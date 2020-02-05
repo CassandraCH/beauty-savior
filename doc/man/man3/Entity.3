@@ -1,0 +1,66 @@
+.TH "Entity" 3 "Mercredi 5 Février 2020" "Version 0.1" "Beauty Savior" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Entity \- Structure de base réprésentant les entités vivantes du jeux\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <entity\&.h>\fP
+.SS "Champs de données"
+
+.in +1c
+.ti -1c
+.RI "int \fBpointDeVie\fP"
+.br
+.ti -1c
+.RI "int \fBx\fP"
+.br
+.ti -1c
+.RI "int \fBy\fP"
+.br
+.ti -1c
+.RI "int \fBl\fP"
+.br
+.ti -1c
+.RI "int \fBh\fP"
+.br
+.ti -1c
+.RI "bool \fBcheckPointActif\fP"
+.br
+.ti -1c
+.RI "Etat \fBetat\fP"
+.br
+.ti -1c
+.RI "int \fBdirection\fP"
+.br
+.in -1c
+.SH "Description détaillée"
+.PP 
+Structure de base réprésentant les entités vivantes du jeux\&. 
+.SH "Documentation des champs"
+.PP 
+.SS "bool checkPointActif"
+Vérifie si l'entité est actif ou non 
+.SS "int direction"
+Direction dans laquelle se déplace l'entité ( gauche / droite ) 
+.SS "Etat etat"
+Etat du sprite ( en vie, inactif, mort, saute ) 
+.br
+ 
+.SS "int h"
+Hauteur du sprite 
+.SS "int l"
+Largeur du sprite 
+.SS "int pointDeVie"
+Point de vie 
+.SS "int x"
+Position en y 
+.SS "int y"
+Position en y 
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Beauty Savior à partir du code source\&.
