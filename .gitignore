@@ -1,1 +1,32 @@
-.vscode/
+# Object files
+*.o
+*.ko
+*.obj
+*.elf
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+
+# Executables
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+
+# Debug files
+*.dSYM/
+*.su
+
+# Latex
+*.aux
+*.log
+*.synctex.gz
+*.toc
+*.fdb_latexmk
+*.fls
+
