@@ -18,7 +18,6 @@ Règles:
     -les niveaux peuvent être détruits ou récupérés. Il doit finir le niveau dans un temps imparti.
 
 
-
 Contrôle du joueur:
 
     - On contrôle le joueur avec les touches du clavier :
@@ -26,3 +25,22 @@ Contrôle du joueur:
     - Flèche droite pour aller à droite 
     - Flèche gauche pour aller à gauche 
     - Espace pour lancer un objet.
+
+
+Liste des différentes entités : 
+
+    - Items -> Gestion de tous les items disponibles sur un niveau  
+    - Input -> Gestion du clavier 
+    - GameObject -> Héros 
+                 -> Ennemi 
+
+    - Save-> Gestion de la sauvegarde des données du jeux ainsi que de leurs chargement 
+    - Map -> Gestion des différents niveaux du jeux 
+    - Score -> Gestion du scoring 
+    - GameStage -> Structure ayant la responsabilité des différents états du jeux 
+        -> Menu principal
+        -> En pause 
+        -> Game Over 
+
+    
+
