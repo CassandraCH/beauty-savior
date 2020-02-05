@@ -29,6 +29,11 @@ Contrôle du joueur:
 
 Liste des différentes entités : 
 
+    - GameStage -> Structure ayant la responsabilité des différents états du jeux 
+        -> Menu principal
+        -> En pause 
+        -> Game Over 
+
     - Items -> Gestion de tous les items disponibles sur un niveau  
     - Input -> Gestion du clavier 
     - GameObject -> Héros 
@@ -37,10 +42,7 @@ Liste des différentes entités :
     - Save-> Gestion de la sauvegarde des données du jeux ainsi que de leurs chargement 
     - Map -> Gestion des différents niveaux du jeux 
     - Score -> Gestion du scoring 
-    - GameStage -> Structure ayant la responsabilité des différents états du jeux 
-        -> Menu principal
-        -> En pause 
-        -> Game Over 
+  
 
     
 

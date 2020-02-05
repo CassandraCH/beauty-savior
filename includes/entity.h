@@ -8,8 +8,6 @@
 *\brief Fichier d'en-tête pour la définition du type Entité 
 */
 
-
-
 /**
  * \typedef Entity_t 
  * \brief typedef pour la structure Entity 
@@ -30,10 +28,8 @@ typedef struct Entity
     Etat etat; /**< Etat du sprite ( en vie,  inactif, mort, saute )  */
     int direction; /**< Direction dans laquelle  se déplace l'entité ( gauche / droite ) */
 
+
 }Entity_t;
-
-
-
 
 
 #endif
