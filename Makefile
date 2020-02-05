@@ -1,5 +1,5 @@
 CC=gcc
-CFLAGS= -Iinclude/ -Wall -O 
+CFLAGS= -Iincludes/ -Wall -O 
 LDFLAGS=  -lmingw32 -lSDL2main -lSDL2_image -lSDL2_ttf -lSDL2_mixer -lSDL2 
 EXEC=prog.exe
 SRC=$(wildcard src/*.c)
@@ -12,11 +12,11 @@ $(EXEC): $(OBJ)
 	
 	
 %.o: %.c
-	$(CC) -o $@ -c $< $(CFLAGS)
+	$(CC) -o $@ -c $< $(CFLAGS) 
 
 
 clean:
-	del -f *.o core
+	del src\*.o 
 
 mrproper: clean
 	del -f $(EXEC)
