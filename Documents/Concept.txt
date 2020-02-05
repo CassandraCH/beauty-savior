@@ -1,0 +1,28 @@
+Jeux de plateforme : Beauty Savior
+
+
+Liste des fonctionnalités : 
+    -        Systèmes de chargement/sauvegarde (Possibilité de récupérer et conserver l’avancée d’un joueur).
+    -        Gestions basiques des scores.
+    -        Gestion du temps (Un niveau doit être terminé dans un temps imparti).
+    -        Mise en place d’un système de collectes d’objets.
+    -        Changement de décor en fonction des niveaux.
+    -        Gestion des collisions (décor, ennemi).
+    -        Déplacement dans le décor de l’héroïne.
+    -        Mini AI des ennemis 
+
+
+Règles: 
+
+    - Le joueur court à travers différents niveaux, tuant les ennemis s’y trouvant, les objets dans 
+    -les niveaux peuvent être détruits ou récupérés. Il doit finir le niveau dans un temps imparti.
+
+
+
+Contrôle du joueur:
+
+    - On contrôle le joueur avec les touches du clavier :
+    - Flèche du haut pour sauter 
+    - Flèche droite pour aller à droite 
+    - Flèche gauche pour aller à gauche 
+    - Espace pour lancer un objet.
