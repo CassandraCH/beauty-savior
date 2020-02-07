@@ -44,5 +44,58 @@ Liste des différentes entités :
     - Score -> Gestion du scoring 
   
 
+/// Modification des entités du jeux :
+Nouveau modèle
+
+
+Player 
+    -> getPlayer()
+    -> getPlayerX()
+    -> getPlayerY()
+    -> setNiveau(int niveau)
+    -> deplacement()
+    -> afficherJoueur()
+
+Menu
+    ->  getMenu()
+    ->  Init_Menu()
+    ->  Ecran_Afficher()
+    ->  Ecran_Actif()
+    ->  Nettoyer_Ecran()
+        ----> Menu principal
+        ----> Menu pause
+        ----> Menu Chargement 
+        ----> Menu Game Over
+        ----> Ecran jeux ( s'occupe de la gestion des données quand on est en jeux )
+
+
+Texture_Manager -> SDL_Texture
+                -> Largeur , Hauteur de la texture
+
+                -> ChargerImage() 
+                -> dessinerImage()
+                -> dessinerImages() // Dessine une portion de l'image
+                -> ChargerTexte()
+                -> LibérerRessources()
+
+Scores  -> getScores()
+        -> nouveauScores()
+
+
+Chargement/sauvegarde 
+        -> ChargerJeux()
+        -> SauvegarderJeux() 
+
+Input 
+    -> getInput()
+    -> Input()
+
+Map  ->cameraX
+     ->cameray
+
     
+    -> getMap()
+    -> 
+     
+
 
