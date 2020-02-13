@@ -17,7 +17,37 @@
 
 int main( int argc, char ** argv )
 {
+    Init("Beauty Savior");
+	SDL_Event event;
+	
+    float flPreviousTime, flCurrentTime;
+
+	while( getBaseGame()->estActif )
+    {   
+
+        flPreviousTime = flCurrentTime;
+        flCurrentTime = SDL_GetTicks();
+
+        float dt = flCurrentTime - flPreviousTime;
+
+        if( dt > 0.15f )
+            dt = 0.15f;
+            
+        ProcessInput(&event);
+		 
+        if( getInput()->pause )
+			getBaseGame()->estActif = false;
+      
+
+        Update(dt);
+       
+		Rendu_Jeux( getBaseGame() );
+
+    } 
 
     
+    
+    Quitter_Jeux();
+
     return 0;
 }

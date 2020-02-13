@@ -1,10 +1,15 @@
 #ifndef _MENU_PRINCIPAL_H
 #define _MENU_PRINCIPAL_H
 
-// #include "Texture.h"
+#include "texture.h"
 
 #define MAX_NUMBER 3
 
+
+/**
+ *\struct option
+ *\details Structure gérant les caractéristiques liées à une option
+ */
 typedef struct option
 {   
     int largeur, hauteur;
@@ -15,11 +20,14 @@ typedef struct option
 
 }Options_t;
 
-
+/**
+ *\struct menu
+ *\details Structure 
+ */
 typedef struct menu
 {
     int selectedOption;
-    Options menu[3];
+    Options_t menu[3];
     Mix_Chunk *son;
     TTF_Font * police;
 
