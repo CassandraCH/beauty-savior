@@ -27,45 +27,18 @@ typedef struct
 
 }LinkedList;
 
-// typedef struct inventaire
-// {
 
-//     void (*InitInventaire)(LinkedList *);
-//     void (*DessinerItem) (SDL_Texture * , LinkedList * );
-//     // Node* (*CreerItem)(SDL_Rect*);
-//     Node* (*CreerItem)(SDL_Rect*, typeItem);
-//     //, typeItem 
-
-//     void (*InsererItem)(SDL_Rect *rect, typeItem );
-//     void (*SupprimerItem)(LinkedList *lstPtr);
-//     void (*DeplacementItem) ( LinkedList * lst );
-//     void (*NettoyerItem )(LinkedList *lst);
-//     bool (*SuppPremierItem)(LinkedList * lst);
-//     bool (*SuppDernierItem)(LinkedList * lst);
-//     Node* (*TrouverItem) (LinkedList *lsptr, int target, Node **prvPtr);
-//     bool (*SupprimerItemCible)(LinkedList *lsptr, int target);
-
-//     int (*NombreItems)(LinkedList* );
-
-//     LinkedList listes;
-
-// }Inventaire;
-
-
-
-extern LinkedList* Listes();
-extern void InitialiserInventaire();
 extern void initList();
 
 extern void collisionDetect();
+extern Node* CreateRect(SDL_Rect*rect, typeItem item_t);
 
 extern void init_List(LinkedList *list);
 extern void insertQueue(LinkedList * list, SDL_Rect *rect, typeItem items_t);
+extern void deleteQueue(LinkedList *lstPtr);
 
-extern Node* CreateRect(SDL_Rect*rect, typeItem item_t);
 extern void drawCollider(SDL_Texture * tex, LinkedList *lsptr, typeItem item_t);
 
-extern void deleteQueue(LinkedList *lstPtr);
 extern void moveRectangle ( LinkedList * lst );
 extern void clearRect (LinkedList *lst);
 

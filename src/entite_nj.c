@@ -10,13 +10,7 @@ extern void init_List(LinkedList *list)
 }
 
 
-extern int nombreElements(LinkedList* lstPtr)
-{
-    return lstPtr->nodeCount;
-}
-
 extern Node* CreateRect(SDL_Rect*rect, typeItem item_t)
-// extern Node* CreateRect(SDL_Rect*rect)
 {   
     Node * nouvelElement = malloc( sizeof( Node ) );
     nouvelElement->next = NULL;
@@ -27,7 +21,7 @@ extern Node* CreateRect(SDL_Rect*rect, typeItem item_t)
     return ( nouvelElement );
 }
 
-// extern void drawCollider(LinkedList *lsptr, SDL_Texture * tex, typeItem item_t,
+
 extern void  drawCollider(LinkedList *lsptr, SDL_Texture * tex, typeItem item_t )
 {
     Node *pt;
