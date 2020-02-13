@@ -77,8 +77,9 @@ extern void Init_MenuPrincipal()
 extern void UpdateOption(Options * menut)
 {
     /* 
-     * Surface tampon
+     * Surface tampon => utile pour parametrer la surface
      * TTF_RenderText_Blended => permet de creer une surface et de l'affiche en haute qualite 
+     * 
      */
     SDL_Surface *tmp = TTF_RenderText_Blended(menu.font, menut->string, menut->color );
     menut->width  = tmp->w;
@@ -98,7 +99,9 @@ extern void UpdateOption(Options * menut)
     SDL_FreeSurface(tmp);
 }
 
-
+/*
+ * Fonction qui permer de naviguer dans le menu vers le haut
+ */
 extern void MoveUp()
 {   
 	if ( menu.selectedItem - 1 >= 0)
@@ -116,7 +119,9 @@ extern void MoveUp()
     }
 
 }
-
+/*
+ * Fonction qui permer de naviguer dans le menu vers le bas
+ */
 extern void MoveDown()
 {  
 	if ( menu.selectedItem  + 1 < MAX_NUMBER )
