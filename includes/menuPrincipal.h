@@ -20,7 +20,7 @@ typedef struct option
 typedef struct menu
 {
     int selectedOption;
-    Options menu[3];
+    Options_t menu[3];
     Mix_Chunk *son;
     TTF_Font * police;
 

@@ -1,5 +1,7 @@
 //#include "baseGame.h
 #include "menuPrincipal.h"
+#include "constantes.h"
+#include "commun.h"
 
 Menu_t menu;
 
@@ -35,7 +37,7 @@ extern void Init_MenuPrincipal()
      * Premiere option : demarer une nouvelle partie 
      * couleur du début = rouge
      */ 
-    menu.menu[0].couleur = (SDL_Color) { 0xFF, 0, 0,0 };
+    menu.menu[0].couleur = (SDL_Color) {0xFF, 0, 0,0 };
     menu.menu[0].nomOption = "Nouvelle Partie";
     //Refraichissement de l'affichage de l'option
     UpdateOption( &menu.menu[0] );
@@ -72,15 +74,15 @@ extern void Init_MenuPrincipal()
 }
 
 /* 
- * Fonction qui rafraichit l'affichage des options 
+ * Fonction qui rafraichit l'affichage des Options 
  */
-extern void UpdateOption(Options * menut)
+extern void UpdateOption(Options_t * menut)
 {
     /* 
      * Surface tampon => utile pour parametrer la surface
      * TTF_RenderText_Blended => permet de creer une surface et de l'affiche en haute qualite 
      */
-    SDL_Surface *tmp = TTF_RenderText_Blended(menu.font, menut->nomOption, menut->couleur);
+    SDL_Surface *tmp = TTF_RenderText_Blended(menu.police, menut->nomOption, menut->couleur);
     menut->largeur = tmp->w;
     menut->hauteur = tmp->h;
 
@@ -156,7 +158,9 @@ extern void Draw_MenuPrincipal()
     //Pour chaque option, afficher a l'ecran son rendu
 	for (int i = 0; i < MAX_NUMBER; i++)
 	{
+        //Rectangle tampon 
         SDL_Rect rect = {menu.menu[i].x, menu.menu[i].y, menu.menu[i].largeur, menu.menu[i].hauteur};
+        //
         SDL_RenderCopy( getRenderer(), menu.menu[i].texture , NULL, &rect);
 	}
 }
