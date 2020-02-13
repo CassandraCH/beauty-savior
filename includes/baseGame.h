@@ -42,11 +42,12 @@ extern Input_t* getInput(void);
 extern Score_t* getScores(void);
 extern SDL_Renderer* getRenderer(void);
 
+
+
+/*####### FONCTION PRINCIPAL ############ */
 extern void Init(const char *title);
 extern void Update(float dt);
 extern void Quitter_Jeux();
-
-
 extern void Rendu_Jeux() ;
 
 #endif
