@@ -151,7 +151,7 @@ extern void MoveDown()
 
 /*
  * Fonction qui permet d'afficher le menu principal
- * => afficher les differentes options
+ * => affichage les differentes options
  */
 extern void Draw_MenuPrincipal() 
 {
@@ -160,22 +160,28 @@ extern void Draw_MenuPrincipal()
 	{
         //Rectangle tampon 
         SDL_Rect rect = {menu.menu[i].x, menu.menu[i].y, menu.menu[i].largeur, menu.menu[i].hauteur};
-        //
         SDL_RenderCopy( getRenderer(), menu.menu[i].texture , NULL, &rect);
 	}
 }
 
+/*
+ * Fonction qui permet de gérer les evenements 
+ * => gestion des entrees clavier (action utilisateur)
+ */
 extern void Input_MenuPrincipal(SDL_Event* event)
 {
-    
+    //Lecture de tous les evenements
     while( SDL_PollEvent(event) != 0 )
     {
+        //Si le joueur ferme la fenetre ou appuie sur le bouton echap
         if( event->type == SDL_QUIT || event->key.keysym.sym == SDLK_ESCAPE )
         {
+            //changer l'etat du jeu
             getBaseGame()->estActif = false;
             return;
         }
 
+        //
         if( event->type == SDL_KEYUP )
         {
             switch (event->key.keysym.sym)
@@ -221,6 +227,9 @@ extern void Input_MenuPrincipal(SDL_Event* event)
     } // fin while (SDL_PollEvent)
 }
 
+/*
+ * Fonction qui permet de supprimer le menu => liberation de la memoire
+ */
 extern void Nettoyer_MenuPrincipal()
 {
     printf("Suppression Menu principal\n");
