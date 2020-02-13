@@ -3,7 +3,8 @@
 
 // #include "Texture.h"
 
-#define MAX_NUMBER 3
+#define MAX_NUMBER 3 //nombre d'éléments du menu
+
 
 typedef struct option
 {   
