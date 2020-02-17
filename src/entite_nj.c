@@ -22,7 +22,7 @@ extern Node* CreateRect(SDL_Rect*rect, typeItem item_t)
 }
 
 
-extern void  drawCollider(LinkedList *lsptr, SDL_Texture * tex, typeItem item_t )
+extern void  RenderEntity(LinkedList *lsptr, SDL_Texture * tex)
 {
     Node *pt;
     if( lsptr->nodeCount  > 0 )
@@ -32,15 +32,6 @@ extern void  drawCollider(LinkedList *lsptr, SDL_Texture * tex, typeItem item_t 
             SDL_Rect ledgeRect = {  pt->rect->x- camera.x ,pt->rect->y-  camera.y ,pt->rect->w,pt->rect->h };
             SDL_RenderCopy(getRenderer(), tex , NULL, &ledgeRect);
         }
-
-        // for( pt = lsptr->head; pt!= NULL; pt= pt->next )
-        // {
-        //    if ( pt->touche != true && pt->type == item_t )
-        //    {
-        //     SDL_Rect legde = {  pt->rect->x - getBaseGame()->camera.x , pt->rect->y - getBaseGame()->camera.y , pt->rect->w, pt->rect->h };
-        //     SDL_RenderCopy( getRenderer() , tex , NULL, &legde );
-        //    }
-        // }
     }
         
 }

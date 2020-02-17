@@ -28,16 +28,18 @@ typedef struct
 }LinkedList;
 
 
-extern void initList();
+extern void init_List(LinkedList *list);
 
+extern bool collide2d(float x1, float y1, float x2, float y2, float wt1, float ht1, float wt2, float ht2);
 extern void collisionDetect();
+
+
 extern Node* CreateRect(SDL_Rect*rect, typeItem item_t);
 
-extern void init_List(LinkedList *list);
 extern void insertQueue(LinkedList * list, SDL_Rect *rect, typeItem items_t);
 extern void deleteQueue(LinkedList *lstPtr);
 
-extern void drawCollider(SDL_Texture * tex, LinkedList *lsptr, typeItem item_t);
+extern void RenderEntity(SDL_Texture * tex, LinkedList *lsptr);
 
 extern void moveRectangle ( LinkedList * lst );
 extern void clearRect (LinkedList *lst);
@@ -48,6 +50,5 @@ extern bool deleteLast(LinkedList * lst);
 extern Node * find (LinkedList *lsptr, int target, Node **prvPtr);
 extern bool deleteTarget(LinkedList *lsptr, int target);
 
-extern bool collide2d(float x1, float y1, float x2, float y2, float wt1, float ht1, float wt2, float ht2);
 
 #endif
