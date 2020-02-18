@@ -35,7 +35,7 @@ extern Menu_t* getMenu(void);
 extern Scores* getScores(void);
 extern SDL_Renderer* getRenderer(void);
 
-extern LinkedList listEnnemies;
+extern LinkedList listEnnemis;
 extern LinkedList listCollider;
 extern LinkedList bullet;
 

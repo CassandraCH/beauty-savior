@@ -203,7 +203,7 @@ extern void Input_MenuPrincipal(SDL_Event* event)
                         case 0:
                             getPlayer()->estMort = false;
                             deleteList( &listCollider );
-                            deleteList(&listEnnemies);
+                            deleteList(&listEnnemis);
                             ChargerNiveau();
                             Nettoyer_MenuPrincipal();
                             getBaseGame()->state = IN_GAME;

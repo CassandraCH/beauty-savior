@@ -116,7 +116,7 @@ extern void ChargementEnnemis(const char * filename)
         rect->w = 50;
         rect->h = 50;             
         if( fscanf(file, "%d %d",&rect->x , &rect->y) ){
-            insertion(&listEnnemies,  rect, ennemi, false );
+            insertion(&listEnnemis,  rect, ennemi, false );
         }
     }
 

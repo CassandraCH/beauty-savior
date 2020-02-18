@@ -4,7 +4,7 @@
 #include "baseGame.h"
 
 Level level;
-LinkedList listEnnemies;
+LinkedList listEnnemis;
 LinkedList bullet;
 LinkedList listCollider;
 
@@ -20,10 +20,10 @@ extern void ChargerNiveau()
    
    if(  getPlayer()->niveau == 1 )
    {
-      init_List(&listEnnemies);
+      init_List(&listEnnemis);
       init_List(&bullet);
       Chargement_CreationPNJ("niveau1.txt") ;
-      ChargementEnnemis("ennemy.txt");
+      ChargementEnnemis("ennemi.txt");
       level.levelTextures[0].texture = LoadTexture("assets/savior1-1.png");
    }  
    else if(  getPlayer()->niveau == 2 )

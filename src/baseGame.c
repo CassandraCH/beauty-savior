@@ -22,24 +22,30 @@ extern void Update(float dt)
     else if ( game.state == IN_GAME )
     {
 		
-		if (bullet.nodeCount > 0 || listCollider.nodeCount > 0 || listEnnemies.nodeCount > 0)
-		{
-		  deleteTarget(&bullet, true);
-		  deleteTarget(&listCollider, true);
-		  deleteTarget(&listEnnemies, true);
-		}
-        
-        // moveRectangle(&bullet);
-        
-        UpdateJoueur(dt);
-        // collisionDetect();
-        collisionDecor((Entite*)getPlayer());
-        for( Node * pt =listEnnemies.tete ; pt != NULL; pt=pt->suivant ) 
+        if (bullet.nodeCount > 0 || listCollider.nodeCount > 0 || listEnnemis.nodeCount > 0)
         {
-          deplacement_entiteNJ((Entite*) pt );
-		  collisionEntite((Entite*) getPlayer(), (Entite*) pt);
-          collisionDecor((Entite*)pt);
+          deleteTarget(&bullet, true);
+          deleteTarget(&listCollider, true);
+          deleteTarget(&listEnnemis, true);
         }
+       
+  
+        UpdateJoueur(dt);
+        UpdateIngame();
+        // for( Node* pt = listEnnemis.tete; pt != NULL; pt = pt->suivant )
+        // {
+        //   //collisionEntite((Entite*) getPlayer(), (Entite*) pt);
+        // }
+        deplacement_entite( listEnnemis );
+        //   pt->x += 4;
+          
+        // collisionDetecct();
+        collisionDetect_E();
+        collisionDecor((Entite*)getPlayer());
+        // for( Node* pt = listEnnemis.tete; pt != NULL; pt = pt->suivant )
+        //    
+  
+        
     }
       
 }
@@ -70,7 +76,12 @@ extern void Rendu_Jeux()
       SDL_Texture * texture2 = SDL_CreateTextureFromSurface(getRenderer(), surface2);
       SDL_Texture * texture3 = SDL_CreateTextureFromSurface(getRenderer(), surface3);
 
-       if( listCollider.nodeCount > 0)
+       
+
+      SDL_Rect renderQuad = {0, 0, camera.w ,  camera.h };
+      SDL_RenderCopyEx( getRenderer() , getLevel()->levelTextures[0].texture,&camera, &renderQuad, 0.0, NULL, SDL_FLIP_NONE );
+
+      if( listCollider.nodeCount > 0)
         {
           for(Node* pt = listCollider.tete ; pt != NULL ; pt = pt->suivant )
           {
@@ -86,12 +97,9 @@ extern void Rendu_Jeux()
           }
         }
 
-      SDL_Rect renderQuad = {0, 0, camera.w ,  camera.h };
-      SDL_RenderCopyEx( getRenderer() , getLevel()->levelTextures[0].texture,&camera, &renderQuad, 0.0, NULL, SDL_FLIP_NONE );
-
       SDL_SetRenderDrawColor( getRenderer(), 0xFF,0,0,0 );
-        RenderElements(&listEnnemies, texture2, ennemi );
-        RenderElements(&bullet, texture2, ennemi );
+      RenderElements(&listEnnemis, texture2, ennemi );
+      RenderElements(&bullet, texture2, ennemi );
         
 
       

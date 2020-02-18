@@ -22,11 +22,13 @@ extern void Input_InGame(SDL_Event *event)
 
     const Uint8 *keystates  = SDL_GetKeyboardState(NULL);
     InputJoueur(event);
+ 
 
 }
 
 extern void UpdateIngame()
-{
+{   
+    
 
     camera.x = ( getPlayer()->x + getPlayer()->w / 2 ) - LARGEUR_FENETRE / 2;
     camera.y = ( getPlayer()->y+  getPlayer()->h  / 2 ) - HAUTEUR_FENETRE / 2;
@@ -47,7 +49,10 @@ extern void UpdateIngame()
     if( camera.y + camera.h >= LEVEL_HEIGHT)
     {
         camera.y = LEVEL_HEIGHT - HAUTEUR_FENETRE;
+
     }
+
+   
 }
 
 extern void RenderIngame()
