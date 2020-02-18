@@ -1,7 +1,7 @@
 #ifndef _ENTITE_NJ_H
 #define _ENTITE_NJ_H
 
-#include "common.h"
+#include "commun.h"
 #include "texture.h"
 
 typedef struct Node
@@ -9,7 +9,7 @@ typedef struct Node
   #include "attributs.h"
 
   SDL_Rect *rect;
-  typeItem type; //enum
+
   Texture_Manager imagesItem[2];
   int imageCourante; 
 
@@ -32,8 +32,8 @@ extern void init_List(LinkedList *list);
 
 extern void collisionDetect();
 
-extern Node* creerRect(SDL_Rect*rect, typeItem item_t, bool isLeft);
-extern void insertion(LinkedList * list, SDL_Rect *rect, typeItem items_t, bool isLeft);
+extern Node* creerRect(SDL_Rect*rect, typeEntite item_t, bool isLeft);
+extern void insertion(LinkedList * list, SDL_Rect *rect, typeEntite items_t, bool isLeft);
 extern void deleteQueue(LinkedList *lstPtr);
 extern void RenderElements(LinkedList *lst,SDL_Texture * tex, typeEntite typeE);
 

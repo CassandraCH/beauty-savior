@@ -1,6 +1,6 @@
 #include "baseGame.h"
 
-extern void move_entity(Entity *entity)
+extern void deplacement_entiteNJ(Entite *entity)
 {
 
 
@@ -46,50 +46,48 @@ extern void collisionEntite(Entite *entite_a, Entite *entite_b )
     float posY_B = entite_b->y; 
 
     
-    if(collide2d(posX_A, posX_B, posX_B,posY_B, largeur_A ,hauteur_A, largeur_B, hauteur_B) && entite_b->type == ennemy )
+    if(collide2d(posX_A, posX_B, posX_B,posY_B, largeur_A ,hauteur_A, largeur_B, hauteur_B) && entite_b->type == ennemi )
     {
 				
-            if( posX_A+largeur_A > posX_B && posX_A < posX_B+largeur_B  )
-            {    
-            
-                if( posY_A+hauteur_A > posY_B && posY_A < posY_B && entite_a->vy > 0 )
+        if( posX_A+largeur_A > posX_B && posX_A < posX_B+largeur_B  )
+        {    
+        
+            if( posY_A+hauteur_A > posY_B && posY_A < posY_B && entite_a->vy > 0 )
+            {
+                // correct y
+                entite_a->y = posY_B-hauteur_A;
+                posY_A = posY_B-hauteur_A;
+
+                if( !entite_b->estMort )
                 {
-                    // correct y
-                    entite_a->y = posY_B-hauteur_A;
-                    posY_A = posY_B-hauteur_A;
-
-                    if( !entite_b->estMort )
-                    {
-                        entite_b->estMort = true;
-                    }
-
+                    entite_b->estMort = true;
                 }
-                else
+
+            }
+            else
+            {
+                if( !entite_a->estMort )
                 {
-                    if( !entite_a->estMort )
-                    {
-                        entite_a->actualiserVie;
-                    }
+                    entite_a->actualiserVie;
                 }
-            } 
+            }
+        } 
 
-            
-             break;
-        }
     }
+    
 
 }
 
 
-extern void collisionDecor(Entity *entity)
+extern void collisionDecor(Entite *entity)
 {
 
     //Vérifie si l'entité tombe
     if( entity->y > 600)
     {
-        if( !entity->isDead  )
+        if( !entity->estMort  )
         {
-          entity->isDead = true;
+          entity->estMort = true;
           if( entity->type == joueur)
           {
             Init_MenuPrincipal();
@@ -105,7 +103,7 @@ extern void collisionDecor(Entity *entity)
 
     Node * ec = NULL;
     // Vérifie les collisions avec les colliders
-    for(ec =  Listes()->head; ec != NULL; ec = ec->next)
+    for(ec =  listCollider.tete ; ec != NULL; ec = ec->suivant )
     {   
             // taille en largeur
             float largeur_entity = entity->w; 
@@ -128,7 +126,7 @@ extern void collisionDecor(Entity *entity)
             float collider_h = ec->rect->h;
 
 
-            if( ec->type == collider )
+            if( ec->type == platform )
             {
 
                     //  player.x+player.w/2 > collider.x && player.x+player.w/2 < collider.x+ collider.w
@@ -161,10 +159,10 @@ extern void collisionDecor(Entity *entity)
 
                         // landed on the ledge stop any velocity
                         entity->vy = 0;
-                        if(!entity->onGround)
+                        if(!entity->estSurSol )
                         {
                             // Mix_PlayChannel(-1, game->landSound, 0);
-                            entity->onGround = true;
+                            entity->estSurSol = true;
                         }
 
                     }
@@ -177,11 +175,11 @@ extern void collisionDecor(Entity *entity)
                 //rubbing against right edge
                 if(posX_entity < collider_x+collider_w && posX_entity+largeur_entity > collider_x+collider_w && entity->vx < 0)
                 {
-                    if( entity->type == ennemy  )
+                    if( entity->type == ennemi  )
                     {
                          entity->vx = 0 - entity->vx;
                     }
-                    else if (entity->type == joueur && !(ec->type == arrow ) )
+                    else if (entity->type == joueur && !(ec->type == fleche ) )
                     {
                         //correct x
                         entity->x = collider_x+collider_w;
@@ -193,11 +191,11 @@ extern void collisionDecor(Entity *entity)
                 //rubbing against left edge
                 else if(posX_entity+largeur_entity > collider_x && posX_entity < collider_x && entity->x > 0)
                 {
-                    if( entity->type == ennemy)
+                    if( entity->type == ennemi)
                     {
                         entity->vx = 0 - entity->vx;
                     }
-                    else if (entity->type == joueur && !(ec->type == arrow) )
+                    else if (entity->type == joueur && !(ec->type == fleche) )
                     {
                         //correct x
                         entity->x = collider_x-largeur_entity;

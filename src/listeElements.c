@@ -4,16 +4,16 @@
 
 extern void init_List(LinkedList *list)
 {
-  Listes()->head = NULL;
-  Listes()->tail = NULL;
-  Listes()->nodeCount = 0;
+  list->tete = NULL;
+  list->queue = NULL;
+  list->nodeCount = 0;
 }
 
 
-extern Node* creerRect(SDL_Rect*rect, typeItem item_t, bool isLeft)
+extern Node* creerRect(SDL_Rect*rect, typeEntite item_t, bool isLeft)
 {   
     Node * nouvelElement = malloc( sizeof( Node ) );
-    nouvelElement->next = NULL;
+    nouvelElement->suivant = NULL;
     nouvelElement->rect = rect;
     nouvelElement->estMort = false;
     nouvelElement->estSurSol = false;
@@ -31,26 +31,23 @@ extern Node* creerRect(SDL_Rect*rect, typeItem item_t, bool isLeft)
 
 
 
-extern void insertion(LinkedList * list, SDL_Rect *rect, typeItem items_t, bool isLeft)
+extern void insertion(LinkedList * list, SDL_Rect *rect, typeEntite items_t, bool isLeft)
 {
  
-  Node *nouvelElement = CreateRect(rect, items_t);
+  Node *nouvelElement = creerRect(rect, items_t,false);
  
   if (list->nodeCount == 0){
     // Cas lorsque la liste est vide
-    list->head = nouvelElement;
-    list->tail = nouvelElement;
+    list->tete = nouvelElement;
+    list->queue = nouvelElement;
   }
   else{
     // Cas lorsque la liste n'est pas vide
-    list->tail->next = nouvelElement;
-    list->tail = nouvelElement;
+    list->queue->suivant = nouvelElement;
+    list->queue = nouvelElement;
   }
    
   list->nodeCount++;
-  nouvelElement->id = list->nodeCount;
-    printf("ID element: %d\n", nouvelElement->id );
-    printf("Nombre element: %d\n", list->nodeCount );
 }
 
 
@@ -60,7 +57,7 @@ extern void insertion(LinkedList * list, SDL_Rect *rect, typeItem items_t, bool 
 //     if( lst->nodeCount  > 0 )
 //     {   
         
-//         for( pt = lst->head; pt!= NULL; pt= pt->next )
+//         for( pt = lst->tete; pt!= NULL; pt= pt->next )
 //         {
 
 //             if( pt->rect->x < camera.x+camera.w )
@@ -79,7 +76,7 @@ extern void insertion(LinkedList * list, SDL_Rect *rect, typeItem items_t, bool 
 extern void deleteList(LinkedList * lst)
 {
     Node * temp;
-    Node * current = lst->head;
+    Node * current = lst->tete;
     while( current != NULL)
     {
         temp = current;
@@ -97,17 +94,17 @@ extern void deleteQueue(LinkedList *lstPtr){
   {
         if( lstPtr->nodeCount  > 0 )
         {
-            Node *first = lstPtr->head;
+            Node *first = lstPtr->tete;
             printf("ID element: %d\n", first->id );        
             if (lstPtr->nodeCount == 1){
                 // Cas si il n'y a qu'un élément 
-                lstPtr->head = NULL;
-                lstPtr->tail = NULL;
+                lstPtr->tete = NULL;
+                lstPtr->queue = NULL;
 
             }
             else{
                 //Si il y a plusieurs élements il faut supprimer le premier
-                lstPtr->head = first->next;
+                lstPtr->tete = first->next;
             }
             
             free(first->rect);
@@ -128,16 +125,16 @@ extern bool deleteFirst(LinkedList * lst)
         return false;
     }
 
-    Node * first = lst->head;
+    Node * first = lst->tete;
 
     if (lst->nodeCount == 1)
     {
-        lst->head = NULL; 
-        lst->tail = NULL;
+        lst->tete = NULL; 
+        lst->queue = NULL;
     }
     else 
     {
-        lst->head = first->next;
+        lst->tete = first->next;
     }
     free(first);
     lst->nodeCount--;
@@ -152,21 +149,21 @@ extern bool deleteLast(LinkedList * lst)
         return false;
     }
 
-    Node * current = lst->head;
-    Node * last = lst->tail;
+    Node * current = lst->tete;
+    Node * last = lst->queue;
 
     if (lst->nodeCount == 1)
     {
-        lst->head = NULL; 
-        lst->tail = NULL;
+        lst->tete = NULL; 
+        lst->queue = NULL;
     }
     else 
     {
-        while( current->next != lst->tail )
+        while( current->next != lst->queue )
             current = current->next;
 
-        lst->tail= current;
-        lst->tail->next = NULL;
+        lst->queue= current;
+        lst->queue->next = NULL;
 
     }
     free(last);
@@ -178,7 +175,7 @@ extern bool deleteLast(LinkedList * lst)
 
 extern Node * find (LinkedList *lsptr, int target, Node **prvPtr)
 {
-    Node * current = lsptr->head;
+    Node * current = lsptr->tete;
     *prvPtr = NULL;
     
     while( current != NULL )
@@ -202,12 +199,12 @@ extern bool deleteTarget(LinkedList *lsptr, int target)
         return false;
     }
 
-    if( current == lsptr->head )
+    if( current == lsptr->tete )
     {
        return deleteFirst(lsptr);
     }
     
-    else if( current == lsptr->tail )
+    else if( current == lsptr->queue )
     {
        return deleteLast(lsptr);
     }
@@ -228,7 +225,7 @@ extern void collisionDetect()
     Node * pt;
     
     // Vérifie la collision avec les items
-     for(pt = Listes()->head; pt != NULL; pt = pt->next)
+     for(pt = Listes()->tete; pt != NULL; pt = pt->next)
     {
         if(collide2d(getPlayerX(), getPlayerY(), pt->rect->x,pt->rect->y,50,50,25, 25 ) && pt->type == item )
         {
@@ -247,7 +244,7 @@ extern void collisionDetect()
     {
      
           
-        for(pt = Listes()->head; pt != NULL; pt = pt->next)
+        for(pt = Listes()->tete; pt != NULL; pt = pt->next)
         {
             if(collide2d( pt2->rect->x , pt2->rect->y, pt->rect->x,pt2->rect->y,20,20,50, 50 ) && pt->type == ennemy )
                 {
@@ -273,7 +270,7 @@ extern void RenderElements(LinkedList *lst,SDL_Texture * tex, typeEntite typeE)
     Node *pt;
     if( lsptr->nodeCount  > 0 )
     {
-        for( pt = lst->head; pt!= NULL; pt= pt->next )
+        for( pt = lst->tete; pt!= NULL; pt= pt->next )
         {
            if ( pt->isDead != true && pt->type == item_t )
            {

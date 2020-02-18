@@ -11,7 +11,7 @@ typedef struct
     int numeroNiveau;
 
     
-}Score;
+}Scores;
 
 
 extern void Init_Scores();

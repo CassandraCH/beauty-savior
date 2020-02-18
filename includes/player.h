@@ -2,7 +2,7 @@
 #define _PLAYER_H
 
 #include "texture.h"
-#include "constants.h"
+#include "constantes.h"
 
 
 
@@ -36,7 +36,7 @@ extern void actualiserJoueur(void);
 extern void InitJoueur(Player *player);
 extern bool collide2d(float x1, float y1, float x2, float y2, float wt1, float ht1, float wt2, float ht2);
 
-extern void InputJoueur(const Uint8 * keystates);
+extern void InputJoueur(SDL_Event *event);
 extern void AfficherJoueur();
 
 

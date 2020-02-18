@@ -1,4 +1,4 @@
-#include "common.h"
+#include "commun.h"
 #include "baseGame.h"
 
 SDL_Window *fenetre;
@@ -37,8 +37,8 @@ void Init(const char *title)
     }
 
     /*############### CHARGEMENT DES POLICES *###############*/
-    getMenu()->font = TTF_OpenFont("fonts/Crazy-Pixel.ttf", 48);
-    if(!getMenu()->font )
+    getMenu()->police = TTF_OpenFont("fonts/Crazy-Pixel.ttf", 48);
+    if(!getMenu()->police )
     {
         printf("Cannot find font file!!\n");
         SDL_Quit();
@@ -50,14 +50,13 @@ void Init(const char *title)
 
 
     /*############### INITIALISATION DES ENTITES *###############*/        
-    InitialiserInventaire();
+    
     InitJoueur( getPlayer() );
 	Init_MenuPrincipal();
     Init_Scores();
 
 
     getBaseGame()->state = MENU_PRINCIPAL ;
-    getBaseGame()->camera = (SDL_Rect) { 0, 0, LARGEUR_FENETRE, HAUTEUR_FENETRE };
     getPlayer()->niveau = 1;
     getPlayer()->nombreVies = 3;
     getBaseGame()->estActif = true;
@@ -69,8 +68,8 @@ void Init(const char *title)
 void Quitter_Jeux()
 {
      
-    Mix_FreeChunk(getMenu()->sound);
-    TTF_CloseFont(getMenu()->font);
+    Mix_FreeChunk(getMenu()->son);
+    TTF_CloseFont(getMenu()->police);
     Nettoyer_MenuPrincipal();
     SDL_DestroyWindow(fenetre) ;
     SDL_DestroyRenderer ( rendu);

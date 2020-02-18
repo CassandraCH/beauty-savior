@@ -1,27 +1,25 @@
-#include "load_save.h"
+#include "chargeSave.h"
 #include <stdlib.h>
 #include <stdio.h>
 
-extern void LoadGame()
+extern void ChargerPartie()
 {
     FILE * file = fopen("data.txt", "r");
-
-
+    
     if (file == NULL) {
         fprintf(stderr, "Can't open input file in.list!\n");
         exit(1);    
     }
-
+    
     if( fscanf(file,"%f %f", &getPlayer()->x, &getPlayer()->y) )
     {
         printf( "Score charger: %f-%f\n", getPlayer()->x, getPlayer()->y);
         fclose(file);
 
     }
-    
 }
 
-extern void SaveGame()
+extern void SauvegarderPartie()
 {
     FILE * file = fopen("data.txt", "a");
     
@@ -47,7 +45,7 @@ extern void SaveNode_Position(LinkedList * lst)
     
     if( lst->nodeCount  > 0 )
     {
-        for( pt = lst->head; pt != NULL; pt = pt->next )
+        for( pt = lst->tete; pt != NULL; pt = pt->suivant )
         {
              fprintf(file,"%d %d\n", pt->rect->x , pt->rect->y );
         }
@@ -66,9 +64,9 @@ extern void ChargementCollider(const char * filename)
     }
     Node * pt;
     
-    if( Listes()->nodeCount  > 0 )
+    if( listCollider.nodeCount  > 0 )
     {
-        for( pt = Listes()->head; pt != NULL; pt = pt->next )
+        for( pt = listCollider.tete ; pt != NULL; pt = pt->suivant )
         {
             if (fscanf(file, "%d %d",&pt->rect->x , &pt->rect->y) )
             {
@@ -96,7 +94,7 @@ extern void Chargement_CreationPNJ(const char * filename)
         SDL_Rect *rect = malloc( sizeof(SDL_Rect));       
         if( fscanf(file, "%d %d %d %d %d %d",&typeCollider,&isLeft,  &rect->x , &rect->y, &rect->w, &rect->h) )
         {
-            insertQueue(Listes(), rect, typeCollider, isLeft);
+            insertion(&listCollider, rect, typeCollider, isLeft);
         }
     }
 	
@@ -119,7 +117,7 @@ extern void ChargementEnnemis(const char * filename)
         rect->w = 50;
         rect->h = 50;             
         if( fscanf(file, "%d %d",&rect->x , &rect->y) ){
-            insertQueue(listEnnemies,  rect, ennemy, false );
+            insertion(&listEnnemies,  rect, ennemi, false );
         }
     }
 
