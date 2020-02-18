@@ -26,28 +26,10 @@ extern Node* creerRect(SDL_Rect*rect, typeItem item_t, bool isLeft)
     nouvelElement->estTourne = isLeft;
     // nouvelElement->launch = true;
     nouvelElement->type = item_t;
-
-
     return ( nouvelElement );
 }
 
 
-extern void RenderElements(LinkedList *lst,SDL_Texture * tex, typeEntite typeE)
-{
-    Node *pt;
-    if( lsptr->nodeCount  > 0 )
-    {
-        for( pt = lst->head; pt!= NULL; pt= pt->next )
-        {
-           if ( pt->isDead != true && pt->type == item_t )
-           {
-            SDL_Rect rect = {  pt->x - camera.x , pt->y - camera.y , pt->w, pt->h };
-            SDL_RenderCopy( getRenderer() , tex , NULL, &rect );
-           }
-        }
-    }
-        
-}
 
 extern void insertion(LinkedList * list, SDL_Rect *rect, typeItem items_t, bool isLeft)
 {
@@ -61,7 +43,6 @@ extern void insertion(LinkedList * list, SDL_Rect *rect, typeItem items_t, bool 
   }
   else{
     // Cas lorsque la liste n'est pas vide
-   
     list->tail->next = nouvelElement;
     list->tail = nouvelElement;
   }
@@ -71,6 +52,29 @@ extern void insertion(LinkedList * list, SDL_Rect *rect, typeItem items_t, bool 
     printf("ID element: %d\n", nouvelElement->id );
     printf("Nombre element: %d\n", list->nodeCount );
 }
+
+
+// extern void moveRectangle ( LinkedList * lst )
+// {
+//      Node *pt;
+//     if( lst->nodeCount  > 0 )
+//     {   
+        
+//         for( pt = lst->head; pt!= NULL; pt= pt->next )
+//         {
+
+//             if( pt->rect->x < camera.x+camera.w )
+//             {
+//                 pt->rect->x += 4;
+//             }
+//             else 
+//             {
+//                 pt->touche = true;
+//             }
+
+//         }
+//     }
+// }
 
 extern void deleteList(LinkedList * lst)
 {
@@ -116,28 +120,6 @@ extern void deleteQueue(LinkedList *lstPtr){
 }
 
 
-extern void moveRectangle ( LinkedList * lst )
-{
-     Node *pt;
-    if( lst->nodeCount  > 0 )
-    {   
-        
-        for( pt = lst->head; pt!= NULL; pt= pt->next )
-        {
-
-            if( pt->rect->x < camera.x+camera.w )
-            {
-                pt->rect->x += 4;
-            }
-            else 
-            {
-                pt->touche = true;
-            }
-
-        }
-    }
-}
-
 
 extern bool deleteFirst(LinkedList * lst)
 {
@@ -162,6 +144,7 @@ extern bool deleteFirst(LinkedList * lst)
     printf("Nombre element: %d\n", lst->nodeCount);
     return true;
 }
+
 
 extern bool deleteLast(LinkedList * lst)
 {
@@ -285,4 +268,19 @@ extern void collisionDetect()
 }
 
 
-
+extern void RenderElements(LinkedList *lst,SDL_Texture * tex, typeEntite typeE)
+{
+    Node *pt;
+    if( lsptr->nodeCount  > 0 )
+    {
+        for( pt = lst->head; pt!= NULL; pt= pt->next )
+        {
+           if ( pt->isDead != true && pt->type == item_t )
+           {
+            SDL_Rect rect = {  pt->x - camera.x , pt->y - camera.y , pt->w, pt->h };
+            SDL_RenderCopy( getRenderer() , tex , NULL, &rect );
+           }
+        }
+    }
+        
+}

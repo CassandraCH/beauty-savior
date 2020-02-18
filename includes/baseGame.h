@@ -5,16 +5,17 @@
 // Fichier d'entête pour les différents fichiers 
 
 #include "constantes.h"
-// #include "Inputs.h"
-// #include "player.h"
 // #include "level.h"
 // #include "inventaire.h"
+// #include "player.h"
 // #include "scores.h"
 // #include "load_save.h"
-// #include "ingame.h"
 
+
+
+#include "enjeu.h"
+#include "inputs.h"
 #include "entity.h"
-
 #include "texture.h"
 #include "menuPrincipal.h"
 
@@ -35,14 +36,13 @@ extern int tempsEcoule;
 extern SDL_Rect camera;
 
 
-// Getter & Setter  
+/*######## GETTER & SETTER ######## */
 extern Menu_t* getMenu(void);
 extern Base_Game*  getBaseGame(void);
 extern NonJoueur* getPNJ(void);
 extern Input_t* getInput(void);
 extern Score_t* getScores(void);
 extern SDL_Renderer* getRenderer(void);
-
 
 
 /*####### FONCTION PRINCIPAL ############ */

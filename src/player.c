@@ -17,19 +17,6 @@ extern int getPlayerX(void)
 	return player.x;
 }
 
-//Renvoie les coordonnées x du héros
-extern int getPlayerVX(void)
-{
-	return player.x;
-}
-
-//Renvoie les coordonnées x du héros
-extern int getPlayerVY(void)
-{
-	return player.x;
-}
-
-
 //Renvoie les coordonnées y du héros
 extern int getPlayerY(void)
 {
@@ -115,6 +102,8 @@ extern void InitJoueur()
     }
 
  }
+
+
 
 extern void AfficherJoueur()
 {
