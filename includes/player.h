@@ -33,7 +33,7 @@ extern void setPlayerY(int valeur);
 extern void UpdateJoueur(float dt);
 extern void actualiserJoueur(void);
 
-extern void InitJoueur(Player *player);
+extern void InitJoueur();
 extern bool collide2d(float x1, float y1, float x2, float y2, float wt1, float ht1, float wt2, float ht2);
 
 extern void InputJoueur(SDL_Event *event);

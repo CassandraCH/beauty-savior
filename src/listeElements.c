@@ -1,7 +1,6 @@
 #include "baseGame.h"
 
 
-
 extern void init_List(LinkedList *list)
 {
   list->tete = NULL;
@@ -57,7 +56,7 @@ extern void insertion(LinkedList * list, SDL_Rect *rect, typeEntite items_t, boo
 //     if( lst->nodeCount  > 0 )
 //     {   
         
-//         for( pt = lst->tete; pt!= NULL; pt= pt->next )
+//         for( pt = lst->tete; pt!= NULL; pt= pt->suivant )
 //         {
 
 //             if( pt->rect->x < camera.x+camera.w )
@@ -66,7 +65,7 @@ extern void insertion(LinkedList * list, SDL_Rect *rect, typeEntite items_t, boo
 //             }
 //             else 
 //             {
-//                 pt->touche = true;
+//                 pt->estMort = true;
 //             }
 
 //         }
@@ -80,7 +79,7 @@ extern void deleteList(LinkedList * lst)
     while( current != NULL)
     {
         temp = current;
-        current = current->next;
+        current = current->suivant;
         free(temp);
         lst->nodeCount--;
     }
@@ -95,7 +94,7 @@ extern void deleteQueue(LinkedList *lstPtr){
         if( lstPtr->nodeCount  > 0 )
         {
             Node *first = lstPtr->tete;
-            printf("ID element: %d\n", first->id );        
+            
             if (lstPtr->nodeCount == 1){
                 // Cas si il n'y a qu'un élément 
                 lstPtr->tete = NULL;
@@ -104,7 +103,7 @@ extern void deleteQueue(LinkedList *lstPtr){
             }
             else{
                 //Si il y a plusieurs élements il faut supprimer le premier
-                lstPtr->tete = first->next;
+                lstPtr->tete = first->suivant;
             }
             
             free(first->rect);
@@ -134,7 +133,7 @@ extern bool deleteFirst(LinkedList * lst)
     }
     else 
     {
-        lst->tete = first->next;
+        lst->tete = first->suivant;
     }
     free(first);
     lst->nodeCount--;
@@ -159,11 +158,11 @@ extern bool deleteLast(LinkedList * lst)
     }
     else 
     {
-        while( current->next != lst->queue )
-            current = current->next;
+        while( current->suivant != lst->queue )
+            current = current->suivant;
 
         lst->queue= current;
-        lst->queue->next = NULL;
+        lst->queue->suivant = NULL;
 
     }
     free(last);
@@ -180,12 +179,12 @@ extern Node * find (LinkedList *lsptr, int target, Node **prvPtr)
     
     while( current != NULL )
     {
-        if ( current->touche == target )
+        if ( current->estMort == target )
         {
             break;
         }
         *prvPtr = current;
-        current = current->next;
+        current = current->suivant;
     }
     return current;
 }
@@ -210,7 +209,7 @@ extern bool deleteTarget(LinkedList *lsptr, int target)
     }
     else 
     {
-        prev->next = current->next;
+        prev->suivant = current->suivant;
         free(current);
         lsptr->nodeCount--;
 
@@ -225,14 +224,14 @@ extern void collisionDetect()
     Node * pt;
     
     // Vérifie la collision avec les items
-     for(pt = Listes()->tete; pt != NULL; pt = pt->next)
+     for(pt = listCollider.tete; pt != NULL; pt = pt->suivant)
     {
         if(collide2d(getPlayerX(), getPlayerY(), pt->rect->x,pt->rect->y,50,50,25, 25 ) && pt->type == item )
         {
 
-            if( !pt->touche )
+            if( !pt->estMort )
             {
-               pt->touche = true;
+               pt->estMort = true;
                
             }
             break;
@@ -240,18 +239,18 @@ extern void collisionDetect()
     }
     Node * pt2 = NULL;
     //Vérifie la collision avec les armes 
-    for(pt2 = bullet.head; pt2 != NULL; pt2 = pt2->next)
+    for(pt2 = bullet.tete; pt2 != NULL; pt2 = pt2->suivant)
     {
      
           
-        for(pt = Listes()->tete; pt != NULL; pt = pt->next)
+        for(pt = listCollider.tete; pt != NULL; pt = pt->suivant)
         {
-            if(collide2d( pt2->rect->x , pt2->rect->y, pt->rect->x,pt2->rect->y,20,20,50, 50 ) && pt->type == ennemy )
+            if(collide2d( pt2->rect->x , pt2->rect->y, pt->rect->x,pt2->rect->y,20,20,50, 50 ) && pt->type == ennemi )
                 {
 
-                    if( !pt->touche )
+                    if( !pt->estMort )
                     {
-                        pt->touche = true;
+                        pt->estMort = true;
                     
                     }
                     break;
@@ -268,11 +267,11 @@ extern void collisionDetect()
 extern void RenderElements(LinkedList *lst,SDL_Texture * tex, typeEntite typeE)
 {
     Node *pt;
-    if( lsptr->nodeCount  > 0 )
+    if( lst->nodeCount  > 0 )
     {
-        for( pt = lst->tete; pt!= NULL; pt= pt->next )
+        for( pt = lst->tete; pt!= NULL; pt= pt->suivant )
         {
-           if ( pt->isDead != true && pt->type == item_t )
+           if ( pt->estMort != true && pt->type == typeE )
            {
             SDL_Rect rect = {  pt->x - camera.x , pt->y - camera.y , pt->w, pt->h };
             SDL_RenderCopy( getRenderer() , tex , NULL, &rect );

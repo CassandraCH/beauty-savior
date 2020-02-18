@@ -47,10 +47,10 @@ extern void SetValeurDuNiveau(int valeur)
 extern void InitJoueur()
 {
 	player.niveau = 1;
-	*player = (Player) { 0 };
+	player = (Player) { 0 };
 	chargerImage(&player.tex, "assets/rect10.png");	
-	player.h = player->tex.h;
-	player.w = player->tex.w;
+	player.h = player.tex.h;
+	player.w = player.tex.w;
 	player.x = 100;
     player.y = 100;
     player.posXDepart = 100;
@@ -59,47 +59,65 @@ extern void InitJoueur()
 }
 
 
- extern void InputJoueur( const Uint8* keystates )
+ extern void InputJoueur( SDL_Event *event  )
 {
-     if( keystates[SDL_SCANCODE_LEFT] && player.x-25 > 0  )
-	{
-		player->vx -= 0.5;
-        
-        if( player.vx < -6 )
-        {
-            player.vx = -6;
-        }
-       player.ralenti = 0;
-		
-	}
-	else if (  keystates[SDL_SCANCODE_RIGHT] )
-	{
-		player.vx += 0.5;
-        if(player.vx > 6 )
-        {
-           player.vx = 6;
-        }     
-        player.ralenti = false;
-	}
-    else if  ( keystates[SDL_SCANCODE_UP] )
-    {
-        player.vy  = -10;
-    }
-    else if ( keystates[SDL_SCANCODE_DOWN] )
-    {
-        player.y += 10;
-    }
-    else 
-	{ 
-        // friction   
-        player.vx *= 0.8f;
-        player.ralenti = true;
 
-        if( fabsf( player.vx) < 0.1f)
+    if( event->type == SDL_KEYDOWN )
+    {
+
+        switch(event->key.keysym.sym)
         {
-                player.vx = 0;
+            case SDLK_UP:
+                if( getPlayer()->estSurSol )
+                {
+                    
+                    getPlayer()->vy  = -10;
+                    getPlayer()->estSurSol =false;
+                }
+            break;
+
         }
     }
+     
+     const Uint8 *states = SDL_GetKeyboardState(NULL);
+
+    if( states[SDL_SCANCODE_LEFT]  && getPlayer()->x-25 > 0 ){
+        getPlayer()->vx -= 0.5;
+            
+            if( getPlayer()->vx < -6 )
+            {
+                getPlayer()->vx = -6;
+            }
+        //player->facingLeft = 1;
+        getPlayer()->ralenti = 0;
+
+
+    } else if( states[SDL_SCANCODE_RIGHT] && getPlayer()->x < LEVEL_WIDTH-getPlayer()->w ){
+
+        getPlayer()->vx += 0.5;
+        if(getPlayer()->vx > 6 )
+        {
+           getPlayer()->vx = 6;
+        }
+           //player->facingLeft = 0;
+            getPlayer()->ralenti = 0;
+    }
+    else { // friction
+       //player->animFrame =0;
+       getPlayer()->vx *= 0.8f;
+        getPlayer()->ralenti = 1;
+
+        if( fabsf( getPlayer()->vx) < 0.1f)
+        {
+               getPlayer()->vx = 0;
+        }
+    }
+   
+    // if(  getPlayer()->isLeft  )
+    //     bullet.isLeft = true;
+    //  else 
+    //     bullet.isLeft = false;
+
 
  }
 

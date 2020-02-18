@@ -1,8 +1,5 @@
-#include <stdlib.h>
-#include <stdio.h>
 
-
-#include "commun.h"
+#include "baseGame.h"
 
 
 /**

@@ -6,6 +6,7 @@
 Level level;
 LinkedList listEnnemies;
 LinkedList bullet;
+LinkedList listCollider;
 
 
 extern Level* getLevel()
@@ -22,7 +23,7 @@ extern void ChargerNiveau()
       init_List(&listEnnemies);
       init_List(&bullet);
       Chargement_CreationPNJ("niveau1.txt") ;
-      ChargerEnnemis("ennemy.txt");
+      ChargementEnnemis("ennemy.txt");
       level.levelTextures[0].texture = LoadTexture("assets/savior1-1.png");
    }  
    else if(  getPlayer()->niveau == 2 )

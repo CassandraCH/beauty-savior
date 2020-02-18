@@ -7,17 +7,10 @@ Base_Game game;
 int last_frame_time = 0;
 float dt = 0.0f;
 
-
-extern SDL_Rect * getCamera()
-{
-  return &camera;
-}
-
-extern Base_Game*  getBaseGame(void)
+Base_Game* getBaseGame()
 {
   return &game;
 }
-
 
 extern void Update(float dt)
 { 

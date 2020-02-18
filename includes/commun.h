@@ -16,4 +16,6 @@ typedef enum  { item,joueur, ennemi, platform , fleche }  typeEntite;
 typedef enum { fixe, anime } texState;
 
 
+extern SDL_Renderer* getRenderer(void);
+
 #endif

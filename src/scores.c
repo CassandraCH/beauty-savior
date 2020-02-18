@@ -1,6 +1,6 @@
 #include "scores.h"
 
-Score score;
+Scores score;
 
 
 
@@ -18,7 +18,7 @@ extern void Init_Scores()
  *  
  *  \details Cela permet d'instaurer un contexte privée. 
  */
-extern Score* getScores()
+extern Scores* getScores()
 {
    return &score;
 }

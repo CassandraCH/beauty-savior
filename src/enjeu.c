@@ -1,3 +1,4 @@
+#include "enjeu.h"
 #include "baseGame.h"
 
 SDL_Rect camera = {0,0,LARGEUR_FENETRE, HAUTEUR_FENETRE}; 

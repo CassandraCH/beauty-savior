@@ -1,6 +1,5 @@
 #include "chargeSave.h"
-#include <stdlib.h>
-#include <stdio.h>
+
 
 extern void ChargerPartie()
 {
@@ -101,7 +100,7 @@ extern void Chargement_CreationPNJ(const char * filename)
     fclose(file);
 }
 
-extern void ChargementEnnemis(const char * filename) 
+extern void ChargementEnnemis(const char * filename)
 {
     FILE * file = fopen(filename, "r");
     

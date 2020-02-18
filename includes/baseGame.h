@@ -5,21 +5,22 @@
 // Fichier d'entête pour les différents fichiers 
 
 // #include "inventaire.h"
-
-
-#include "entite.h"
-#include "player.h"
-#include "scores.h"
-#include "enjeu.h"
-#include "listeElements.h"
+#include "constantes.h"
 
 #include "inputs.h"
 #include "entite.h"
-#include "texture.h"
-#include "menuPrincipal.h"
-#include "constantes.h"
+#include "player.h"
 #include "level.h"
+#include "scores.h"
+#include "listeElements.h"
 #include "chargeSave.h"
+#include "texture.h"
+#include "enjeu.h"
+#include "entite.h"
+
+
+#include "menuPrincipal.h"
+
 
 typedef struct baseGame 
 {
@@ -28,19 +29,19 @@ typedef struct baseGame
 
 }Base_Game;
 
-extern LinkedList listCollider;
+/*######## GETTER & SETTER ######## */
+extern Base_Game*  getBaseGame(void);
+extern Menu_t* getMenu(void);
+extern Scores* getScores(void);
+extern SDL_Renderer* getRenderer(void);
+
 extern LinkedList listEnnemies;
+extern LinkedList listCollider;
 extern LinkedList bullet;
 
 extern int tempsEcoule;
 extern SDL_Rect camera;
 
-
-/*######## GETTER & SETTER ######## */
-extern Menu_t* getMenu(void);
-extern Base_Game*  getBaseGame(void);
-extern Scores* getScores(void);
-extern SDL_Renderer* getRenderer(void);
 
 
 /*####### FONCTION PRINCIPAL ############ */
