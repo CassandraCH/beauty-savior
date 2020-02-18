@@ -8,23 +8,24 @@
 
 typedef struct player
 {
-    // posX , posY
-    int x, y;
-    int w, h;
-    
+   
+    #include "attributs.h"
+
+    float posXDepart;
+    float posYDepart;
+
     int nombreVies;
-    float vx, vy;
-    bool surLeSol, estMort;
     bool ralenti;
     float scrollX;
-
     int niveau;
-
+    int lancer;
     Texture_Manager tex;
+
 
 }Player;
 
 
+extern void actualiserJoueur(void);
 extern Player *getPlayer(void);
 extern int getPlayerX(void);
 extern int getPlayerY(void);

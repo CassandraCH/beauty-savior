@@ -13,6 +13,7 @@
 // #include "load_save.h"
 // #include "ingame.h"
 
+#include "entity.h"
 
 #include "texture.h"
 #include "menuPrincipal.h"

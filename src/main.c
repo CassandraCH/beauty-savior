@@ -34,11 +34,7 @@ int main( int argc, char ** argv )
             dt = 0.15f;
             
         ProcessInput(&event);
-		 
-        if( getInput()->pause )
-			getBaseGame()->estActif = false;
-      
-
+	
         Update(dt);
        
 		Rendu_Jeux( getBaseGame() );

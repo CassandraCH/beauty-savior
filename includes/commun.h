@@ -11,7 +11,7 @@
 
 typedef enum { false, true } bool;
 
-typedef enum { item, ennemi, collider } typeItem;
+typedef enum  { item,joueur, ennemi, platform , fleche }  typeEntite;
 
 typedef enum { fixe, anime } texState;
 

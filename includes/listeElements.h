@@ -6,7 +6,7 @@
 
 typedef struct Node
 {
-  bool touche;
+  #include "attributs.h"
 
   SDL_Rect *rect;
   typeItem type; //enum
@@ -30,16 +30,12 @@ typedef struct
 
 extern void init_List(LinkedList *list);
 
-extern bool collide2d(float x1, float y1, float x2, float y2, float wt1, float ht1, float wt2, float ht2);
 extern void collisionDetect();
 
-
-extern Node* CreateRect(SDL_Rect*rect, typeItem item_t);
-
-extern void insertQueue(LinkedList * list, SDL_Rect *rect, typeItem items_t);
+extern Node* creerRect(SDL_Rect*rect, typeItem item_t, bool isLeft);
+extern void insertion(LinkedList * list, SDL_Rect *rect, typeItem items_t, bool isLeft);
 extern void deleteQueue(LinkedList *lstPtr);
-
-extern void RenderEntity(SDL_Texture * tex, LinkedList *lsptr);
+extern void RenderElements(LinkedList *lst,SDL_Texture * tex, typeEntite typeE);
 
 extern void moveRectangle ( LinkedList * lst );
 extern void clearRect (LinkedList *lst);
