@@ -83,21 +83,22 @@ extern void Init_MenuPrincipal()
  */
 extern void UpdateOption(Options * menut)
 {
-    /* 
+	/* 
      * Surface tampon => utile pour parametrer la surface
      * TTF_RenderText_Blended => permet de creer une surface et de l'affiche en haute qualite 
      */
     SDL_Surface *tmp = TTF_RenderText_Blended(menu.font, menut->string, menut->color );
     menut->width  = tmp->w;
     menut->height= tmp->h;
-	
-	//Liberer la memoire utilisee pour l'ancienne structure
+
+    //Liberer la memoire utilisee pour l'ancienne structure
     if( menut->texture != NULL)
     {   
         printf("Texture libéré\n");
         SDL_DestroyTexture(menut->texture);
         menut->texture = NULL;
     }
+
 
     //Creer la nouvelle texture avec les parametres dans la surface tampon
     menut->texture = SDL_CreateTextureFromSurface( getRenderer() , tmp);
