@@ -33,16 +33,17 @@ extern void Init_MenuPrincipal()
     //chargement du son
     menu.son = Mix_LoadWAV("sounds/menu_click.wav");
 
-    /* 
-     * Premiere option : demarer une nouvelle partie 
+     /* Premiere option : demarer une nouvelle partie 
      * couleur du début = rouge
      */ 
     menu.menu[0].couleur = (SDL_Color) {0xFF, 0, 0,0 };
     menu.menu[0].nomOption = "Nouvelle Partie";
-    //Refraichissement de l'affichage de l'option
+    
+	//Rafraichissement de l'affichage de l'option
     UpdateOption( &menu.menu[0] );
-    //Position (en x et y) de l'option dans la fenetre
-    menu.menu[0].x = (width / 2) - (menu.menu[0].largeur);
+    
+	//Position (en x et y) de l'option dans la fenetre 
+	menu.menu[0].x = (width / 2) - (menu.menu[0].largeur);
     menu.menu[0].y = height / (MAX_NUMBER + 1) * 1;
 
     /* 
@@ -51,9 +52,11 @@ extern void Init_MenuPrincipal()
      */
     menu.menu[1].couleur = (SDL_Color){0xFF, 0xFF, 0xFF, 0xFF};
     menu.menu[1].nomOption = "Charger Partie";
+
     //Refraichissement de l'affichage de l'option
     UpdateOption(&menu.menu[1]);
-    //Position (en x et y) de l'option dans la fenetre
+   
+	//Position (en x et y) de l'option dans la fenetre
     menu.menu[1].x = (width / 2) - (menu.menu[1].largeur);
     menu.menu[1].y = height / (MAX_NUMBER + 1) * 2;
 
@@ -63,9 +66,11 @@ extern void Init_MenuPrincipal()
      */
     menu.menu[2].couleur = (SDL_Color){0xFF, 0xFF, 0xFF, 0xFF};
     menu.menu[2].nomOption = "Exit";
-    //Refraichissement de l'affichage de l'option
+    
+	//Raraichissement de l'affichage de l'option
     UpdateOption(&menu.menu[2]);
-    //Position (en x et y) de l'option dans la fenetre
+    
+	//Position (en x et y) de l'option dans la fenetre
     menu.menu[2].x = (width / 2) - (menu.menu[2].largeur);
     menu.menu[2].y = height / (MAX_NUMBER + 1) * 3;
 
@@ -74,19 +79,19 @@ extern void Init_MenuPrincipal()
 }
 
 /* 
- * Fonction qui rafraichit l'affichage des Options 
+ * Fonction qui rafraichit l'affichage des options 
  */
-extern void UpdateOption(Options_t * menut)
+extern void UpdateOption(Options * menut)
 {
     /* 
      * Surface tampon => utile pour parametrer la surface
      * TTF_RenderText_Blended => permet de creer une surface et de l'affiche en haute qualite 
      */
-    SDL_Surface *tmp = TTF_RenderText_Blended(menu.police, menut->nomOption, menut->couleur);
-    menut->largeur = tmp->w;
-    menut->hauteur = tmp->h;
-
-    //Liberer la memoire utilisee pour l'ancienne structure
+    SDL_Surface *tmp = TTF_RenderText_Blended(menu.font, menut->string, menut->color );
+    menut->width  = tmp->w;
+    menut->height= tmp->h;
+	
+	//Liberer la memoire utilisee pour l'ancienne structure
     if( menut->texture != NULL)
     {   
         printf("Texture libéré\n");
