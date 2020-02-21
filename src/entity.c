@@ -154,7 +154,7 @@ extern void collisionDecor(Entite *entity)
 {
 
     //Vérifie si l'entité tombe
-    if( entity->y > 600)
+    if( entity->rect->y > 600)
     {
         if( !entity->estMort  )
         {
@@ -165,28 +165,28 @@ extern void collisionDecor(Entite *entity)
             DestructionNiveau();
             getBaseGame()->state = MENU_PRINCIPAL;
 
-            entity->x = 100;
-            entity->y = 100;
+            entity->rect->x = 100;
+            entity->rect->y = 100;
             entity->vx = 0;
-            return;
+            // return;
           }
         }
     }
 
     Node * ec = NULL;
     // Vérifie les collisions avec les colliders
-    for(ec =  listCollider.tete ; ec != NULL; ec = ec->suivant )
+    for(ec =  getCollider()->tete ; ec != NULL; ec = ec->suivant )
     {   
             // taille en largeur
-            float largeur_entity = entity->w; 
+            float largeur_entity = entity->rect->w; 
             // taille en hauteur
-            float hauteur_entity = entity->h;
+            float hauteur_entity = entity->rect->h;
 
             // position X
-            float posX_entity = entity->x;
+            float posX_entity = entity->rect->x;
             
             // position Y
-            float posY_entity = entity->y;
+            float posY_entity = entity->rect->y;
 
             // position en x des colliders
             float collider_x = ec->rect->x;
@@ -209,7 +209,7 @@ extern void collisionDecor(Entite *entity)
                     {
             
                         // correct y
-                        entity->y = collider_y+collider_h;
+                        entity->rect->y = collider_y+collider_h;
                         posY_entity = collider_y+collider_h;
 
                         // bumped our head, stop any velocity
@@ -226,7 +226,7 @@ extern void collisionDecor(Entite *entity)
                     if( posY_entity+hauteur_entity > collider_y && posY_entity < collider_y && entity->vy > 0 )
                     {
                         // correct y
-                        entity->y = collider_y-hauteur_entity;
+                        entity->rect->y = collider_y-hauteur_entity;
                         posY_entity = collider_y-hauteur_entity;
 
                         // landed on the ledge stop any velocity
@@ -254,14 +254,14 @@ extern void collisionDecor(Entite *entity)
                     else if (entity->type == joueur && !(ec->type == fleche ) )
                     {
                         //correct x
-                        entity->x = collider_x+collider_w;
+                        entity->rect->x = collider_x+collider_w;
                         posX_entity = collider_x+collider_w;
 
                         entity->vx = 0;
                     }
                 }
                 //rubbing against left edge
-                else if(posX_entity+largeur_entity > collider_x && posX_entity < collider_x && entity->x > 0)
+                else if(posX_entity+largeur_entity > collider_x && posX_entity < collider_x && entity->rect->x > 0)
                 {
                     if( entity->type == ennemi)
                     {
@@ -270,7 +270,7 @@ extern void collisionDecor(Entite *entity)
                     else if (entity->type == joueur && !(ec->type == fleche) )
                     {
                         //correct x
-                        entity->x = collider_x-largeur_entity;
+                        entity->rect->x = collider_x-largeur_entity;
                         posX_entity = collider_x-largeur_entity;
 
                         entity->vx = 0;

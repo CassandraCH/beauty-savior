@@ -20,7 +20,7 @@ extern Node* creerRect(SDL_Rect*rect, typeEntite item_t, bool isLeft)
     nouvelElement->y = rect->y;
     nouvelElement->w = rect->w;
     nouvelElement->h = rect->h;
-    nouvelElement->vx = -1.8f;
+    nouvelElement->vx = -2.8f;
     nouvelElement->vy = 0;
     nouvelElement->estTourne = isLeft;
     // nouvelElement->launch = true;
