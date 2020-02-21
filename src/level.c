@@ -22,14 +22,14 @@ extern void ChargerNiveau()
    {
       init_List(&listEnnemis);
       init_List(&bullet);
-      Chargement_CreationPNJ("niveau1.txt") ;
-      ChargementEnnemis("ennemi.txt");
-      level.levelTextures[0].texture = LoadTexture("assets/savior1-1.png");
+      Chargement_CreationPNJ("files_assets/niveau1.txt") ;
+      ChargementEnnemis("files_assets/ennemi.txt");
+      level.levelTextures[0].texture = LoadTexture("graphics_assets/savior1-1.png");
    }  
    else if(  getPlayer()->niveau == 2 )
    {  
-         // Load_And_CreatePNJ("niveau2.txt",ennemy) ;
-         chargerImage(&getLevel()->levelTextures[1], "assets/niveau2.png");
+         // Load_And_CreatePNJ("files_assets/niveau2.txt",ennemy) ;
+         chargerImage(&getLevel()->levelTextures[1], "graphics_assets/niveau2.png");
    }
   printf("Fin chargement niveau\n");
 }

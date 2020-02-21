@@ -3,7 +3,7 @@
 
 extern void ChargerPartie()
 {
-    FILE * file = fopen("data.txt", "r");
+    FILE * file = fopen("files_assets/data.txt", "r");
     
     if (file == NULL) {
         fprintf(stderr, "Can't open input file in.list!\n");
@@ -20,7 +20,7 @@ extern void ChargerPartie()
 
 extern void SauvegarderPartie()
 {
-    FILE * file = fopen("data.txt", "a");
+    FILE * file = fopen("files_assets/data.txt", "a");
     
     if (file == NULL) {
         fprintf(stderr, "Erreur avec le fichier\n");
@@ -34,7 +34,7 @@ extern void SauvegarderPartie()
 
 extern void SaveNode_Position(LinkedList * lst)
 {
-    FILE * file = fopen("niveau1.txt", "w");
+    FILE * file = fopen("files_assets/niveau1.txt", "w");
     
     if (file == NULL) {
         fprintf(stderr, "Erreur avec le fichier\n");
