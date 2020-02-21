@@ -83,9 +83,10 @@ extern void Init_MenuPrincipal()
  */
 extern void UpdateOption(Options * menut)
 {
-	/* 
-     * Surface tampon => utile pour parametrer la surface
+	
+	/** Surface tampon => utile pour parametrer la surface
      * TTF_RenderText_Blended => permet de creer une surface et de l'affiche en haute qualite 
+     * 
      */
     SDL_Surface *tmp = TTF_RenderText_Blended(menu.font, menut->string, menut->color );
     menut->width  = tmp->w;
