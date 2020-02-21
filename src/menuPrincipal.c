@@ -1,7 +1,14 @@
+<<<<<<< HEAD
 #include "baseGame.h"
 // #include "menuPrincipal.h"
 // #include "constantes.h"
 // #include "commun.h"
+=======
+//#include "baseGame.h
+#include "menuPrincipal.h"
+#include "constantes.h"
+#include "commun.h"
+>>>>>>> 85ad297596cda38f76da9dd8aebb1678c1c0e241
 
 Menu_t menu;
 
@@ -52,11 +59,10 @@ extern void Init_MenuPrincipal()
      */
     menu.menu[1].couleur = (SDL_Color){0xFF, 0xFF, 0xFF, 0xFF};
     menu.menu[1].nomOption = "Charger Partie";
-
+	
     //Refraichissement de l'affichage de l'option
     UpdateOption(&menu.menu[1]);
-   
-	//Position (en x et y) de l'option dans la fenetre
+
     menu.menu[1].x = (width / 2) - (menu.menu[1].largeur);
     menu.menu[1].y = height / (MAX_NUMBER + 1) * 2;
 
@@ -66,11 +72,11 @@ extern void Init_MenuPrincipal()
      */
     menu.menu[2].couleur = (SDL_Color){0xFF, 0xFF, 0xFF, 0xFF};
     menu.menu[2].nomOption = "Exit";
-    
-	//Raraichissement de l'affichage de l'option
+
+    //Refraichissement de l'affichage de l'option
     UpdateOption(&menu.menu[2]);
-    
-	//Position (en x et y) de l'option dans la fenetre
+	
+    //Position (en x et y) de l'option dans la fenetre
     menu.menu[2].x = (width / 2) - (menu.menu[2].largeur);
     menu.menu[2].y = height / (MAX_NUMBER + 1) * 3;
 
@@ -79,18 +85,17 @@ extern void Init_MenuPrincipal()
 }
 
 /* 
- * Fonction qui rafraichit l'affichage des options 
+ * Fonction qui rafraichit l'affichage des Options 
  */
-extern void UpdateOption(Options * menut)
+extern void UpdateOption(Options_t * menut)
 {
 	
 	/** Surface tampon => utile pour parametrer la surface
      * TTF_RenderText_Blended => permet de creer une surface et de l'affiche en haute qualite 
-     * 
      */
-    SDL_Surface *tmp = TTF_RenderText_Blended(menu.font, menut->string, menut->color );
-    menut->width  = tmp->w;
-    menut->height= tmp->h;
+    SDL_Surface *tmp = TTF_RenderText_Blended(menu.police, menut->nomOption, menut->couleur);
+    menut->largeur = tmp->w;
+    menut->hauteur = tmp->h;
 
     //Liberer la memoire utilisee pour l'ancienne structure
     if( menut->texture != NULL)
@@ -167,7 +172,7 @@ extern void Draw_MenuPrincipal()
 	{
         //Rectangle tampon 
         SDL_Rect rect = {menu.menu[i].x, menu.menu[i].y, menu.menu[i].largeur, menu.menu[i].hauteur};
-        SDL_RenderCopy( getRenderer(), menu.menu[i].texture , NULL, &rect);
+		SDL_RenderCopy( getRenderer(), menu.menu[i].texture , NULL, &rect);
 	}
 }
 
