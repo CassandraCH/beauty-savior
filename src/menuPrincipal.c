@@ -1,14 +1,8 @@
 <<<<<<< HEAD
 #include "baseGame.h"
-// #include "menuPrincipal.h"
-// #include "constantes.h"
-// #include "commun.h"
-=======
-//#include "baseGame.h
 #include "menuPrincipal.h"
 #include "constantes.h"
 #include "commun.h"
->>>>>>> 85ad297596cda38f76da9dd8aebb1678c1c0e241
 
 Menu_t menu;
 
