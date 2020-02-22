@@ -69,8 +69,8 @@ extern void Rendu_Jeux()
     
     {
 
-      Affichage_Niveau();
     
+      Affichage_Niveau();
 
       SDL_Texture * texture = ChargerTexture("graphics_assets/rect11.png");
       SDL_Texture * itemTex = ChargerTexture("graphics_assets/coin.png");
@@ -80,8 +80,12 @@ extern void Rendu_Jeux()
       Afficher_ElementsListes( &listEnnemis, texture, ennemi );
       Afficher_ElementsListes( &bullet , texture, bull );
       
+      Debug_AfficherCollider();
+      
+      Afficher_ElementsListes( &items, itemTex, item ); 
+
       AfficherJoueur();
-      Afficher_ElementsListes( &items, itemTex, item );
+
 
       // AfficherScore();
     

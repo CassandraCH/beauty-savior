@@ -24,13 +24,11 @@ extern void ChargerNiveau()
       Chargement_CreationPNJ(getCollider(),"files_assets/niveau1.txt") ;
 
       ChargementEnnemis("files_assets/ennemi.txt");
+
       SDL_Texture * itemTex = ChargerTexture("graphics_assets/coin.png");
       ChargementItems("files_assets/coin.txt", itemTex);
 
-      // ChargerTextureManager( level.levelTextures, "graphics_assets/savior1-1.png");
-      ChargerTextureManager( level.levelTextures, "graphics_assets/savior1-0-big.png");
-
-
+      ChargerTextureManager( level.levelTextures, "graphics_assets/decor.png");
    }  
    else if(  getPlayer()->niveau == 2 )
    {  
@@ -43,10 +41,11 @@ extern void ChargerNiveau()
 extern void Debug_AfficherCollider() 
 {
    SDL_Rect rect;
+   SDL_Texture * texColider = ChargerTexture("graphics_assets/rect10.png");
    for(Node* pt = getCollider()->tete ; pt != NULL ; pt = pt->suivant )
    {
           rect = (SDL_Rect) {  pt->rect->x- camera.x ,pt->rect->y-  camera.y ,pt->rect->w,pt->rect->h };
-         SDL_RenderCopy(getRenderer(), pt->imagesItem[0].texture , NULL, &rect);
+         SDL_RenderCopy(getRenderer(), texColider , NULL, &rect);
    }
 }
 
@@ -66,6 +65,8 @@ extern void Affichage_Niveau ()
    {
 
       afficher_textures_niveau(0);
+
+   
 
    }  
    else if(  getPlayer()->niveau == 2 )
