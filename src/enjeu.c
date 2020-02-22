@@ -23,26 +23,13 @@ extern void Input_InGame(SDL_Event *event)
             if( getPlayer()->nb_lancer < 1 && !isKeyPressed )
             {
 
-                SDL_Rect *rect = malloc(sizeof(SDL_Rect));
-                rect->w = 20;
-                rect->h = 20;
-                rect->y = getPlayerY() + (rect->h/2);
-                
-                if( getPlayer()->estTourne )
-                    rect->x =  getPlayerX() - (rect->w/2);
-                else
-                    rect->x =  getPlayerX() + (getPlayer()->w/2) ;
-
-                insertion(&bullet, rect, bull );
-                getPlayer()->nb_lancer++;
-                printf("Lance Objet" );
+                lancerObjet();
                 isKeyPressed = true;
                 return;
             }
             if(event->key.keysym.sym == SDLK_a && event->type == SDL_KEYUP )
             {
                 isKeyPressed = false;
-                // getPlayer()->nb_lancer = 0;
             }
 
         }

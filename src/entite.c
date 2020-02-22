@@ -18,6 +18,7 @@ extern bool UpdateBullets(  )
                 
                if ( pt->lancer )
                 {
+                    // Si le joueur est tourné on inverse le sens du tir
                     if( getPlayer()->estTourne )
                         pt->movingX = -6;
                     else 
@@ -28,8 +29,7 @@ extern bool UpdateBullets(  )
             }
             else 
             {
-                pt->estMort = true;
-                supprimeCible(getBullets(), true);
+                pt->estMort = true;   
             }
 
         }
@@ -38,7 +38,9 @@ extern bool UpdateBullets(  )
 
 
 
-
+/*
+    Mise à jour des ennemis
+*/
 extern void UpdateEnnemis()
 {
      Node * pt = getEnnemis()->tete;
@@ -52,53 +54,71 @@ extern void UpdateEnnemis()
             pt->rect->y = pt->baseY;
             pt->rect->x = pt->baseX+ sinf( (pt->phase*2)+ getBaseGame()->time*0.04f)*75;
         }
-        else 
-        {
-            supprimeCible(getEnnemis(), true);
-        }
 
     }
 }   
 
 
-
+/**
+ *  
+ * Fonction de detection du joueur avec le décor et les s
+ */
 extern void collisionDetection()
 {
-        Node * pt;
-    Node * pt_e = NULL;
-    // Vérifie la collision avec les ennemies
-     for(pt_e = listEnnemis.tete ; pt_e != NULL; pt_e = pt_e->suivant)
-    {
-        float mw = 50; float mh = 50;
-        // homme position en x et y 
-        float mx = getPlayerX(), my =getPlayerY();
    
-        float bx = pt_e->rect->x, by = pt_e->rect->y, bw = pt_e->rect->w, bh = pt_e->rect->h;
 
-        if(collide2d(getPlayerX(), getPlayerY(), pt_e->rect->x,pt_e->rect->y,50,50,50, 50 ) && pt_e->type == ennemi )
+     /*##### JOUEUR ######*/
+    // Largeur et Hauteur du joueur
+    float joueur_w = getPlayer()->w ;
+    float joueur_h = getPlayer()->h;
+    
+    // Position X & Y du joueur
+    float joueur_x = getPlayerX();
+    float joueur_y = getPlayerY();
+    
+    /*
+        côté droit = x + largeur;
+        coté gauche = x;
+        coté bas = y + haut
+        coté haut = y 
+    */
+
+    // Vérifie la collision avec les ennemies sur la gauche et la droite.
+     for( Node * pt = listEnnemis.tete ; pt != NULL; pt = pt->suivant)
+    {
+            /*##### ENNEMI ######*/
+        // Largeur et Hauteur de l'ennemi
+        float ennemi_w = pt->rect->w;
+        float ennemi_h = pt->rect->h;
+
+        // Position X & Y de l'ennemi
+        float ennemi_x = pt->rect->x;
+        float ennemi_y = pt->rect->y;
+         
+    
+        // Vérifie les collisions à gauche , droite, bas et en haut
+        if(collide2d( joueur_x, joueur_y, ennemi_x, ennemi_y , joueur_w, joueur_h, ennemi_w, ennemi_h ) && pt->type == ennemi )
         {
-				
-            if( mx+mw > bx && mx < bx+bw  )
+            /*
+                Gestion de la collision pour le saut 
+                Vérifie que le joueur ce trouve bien au dessus de l'ennemi 
+            */
+            if( joueur_x+joueur_w > ennemi_x && joueur_x < ennemi_x+ennemi_w  )
             {   
-                
-                if( my+mh > by && my < by && getPlayer()->vy > 0 )
+                /* Vérifie si lorsque le joueur tombe, il touche le haut de l'ennemi  */
+                if( joueur_y+joueur_h > ennemi_y && joueur_y < ennemi_y && getPlayer()->vy > 0 )
                 {
-                    // correct y
-                    getPlayer()->y = by-mh;
-                    my = by-mh;
-
-                    getPlayer()->nb_lancer = 0;
-                    // landed on the ledge stop any velocity
-                    //getPlayer()->vy = 0;
-                    if( !pt_e->estMort )
+                    // Si il n'est pas déjà mort alors il le devient.
+                    if( !pt->estMort )
                     {
-                        pt_e->estMort = true;
-                        
+                        pt->estMort = true;  
+                      
                     }
                      break;   
                 }
                 else
                 {
+                    // Sinon c'est que le joueur rentre en collision sur le côté. 
                     actualiserJoueur(); 
                 }
             } 
@@ -108,55 +128,57 @@ extern void collisionDetection()
         }
     }
 
-    //Check for falling
+    //Vérifie si le joueur tombe dans le vide et qu'il dépasse la hauteur de l'écran
     if( getPlayer()->y > 600)
     {
         actualiserJoueur();
-       
     }
 
-    // checks for collision with any ledges(brick blocks)
-    for(pt =  listCollider.tete; pt != NULL; pt = pt->suivant)
+
+    /*##### COLLISION DECOR ####*/
+    // Vérifie les collisions avec le décor
+    for(Node * pt =  listCollider.tete; pt != NULL; pt = pt->suivant)
     {   
+            /*##### BRIQUES ######*/
+            // Largeur et Hauteur des blocs de collisions
+            float collider_w = pt->rect->w;
+            float collider_h = pt->rect->h;
 
-
-        
-            // man taille en largeur et hauteur.
-            float mw = 50; float mh = 50;
-            // homme position en x et y 
-            float mx = getPlayerX(), my =getPlayerY();
-            // position en x et y des briques, et taille en largeur et hauteur.
-            float bx = pt->rect->x, by = pt->rect->y, bw = pt->rect->w, bh = pt->rect->h;
-
-            //  player.x+player.w/2 > collider.x && player.x+player.w/2 < collider.x+ collider.w
-            if( mx+mw/2 > bx && mx+mw/2 < bx+bw  )
+            // Position X & Y des blocs de collisions
+            float collider_x = pt->rect->x;
+            float collider_y = pt->rect->y;
+            
+            /*
+                Gestion des colisions avec le décor .
+                Divers traitement 
+                Cas du haut, bas, droit & gauche
+            */
+            if( joueur_x+joueur_w/2 > collider_x && joueur_x+joueur_w/2 < collider_x+collider_w  )
             {
-                // are we bumping our head ?
-                if( my < by+bh && my > by && getPlayer()->vy < 0 )
+                // Le haut du joueur rentre en collision avec le bas d'un bloc.
+                if( joueur_y < collider_y+collider_h && joueur_y > collider_y && getPlayer()->vy < 0 )
                 {
                     
-                    getPlayer()->y = by+bh;
-                    my = by+bh;
+                    getPlayer()->y = collider_y+collider_h;
+                    joueur_y = collider_y+collider_h;
 
-                    
+                    // On arrête le saut 
                     getPlayer()->vy = 0;
-                    getPlayer()->estSurSol = true;
-
                 }
             }
 
            
-            if( mx+mw > bx && mx < bx+bw  )
+            if( joueur_x+joueur_w > collider_x && joueur_x < collider_x+collider_w  )
             {   
-                
-                if( my+mh > by && my < by && getPlayer()->vy > 0 )
+                // Le bas du joueur est en collision avec le haut du bloc
+                if( joueur_y+joueur_h > collider_y && joueur_y < collider_y && getPlayer()->vy > 0 )
                 {
-                    
-                    getPlayer()->y = by-mh;
-                    my = by-mh;
+                    getPlayer()->y = collider_y-joueur_h;
+                    joueur_y = collider_y-joueur_h;
 
                    
                     getPlayer()->vy = 0;
+                    // Le joueur est posé sur un bloc. 
                     if(!getPlayer()->estSurSol)
                     {
                         getPlayer()->estSurSol = true;
@@ -165,23 +187,23 @@ extern void collisionDetection()
                 }
             }
 
-            if(my+mh > by && my<by+bh)
+            if(joueur_y+joueur_h > collider_y && joueur_y<collider_y+collider_h)
             {
-            
-                if(mx < bx+bw && mx+mw > bx+bw && getPlayer()->vx < 0)
+                 // Le côté droit du joueur est en collision avec le coté gauche du bloc
+                if(joueur_x < collider_x+collider_w && joueur_x+joueur_w > collider_x+collider_w && getPlayer()->vx < 0)
                 {
     
-                    getPlayer()->x = bx+bw;
-                    mx = bx+bw;
+                    getPlayer()->x = collider_x+collider_w;
+                    joueur_x = collider_x+collider_w;
 
                     getPlayer()->vx = 0;
                 }
-               
-                else if(mx+mw > bx && mx < bx && getPlayer()->x > 0)
+                 // Le côté gauche du joueur est en collision avec le coté droit du bloc
+                else if(joueur_x+joueur_w > collider_x && joueur_x < collider_x && getPlayer()->x > 0)
                 {
                     //correct x
-                    getPlayer()->x = bx-mw;
-                    mx = bx-mw;
+                    getPlayer()->x = collider_x-joueur_w;
+                    joueur_x = collider_x-joueur_w;
 
                     getPlayer()->vx = 0;
                 }

@@ -55,6 +55,7 @@ extern LinkedList listEnnemis;
 extern LinkedList listCollider;
 extern LinkedList bullet;
 extern LinkedList items;
+extern void Update_Listes();
 
 
 extern int tempsEcoule;

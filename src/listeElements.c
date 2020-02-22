@@ -142,8 +142,6 @@ extern void deleteQueue(LinkedList *lstPtr){
             lstPtr->nodeCount --;
         }
   }
-    
-    printf("Nombre element : %d\n", lstPtr->nodeCount);
 }
 
 

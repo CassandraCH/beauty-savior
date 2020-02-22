@@ -43,7 +43,7 @@ void Init(const char *title)
         exit(EXIT_FAILURE);
     }
 
-    getScores()->police = TTF_OpenFont("fonts/Crazy-Pixel.ttf", 48);
+    getScores()->police = TTF_OpenFont("fonts/BingBam.ttf", 48);
     if(!getScores()->police )
     {
         printf("Cannot find font file!!\n");
@@ -61,10 +61,10 @@ void Init(const char *title)
     
 
     Init_Scores();
-    PlayerScore(100, 100);
+    
 
 
-
+  
     getBaseGame()->estActif = true;
 }
 

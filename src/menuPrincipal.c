@@ -164,6 +164,9 @@ extern void Dessiner_MenuPrincipal()
         SDL_Rect rect = {menu.menu[i].x, menu.menu[i].y, menu.menu[i].largeur, menu.menu[i].hauteur};
         SDL_RenderCopy( getRenderer(), menu.menu[i].texture , NULL, &rect);
 	}
+
+
+    
     
 }
 
@@ -209,6 +212,7 @@ extern void Input_MenuPrincipal(SDL_Event *event)
                             suppListe( getCollider() );
                             suppListe(getEnnemis());
                             suppListe(getBullets());
+                            PlayerScore("PIECES: 0", 10, 0);
                             ChargerNiveau();
                             Nettoyer_MenuPrincipal();
                             getBaseGame()->state = IN_GAME;
@@ -237,10 +241,12 @@ extern void Input_MenuPrincipal(SDL_Event *event)
  */
 extern void Nettoyer_MenuPrincipal()
 {
+    // NettoyerScore();
     printf("Suppression Menu principal\n");
     for(int i = 0; i < MAX_NUMBER; i++)
     {
         free(menu.menu[i].texture);
     }
+
    
 }

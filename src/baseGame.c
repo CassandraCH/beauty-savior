@@ -27,7 +27,9 @@ extern void Update(float dt)
        
         getBaseGame()->time++;
         setTimerBullet(0);
-        
+
+        Update_Listes();
+
         UpdateJoueur(dt);
         UpdateBullets();
         UpdateEnnemis();
@@ -37,18 +39,6 @@ extern void Update(float dt)
         CollisionItems(); 
         collisionDetection();
         
-
-        if( getTimerBullet() < 100 )
-        {
-          setTimerBullet(getTimerBullet() + 1);
-        }
-        else 
-        {
-          suppListe( &bullet );
-          setTimerBullet(0);
-        }
-
-        
     }
       
 }
@@ -56,8 +46,10 @@ extern void Update(float dt)
 
 extern void Rendu_Jeux() 
 {
-      SDL_SetRenderDrawColor(getRenderer(), 0, 0, 0, 0);
-      SDL_RenderClear(getRenderer());
+      
+    SDL_SetRenderDrawColor(getRenderer(), 0,0,0,0);
+    SDL_RenderClear( getRenderer() );
+    
 
   
     if ( getBaseGame()->state == MENU_PRINCIPAL )
@@ -74,18 +66,17 @@ extern void Rendu_Jeux()
       SDL_Texture * texture = ChargerTexture("graphics_assets/rect11.png");
       SDL_Texture * itemTex = ChargerTexture("graphics_assets/coin.png");
 
-      SDL_SetRenderDrawColor( getRenderer(), 0xFF,0,0,0 );
-
       Afficher_ElementsListes( &listEnnemis, texture, ennemi );
-      Afficher_ElementsListes( &bullet , texture, bull );
+      Afficher_ElementsListes( &bullet , itemTex, bull );
       
- 
+      DessinerScores();
       
       Afficher_ElementsListes( &items, itemTex, item ); 
 
       AfficherJoueur();
 
 
+  
       // AfficherScore();
     
     }
@@ -100,4 +91,10 @@ extern void Rendu_Jeux()
 
   SDL_RenderPresent( getRenderer() );
 
+}
+
+extern void Update_Listes()
+{
+  supprimeCible(getBullets(), true);
+  supprimeCible(getEnnemis(), true);
 }

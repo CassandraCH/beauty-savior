@@ -21,8 +21,9 @@ typedef struct score
 extern void Init_Scores();
 extern void DessinerScores();
 extern void SetScore(int scores);
-extern void PlayerScore(int x,  int y);
+extern void PlayerScore(const char * text, int x,  int y);
 extern void nouveauScore();
+extern void NettoyerScore();
 
 
 

@@ -24,12 +24,10 @@ extern void Init_Scores()
     
 }
 
-extern void PlayerScore(int x,  int y)
+extern void PlayerScore(const char * text, int x,  int y)
 {
-
-    // ChargerTexte(score.tex ,getMenu()->police , "Scores: 0" );
-    score.surface = TTF_RenderText_Solid(score.police, "Scores: 0",(SDL_Color){0xFF, 0xFF, 0xFF, 0xFF});
-    score.tex = SDL_CreateTextureFromSurface(getRenderer(), score.surface);
+    score.surface = TTF_RenderText_Solid(score.police, text,(SDL_Color){0, 0, 0,0});
+    score.tex = SDL_CreateTextureFromSurface( getRenderer(), score.surface );
     
     int width, height;
     SDL_QueryTexture(score.tex, NULL, NULL, &width, &height);
@@ -44,12 +42,15 @@ extern void PlayerScore(int x,  int y)
 
 extern void NettoyerScore()
 {
+    printf("Nettoyer scores\n");
     SDL_FreeSurface(score.surface);
     SDL_DestroyTexture(score.tex);  
 }
 
 extern void DessinerScores()
 {
+
+    SDL_Rect scor = {score.rect.x - camera.x  ,score.rect.y - camera.y, score.rect.w ,score.rect.h };
     SDL_RenderCopy(getRenderer(), score.tex, NULL, &score.rect);
 }
 
@@ -65,8 +66,12 @@ extern void SetScore(int scores)
     }
 
     char sc[20];
-    sprintf( sc, "Scores: %d" , scores ); 
+    sprintf( sc, "PIECES: %d" , scores ); 
+    
+    score.surface = TTF_RenderText_Solid(score.police, sc, (SDL_Color){0, 0, 0,0});
+    score.tex = SDL_CreateTextureFromSurface( getRenderer() , score.surface );
 
+   
     int width, height;
     SDL_QueryTexture(score.tex, NULL, NULL, &width, &height);
 
