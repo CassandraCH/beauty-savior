@@ -63,14 +63,12 @@ extern void ChargementCollider(const char * filename)
     }
     Node * pt;
     
-    if( listCollider.nodeCount  > 0 )
+    if( getCollider()->nodeCount  > 0 )
     {
-        for( pt = listCollider.tete ; pt != NULL; pt = pt->suivant )
+        for( pt = getCollider()->tete ; pt != NULL; pt = pt->suivant )
         {
             if (fscanf(file, "%d %d",&pt->rect->x , &pt->rect->y) )
-            {
-
-            }
+            {}
         }
     }
 
@@ -93,7 +91,7 @@ extern void Chargement_CreationPNJ(const char * filename)
         SDL_Rect *rect = malloc( sizeof(SDL_Rect));       
         if( fscanf(file, "%d %d %d %d %d %d",&typeCollider,&isLeft,  &rect->x , &rect->y, &rect->w, &rect->h) )
         {
-            insertion(&listCollider, rect, typeCollider, isLeft);
+            insertion(getCollider(), rect, typeCollider);
         }
     }
 	
@@ -116,7 +114,7 @@ extern void ChargementEnnemis(const char * filename)
         rect->w = 50;
         rect->h = 50;             
         if( fscanf(file, "%d %d",&rect->x , &rect->y) ){
-            insertion(&listEnnemis,  rect, ennemi, false );
+            insertion(getEnnemis(),  rect, ennemi );
         }
     }
 

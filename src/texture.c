@@ -2,7 +2,8 @@
 
 
 
-bool chargerImage(Texture_Manager * tex,  char * filename )
+
+bool chargerImage(Texture_Manager * tex,const char * filename )
 {
     
     SDL_Surface* pTempSurface = IMG_Load( filename );
@@ -12,7 +13,6 @@ bool chargerImage(Texture_Manager * tex,  char * filename )
     }
 
     SDL_Texture* pTexture = SDL_CreateTextureFromSurface(getRenderer() , pTempSurface);
-    
 
     if(pTexture != 0)
     {
@@ -27,23 +27,29 @@ bool chargerImage(Texture_Manager * tex,  char * filename )
     return false;
 }
 
- void dessiner(Texture_Manager * tex,  int x, int y, int width, int height,SDL_RendererFlip flip)
+
+
+extern void ChargerTextureManager(Texture_Manager *tex, char * filepath )
 {
-    SDL_Rect srcRect;
-    SDL_Rect destRect;
 
-    srcRect.x = 0;
-    srcRect.y = 0;
-    srcRect.w = destRect.w = width;
-    srcRect.h = destRect.h = height;
+    tex->texture = NULL;
+    SDL_Surface *surface = IMG_Load(filepath);
+    if( !surface )
+    {
+        printf("Cannot find %s..\n",filepath);
+        SDL_Quit();
+        exit(1);
+    }
+    else {
+        tex->texture = SDL_CreateTextureFromSurface(getRenderer(), surface);
+        if( !tex->texture )
+            printf("Erreur: %s",filepath);
+    }
 
-    destRect.x = x;
-    destRect.y = y;
-
-    SDL_RenderCopyEx(getRenderer(), tex->texture , &srcRect,&destRect, 0, 0, SDL_FLIP_NONE );
+    SDL_FreeSurface(surface); 
 }
 
-extern SDL_Texture *LoadTexture(char * filepath)
+extern SDL_Texture *ChargerTexture( char * filepath )
 {
     SDL_Texture *texture = NULL;
     SDL_Surface *surface = IMG_Load(filepath);
@@ -66,9 +72,7 @@ extern SDL_Texture *LoadTexture(char * filepath)
 
 void dessinerFullImage(Texture_Manager * tex, int x, int y)
 {   
-    //SDL_SetRenderDrawColor(getRenderer(), 128, 128,255,255);
-   
-	SDL_Rect dest;
+ 	SDL_Rect dest;
 
 	/* Règle le rectangle à dessiner selon la taille de l'image source */
 	dest.x = x;
@@ -78,7 +82,6 @@ void dessinerFullImage(Texture_Manager * tex, int x, int y)
 	SDL_QueryTexture(tex->texture, NULL, NULL, &dest.w, &dest.h);
 	SDL_RenderCopy(getRenderer(), tex->texture, NULL, &dest);
 }
-
 
 
 extern void dessinerImages(Texture_Manager * tex, int x, int y, int width, int height, int currentRow, int currentFrame, SDL_RendererFlip flip)
@@ -97,6 +100,9 @@ extern void dessinerImages(Texture_Manager * tex, int x, int y, int width, int h
     SDL_RenderCopyEx(getRenderer(), tex->texture , &srcRect, &destRect, 0, 0, flip);
 }
 
+
+
+
 extern void ChargerTexte(Texture_Manager* tex, TTF_Font * font, const char * text )
 {
     SDL_Color white = { 0, 0, 0, 0 };
@@ -111,7 +117,7 @@ extern void ChargerTexte(Texture_Manager* tex, TTF_Font * font, const char * tex
 
 extern void LibererRessources( Texture_Manager *tex )
 {
-    SDL_DestroyTexture(tex->texture);
+   SDL_DestroyTexture(tex->texture);
    tex->texture = NULL;
 
 }

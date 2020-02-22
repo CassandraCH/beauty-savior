@@ -1,17 +1,19 @@
 #include "baseGame.h"
 
-Input input;
 
-extern Input* getInput()
+
+
+extern Input* get_Input()
 {
     return &input;
 }
 
 
+
 /**
  * Gestion des entrées utilisateurs.
  */ 
-extern void ProcessInput(SDL_Event *event)
+extern void ProcessInput(SDL_Event * event)
 {
 
    if (getBaseGame()->state == MENU_PRINCIPAL )
@@ -21,6 +23,7 @@ extern void ProcessInput(SDL_Event *event)
    else if (getBaseGame()->state == IN_GAME )
    {
        Input_InGame(event);
+    
    }
 
 }

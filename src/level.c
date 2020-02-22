@@ -4,9 +4,6 @@
 #include "baseGame.h"
 
 Level level;
-LinkedList listEnnemis;
-LinkedList bullet;
-LinkedList listCollider;
 
 
 extern Level* getLevel()
@@ -24,16 +21,32 @@ extern void ChargerNiveau()
       init_List(&bullet);
       Chargement_CreationPNJ("files_assets/niveau1.txt") ;
       ChargementEnnemis("files_assets/ennemi.txt");
-      level.levelTextures[0].texture = LoadTexture("graphics_assets/savior1-1.png");
+      ChargerTextureManager( level.levelTextures, "graphics_assets/savior1-1.png");
    }  
    else if(  getPlayer()->niveau == 2 )
    {  
-         // Load_And_CreatePNJ("files_assets/niveau2.txt",ennemy) ;
+         // Load_And_CreatePNJ("niveau2.txt",ennemy) ;
          chargerImage(&getLevel()->levelTextures[1], "graphics_assets/niveau2.png");
    }
   printf("Fin chargement niveau\n");
 }
 
+extern void Debug_AfficherCollider() 
+{
+   SDL_Rect rect;
+   for(Node* pt = getCollider()->tete ; pt != NULL ; pt = pt->suivant )
+   {
+          rect = (SDL_Rect) {  pt->rect->x- camera.x ,pt->rect->y-  camera.y ,pt->rect->w,pt->rect->h };
+         SDL_RenderCopy(getRenderer(), pt->imagesItem[0].texture , NULL, &rect);
+   }
+}
+
+extern void afficher_textures_niveau(int niveau)
+{
+   SDL_Rect renderQuad = {0, 0, camera.w ,  camera.h };
+   SDL_RenderCopy( getRenderer() , getLevel()->levelTextures[niveau].texture,&camera, &renderQuad);
+
+}
 
 extern void Affichage_Niveau ()
 {  
@@ -42,11 +55,13 @@ extern void Affichage_Niveau ()
    
    if(  getPlayer()->niveau == 1 )
    {
-      SDL_SetRenderDrawColor(getRenderer(), 25,0 ,0, 0);
+
+      afficher_textures_niveau(0);
+
    }  
    else if(  getPlayer()->niveau == 2 )
    {  
-      dessinerFullImage(&getLevel()->levelTextures[1],0,0 );
+      afficher_textures_niveau(1);
    }
    
     

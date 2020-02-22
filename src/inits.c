@@ -1,20 +1,18 @@
 #include "commun.h"
 #include "baseGame.h"
 
-SDL_Window *fenetre;
-SDL_Renderer *rendu;
+SDL_Renderer *rendu = NULL;
+SDL_Window *fenetre = NULL;
 
-SDL_Renderer* getRenderer(void)
+
+extern SDL_Renderer* getRenderer(void)
 {
 	return rendu;
 }
 
-
 void Init(const char *title)
 {
-    fenetre = NULL;
-    rendu= NULL;
-
+    
     if(TTF_Init() == -1)
     {
         fprintf(stderr, "Erreur d'initialisation de TTF_Init : %s\n", TTF_GetError());
@@ -45,6 +43,12 @@ void Init(const char *title)
         exit(EXIT_FAILURE);
     }
 
+    getScores()->police = TTF_OpenFont("fonts/Crazy-Pixel.ttf", 48);
+    if(!getScores()->police )
+    {
+        printf("Cannot find font file!!\n");
+        SDL_Quit();
+    }
     /*############### GESTION DES AUDIO *###############*/
     Mix_OpenAudio(MIX_DEFAULT_FREQUENCY, MIX_DEFAULT_FORMAT, MIX_DEFAULT_CHANNELS, 4096); //initialize sound
 
@@ -56,12 +60,9 @@ void Init(const char *title)
     Init_Scores();
 
 
-    getBaseGame()->state = MENU_PRINCIPAL ;
-    getPlayer()->niveau = 1;
-    getPlayer()->nombreVies = 3;
     getBaseGame()->estActif = true;
 
-
+    PlayerScore(100, 100);
 }
 
 
@@ -70,11 +71,17 @@ void Quitter_Jeux()
      
     Mix_FreeChunk(getMenu()->son);
     TTF_CloseFont(getMenu()->police);
+    TTF_CloseFont(getScores()->police);
+    suppListe(&bullet);
+    suppListe(&listCollider);
+    suppListe(&listEnnemis);
+    
     Nettoyer_MenuPrincipal();
+
     SDL_DestroyWindow(fenetre) ;
     SDL_DestroyRenderer ( rendu);
     rendu = NULL;
-   fenetre = NULL;
+    fenetre = NULL;
     TTF_Quit();
     SDL_Quit();
 }

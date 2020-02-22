@@ -1,5 +1,47 @@
 #include "baseGame.h"
 
+/*#### DONNEES PRIVEES ####*/
+LinkedList listEnnemis;
+LinkedList bullet;
+LinkedList listCollider;
+LinkedList items;
+
+int timerBullets;
+
+/*### ACCESSSEURS ###*/
+extern LinkedList* getEnnemis()
+{
+   return &listEnnemis;
+}
+
+
+extern LinkedList* getCollider()
+{
+   return &listCollider;
+}
+
+extern LinkedList* getBullets()
+{
+   return &bullet;
+}
+
+extern LinkedList* getItems()
+{
+   return &items;
+}
+
+extern int getTimerBullet()
+{
+    return timerBullets;   
+}
+
+extern void setTimerBullet(int time)
+{
+    timerBullets = time;
+}
+
+
+/*### METHODES ###*/
 
 extern void init_List(LinkedList *list)
 {
@@ -9,32 +51,37 @@ extern void init_List(LinkedList *list)
 }
 
 
-extern Node* creerRect(SDL_Rect*rect, typeEntite item_t, bool isLeft)
+extern Node* creerRect(SDL_Rect*rect, typeEntite item_t)
 {   
     Node * nouvelElement = malloc( sizeof( Node ) );
-    nouvelElement->suivant = NULL;
+    nouvelElement->suivant = NULL; 
+    memset(nouvelElement, 0, sizeof(Node));
     nouvelElement->rect = rect;
-    nouvelElement->estMort = false;
-    nouvelElement->estSurSol = false;
+    nouvelElement->type = item_t;
+    nouvelElement->nb_objets = 0;
+    nouvelElement->movingX = 0;
+    nouvelElement->lancer = true;
+
     nouvelElement->x = rect->x;
     nouvelElement->y = rect->y;
     nouvelElement->w = rect->w;
     nouvelElement->h = rect->h;
-    nouvelElement->vx = -2.8f;
+
+    nouvelElement->baseX = rect->x;
+    nouvelElement->baseY = rect->y;
+    nouvelElement->phase = 2*3.14*(rand() % 360) / 360.0f;
+    nouvelElement->vx = -1.8f;
     nouvelElement->vy = 0;
-    nouvelElement->estTourne = isLeft;
-    // nouvelElement->launch = true;
-    nouvelElement->type = item_t;
+
     return ( nouvelElement );
 }
 
 
-
-extern void insertion(LinkedList * list, SDL_Rect *rect, typeEntite items_t, bool isLeft)
+extern void insertion(LinkedList * list, SDL_Rect *rect, typeEntite items_t)
 {
  
-  Node *nouvelElement = creerRect(rect, items_t,false);
- 
+  Node *nouvelElement = creerRect(rect, items_t);
+
   if (list->nodeCount == 0){
     // Cas lorsque la liste est vide
     list->tete = nouvelElement;
@@ -45,34 +92,15 @@ extern void insertion(LinkedList * list, SDL_Rect *rect, typeEntite items_t, boo
     list->queue->suivant = nouvelElement;
     list->queue = nouvelElement;
   }
-   
+
   list->nodeCount++;
+
+  return;
+   
 }
 
 
-// extern void moveRectangle ( LinkedList * lst )
-// {
-//      Node *pt;
-//     if( lst->nodeCount  > 0 )
-//     {   
-        
-//         for( pt = lst->tete; pt!= NULL; pt= pt->suivant )
-//         {
-
-//             if( pt->rect->x < camera.x+camera.w )
-//             {
-//                 pt->rect->x += 4;
-//             }
-//             else 
-//             {
-//                 pt->estMort = true;
-//             }
-
-//         }
-//     }
-// }
-
-extern void deleteList(LinkedList * lst)
+extern void suppListe(LinkedList * lst)
 {
     Node * temp;
     Node * current = lst->tete;
@@ -117,7 +145,7 @@ extern void deleteQueue(LinkedList *lstPtr){
 
 
 
-extern bool deleteFirst(LinkedList * lst)
+extern bool suppPremier(LinkedList * lst)
 {
     
     if( lst->nodeCount == 0 ){
@@ -142,7 +170,7 @@ extern bool deleteFirst(LinkedList * lst)
 }
 
 
-extern bool deleteLast(LinkedList * lst)
+extern bool suppDernier(LinkedList * lst)
 {
     if( lst->nodeCount == 0 ){
         return false;
@@ -172,7 +200,7 @@ extern bool deleteLast(LinkedList * lst)
 }
 
 
-extern Node * find (LinkedList *lsptr, int target, Node **prvPtr)
+extern Node * trouve (LinkedList *lsptr, int target, Node **prvPtr)
 {
     Node * current = lsptr->tete;
     *prvPtr = NULL;
@@ -190,22 +218,23 @@ extern Node * find (LinkedList *lsptr, int target, Node **prvPtr)
 }
 
 
-extern bool deleteTarget(LinkedList *lsptr, int target)
+extern bool supprimeCible(LinkedList *lsptr, int target)
 {   
     Node * current = NULL, *prev = NULL;
-    current = find(lsptr,target, &prev);
+    current = trouve(lsptr,target, &prev);
+    
     if( current == NULL ){
         return false;
     }
 
     if( current == lsptr->tete )
     {
-       return deleteFirst(lsptr);
+       return suppPremier(lsptr);
     }
     
     else if( current == lsptr->queue )
     {
-       return deleteLast(lsptr);
+       return suppDernier(lsptr);
     }
     else 
     {
@@ -219,52 +248,9 @@ extern bool deleteTarget(LinkedList *lsptr, int target)
     
 }
 
-extern void collisionDetect()
-{
-    Node * pt;
-    
-    // Vérifie la collision avec les items
-     for(pt = listCollider.tete; pt != NULL; pt = pt->suivant)
-    {
-        if(collide2d(getPlayerX(), getPlayerY(), pt->rect->x,pt->rect->y,50,50,25, 25 ) && pt->type == item )
-        {
-
-            if( !pt->estMort )
-            {
-               pt->estMort = true;
-               
-            }
-            break;
-        }
-    }
-    Node * pt2 = NULL;
-    //Vérifie la collision avec les armes 
-    for(pt2 = bullet.tete; pt2 != NULL; pt2 = pt2->suivant)
-    {
-     
-          
-        for(pt = listCollider.tete; pt != NULL; pt = pt->suivant)
-        {
-            if(collide2d( pt2->rect->x , pt2->rect->y, pt->rect->x,pt2->rect->y,20,20,50, 50 ) && pt->type == ennemi )
-                {
-
-                    if( !pt->estMort )
-                    {
-                        pt->estMort = true;
-                    
-                    }
-                    break;
-                }
-            
-            }
-        
-    }
 
 
-}
-
-
-extern void RenderElements(LinkedList *lst,SDL_Texture * tex, typeEntite typeE)
+extern void Afficher_ElementsListes(LinkedList *lst,SDL_Texture * tex, typeEntite typeE)
 {
     Node *pt;
     if( lst->nodeCount  > 0 )
@@ -273,7 +259,7 @@ extern void RenderElements(LinkedList *lst,SDL_Texture * tex, typeEntite typeE)
         {
            if ( pt->estMort != true && pt->type == typeE )
            {
-            SDL_Rect rect = {  pt->x - camera.x , pt->y - camera.y , pt->w, pt->h };
+            SDL_Rect rect = {  pt->rect->x- camera.x ,pt->rect->y-  camera.y ,pt->rect->w,pt->rect->h };
             SDL_RenderCopy( getRenderer() , tex , NULL, &rect );
            }
         }

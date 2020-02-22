@@ -3,7 +3,8 @@
 
 #include "texture.h"
 
-#define MAX_NUMBER 3 //nombre d'éléments du menu
+#define MAX_NUMBER 3
+
 
 /**
  *\struct option
@@ -34,15 +35,16 @@ typedef struct menu
 
 
 extern void UpdateOption(Options_t * );
-extern int GetKeyPressed();
+extern int getTouchePresse();
 
-extern void MoveUp();
-extern void MoveDown();
+extern void ToucheHaut();
+extern void ToucheBas();
 
 extern void Init_MenuPrincipal();
-extern void Draw_MenuPrincipal();
+extern void Dessiner_MenuPrincipal();
 
 extern void Input_MenuPrincipal(SDL_Event* event);
+
 
 extern void Nettoyer_MenuPrincipal();
 

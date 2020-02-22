@@ -12,32 +12,43 @@
 #include "player.h"
 #include "level.h"
 #include "scores.h"
+#include "items.h"
 #include "listeElements.h"
 #include "chargeSave.h"
 #include "texture.h"
 #include "enjeu.h"
 #include "entite.h"
-
-
 #include "menuPrincipal.h"
-
 
 typedef struct baseGame 
 {
-    int state;
-    bool estActif;
-
+    int state; /**<  */
+    bool estActif; /**< Etat du jeux : Actif - Non Actif */
+    int time;
 }Base_Game;
 
-/*######## GETTER & SETTER ######## */
-extern Base_Game*  getBaseGame(void);
-extern Menu_t* getMenu(void);
-extern Scores* getScores(void);
-extern SDL_Renderer* getRenderer(void);
+Input input;
+InputState keyStates[SDL_NUM_SCANCODES];
 
+/*######## GETTER & SETTER ######## */
+extern Input* get_Input();
+extern SDL_Window* getWindow(void);
+extern Base_Game*  getBaseGame(void);
+extern LinkedList* getEnnemis();
+extern LinkedList* getCollider();
+extern LinkedList* getBullets();
+extern Scores* getScores(void);
+extern Menu_t* getMenu(void);
+extern int getTimerBullet();
+extern void setTimerBullet(int time);
+
+
+/*######## LISTES ######## */
 extern LinkedList listEnnemis;
 extern LinkedList listCollider;
 extern LinkedList bullet;
+extern LinkedList items;
+
 
 extern int tempsEcoule;
 extern SDL_Rect camera;

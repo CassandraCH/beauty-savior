@@ -23,18 +23,17 @@ extern int getPlayerY(void)
 	return player.y;
 }
 
-
-//Change la valeur des coordonnées x du héros
-extern void setPlayerX(int valeur)
+extern void setNombretir() 
 {
-	player.x = valeur;
-}
 
-
-//Change la valeur des coordonnées y du héros
-extern void setPlayerY(int valeur)
-{
-	player.y = valeur;
+    if( player.nb_lancer < 1  ) 
+    {
+        player.nb_lancer++;
+    }
+    else 
+    {
+       player.nb_lancer = 0;
+    }           
 }
 
 //Change la valeur du niveau en cours
@@ -47,15 +46,18 @@ extern void SetValeurDuNiveau(int valeur)
 extern void InitJoueur()
 {
 	player.niveau = 1;
-	player = (Player) { 0 };
+    player.nombreVies = 3;
+	// player = (Player) { 0 };
 	chargerImage(&player.tex, "assets/rect10.png");	
 	player.h = player.tex.h;
 	player.w = player.tex.w;
 	player.x = 100;
     player.y = 100;
+    player.nb_lancer = 0;
+    // player.rect =  (SDL_Rect*){0};
     player.posXDepart = 100;
     player.posYDepart = 100;
-    player.actualiserVie = (void*)actualiserJoueur;
+
 }
 
 
@@ -64,59 +66,62 @@ extern void InitJoueur()
 
     if( event->type == SDL_KEYDOWN )
     {
-
         switch(event->key.keysym.sym)
         {
             case SDLK_UP:
-                if( getPlayer()->estSurSol )
+                if( player.estSurSol )
                 {
-                    
-                    getPlayer()->vy  = -10;
-                    getPlayer()->estSurSol =false;
+                    player.vy  = -10;
+                    player.estSurSol =false;
                 }
             break;
-
+    
+          
         }
     }
-     
+ 
+
      const Uint8 *states = SDL_GetKeyboardState(NULL);
 
-    if( states[SDL_SCANCODE_LEFT]  && getPlayer()->x-25 > 0 ){
-        getPlayer()->vx -= 0.5;
+ 
+ 
+
+    if( states[SDL_SCANCODE_LEFT]  && player.x-25 > 0 ){
+        player.vx -= 0.5;
             
-            if( getPlayer()->vx < -6 )
+            if( player.vx < -6 )
             {
-                getPlayer()->vx = -6;
+                player.vx = -6;
             }
-        //player->facingLeft = 1;
-        getPlayer()->ralenti = 0;
+        player.estTourne = true;
+        player.ralenti = 0;
 
 
-    } else if( states[SDL_SCANCODE_RIGHT] && getPlayer()->x < LEVEL_WIDTH-getPlayer()->w ){
+    } else if(   states[SDL_SCANCODE_RIGHT] && player.x < LARGEUR_NIVEAU-player.w ){
 
-        getPlayer()->vx += 0.5;
-        if(getPlayer()->vx > 6 )
+        player.vx += 0.5;
+        if(player.vx > 6 )
         {
-           getPlayer()->vx = 6;
+           player.vx = 6;
         }
-           //player->facingLeft = 0;
-            getPlayer()->ralenti = 0;
+           player.estTourne = false;
+            player.ralenti = 0;
     }
     else { // friction
        //player->animFrame =0;
-       getPlayer()->vx *= 0.8f;
-        getPlayer()->ralenti = 1;
+        player.vx *= 0.8f;
+        player.ralenti = 1;
 
-        if( fabsf( getPlayer()->vx) < 0.1f)
+        if( fabsf( player.vx) < 0.1f)
         {
-               getPlayer()->vx = 0;
+               player.vx = 0;
         }
     }
    
-    // if(  getPlayer()->isLeft  )
-    //     bullet.isLeft = true;
+    // if(  player.estTourne  )
+    //     getBullets()->estTourne = true;
     //  else 
-    //     bullet.isLeft = false;
+    //      getBullets()->estTourne = false;
 
 
  }
@@ -134,31 +139,104 @@ extern void UpdateJoueur(float dt)
 {
 	if( !player.estMort )
     {	
+        
+        player.x += player.vx;
+        player.y += player.vy;
+        // setPlayerX(getPlayerX() + player.vx);
+        // setPlayerY(getPlayerY() + player.vy);
 
-        Player *man = getPlayer();
-        man->x += player.vx;
-        man->y += player.vy;
+        player.vy += GRAVITY;
 
-        man->vy += GRAVITY;
+        
     }
 }
 
 extern void actualiserJoueur(void)
 {
+    if( !player.estMort )
+    {
+        //  if( player.nombreVies > 1 )
+        // {
+        //     player.nombreVies--;
+        //     printf("Il reste %d points de vie\n", getPlayer()->nombreVies );
+        // }else 
+        // {
+            player.estMort = true;
+            Init_MenuPrincipal();
+            DestructionNiveau();
+            getBaseGame()->state = MENU_PRINCIPAL;
+            
+        // }
+        player.nb_lancer = 0;
+        player.x = player.posXDepart;
+        player.y = player.posYDepart;
+        player.vx = 0;
+        getBaseGame()->time = 0;
+        setTimerBullet(0);
 
-    if( player.nombreVies > 0 )
+        return;
+    }
+
+}
+
+extern bool collide2d(float x1, float y1, float x2, float y2, float wt1, float ht1, float wt2, float ht2)
+{
+    return (! ( (x1 > (x2+wt2)) || (x2 > (x1+wt1)) || (y1 > (y2+ht2)) || (y2 > (y1+ht1))  )  );
+}
+
+/**
+ *  Fonction qui s'occupe de gérer les attaques lancer par le joueur
+ */
+extern void lancerAttaque()
+{
+    if ( getPlayer()->nb_lancer < 1 )
     {
-        player.nombreVies--;
-    }else 
-    {
-        player.estMort = true;
-        Init_MenuPrincipal();
-        DestructionNiveau();
-        getBaseGame()->state = MENU_PRINCIPAL;
+        SDL_Rect *rect = malloc(sizeof(SDL_Rect));
+        rect->w = 20;
+        rect->h = 20;
+        rect->y = getPlayerY() + (rect->h/2);
+        rect->x =  getPlayerX() - (rect->w/2);
+        
+        // if( getPlayer()->estTourne )
+        // else
+        //     rect->x =  getPlayerX() + (getPlayer()->w/2) ;
+
+        insertion(getBullets(), rect, bull );
+        getPlayer()->nb_lancer++;
+        printf("Lancer : %d\n", getPlayer()->nb_lancer );
         
     }
-    setPlayerX(player.posXDepart);
-    setPlayerY(player.posYDepart);
-    player.vx = 0;
+     
+    return;
+}
+
+extern void collision_tir()
+{
+   
+     Node * tir = NULL;
+    Node * enne = NULL;
+    if( getBullets()->nodeCount > 0 )
+    {
+         //Vérifie la collision avec les armes 
+        for(tir = getBullets()->tete; tir != NULL; tir = tir->suivant)
+        {
+            for(enne = getEnnemis()->tete; enne != NULL; enne = enne->suivant)
+            {
+                if(collide2d( tir->rect->x , tir->rect->y, enne->rect->x,enne->rect->y,20,20,50, 50 ) && enne->type == ennemi )
+                    {
+
+                        if( !enne->estMort )
+                        {
+                            enne->estMort = true;
+                            tir->estMort = true;
+                            // getPlayer()->nb_lancer = 0;
+                        }
+                            
+                        break;
+                    }
+
+                }
+        }
+    }
 
 }

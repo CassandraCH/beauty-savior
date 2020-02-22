@@ -2,12 +2,9 @@
 #define __LEVEL_H
 
 #include "texture.h"
-// #include "inventaire.h"
-
 
 typedef struct level
 {
-    void (*Render)();
 
     Texture_Manager levelTextures[5];
     
@@ -24,5 +21,8 @@ extern Level *getLevel();
 extern void ChargerNiveau();
 extern void Affichage_Niveau();
 extern void DestructionNiveau();
+
+extern void afficher_textures_niveau(int niveau);
+extern void Debug_AfficherCollider();
 
 #endif 

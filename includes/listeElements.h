@@ -4,17 +4,22 @@
 #include "commun.h"
 #include "texture.h"
 
+
 typedef struct Node
 {
   #include "attributs.h"
 
   SDL_Rect *rect;
-
+  
+  int nb_objets;
+  float baseX, baseY;
+  float phase;
+  bool lancer;
+  float movingX;
   Texture_Manager imagesItem[2];
   int imageCourante; 
 
   struct Node *suivant;
-
 }Node;
 
 
@@ -30,21 +35,17 @@ typedef struct
 
 extern void init_List(LinkedList *list);
 
-extern void collisionDetect();
+extern Node* creerRect(SDL_Rect*rect, typeEntite item_t);
+extern void insertion(LinkedList * list, SDL_Rect *rect, typeEntite items_t);
 
-extern Node* creerRect(SDL_Rect*rect, typeEntite item_t, bool isLeft);
-extern void insertion(LinkedList * list, SDL_Rect *rect, typeEntite items_t, bool isLeft);
 extern void deleteQueue(LinkedList *lstPtr);
-extern void RenderElements(LinkedList *lst,SDL_Texture * tex, typeEntite typeE);
+extern void Afficher_ElementsListes(LinkedList *lst,SDL_Texture * tex, typeEntite typeE);
 
-extern void moveRectangle ( LinkedList * lst );
-extern void clearRect (LinkedList *lst);
-
-extern void deleteList(LinkedList * lst);
-extern bool deleteFirst(LinkedList * lst);
-extern bool deleteLast(LinkedList * lst);
-extern Node * find (LinkedList *lsptr, int target, Node **prvPtr);
-extern bool deleteTarget(LinkedList *lsptr, int target);
+extern void suppListe(LinkedList * lst);
+extern bool suppPremier(LinkedList * lst);
+extern bool suppDernier(LinkedList * lst);
+extern Node * trouve (LinkedList *lsptr, int target, Node **prvPtr);
+extern bool supprimeCible(LinkedList *lsptr, int target);
 
 
 #endif
