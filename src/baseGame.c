@@ -69,15 +69,12 @@ extern void Rendu_Jeux()
       Afficher_ElementsListes( &listEnnemis, texture, ennemi );
       Afficher_ElementsListes( &bullet , itemTex, bull );
       
-      DessinerScores();
+      AfficherScores();
       
       Afficher_ElementsListes( &items, itemTex, item ); 
 
       AfficherJoueur();
 
-
-  
-      // AfficherScore();
     
     }
     else if ( getBaseGame()->state == PAUSE )

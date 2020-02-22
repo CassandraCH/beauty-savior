@@ -47,7 +47,7 @@ extern void NettoyerScore()
     SDL_DestroyTexture(score.tex);  
 }
 
-extern void DessinerScores()
+extern void AfficherScores()
 {
 
     SDL_Rect scor = {score.rect.x - camera.x  ,score.rect.y - camera.y, score.rect.w ,score.rect.h };
