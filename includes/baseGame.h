@@ -36,6 +36,7 @@ extern SDL_Window* getWindow(void);
 extern Base_Game*  getBaseGame(void);
 extern LinkedList* getEnnemis();
 extern LinkedList* getCollider();
+extern LinkedList* getItems();
 extern LinkedList* getBullets();
 extern Scores* getScores(void);
 extern Menu_t* getMenu(void);

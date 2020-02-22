@@ -121,7 +121,27 @@ extern void InitJoueur()
    
  }
 
+extern void CollisionItems() 
+{
+    Node * pt;
+    
+    // Vérifie la collision avec les items
+     for(pt = getItems()->tete ; pt != NULL; pt = pt->suivant)
+    {
+        if(collide2d(getPlayerX(), getPlayerY(), pt->rect->x,pt->rect->y,getPlayer()->w,getPlayer()->h,pt->rect->w , pt->rect->h  ) && pt->type == item )
+        {
 
+            if( !pt->estMort )
+            {
+               pt->estMort = true;
+               supprimeCible(getItems(), true);
+            }
+            break;
+        }
+    }
+
+
+}
 
 extern void AfficherJoueur()
 {

@@ -5,7 +5,7 @@ EXEC=prog.exe
 SRC=$(wildcard src/*.c)
 OBJ=$(SRC:.c=.o)
 
-all: $(EXEC)
+all:$(EXEC)
 
 $(EXEC): $(OBJ)
 	$(CC) -o $@ $^ $(LDFLAGS)

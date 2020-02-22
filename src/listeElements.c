@@ -67,11 +67,14 @@ extern Node* creerRect(SDL_Rect*rect, typeEntite item_t)
     nouvelElement->w = rect->w;
     nouvelElement->h = rect->h;
 
-    nouvelElement->baseX = rect->x;
-    nouvelElement->baseY = rect->y;
-    nouvelElement->phase = 2*3.14*(rand() % 360) / 360.0f;
-    nouvelElement->vx = -1.8f;
-    nouvelElement->vy = 0;
+    if( item_t == ennemi ) 
+    {
+          nouvelElement->baseX = rect->x;
+        nouvelElement->baseY = rect->y;
+        nouvelElement->phase = 2*3.14*(rand() % 360) / 360.0f;
+        nouvelElement->vx = -1.8f;
+        nouvelElement->vy = 0;
+    }
 
     return ( nouvelElement );
 }

@@ -33,7 +33,10 @@ extern void Update(float dt)
         UpdateEnnemis();
     
         collision_tir();
+
+        CollisionItems(); 
         collisionDetection();
+        
 
         if( getTimerBullet() < 100 )
         {
@@ -70,11 +73,15 @@ extern void Rendu_Jeux()
     
 
       SDL_Texture * texture = ChargerTexture("graphics_assets/rect11.png");
+      SDL_Texture * itemTex = ChargerTexture("graphics_assets/coin.png");
+
       SDL_SetRenderDrawColor( getRenderer(), 0xFF,0,0,0 );
+
       Afficher_ElementsListes( &listEnnemis, texture, ennemi );
       Afficher_ElementsListes( &bullet , texture, bull );
       
       AfficherJoueur();
+      Afficher_ElementsListes( &items, itemTex, item );
 
       // AfficherScore();
     

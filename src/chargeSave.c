@@ -75,7 +75,7 @@ extern void ChargementCollider(const char * filename)
     fclose(file);
 }
 
-extern void Chargement_CreationPNJ(const char * filename)
+extern void Chargement_CreationPNJ(LinkedList*lst, char * filename)
 {
     FILE * file = fopen(filename, "r");
 
@@ -84,19 +84,42 @@ extern void Chargement_CreationPNJ(const char * filename)
         exit(1);    
     }
     int typeCollider;
-    int isLeft;
 
     while( !feof(file) )
     {
         SDL_Rect *rect = malloc( sizeof(SDL_Rect));       
-        if( fscanf(file, "%d %d %d %d %d %d",&typeCollider,&isLeft,  &rect->x , &rect->y, &rect->w, &rect->h) )
+        if( fscanf(file, "%d %d %d %d %d",&typeCollider, &rect->x , &rect->y, &rect->w, &rect->h) )
         {
-            insertion(getCollider(), rect, typeCollider);
+            insertion(lst, rect, typeCollider);
         }
     }
 	
     fclose(file);
 }
+
+extern void ChargementItems(const char * filename, SDL_Texture * tex)
+{
+    FILE * file = fopen(filename, "r");
+    
+    if (file == NULL) {
+        fprintf(stderr, "Erreur avec le fichier\n");
+        exit(1);    
+    }
+    int w, h;
+    SDL_QueryTexture(tex, NULL,NULL, &w, &h );
+    while( !feof(file) )
+    {
+        SDL_Rect *rect = malloc( sizeof(SDL_Rect));
+        rect->w = w;
+        rect->h = h;             
+        if( fscanf(file, "%d %d",&rect->x , &rect->y) ){
+            insertion(getItems(),  rect, item );
+        }
+    }
+
+    fclose(file);
+}
+
 
 extern void ChargementEnnemis(const char * filename)
 {

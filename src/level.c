@@ -19,8 +19,15 @@ extern void ChargerNiveau()
    {
       init_List(&listEnnemis);
       init_List(&bullet);
-      Chargement_CreationPNJ("files_assets/niveau1.txt") ;
+      init_List(&items);
+
+      Chargement_CreationPNJ(getCollider(),"files_assets/niveau1.txt") ;
+
       ChargementEnnemis("files_assets/ennemi.txt");
+      SDL_Texture * itemTex = ChargerTexture("graphics_assets/coin.png");
+      ChargementItems("files_assets/coin.txt", itemTex);
+
+
       ChargerTextureManager( level.levelTextures, "graphics_assets/savior1-1.png");
    }  
    else if(  getPlayer()->niveau == 2 )

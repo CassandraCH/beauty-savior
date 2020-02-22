@@ -1,5 +1,9 @@
 #include "baseGame.h"
 
+
+/**
+ *  Mis à jour des Bullets() 
+ */ 
 extern bool UpdateBullets(  )
 {
     
@@ -60,24 +64,7 @@ extern void UpdateEnnemis()
 
 extern void collisionDetection()
 {
-    Node * pt;
-    
-    // Vérifie la collision avec les items
-     for(pt = listCollider.tete; pt != NULL; pt = pt->suivant)
-    {
-        if(collide2d(getPlayerX(), getPlayerY(), pt->x,pt->y,50,50,25, 25 ) && pt->type == item )
-        {
-
-            if( !pt->estMort )
-            {
-               pt->estMort = true;
-               
-            }
-            break;
-        }
-    }
-
-
+        Node * pt;
     Node * pt_e = NULL;
     // Vérifie la collision avec les ennemies
      for(pt_e = listEnnemis.tete ; pt_e != NULL; pt_e = pt_e->suivant)
@@ -127,7 +114,7 @@ extern void collisionDetection()
         actualiserJoueur();
        
     }
-    
+
     // checks for collision with any ledges(brick blocks)
     for(pt =  listCollider.tete; pt != NULL; pt = pt->suivant)
     {   
