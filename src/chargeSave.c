@@ -32,9 +32,9 @@ extern void SauvegarderPartie()
     fclose(file);
 }
 
-extern void SaveNode_Position(LinkedList * lst)
+extern void SaveCollider_Position()
 {
-    FILE * file = fopen("files_assets/niveau1.txt", "w");
+    FILE * file = fopen("files_assets/niveau1_position.txt", "w");
     
     if (file == NULL) {
         fprintf(stderr, "Erreur avec le fichier\n");
@@ -42,9 +42,9 @@ extern void SaveNode_Position(LinkedList * lst)
     }
     Node * pt;
     
-    if( lst->nodeCount  > 0 )
+    if( getCollider()->nodeCount  > 0 )
     {
-        for( pt = lst->tete; pt != NULL; pt = pt->suivant )
+        for( pt =  getCollider()->tete; pt != NULL; pt = pt->suivant )
         {
              fprintf(file,"%d %d\n", pt->rect->x , pt->rect->y );
         }

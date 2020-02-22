@@ -69,7 +69,6 @@ extern void Rendu_Jeux()
     
     {
 
-    
       Affichage_Niveau();
 
       SDL_Texture * texture = ChargerTexture("graphics_assets/rect11.png");
@@ -80,7 +79,7 @@ extern void Rendu_Jeux()
       Afficher_ElementsListes( &listEnnemis, texture, ennemi );
       Afficher_ElementsListes( &bullet , texture, bull );
       
-      Debug_AfficherCollider();
+ 
       
       Afficher_ElementsListes( &items, itemTex, item ); 
 
@@ -94,6 +93,8 @@ extern void Rendu_Jeux()
     {
       // A définir 
     }
+
+    
 
 
 

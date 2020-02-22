@@ -7,6 +7,8 @@ extern void Input_InGame(SDL_Event *event)
 {
 
     bool isKeyPressed = false;
+  
+       
     while( SDL_PollEvent(event) )
     {
         if( event->type == SDL_QUIT || event->key.keysym.sym == SDLK_ESCAPE )
@@ -48,29 +50,31 @@ extern void Input_InGame(SDL_Event *event)
     } // fin while (SDL_PollEvent)
 
 
-    const Uint8 *keystates  = SDL_GetKeyboardState(NULL);
-    InputJoueur(event);
-    camera.x = ( getPlayer()->x + getPlayer()->w / 2 ) - LARGEUR_FENETRE / 2;
-    camera.y = ( getPlayer()->y+  getPlayer()->h  / 2 ) - HAUTEUR_FENETRE / 2;
-	
-    if( camera.x < 0 )
-    { 
-       camera.x = 0;
-    }
-    if(camera.y < 0 )
-    {
-		
-        camera.y = 0;
-    }
-    if( camera.x + camera.w >= LARGEUR_NIVEAU )
-    {
-        camera.x = LARGEUR_NIVEAU - LARGEUR_FENETRE;
-    }
-    if( camera.y + camera.h >= HAUTEUR_NIVEAU)
-    {
-        camera.y = HAUTEUR_NIVEAU - HAUTEUR_FENETRE;
+        const Uint8 *keystates  = SDL_GetKeyboardState(NULL);
+        InputJoueur(event);
+        camera.x = ( getPlayer()->x + getPlayer()->w / 2 ) - LARGEUR_FENETRE / 2;
+        camera.y = ( getPlayer()->y+  getPlayer()->h  / 2 ) - HAUTEUR_FENETRE / 2;
+        
+        if( camera.x < 0 )
+        { 
+        camera.x = 0;
+        }
+        if(camera.y < 0 )
+        {
+            
+            camera.y = 0;
+        }
+        if( camera.x + camera.w >= LARGEUR_NIVEAU )
+        {
+            camera.x = LARGEUR_NIVEAU - LARGEUR_FENETRE;
+        }
+        if( camera.y + camera.h >= HAUTEUR_NIVEAU)
+        {
+            camera.y = HAUTEUR_NIVEAU - HAUTEUR_FENETRE;
 
-    }
+        }
 
+   
+   
 }
 

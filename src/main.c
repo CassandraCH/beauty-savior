@@ -15,13 +15,13 @@
 
 int main( int argc, char ** argv )
 {
+
     Init("Beauty Savior");
 	SDL_Event event;
 	
      srand( (int) time(NULL));
 
     float flPreviousTime, flCurrentTime;
-
 	while( getBaseGame()->estActif )
     {   
         
@@ -33,9 +33,10 @@ int main( int argc, char ** argv )
 
         if( dt > 0.15f )
             dt = 0.15f;
- 
+
+        
         ProcessInput(&event);
-	
+      
         Update(dt);
        
 		Rendu_Jeux( getBaseGame() );

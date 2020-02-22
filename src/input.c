@@ -23,7 +23,7 @@ extern void ProcessInput(SDL_Event * event)
    else if (getBaseGame()->state == IN_GAME )
    {
        Input_InGame(event);
-    
    }
+   
 
 }

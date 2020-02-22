@@ -7,6 +7,7 @@
 // #include "inventaire.h"
 #include "constantes.h"
 
+
 #include "inputs.h"
 #include "entite.h"
 #include "player.h"
@@ -26,6 +27,11 @@ typedef struct baseGame
     bool estActif; /**< Etat du jeux : Actif - Non Actif */
     int time;
 }Base_Game;
+
+
+
+// extern int mouseX;
+// extern int mouseY;
 
 Input input;
 InputState keyStates[SDL_NUM_SCANCODES];

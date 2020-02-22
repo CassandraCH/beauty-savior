@@ -57,12 +57,15 @@ void Init(const char *title)
     
     InitJoueur( getPlayer() );
 	Init_MenuPrincipal();
+    
+    
+
     Init_Scores();
+    PlayerScore(100, 100);
+
 
 
     getBaseGame()->estActif = true;
-
-    PlayerScore(100, 100);
 }
 
 

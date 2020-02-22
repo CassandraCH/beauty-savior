@@ -84,8 +84,6 @@ extern void InitJoueur()
      const Uint8 *states = SDL_GetKeyboardState(NULL);
 
  
- 
-
     if( states[SDL_SCANCODE_LEFT]  && player.x-25 > 0 ){
         player.vx -= 0.5;
             
@@ -161,8 +159,6 @@ extern void UpdateJoueur(float dt)
         // setPlayerY(getPlayerY() + player.vy);
 
         player.vy += GRAVITY;
-
-        
     }
 }
 

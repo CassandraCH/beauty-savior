@@ -14,6 +14,7 @@
 #define LARGEUR_FENETRE 1000
 #define HAUTEUR_FENETRE 600
 
+
 #define MENU_PRINCIPAL 0
 #define IN_GAME 1
 #define PAUSE 3
@@ -28,6 +29,8 @@
 #define NIVEAU2 2
 
 #define MAX_ITEMS 3
+
+
 
 
 

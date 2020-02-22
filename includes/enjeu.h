@@ -6,8 +6,6 @@
 
 
 extern void Input_InGame(SDL_Event *event);
-extern void UpdateIngame(float dt);
-extern void RenderIngame();
 
 
 #endif
