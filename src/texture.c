@@ -6,6 +6,7 @@
 bool chargerImage(Texture_Manager * tex,const char * filename )
 {
     
+    printf("Charger image\n");
     SDL_Surface* pTempSurface = IMG_Load( filename );
     if(pTempSurface == 0)
     {
@@ -31,6 +32,8 @@ bool chargerImage(Texture_Manager * tex,const char * filename )
 
 extern void ChargerTextureManager(Texture_Manager *tex, char * filepath )
 {
+    printf("Chargement texture DECOR");
+
 
     tex->texture = NULL;
     SDL_Surface *surface = IMG_Load(filepath);

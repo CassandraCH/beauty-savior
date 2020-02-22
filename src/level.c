@@ -27,8 +27,10 @@ extern void ChargerNiveau()
       SDL_Texture * itemTex = ChargerTexture("graphics_assets/coin.png");
       ChargementItems("files_assets/coin.txt", itemTex);
 
+      // ChargerTextureManager( level.levelTextures, "graphics_assets/savior1-1.png");
+      ChargerTextureManager( level.levelTextures, "graphics_assets/savior1-0-big.png");
 
-      ChargerTextureManager( level.levelTextures, "graphics_assets/savior1-1.png");
+
    }  
    else if(  getPlayer()->niveau == 2 )
    {  
