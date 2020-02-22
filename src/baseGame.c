@@ -92,7 +92,9 @@ extern void Rendu_Jeux()
   SDL_RenderPresent( getRenderer() );
 
 }
-
+/***
+ * Met à jour les listes en supprimant si besoin
+ */ 
 extern void Update_Listes()
 {
   supprimeCible(getBullets(), true);
