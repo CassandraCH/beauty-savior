@@ -48,7 +48,7 @@ extern void InitJoueur()
 	player.niveau = 1;
     player.nombreVies = 3;
 	// player = (Player) { 0 };
-	chargerImage(&player.tex, "assets/rect10.png");	
+	chargerImage(&player.tex, "graphics_assets/rect10.png");	
 	player.h = player.tex.h;
 	player.w = player.tex.w;
 	player.x = 100;
@@ -108,6 +108,7 @@ extern void InitJoueur()
             player.ralenti = 0;
     }
     else { // friction
+    
        //player->animFrame =0;
         player.vx *= 0.8f;
         player.ralenti = 1;
@@ -118,12 +119,6 @@ extern void InitJoueur()
         }
     }
    
-    // if(  player.estTourne  )
-    //     getBullets()->estTourne = true;
-    //  else 
-    //      getBullets()->estTourne = false;
-
-
  }
 
 

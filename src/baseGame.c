@@ -69,7 +69,7 @@ extern void Rendu_Jeux()
       Affichage_Niveau();
     
 
-      SDL_Texture * texture = ChargerTexture("assets/rect11.png");
+      SDL_Texture * texture = ChargerTexture("graphics_assets/rect11.png");
       SDL_SetRenderDrawColor( getRenderer(), 0xFF,0,0,0 );
       Afficher_ElementsListes( &listEnnemis, texture, ennemi );
       Afficher_ElementsListes( &bullet , texture, bull );
