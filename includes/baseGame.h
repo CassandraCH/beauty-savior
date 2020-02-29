@@ -21,6 +21,7 @@
 #include "entite.h"
 #include "menuPrincipal.h"
 
+
 typedef struct baseGame 
 {
     int state; /**<  */
@@ -33,11 +34,9 @@ typedef struct baseGame
 // extern int mouseX;
 // extern int mouseY;
 
-Input input;
-InputState keyStates[SDL_NUM_SCANCODES];
+
 
 /*######## GETTER & SETTER ######## */
-extern Input* get_Input();
 extern SDL_Window* getWindow(void);
 extern Base_Game*  getBaseGame(void);
 extern LinkedList* getEnnemis();
@@ -68,5 +67,6 @@ extern void Init(const char *title);
 extern void Update(float dt);
 extern void Quitter_Jeux();
 extern void Rendu_Jeux() ;
+void delay(unsigned int frameLimit);
 
 #endif

@@ -51,7 +51,7 @@ extern void init_List(LinkedList *list)
 }
 
 
-extern Node* creerRect(SDL_Rect*rect, typeEntite item_t)
+extern Node* creerRect(SDL_Rect*rect, typeEntite item_t, bool actif ) 
 {   
     Node * nouvelElement = malloc( sizeof( Node ) );
     nouvelElement->suivant = NULL; 
@@ -66,13 +66,17 @@ extern Node* creerRect(SDL_Rect*rect, typeEntite item_t)
     nouvelElement->y = rect->y;
     nouvelElement->w = rect->w;
     nouvelElement->h = rect->h;
+    nouvelElement->actif = actif;
 
     if( item_t == ennemi ) 
     {
-          nouvelElement->baseX = rect->x;
+        nouvelElement->baseX = rect->x;
         nouvelElement->baseY = rect->y;
-        nouvelElement->phase = 2*3.14*(rand() % 360) / 360.0f;
-        nouvelElement->vx = -1.8f;
+        if( actif == true )
+         {
+            nouvelElement->phase = 2*3.14*(rand() % 360) / 360.0f;
+            nouvelElement->vx = -1.8f;
+         }
         nouvelElement->vy = 0;
     }
 
@@ -80,10 +84,10 @@ extern Node* creerRect(SDL_Rect*rect, typeEntite item_t)
 }
 
 
-extern void insertion(LinkedList * list, SDL_Rect *rect, typeEntite items_t)
+extern void insertion(LinkedList * list, SDL_Rect *rect, typeEntite items_t, bool actif)
 {
     printf("Insertion objet\n");
-  Node *nouvelElement = creerRect(rect, items_t);
+  Node *nouvelElement = creerRect(rect, items_t, actif);
 
   if (list->nodeCount == 0){
     // Cas lorsque la liste est vide

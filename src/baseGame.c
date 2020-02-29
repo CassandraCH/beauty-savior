@@ -47,7 +47,7 @@ extern void Update(float dt)
 extern void Rendu_Jeux() 
 {
       
-    SDL_SetRenderDrawColor(getRenderer(), 0,0,0,0);
+    SDL_SetRenderDrawColor(getRenderer(), 0xFF,0xFF,0xFF,0xFF);
     SDL_RenderClear( getRenderer() );
     
 
@@ -61,10 +61,11 @@ extern void Rendu_Jeux()
     
     {
 
-      Affichage_Niveau();
-
+      // Affichage_Niveau();
+      Debug_AfficherCollider();
       SDL_Texture * texture = ChargerTexture("graphics_assets/rect11.png");
       SDL_Texture * itemTex = ChargerTexture("graphics_assets/coin.png");
+
 
       Afficher_ElementsListes( &listEnnemis, texture, ennemi );
       Afficher_ElementsListes( &bullet , itemTex, bull );
@@ -88,6 +89,7 @@ extern void Rendu_Jeux()
 
   SDL_RenderPresent( getRenderer() );
 
+
 }
 /***
  * Met à jour les listes en supprimant si besoin
@@ -97,3 +99,4 @@ extern void Update_Listes()
   supprimeCible(getBullets(), true);
   supprimeCible(getEnnemis(), true);
 }
+
