@@ -6,6 +6,7 @@
 typedef struct textures
 {
     int h, w;
+    int row;
     SDL_Texture * texture;
     
 }Texture_Manager;

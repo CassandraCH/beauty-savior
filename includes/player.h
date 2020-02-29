@@ -9,29 +9,53 @@
 typedef struct player
 {
    
-    #include "attributs.h"
+    float vx, vy;
+    int x, y;
+    int w, h;
+    bool estMort;
+    typeEntite type;
+
+
+    /**
+        Données pour l'animation 
+    */
+    int m_frameWidth, m_frameHeight;
+    int m_textureWidth, m_textureHeight;
+    
     float posXDepart;
     float posYDepart;
+    float numeroImage;
 
+    SDL_Rect playerRect;
+    SDL_Rect playerPosition;
+    int originX, originY;
+    
+    int frame;
+
+    bool estActif;
     bool estTourne;
     bool estSurSol;
-    
+
+    float animationSpeed;
     int nombreVies;
     bool ralenti;
     float scrollX;
     int niveau;
     int nb_lancer;
     int nb_objet;
-
+    
     Texture_Manager tex;
 
 
 }Player;
 
 
+
 extern Player *getPlayer(void);
 extern int  getPlayerX(void);
 extern int  getPlayerY(void);
+
+extern void ChargerJoueur(char* filepath, int x , int y , int framesX, int framesY);
 
 extern int getPlayerOriginX();
 extern int getPlayerOriginY();

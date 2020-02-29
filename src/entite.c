@@ -48,11 +48,11 @@ extern void UpdateEnnemis()
      for(; pt != NULL; pt = pt->suivant)
     {
     
-        if ( !pt->estMort )
+        if ( !pt->estMort &&pt->actif )
         {
             pt->rect->x = pt->baseX;
             pt->rect->y = pt->baseY;
-            pt->rect->x = pt->baseX+ sinf( (pt->phase*2)+ getBaseGame()->time*0.04f)*75;
+            pt->rect->x = pt->baseX+ sinf( (pt->phase*2)+ getBaseGame()->time * 0.04f ) *75;
         }
 
     }
@@ -69,8 +69,8 @@ extern void collisionDetection()
 
      /*##### JOUEUR ######*/
     // Largeur et Hauteur du joueur
-    float joueur_w = getPlayer()->w ;
-    float joueur_h = getPlayer()->h;
+    float joueur_w = getPlayer()->tex.w ;
+    float joueur_h = getPlayer()->tex.h;
     
     // Position X & Y du joueur
     float joueur_x = getPlayerX();
@@ -135,6 +135,7 @@ extern void collisionDetection()
     }
 
 
+
     /*##### COLLISION DECOR ####*/
     // Vérifie les collisions avec le décor
     for(Node * pt =  listCollider.tete; pt != NULL; pt = pt->suivant)
@@ -156,7 +157,7 @@ extern void collisionDetection()
             if( joueur_x+joueur_w/2 > collider_x && joueur_x+joueur_w/2 < collider_x+collider_w  )
             {
                 // Le haut du joueur rentre en collision avec le bas d'un bloc.
-                if( joueur_y < collider_y+collider_h && joueur_y > collider_y && getPlayer()->vy < 0 )
+                if( joueur_y < collider_y+collider_h && joueur_y > collider_y && getPlayer()->vy < 0  )
                 {
                     
                     getPlayer()->y = collider_y+collider_h;
