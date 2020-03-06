@@ -1,0 +1,102 @@
+.TH "src/player.c" 3 "Vendredi 6 Mars 2020" "Version 0.1" "Beauty Savior" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/player.c \- Programme qui gère le joueur\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'baseGame\&.h'\fP
+.br
+
+.SS "Fonctions"
+
+.in +1c
+.ti -1c
+.RI "\fBPlayer\fP * \fBgetPlayer\fP (void)"
+.br
+.ti -1c
+.RI "int \fBgetPlayerX\fP (void)"
+.br
+.ti -1c
+.RI "int \fBgetPlayerY\fP (void)"
+.br
+.ti -1c
+.RI "void \fBsetNombretir\fP ()"
+.br
+.ti -1c
+.RI "void \fBSetValeurDuNiveau\fP (int valeur)"
+.br
+.ti -1c
+.RI "void \fBInitJoueur\fP ()"
+.br
+.ti -1c
+.RI "void \fBInputJoueur\fP (SDL_Event *event)"
+.br
+.ti -1c
+.RI "void \fBCollisionItems\fP ()"
+.br
+.ti -1c
+.RI "void \fBAfficherJoueur\fP ()"
+.br
+.ti -1c
+.RI "void \fBUpdateJoueur\fP (float dt)"
+.br
+.ti -1c
+.RI "void \fBactualiserJoueur\fP (void)"
+.br
+.ti -1c
+.RI "bool \fBcollide2d\fP (float x1, float y1, float x2, float y2, float wt1, float ht1, float wt2, float ht2)"
+.br
+.ti -1c
+.RI "void \fBlancerObjet\fP ()"
+.br
+.ti -1c
+.RI "void \fBcollision_tir\fP ()"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "int \fBlevel\fP"
+.br
+.ti -1c
+.RI "\fBPlayer\fP \fBplayer\fP"
+.br
+.ti -1c
+.RI "\fBTexture_Manager\fP \fBplayerSprite\fP"
+.br
+.in -1c
+.SH "Description détaillée"
+.PP 
+Programme qui gère le joueur\&. 
+
+
+.PP
+\fBAuteur\fP
+.RS 4
+CALVADOS Cindy, CHAUMULON Cassandra, CHELLI Célia, OUSMANOVA Karina 
+.RE
+.PP
+\fBVersion\fP
+.RS 4
+1\&.0 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+janvier 2020
+.RE
+.PP
+Initialisation, affichage (et actualisation en fonction des entrées clavier), positionnement et déplacement du joueur
+.PP
+Gestion des tirs (attaques) et des collisions 
+.SH "Documentation des fonctions"
+.PP 
+.SS "void lancerObjet ()"
+Fonction qui s'occupe de gérer les attaques lancer par le joueur 
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Beauty Savior à partir du code source\&.

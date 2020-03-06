@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['processinput_49',['ProcessInput',['../input_8c.html#af9658d8e7a4d94f46954586e8f10d5a1',1,'input.c']]]
+  ['getscores_57',['getScores',['../scores_8c.html#ac625273c55bac118e3b28d6973104059',1,'scores.c']]]
 ];

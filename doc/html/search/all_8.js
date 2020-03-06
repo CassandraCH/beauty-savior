@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['player_21',['player',['../structplayer.html',1,'']]],
-  ['processinput_22',['ProcessInput',['../input_8c.html#af9658d8e7a4d94f46954586e8f10d5a1',1,'input.c']]]
+  ['option_22',['option',['../structoption.html',1,'']]]
 ];
