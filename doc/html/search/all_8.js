@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['y_11',['y',['../struct_entity.html#a0a2f84ed7838f07779ae24c5a9086d33',1,'Entity']]]
+  ['player_21',['player',['../structplayer.html',1,'']]],
+  ['processinput_22',['ProcessInput',['../input_8c.html#af9658d8e7a4d94f46954586e8f10d5a1',1,'input.c']]]
 ];

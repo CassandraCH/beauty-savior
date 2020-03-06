@@ -1,3 +1,11 @@
+/**
+ * \file texture.c
+ * \author CALVADOS Cindy, CHAUMULON Cassandra, CHELLI Célia, OUSMANOVA Karina
+ * \version 1.0
+ * \date janvier 2020
+ * \brief Programme qui gère les textures (affichage)
+ * \brief Chargement des images, des textures, des textes et destruction des textures
+ */
 #include "texture.h"
 
 

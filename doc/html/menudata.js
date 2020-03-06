@@ -32,4 +32,4 @@ var menudata={children:[
 {text:"Liste des fichiers",url:"files.html"},
 {text:"Variables globale",url:"globals.html",children:[
 {text:"Tout",url:"globals.html"},
-{text:"Définitions de type",url:"globals_type.html"}]}]}]}
+{text:"Fonctions",url:"globals_func.html"}]}]}]}

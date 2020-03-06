@@ -1,9 +1,18 @@
-#include "baseGame.h"
-// #include "menuPrincipal.h"
-// #include "constantes.h"
-// #include "commun.h"
+/**
+ * \file menuPrincipal.c
+ * \author CALVADOS Cindy, CHAUMULON Cassandra, CHELLI Célia, OUSMANOVA Karina
+ * \version 1.0
+ * \date janvier 2020
+ * \brief Programme qui gère le menu principal
+ * \brief Initialisation, affichage du menu, navigation dans le menu, gestion des entrées clavier et destruction du menu
+ */
 
-Menu_t menu;
+#include "baseGame.h"
+    // #include "menuPrincipal.h"
+    // #include "constantes.h"
+    // #include "commun.h"
+
+    Menu_t menu;
 
 /*
  * Fonction qui retourne le menu

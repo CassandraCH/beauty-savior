@@ -1,0 +1,64 @@
+.TH "src/inits.c" 3 "Vendredi 6 Mars 2020" "Version 0.1" "Beauty Savior" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/inits.c \- Programme qui gère l'initialisation\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'commun\&.h'\fP
+.br
+\fC#include 'baseGame\&.h'\fP
+.br
+
+.SS "Fonctions"
+
+.in +1c
+.ti -1c
+.RI "SDL_Renderer * \fBgetRenderer\fP (void)"
+.br
+.ti -1c
+.RI "void \fBInit\fP (const char *title)"
+.br
+.ti -1c
+.RI "void \fBQuitter_Jeux\fP ()"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "SDL_Renderer * \fBrendu\fP = NULL"
+.br
+.ti -1c
+.RI "SDL_Window * \fBfenetre\fP = NULL"
+.br
+.in -1c
+.SH "Description détaillée"
+.PP 
+Programme qui gère l'initialisation\&. 
+
+
+.PP
+\fBAuteur\fP
+.RS 4
+CALVADOS Cindy, CHAUMULON Cassandra, CHELLI Célia, OUSMANOVA Karina 
+.RE
+.PP
+\fBVersion\fP
+.RS 4
+1\&.0 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+janvier 2020
+.RE
+.PP
+Initialisation de la fenêtre, du rendu, du son, du menu principal, du score et du joueur
+.PP
+Destruction du son, des ennemis, de la fenêtre, du menu prinicpal, du rendu\&.\&.\&. 
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Beauty Savior à partir du code source\&.

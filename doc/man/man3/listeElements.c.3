@@ -1,0 +1,108 @@
+.TH "src/listeElements.c" 3 "Vendredi 6 Mars 2020" "Version 0.1" "Beauty Savior" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/listeElements.c \- Programme qui permet de gérer les listes\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'baseGame\&.h'\fP
+.br
+
+.SS "Fonctions"
+
+.in +1c
+.ti -1c
+.RI "\fBLinkedList\fP * \fBgetEnnemis\fP ()"
+.br
+.ti -1c
+.RI "\fBLinkedList\fP * \fBgetCollider\fP ()"
+.br
+.ti -1c
+.RI "\fBLinkedList\fP * \fBgetBullets\fP ()"
+.br
+.ti -1c
+.RI "\fBLinkedList\fP * \fBgetItems\fP ()"
+.br
+.ti -1c
+.RI "int \fBgetTimerBullet\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetTimerBullet\fP (int time)"
+.br
+.ti -1c
+.RI "void \fBinit_List\fP (\fBLinkedList\fP *list)"
+.br
+.ti -1c
+.RI "\fBNode\fP * \fBcreerRect\fP (SDL_Rect *rect, typeEntite item_t)"
+.br
+.ti -1c
+.RI "void \fBinsertion\fP (\fBLinkedList\fP *list, SDL_Rect *rect, typeEntite items_t)"
+.br
+.ti -1c
+.RI "void \fBsuppListe\fP (\fBLinkedList\fP *lst)"
+.br
+.ti -1c
+.RI "void \fBdeleteQueue\fP (\fBLinkedList\fP *lstPtr)"
+.br
+.ti -1c
+.RI "bool \fBsuppPremier\fP (\fBLinkedList\fP *lst)"
+.br
+.ti -1c
+.RI "bool \fBsuppDernier\fP (\fBLinkedList\fP *lst)"
+.br
+.ti -1c
+.RI "\fBNode\fP * \fBtrouve\fP (\fBLinkedList\fP *lsptr, int target, \fBNode\fP **prvPtr)"
+.br
+.ti -1c
+.RI "bool \fBsupprimeCible\fP (\fBLinkedList\fP *lsptr, int target)"
+.br
+.ti -1c
+.RI "void \fBAfficher_ElementsListes\fP (\fBLinkedList\fP *lst, SDL_Texture *tex, typeEntite typeE)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBLinkedList\fP \fBlistEnnemis\fP"
+.br
+.ti -1c
+.RI "\fBLinkedList\fP \fBbullet\fP"
+.br
+.ti -1c
+.RI "\fBLinkedList\fP \fBlistCollider\fP"
+.br
+.ti -1c
+.RI "\fBLinkedList\fP \fBitems\fP"
+.br
+.ti -1c
+.RI "int \fBtimerBullets\fP"
+.br
+.in -1c
+.SH "Description détaillée"
+.PP 
+Programme qui permet de gérer les listes\&. 
+
+
+.PP
+\fBAuteur\fP
+.RS 4
+CALVADOS Cindy, CHAUMULON Cassandra, CHELLI Célia, OUSMANOVA Karina 
+.RE
+.PP
+\fBVersion\fP
+.RS 4
+1\&.0 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+janvier 2020
+.RE
+.PP
+Création d'une liste, ajout de nouvel élément, suppression de la tête, suppresion de la queue, accès à une liste, affichage d'une liste' 
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Beauty Savior à partir du code source\&.

@@ -1,3 +1,11 @@
+/**
+ * \file listeElements.c
+ * \author CALVADOS Cindy, CHAUMULON Cassandra, CHELLI Célia, OUSMANOVA Karina
+ * \version 1.0
+ * \date janvier 2020
+ * \brief Programme qui permet de gérer les listes
+ * \brief Création d'une liste, ajout de nouvel élément, suppression de la tête, suppresion de la queue, accès à une liste, affichage d'une liste'
+ */
 #include "baseGame.h"
 
 /*#### DONNEES PRIVEES ####*/

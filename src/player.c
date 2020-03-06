@@ -1,3 +1,12 @@
+/**
+ * \file player.c
+ * \author CALVADOS Cindy, CHAUMULON Cassandra, CHELLI Célia, OUSMANOVA Karina
+ * \version 1.0
+ * \date janvier 2020
+ * \brief Programme qui gère le joueur
+ * \brief Initialisation, affichage (et actualisation en fonction des entrées clavier), positionnement et déplacement du joueur
+ * \brief Gestion des tirs (attaques) et des collisions
+ */
 #include "baseGame.h"
 
 
