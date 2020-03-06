@@ -1,4 +1,7 @@
 .vscode/
+src/*.o
+.vs/*
+
 
 # Object files
 *.o

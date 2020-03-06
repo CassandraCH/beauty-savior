@@ -1,8 +1,5 @@
-#include <stdlib.h>
-#include <stdio.h>
 
-
-#include "commun.h"
+#include "baseGame.h"
 
 
 /**
@@ -15,9 +12,40 @@
 *\date janvier 2020
 */
 
+
 int main( int argc, char ** argv )
 {
 
+    Init("Beauty Savior");
+	SDL_Event event;
+	
+     srand( (int) time(NULL));
+
+    float flPreviousTime, flCurrentTime;
+	while( getBaseGame()->estActif )
+    {   
+        
+
+        flPreviousTime = flCurrentTime;
+        flCurrentTime = SDL_GetTicks();
+
+        float dt = flCurrentTime - flPreviousTime;
+
+        if( dt > 0.15f )
+            dt = 0.15f;
+
+        
+        ProcessInput(&event);
+      
+        Update(dt);
+       
+		Rendu_Jeux( getBaseGame() );
+
+    } 
+
     
+    
+    Quitter_Jeux();
+
     return 0;
 }
