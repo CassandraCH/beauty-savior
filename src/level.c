@@ -1,3 +1,10 @@
+/**
+ * \file level.c
+ * \author CALVADOS Cindy, CHAUMULON Cassandra, CHELLI Célia, OUSMANOVA Karina
+ * \version 1.0
+ * \date janvier 2020
+ * \brief Programme qui gère les niveaux : affichage et destruction des niveaux
+ */
 #include "level.h"
 #include "constantes.h"
 

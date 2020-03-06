@@ -1,3 +1,10 @@
+/**
+ * \file chargeSave.c
+ * \author CALVADOS Cindy, CHAUMULON Cassandra, CHELLI Célia, OUSMANOVA Karina
+ * \version 1.0
+ * \date janvier 2020
+ * \brief Programme qui gère le chargement et la sauvegarde des parties
+ */
 #include "chargeSave.h"
 
 

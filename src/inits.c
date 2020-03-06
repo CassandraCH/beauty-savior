@@ -1,3 +1,12 @@
+/**
+ * \file inits.c
+ * \author CALVADOS Cindy, CHAUMULON Cassandra, CHELLI Célia, OUSMANOVA Karina
+ * \version 1.0
+ * \date janvier 2020
+ * \brief Programme qui gère l'initialisation
+ * \brief Initialisation de la fenêtre, du rendu, du son, du menu principal, du score et du joueur 
+ * \brief Destruction du son, des ennemis, de la fenêtre, du menu prinicpal, du rendu...
+ */
 #include "commun.h"
 #include "baseGame.h"
 

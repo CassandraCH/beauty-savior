@@ -1,3 +1,10 @@
+/**
+ * \file enjeu.c
+ * \author CALVADOS Cindy, CHAUMULON Cassandra, CHELLI Célia, OUSMANOVA Karina
+ * \version 1.0
+ * \date janvier 2020
+ * \brief Programme qui gère les entrées utilisateur (touches) et la caméra
+ */
 #include "enjeu.h"
 #include "baseGame.h"
 
