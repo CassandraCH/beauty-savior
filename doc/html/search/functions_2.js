@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['updatebullets_50',['UpdateBullets',['../entite_8c.html#ab434a962f655ade402945d959b7535d2',1,'entite.c']]]
+  ['lancerobjet_58',['lancerObjet',['../player_8c.html#af32226839e24bbe39ae39df295b53c4f',1,'player.c']]]
 ];

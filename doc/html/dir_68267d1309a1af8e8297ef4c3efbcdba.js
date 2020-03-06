@@ -9,5 +9,8 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
     [ "level.c", "level_8c.html", "level_8c" ],
     [ "listeElements.c", "liste_elements_8c.html", "liste_elements_8c" ],
     [ "main.c", "main_8c.html", "main_8c" ],
-    [ "menuPrincipal.c", "menu_principal_8c.html", "menu_principal_8c" ]
+    [ "menuPrincipal.c", "menu_principal_8c.html", "menu_principal_8c" ],
+    [ "player.c", "player_8c.html", "player_8c" ],
+    [ "scores.c", "scores_8c.html", "scores_8c" ],
+    [ "texture.c", "texture_8c.html", "texture_8c" ]
 ];
