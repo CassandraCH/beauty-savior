@@ -23,8 +23,8 @@
 
 typedef struct baseGame 
 {
-    int state; /**<  */
-    bool estActif; /**< Etat du jeux : Actif - Non Actif */
+    int state; /**< Etat du jeu : en cours de partie, sur le menu principal*/
+    bool estActif; /**< Etat du jeu : Actif - Non Actif */
     int time;
 }Base_Game;
 

@@ -9,19 +9,28 @@
 #include "commun.h"
 
 
-Base_Game game; /**< */
+Base_Game game; /**< Structure qui gère l'état du jeu*/
 
 
-int last_frame_time = 0;
-float dt = 0.0f;
+int last_frame_time = 0; /**< Temps écoulé depuis la dernière image*/
+float dt = 0.0f; /**< Delta-time = temps écoulé entre l'affichage de chaque image*/
 
+/**
+ * \fn Base_Game* getBaseGame()
+ * \brief Fonction qui permet d'accéder à la structure qui gère l'état du jeu
+ * \return Un pointeur sur une structure de données de type Base_Game
+*/
 Base_Game* getBaseGame()
 {
   return &game;
 }
 
-
-
+/**
+ * \fn extern void Update(float dt)
+ * \brief Mise à jour 
+ * \details On fait appel à la fonction \a somme1(int n) et on multiplie par 2 son résultat
+ * \param dt valeur du delta-time
+*/
 extern void Update(float dt)
 { 
 
