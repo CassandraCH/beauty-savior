@@ -69,8 +69,7 @@ extern Node* creerRect(SDL_Rect*rect, typeEntite item_t, bool actif )
     nouvelElement->nb_objets = 0;
     nouvelElement->movingX = 0;
     nouvelElement->lancer = true;
-    nouvelElement->estSurSol = false;
-
+   
     nouvelElement->x = rect->x;
     nouvelElement->y = rect->y;
     nouvelElement->w = rect->w;
@@ -81,7 +80,6 @@ extern Node* creerRect(SDL_Rect*rect, typeEntite item_t, bool actif )
     {
         nouvelElement->baseX = rect->x;
         nouvelElement->baseY = rect->y;
-<<<<<<< HEAD
 
         if( actif == true )
          {
@@ -89,11 +87,7 @@ extern Node* creerRect(SDL_Rect*rect, typeEntite item_t, bool actif )
             nouvelElement->vx = -1.8f;
          }
 		nouvelElement->vy = 0;
-=======
-        nouvelElement->phase = 2*3.14*(rand() % 360) / 360.0f;
-        nouvelElement->vx = 0;
-        nouvelElement->vy = 0;
->>>>>>> 748fc7bf7ada1e532acd41eebdcd999042a8df67
+
     }
 
     return ( nouvelElement );

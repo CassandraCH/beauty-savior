@@ -65,12 +65,10 @@ extern void InitJoueur()
 	player.h = player.tex.h;
 	player.w = player.tex.w;
 	player.x = 600;
-<<<<<<< HEAD
+
 	player.y = 100;
     player.frame = 0;
-=======
-    player.y = 100;
->>>>>>> 748fc7bf7ada1e532acd41eebdcd999042a8df67
+
     player.nb_lancer = 0;
     player.nb_objet = 0;
     player.posXDepart = 100;
@@ -233,11 +231,9 @@ extern void attaqueJoueur()
 {
     if ( getPlayer()->nb_objet > 0 )
     {
-<<<<<<< HEAD
+
       // SDL_Rect *rect = malloc(sizeof(SDL_Rect));
-=======
-        // SDL_Rect *rect = malloc(sizeof(SDL_Rect));
->>>>>>> 748fc7bf7ada1e532acd41eebdcd999042a8df67
+
         // rect->w = 41;
         // rect->h = 47;
         // rect->y = ( getPlayer()->y+  getPlayer()->h  / 2 ) - rect->h/2;
@@ -291,10 +287,6 @@ extern void collision_tir()
 
 }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 748fc7bf7ada1e532acd41eebdcd999042a8df67
 extern void joueur_surSol()
 {
     player.vy = 0;
@@ -303,8 +295,7 @@ extern void joueur_surSol()
     {
         getPlayer()->estSurSol = true;
     }
-<<<<<<< HEAD
+
 }
-=======
-}
->>>>>>> 748fc7bf7ada1e532acd41eebdcd999042a8df67
+
+

@@ -115,7 +115,7 @@ extern void CreerTir( typeEntite type,int width, int height, int startX, int sta
     rect->y = ( startY +  height  / 2 ) - rect->h / 2;
     rect->x = startX + 25;
     
-    insertion( &bullet, rect, type );
+    insertion( &bullet, rect, type, false );
 }
 
 
@@ -162,15 +162,11 @@ extern void UpdateEnnemis()
         {
             pt->rect->x = pt->baseX;
             pt->rect->y = pt->baseY;
-<<<<<<< HEAD
+
 
             pt->rect->x = pt->baseX+ sinf( (pt->phase*2)+ getBaseGame()->time * 0.04f ) *75;
        }
-=======
-            pt->rect->x = pt->baseX+ sinf( (pt->phase*2)+ getBaseGame()->time*0.04f)*75;
 
-        }
->>>>>>> 748fc7bf7ada1e532acd41eebdcd999042a8df67
 
     }
 }   
@@ -250,12 +246,6 @@ extern void collisionDetection()
     {
         actualiserJoueur();
     }
-<<<<<<< HEAD
-	/*##### COLLISION DECOR ####*/
-=======
-    
-    /*##### COLLISION DECOR ####*/
->>>>>>> 748fc7bf7ada1e532acd41eebdcd999042a8df67
     // Vérifie les collisions avec le décor
     collision_Decor(joueur,joueur_w, joueur_h, &getPlayer()->x , &getPlayer()->y , &getPlayer()->vy , &getPlayer()->estSurSol );
 
@@ -285,13 +275,9 @@ extern void collision_Decor( typeEntite type, float type_w, float type_h , float
             if( (*type_x) + type_w / 2 > collider_x && (*type_x) + type_w / 2 < collider_x+collider_w  )
             {
                 // Le haut du joueur rentre en collision avec le bas d'un bloc.
-<<<<<<< HEAD
 
                 if( (*type_y) < collider_y+collider_h && (*type_y) > collider_y && (*vy) < 0 )
 
-=======
-                if( (*type_y) < collider_y+collider_h && (*type_y) > collider_y && (*vy) < 0 )
->>>>>>> 748fc7bf7ada1e532acd41eebdcd999042a8df67
                 {
                     
                     (*type_y) = collider_y + collider_h;

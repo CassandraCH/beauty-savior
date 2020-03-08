@@ -7,10 +7,6 @@
  */
 #include "baseGame.h"
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 748fc7bf7ada1e532acd41eebdcd999042a8df67
 /**
  * Gestion des entrées utilisateurs.
  */ 

@@ -31,11 +31,6 @@ typedef struct baseGame
 
 }Base_Game;
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 748fc7bf7ada1e532acd41eebdcd999042a8df67
-
 /*######## GETTER & SETTER ######## */
 extern SDL_Window* getWindow(void);
 extern Base_Game*  getBaseGame(void);

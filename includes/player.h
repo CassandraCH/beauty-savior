@@ -9,12 +9,7 @@
 typedef struct player
 {
    
-    float vx, vy;
-    int x, y;
-    int w, h;
-    bool estMort;
-    typeEntite type;
-
+    #include "attributs.h"
 
     /**
         Données pour l'animation 
@@ -35,15 +30,9 @@ typedef struct player
     bool estActif;
     bool estTourne;
 
-<<<<<<< HEAD
     bool estSurSol;
-
     float animationSpeed;
 
-
-=======
-    
->>>>>>> 748fc7bf7ada1e532acd41eebdcd999042a8df67
     int nombreVies;
     bool ralenti;
     float scrollX;
