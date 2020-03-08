@@ -35,7 +35,7 @@ void Init(const char *title)
     }
 
     /*############### CHARGEMENT DES POLICES *###############*/
-    getMenu()->police = TTF_OpenFont("fonts/Crazy-Pixel.ttf", 48);
+    getMenu()->police = TTF_OpenFont("fonts/homizio.ttf", 20);
     if(!getMenu()->police )
     {
         printf("Cannot find font file!!\n");
@@ -73,6 +73,7 @@ void Quitter_Jeux()
 {
      
     Mix_FreeChunk(getMenu()->son);
+    Mix_FreeMusic( getMenu()->bgm  );
     TTF_CloseFont(getMenu()->police);
     TTF_CloseFont(getScores()->police);
     suppListe(&bullet);

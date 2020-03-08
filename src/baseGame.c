@@ -20,7 +20,8 @@ extern void Update(float dt)
 
     if ( game.state == MENU_PRINCIPAL )
     {
-        
+        if( !Mix_PlayingMusic() )
+          Mix_PlayMusic(getMenu()->bgm, -1);
     }
     else if ( game.state == IN_GAME )
     {   
@@ -56,13 +57,15 @@ extern void Rendu_Jeux()
     {
       
       Dessiner_MenuPrincipal();
+
+      
     }
     else if ( getBaseGame()->state == IN_GAME )
     
     {
 
-      // Affichage_Niveau();
-      Debug_AfficherCollider();
+      // Debug_AfficherCollider();
+      Affichage_Niveau();
       SDL_Texture * texture = ChargerTexture("graphics_assets/rect11.png");
       SDL_Texture * itemTex = ChargerTexture("graphics_assets/coin.png");
 

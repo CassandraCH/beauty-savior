@@ -11,8 +11,8 @@
 #define HAUTEUR_NIVEAU  600
 
 //Dimensions de la fenetre
-#define LARGEUR_FENETRE 1000
-#define HAUTEUR_FENETRE 600
+#define LARGEUR_FENETRE 1280
+#define HAUTEUR_FENETRE 720
 
 
 #define MENU_PRINCIPAL 0

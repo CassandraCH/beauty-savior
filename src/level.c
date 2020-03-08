@@ -68,8 +68,6 @@ extern void Affichage_Niveau ()
 
       afficher_textures_niveau(0);
       
-   
-
    }  
    else if(  getPlayer()->niveau == 2 )
    {  
