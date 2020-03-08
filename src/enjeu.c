@@ -30,7 +30,7 @@ extern void Input_InGame(SDL_Event *event)
             if( getPlayer()->nb_lancer < 1 && !isKeyPressed )
             {
 
-                lancerObjet();
+                attaqueJoueur();
                 isKeyPressed = true;
                 return;
             }

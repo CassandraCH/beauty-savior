@@ -60,7 +60,7 @@ extern void InitJoueur()
 	chargerImage(&player.tex, "graphics_assets/rect10.png");	
 	player.h = player.tex.h;
 	player.w = player.tex.w;
-	player.x = 100;
+	player.x = 600;
     player.y = 100;
     player.nb_lancer = 0;
     player.nb_objet = 0;
@@ -201,6 +201,7 @@ extern void actualiserJoueur(void)
 
 }
 
+
 extern bool collide2d(float x1, float y1, float x2, float y2, float wt1, float ht1, float wt2, float ht2)
 {
     return (! ( (x1 > (x2+wt2)) || (x2 > (x1+wt1)) || (y1 > (y2+ht2)) || (y2 > (y1+ht1))  )  );
@@ -209,21 +210,22 @@ extern bool collide2d(float x1, float y1, float x2, float y2, float wt1, float h
 /**
  *  Fonction qui s'occupe de gérer les attaques lancer par le joueur
  */
-extern void lancerObjet()
+extern void attaqueJoueur()
 {
     if ( getPlayer()->nb_objet > 0 )
     {
-        SDL_Rect *rect = malloc(sizeof(SDL_Rect));
-        rect->w = 41;
-        rect->h = 47;
-        rect->y = ( getPlayer()->y+  getPlayer()->h  / 2 ) - rect->h/2;
+        // SDL_Rect *rect = malloc(sizeof(SDL_Rect));
+        // rect->w = 41;
+        // rect->h = 47;
+        // rect->y = ( getPlayer()->y+  getPlayer()->h  / 2 ) - rect->h/2;
 
-        if( getPlayer()->estTourne )
-            rect->x =  getPlayerX() - (getPlayer()->w/2);
-        else
-            rect->x =  getPlayerX() + (getPlayer()->w/2) ;
+        // if( getPlayer()->estTourne )
+        //     rect->x =  getPlayerX() - (getPlayer()->w/2);
+        // else
+        //     rect->x =  getPlayerX() + (getPlayer()->w/2) ;
 
-        insertion(&bullet, rect, bull );
+        // insertion(&bullet, rect, bull );
+        CreerTir(bull, getPlayer()->w , getPlayer()->h, getPlayerX(),  getPlayerY() );
         SetScore(--player.nb_objet);
 
     }
@@ -242,8 +244,8 @@ extern void collision_tir()
         {
             for(enne = getEnnemis()->tete; enne != NULL; enne = enne->suivant)
             {
-                if(collide2d( tir->rect->x , tir->rect->y, enne->rect->x,enne->rect->y,tir->rect->w ,tir->rect->h,enne->rect->w, enne->rect->h ) && enne->type == ennemi )
-                    {
+                if(collide2d( tir->rect->x , tir->rect->y, enne->rect->x,enne->rect->y,tir->rect->w ,tir->rect->h,enne->rect->w, enne->rect->h ) && enne->type == ennemi && tir->type == bull ) 
+                {
 
                         if( !enne->estMort )
                         {
@@ -254,10 +256,24 @@ extern void collision_tir()
                         }
                             
                         break;
-                    }
-
                 }
+                else if(collide2d( tir->rect->x , tir->rect->y, getPlayerX(),getPlayerY(),tir->rect->w ,tir->rect->h,getPlayer()->w, getPlayer()->h ) && tir->type == feu ) 
+                {
+                    actualiserJoueur();
+                    break;
+                }
+            }
         }
     }
 
+}
+
+extern void joueur_surSol()
+{
+    player.vy = 0;
+    // Le joueur est posé sur un bloc. 
+    if(!player.estSurSol)
+    {
+        getPlayer()->estSurSol = true;
+    }
 }

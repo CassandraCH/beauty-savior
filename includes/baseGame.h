@@ -26,18 +26,13 @@ typedef struct baseGame
     int state; /**<  */
     bool estActif; /**< Etat du jeux : Actif - Non Actif */
     int time;
+
+
 }Base_Game;
 
 
 
-// extern int mouseX;
-// extern int mouseY;
-
-Input input;
-InputState keyStates[SDL_NUM_SCANCODES];
-
 /*######## GETTER & SETTER ######## */
-extern Input* get_Input();
 extern SDL_Window* getWindow(void);
 extern Base_Game*  getBaseGame(void);
 extern LinkedList* getEnnemis();

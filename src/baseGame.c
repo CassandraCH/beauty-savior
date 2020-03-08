@@ -35,10 +35,11 @@ extern void Update(float dt)
         getBaseGame()->time++;
         setTimerBullet(0);
 
-        Update_Listes();
+        attaqueEnnemis();
 
+        Update_Listes();
         UpdateJoueur(dt);
-        UpdateBullets();
+        UpdateBullets(joueur, ennemi);
         UpdateEnnemis();
     
         collision_tir();
@@ -75,6 +76,7 @@ extern void Rendu_Jeux()
 
       Afficher_ElementsListes( &listEnnemis, texture, ennemi );
       Afficher_ElementsListes( &bullet , itemTex, bull );
+      Afficher_ElementsListes( &bullet , itemTex, feu );
       
       AfficherScores();
       

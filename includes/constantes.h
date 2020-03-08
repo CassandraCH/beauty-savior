@@ -7,11 +7,11 @@
 #define FRAME_TARGET_TIME (1000/FPS)
 
 //Dimensions du niveau
-#define LARGEUR_NIVEAU 10000
+#define LARGEUR_NIVEAU 3000
 #define HAUTEUR_NIVEAU  600
 
 //Dimensions de la fenetre
-#define LARGEUR_FENETRE 1000
+#define LARGEUR_FENETRE 1000    
 #define HAUTEUR_FENETRE 600
 
 
