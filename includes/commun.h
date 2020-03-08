@@ -13,9 +13,14 @@
 
 typedef enum { false, true } bool;
 
-typedef enum  { item, joueur, ennemi, platform , bull }  typeEntite;
+typedef enum  { item, joueur, ennemi, platform , bull, feu }  typeEntite;
+
+// typedef enum {  } typeAttaque;
 
 typedef enum { fixe, anime } texState;
+
+
+
 
 extern SDL_Renderer* getRenderer(void);
 

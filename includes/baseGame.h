@@ -27,13 +27,9 @@ typedef struct baseGame
     int state; /**<  */
     bool estActif; /**< Etat du jeux : Actif - Non Actif */
     int time;
+
+
 }Base_Game;
-
-
-
-// extern int mouseX;
-// extern int mouseY;
-
 
 
 /*######## GETTER & SETTER ######## */

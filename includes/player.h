@@ -34,14 +34,17 @@ typedef struct player
 
     bool estActif;
     bool estTourne;
+
     bool estSurSol;
 
     float animationSpeed;
+
+
     int nombreVies;
     bool ralenti;
     float scrollX;
     int niveau;
-    int nb_lancer;
+    
     int nb_objet;
     
     Texture_Manager tex;
@@ -66,12 +69,13 @@ extern void actualiserJoueur(void);
 extern void InitJoueur();
 extern void setNombretir();
 extern bool collide2d(float x1, float y1, float x2, float y2, float wt1, float ht1, float wt2, float ht2);
-extern void lancerObjet();
+extern void attaqueJoueur();
 extern void collision_tir();
 extern void CollisionItems();
 
 extern void InputJoueur(SDL_Event *event);
 extern void AfficherJoueur();
+extern void joueur_surSol();
 
 
 #endif
