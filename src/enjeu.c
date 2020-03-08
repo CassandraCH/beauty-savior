@@ -31,7 +31,11 @@ extern void Input_InGame(SDL_Event *event)
             {
 
                 attaqueJoueur();
+<<<<<<< HEAD
                isKeyPressed = true;
+=======
+                isKeyPressed = true;
+>>>>>>> 748fc7bf7ada1e532acd41eebdcd999042a8df67
                 return;
             }
             if(event->key.keysym.sym == SDLK_a && event->type == SDL_KEYUP )

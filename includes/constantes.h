@@ -12,10 +12,9 @@
 
 //Dimensions de la fenetre
 
+
 #define LARGEUR_FENETRE 1280
 #define HAUTEUR_FENETRE 720
-
-
 
 #define MENU_PRINCIPAL 0
 #define IN_GAME 1

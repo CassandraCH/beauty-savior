@@ -37,7 +37,7 @@ typedef struct menu
 }Menu_t;
 
 
-// extern void UpdateOption(Options_t * );
+
 extern void UpdateOption(Options_t * menut, int etat);
 extern int getTouchePresse();
 
