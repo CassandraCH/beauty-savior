@@ -8,7 +8,7 @@
 
 //Dimensions du niveau
 #define LARGEUR_NIVEAU 3000
-#define HAUTEUR_NIVEAU  600
+#define HAUTEUR_NIVEAU  720
 
 //Dimensions de la fenetre
 

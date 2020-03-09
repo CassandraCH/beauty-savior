@@ -8,26 +8,8 @@
  */
 #include "baseGame.h"
 
-/***
- * 
- */
 
 
-extern void UpdateEnnemi()
-{
-
-    Node * pt = getEnnemis()->tete;
-     for(; pt != NULL; pt = pt->suivant)
-    {
-        if ( !pt->estMort )
-        {
-            pt->rect->x += pt->vx;
-            pt->rect->y += pt->vy;
-
-            pt->vy += GRAVITY;
-        }
-    }
-}
 
 /**
  *  Mis à jour des Bullets() 
@@ -164,7 +146,7 @@ extern void UpdateEnnemis()
             pt->rect->y = pt->baseY;
 
 
-            pt->rect->x = pt->baseX+ sinf( (pt->phase*2)+ getBaseGame()->time * 0.04f ) *75;
+            pt->rect->x = pt->baseX+ sinf( (pt->phase*2)+ getBaseGame()->time * 0.04f ) *55;
        }
 
 
@@ -242,7 +224,7 @@ extern void collisionDetection()
     }
 
     //Vérifie si le joueur tombe dans le vide et qu'il dépasse la hauteur de l'écran
-    if( getPlayer()->y > 600)
+    if( getPlayer()->y > 720 ) 
     {
         actualiserJoueur();
     }
@@ -329,27 +311,3 @@ extern void collision_Decor( typeEntite type, float type_w, float type_h , float
         }
 }
 
-// extern void ennemi_surSol()
-// {
-
-//      for( Node * pt = listEnnemis.tete ; pt != NULL; pt = pt->suivant)
-//     {
-//         /*##### ENNEMI ######*/
-//         // Largeur et Hauteur de l'ennemi
-//         float ennemi_w = pt->rect->w;
-//         float ennemi_h = pt->rect->h;
-
-//         // Position X & Y de l'ennemi
-//         float ennemi_x = pt->rect->x;
-//         float ennemi_y = pt->rect->y;
-        
-//         pt->vy = 0;
-//         // Le joueur est posé sur un bloc. 
-//         if(!pt->estSurSol)
-//         {
-//             pt->estSurSol = true;
-//         }
-
-//     }
-
-// }

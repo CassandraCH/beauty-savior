@@ -72,8 +72,8 @@ extern void Rendu_Jeux()
     
     {
 
-      // Debug_AfficherCollider();
       Affichage_Niveau();
+      Debug_AfficherCollider();
       SDL_Texture * texture = ChargerTexture("graphics_assets/rect11.png");
       SDL_Texture * itemTex = ChargerTexture("graphics_assets/coin.png");
 

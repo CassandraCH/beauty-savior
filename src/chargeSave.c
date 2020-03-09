@@ -141,8 +141,8 @@ extern void ChargementEnnemis(const char * filename)
     while( !feof(file) )
     {
         SDL_Rect *rect = malloc( sizeof(SDL_Rect));
-        rect->w = 50;
-        rect->h = 50;             
+        rect->w = 55;
+        rect->h = 55;             
         if( fscanf(file, "%d %d %d",&rect->x , &rect->y, &actif ) ){
             insertion(getEnnemis(),  rect, ennemi , actif );
         }
