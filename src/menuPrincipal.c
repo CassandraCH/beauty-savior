@@ -46,9 +46,9 @@ extern void Init_MenuPrincipal()
 
     /* 
      * Premiere option : demarer une nouvelle partie 
-     * couleur du début = rouge
+     * Actif par défaut
      */ 
-    menu.menu[0].couleur = (SDL_Color) {0xFF, 0, 0,0 };
+
     menu.menu[0].nomOption = "Jouer";
     menu.menu[0].filename[0] = "graphics_assets/jouer_on_xs.png";
     menu.menu[0].filename[1] = "graphics_assets/jouer_off_xs.png";
@@ -61,34 +61,46 @@ extern void Init_MenuPrincipal()
     menu.menu[0].y = 366;
 
     /* 
-     * Deuxieme option : chargement d'une partie 
-     * couleur du début = blanc
+     * Deuxieme option : Chargement d'un partie
      */
-    menu.menu[1].couleur = (SDL_Color){0, 0, 0, 0};
-    menu.menu[1].nomOption = "Options";
-    menu.menu[1].filename[0] = "graphics_assets/options_on_xs.png";
-    menu.menu[1].filename[1] = "graphics_assets/options_off_xs.png";
+    menu.menu[1].nomOption = "Chargement";
+    menu.menu[1].filename[0] = "graphics_assets/load_on_xs.png";
+    menu.menu[1].filename[1] = "graphics_assets/load_off_xs.png";
 
     //Refraichissement de l'affichage de l'option
     UpdateOption(&menu.menu[1], 1);
     //Position (en x et y) de l'option dans la fenetre
-    menu.menu[1].x = 469;
+    menu.menu[1].x = 455;
     menu.menu[1].y = 449;
 
     /* 
      * Troisieme option : quitter le jeu 
-     * couleur du début = blanc
      */
-    menu.menu[2].couleur = (SDL_Color){0, 0, 0, 0};
     menu.menu[2].nomOption = "Quitter";
     menu.menu[2].filename[0] = "graphics_assets/quitter_on_xs.png";
     menu.menu[2].filename[1] = "graphics_assets/quitter_off_xs.png";
 
     //Refraichissement de l'affichage de l'option
     UpdateOption(&menu.menu[2], 1  );
-    //Position (en x et y) de l'option dans la fenetre
+    //Position (en x et y) de l'option dans la fenetremake
+
     menu.menu[2].x = 469;
     menu.menu[2].y = 491;
+
+     /* 
+     * Quatrième option : Couper/Activer Son
+     */
+    menu.menu[3].nomOption = "Son";
+    menu.menu[3].filename[0] = "graphics_assets/sound_on_xs.png";
+    menu.menu[3].filename[1] = "graphics_assets/sound_off_xs.png";
+
+
+    //Refraichissement de l'affichage de l'option
+    UpdateOption(&menu.menu[3], 0  );
+    //Position (en x et y) de l'option dans la fenetre
+    menu.menu[3].x = 487;
+    menu.menu[3].y = 627;
+
 
     //Option selectionnee = la premiere (nouvelle partie)
     menu.selectedOption = 0;
@@ -136,16 +148,13 @@ extern void ToucheHaut()
     //Si on est sur la premiere option => on ne peut pas aller sur une option au-dessus
     if (menu.selectedOption - 1 >= 0)
     {  
-        //Pour l'option actuelle => changer la couleur (mettre blanc)
-        menu.menu[menu.selectedOption].couleur = (SDL_Color){0, 0, 0, 0};
+  
         //Rafraichir l'affichage
         UpdateOption(&menu.menu[menu.selectedOption] , 1);
 
         //Modifier l'option selectionnee => passe a l'option suivante
         menu.selectedOption--;
 
-        //Pour l'option sur laquelle on veut aller => changer la couleur (mettre rouge)
-        menu.menu[menu.selectedOption].couleur = (SDL_Color){0xFF, 0, 0, 0};
         //Rafraichir l'affichage
         UpdateOption(&menu.menu[menu.selectedOption], 0 );
     }
@@ -160,16 +169,12 @@ extern void ToucheBas()
     //Si on est sur la derniere option => on ne peut pas aller sur une option en-dessous
     if (menu.selectedOption + 1 < MAX_NUMBER)
     {
-        //Pour l'option actuelle => changer la couleur (mettre blanc)
-        menu.menu[menu.selectedOption].couleur = (SDL_Color){0, 0, 0, 0};
         //Rafraichir l'affichage
         UpdateOption(&menu.menu[menu.selectedOption], 1 );
 
         //Modifier l'option selectionnee => passe a l'option precedente
         menu.selectedOption++;
 
-        //Pour l'option sur laquelle on veut aller => changer la couleur (mettre rouge)
-        menu.menu[menu.selectedOption].couleur = (SDL_Color){0xFF, 0, 0, 0};
         //Rafraichir l'affichage
         UpdateOption(&menu.menu[menu.selectedOption], 0 );
     }
@@ -187,7 +192,7 @@ extern void Dessiner_MenuPrincipal()
     SDL_RenderCopy( getRenderer(), menu.bg , NULL, &rect );
 
     //Pour chaque option, afficher a l'ecran son rendu
-	for (int i = 0; i < MAX_NUMBER; i++)
+	for (int i = 0; i < MAX_NUMBER+1; i++)
 	{
         //Rectangle tampon 
         SDL_Rect rect = {menu.menu[i].x, menu.menu[i].y, menu.menu[i].largeur, menu.menu[i].hauteur};
@@ -256,6 +261,22 @@ extern void Input_MenuPrincipal(SDL_Event *event)
                         default:
                             break;
                     }
+                break;
+                case SDLK_s:
+                     //Si la musique est en pause
+                        if( Mix_PausedMusic() == 1 )
+                        {
+                            UpdateOption(&menu.menu[3], 0  );
+                            //On enlève la pause (la musique repart où elle en était)
+                            Mix_ResumeMusic();
+                        }
+                        //Si la musique est en train de jouer
+                        else
+                        {
+                            UpdateOption(&menu.menu[3], 1  );
+                            //On met en pause la musique
+                            Mix_PauseMusic();
+                        }    
                 break;
                 default:
                     break;
