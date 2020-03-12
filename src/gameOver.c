@@ -25,13 +25,16 @@ extern void Init_MenuGameOver()
     int width = LARGEUR_FENETRE, height = HAUTEUR_FENETRE;
     printf("Chargement Menu Game Over");
     // NettoyerScore();
+
     SetScore("SCORES", getPlayer()->nb_objet);
     getScores()->rect.x = 100;
     getScores()->rect.y = 300;
-    // PlayerScorrect->e("SCORE
-    // PlayerScorrect->y("S4ORES : 0", 10, 0);
+
 
     SetScore("SCORES", getPlayer()->nb_objet);
+    getScores()->rect.x = 100;
+    getScores()->rect.y = 300;
+ 
 
     //chargement du son
 /* Son a modifier */
@@ -168,15 +171,9 @@ extern void Input_MenuGameOver(SDL_Event *event)
                     suppListe(getCollider());
                     suppListe(getEnnemis());
                     suppListe(getBullets());
-<<<<<<< HEAD
                     actualiserJoueur();
                     PlayerScore("SCORES : 0", 10, 0);
-=======
-                    NettoyerScore();
-                    
-                    actualiserJoueur();
-                        PlayerScore("SCORES : 0", 100, 300);
->>>>>>> Fix 0.1 menu game over
+
                     getBaseGame()->state = IN_GAME;
                     ChargerNiveau();
                     // Nettoyer_MenuPrincipal();
@@ -237,14 +234,10 @@ extern void Nettoyer_MenuGameOver()
 
 extern void Init_GameOver()
 {
-<<<<<<< HEAD
+
 
     getPlayer()->estMort = true;
     Nettoyer_MenuPrincipal();
-=======
-    
-    getPlayer()->estMort = true;
->>>>>>> Fix 0.1 menu game over
     Init_MenuGameOver();
     DestructionNiveau();
     getBaseGame()->state = GAMEOVER;
