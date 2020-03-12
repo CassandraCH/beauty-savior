@@ -8,9 +8,7 @@
  */
 
 #include "baseGame.h"
-    // #include "menuPrincipal.h"
-    // #include "constantes.h"
-    // #include "commun.h"
+
 
     Menu_t menu;
 

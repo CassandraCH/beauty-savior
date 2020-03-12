@@ -20,7 +20,7 @@
 #include "enjeu.h"
 #include "entite.h"
 #include "menuPrincipal.h"
-
+#include "gameOver.h"
 
 typedef struct baseGame 
 {

@@ -148,7 +148,7 @@ extern void CollisionItems()
             {
                pt->estMort = true;
                supprimeCible(getItems(), true);
-               SetScore(++player.nb_objet);
+               SetScore("Scores:", ++player.nb_objet);
             }
             break;
         }
@@ -232,20 +232,9 @@ extern void attaqueJoueur()
     if ( getPlayer()->nb_objet > 0 )
     {
 
-      // SDL_Rect *rect = malloc(sizeof(SDL_Rect));
-
-        // rect->w = 41;
-        // rect->h = 47;
-        // rect->y = ( getPlayer()->y+  getPlayer()->h  / 2 ) - rect->h/2;
-
-        // if( getPlayer()->estTourne )
-        //     rect->x =  getPlayerX() - (getPlayer()->w/2);
-        // else
-        //     rect->x =  getPlayerX() + (getPlayer()->w/2) ;
-
-        // insertion(&bullet, rect, bull );
+      
         CreerTir(bull, getPlayer()->w , getPlayer()->h, getPlayerX(),  getPlayerY() );
-        SetScore(--player.nb_objet);
+        SetScore("Scores",--player.nb_objet);
 
     }
     return;

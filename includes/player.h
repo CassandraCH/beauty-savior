@@ -13,7 +13,7 @@ typedef struct player
 
     /**
         Données pour l'animation 
-    */
+   */
     int m_frameWidth, m_frameHeight;
     int m_textureWidth, m_textureHeight;
     
@@ -24,14 +24,15 @@ typedef struct player
     SDL_Rect playerRect;
     SDL_Rect playerPosition;
     int originX, originY;
+    float animationSpeed;
     
+ 
     int frame;
-
     bool estActif;
     bool estTourne;
 
     bool estSurSol;
-    float animationSpeed;
+ 
 
     int nombreVies;
     bool ralenti;

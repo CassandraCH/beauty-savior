@@ -27,23 +27,26 @@ Base_Game* getBaseGame()
 
 /**
  * \fn extern void Update(float dt)
- * \brief Mise à jour 
- * \details On fait appel à la fonction \a somme1(int n) et on multiplie par 2 son résultat
+ * \brief Fonction qui permet gerer...
+ * \details 
  * \param dt valeur du delta-time
+ * \return pas de retour (void)
 */
 extern void Update(float dt)
 { 
-
+ 
     if ( game.state == MENU_PRINCIPAL )
     {
         if( !Mix_PlayingMusic() )
           Mix_PlayMusic(getMenu()->bgm, -1);
+
     }
     else if ( game.state == IN_GAME )
     {   
        
-        getBaseGame()->time++;
-        setTimerBullet(0);
+       // Timer
+         getBaseGame()->time++;
+        setTimerBullet(0); 
 
         attaqueEnnemis();
 
@@ -53,15 +56,19 @@ extern void Update(float dt)
         UpdateEnnemis();
     
         collision_tir();
-
         CollisionItems(); 
         collisionDetection();
         
     }
       
 }
-    
 
+/**
+ * \fn extern void Rendu_Jeux()
+ * \brief ...
+ * \details ...
+ * \return pas de retour (void)
+*/
 extern void Rendu_Jeux() 
 {
       
@@ -103,12 +110,13 @@ extern void Rendu_Jeux()
     {
       // A définir 
     }
+    else if (getBaseGame()->state == GAMEOVER)
+    {
+      Dessiner_MenuGameOver();
+      AfficherScores();
+    }
 
-    
-
-
-
-  SDL_RenderPresent( getRenderer() );
+    SDL_RenderPresent(getRenderer());
 
 
 }

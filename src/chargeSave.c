@@ -21,7 +21,6 @@ extern void ChargerPartie()
     {
         printf( "Score charger: %f-%f\n", getPlayer()->x, getPlayer()->y);
         fclose(file);
-
     }
 }
 

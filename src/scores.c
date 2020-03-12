@@ -63,7 +63,7 @@ extern void AfficherScores()
 }
 
 
-extern void SetScore(int scores)
+extern void SetScore(const char * nom, int scores)
 {
     SDL_Texture * tex = score.tex;
 
@@ -73,8 +73,11 @@ extern void SetScore(int scores)
         SDL_DestroyTexture(score.tex);
     }
 
-    char sc[20];
-    sprintf( sc, "PIECES: %d" , scores ); 
+    char sc[30];
+
+    memset(sc,' ', 30);
+
+    sprintf( sc, "%s : %d" , nom, scores ); 
     
     score.surface = TTF_RenderText_Solid(score.police, sc, (SDL_Color){0, 0, 0,0});
     score.tex = SDL_CreateTextureFromSurface( getRenderer() , score.surface );
