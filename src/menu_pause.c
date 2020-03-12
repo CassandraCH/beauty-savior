@@ -19,8 +19,8 @@ extern void Init_MenuPause()
      */ 
 
     menu_pause.menu[0].nomOption = "Reprendre partie";
-    menu_pause.menu[0].filename[0] = "graphics_assets/back_on_xs.png";
-    menu_pause.menu[0].filename[1] = "graphics_assets/back_off_xs.png";
+    menu_pause.menu[0].filename[0] = "graphics_assets/icons_buttons/back_on_xs.png";
+    menu_pause.menu[0].filename[1] = "graphics_assets/icons_buttons/back_off_xs.png";
 
     //Refraichissement de l'affichage de l'option
     UpdateOption( &menu_pause.menu[0], 0  );
@@ -33,8 +33,8 @@ extern void Init_MenuPause()
      * Deuxieme option : Retour sur le menu principal
      */
     menu_pause.menu[1].nomOption = "Retour menu";
-    menu_pause.menu[1].filename[0] = "graphics_assets/menu_on_xs.png";
-    menu_pause.menu[1].filename[1] = "graphics_assets/menu_off_xs.png";
+    menu_pause.menu[1].filename[0] = "graphics_assets/icons_buttons/menu_on_xs.png";
+    menu_pause.menu[1].filename[1] = "graphics_assets/icons_buttons/menu_off_xs.png";
 
     //Refraichissement de l'affichage de l'option
     UpdateOption(&menu_pause.menu[1], 1);
@@ -98,7 +98,8 @@ extern void Input_MenuPause(SDL_Event *event)
                     break;
                 case 1:
                     
-                    getBaseGame()->state = MENU_PRINCIPAL;                    
+                    actualiserJoueur();   
+                    getBaseGame()->state = MENU_PRINCIPAL;       
                     return;
 
                     break;

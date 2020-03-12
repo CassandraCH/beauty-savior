@@ -61,7 +61,7 @@ extern SDL_Rect camera;
 /*####### FONCTION PRINCIPAL ############ */
 extern void Init(const char *title);
 extern void Update(float dt);
-extern void Quitter_Jeux();
+extern void LibererRessources_Jeux();
 extern void Rendu_Jeux() ;
 void delay(unsigned int frameLimit);
 

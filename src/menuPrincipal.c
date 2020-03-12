@@ -48,8 +48,8 @@ extern void Init_MenuPrincipal()
      */ 
 
     menu.menu[0].nomOption = "Jouer";
-    menu.menu[0].filename[0] = "graphics_assets/jouer_on_xs.png";
-    menu.menu[0].filename[1] = "graphics_assets/jouer_off_xs.png";
+    menu.menu[0].filename[0] = "graphics_assets/icons_buttons/jouer_on_xs.png";
+    menu.menu[0].filename[1] = "graphics_assets/icons_buttons/jouer_off_xs.png";
 
     //Refraichissement de l'affichage de l'option
     UpdateOption( &menu.menu[0], 0  );
@@ -62,8 +62,8 @@ extern void Init_MenuPrincipal()
      * Deuxieme option : Chargement d'un partie
      */
     menu.menu[1].nomOption = "Chargement";
-    menu.menu[1].filename[0] = "graphics_assets/load_on_xs.png";
-    menu.menu[1].filename[1] = "graphics_assets/load_off_xs.png";
+    menu.menu[1].filename[0] = "graphics_assets/icons_buttons/load_on_xs.png";
+    menu.menu[1].filename[1] = "graphics_assets/icons_buttons/load_off_xs.png";
 
     //Refraichissement de l'affichage de l'option
     UpdateOption(&menu.menu[1], 1);
@@ -75,8 +75,8 @@ extern void Init_MenuPrincipal()
      * Troisieme option : quitter le jeu 
      */
     menu.menu[2].nomOption = "Quitter";
-    menu.menu[2].filename[0] = "graphics_assets/quitter_on_xs.png";
-    menu.menu[2].filename[1] = "graphics_assets/quitter_off_xs.png";
+    menu.menu[2].filename[0] = "graphics_assets/icons_buttons/quitter_on_xs.png";
+    menu.menu[2].filename[1] = "graphics_assets/icons_buttons/quitter_off_xs.png";
 
     //Refraichissement de l'affichage de l'option
     UpdateOption(&menu.menu[2], 1  );
@@ -89,8 +89,8 @@ extern void Init_MenuPrincipal()
      * Quatrième option : Couper/Activer Son
      */
     menu.menu[3].nomOption = "Son";
-    menu.menu[3].filename[0] = "graphics_assets/sound_on_xs.png";
-    menu.menu[3].filename[1] = "graphics_assets/sound_off_xs.png";
+    menu.menu[3].filename[0] = "graphics_assets/icons_buttons/sound_on_xs.png";
+    menu.menu[3].filename[1] = "graphics_assets/icons_buttons/sound_off_xs.png";
 
 
     //Refraichissement de l'affichage de l'option

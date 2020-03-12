@@ -77,8 +77,11 @@ void Init(const char *title)
     getBaseGame()->estActif = true;
 }
 
-
-void Quitter_Jeux()
+/**
+ *  S'occupe de la libération de toutes les ressources du jeux
+ *  Ainsi que de la destruction du Renderer et du Window
+ */
+void LibererRessources_Jeux()
 {
      
     SDL_DestroyWindow(fenetre) ;
