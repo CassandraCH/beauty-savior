@@ -81,20 +81,23 @@ void Init(const char *title)
 void Quitter_Jeux()
 {
      
+    SDL_DestroyWindow(fenetre) ;
+    SDL_DestroyRenderer (rendu);
+    rendu = NULL;
+    fenetre = NULL;
+    
     Mix_FreeChunk(getMenu()->son);
     Mix_FreeMusic( getMenu()->bgm  );
     TTF_CloseFont(getMenu()->police);
     TTF_CloseFont(getScores()->police);
+    
     suppListe(&bullet);
     suppListe(&listCollider);
     suppListe(&listEnnemis);
-    
     Nettoyer_MenuPrincipal();
 
-    SDL_DestroyWindow(fenetre) ;
-    SDL_DestroyRenderer ( rendu);
-    rendu = NULL;
-    fenetre = NULL;
     TTF_Quit();
     SDL_Quit();
+    
+    printf("fin sdl quit\n");
 }

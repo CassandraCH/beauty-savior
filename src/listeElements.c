@@ -119,16 +119,18 @@ extern void insertion(LinkedList * list, SDL_Rect *rect, typeEntite items_t, boo
 
 extern void suppListe(LinkedList * lst)
 {
-    Node * temp;
-    Node * current = lst->tete;
-    while( current != NULL)
+    if( lst->nodeCount > 0 ) 
     {
-        temp = current;
-        current = current->suivant;
-        free(temp);
-        lst->nodeCount--;
+        Node * temp;
+        Node * current = lst->tete;
+        while( current != NULL)
+        {
+            temp = current;
+            current = current->suivant;
+            free(temp);
+            lst->nodeCount--;
+        }
     }
-    printf("Nombres occurences :%d\n", lst->nodeCount);
     printf("TOUS LES NŒUDS DE LA LISTE ONT ETAIENT DETRUIT\n");
 }
 

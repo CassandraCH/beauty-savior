@@ -246,7 +246,7 @@ extern void Input_MenuPrincipal(SDL_Event *event)
                             suppListe(getBullets());
                             PlayerScore("PIECES: 0", 10, 0);
                             ChargerNiveau();
-                            Nettoyer_MenuPrincipal();
+                            // Nettoyer_MenuPrincipal();
                             getBaseGame()->state = IN_GAME;
                             Mix_HaltMusic();
                             return;
@@ -255,8 +255,8 @@ extern void Input_MenuPrincipal(SDL_Event *event)
                             printf("Bouton option press%c\n", 130);
                             break;
                         case 2:
-                             getBaseGame()->estActif = false;
-                                return;
+			               getBaseGame()->estActif = false;
+			                 return;
                             break;
                         default:
                             break;
@@ -292,10 +292,15 @@ extern void Nettoyer_MenuPrincipal()
 {
     // NettoyerScore();
     printf("Suppression Menu principal\n");
-    for(int i = 0; i < MAX_NUMBER; i++)
+    for(int i = 0; i < MAX_NUMBER+1; i++)
     {
-        free(menu.menu[i].texture);
+       if( menu.menu[i].texture != NULL ) 
+        {
+            free(menu.menu[i].texture);
+        }
+      
     }
+    printf("Fin Suppression Menu principal\n");
+   return;
 
-   
 }
