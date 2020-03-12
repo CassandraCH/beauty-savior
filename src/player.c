@@ -14,9 +14,11 @@ int level;
 Player player;
 Texture_Manager playerSprite;
 
+
 //Renvoie l'adresse vers de l'objet Joueur (héros)
 extern Player *getPlayer(void)
 {
+    
 	return &player;
 }
 
@@ -51,20 +53,24 @@ extern void SetValeurDuNiveau(int valeur)
 	level = valeur;
 }
 
+
 // Initialisation du joueur
 extern void InitJoueur()
 {
 	player.niveau = 1;
     player.nombreVies = 3;
+
 	// player = (Player) { 0 };
 	chargerImage(&player.tex, "graphics_assets/rect10.png");	
 	player.h = player.tex.h;
 	player.w = player.tex.w;
-	player.x = 100;
-    player.y = 100;
+	player.x = 600;
+
+	player.y = 100;
+    player.frame = 0;
+
     player.nb_lancer = 0;
     player.nb_objet = 0;
-    // player.rect =  (SDL_Rect*){0};
     player.posXDepart = 100;
     player.posYDepart = 100;
 
@@ -81,7 +87,7 @@ extern void InitJoueur()
             case SDLK_UP:
                 if( player.estSurSol )
                 {
-                    player.vy  = -10;
+                    player.vy  = -9;
                     player.estSurSol =false;
                 }
             break;
@@ -90,11 +96,10 @@ extern void InitJoueur()
         }
     }
  
-
      const Uint8 *states = SDL_GetKeyboardState(NULL);
 
  
-    if( states[SDL_SCANCODE_LEFT]  && player.x-25 > 0 ){
+    if( states[SDL_SCANCODE_LEFT]  && player.x-25 > 0  ){
         player.vx -= 0.5;
             
             if( player.vx < -6 )
@@ -105,7 +110,7 @@ extern void InitJoueur()
         player.ralenti = 0;
 
 
-    } else if(   states[SDL_SCANCODE_RIGHT] && player.x < LARGEUR_NIVEAU-player.w ){
+    } else if(   states[SDL_SCANCODE_RIGHT] && player.x < LARGEUR_NIVEAU - player.w ){
 
         player.vx += 0.5;
         if(player.vx > 6 )
@@ -117,7 +122,7 @@ extern void InitJoueur()
     }
     else { // friction
     
-       //player->animFrame =0;
+        player.frame = 0;
         player.vx *= 0.8f;
         player.ralenti = 1;
 
@@ -136,7 +141,7 @@ extern void CollisionItems()
     // Vérifie la collision avec les items
      for(pt = getItems()->tete ; pt != NULL; pt = pt->suivant)
     {
-        if(collide2d(getPlayerX(), getPlayerY(), pt->rect->x,pt->rect->y,getPlayer()->w,getPlayer()->h,pt->rect->w , pt->rect->h  ) && pt->type == item )
+        if(collide2d(getPlayerX(), getPlayerY(), pt->rect->x,pt->rect->y, player.tex.w,player.tex.h,pt->rect->w , pt->rect->h  ) && pt->type == item )
         {
 
             if( !pt->estMort )
@@ -154,18 +159,30 @@ extern void CollisionItems()
 
 extern void AfficherJoueur()
 {
-	SDL_Rect rec = { player.x - camera.x , player.y - camera.y , player.w, player.h};
-    SDL_RenderFillRect(getRenderer(), &rec);
-
+	SDL_Rect rec = { player.x - camera.x , player.y - camera.y , player.tex.w, player.tex.h};
+    SDL_RenderCopy(getRenderer(), player.tex.texture , NULL, &rec );
+    
 }
 
-extern void UpdateJoueur(float dt)
-{
+extern void UpdateJoueur( float dt)
+{   
+
 	if( !player.estMort )
     {	
         
         player.x += player.vx;
         player.y += player.vy;
+
+        if( player.vx != 0 && player.estSurSol && !player.ralenti) 
+        {
+            if( getBaseGame()->time % 8 == 0 )
+            {
+                player.frame = player.frame + 1;
+                if( player.frame > 5 ) player.frame = 0; 
+            }
+        }
+
+
 
         player.vy += GRAVITY;
     }
@@ -201,6 +218,7 @@ extern void actualiserJoueur(void)
 
 }
 
+
 extern bool collide2d(float x1, float y1, float x2, float y2, float wt1, float ht1, float wt2, float ht2)
 {
     return (! ( (x1 > (x2+wt2)) || (x2 > (x1+wt1)) || (y1 > (y2+ht2)) || (y2 > (y1+ht1))  )  );
@@ -209,21 +227,24 @@ extern bool collide2d(float x1, float y1, float x2, float y2, float wt1, float h
 /**
  *  Fonction qui s'occupe de gérer les attaques lancer par le joueur
  */
-extern void lancerObjet()
+extern void attaqueJoueur()
 {
     if ( getPlayer()->nb_objet > 0 )
     {
-        SDL_Rect *rect = malloc(sizeof(SDL_Rect));
-        rect->w = 41;
-        rect->h = 47;
-        rect->y = ( getPlayer()->y+  getPlayer()->h  / 2 ) - rect->h/2;
 
-        if( getPlayer()->estTourne )
-            rect->x =  getPlayerX() - (getPlayer()->w/2);
-        else
-            rect->x =  getPlayerX() + (getPlayer()->w/2) ;
+      // SDL_Rect *rect = malloc(sizeof(SDL_Rect));
 
-        insertion(&bullet, rect, bull );
+        // rect->w = 41;
+        // rect->h = 47;
+        // rect->y = ( getPlayer()->y+  getPlayer()->h  / 2 ) - rect->h/2;
+
+        // if( getPlayer()->estTourne )
+        //     rect->x =  getPlayerX() - (getPlayer()->w/2);
+        // else
+        //     rect->x =  getPlayerX() + (getPlayer()->w/2) ;
+
+        // insertion(&bullet, rect, bull );
+        CreerTir(bull, getPlayer()->w , getPlayer()->h, getPlayerX(),  getPlayerY() );
         SetScore(--player.nb_objet);
 
     }
@@ -242,8 +263,8 @@ extern void collision_tir()
         {
             for(enne = getEnnemis()->tete; enne != NULL; enne = enne->suivant)
             {
-                if(collide2d( tir->rect->x , tir->rect->y, enne->rect->x,enne->rect->y,tir->rect->w ,tir->rect->h,enne->rect->w, enne->rect->h ) && enne->type == ennemi )
-                    {
+                if(collide2d( tir->rect->x , tir->rect->y, enne->rect->x,enne->rect->y,tir->rect->w ,tir->rect->h,enne->rect->w, enne->rect->h ) && enne->type == ennemi && tir->type == bull ) 
+                {
 
                         if( !enne->estMort )
                         {
@@ -254,10 +275,27 @@ extern void collision_tir()
                         }
                             
                         break;
-                    }
-
                 }
+                else if(collide2d( tir->rect->x , tir->rect->y, getPlayerX(),getPlayerY(),tir->rect->w ,tir->rect->h,getPlayer()->w, getPlayer()->h ) && tir->type == feu ) 
+                {
+                    actualiserJoueur();
+                    break;
+                }
+            }
         }
     }
 
 }
+
+extern void joueur_surSol()
+{
+    player.vy = 0;
+    // Le joueur est posé sur un bloc. 
+    if(!player.estSurSol)
+    {
+        getPlayer()->estSurSol = true;
+    }
+
+}
+
+

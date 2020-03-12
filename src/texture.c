@@ -22,13 +22,12 @@ bool chargerImage(Texture_Manager * tex,const char * filename )
     }
 
     SDL_Texture* pTexture = SDL_CreateTextureFromSurface(getRenderer() , pTempSurface);
+    tex->w = pTempSurface->w;
+    tex->h = pTempSurface->h;
 
     if(pTexture != 0)
     {
-        tex->w = pTempSurface->w;
-        tex->h = pTempSurface->h;
         SDL_FreeSurface(pTempSurface);
-        
         tex->texture = pTexture;
         return true;
     }

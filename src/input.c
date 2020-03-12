@@ -7,16 +7,6 @@
  */
 #include "baseGame.h"
 
-
-
-
-extern Input* get_Input()
-{
-    return &input;
-}
-
-
-
 /**
  * Gestion des entrées utilisateurs.
  */ 

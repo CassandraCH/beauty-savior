@@ -36,7 +36,8 @@ extern void Update(float dt)
 
     if ( game.state == MENU_PRINCIPAL )
     {
-        
+        if( !Mix_PlayingMusic() )
+          Mix_PlayMusic(getMenu()->bgm, -1);
     }
     else if ( game.state == IN_GAME )
     {   
@@ -44,10 +45,11 @@ extern void Update(float dt)
         getBaseGame()->time++;
         setTimerBullet(0);
 
-        Update_Listes();
+        attaqueEnnemis();
 
+        Update_Listes();
         UpdateJoueur(dt);
-        UpdateBullets();
+        UpdateBullets(joueur, ennemi);
         UpdateEnnemis();
     
         collision_tir();
@@ -63,7 +65,7 @@ extern void Update(float dt)
 extern void Rendu_Jeux() 
 {
       
-    SDL_SetRenderDrawColor(getRenderer(), 0,0,0,0);
+    SDL_SetRenderDrawColor(getRenderer(), 0xFF,0xFF,0xFF,0xFF);
     SDL_RenderClear( getRenderer() );
     
 
@@ -72,18 +74,22 @@ extern void Rendu_Jeux()
     {
       
       Dessiner_MenuPrincipal();
+
+      
     }
     else if ( getBaseGame()->state == IN_GAME )
     
     {
 
       Affichage_Niveau();
-
+      // Debug_AfficherCollider();
       SDL_Texture * texture = ChargerTexture("graphics_assets/rect11.png");
       SDL_Texture * itemTex = ChargerTexture("graphics_assets/coin.png");
 
+
       Afficher_ElementsListes( &listEnnemis, texture, ennemi );
       Afficher_ElementsListes( &bullet , itemTex, bull );
+      Afficher_ElementsListes( &bullet , itemTex, feu );
       
       AfficherScores();
       
@@ -104,6 +110,7 @@ extern void Rendu_Jeux()
 
   SDL_RenderPresent( getRenderer() );
 
+
 }
 /***
  * Met à jour les listes en supprimant si besoin
@@ -113,3 +120,4 @@ extern void Update_Listes()
   supprimeCible(getBullets(), true);
   supprimeCible(getEnnemis(), true);
 }
+

@@ -97,7 +97,7 @@ extern void Chargement_CreationPNJ(LinkedList*lst, char * filename)
         SDL_Rect *rect = malloc( sizeof(SDL_Rect));       
         if( fscanf(file, "%d %d %d %d %d",&typeCollider, &rect->x , &rect->y, &rect->w, &rect->h) )
         {
-            insertion(lst, rect, typeCollider);
+            insertion(lst, rect, typeCollider, false);
         }
     }
 	
@@ -120,7 +120,7 @@ extern void ChargementItems(const char * filename, SDL_Texture * tex)
         rect->w = w;
         rect->h = h;             
         if( fscanf(file, "%d %d",&rect->x , &rect->y) ){
-            insertion(getItems(),  rect, item );
+            insertion(getItems(),  rect, item , false);
         }
     }
 
@@ -136,15 +136,15 @@ extern void ChargementEnnemis(const char * filename)
         fprintf(stderr, "Erreur avec le fichier\n");
         exit(1);    
     }
-    
+    int actif;
    
     while( !feof(file) )
     {
         SDL_Rect *rect = malloc( sizeof(SDL_Rect));
-        rect->w = 50;
-        rect->h = 50;             
-        if( fscanf(file, "%d %d",&rect->x , &rect->y) ){
-            insertion(getEnnemis(),  rect, ennemi );
+        rect->w = 55;
+        rect->h = 55;             
+        if( fscanf(file, "%d %d %d",&rect->x , &rect->y, &actif ) ){
+            insertion(getEnnemis(),  rect, ennemi , actif );
         }
     }
 

@@ -10,7 +10,7 @@ typedef struct Node
   #include "attributs.h"
 
   SDL_Rect *rect;
-  
+  bool actif;
   int nb_objets;
   float baseX, baseY;
   float phase;
@@ -35,8 +35,8 @@ typedef struct
 
 extern void init_List(LinkedList *list);
 
-extern Node* creerRect(SDL_Rect*rect, typeEntite item_t);
-extern void insertion(LinkedList * list, SDL_Rect *rect, typeEntite items_t);
+extern Node* creerRect(SDL_Rect*rect, typeEntite item_t, bool actif );
+extern void insertion(LinkedList * list, SDL_Rect *rect, typeEntite items_t , bool actif);
 
 extern void deleteQueue(LinkedList *lstPtr);
 extern void Afficher_ElementsListes(LinkedList *lst,SDL_Texture * tex, typeEntite typeE);

@@ -59,7 +59,7 @@ extern void init_List(LinkedList *list)
 }
 
 
-extern Node* creerRect(SDL_Rect*rect, typeEntite item_t)
+extern Node* creerRect(SDL_Rect*rect, typeEntite item_t, bool actif ) 
 {   
     Node * nouvelElement = malloc( sizeof( Node ) );
     nouvelElement->suivant = NULL; 
@@ -69,29 +69,35 @@ extern Node* creerRect(SDL_Rect*rect, typeEntite item_t)
     nouvelElement->nb_objets = 0;
     nouvelElement->movingX = 0;
     nouvelElement->lancer = true;
-
+   
     nouvelElement->x = rect->x;
     nouvelElement->y = rect->y;
     nouvelElement->w = rect->w;
     nouvelElement->h = rect->h;
+    nouvelElement->actif = actif;
 
     if( item_t == ennemi ) 
     {
-          nouvelElement->baseX = rect->x;
+        nouvelElement->baseX = rect->x;
         nouvelElement->baseY = rect->y;
-        nouvelElement->phase = 2*3.14*(rand() % 360) / 360.0f;
-        nouvelElement->vx = -1.8f;
-        nouvelElement->vy = 0;
+
+        if( actif == true )
+         {
+            nouvelElement->phase = 2*3.14*(rand() % 360) / 360.0f;
+            nouvelElement->vx = -1.8f;
+         }
+		nouvelElement->vy = 0;
+
     }
 
     return ( nouvelElement );
 }
 
 
-extern void insertion(LinkedList * list, SDL_Rect *rect, typeEntite items_t)
+extern void insertion(LinkedList * list, SDL_Rect *rect, typeEntite items_t, bool actif)
 {
     printf("Insertion objet\n");
-  Node *nouvelElement = creerRect(rect, items_t);
+  Node *nouvelElement = creerRect(rect, items_t, actif);
 
   if (list->nodeCount == 0){
     // Cas lorsque la liste est vide
@@ -113,16 +119,18 @@ extern void insertion(LinkedList * list, SDL_Rect *rect, typeEntite items_t)
 
 extern void suppListe(LinkedList * lst)
 {
-    Node * temp;
-    Node * current = lst->tete;
-    while( current != NULL)
+    if( lst->nodeCount > 0 ) 
     {
-        temp = current;
-        current = current->suivant;
-        free(temp);
-        lst->nodeCount--;
+        Node * temp;
+        Node * current = lst->tete;
+        while( current != NULL)
+        {
+            temp = current;
+            current = current->suivant;
+            free(temp);
+            lst->nodeCount--;
+        }
     }
-    printf("Nombres occurences :%d\n", lst->nodeCount);
     printf("TOUS LES NŒUDS DE LA LISTE ONT ETAIENT DETRUIT\n");
 }
 

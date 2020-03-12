@@ -30,7 +30,7 @@ extern void Input_InGame(SDL_Event *event)
             if( getPlayer()->nb_lancer < 1 && !isKeyPressed )
             {
 
-                lancerObjet();
+                attaqueJoueur();
                 isKeyPressed = true;
                 return;
             }
@@ -46,8 +46,8 @@ extern void Input_InGame(SDL_Event *event)
 
         const Uint8 *keystates  = SDL_GetKeyboardState(NULL);
         InputJoueur(event);
-        camera.x = ( getPlayer()->x + getPlayer()->w / 2 ) - LARGEUR_FENETRE / 2;
-        camera.y = ( getPlayer()->y+  getPlayer()->h  / 2 ) - HAUTEUR_FENETRE / 2;
+        camera.x = ( getPlayer()->x + getPlayer()->tex.w / 2 ) - LARGEUR_FENETRE / 2;
+        camera.y = ( getPlayer()->y+  getPlayer()->tex.h / 2 ) - HAUTEUR_FENETRE / 2;
         
         if( camera.x < 0 )
         { 

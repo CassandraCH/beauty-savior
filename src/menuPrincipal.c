@@ -42,58 +42,85 @@ extern void Init_MenuPrincipal()
     //chargement du son
     menu.son = Mix_LoadWAV("sounds/menu_click.wav");
 
+    menu.bgm = Mix_LoadMUS("sounds/awesomeness.wav");
+
     /* 
      * Premiere option : demarer une nouvelle partie 
-     * couleur du début = rouge
+     * Actif par défaut
      */ 
-    menu.menu[0].couleur = (SDL_Color) {0xFF, 0, 0,0 };
-    menu.menu[0].nomOption = "Play";
+
+    menu.menu[0].nomOption = "Jouer";
+    menu.menu[0].filename[0] = "graphics_assets/jouer_on_xs.png";
+    menu.menu[0].filename[1] = "graphics_assets/jouer_off_xs.png";
 
     //Refraichissement de l'affichage de l'option
-    UpdateOption( &menu.menu[0] );
+    UpdateOption( &menu.menu[0], 0  );
     
     //Position (en x et y) de l'option dans la fenetre
-    menu.menu[0].x = (width / 2) - (menu.menu[0].largeur);
-    menu.menu[0].y = height / (MAX_NUMBER + 1) * 1;
+    menu.menu[0].x = 469;
+    menu.menu[0].y = 366;
 
     /* 
-     * Deuxieme option : chargement d'une partie 
-     * couleur du début = blanc
+     * Deuxieme option : Chargement d'un partie
      */
-    menu.menu[1].couleur = (SDL_Color){0xFF, 0xFF, 0xFF, 0xFF};
-    menu.menu[1].nomOption = "Options";
+    menu.menu[1].nomOption = "Chargement";
+    menu.menu[1].filename[0] = "graphics_assets/load_on_xs.png";
+    menu.menu[1].filename[1] = "graphics_assets/load_off_xs.png";
+
     //Refraichissement de l'affichage de l'option
-    UpdateOption(&menu.menu[1]);
+    UpdateOption(&menu.menu[1], 1);
     //Position (en x et y) de l'option dans la fenetre
-    menu.menu[1].x = (width / 2) - (menu.menu[1].largeur);
-    menu.menu[1].y = height / (MAX_NUMBER + 1) * 2;
+    menu.menu[1].x = 455;
+    menu.menu[1].y = 449;
 
     /* 
      * Troisieme option : quitter le jeu 
-     * couleur du début = blanc
      */
-    menu.menu[2].couleur = (SDL_Color){0xFF, 0xFF, 0xFF, 0xFF};
-    menu.menu[2].nomOption = "Exit";
+    menu.menu[2].nomOption = "Quitter";
+    menu.menu[2].filename[0] = "graphics_assets/quitter_on_xs.png";
+    menu.menu[2].filename[1] = "graphics_assets/quitter_off_xs.png";
+
     //Refraichissement de l'affichage de l'option
-    UpdateOption(&menu.menu[2]);
+    UpdateOption(&menu.menu[2], 1  );
+    //Position (en x et y) de l'option dans la fenetremake
+
+    menu.menu[2].x = 469;
+    menu.menu[2].y = 491;
+
+     /* 
+     * Quatrième option : Couper/Activer Son
+     */
+    menu.menu[3].nomOption = "Son";
+    menu.menu[3].filename[0] = "graphics_assets/sound_on_xs.png";
+    menu.menu[3].filename[1] = "graphics_assets/sound_off_xs.png";
+
+
+    //Refraichissement de l'affichage de l'option
+    UpdateOption(&menu.menu[3], 0  );
     //Position (en x et y) de l'option dans la fenetre
-    menu.menu[2].x = (width / 2) - (menu.menu[2].largeur);
-    menu.menu[2].y = height / (MAX_NUMBER + 1) * 3;
+    menu.menu[3].x = 487;
+    menu.menu[3].y = 627;
+
 
     //Option selectionnee = la premiere (nouvelle partie)
     menu.selectedOption = 0;
+
+    menu.bg = ChargerTexture("graphics_assets/menu_bg_xs.png");
+
+
 }
 
 /* 
  * Fonction qui rafraichit l'affichage des Options 
  */
-extern void UpdateOption(Options_t * menut)
+extern void UpdateOption(Options_t * menut, int etat )
 {
     /* 
      * Surface tampon => utile pour parametrer la surface
      * TTF_RenderText_Blended => permet de creer une surface et de l'affiche en haute qualite 
      */
-    SDL_Surface *tmp = TTF_RenderText_Blended(menu.police, menut->nomOption, menut->couleur);
+    // SDL_Surface *tmp = TTF_RenderText_Blended(menu.police, menut->nomOption, menut->couleur);
+    SDL_Surface *tmp = IMG_Load( menut->filename[etat] );
     menut->largeur = tmp->w;
     menut->hauteur = tmp->h;
 
@@ -121,18 +148,15 @@ extern void ToucheHaut()
     //Si on est sur la premiere option => on ne peut pas aller sur une option au-dessus
     if (menu.selectedOption - 1 >= 0)
     {  
-        //Pour l'option actuelle => changer la couleur (mettre blanc)
-        menu.menu[menu.selectedOption].couleur = (SDL_Color){0xFF, 0xFF, 0xFF, 0xFF};
+  
         //Rafraichir l'affichage
-        UpdateOption(&menu.menu[menu.selectedOption]);
+        UpdateOption(&menu.menu[menu.selectedOption] , 1);
 
         //Modifier l'option selectionnee => passe a l'option suivante
         menu.selectedOption--;
 
-        //Pour l'option sur laquelle on veut aller => changer la couleur (mettre rouge)
-        menu.menu[menu.selectedOption].couleur = (SDL_Color){0xFF, 0, 0, 0};
         //Rafraichir l'affichage
-        UpdateOption(&menu.menu[menu.selectedOption]);
+        UpdateOption(&menu.menu[menu.selectedOption], 0 );
     }
 
 }
@@ -145,18 +169,14 @@ extern void ToucheBas()
     //Si on est sur la derniere option => on ne peut pas aller sur une option en-dessous
     if (menu.selectedOption + 1 < MAX_NUMBER)
     {
-        //Pour l'option actuelle => changer la couleur (mettre blanc)
-        menu.menu[menu.selectedOption].couleur = (SDL_Color){0xFF, 0xFF, 0xFF, 0xFF};
         //Rafraichir l'affichage
-        UpdateOption(&menu.menu[menu.selectedOption]);
+        UpdateOption(&menu.menu[menu.selectedOption], 1 );
 
         //Modifier l'option selectionnee => passe a l'option precedente
         menu.selectedOption++;
 
-        //Pour l'option sur laquelle on veut aller => changer la couleur (mettre rouge)
-        menu.menu[menu.selectedOption].couleur = (SDL_Color){0xFF, 0, 0, 0};
         //Rafraichir l'affichage
-        UpdateOption(&menu.menu[menu.selectedOption]);
+        UpdateOption(&menu.menu[menu.selectedOption], 0 );
     }
 }
 
@@ -166,16 +186,19 @@ extern void ToucheBas()
  */
 extern void Dessiner_MenuPrincipal() 
 {
+
+    SDL_Rect rect = {0,0, 1280, 720 };
+
+    SDL_RenderCopy( getRenderer(), menu.bg , NULL, &rect );
+
     //Pour chaque option, afficher a l'ecran son rendu
-	for (int i = 0; i < MAX_NUMBER; i++)
+	for (int i = 0; i < MAX_NUMBER+1; i++)
 	{
         //Rectangle tampon 
         SDL_Rect rect = {menu.menu[i].x, menu.menu[i].y, menu.menu[i].largeur, menu.menu[i].hauteur};
         SDL_RenderCopy( getRenderer(), menu.menu[i].texture , NULL, &rect);
 	}
 
-
-    
     
 }
 
@@ -223,20 +246,37 @@ extern void Input_MenuPrincipal(SDL_Event *event)
                             suppListe(getBullets());
                             PlayerScore("PIECES: 0", 10, 0);
                             ChargerNiveau();
-                            Nettoyer_MenuPrincipal();
+                            // Nettoyer_MenuPrincipal();
                             getBaseGame()->state = IN_GAME;
+                            Mix_HaltMusic();
                             return;
                             break;
                         case 1:
                             printf("Bouton option press%c\n", 130);
                             break;
                         case 2:
-                             getBaseGame()->estActif = false;
-                                return;
+			               getBaseGame()->estActif = false;
+			                 return;
                             break;
                         default:
                             break;
                     }
+                break;
+                case SDLK_s:
+                     //Si la musique est en pause
+                        if( Mix_PausedMusic() == 1 )
+                        {
+                            UpdateOption(&menu.menu[3], 0  );
+                            //On enlève la pause (la musique repart où elle en était)
+                            Mix_ResumeMusic();
+                        }
+                        //Si la musique est en train de jouer
+                        else
+                        {
+                            UpdateOption(&menu.menu[3], 1  );
+                            //On met en pause la musique
+                            Mix_PauseMusic();
+                        }    
                 break;
                 default:
                     break;
@@ -252,10 +292,15 @@ extern void Nettoyer_MenuPrincipal()
 {
     // NettoyerScore();
     printf("Suppression Menu principal\n");
-    for(int i = 0; i < MAX_NUMBER; i++)
+    for(int i = 0; i < MAX_NUMBER+1; i++)
     {
-        free(menu.menu[i].texture);
+       if( menu.menu[i].texture != NULL ) 
+        {
+            free(menu.menu[i].texture);
+        }
+      
     }
+    printf("Fin Suppression Menu principal\n");
+   return;
 
-   
 }

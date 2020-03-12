@@ -44,7 +44,7 @@ void Init(const char *title)
     }
 
     /*############### CHARGEMENT DES POLICES *###############*/
-    getMenu()->police = TTF_OpenFont("fonts/Crazy-Pixel.ttf", 48);
+    getMenu()->police = TTF_OpenFont("fonts/homizio.ttf", 20);
     if(!getMenu()->police )
     {
         printf("Cannot find font file!!\n");
@@ -81,19 +81,23 @@ void Init(const char *title)
 void Quitter_Jeux()
 {
      
+    SDL_DestroyWindow(fenetre) ;
+    SDL_DestroyRenderer (rendu);
+    rendu = NULL;
+    fenetre = NULL;
+    
     Mix_FreeChunk(getMenu()->son);
+    Mix_FreeMusic( getMenu()->bgm  );
     TTF_CloseFont(getMenu()->police);
     TTF_CloseFont(getScores()->police);
+    
     suppListe(&bullet);
     suppListe(&listCollider);
     suppListe(&listEnnemis);
-    
     Nettoyer_MenuPrincipal();
 
-    SDL_DestroyWindow(fenetre) ;
-    SDL_DestroyRenderer ( rendu);
-    rendu = NULL;
-    fenetre = NULL;
     TTF_Quit();
     SDL_Quit();
+    
+    printf("fin sdl quit\n");
 }
