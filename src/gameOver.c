@@ -31,6 +31,8 @@ extern void Init_MenuGameOver()
     // PlayerScorrect->e("SCORE
     // PlayerScorrect->y("S4ORES : 0", 10, 0);
 
+    SetScore("SCORES", getPlayer()->nb_objet);
+
     //chargement du son
 /* Son a modifier */
     menu_over.son = Mix_LoadWAV("sounds/menu_click.wav");
@@ -46,6 +48,7 @@ extern void Init_MenuGameOver()
 /* Changer les fichiers => mettre "nouvelle partie" */
     menu_over.menu[0].filename[0] = "graphics_assets/icons_buttons/newpartie_on_xs.png";
     menu_over.menu[0].filename[1] = "graphics_assets/icons_buttons/newpartie_off_xs.png";
+
 
     //Refraichissement de l'affichage de l'option
     UpdateOption(&menu_over.menu[0], 0);
@@ -165,8 +168,15 @@ extern void Input_MenuGameOver(SDL_Event *event)
                     suppListe(getCollider());
                     suppListe(getEnnemis());
                     suppListe(getBullets());
+<<<<<<< HEAD
                     actualiserJoueur();
                     PlayerScore("SCORES : 0", 10, 0);
+=======
+                    NettoyerScore();
+                    
+                    actualiserJoueur();
+                        PlayerScore("SCORES : 0", 100, 300);
+>>>>>>> Fix 0.1 menu game over
                     getBaseGame()->state = IN_GAME;
                     ChargerNiveau();
                     // Nettoyer_MenuPrincipal();
@@ -227,9 +237,14 @@ extern void Nettoyer_MenuGameOver()
 
 extern void Init_GameOver()
 {
+<<<<<<< HEAD
 
     getPlayer()->estMort = true;
     Nettoyer_MenuPrincipal();
+=======
+    
+    getPlayer()->estMort = true;
+>>>>>>> Fix 0.1 menu game over
     Init_MenuGameOver();
     DestructionNiveau();
     getBaseGame()->state = GAMEOVER;
