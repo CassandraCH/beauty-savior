@@ -95,6 +95,7 @@ void Quitter_Jeux()
     suppListe(&listCollider);
     suppListe(&listEnnemis);
     Nettoyer_MenuPrincipal();
+    Nettoyer_MenuGameOver();
 
     TTF_Quit();
     SDL_Quit();

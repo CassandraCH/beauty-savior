@@ -39,10 +39,10 @@ typedef struct menu
 
 
 extern void UpdateOption(Options_t * menut, int etat);
-extern int getTouchePresse();
+extern int getTouchePresse(Menu_t *menu);
 
-extern void ToucheHaut();
-extern void ToucheBas();
+extern void ToucheHaut(Menu_t * menu);
+extern void ToucheBas(Menu_t *menu);
 
 extern void Init_MenuPrincipal();
 extern void Dessiner_MenuPrincipal();

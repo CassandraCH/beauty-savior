@@ -11,6 +11,10 @@
 
 Menu_t menu_over;
 
+extern Menu_t * getMenu_Over()
+{
+    return &menu_over;
+}
 
 /* 
  * Fonction qui initialise le menu game over
@@ -20,6 +24,8 @@ extern void Init_MenuGameOver()
 
     int width = LARGEUR_FENETRE, height = HAUTEUR_FENETRE;
     printf("Chargement Menu Game Over");
+
+    SetScore("SCORES", getPlayer()->nb_objet);
 
     //chargement du son
 /* Son a modifier */
@@ -34,8 +40,8 @@ extern void Init_MenuGameOver()
 
     menu_over.menu[0].nomOption = "Nouvelle partie";
 /* Changer les fichiers => mettre "nouvelle partie" */
-    menu_over.menu[0].filename[0] = "graphics_assets/jouer_on_xs.png";
-    menu_over.menu[0].filename[1] = "graphics_assets/jouer_off_xs.png";
+    menu_over.menu[0].filename[0] = "graphics_assets/newpartie_on_xs.png";
+    menu_over.menu[0].filename[1] = "graphics_assets/newpartie_off_xs.png";
 
     //Refraichissement de l'affichage de l'option
     UpdateOption(&menu_over.menu[0], 0);
@@ -136,27 +142,30 @@ extern void Input_MenuGameOver(SDL_Event *event)
             {
             case SDLK_UP:
                 Mix_PlayChannel(-1, getMenu()->son, 0);
-                ToucheHaut();
+                ToucheHaut(getMenu_Over());
                 break;
             case SDLK_DOWN:
                 Mix_PlayChannel(-1, getMenu()->son, 0);
-                ToucheBas();
+                ToucheBas(getMenu_Over());
                 break;
             case SDLK_LEFT:
 
                 break;
             case SDLK_RETURN:
-                switch (getTouchePresse())
+                switch (getTouchePresse(getMenu_Over()))
                 {
                 case 0:
                     getPlayer()->estMort = false;
                     suppListe(getCollider());
                     suppListe(getEnnemis());
                     suppListe(getBullets());
-                    PlayerScore("PIECES: 0", 10, 0);
+                    NettoyerScore();
+                    
+                    actualiserJoueur();
+                        PlayerScore("SCORES : 0", 100, 300);
+                    getBaseGame()->state = IN_GAME;
                     ChargerNiveau();
                     // Nettoyer_MenuPrincipal();
-                    getBaseGame()->state = IN_GAME;
                     Mix_HaltMusic();
                     return;
                     break;
@@ -200,7 +209,7 @@ extern void Input_MenuGameOver(SDL_Event *event)
 extern void Nettoyer_MenuGameOver()
 {
     // NettoyerScore();
-    printf("Suppression Menu principal\n");
+    printf("Suppression Menu Game Over\n");
     for (int i = 0; i < MAX_NUMBER + 1; i++)
     {
         if (menu_over.menu[i].texture != NULL)
@@ -208,6 +217,18 @@ extern void Nettoyer_MenuGameOver()
             free(menu_over.menu[i].texture);
         }
     }
-    printf("Fin Suppression Menu principal\n");
+    printf("Fin Suppression Menu Game Over\n");
     return;
+}
+
+extern void Init_GameOver()
+{
+    
+    getPlayer()->estMort = true;
+    Init_MenuGameOver();
+    DestructionNiveau();
+    getBaseGame()->state = GAMEOVER;
+    getBaseGame()->time = 0;
+    setTimerBullet(0);
+    
 }

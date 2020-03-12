@@ -23,9 +23,9 @@ extern Menu_t* getMenu()
 /* 
  * Fonction qui retourne l'option du menu selectionne
  */
-extern int getTouchePresse()
+extern int getTouchePresse(Menu_t *menu)
 { 
-    return menu.selectedOption; 
+    return menu->selectedOption; 
 }
 
 /* 
@@ -140,41 +140,41 @@ extern void UpdateOption(Options_t * menut, int etat )
 /*
  * Fonction qui permer de naviguer dans le menu vers le haut
  */
-extern void ToucheHaut()
+extern void ToucheHaut(Menu_t *menu)
 {
     //Si l'option actuellement selectionnee est differente de la premiere
     //Si on est sur la premiere option => on ne peut pas aller sur une option au-dessus
-    if (menu.selectedOption - 1 >= 0)
+    if (menu->selectedOption - 1 >= 0)
     {  
   
         //Rafraichir l'affichage
-        UpdateOption(&menu.menu[menu.selectedOption] , 1);
+        UpdateOption(&menu->menu[menu->selectedOption] , 1);
 
         //Modifier l'option selectionnee => passe a l'option suivante
-        menu.selectedOption--;
+        menu->selectedOption--;
 
         //Rafraichir l'affichage
-        UpdateOption(&menu.menu[menu.selectedOption], 0 );
+        UpdateOption(&menu->menu[menu->selectedOption], 0 );
     }
 
 }
 /*
  * Fonction qui permer de naviguer dans le menu vers le bas
  */
-extern void ToucheBas()
+extern void ToucheBas(Menu_t *menu)
 {
     //Si l'option actuellement selectionnee est differente de la derniere
     //Si on est sur la derniere option => on ne peut pas aller sur une option en-dessous
-    if (menu.selectedOption + 1 < MAX_NUMBER)
+    if (menu->selectedOption + 1 < MAX_NUMBER)
     {
         //Rafraichir l'affichage
-        UpdateOption(&menu.menu[menu.selectedOption], 1 );
+        UpdateOption(&menu->menu[menu->selectedOption], 1);
 
         //Modifier l'option selectionnee => passe a l'option precedente
-        menu.selectedOption++;
+        menu->selectedOption++;
 
         //Rafraichir l'affichage
-        UpdateOption(&menu.menu[menu.selectedOption], 0 );
+        UpdateOption(&menu->menu[menu->selectedOption], 0);
     }
 }
 
@@ -225,24 +225,24 @@ extern void Input_MenuPrincipal(SDL_Event *event)
             {
                 case SDLK_UP:
                     Mix_PlayChannel(-1, getMenu()->son, 0);
-                    ToucheHaut();
+                    ToucheHaut(getMenu());
                     break;
                 case SDLK_DOWN:
                     Mix_PlayChannel(-1, getMenu()->son, 0);
-                    ToucheBas();
+                    ToucheBas(getMenu());
                     break;
                 case SDLK_LEFT:
             
                     break;
                 case SDLK_RETURN:
-                    switch ( getTouchePresse() )
+                    switch (getTouchePresse(getMenu()))
                     {
                         case 0:
                             getPlayer()->estMort = false;
                             suppListe( getCollider() );
                             suppListe(getEnnemis());
                             suppListe(getBullets());
-                            PlayerScore("PIECES: 0", 10, 0);
+                            PlayerScore("SCORES : 0", 10, 0);
                             ChargerNiveau();
                             // Nettoyer_MenuPrincipal();
                             getBaseGame()->state = IN_GAME;

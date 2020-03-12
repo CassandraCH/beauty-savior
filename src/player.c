@@ -148,7 +148,7 @@ extern void CollisionItems()
             {
                pt->estMort = true;
                supprimeCible(getItems(), true);
-               SetScore("Scores:", ++player.nb_objet);
+               SetScore("SCORES", ++player.nb_objet);
             }
             break;
         }
@@ -198,22 +198,17 @@ extern void actualiserJoueur(void)
         //     printf("Il reste %d points de vie\n", getPlayer()->nombreVies );
         // }else 
         // {
-            player.estMort = true;
-            Init_MenuPrincipal();
-            DestructionNiveau();
-            getBaseGame()->state = MENU_PRINCIPAL;
-            
-        // }
-        PlayerScore("Scores: 0", 50, 50);
-        player.nb_lancer = 0;
-        player.x = player.posXDepart;
-        player.y = player.posYDepart;
-        player.vx = 0;
-        getBaseGame()->time = 0;
-        setTimerBullet(0);
-        player.nb_objet = 0;
+           
 
-        return;
+            // }
+            PlayerScore("Scores: 0", 50, 50);
+            player.nb_lancer = 0;
+            player.x = player.posXDepart;
+            player.y = player.posYDepart;
+            player.vx = 0;
+            player.nb_objet = 0;
+
+            return;
     }
 
 }
@@ -234,7 +229,7 @@ extern void attaqueJoueur()
 
       
         CreerTir(bull, getPlayer()->w , getPlayer()->h, getPlayerX(),  getPlayerY() );
-        SetScore("Scores",--player.nb_objet);
+        SetScore("SCORES",--player.nb_objet);
 
     }
     return;
@@ -267,7 +262,7 @@ extern void collision_tir()
                 }
                 else if(collide2d( tir->rect->x , tir->rect->y, getPlayerX(),getPlayerY(),tir->rect->w ,tir->rect->h,getPlayer()->w, getPlayer()->h ) && tir->type == feu ) 
                 {
-                    actualiserJoueur();
+                    Init_GameOver();
                     break;
                 }
             }

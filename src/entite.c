@@ -214,7 +214,8 @@ extern void collisionDetection()
                 else
                 {
                     // Sinon c'est que le joueur rentre en collision sur le côté. 
-                    actualiserJoueur(); 
+                    //actualiserJoueur(); 
+                    Init_GameOver();
                 }
             } 
 
@@ -226,7 +227,8 @@ extern void collisionDetection()
     //Vérifie si le joueur tombe dans le vide et qu'il dépasse la hauteur de l'écran
     if( getPlayer()->y > 720 ) 
     {
-        actualiserJoueur();
+        //actualiserJoueur();
+        Init_GameOver();
     }
     // Vérifie les collisions avec le décor
     collision_Decor(joueur,joueur_w, joueur_h, &getPlayer()->x , &getPlayer()->y , &getPlayer()->vy , &getPlayer()->estSurSol );
