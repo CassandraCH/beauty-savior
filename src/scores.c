@@ -50,9 +50,13 @@ extern void PlayerScore(const char * text, int x,  int y)
 
 extern void NettoyerScore()
 {
-    printf("Nettoyer scores\n");
-    SDL_FreeSurface(score.surface);
-    SDL_DestroyTexture(score.tex);  
+    if(score.tex != NULL)
+    {
+        printf("Nettoyer scores\n");
+        SDL_FreeSurface(score.surface);
+        SDL_DestroyTexture(score.tex);
+    }
+    
 }
 
 extern void AfficherScores()
@@ -74,8 +78,6 @@ extern void SetScore(const char * nom, int scores)
     }
 
     char sc[30];
-
-    memset(sc,' ', 30);
 
     sprintf( sc, "%s : %d" , nom, scores ); 
     

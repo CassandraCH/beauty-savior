@@ -9,4 +9,6 @@ extern void Input_MenuGameOver(SDL_Event *event);
 
 extern void Nettoyer_MenuGameOver();
 
+extern void Init_GameOver();
+
 #endif

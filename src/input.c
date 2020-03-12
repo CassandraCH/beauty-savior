@@ -21,6 +21,8 @@ extern void ProcessInput(SDL_Event * event)
    {
        Input_InGame(event);
    }
-   
-
+   else if (getBaseGame()->state == GAMEOVER)
+   {
+       Input_MenuGameOver(event);
+   }
 }

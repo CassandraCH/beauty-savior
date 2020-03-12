@@ -60,7 +60,11 @@ extern void Update(float dt)
         collisionDetection();
         
     }
-      
+    else if (game.state == GAMEOVER)
+    {
+
+      /* a faire */
+    }
 }
 
 /**
