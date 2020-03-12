@@ -23,6 +23,12 @@ extern void Input_InGame(SDL_Event *event)
             getBaseGame()->estActif = false;
             return;
         }
+
+        if(event->key.keysym.sym == SDLK_p && event->type == SDL_KEYDOWN )
+        {   
+            getBaseGame()->state = PAUSE;
+            Init_MenuPause();
+        }
         
         if(event->key.keysym.sym == SDLK_a && event->type == SDL_KEYDOWN )
         {

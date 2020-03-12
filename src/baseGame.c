@@ -41,6 +41,12 @@ extern void Update(float dt)
           Mix_PlayMusic(getMenu()->bgm, -1);
 
     }
+    else if ( game.state == PAUSE )
+    {
+
+
+
+    }
     else if ( game.state == IN_GAME )
     {   
        
@@ -75,18 +81,29 @@ extern void Update(float dt)
 */
 extern void Rendu_Jeux() 
 {
-      
-    SDL_SetRenderDrawColor(getRenderer(), 0xFF,0xFF,0xFF,0xFF);
-    SDL_RenderClear( getRenderer() );
-    
+ 
+    if ( getBaseGame()->state != PAUSE )
+    {
+           
+      SDL_SetRenderDrawColor(getRenderer(), 0xFF,0xFF,0xFF,0);
+         SDL_RenderClear( getRenderer() );
+    }
+    else 
+    {
+      // SDL_SetRenderDrawColor(getRenderer(), 0xFF,0xFF,0xFF,0);
+     
+    }
 
-  
     if ( getBaseGame()->state == MENU_PRINCIPAL )
     {
       
       Dessiner_MenuPrincipal();
 
       
+    }
+    else if ( getBaseGame()->state == PAUSE )
+    {
+      Dessiner_MenuPause();
     }
     else if ( getBaseGame()->state == IN_GAME )
     
