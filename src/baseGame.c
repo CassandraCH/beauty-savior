@@ -114,7 +114,7 @@ extern void Rendu_Jeux()
     {
       // A définir 
     }
-    else if (getBaseGame()->state == GAMEOVER)
+    else if (getBaseGame()->state == GAMEOVER )
     {
       Dessiner_MenuGameOver();
       AfficherScores();
