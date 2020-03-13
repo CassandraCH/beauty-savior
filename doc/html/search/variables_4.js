@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['l_19',['l',['../struct_entity.html#a89606eca6b563ec68d2da2e84657736f',1,'Entity']]]
+  ['m_5fframewidth_96',['m_frameWidth',['../structplayer.html#a06970f5536dc17a71b6a1da7dec055bb',1,'player']]]
 ];

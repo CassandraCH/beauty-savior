@@ -1,4 +1,4 @@
-.TH "player" 3 "Vendredi 6 Mars 2020" "Version 0.1" "Beauty Savior" \" -*- nroff -*-
+.TH "player" 3 "Vendredi 13 Mars 2020" "Version 0.1" "Beauty Savior" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -10,10 +10,46 @@ player
 
 .in +1c
 .ti -1c
+.RI "int \fBm_frameWidth\fP"
+.br
+.ti -1c
+.RI "int \fBm_frameHeight\fP"
+.br
+.ti -1c
+.RI "int \fBm_textureWidth\fP"
+.br
+.ti -1c
+.RI "int \fBm_textureHeight\fP"
+.br
+.ti -1c
 .RI "float \fBposXDepart\fP"
 .br
 .ti -1c
 .RI "float \fBposYDepart\fP"
+.br
+.ti -1c
+.RI "float \fBnumeroImage\fP"
+.br
+.ti -1c
+.RI "SDL_Rect \fBplayerRect\fP"
+.br
+.ti -1c
+.RI "SDL_Rect \fBplayerPosition\fP"
+.br
+.ti -1c
+.RI "int \fBoriginX\fP"
+.br
+.ti -1c
+.RI "int \fBoriginY\fP"
+.br
+.ti -1c
+.RI "float \fBanimationSpeed\fP"
+.br
+.ti -1c
+.RI "int \fBframe\fP"
+.br
+.ti -1c
+.RI "bool \fBestActif\fP"
 .br
 .ti -1c
 .RI "bool \fBestTourne\fP"
@@ -34,15 +70,16 @@ player
 .RI "int \fBniveau\fP"
 .br
 .ti -1c
-.RI "int \fBnb_lancer\fP"
-.br
-.ti -1c
 .RI "int \fBnb_objet\fP"
 .br
 .ti -1c
 .RI "\fBTexture_Manager\fP \fBtex\fP"
 .br
 .in -1c
+.SH "Documentation des champs"
+.PP 
+.SS "int m_frameWidth"
+Données pour l'animation 
 
 .SH "Auteur"
 .PP 

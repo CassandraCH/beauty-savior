@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['lancerobjet_60',['lancerObjet',['../player_8c.html#af32226839e24bbe39ae39df295b53c4f',1,'player.c']]]
+  ['getbasegame_83',['getBaseGame',['../base_game_8c.html#a4a9a8fc9fd5aa1cc1612a8ec90c6461e',1,'baseGame.c']]],
+  ['getscores_84',['getScores',['../scores_8c.html#ac625273c55bac118e3b28d6973104059',1,'scores.c']]]
 ];

@@ -1,4 +1,4 @@
-.TH "src/player.c" 3 "Vendredi 6 Mars 2020" "Version 0.1" "Beauty Savior" \" -*- nroff -*-
+.TH "src/player.c" 3 "Vendredi 13 Mars 2020" "Version 0.1" "Beauty Savior" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -41,7 +41,7 @@ src/player.c \- Programme qui gère le joueur\&.
 .RI "void \fBAfficherJoueur\fP ()"
 .br
 .ti -1c
-.RI "void \fBUpdateJoueur\fP (float dt)"
+.RI "void \fBUpdateJoueur\fP (float \fBdt\fP)"
 .br
 .ti -1c
 .RI "void \fBactualiserJoueur\fP (void)"
@@ -50,10 +50,13 @@ src/player.c \- Programme qui gère le joueur\&.
 .RI "bool \fBcollide2d\fP (float x1, float y1, float x2, float y2, float wt1, float ht1, float wt2, float ht2)"
 .br
 .ti -1c
-.RI "void \fBlancerObjet\fP ()"
+.RI "void \fBattaqueJoueur\fP ()"
 .br
 .ti -1c
 .RI "void \fBcollision_tir\fP ()"
+.br
+.ti -1c
+.RI "void \fBjoueur_surSol\fP ()"
 .br
 .in -1c
 .SS "Variables"
@@ -95,7 +98,7 @@ Initialisation, affichage (et actualisation en fonction des entrées clavier), p
 Gestion des tirs (attaques) et des collisions 
 .SH "Documentation des fonctions"
 .PP 
-.SS "void lancerObjet ()"
+.SS "void attaqueJoueur ()"
 Fonction qui s'occupe de gérer les attaques lancer par le joueur 
 .SH "Auteur"
 .PP 

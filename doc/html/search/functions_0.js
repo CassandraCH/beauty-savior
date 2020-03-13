@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['collisiondetection_57',['collisionDetection',['../entite_8c.html#a245251599de796f01b4d187a4bcae01b',1,'entite.c']]]
+  ['attaqueennemis_74',['attaqueEnnemis',['../entite_8c.html#adf33bce05406e0cd2662f95f88a69bad',1,'entite.c']]],
+  ['attaquejoueur_75',['attaqueJoueur',['../player_8c.html#a6eefc40165232a89552410f13c2f0e92',1,'player.c']]]
 ];

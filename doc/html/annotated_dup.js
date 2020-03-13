@@ -1,7 +1,6 @@
 var annotated_dup =
 [
     [ "baseGame", "structbase_game.html", "structbase_game" ],
-    [ "entite_s", "structentite__s.html", null ],
     [ "input", "structinput.html", "structinput" ],
     [ "item", "structitem.html", "structitem" ],
     [ "level", "structlevel.html", "structlevel" ],

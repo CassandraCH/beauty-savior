@@ -32,4 +32,5 @@ var menudata={children:[
 {text:"Liste des fichiers",url:"files.html"},
 {text:"Variables globale",url:"globals.html",children:[
 {text:"Tout",url:"globals.html"},
-{text:"Fonctions",url:"globals_func.html"}]}]}]}
+{text:"Fonctions",url:"globals_func.html"},
+{text:"Variables",url:"globals_vars.html"}]}]}]}

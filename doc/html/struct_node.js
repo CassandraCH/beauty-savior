@@ -1,5 +1,6 @@
 var struct_node =
 [
+    [ "actif", "struct_node.html#a9700370f50e0fce28f167c5c808f5faf", null ],
     [ "baseX", "struct_node.html#a55d0bd90e3b7d8747086fb4cffa628a3", null ],
     [ "baseY", "struct_node.html#aa6733345a1163765ef8e0f57d455a1ef", null ],
     [ "imageCourante", "struct_node.html#a4470157cfcbad4f362f3db062b49fba4", null ],

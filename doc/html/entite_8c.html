@@ -95,13 +95,23 @@ $(document).ready(function(){initNavTree('entite_8c.html',''); initResizable(); 
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Fonctions</h2></td></tr>
-<tr class="memitem:ab434a962f655ade402945d959b7535d2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="entite_8c.html#ab434a962f655ade402945d959b7535d2">UpdateBullets</a> ()</td></tr>
-<tr class="separator:ab434a962f655ade402945d959b7535d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48a46773f7a54ff924d3fe18676da527"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="entite_8c.html#a48a46773f7a54ff924d3fe18676da527">UpdateBullets</a> (typeEntite typeA, typeEntite typeB)</td></tr>
+<tr class="separator:a48a46773f7a54ff924d3fe18676da527"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad05db5f8734978421f1b6050b5aaeb4d"><td class="memItemLeft" align="right" valign="top"><a id="ad05db5f8734978421f1b6050b5aaeb4d"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>SetNombreTir_Ennemis</b> ()</td></tr>
+<tr class="separator:ad05db5f8734978421f1b6050b5aaeb4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad22010ae4c30b9f88efac9dc9c4aa51b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="entite_8c.html#ad22010ae4c30b9f88efac9dc9c4aa51b">CreerTir</a> (typeEntite type, int width, int height, int startX, int startY)</td></tr>
+<tr class="separator:ad22010ae4c30b9f88efac9dc9c4aa51b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf33bce05406e0cd2662f95f88a69bad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="entite_8c.html#adf33bce05406e0cd2662f95f88a69bad">attaqueEnnemis</a> ()</td></tr>
+<tr class="separator:adf33bce05406e0cd2662f95f88a69bad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6254e69c73b49b05628238188813f020"><td class="memItemLeft" align="right" valign="top"><a id="a6254e69c73b49b05628238188813f020"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>UpdateEnnemis</b> ()</td></tr>
 <tr class="separator:a6254e69c73b49b05628238188813f020"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a245251599de796f01b4d187a4bcae01b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="entite_8c.html#a245251599de796f01b4d187a4bcae01b">collisionDetection</a> ()</td></tr>
 <tr class="separator:a245251599de796f01b4d187a4bcae01b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64a10c5211d133766cb9f3fe5d75b752"><td class="memItemLeft" align="right" valign="top"><a id="a64a10c5211d133766cb9f3fe5d75b752"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>collision_Decor</b> (typeEntite type, float type_w, float type_h, float *type_x, float *type_y, float *vy, bool *estSurSol)</td></tr>
+<tr class="separator:a64a10c5211d133766cb9f3fe5d75b752"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>Programme qui gère le comportement des entités. </p>
@@ -110,6 +120,24 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>UpdateEnnemis</b> ()<
 <dl class="section date"><dt>Date</dt><dd>janvier 2020</dd></dl>
 <p>Gestion des collisions entre le joueur et le décor (plateformes), le joueur et les ennemis, les ennemis et les projectiles ou si le joueur tombe dans le vide </p>
 </div><h2 class="groupheader">Documentation des fonctions</h2>
+<a id="adf33bce05406e0cd2662f95f88a69bad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf33bce05406e0cd2662f95f88a69bad">&#9670;&nbsp;</a></span>attaqueEnnemis()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void attaqueEnnemis </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Fonction qui s'occupe de la gestion des attaques des ennemies. </p>
+
+</div>
+</div>
 <a id="a245251599de796f01b4d187a4bcae01b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a245251599de796f01b4d187a4bcae01b">&#9670;&nbsp;</a></span>collisionDetection()</h2>
 
@@ -128,8 +156,55 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>UpdateEnnemis</b> ()<
 
 </div>
 </div>
-<a id="ab434a962f655ade402945d959b7535d2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab434a962f655ade402945d959b7535d2">&#9670;&nbsp;</a></span>UpdateBullets()</h2>
+<a id="ad22010ae4c30b9f88efac9dc9c4aa51b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad22010ae4c30b9f88efac9dc9c4aa51b">&#9670;&nbsp;</a></span>CreerTir()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CreerTir </td>
+          <td>(</td>
+          <td class="paramtype">typeEntite&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>height</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>startX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>startY</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Fonction de création d'un tir Prend en paramètre le type du tir, la largeur du sprite, sa hauteur. La position en X et Y du début du tir. </p>
+
+</div>
+</div>
+<a id="a48a46773f7a54ff924d3fe18676da527"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48a46773f7a54ff924d3fe18676da527">&#9670;&nbsp;</a></span>UpdateBullets()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -137,8 +212,19 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>UpdateEnnemis</b> ()<
         <tr>
           <td class="memname">bool UpdateBullets </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">typeEntite&#160;</td>
+          <td class="paramname"><em>typeA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">typeEntite&#160;</td>
+          <td class="paramname"><em>typeB</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">

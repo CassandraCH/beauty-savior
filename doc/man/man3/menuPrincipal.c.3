@@ -1,4 +1,4 @@
-.TH "src/menuPrincipal.c" 3 "Vendredi 6 Mars 2020" "Version 0.1" "Beauty Savior" \" -*- nroff -*-
+.TH "src/menuPrincipal.c" 3 "Vendredi 13 Mars 2020" "Version 0.1" "Beauty Savior" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -17,19 +17,19 @@ src/menuPrincipal.c \- Programme qui gère le menu principal\&.
 .RI "\fBMenu_t\fP * \fBgetMenu\fP ()"
 .br
 .ti -1c
-.RI "int \fBgetTouchePresse\fP ()"
+.RI "int \fBgetTouchePresse\fP (\fBMenu_t\fP *\fBmenu\fP)"
 .br
 .ti -1c
 .RI "void \fBInit_MenuPrincipal\fP ()"
 .br
 .ti -1c
-.RI "void \fBUpdateOption\fP (\fBOptions_t\fP *menut)"
+.RI "void \fBUpdateOption\fP (\fBOptions_t\fP *menut, int etat)"
 .br
 .ti -1c
-.RI "void \fBToucheHaut\fP ()"
+.RI "void \fBToucheHaut\fP (\fBMenu_t\fP *\fBmenu\fP)"
 .br
 .ti -1c
-.RI "void \fBToucheBas\fP ()"
+.RI "void \fBToucheBas\fP (\fBMenu_t\fP *\fBmenu\fP)"
 .br
 .ti -1c
 .RI "void \fBDessiner_MenuPrincipal\fP ()"

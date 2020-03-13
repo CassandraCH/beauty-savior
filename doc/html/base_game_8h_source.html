@@ -108,66 +108,64 @@ $(document).ready(function(){initNavTree('base_game_8h_source.html',''); initRes
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;enjeu.h&quot;</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;entite.h&quot;</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;menuPrincipal.h&quot;</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="structbase_game.html">   24</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structbase_game.html">baseGame</a> </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">int</span> state; </div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="structbase_game.html#ad89867021ac1f6bf309e9a79313123fc">   27</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="structbase_game.html#ad89867021ac1f6bf309e9a79313123fc">estActif</a>; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">int</span> time;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}<a class="code" href="structbase_game.html">Base_Game</a>;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;menuPause.h&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;gameOver.h&quot;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="structbase_game.html">   26</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structbase_game.html">baseGame</a> </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="structbase_game.html#a89f234133d3efe315836311cbf21c64b">   28</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structbase_game.html#a89f234133d3efe315836311cbf21c64b">state</a>; </div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="structbase_game.html#ad89867021ac1f6bf309e9a79313123fc">   29</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="structbase_game.html#ad89867021ac1f6bf309e9a79313123fc">estActif</a>; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">int</span> time;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}<a class="code" href="structbase_game.html">Base_Game</a>;</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">// extern int mouseX;</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">// extern int mouseY;</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<a class="code" href="structinput.html">Input</a> <a class="code" href="structinput.html">input</a>;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;InputState keyStates[SDL_NUM_SCANCODES];</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">/*######## GETTER &amp; SETTER ######## */</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">extern</span> <a class="code" href="structinput.html">Input</a>* get_Input();</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">extern</span> SDL_Window* getWindow(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">extern</span> <a class="code" href="structbase_game.html">Base_Game</a>*  <a class="code" href="base_game_8c.html#a4a9a8fc9fd5aa1cc1612a8ec90c6461e">getBaseGame</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">extern</span> <a class="code" href="struct_linked_list.html">LinkedList</a>* getEnnemis();</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">extern</span> <a class="code" href="struct_linked_list.html">LinkedList</a>* getCollider();</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">extern</span> <a class="code" href="struct_linked_list.html">LinkedList</a>* getItems();</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">extern</span> <a class="code" href="struct_linked_list.html">LinkedList</a>* getBullets();</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">extern</span> <a class="code" href="structscore.html">Scores</a>* <a class="code" href="scores_8c.html#ac625273c55bac118e3b28d6973104059">getScores</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">extern</span> <a class="code" href="structmenu.html">Menu_t</a>* getMenu(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">int</span> getTimerBullet();</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> setTimerBullet(<span class="keywordtype">int</span> time);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">/*######## GETTER &amp; SETTER ######## */</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">extern</span> SDL_Window* getWindow(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">extern</span> <a class="code" href="structbase_game.html">Base_Game</a>*  <a class="code" href="base_game_8c.html#a4a9a8fc9fd5aa1cc1612a8ec90c6461e">getBaseGame</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">extern</span> <a class="code" href="struct_linked_list.html">LinkedList</a>* getEnnemis();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">extern</span> <a class="code" href="struct_linked_list.html">LinkedList</a>* getCollider();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">extern</span> <a class="code" href="struct_linked_list.html">LinkedList</a>* getItems();</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">extern</span> <a class="code" href="struct_linked_list.html">LinkedList</a>* getBullets();</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">extern</span> <a class="code" href="structscore.html">Scores</a>* <a class="code" href="scores_8c.html#ac625273c55bac118e3b28d6973104059">getScores</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">extern</span> <a class="code" href="structmenu.html">Menu_t</a>* getMenu(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">int</span> getTimerBullet();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> setTimerBullet(<span class="keywordtype">int</span> time);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">/*######## LISTES ######## */</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">extern</span> <a class="code" href="struct_linked_list.html">LinkedList</a> listEnnemis;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">extern</span> <a class="code" href="struct_linked_list.html">LinkedList</a> listCollider;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">extern</span> <a class="code" href="struct_linked_list.html">LinkedList</a> bullet;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">extern</span> <a class="code" href="struct_linked_list.html">LinkedList</a> items;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="base_game_8c.html#a42fd91da1c159bcb3ef0805dd742a5ce">Update_Listes</a>();</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">/*######## LISTES ######## */</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keyword">extern</span> <a class="code" href="struct_linked_list.html">LinkedList</a> listEnnemis;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">extern</span> <a class="code" href="struct_linked_list.html">LinkedList</a> listCollider;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">extern</span> <a class="code" href="struct_linked_list.html">LinkedList</a> bullet;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keyword">extern</span> <a class="code" href="struct_linked_list.html">LinkedList</a> items;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> Update_Listes();</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">int</span> tempsEcoule;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keyword">extern</span> SDL_Rect camera;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">int</span> tempsEcoule;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">extern</span> SDL_Rect camera;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">/*####### FONCTION PRINCIPAL ############ */</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> Init(<span class="keyword">const</span> <span class="keywordtype">char</span> *title);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="base_game_8c.html#acb21945d67d98b8ce4fc097ead0c6515">Update</a>(<span class="keywordtype">float</span> <a class="code" href="base_game_8c.html#a778e38aa889751afffa2dea6b803e67a">dt</a>);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> Quitter_Jeux();</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="base_game_8c.html#a84b7d8c161bc3ba1be25eab70f664a67">Rendu_Jeux</a>() ;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="keywordtype">void</span> delay(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> frameLimit);</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">/*####### FONCTION PRINCIPAL ############ */</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> Init(<span class="keyword">const</span> <span class="keywordtype">char</span> *title);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> Update(<span class="keywordtype">float</span> dt);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> Quitter_Jeux();</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> Rendu_Jeux() ;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="astructbase_game_html"><div class="ttname"><a href="structbase_game.html">baseGame</a></div><div class="ttdef"><b>Definition:</b> baseGame.h:24</div></div>
-<div class="ttc" id="astructmenu_html"><div class="ttname"><a href="structmenu.html">menu</a></div><div class="ttdef"><b>Definition:</b> menuPrincipal.h:27</div></div>
-<div class="ttc" id="astructbase_game_html_ad89867021ac1f6bf309e9a79313123fc"><div class="ttname"><a href="structbase_game.html#ad89867021ac1f6bf309e9a79313123fc">baseGame::estActif</a></div><div class="ttdeci">bool estActif</div><div class="ttdef"><b>Definition:</b> baseGame.h:27</div></div>
-<div class="ttc" id="astructinput_html"><div class="ttname"><a href="structinput.html">input</a></div><div class="ttdef"><b>Definition:</b> inputs.h:9</div></div>
+<div class="ttc" id="astructbase_game_html"><div class="ttname"><a href="structbase_game.html">baseGame</a></div><div class="ttdef"><b>Definition:</b> baseGame.h:26</div></div>
+<div class="ttc" id="astructmenu_html"><div class="ttname"><a href="structmenu.html">menu</a></div><div class="ttdef"><b>Definition:</b> menuPrincipal.h:28</div></div>
+<div class="ttc" id="astructbase_game_html_ad89867021ac1f6bf309e9a79313123fc"><div class="ttname"><a href="structbase_game.html#ad89867021ac1f6bf309e9a79313123fc">baseGame::estActif</a></div><div class="ttdeci">bool estActif</div><div class="ttdef"><b>Definition:</b> baseGame.h:29</div></div>
+<div class="ttc" id="abase_game_8c_html_a42fd91da1c159bcb3ef0805dd742a5ce"><div class="ttname"><a href="base_game_8c.html#a42fd91da1c159bcb3ef0805dd742a5ce">Update_Listes</a></div><div class="ttdeci">void Update_Listes()</div><div class="ttdoc">Fonction qui met a jour les listes de bullets et ennemis.</div><div class="ttdef"><b>Definition:</b> baseGame.c:131</div></div>
+<div class="ttc" id="astructbase_game_html_a89f234133d3efe315836311cbf21c64b"><div class="ttname"><a href="structbase_game.html#a89f234133d3efe315836311cbf21c64b">baseGame::state</a></div><div class="ttdeci">int state</div><div class="ttdef"><b>Definition:</b> baseGame.h:28</div></div>
 <div class="ttc" id="astruct_linked_list_html"><div class="ttname"><a href="struct_linked_list.html">LinkedList</a></div><div class="ttdef"><b>Definition:</b> listeElements.h:26</div></div>
+<div class="ttc" id="abase_game_8c_html_a778e38aa889751afffa2dea6b803e67a"><div class="ttname"><a href="base_game_8c.html#a778e38aa889751afffa2dea6b803e67a">dt</a></div><div class="ttdeci">float dt</div><div class="ttdef"><b>Definition:</b> baseGame.c:16</div></div>
+<div class="ttc" id="abase_game_8c_html_a84b7d8c161bc3ba1be25eab70f664a67"><div class="ttname"><a href="base_game_8c.html#a84b7d8c161bc3ba1be25eab70f664a67">Rendu_Jeux</a></div><div class="ttdeci">void Rendu_Jeux()</div><div class="ttdoc">Fonction qui permet de gérer le rendu.</div><div class="ttdef"><b>Definition:</b> baseGame.c:74</div></div>
 <div class="ttc" id="astructscore_html"><div class="ttname"><a href="structscore.html">score</a></div><div class="ttdef"><b>Definition:</b> scores.h:8</div></div>
+<div class="ttc" id="abase_game_8c_html_acb21945d67d98b8ce4fc097ead0c6515"><div class="ttname"><a href="base_game_8c.html#acb21945d67d98b8ce4fc097ead0c6515">Update</a></div><div class="ttdeci">void Update(float dt)</div><div class="ttdoc">Fonction qui permet gerer les comportements des entités si on se trouve dans une partie et gerer le s...</div><div class="ttdef"><b>Definition:</b> baseGame.c:35</div></div>
 <div class="ttc" id="ascores_8c_html_ac625273c55bac118e3b28d6973104059"><div class="ttname"><a href="scores_8c.html#ac625273c55bac118e3b28d6973104059">getScores</a></div><div class="ttdeci">Scores * getScores()</div><div class="ttdoc">Retourne l'instance de l'objet score.</div><div class="ttdef"><b>Definition:</b> scores.c:22</div></div>
-<div class="ttc" id="abase_game_8c_html_a4a9a8fc9fd5aa1cc1612a8ec90c6461e"><div class="ttname"><a href="base_game_8c.html#a4a9a8fc9fd5aa1cc1612a8ec90c6461e">getBaseGame</a></div><div class="ttdeci">Base_Game * getBaseGame()</div><div class="ttdoc">Fonction qui.</div><div class="ttdef"><b>Definition:</b> baseGame.c:23</div></div>
+<div class="ttc" id="abase_game_8c_html_a4a9a8fc9fd5aa1cc1612a8ec90c6461e"><div class="ttname"><a href="base_game_8c.html#a4a9a8fc9fd5aa1cc1612a8ec90c6461e">getBaseGame</a></div><div class="ttdeci">Base_Game * getBaseGame()</div><div class="ttdoc">Fonction qui permet d'accéder à la structure qui gère l'état du jeu.</div><div class="ttdef"><b>Definition:</b> baseGame.c:23</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

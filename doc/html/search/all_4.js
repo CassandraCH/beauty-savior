@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['inits_2ec_10',['inits.c',['../inits_8c.html',1,'']]],
-  ['input_11',['input',['../structinput.html',1,'']]],
-  ['input_2ec_12',['input.c',['../input_8c.html',1,'']]],
-  ['item_13',['item',['../structitem.html',1,'']]]
+  ['enjeu_2ec_13',['enjeu.c',['../enjeu_8c.html',1,'']]],
+  ['entite_2ec_14',['entite.c',['../entite_8c.html',1,'']]],
+  ['estactif_15',['estActif',['../structbase_game.html#ad89867021ac1f6bf309e9a79313123fc',1,'baseGame']]]
 ];

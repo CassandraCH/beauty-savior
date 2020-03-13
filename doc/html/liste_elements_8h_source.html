@@ -98,7 +98,7 @@ $(document).ready(function(){initNavTree('liste_elements_8h_source.html',''); in
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">  #include &quot;attributs.h&quot;</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  SDL_Rect *rect;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  <span class="keywordtype">bool</span> actif;</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <span class="keywordtype">int</span> nb_objets;</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <span class="keywordtype">float</span> baseX, baseY;</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <span class="keywordtype">float</span> phase;</div>
@@ -123,8 +123,8 @@ $(document).ready(function(){initNavTree('liste_elements_8h_source.html',''); in
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> init_List(<a class="code" href="struct_linked_list.html">LinkedList</a> *list);</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">extern</span> <a class="code" href="struct_node.html">Node</a>* creerRect(SDL_Rect*rect, typeEntite item_t);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> insertion(<a class="code" href="struct_linked_list.html">LinkedList</a> * list, SDL_Rect *rect, typeEntite items_t);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">extern</span> <a class="code" href="struct_node.html">Node</a>* creerRect(SDL_Rect*rect, typeEntite item_t, <span class="keywordtype">bool</span> actif );</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> insertion(<a class="code" href="struct_linked_list.html">LinkedList</a> * list, SDL_Rect *rect, typeEntite items_t , <span class="keywordtype">bool</span> actif);</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> deleteQueue(<a class="code" href="struct_linked_list.html">LinkedList</a> *lstPtr);</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> Afficher_ElementsListes(<a class="code" href="struct_linked_list.html">LinkedList</a> *lst,SDL_Texture * tex, typeEntite typeE);</div>

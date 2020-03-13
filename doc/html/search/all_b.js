@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['texture_2ec_29',['texture.c',['../texture_8c.html',1,'']]],
-  ['textures_30',['textures',['../structtextures.html',1,'']]]
+  ['player_35',['player',['../structplayer.html',1,'']]],
+  ['player_2ec_36',['player.c',['../player_8c.html',1,'']]],
+  ['processinput_37',['ProcessInput',['../input_8c.html#af9658d8e7a4d94f46954586e8f10d5a1',1,'input.c']]]
 ];

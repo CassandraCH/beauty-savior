@@ -4,6 +4,7 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
     [ "chargeSave.c", "charge_save_8c.html", "charge_save_8c" ],
     [ "enjeu.c", "enjeu_8c.html", "enjeu_8c" ],
     [ "entite.c", "entite_8c.html", "entite_8c" ],
+    [ "gameOver.c", "game_over_8c.html", "game_over_8c" ],
     [ "inits.c", "inits_8c.html", "inits_8c" ],
     [ "input.c", "input_8c.html", "input_8c" ],
     [ "level.c", "level_8c.html", "level_8c" ],

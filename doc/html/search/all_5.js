@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['lancerobjet_14',['lancerObjet',['../player_8c.html#af32226839e24bbe39ae39df295b53c4f',1,'player.c']]],
-  ['level_15',['level',['../structlevel.html',1,'']]],
-  ['level_2ec_16',['level.c',['../level_8c.html',1,'']]],
-  ['linkedlist_17',['LinkedList',['../struct_linked_list.html',1,'']]],
-  ['listeelements_2ec_18',['listeElements.c',['../liste_elements_8c.html',1,'']]]
+  ['game_16',['game',['../base_game_8c.html#a9e1da7e436a315594c2bfb20bc8b240c',1,'baseGame.c']]],
+  ['gameover_2ec_17',['gameOver.c',['../game_over_8c.html',1,'']]],
+  ['getbasegame_18',['getBaseGame',['../base_game_8c.html#a4a9a8fc9fd5aa1cc1612a8ec90c6461e',1,'baseGame.c']]],
+  ['getscores_19',['getScores',['../scores_8c.html#ac625273c55bac118e3b28d6973104059',1,'scores.c']]]
 ];

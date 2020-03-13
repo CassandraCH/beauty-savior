@@ -11,8 +11,6 @@
 #define HAUTEUR_NIVEAU  720
 
 //Dimensions de la fenetre
-
-
 #define LARGEUR_FENETRE 1280
 #define HAUTEUR_FENETRE 720
 
