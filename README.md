@@ -24,9 +24,9 @@ L'entièreté des visuels on était créés dans le cadre de ce projet par un me
 ## Comment jouer ?
 
 - Pour se déplacer, utilisez les flèches `gauche` - `droite`.
-- Pour effectuer un saut, utilisez la touche `espace`.
+- Pour effectuer un saut, utilisez la touche `haut`.
 - Pour mettre le jeu en pause, appuyer sur la touche `p`.
 - Pour récupérer un objet, il suffit de le toucher.
-- Pour lancer une attaque, appuyez sur la touche `a`.
+- Pour lancer une attaque, appuyez sur la touche `espace`.
 - La sauvegarde se fait automatiquement à la fin d'un niveau.
 - Pour quitter le jeu, appuyez sur `esc` ou cliquer sur la `croix`.
