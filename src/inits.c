@@ -1,3 +1,12 @@
+/**
+ * \file inits.c
+ * \author CALVADOS Cindy, CHAUMULON Cassandra, CHELLI Célia, OUSMANOVA Karina
+ * \version 1.0
+ * \date janvier 2020
+ * \brief Programme qui gère l'initialisation
+ * \brief Initialisation de la fenêtre, du rendu, du son, du menu principal, du score et du joueur 
+ * \brief Destruction du son, des ennemis, de la fenêtre, du menu prinicpal, du rendu...
+ */
 #include "commun.h"
 #include "baseGame.h"
 
@@ -68,24 +77,32 @@ void Init(const char *title)
     getBaseGame()->estActif = true;
 }
 
-
-void Quitter_Jeux()
+/**
+ *  S'occupe de la libération de toutes les ressources du jeux
+ *  Ainsi que de la destruction du Renderer et du Window
+ */
+void LibererRessources_Jeux()
 {
      
+    SDL_DestroyWindow(fenetre) ;
+    SDL_DestroyRenderer (rendu);
+    rendu = NULL;
+    fenetre = NULL;
+    
     Mix_FreeChunk(getMenu()->son);
     Mix_FreeMusic( getMenu()->bgm  );
     TTF_CloseFont(getMenu()->police);
     TTF_CloseFont(getScores()->police);
+    
     suppListe(&bullet);
     suppListe(&listCollider);
     suppListe(&listEnnemis);
-    
     Nettoyer_MenuPrincipal();
+    Nettoyer_MenuPause();
+    Nettoyer_MenuGameOver();
 
-    SDL_DestroyWindow(fenetre) ;
-    SDL_DestroyRenderer ( rendu);
-    rendu = NULL;
-    fenetre = NULL;
     TTF_Quit();
     SDL_Quit();
+    
+    printf("fin sdl quit\n");
 }

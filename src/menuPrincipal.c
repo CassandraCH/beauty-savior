@@ -1,9 +1,16 @@
-#include "baseGame.h"
-// #include "menuPrincipal.h"
-// #include "constantes.h"
-// #include "commun.h"
+/**
+ * \file menuPrincipal.c
+ * \author CALVADOS Cindy, CHAUMULON Cassandra, CHELLI Célia, OUSMANOVA Karina
+ * \version 1.0
+ * \date janvier 2020
+ * \brief Programme qui gère le menu principal
+ * \brief Initialisation, affichage du menu, navigation dans le menu, gestion des entrées clavier et destruction du menu
+ */
 
-Menu_t menu;
+#include "baseGame.h"
+
+
+    Menu_t menu;
 
 /*
  * Fonction qui retourne le menu
@@ -16,9 +23,9 @@ extern Menu_t* getMenu()
 /* 
  * Fonction qui retourne l'option du menu selectionne
  */
-extern int getTouchePresse()
+extern int getTouchePresse(Menu_t *menu)
 { 
-    return menu.selectedOption; 
+    return menu->selectedOption; 
 }
 
 /* 
@@ -37,12 +44,12 @@ extern void Init_MenuPrincipal()
 
     /* 
      * Premiere option : demarer une nouvelle partie 
-     * couleur du début = rouge
+     * Actif par défaut
      */ 
-    menu.menu[0].couleur = (SDL_Color) {0xFF, 0, 0,0 };
+
     menu.menu[0].nomOption = "Jouer";
-    menu.menu[0].filename[0] = "graphics_assets/jouer_on_xs.png";
-    menu.menu[0].filename[1] = "graphics_assets/jouer_off_xs.png";
+    menu.menu[0].filename[0] = "graphics_assets/icons_buttons/jouer_on_xs.png";
+    menu.menu[0].filename[1] = "graphics_assets/icons_buttons/jouer_off_xs.png";
 
     //Refraichissement de l'affichage de l'option
     UpdateOption( &menu.menu[0], 0  );
@@ -52,34 +59,46 @@ extern void Init_MenuPrincipal()
     menu.menu[0].y = 366;
 
     /* 
-     * Deuxieme option : chargement d'une partie 
-     * couleur du début = blanc
+     * Deuxieme option : Chargement d'un partie
      */
-    menu.menu[1].couleur = (SDL_Color){0, 0, 0, 0};
-    menu.menu[1].nomOption = "Options";
-    menu.menu[1].filename[0] = "graphics_assets/options_on_xs.png";
-    menu.menu[1].filename[1] = "graphics_assets/options_off_xs.png";
+    menu.menu[1].nomOption = "Chargement";
+    menu.menu[1].filename[0] = "graphics_assets/icons_buttons/load_on_xs.png";
+    menu.menu[1].filename[1] = "graphics_assets/icons_buttons/load_off_xs.png";
 
     //Refraichissement de l'affichage de l'option
     UpdateOption(&menu.menu[1], 1);
     //Position (en x et y) de l'option dans la fenetre
-    menu.menu[1].x = 469;
+    menu.menu[1].x = 455;
     menu.menu[1].y = 449;
 
     /* 
      * Troisieme option : quitter le jeu 
-     * couleur du début = blanc
      */
-    menu.menu[2].couleur = (SDL_Color){0, 0, 0, 0};
     menu.menu[2].nomOption = "Quitter";
-    menu.menu[2].filename[0] = "graphics_assets/quitter_on_xs.png";
-    menu.menu[2].filename[1] = "graphics_assets/quitter_off_xs.png";
+    menu.menu[2].filename[0] = "graphics_assets/icons_buttons/quitter_on_xs.png";
+    menu.menu[2].filename[1] = "graphics_assets/icons_buttons/quitter_off_xs.png";
 
     //Refraichissement de l'affichage de l'option
     UpdateOption(&menu.menu[2], 1  );
-    //Position (en x et y) de l'option dans la fenetre
+    //Position (en x et y) de l'option dans la fenetremake
+
     menu.menu[2].x = 469;
     menu.menu[2].y = 491;
+
+     /* 
+     * Quatrième option : Couper/Activer Son
+     */
+    menu.menu[3].nomOption = "Son";
+    menu.menu[3].filename[0] = "graphics_assets/icons_buttons/sound_on_xs.png";
+    menu.menu[3].filename[1] = "graphics_assets/icons_buttons/sound_off_xs.png";
+
+
+    //Refraichissement de l'affichage de l'option
+    UpdateOption(&menu.menu[3], 0  );
+    //Position (en x et y) de l'option dans la fenetre
+    menu.menu[3].x = 487;
+    menu.menu[3].y = 627;
+
 
     //Option selectionnee = la premiere (nouvelle partie)
     menu.selectedOption = 0;
@@ -121,48 +140,41 @@ extern void UpdateOption(Options_t * menut, int etat )
 /*
  * Fonction qui permer de naviguer dans le menu vers le haut
  */
-extern void ToucheHaut()
+extern void ToucheHaut(Menu_t *menu)
 {
     //Si l'option actuellement selectionnee est differente de la premiere
     //Si on est sur la premiere option => on ne peut pas aller sur une option au-dessus
-    if (menu.selectedOption - 1 >= 0)
+    if (menu->selectedOption - 1 >= 0)
     {  
-        //Pour l'option actuelle => changer la couleur (mettre blanc)
-        menu.menu[menu.selectedOption].couleur = (SDL_Color){0, 0, 0, 0};
+  
         //Rafraichir l'affichage
-        UpdateOption(&menu.menu[menu.selectedOption] , 1);
+        UpdateOption(&menu->menu[menu->selectedOption] , 1);
 
         //Modifier l'option selectionnee => passe a l'option suivante
-        menu.selectedOption--;
+        menu->selectedOption--;
 
-        //Pour l'option sur laquelle on veut aller => changer la couleur (mettre rouge)
-        menu.menu[menu.selectedOption].couleur = (SDL_Color){0xFF, 0, 0, 0};
         //Rafraichir l'affichage
-        UpdateOption(&menu.menu[menu.selectedOption], 0 );
+        UpdateOption(&menu->menu[menu->selectedOption], 0 );
     }
 
 }
 /*
  * Fonction qui permer de naviguer dans le menu vers le bas
  */
-extern void ToucheBas()
+extern void ToucheBas(Menu_t *menu)
 {
     //Si l'option actuellement selectionnee est differente de la derniere
     //Si on est sur la derniere option => on ne peut pas aller sur une option en-dessous
-    if (menu.selectedOption + 1 < MAX_NUMBER)
+    if (menu->selectedOption + 1 < MAX_NUMBER)
     {
-        //Pour l'option actuelle => changer la couleur (mettre blanc)
-        menu.menu[menu.selectedOption].couleur = (SDL_Color){0, 0, 0, 0};
         //Rafraichir l'affichage
-        UpdateOption(&menu.menu[menu.selectedOption], 1 );
+        UpdateOption(&menu->menu[menu->selectedOption], 1);
 
         //Modifier l'option selectionnee => passe a l'option precedente
-        menu.selectedOption++;
+        menu->selectedOption++;
 
-        //Pour l'option sur laquelle on veut aller => changer la couleur (mettre rouge)
-        menu.menu[menu.selectedOption].couleur = (SDL_Color){0xFF, 0, 0, 0};
         //Rafraichir l'affichage
-        UpdateOption(&menu.menu[menu.selectedOption], 0 );
+        UpdateOption(&menu->menu[menu->selectedOption], 0);
     }
 }
 
@@ -178,7 +190,7 @@ extern void Dessiner_MenuPrincipal()
     SDL_RenderCopy( getRenderer(), menu.bg , NULL, &rect );
 
     //Pour chaque option, afficher a l'ecran son rendu
-	for (int i = 0; i < MAX_NUMBER; i++)
+	for (int i = 0; i < MAX_NUMBER+1; i++)
 	{
         //Rectangle tampon 
         SDL_Rect rect = {menu.menu[i].x, menu.menu[i].y, menu.menu[i].largeur, menu.menu[i].hauteur};
@@ -213,26 +225,26 @@ extern void Input_MenuPrincipal(SDL_Event *event)
             {
                 case SDLK_UP:
                     Mix_PlayChannel(-1, getMenu()->son, 0);
-                    ToucheHaut();
+                    ToucheHaut(getMenu());
                     break;
                 case SDLK_DOWN:
                     Mix_PlayChannel(-1, getMenu()->son, 0);
-                    ToucheBas();
+                    ToucheBas(getMenu());
                     break;
                 case SDLK_LEFT:
             
                     break;
                 case SDLK_RETURN:
-                    switch ( getTouchePresse() )
+                    switch (getTouchePresse(getMenu()))
                     {
                         case 0:
                             getPlayer()->estMort = false;
                             suppListe( getCollider() );
                             suppListe(getEnnemis());
                             suppListe(getBullets());
-                            PlayerScore("PIECES: 0", 10, 0);
+                            PlayerScore("SCORES : 0", 10, 0);
                             ChargerNiveau();
-                            Nettoyer_MenuPrincipal();
+                            // Nettoyer_MenuPrincipal();
                             getBaseGame()->state = IN_GAME;
                             Mix_HaltMusic();
                             return;
@@ -241,12 +253,28 @@ extern void Input_MenuPrincipal(SDL_Event *event)
                             printf("Bouton option press%c\n", 130);
                             break;
                         case 2:
-                             getBaseGame()->estActif = false;
-                                return;
+			               getBaseGame()->estActif = false;
+			                 return;
                             break;
                         default:
                             break;
                     }
+                break;
+                case SDLK_s:
+                     //Si la musique est en pause
+                        if( Mix_PausedMusic() == 1 )
+                        {
+                            UpdateOption(&menu.menu[3], 0  );
+                            //On enlève la pause (la musique repart où elle en était)
+                            Mix_ResumeMusic();
+                        }
+                        //Si la musique est en train de jouer
+                        else
+                        {
+                            UpdateOption(&menu.menu[3], 1  );
+                            //On met en pause la musique
+                            Mix_PauseMusic();
+                        }    
                 break;
                 default:
                     break;
@@ -262,10 +290,15 @@ extern void Nettoyer_MenuPrincipal()
 {
     // NettoyerScore();
     printf("Suppression Menu principal\n");
-    for(int i = 0; i < MAX_NUMBER; i++)
+    for(int i = 0; i < MAX_NUMBER+1; i++)
     {
-        free(menu.menu[i].texture);
+       if( menu.menu[i].texture != NULL ) 
+        {
+            free(menu.menu[i].texture);
+        }
+      
     }
+    printf("Fin Suppression Menu principal\n");
+   return;
 
-   
 }

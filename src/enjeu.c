@@ -1,3 +1,10 @@
+/**
+ * \file enjeu.c
+ * \author CALVADOS Cindy, CHAUMULON Cassandra, CHELLI Célia, OUSMANOVA Karina
+ * \version 1.0
+ * \date janvier 2020
+ * \brief Programme qui gère les entrées utilisateur (touches) et la caméra
+ */
 #include "enjeu.h"
 #include "baseGame.h"
 
@@ -16,13 +23,20 @@ extern void Input_InGame(SDL_Event *event)
             getBaseGame()->estActif = false;
             return;
         }
+
+        if(event->key.keysym.sym == SDLK_p && event->type == SDL_KEYDOWN )
+        {   
+            getBaseGame()->state = PAUSE;
+            Init_MenuPause();
+        }
         
         if(event->key.keysym.sym == SDLK_a && event->type == SDL_KEYDOWN )
         {
             
             if( getPlayer()->nb_lancer < 1 && !isKeyPressed )
             {
-                lancerObjet();
+
+                attaqueJoueur();
                 isKeyPressed = true;
                 return;
             }

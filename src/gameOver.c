@@ -44,8 +44,13 @@ extern void Init_MenuGameOver()
 
     menu_over.menu[0].nomOption = "Nouvelle partie";
 /* Changer les fichiers => mettre "nouvelle partie" */
+<<<<<<< HEAD
     menu_over.menu[0].filename[0] = "graphics_assets/newpartie_on_xs.png";
     menu_over.menu[0].filename[1] = "graphics_assets/newpartie_off_xs.png";
+=======
+    menu_over.menu[0].filename[0] = "graphics_assets/icons_buttons/newpartie_on_xs.png";
+    menu_over.menu[0].filename[1] = "graphics_assets/icons_buttons/newpartie_off_xs.png";
+>>>>>>> 723ab1285700ea88dda443bee94dc142e3e2d8f3
 
     //Refraichissement de l'affichage de l'option
     UpdateOption(&menu_over.menu[0], 0);
@@ -58,8 +63,8 @@ extern void Init_MenuGameOver()
      * Deuxieme option : Chargement d'un partie
      */
     menu_over.menu[1].nomOption = "Chargement";
-    menu_over.menu[1].filename[0] = "graphics_assets/load_on_xs.png";
-    menu_over.menu[1].filename[1] = "graphics_assets/load_off_xs.png";
+    menu_over.menu[1].filename[0] = "graphics_assets/icons_buttons/load_on_xs.png";
+    menu_over.menu[1].filename[1] = "graphics_assets/icons_buttons/load_off_xs.png";
 
     //Refraichissement de l'affichage de l'option
     UpdateOption(&menu_over.menu[1], 1);
@@ -71,8 +76,9 @@ extern void Init_MenuGameOver()
      * Troisieme option : quitter le jeu 
      */
     menu_over.menu[2].nomOption = "Quitter";
-    menu_over.menu[2].filename[0] = "graphics_assets/quitter_on_xs.png";
-    menu_over.menu[2].filename[1] = "graphics_assets/quitter_off_xs.png";
+    menu_over.menu[2].filename[0] = "graphics_assets/icons_buttons/quitter_on_xs.png";
+    menu_over.menu[2].filename[1] = "graphics_assets/icons_buttons/quitter_off_xs.png";
+
 
     //Refraichissement de l'affichage de l'option
     UpdateOption(&menu_over.menu[2], 1);
@@ -85,8 +91,9 @@ extern void Init_MenuGameOver()
      * Quatrième option : Couper/Activer Son
      */
     menu_over.menu[3].nomOption = "Son";
-    menu_over.menu[3].filename[0] = "graphics_assets/sound_on_xs.png";
-    menu_over.menu[3].filename[1] = "graphics_assets/sound_off_xs.png";
+    menu_over.menu[3].filename[0] = "graphics_assets/icons_buttons/sound_on_xs.png";
+    menu_over.menu[3].filename[1] = "graphics_assets/icons_buttons/sound_off_xs.png";
+
 
     //Refraichissement de l'affichage de l'option
     UpdateOption(&menu_over.menu[3], 0);

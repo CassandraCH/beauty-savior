@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['checkpointactif_0',['checkPointActif',['../struct_entity.html#ab27aa9613760614065ae16902bc68bc2',1,'Entity']]]
+  ['basegame_0',['baseGame',['../structbase_game.html',1,'']]],
+  ['basegame_2ec_1',['baseGame.c',['../base_game_8c.html',1,'']]]
 ];

@@ -1,3 +1,10 @@
+/**
+ * \file level.c
+ * \author CALVADOS Cindy, CHAUMULON Cassandra, CHELLI Célia, OUSMANOVA Karina
+ * \version 1.0
+ * \date janvier 2020
+ * \brief Programme qui gère les niveaux : affichage et destruction des niveaux
+ */
 #include "level.h"
 #include "constantes.h"
 
@@ -28,7 +35,7 @@ extern void ChargerNiveau()
       SDL_Texture * itemTex = ChargerTexture("graphics_assets/coin.png");
       ChargementItems("files_assets/coin.txt", itemTex);
 
-      ChargerTextureManager( level.levelTextures, "graphics_assets/decor.png");
+      ChargerTextureManager( level.levelTextures, "graphics_assets/savior1-1.png");
    }  
    else if(  getPlayer()->niveau == 2 )
    {  

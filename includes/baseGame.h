@@ -20,21 +20,17 @@
 #include "enjeu.h"
 #include "entite.h"
 #include "menuPrincipal.h"
-
+#include "menuPause.h"
+#include "gameOver.h"
 
 typedef struct baseGame 
 {
-    int state; /**<  */
-    bool estActif; /**< Etat du jeux : Actif - Non Actif */
+    int state; /**< Etat du jeu : en cours de partie, sur le menu principal*/
+    bool estActif; /**< Etat du jeu : Actif - Non Actif */
     int time;
+
+
 }Base_Game;
-
-
-
-// extern int mouseX;
-// extern int mouseY;
-
-
 
 /*######## GETTER & SETTER ######## */
 extern SDL_Window* getWindow(void);
@@ -65,7 +61,7 @@ extern SDL_Rect camera;
 /*####### FONCTION PRINCIPAL ############ */
 extern void Init(const char *title);
 extern void Update(float dt);
-extern void Quitter_Jeux();
+extern void LibererRessources_Jeux();
 extern void Rendu_Jeux() ;
 void delay(unsigned int frameLimit);
 

@@ -4,9 +4,6 @@ float vx, vy;
 typeEntite type;
 
 bool estMort;
-
-
-
-
+int nb_lancer;
 
 

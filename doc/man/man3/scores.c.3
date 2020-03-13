@@ -1,0 +1,85 @@
+.TH "src/scores.c" 3 "Vendredi 6 Mars 2020" "Version 0.1" "Beauty Savior" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/scores.c \- Programme qui gère le score\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'scores\&.h'\fP
+.br
+\fC#include 'baseGame\&.h'\fP
+.br
+
+.SS "Fonctions"
+
+.in +1c
+.ti -1c
+.RI "\fBScores\fP * \fBgetScores\fP ()"
+.br
+.RI "Retourne l'instance de l'objet score\&. "
+.ti -1c
+.RI "void \fBInit_Scores\fP ()"
+.br
+.ti -1c
+.RI "void \fBPlayerScore\fP (const char *text, int x, int y)"
+.br
+.ti -1c
+.RI "void \fBNettoyerScore\fP ()"
+.br
+.ti -1c
+.RI "void \fBAfficherScores\fP ()"
+.br
+.ti -1c
+.RI "void \fBSetScore\fP (int scores)"
+.br
+.ti -1c
+.RI "void \fBnouveauScore\fP (int nouveauScore)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBScores\fP \fBscore\fP"
+.br
+.in -1c
+.SH "Description détaillée"
+.PP 
+Programme qui gère le score\&. 
+
+
+.PP
+\fBAuteur\fP
+.RS 4
+CALVADOS Cindy, CHAUMULON Cassandra, CHELLI Célia, OUSMANOVA Karina 
+.RE
+.PP
+\fBVersion\fP
+.RS 4
+1\&.0 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+janvier 2020
+.RE
+.PP
+Initialisation, mise à jour, affichage et destruction du score 
+.SH "Documentation des fonctions"
+.PP 
+.SS "getScores ()"
+
+.PP
+Retourne l'instance de l'objet score\&. 
+.PP
+\fBRenvoie\fP
+.RS 4
+Retourne un pointeur sur l'objet score
+.RE
+.PP
+Cela permet d'instaurer un contexte privée\&. 
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Beauty Savior à partir du code source\&.

@@ -1,7 +1,15 @@
+/**
+ * \file scores.c
+ * \author CALVADOS Cindy, CHAUMULON Cassandra, CHELLI Célia, OUSMANOVA Karina
+ * \version 1.0
+ * \date janvier 2020
+ * \brief Programme qui gère le score
+ * \brief Initialisation, mise à jour, affichage et destruction du score
+ */
 #include "scores.h"
 #include "baseGame.h"
 
-Scores score;
+    Scores score;
 
 
 /** \fn  getScores
@@ -42,9 +50,13 @@ extern void PlayerScore(const char * text, int x,  int y)
 
 extern void NettoyerScore()
 {
-    printf("Nettoyer scores\n");
-    SDL_FreeSurface(score.surface);
-    SDL_DestroyTexture(score.tex);  
+    if(score.tex != NULL)
+    {
+        printf("Nettoyer scores\n");
+        SDL_FreeSurface(score.surface);
+        SDL_DestroyTexture(score.tex);
+    }
+    
 }
 
 extern void AfficherScores()
@@ -55,7 +67,7 @@ extern void AfficherScores()
 }
 
 
-extern void SetScore(int scores)
+extern void SetScore(const char * nom, int scores)
 {
     SDL_Texture * tex = score.tex;
 
@@ -65,8 +77,9 @@ extern void SetScore(int scores)
         SDL_DestroyTexture(score.tex);
     }
 
-    char sc[20];
-    sprintf( sc, "PIECES: %d" , scores ); 
+    char sc[30];
+
+    sprintf( sc, "%s : %d" , nom, scores ); 
     
     score.surface = TTF_RenderText_Solid(score.police, sc, (SDL_Color){0, 0, 0,0});
     score.tex = SDL_CreateTextureFromSurface( getRenderer() , score.surface );

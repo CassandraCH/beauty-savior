@@ -1,0 +1,62 @@
+.TH "src/texture.c" 3 "Vendredi 6 Mars 2020" "Version 0.1" "Beauty Savior" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/texture.c \- Programme qui gère les textures (affichage)  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'texture\&.h'\fP
+.br
+
+.SS "Fonctions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBchargerImage\fP (\fBTexture_Manager\fP *tex, const char *filename)"
+.br
+.ti -1c
+.RI "void \fBChargerTextureManager\fP (\fBTexture_Manager\fP *tex, char *filepath)"
+.br
+.ti -1c
+.RI "SDL_Texture * \fBChargerTexture\fP (char *filepath)"
+.br
+.ti -1c
+.RI "void \fBdessinerFullImage\fP (\fBTexture_Manager\fP *tex, int x, int y)"
+.br
+.ti -1c
+.RI "void \fBdessinerImages\fP (\fBTexture_Manager\fP *tex, int x, int y, int width, int height, int currentRow, int currentFrame, SDL_RendererFlip flip)"
+.br
+.ti -1c
+.RI "void \fBChargerTexte\fP (\fBTexture_Manager\fP *tex, TTF_Font *font, const char *text)"
+.br
+.ti -1c
+.RI "void \fBLibererRessources\fP (\fBTexture_Manager\fP *tex)"
+.br
+.in -1c
+.SH "Description détaillée"
+.PP 
+Programme qui gère les textures (affichage) 
+
+
+.PP
+\fBAuteur\fP
+.RS 4
+CALVADOS Cindy, CHAUMULON Cassandra, CHELLI Célia, OUSMANOVA Karina 
+.RE
+.PP
+\fBVersion\fP
+.RS 4
+1\&.0 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+janvier 2020
+.RE
+.PP
+Chargement des images, des textures, des textes et destruction des textures 
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Beauty Savior à partir du code source\&.

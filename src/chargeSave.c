@@ -1,3 +1,10 @@
+/**
+ * \file chargeSave.c
+ * \author CALVADOS Cindy, CHAUMULON Cassandra, CHELLI Célia, OUSMANOVA Karina
+ * \version 1.0
+ * \date janvier 2020
+ * \brief Programme qui gère le chargement et la sauvegarde des parties
+ */
 #include "chargeSave.h"
 
 
@@ -14,7 +21,6 @@ extern void ChargerPartie()
     {
         printf( "Score charger: %f-%f\n", getPlayer()->x, getPlayer()->y);
         fclose(file);
-
     }
 }
 
@@ -134,8 +140,8 @@ extern void ChargementEnnemis(const char * filename)
     while( !feof(file) )
     {
         SDL_Rect *rect = malloc( sizeof(SDL_Rect));
-        rect->w = 50;
-        rect->h = 50;             
+        rect->w = 55;
+        rect->h = 55;             
         if( fscanf(file, "%d %d %d",&rect->x , &rect->y, &actif ) ){
             insertion(getEnnemis(),  rect, ennemi , actif );
         }

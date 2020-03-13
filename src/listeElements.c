@@ -1,3 +1,11 @@
+/**
+ * \file listeElements.c
+ * \author CALVADOS Cindy, CHAUMULON Cassandra, CHELLI Célia, OUSMANOVA Karina
+ * \version 1.0
+ * \date janvier 2020
+ * \brief Programme qui permet de gérer les listes
+ * \brief Création d'une liste, ajout de nouvel élément, suppression de la tête, suppresion de la queue, accès à une liste, affichage d'une liste'
+ */
 #include "baseGame.h"
 
 /*#### DONNEES PRIVEES ####*/
@@ -61,7 +69,7 @@ extern Node* creerRect(SDL_Rect*rect, typeEntite item_t, bool actif )
     nouvelElement->nb_objets = 0;
     nouvelElement->movingX = 0;
     nouvelElement->lancer = true;
-
+   
     nouvelElement->x = rect->x;
     nouvelElement->y = rect->y;
     nouvelElement->w = rect->w;
@@ -72,12 +80,14 @@ extern Node* creerRect(SDL_Rect*rect, typeEntite item_t, bool actif )
     {
         nouvelElement->baseX = rect->x;
         nouvelElement->baseY = rect->y;
+
         if( actif == true )
          {
             nouvelElement->phase = 2*3.14*(rand() % 360) / 360.0f;
             nouvelElement->vx = -1.8f;
          }
-        nouvelElement->vy = 0;
+		nouvelElement->vy = 0;
+
     }
 
     return ( nouvelElement );
@@ -109,16 +119,18 @@ extern void insertion(LinkedList * list, SDL_Rect *rect, typeEntite items_t, boo
 
 extern void suppListe(LinkedList * lst)
 {
-    Node * temp;
-    Node * current = lst->tete;
-    while( current != NULL)
+    if( lst->nodeCount > 0 ) 
     {
-        temp = current;
-        current = current->suivant;
-        free(temp);
-        lst->nodeCount--;
+        Node * temp;
+        Node * current = lst->tete;
+        while( current != NULL)
+        {
+            temp = current;
+            current = current->suivant;
+            free(temp);
+            lst->nodeCount--;
+        }
     }
-    printf("Nombres occurences :%d\n", lst->nodeCount);
     printf("TOUS LES NŒUDS DE LA LISTE ONT ETAIENT DETRUIT\n");
 }
 

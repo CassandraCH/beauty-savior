@@ -1,3 +1,12 @@
+/**
+ * \file player.c
+ * \author CALVADOS Cindy, CHAUMULON Cassandra, CHELLI Célia, OUSMANOVA Karina
+ * \version 1.0
+ * \date janvier 2020
+ * \brief Programme qui gère le joueur
+ * \brief Initialisation, affichage (et actualisation en fonction des entrées clavier), positionnement et déplacement du joueur
+ * \brief Gestion des tirs (attaques) et des collisions
+ */
 #include "baseGame.h"
 
 
@@ -50,10 +59,16 @@ extern void InitJoueur()
 {
 	player.niveau = 1;
     player.nombreVies = 3;
-	chargerImage(&player.tex, "graphics_assets/rect11.png");
-	player.x = 100;
-    player.y = 100;
+
+	// player = (Player) { 0 };
+	chargerImage(&player.tex, "graphics_assets/rect10.png");	
+	player.h = player.tex.h;
+	player.w = player.tex.w;
+	player.x = 600;
+
+	player.y = 100;
     player.frame = 0;
+
     player.nb_lancer = 0;
     player.nb_objet = 0;
     player.posXDepart = 100;
@@ -133,7 +148,7 @@ extern void CollisionItems()
             {
                pt->estMort = true;
                supprimeCible(getItems(), true);
-               SetScore(++player.nb_objet);
+               SetScore("SCORES", ++player.nb_objet);
             }
             break;
         }
@@ -183,25 +198,21 @@ extern void actualiserJoueur(void)
         //     printf("Il reste %d points de vie\n", getPlayer()->nombreVies );
         // }else 
         // {
-            player.estMort = true;
-            Init_MenuPrincipal();
-            DestructionNiveau();
-            getBaseGame()->state = MENU_PRINCIPAL;
-            
-        // }
-        PlayerScore("Scores: 0", 50, 50);
-        player.nb_lancer = 0;
-        player.x = player.posXDepart;
-        player.y = player.posYDepart;
-        player.vx = 0;
-        getBaseGame()->time = 0;
-        setTimerBullet(0);
-        player.nb_objet = 0;
+           
 
-        return;
+            // }
+            PlayerScore("Scores: 0", 50, 50);
+            player.nb_lancer = 0;
+            player.x = player.posXDepart;
+            player.y = player.posYDepart;
+            player.vx = 0;
+            player.nb_objet = 0;
+
+            return;
     }
 
 }
+
 
 extern bool collide2d(float x1, float y1, float x2, float y2, float wt1, float ht1, float wt2, float ht2)
 {
@@ -211,22 +222,14 @@ extern bool collide2d(float x1, float y1, float x2, float y2, float wt1, float h
 /**
  *  Fonction qui s'occupe de gérer les attaques lancer par le joueur
  */
-extern void lancerObjet()
+extern void attaqueJoueur()
 {
     if ( getPlayer()->nb_objet > 0 )
     {
-        SDL_Rect *rect = malloc(sizeof(SDL_Rect));
-        rect->w = 41;
-        rect->h = 47;
-        rect->y = ( getPlayer()->y+  getPlayer()->tex.h  / 2 ) - rect->h/2;
 
-        if( getPlayer()->estTourne )
-            rect->x =  getPlayerX() - (getPlayer()->tex.w/2);
-        else
-            rect->x =  getPlayerX() + (getPlayer()->tex.w/2) ;
-
-        insertion(&bullet, rect, bull, true );
-        SetScore(--player.nb_objet);
+      
+        CreerTir(bull, getPlayer()->w , getPlayer()->h, getPlayerX(),  getPlayerY() );
+        SetScore("SCORES",--player.nb_objet);
 
     }
     return;
@@ -244,8 +247,8 @@ extern void collision_tir()
         {
             for(enne = getEnnemis()->tete; enne != NULL; enne = enne->suivant)
             {
-                if(collide2d( tir->rect->x , tir->rect->y, enne->rect->x,enne->rect->y,tir->rect->w ,tir->rect->h,enne->rect->w, enne->rect->h ) && enne->type == ennemi )
-                    {
+                if(collide2d( tir->rect->x , tir->rect->y, enne->rect->x,enne->rect->y,tir->rect->w ,tir->rect->h,enne->rect->w, enne->rect->h ) && enne->type == ennemi && tir->type == bull ) 
+                {
 
                         if( !enne->estMort )
                         {
@@ -256,10 +259,25 @@ extern void collision_tir()
                         }
                             
                         break;
-                    }
-
                 }
+                else if(collide2d( tir->rect->x , tir->rect->y, getPlayerX(),getPlayerY(),tir->rect->w ,tir->rect->h,getPlayer()->w, getPlayer()->h ) && tir->type == feu ) 
+                {
+                    Init_GameOver();
+                    break;
+                }
+            }
         }
+    }
+
+}
+
+extern void joueur_surSol()
+{
+    player.vy = 0;
+    // Le joueur est posé sur un bloc. 
+    if(!player.estSurSol)
+    {
+        getPlayer()->estSurSol = true;
     }
 
 }

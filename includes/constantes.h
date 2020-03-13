@@ -7,17 +7,19 @@
 #define FRAME_TARGET_TIME (1000/FPS)
 
 //Dimensions du niveau
-#define LARGEUR_NIVEAU 10000
-#define HAUTEUR_NIVEAU  600
+#define LARGEUR_NIVEAU 3000
+#define HAUTEUR_NIVEAU  720
 
 //Dimensions de la fenetre
+
+
 #define LARGEUR_FENETRE 1280
 #define HAUTEUR_FENETRE 720
-
 
 #define MENU_PRINCIPAL 0
 #define IN_GAME 1
 #define PAUSE 3
+#define GAMEOVER 4
 
 /// MENU PRINCIPAL
 #define NOUVELLE_PARTIE 0

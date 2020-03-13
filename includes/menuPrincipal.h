@@ -17,7 +17,7 @@ typedef struct option
     SDL_Texture *texture;
     SDL_Color couleur;
     int x, y;
-    char * filename[2];
+    char * filename[4];
 
 }Options_t;
 
@@ -28,7 +28,7 @@ typedef struct option
 typedef struct menu
 {
     int selectedOption;
-    Options_t menu[3];
+    Options_t menu[4];
     Mix_Chunk *son;
     TTF_Font * police;
     SDL_Texture * bg;
@@ -37,12 +37,12 @@ typedef struct menu
 }Menu_t;
 
 
-// extern void UpdateOption(Options_t * );
-extern void UpdateOption(Options_t * menut, int etat);
-extern int getTouchePresse();
 
-extern void ToucheHaut();
-extern void ToucheBas();
+extern void UpdateOption(Options_t * menut, int etat);
+extern int getTouchePresse(Menu_t *menu);
+
+extern void ToucheHaut(Menu_t * menu);
+extern void ToucheBas(Menu_t *menu);
 
 extern void Init_MenuPrincipal();
 extern void Dessiner_MenuPrincipal();
