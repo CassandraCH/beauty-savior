@@ -44,13 +44,8 @@ extern void Init_MenuGameOver()
 
     menu_over.menu[0].nomOption = "Nouvelle partie";
 /* Changer les fichiers => mettre "nouvelle partie" */
-<<<<<<< HEAD
-    menu_over.menu[0].filename[0] = "graphics_assets/newpartie_on_xs.png";
-    menu_over.menu[0].filename[1] = "graphics_assets/newpartie_off_xs.png";
-=======
     menu_over.menu[0].filename[0] = "graphics_assets/icons_buttons/newpartie_on_xs.png";
     menu_over.menu[0].filename[1] = "graphics_assets/icons_buttons/newpartie_off_xs.png";
->>>>>>> 723ab1285700ea88dda443bee94dc142e3e2d8f3
 
     //Refraichissement de l'affichage de l'option
     UpdateOption(&menu_over.menu[0], 0);
