@@ -27,123 +27,107 @@ Base_Game* getBaseGame()
 
 /**
  * \fn extern void Update(float dt)
- * \brief Fonction qui permet gerer...
- * \details 
+ * \brief Fonction qui permet gerer les comportements des entités si on se trouve dans une partie et gerer le son si on se trouve sur le menu principal
+ * \details Etat du jeu possible : menu principal ou en partie
  * \param dt valeur du delta-time
- * \return pas de retour (void)
+ * \return pas de valeur de retour (void)
 */
 extern void Update(float dt)
 { 
- 
-    if ( game.state == MENU_PRINCIPAL )
-    {
-        if( !Mix_PlayingMusic() )
-          Mix_PlayMusic(getMenu()->bgm, -1);
+  //Cas ou on se trouve dans le menu principal
+  if ( game.state == MENU_PRINCIPAL )
+  {
+      //Gestion de la musique du menu principal
+      if( !Mix_PlayingMusic() )
+        Mix_PlayMusic(getMenu()->bgm, -1);
+  }
 
-    }
-    else if ( game.state == PAUSE )
-    {
+  //Cas ou on est en train de jouer
+  else if ( game.state == IN_GAME )
+  {          
+      //Gestion du timer
+      getBaseGame()->time++;
+      setTimerBullet(0); 
 
+      //Gestion des attaques
+      attaqueEnnemis();
 
-
-    }
-    else if ( game.state == IN_GAME )
-    {   
-       
-       // Timer
-         getBaseGame()->time++;
-        setTimerBullet(0); 
-
-        attaqueEnnemis();
-
-        Update_Listes();
-        UpdateJoueur(dt);
-        UpdateBullets(joueur, ennemi);
-        UpdateEnnemis();
-    
-        collision_tir();
-        CollisionItems(); 
-        collisionDetection();
-        
-    }
-    else if (game.state == GAMEOVER)
-    {
-
-      /* a faire */
-    }
+      //Mise à jour des entités
+      Update_Listes();
+      UpdateJoueur(dt);
+      UpdateBullets(joueur, ennemi);
+      UpdateEnnemis();
+  
+      //Gestion des collisions
+      collision_tir();
+      CollisionItems(); 
+      collisionDetection();
+  }
 }
 
 /**
  * \fn extern void Rendu_Jeux()
- * \brief ...
- * \details ...
- * \return pas de retour (void)
+ * \brief Fonction qui permet de gérer le rendu 
+ * \details Affichage en fonction de l'etat dans lequel se trouve le jeu
+ * \return pas de valeur de retour (void)
 */
 extern void Rendu_Jeux() 
 {
- 
-    if ( getBaseGame()->state != PAUSE )
-    {
-           
-      SDL_SetRenderDrawColor(getRenderer(), 0xFF,0xFF,0xFF,0);
-         SDL_RenderClear( getRenderer() );
-    }
-    else 
-    {
-      // SDL_SetRenderDrawColor(getRenderer(), 0xFF,0xFF,0xFF,0);
-     
-    }
+  // 
+  if ( getBaseGame()->state != PAUSE )
+  {
+    SDL_SetRenderDrawColor(getRenderer(), 0xFF,0xFF,0xFF,0);
+    SDL_RenderClear( getRenderer() );
+  }
 
-    if ( getBaseGame()->state == MENU_PRINCIPAL )
-    {
-      
-      Dessiner_MenuPrincipal();
+  //Affichage du menu principal
+  if ( getBaseGame()->state == MENU_PRINCIPAL )
+  {
+    Dessiner_MenuPrincipal();
+  }
 
-      
-    }
-    else if ( getBaseGame()->state == PAUSE )
-    {
-      Dessiner_MenuPause();
-    }
-    else if ( getBaseGame()->state == IN_GAME )
+  //Affichage du menu pause
+  else if ( getBaseGame()->state == PAUSE )
+  {
+    Dessiner_MenuPause();
+  }
+  //Affichage du jeu lors d'une partie
+  else if ( getBaseGame()->state == IN_GAME )
+  {
+
+    Affichage_Niveau();
+    // Debug_AfficherCollider();
+    SDL_Texture * texture = ChargerTexture("graphics_assets/rect11.png");
+    SDL_Texture * itemTex = ChargerTexture("graphics_assets/coin.png");
+
+
+    Afficher_ElementsListes( &listEnnemis, texture, ennemi );
+    Afficher_ElementsListes( &bullet , itemTex, bull );
+    Afficher_ElementsListes( &bullet , itemTex, feu );
     
-    {
-
-      Affichage_Niveau();
-      // Debug_AfficherCollider();
-      SDL_Texture * texture = ChargerTexture("graphics_assets/rect11.png");
-      SDL_Texture * itemTex = ChargerTexture("graphics_assets/coin.png");
-
-
-      Afficher_ElementsListes( &listEnnemis, texture, ennemi );
-      Afficher_ElementsListes( &bullet , itemTex, bull );
-      Afficher_ElementsListes( &bullet , itemTex, feu );
-      
-      AfficherScores();
-      
-      Afficher_ElementsListes( &items, itemTex, item ); 
-
-      AfficherJoueur();
-
+    AfficherScores();
     
-    }
-    else if ( getBaseGame()->state == PAUSE )
-    {
-      // A définir 
-    }
-    else if (getBaseGame()->state == GAMEOVER )
-    {
-      Dessiner_MenuGameOver();
-      AfficherScores();
-    }
+    Afficher_ElementsListes( &items, itemTex, item ); 
 
-    SDL_RenderPresent(getRenderer());
+    AfficherJoueur();
+  }
+  
+  //Affichage du menu game over
+  else if (getBaseGame()->state == GAMEOVER )
+  {
+    Dessiner_MenuGameOver();
+    AfficherScores();
+  }
 
-
+  SDL_RenderPresent(getRenderer());
 }
-/***
- * Met à jour les listes en supprimant si besoin
- */ 
+
+/**
+ * \fn extern void Update_Listes()
+ * \brief Fonction qui met a jour les listes de bullets et ennemis
+ * \details Suppression des listes si nécessaire
+ * \return pas de valeur de retour (void)
+*/
 extern void Update_Listes()
 {
   supprimeCible(getBullets(), true);
