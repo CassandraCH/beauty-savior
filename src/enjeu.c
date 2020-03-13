@@ -30,7 +30,7 @@ extern void Input_InGame(SDL_Event *event)
             Init_MenuPause();
         }
         
-        if(event->key.keysym.sym == SDLK_a && event->type == SDL_KEYDOWN )
+        if(event->key.keysym.sym == SDLK_SPACE && event->type == SDL_KEYDOWN )
         {
             
             if( getPlayer()->nb_lancer < 1 && !isKeyPressed )
