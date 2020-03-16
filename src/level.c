@@ -35,12 +35,13 @@ extern void ChargerNiveau()
       SDL_Texture * itemTex = ChargerTexture("graphics_assets/coin.png");
       ChargementItems("files_assets/coin.txt", itemTex);
 
-      ChargerTextureManager( level.levelTextures, "graphics_assets/bg.png");
+      ChargerTextureManager( &level.levelTextures[0], "graphics_assets/level_1/back.png");
+      ChargerTextureManager( &level.levelTextures[1], "graphics_assets/level_1/front.png");
    }  
    else if(  getPlayer()->niveau == 2 )
    {  
-         // Load_And_CreatePNJ("niveau2.txt",ennemy) ;
-         chargerImage(&getLevel()->levelTextures[1], "graphics_assets/niveau2.png");
+         ChargerTextureManager( &level.levelTextures[0], "graphics_assets/level_2/back.png");
+         ChargerTextureManager( &level.levelTextures[1], "graphics_assets/level_2/front.png");
    }
    
    printf("Fin chargement niveau\n");
@@ -74,6 +75,8 @@ extern void Affichage_Niveau ()
    {
 
       afficher_textures_niveau(0);
+      AfficherJoueur();
+      afficher_textures_niveau(1);
       
    }  
    else if(  getPlayer()->niveau == 2 )

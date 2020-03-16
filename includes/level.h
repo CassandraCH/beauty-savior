@@ -7,6 +7,9 @@ typedef struct level
 {
 
     Texture_Manager levelTextures[5];
+    Texture_Manager layer_1;
+    Texture_Manager layer_2;
+    Texture_Manager layer_3;
     
     int departX;
     int departY;

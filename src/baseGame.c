@@ -109,8 +109,10 @@ extern void Rendu_Jeux()
     
     {
 
-      Affichage_Niveau();
+      // Affichage_Niveau();
       // Debug_AfficherCollider();
+      afficher_textures_niveau(0);
+      
       SDL_Texture * texture = ChargerTexture("graphics_assets/rect11.png");
       SDL_Texture * itemTex = ChargerTexture("graphics_assets/coin.png");
 
@@ -120,10 +122,10 @@ extern void Rendu_Jeux()
       Afficher_ElementsListes( &bullet , itemTex, feu );
       
       AfficherScores();
-      
       Afficher_ElementsListes( &items, itemTex, item ); 
-
       AfficherJoueur();
+      afficher_textures_niveau(1);
+ 
 
     
     }
