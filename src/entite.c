@@ -188,7 +188,7 @@ extern void collisionDetection()
         // Position X & Y de l'ennemi
         float ennemi_x = pt->rect->x;
         float ennemi_y = pt->rect->y;
-         
+        
         
         // Vérifie les collisions à gauche , droite, bas et en haut
         if(collide2d( joueur_x, joueur_y, ennemi_x, ennemi_y , joueur_w, joueur_h, ennemi_w, ennemi_h ) && pt->type == ennemi )
@@ -213,9 +213,7 @@ extern void collisionDetection()
                 }
                 else
                 {
-                    // Sinon c'est que le joueur rentre en collision sur le côté. 
-                    //actualiserJoueur(); 
-                    Init_GameOver();
+                    
                 }
             } 
 
@@ -259,6 +257,8 @@ extern void collision_Decor()
             // Position X & Y des blocs de collisions
             float collider_x = pt->rect->x;
             float collider_y = pt->rect->y;
+
+            typeEntite typeCollider = pt->type;
             
             /*
                 Gestion des colisions avec le décor .
@@ -274,12 +274,14 @@ extern void collision_Decor()
                    // Le haut du joueur rentre en collision avec le bas d'un bloc..
                 if( joueur_y < collider_y+collider_h && joueur_y > collider_y && getPlayer()->vy < 0 )
                 {
-                    // correct y
-                    getPlayer()->y = collider_y+collider_h;
-                    joueur_y = collider_y+collider_h;
+                   
+                    
+                        // correct y
+                        getPlayer()->y = collider_y+collider_h;
+                        joueur_y = collider_y+collider_h;
 
-                   // On arrête le saut 
-                    getPlayer()->vy = 0;
+                        // On arrête le saut 
+                        getPlayer()->vy = 0;
                     
 
                 }
@@ -290,15 +292,29 @@ extern void collision_Decor()
                  // Le bas du joueur est en collision avec le haut du bloc
                 if( joueur_y+joueur_h > collider_y && joueur_y < collider_y && getPlayer()->vy > 0 )
                 {
-                    // correct y
-                    getPlayer()->y = collider_y-joueur_h;
-                    joueur_y = collider_y-joueur_h;
 
-                    // On arrête le saut 
-                    getPlayer()->vy = 0;
-                    if(!getPlayer()->estSurSol)
+                    
+                    if( typeCollider == checkpoint )
                     {
-                        getPlayer()->estSurSol = true;
+                        // Init_GameOver();
+                        setNiveau(2);
+                        getPlayer()->x = 86;
+	                    getPlayer()->y = 495;
+                        ChargerNiveau();
+                        
+                    }
+                    else 
+                    {
+                        // correct y
+                        getPlayer()->y = collider_y-joueur_h;
+                        joueur_y = collider_y-joueur_h;
+
+                        // On arrête le saut 
+                        getPlayer()->vy = 0;
+                        if(!getPlayer()->estSurSol)
+                        {
+                            getPlayer()->estSurSol = true;
+                        }
                     }
 
                 }
@@ -309,20 +325,48 @@ extern void collision_Decor()
                 // Le côté droit du joueur est en collision avec le coté gauche du bloc
             if(joueur_x < collider_x+collider_w && joueur_x+joueur_w > collider_x+collider_w && getPlayer()->vx < 0)
             {
-                //correct x
-                getPlayer()->x = collider_x+collider_w;
-                joueur_x = collider_x+collider_w;
+                
 
-                getPlayer()->vx = 0;
+                if( typeCollider == checkpoint )
+                {
+                        // Init_GameOver();
+                        setNiveau(2);
+                        getPlayer()->x = 86;
+	                    getPlayer()->y = 495;
+                        ChargerNiveau();
+                        
+                }       
+                else 
+                {
+                    //correct x
+                    getPlayer()->x = collider_x+collider_w;
+                    joueur_x = collider_x+collider_w;
+
+                    getPlayer()->vx = 0;
+
+                }
             }
             // Le côté droit du joueur est en collision avec le coté gauche du bloc
             else if(joueur_x+joueur_w > collider_x && joueur_x < collider_x && getPlayer()->x > 0)
             {
-                //correct x
-                getPlayer()->x = collider_x-joueur_w;
-                joueur_x = collider_x-joueur_w;
+                if( typeCollider == checkpoint )
+                {
+                        // Init_GameOver();
+                        setNiveau(2);
+                    	getPlayer()->x = 86;
+	                    getPlayer()->y = 495;
+                        ChargerNiveau();
 
-                getPlayer()->vx = 0;
+                }
+                else 
+                {
+
+                    //correct x
+                    getPlayer()->x = collider_x-joueur_w;
+                    joueur_x = collider_x-joueur_w;
+
+                    getPlayer()->vx = 0;
+                }
             }
             }
         }

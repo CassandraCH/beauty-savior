@@ -86,6 +86,7 @@ void LibererRessources_Jeux()
      
     SDL_DestroyWindow(fenetre) ;
     SDL_DestroyRenderer (rendu);
+    DestructionNiveau();
     rendu = NULL;
     fenetre = NULL;
     
@@ -99,7 +100,8 @@ void LibererRessources_Jeux()
     suppListe(&listEnnemis);
     Nettoyer_MenuPrincipal();
     Nettoyer_MenuPause();
-    Nettoyer_MenuGameOver();
+    Nettoyer_MenuGameOver();    
+
 
     TTF_Quit();
     SDL_Quit();

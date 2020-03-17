@@ -21,6 +21,7 @@ typedef struct level
 }Level;
 
 extern Level *getLevel();
+extern void setNiveau(int niveau);
 extern void ChargerNiveau();
 extern void Affichage_Niveau();
 extern void DestructionNiveau();

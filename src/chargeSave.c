@@ -83,6 +83,12 @@ extern void ChargementCollider(const char * filename)
 
 extern void Chargement_CreationPNJ(LinkedList*lst, char * filename)
 {
+    
+    if( lst->nodeCount > 0 ) 
+    {
+        suppListe(lst);
+    }
+    
     FILE * file = fopen(filename, "r");
 
     if (file == NULL) {
@@ -105,6 +111,8 @@ extern void Chargement_CreationPNJ(LinkedList*lst, char * filename)
 
 extern void ChargementItems(const char * filename, SDL_Texture * tex)
 {
+
+
     FILE * file = fopen(filename, "r");
     
     if (file == NULL) {

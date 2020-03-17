@@ -18,17 +18,23 @@ extern Level* getLevel()
    return &level;
 }
 
+extern void setNiveau(int niveau) 
+{
+   getPlayer()->niveau = niveau;
+}
+
 extern void ChargerNiveau()
 {
-
    printf("Chargement Niveau\n");
+   
+   init_List(&listEnnemis);
+   init_List(&bullet);
+   init_List(&items);
+   init_List(&listCollider);
+   
    if(  getPlayer()->niveau == 1 )
    {
-      init_List(&listEnnemis);
-      init_List(&bullet);
-      init_List(&items);
-
-      init_List(&listCollider);
+   
       Chargement_CreationPNJ(getCollider(),"files_assets/niveau1.txt") ;
       ChargementEnnemis("files_assets/ennemi.txt");
 
@@ -40,11 +46,26 @@ extern void ChargerNiveau()
    }  
    else if(  getPlayer()->niveau == 2 )
    {  
+
+         DestructionNiveau();
+         Chargement_CreationPNJ(getCollider(),"files_assets/niveau2.txt") ;
+         ChargementEnnemis("files_assets/ennemi.txt");
+
+         SDL_Texture * itemTex = ChargerTexture("graphics_assets/coin.png");
+         suppListe(getItems() );
+         ChargementItems("files_assets/coin.txt", itemTex);
+
          ChargerTextureManager( &level.levelTextures[0], "graphics_assets/level_2/back.png");
          ChargerTextureManager( &level.levelTextures[1], "graphics_assets/level_2/front.png");
    }
    
    printf("Fin chargement niveau\n");
+
+}
+
+extern void NiveauSuivant()
+{
+   ChargerNiveau();
 
 }
 
@@ -82,6 +103,7 @@ extern void Affichage_Niveau ()
    else if(  getPlayer()->niveau == 2 )
    {  
       afficher_textures_niveau(1);
+      
    }
    
     
@@ -91,13 +113,16 @@ extern void DestructionNiveau()
 {
    printf("Destruction Niveau\n");
    
-   if(  getPlayer()->niveau == 1 )
-   {
-      LibererRessources(&getLevel()->levelTextures[0]);
-   }  
-   else if(  getPlayer()->niveau == 2 )
-   {  
-      LibererRessources(&getLevel()->levelTextures[1]);     
-   }
+   // if(  getPlayer()->niveau == 1 )
+   // {
+   //    LibererRessources(&getLevel()->levelTextures[0]);
+   // }  
+   // else if(  getPlayer()->niveau == 2 )
+   // {  
+   //    LibererRessources(&getLevel()->levelTextures[1]);     
+   // }
+   LibererRessources( &getLevel()->levelTextures[0] );
+   LibererRessources( &getLevel()->levelTextures[1] );
+
    printf("Fin Destruction Niveau\n");
 }
