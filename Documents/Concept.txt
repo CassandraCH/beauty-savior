@@ -47,7 +47,7 @@ Liste des différentes entités :
 /// Modification des entités du jeux :
 Nouveau modèle
 
-
+        
 Player 
     -> getPlayer()
     -> getPlayerX()

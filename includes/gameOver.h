@@ -3,7 +3,7 @@
 
 
 extern void Init_MenuGameOver();
-extern void Dessiner_MenuGameOver();
+
 
 extern void Input_MenuGameOver(SDL_Event *event);
 

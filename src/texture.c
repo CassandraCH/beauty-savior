@@ -41,9 +41,16 @@ extern void ChargerTextureManager(Texture_Manager *tex, char * filepath )
 {
     printf("Chargement texture DECOR");
 
-
+    if( tex->texture != NULL )
+    {
+        SDL_DestroyTexture(tex->texture);
+    }
+    
     tex->texture = NULL;
+    
+    
     SDL_Surface *surface = IMG_Load(filepath);
+    
     if( !surface )
     {
         printf("Cannot find %s..\n",filepath);

@@ -19,8 +19,11 @@
 #include "texture.h"
 #include "enjeu.h"
 #include "entite.h"
+#include "hud.h"
 #include "menuPrincipal.h"
 #include "menuPause.h"
+#include "menu_continue.h"
+
 #include "gameOver.h"
 
 typedef struct baseGame 
@@ -30,16 +33,20 @@ typedef struct baseGame
     int time;
 }Base_Game;
 
+
 /*######## GETTER & SETTER ######## */
 extern SDL_Window* getWindow(void);
 extern Base_Game*  getBaseGame(void);
-extern LinkedList* getEnnemis();
-extern LinkedList* getCollider();
-extern LinkedList* getItems();
-extern LinkedList* getBullets();
-extern Scores* getScores(void);
+extern LinkedList* getEnnemis(void);
+extern LinkedList* getCollider(void);
+extern LinkedList* getItems(void);
+extern LinkedList* getBullets(void);
+extern HUD* getScores(void);
 extern Menu_t* getMenu(void);
-extern int getTimerBullet();
+extern Menu_t * getMenuCon(void);
+extern Menu_t * getMenuPause();
+extern Menu_t * getMenu_Over();
+extern int getTimerBullet(void);
 extern void setTimerBullet(int time);
 
 
@@ -59,7 +66,7 @@ extern SDL_Rect camera;
 /*####### FONCTION PRINCIPAL ############ */
 extern void Init(const char *title);
 extern void Update(float dt);
-extern void Quitter_Jeux();
+extern void LibererRessources_Jeux();
 extern void Rendu_Jeux() ;
 void delay(unsigned int frameLimit);
 

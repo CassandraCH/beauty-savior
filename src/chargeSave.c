@@ -136,7 +136,15 @@ extern void ChargementCollider(const char * filename)
 */
 extern void Chargement_CreationPNJ(LinkedList * lst, char * filename)
 {
+
     //Ouverture du fichier
+
+    
+    if( lst->nodeCount > 0 ) 
+    {
+        suppListe(lst);
+    }
+
     FILE * file = fopen(filename, "r");
 
     //Gestion des erreurs d'ouverture du fichier
@@ -171,7 +179,9 @@ extern void Chargement_CreationPNJ(LinkedList * lst, char * filename)
 */
 extern void ChargementItems(const char * filename, SDL_Texture * tex)
 {
+
     //Ouverture du fichier
+
     FILE * file = fopen(filename, "r");
     
     //Gestion des erreurs d'ouverture du fichier

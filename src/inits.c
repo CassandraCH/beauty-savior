@@ -65,24 +65,20 @@ void Init(const char *title)
     /*############### INITIALISATION DES ENTITES *###############*/        
     
     InitJoueur( getPlayer() );
-	Init_MenuPrincipal();
-    
-    
-
-    Init_Scores();
-    
-
-
-  
+	Init_MenuPrincipal();      
     getBaseGame()->estActif = true;
 }
 
-
-void Quitter_Jeux()
+/**
+ *  S'occupe de la libération de toutes les ressources du jeux
+ *  Ainsi que de la destruction du Renderer et du Window
+ */
+void LibererRessources_Jeux(void)
 {
      
     SDL_DestroyWindow(fenetre) ;
     SDL_DestroyRenderer (rendu);
+    DestructionNiveau();
     rendu = NULL;
     fenetre = NULL;
     
@@ -94,9 +90,9 @@ void Quitter_Jeux()
     suppListe(&bullet);
     suppListe(&listCollider);
     suppListe(&listEnnemis);
-    Nettoyer_MenuPrincipal();
-    Nettoyer_MenuPause();
-    Nettoyer_MenuGameOver();
+    Nettoyer_Menu(getMenuCon(), 1);
+    Nettoyer_Menu(getMenu(), 4 );
+    Nettoyer_Menu(getMenuPause(), 2);
 
     TTF_Quit();
     SDL_Quit();
