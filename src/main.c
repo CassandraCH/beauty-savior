@@ -46,7 +46,7 @@ int main( int argc, char ** argv )
 
     
     
-    Quitter_Jeux();
+    LibererRessources_Jeux();
 
     return 0;
 }

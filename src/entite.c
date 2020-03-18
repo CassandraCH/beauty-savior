@@ -19,7 +19,9 @@
 */
 extern bool UpdateBullets( typeEntite typeA, typeEntite typeB )
 {
+
     Node *pt; //Pointeur sur le bullet actuel
+
 
     //sI il y a au moins un bullet dans la liste
     if( getBullets()->nodeCount > 0 )
@@ -82,10 +84,12 @@ extern bool UpdateBullets( typeEntite typeA, typeEntite typeB )
  * \details 
  * \return pas de valeur de retour (void)
 */
+
 extern void SetNombreTir_Ennemis()
 {
+    
+    Node * pt = getEnnemis()->tete;
 
-    Node *pt = getEnnemis()->tete; // Pointeur sur l'ennemi actuel 
 
     //Parcours de la liste des ennemis 
     for(; pt != NULL; pt = pt->suivant)
@@ -99,6 +103,7 @@ extern void SetNombreTir_Ennemis()
                 pt->nb_lancer = 1;
             }
             //Sinon, le mettre a 0
+
             else 
             {
                 pt->nb_lancer = 0;
@@ -213,11 +218,13 @@ extern void collisionDetection()
         coté haut = y 
     */
 
+
     /* 
         Verifie la collision avec les ennemis sur la gauche et la droite
         Parcours de la liste des ennemis
         *pt = pointeur sur l'ennemi actuel
     */
+
     for( Node * pt = listEnnemis.tete ; pt != NULL; pt = pt->suivant)
     {
         /*##### ENNEMI ######*/
@@ -228,6 +235,7 @@ extern void collisionDetection()
         // Position X & Y de l'ennemi
         float ennemi_x = pt->rect->x; // variable qui stocke la position en x du joueur 
         float ennemi_y = pt->rect->y; // variable qui stocke la position en y du joueur 
+
 
         // Vérifie les collisions à gauche , droite, bas et en haut
         if (collide2d(joueur_x, joueur_y, ennemi_x, ennemi_y, joueur_w, joueur_h, ennemi_w, ennemi_h) && pt->type == ennemi)
@@ -245,6 +253,7 @@ extern void collisionDetection()
                     if (!pt->estMort)
                     {
                         pt->estMort = true;
+
                     }
                     break;
                 }
@@ -252,7 +261,9 @@ extern void collisionDetection()
                 // Sinon c'est que le joueur rentre en collision sur le cote => la partie est perdu
                 else
                 {
+
                     Init_GameOver();
+
                 }
             }
             break;
@@ -265,9 +276,11 @@ extern void collisionDetection()
         Init_GameOver();
     }
 
-    //Verifie les collisions avec le décor
-    collision_Decor(joueur,joueur_w, joueur_h, &getPlayer()->x , &getPlayer()->y , &getPlayer()->vy , &getPlayer()->estSurSol );
+    // Vérifie les collisions avec le décor
+    collision_Decor( );
+
 }
+
 
 /**
  * \fn extern void collision_Decor( typeEntite type, float type_w, float type_h , float * type_x, float * type_y, float *vy, bool *estSurSol)
@@ -282,13 +295,23 @@ extern void collisionDetection()
  * \param estSurSol
  * \return pas de valeur de retour (void)
 */
-extern void collision_Decor( typeEntite type, float type_w, float type_h , float * type_x, float * type_y, float *vy, bool *estSurSol)
-{   
-    /*
-        Parcours de la liste des colliders
-        *pt = pointeur sur le collider actuel
-    */
-    for(Node * pt = getCollider()->tete ; pt != NULL; pt = pt->suivant)
+
+
+extern void collision_Decor()
+{
+    
+    /*##### JOUEUR ######*/
+    // Largeur et Hauteur du joueur
+    float joueur_w = getPlayer()->tex.w ;
+    float joueur_h = getPlayer()->tex.h;
+    
+    // Position X & Y du joueur
+    float joueur_x = getPlayerX();
+    float joueur_y = getPlayerY();
+
+    
+     for(Node * pt = getCollider()->tete ; pt != NULL; pt = pt->suivant)
+
     {   
             /*##### BRIQUES ######*/
             // Largeur et Hauteur des blocs de collisions
@@ -299,62 +322,117 @@ extern void collision_Decor( typeEntite type, float type_w, float type_h , float
             float collider_x = pt->rect->x; // variable qui stocke la position en x du collider 
             float collider_y = pt->rect->y; // variable qui stocke la position en y du collider 
 
+           
+
+            typeEntite typeCollider = pt->type;
+            
             /*
                 Gestion des colisions avec le décor
                 Divers traitement 
                 Cas du haut, bas, droit & gauche
             */
-            if( (*type_x) + type_w / 2 > collider_x && (*type_x) + type_w / 2 < collider_x+collider_w  )
-            {
-                // Le haut du joueur rentre en collision avec le bas d'un bloc
-                if( (*type_y) < collider_y+collider_h && (*type_y) > collider_y && (*vy) < 0 )
-                {
-                    (*type_y) = collider_y + collider_h;
-                    (*type_y) = collider_y + collider_h;
 
-                    // On arrete le saut 
-                    (*vy) = 0;
-                }
-            }
            
-            if( (*type_x)+type_w > collider_x && (*type_x) < collider_x+collider_w  )
-            {   
-                // Le bas du joueur est en collision avec le haut du bloc
-                if((*type_y)+type_h > collider_y && (*type_y) < collider_y && (*vy) > 0 )
+            //  player.x+player.w/2 > collider.x && player.x+player.w/2 < collider.x+ collider.w
+            if( joueur_x+joueur_w/2 > collider_x && joueur_x+joueur_w/2 < collider_x+collider_w  )
+            {
+                   // Le haut du joueur rentre en collision avec le bas d'un bloc..
+                if( joueur_y < collider_y+collider_h && joueur_y > collider_y && getPlayer()->vy < 0 )
                 {
-                    (*type_y) = collider_y-type_h;
-                    (*type_y) = collider_y-type_h;
-
-                   if( type == joueur )
-                   {
-                        joueur_surSol();
-                   }
                    
+                    
+                        // correct y
+                        getPlayer()->y = collider_y+collider_h;
+                        joueur_y = collider_y+collider_h;
+
+                        // On arrête le saut 
+                        getPlayer()->vy = 0;
+                    
+
                 }
             }
 
-            if( (*type_y) + type_h > collider_y && (*type_y)<collider_y+collider_h)
-            {
-                // Le cote droit du joueur est en collision avec le cote gauche du bloc
-                if((*type_x)  < collider_x+collider_w && (*type_x)+type_w > collider_x+collider_w && (*vy) < 0)
+            if( joueur_x+joueur_w > collider_x && joueur_x < collider_x+collider_w  )
+
+            {   
+                 // Le bas du joueur est en collision avec le haut du bloc
+                if( joueur_y+joueur_h > collider_y && joueur_y < collider_y && getPlayer()->vy > 0 )
                 {
-                    (*type_x) = collider_x+collider_w;
-                    (*type_x) = collider_x+collider_w;
 
-                    (*vy) = 0;
+                    
+                    if( typeCollider == checkpoint )
+                    {
+                        // Init_GameOver();
+                        Init_Continue();
+
+                    }
+                    else 
+                    {
+                        // correct y
+                        getPlayer()->y = collider_y-joueur_h;
+                        joueur_y = collider_y-joueur_h;
+
+                        // On arrête le saut 
+                        getPlayer()->vy = 0;
+                        if(!getPlayer()->estSurSol)
+                        {
+                            getPlayer()->estSurSol = true;
+                        }
+                    }
+
                 }
+            }
 
-                // Le cote gauche du joueur est en collision avec le cote droit du bloc
-                else if( (*type_x)+type_w > collider_x && (*type_x) < collider_x && (*type_x) > 0)
+            if(joueur_y+joueur_h > collider_y && joueur_y<collider_y+collider_h)
+            {
+                // Le côté droit du joueur est en collision avec le coté gauche du bloc
+            if(joueur_x < collider_x+collider_w && joueur_x+joueur_w > collider_x+collider_w && getPlayer()->vx < 0)
+            {
+                
+
+                if( typeCollider == checkpoint )
+                {
+
+                        // Init_GameOver();
+                        Init_Continue();
+                        
+                }       
+                else 
                 {
                     //correct x
-                    (*type_x)  = collider_x-type_w;
-                    (*type_x) = collider_x-type_w;
+                    getPlayer()->x = collider_x+collider_w;
+                    joueur_x = collider_x+collider_w;
+
+                    getPlayer()->vx = 0;
+
+                }
+
+
+                 // Le côté droit du joueur est en collision avec le coté gauche du bloc
+            }
+            else if(joueur_x+joueur_w > collider_x && joueur_x < collider_x && getPlayer()->x > 0)
+            {
+                if( typeCollider == checkpoint )
+                {
+                        // Init_GameOver();
+                       Init_Continue();
+
+                }
+                else 
+
+                {
+
+                    //correct x
+                    getPlayer()->x = collider_x-joueur_w;
+                    joueur_x = collider_x-joueur_w;
 
                     // On arrete le saut
-                    (*vy) = 0;
+                    getPlayer()->vx = 0;
+
                 }
             }
+            }
         }
+    
 }
 

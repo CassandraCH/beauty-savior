@@ -73,53 +73,69 @@ extern void Update(float dt)
 */
 extern void Rendu_Jeux() 
 {
-  // 
-  if ( getBaseGame()->state != PAUSE )
-  {
-    SDL_SetRenderDrawColor(getRenderer(), 0xFF,0xFF,0xFF,0);
-    SDL_RenderClear( getRenderer() );
-  }
 
-  //Affichage du menu principal
-  if ( getBaseGame()->state == MENU_PRINCIPAL )
-  {
-    Dessiner_MenuPrincipal();
-  }
+ 
+    if ( getBaseGame()->state != PAUSE  )
+    {
+           
+        SDL_SetRenderDrawColor(getRenderer(), 0xFF,0xFF,0xFF,0);
+        SDL_RenderClear( getRenderer() );
+    }
+    else 
+    {
+      // SDL_SetRenderDrawColor(getRenderer(), 0xFF,0xFF,0xFF,0);
+    }
 
-  //Affichage du menu pause
-  else if ( getBaseGame()->state == PAUSE )
-  {
-    Dessiner_MenuPause();
-  }
-  //Affichage du jeu lors d'une partie
-  else if ( getBaseGame()->state == IN_GAME )
-  {
-
-    Affichage_Niveau();
-    // Debug_AfficherCollider();
-    SDL_Texture * texture = ChargerTexture("graphics_assets/rect11.png");
-    SDL_Texture * itemTex = ChargerTexture("graphics_assets/coin.png");
-
-
-    Afficher_ElementsListes( &listEnnemis, texture, ennemi );
-    Afficher_ElementsListes( &bullet , itemTex, bull );
-    Afficher_ElementsListes( &bullet , itemTex, feu );
+    if ( getBaseGame()->state == MENU_PRINCIPAL )
+    {
+      
+      Dessiner_Menu(getMenu(), 4, 0, 0, 1280, 720 );
+      
+    }
+    else if ( getBaseGame()->state == LEVEL_COMPLETED )
+    {
+      Dessiner_Menu(getMenuCon(), 1,300, 200, 647, 434);
+      AfficherScores(getScores());
+    }
+    else if ( getBaseGame()->state == PAUSE )
+    {
+      Dessiner_Menu(getMenuPause(), 2,300, 200,  645, 432 );
+    }
+    else if ( getBaseGame()->state == IN_GAME )
     
-    AfficherScores();
+    {
+
+      // Affichage_Niveau();
+      afficher_textures_niveau(0);
+      
+      SDL_Texture * texture = ChargerTexture("graphics_assets/rect11.png");
+      SDL_Texture * itemTex = ChargerTexture("graphics_assets/coin.png");
+
+
+      Afficher_ElementsListes( &listEnnemis, texture, ennemi );
+      Afficher_ElementsListes( &bullet , itemTex, bull );
+      Afficher_ElementsListes( &bullet , itemTex, feu );
+      
+      AfficherScores(getScores());
+      Afficher_ElementsListes( &items, itemTex, item ); 
+      AfficherJoueur();
+
+
+      Debug_AfficherCollider();
+      afficher_textures_niveau(1);
+ 
+
     
-    Afficher_ElementsListes( &items, itemTex, item ); 
+    }
+    else if (getBaseGame()->state == GAMEOVER )
+    {
+      Dessiner_Menu(getMenu_Over(), 4, 0, 0 , 1280, 720 );
+      AfficherScores(getScores());
+    }
 
-    AfficherJoueur();
-  }
-  
-  //Affichage du menu game over
-  else if (getBaseGame()->state == GAMEOVER )
-  {
-    Dessiner_MenuGameOver();
-    AfficherScores();
-  }
+    SDL_RenderPresent(getRenderer());
 
-  SDL_RenderPresent(getRenderer());
+
 }
 
 /**

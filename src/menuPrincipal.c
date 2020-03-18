@@ -47,64 +47,49 @@ extern void Init_MenuPrincipal()
      * Actif par défaut
      */ 
 
-    menu.menu[0].nomOption = "Jouer";
-    menu.menu[0].filename[0] = "graphics_assets/jouer_on_xs.png";
-    menu.menu[0].filename[1] = "graphics_assets/jouer_off_xs.png";
-
-    //Refraichissement de l'affichage de l'option
-    UpdateOption( &menu.menu[0], 0  );
-    
-    //Position (en x et y) de l'option dans la fenetre
-    menu.menu[0].x = 469;
-    menu.menu[0].y = 366;
+     ChargerData_Menu(0,0,&menu , "Jouer"
+                ,"graphics_assets/icons_buttons/jouer_on_xs.png"
+                ,"graphics_assets/icons_buttons/jouer_off_xs.png"
+                ,469
+                ,366 );
 
     /* 
      * Deuxieme option : Chargement d'un partie
      */
-    menu.menu[1].nomOption = "Chargement";
-    menu.menu[1].filename[0] = "graphics_assets/load_on_xs.png";
-    menu.menu[1].filename[1] = "graphics_assets/load_off_xs.png";
 
-    //Refraichissement de l'affichage de l'option
-    UpdateOption(&menu.menu[1], 1);
-    //Position (en x et y) de l'option dans la fenetre
-    menu.menu[1].x = 455;
-    menu.menu[1].y = 449;
+    ChargerData_Menu(1,1,&menu , "Chargement"
+            ,"graphics_assets/icons_buttons/load_on_xs.png"
+            ,"graphics_assets/icons_buttons/load_off_xs.png"
+            ,455
+            ,449 );
+
 
     /* 
      * Troisieme option : quitter le jeu 
      */
-    menu.menu[2].nomOption = "Quitter";
-    menu.menu[2].filename[0] = "graphics_assets/quitter_on_xs.png";
-    menu.menu[2].filename[1] = "graphics_assets/quitter_off_xs.png";
 
-    //Refraichissement de l'affichage de l'option
-    UpdateOption(&menu.menu[2], 1  );
-    //Position (en x et y) de l'option dans la fenetremake
-
-    menu.menu[2].x = 469;
-    menu.menu[2].y = 491;
+    ChargerData_Menu(2,1,&menu , "Quitter"
+            ,"graphics_assets/icons_buttons/quitter_on_xs.png"
+            ,"graphics_assets/icons_buttons/quitter_off_xs.png"
+            ,469
+            ,491 );
 
      /* 
      * Quatrième option : Couper/Activer Son
      */
-    menu.menu[3].nomOption = "Son";
-    menu.menu[3].filename[0] = "graphics_assets/sound_on_xs.png";
-    menu.menu[3].filename[1] = "graphics_assets/sound_off_xs.png";
-
-
-    //Refraichissement de l'affichage de l'option
-    UpdateOption(&menu.menu[3], 0  );
-    //Position (en x et y) de l'option dans la fenetre
-    menu.menu[3].x = 487;
-    menu.menu[3].y = 627;
+   
+    ChargerData_Menu(3,1,&menu , "Quitter"
+            ,"graphics_assets/icons_buttons/sound_on_xs.png"
+            ,"graphics_assets/icons_buttons/sound_off_xs.png"
+            ,487
+            ,627 );
 
 
     //Option selectionnee = la premiere (nouvelle partie)
     menu.selectedOption = 0;
 
     menu.bg = ChargerTexture("graphics_assets/menu_bg_xs.png");
-
+    
 
 }
 
@@ -178,23 +163,68 @@ extern void ToucheBas(Menu_t *menu)
     }
 }
 
-/*
- * Fonction qui permet d'afficher le menu principal
- * => affichage les differentes options
- */
-extern void Dessiner_MenuPrincipal() 
+extern void Droite(Menu_t* menu)
 {
 
-    SDL_Rect rect = {0,0, 1280, 720 };
+    //Si l'option actuellement selectionnee est differente de la premiere
+    //Si on est sur la dernière option => on ne peut pas aller sur une option au-dessus 
+    if (menu->selectedOption + 1 < MAX_NUMBER - 1 )
+    {
+        //Rafraichir l'affichage
+        UpdateOption(&menu->menu[menu->selectedOption], 1);
 
-    SDL_RenderCopy( getRenderer(), menu.bg , NULL, &rect );
+        //Modifier l'option selectionnee => passe a l'option precedente
+        menu->selectedOption++;
+
+        //Rafraichir l'affichage
+        UpdateOption(&menu->menu[menu->selectedOption], 0);
+    }
+}
+
+
+extern void Gauche(Menu_t* menu)
+{
+    //Si l'option actuellement selectionnee est differente de la premiere
+    //Si on est sur la premiere option => on ne peut pas aller sur une option au-dessus
+    if (menu->selectedOption - 1 >= 0)
+    {  
+  
+        //Rafraichir l'affichage
+        UpdateOption(&menu->menu[menu->selectedOption] , 1);
+
+        //Modifier l'option selectionnee => passe a l'option suivante
+        menu->selectedOption--;
+
+        //Rafraichir l'affichage
+        UpdateOption(&menu->menu[menu->selectedOption], 0 );
+    }
+    
+}
+
+
+/*
+ * Fonction qui permet d'afficher un menu
+ * => affichage les differentes options
+ */
+
+/*  
+    Prend en paramètre le menu, le nombres d'options qu'il comporte, la position x du background, celle en y
+    La largeur et hauteur du background.
+*/
+extern void Dessiner_Menu(Menu_t* menu, int nombresOptions, int posX, int posY , int largeurBG, int hauteurBG) 
+{
+
+    SDL_Rect rect = {posX,posY, largeurBG, hauteurBG };
+    // SDL_Rect rect = {posX,posY, 1280, 720 };
+
+    SDL_RenderCopy( getRenderer(), menu->bg , NULL, &rect );
 
     //Pour chaque option, afficher a l'ecran son rendu
-	for (int i = 0; i < MAX_NUMBER+1; i++)
+	for (int i = 0; i < nombresOptions; i++)
 	{
         //Rectangle tampon 
-        SDL_Rect rect = {menu.menu[i].x, menu.menu[i].y, menu.menu[i].largeur, menu.menu[i].hauteur};
-        SDL_RenderCopy( getRenderer(), menu.menu[i].texture , NULL, &rect);
+        SDL_Rect rect = {menu->menu[i].x, menu->menu[i].y, menu->menu[i].largeur, menu->menu[i].hauteur};
+        SDL_RenderCopy( getRenderer(), menu->menu[i].texture , NULL, &rect);
 	}
 
     
@@ -242,7 +272,7 @@ extern void Input_MenuPrincipal(SDL_Event *event)
                             suppListe( getCollider() );
                             suppListe(getEnnemis());
                             suppListe(getBullets());
-                            PlayerScore("SCORES : 0", 10, 0);
+                            Init_HUD(getScores(),"SCORES : 0", 10, 0);
                             ChargerNiveau();
                             // Nettoyer_MenuPrincipal();
                             getBaseGame()->state = IN_GAME;
@@ -265,12 +295,14 @@ extern void Input_MenuPrincipal(SDL_Event *event)
                         if( Mix_PausedMusic() == 1 )
                         {
                             UpdateOption(&menu.menu[3], 0  );
+
                             //On enlève la pause (la musique repart où elle en était)
                             Mix_ResumeMusic();
                         }
                         //Si la musique est en train de jouer
                         else
                         {
+
                             UpdateOption(&menu.menu[3], 1  );
                             //On met en pause la musique
                             Mix_PauseMusic();
@@ -284,21 +316,49 @@ extern void Input_MenuPrincipal(SDL_Event *event)
 }
 
 /*
- * Fonction qui permet de supprimer le menu => liberation de la memoire
- */
-extern void Nettoyer_MenuPrincipal()
+    Fonction qui s'occupe de chargement des données
+    Prends en paramètre le numero de l'option, 
+                        le numéro de l'image sélectionné par défaut,
+                        Un pointeur vers le menu, 
+                        Le nom de l'option,
+                        Le chemin vers l'image séléctionner,
+                        Le chemin vers l'image déséléctionner,
+                        La position en X 
+                        La position en Y
+
+*/
+extern void ChargerData_Menu(int numero,int num_image, Menu_t * menu,  char * nomOption,  char * image_on,  char * image_off,
+int positionX, int positionY
+)
+
 {
-    // NettoyerScore();
+    menu->menu[numero].nomOption = nomOption;
+    menu->menu[numero].filename[0] = image_on;
+    menu->menu[numero].filename[1] = image_off;
+
+    //Refraichissement de l'affichage de l'option
+    UpdateOption( &menu->menu[numero], num_image  );
+    
+    //Position (en x et y) de l'option dans la fenetre
+    menu->menu[numero].x = positionX;
+    menu->menu[numero].y = positionY;
+}
+
+
+/*
+ * Fonction qui permet de supprimer un menu => liberation de la memoire
+ */
+extern void Nettoyer_Menu(Menu_t * menu, int nombreOptions)
+{
     printf("Suppression Menu principal\n");
-    for(int i = 0; i < MAX_NUMBER+1; i++)
+    for(int i = 0; i < nombreOptions; i++)
     {
-       if( menu.menu[i].texture != NULL ) 
+       if( menu->menu[i].texture != NULL ) 
         {
-            free(menu.menu[i].texture);
+            free(menu->menu[i].texture);
         }
-      
     }
-    printf("Fin Suppression Menu principal\n");
+    printf("Fin Suppression Menu\n");
    return;
 
 }
