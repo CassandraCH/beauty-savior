@@ -64,15 +64,15 @@ extern void InitJoueur()
 	chargerImage(&player.tex, "graphics_assets/rect10.png");	
 	player.h = player.tex.h;
 	player.w = player.tex.w;
-	player.x = 8000;
+	player.x = 100;
 
 	player.y = 495;
     player.frame = 0;
 
     player.nb_lancer = 0;
     player.nb_objet = 0;
-    player.posXDepart = 100;
-    player.posYDepart = 100;
+    player.posXDepart = player.x;
+    player.posYDepart = player.y;
 
 }
 
@@ -148,7 +148,7 @@ extern void CollisionItems()
             {
                pt->estMort = true;
                supprimeCible(getItems(), true);
-               SetHUD_IntToTexture(getScores(), "SCORES", ++player.nb_objet);
+               SetHUD_IntToTexture(getScores(), "SCORES", ++player.nb_objet, getScores()->rect.x,getScores()->rect.y );
             }
             break;
         }
@@ -190,7 +190,8 @@ extern void UpdateJoueur( float dt)
 
 extern void actualiserJoueur(void)
 {
-    if( !player.estMort )
+
+    if( !player.estMort || getBaseGame()->state == LOADING )
     {
         //  if( player.nombreVies > 1 )
         // {
@@ -198,15 +199,21 @@ extern void actualiserJoueur(void)
         //     printf("Il reste %d points de vie\n", getPlayer()->nombreVies );
         // }else 
         // {
-           
 
-            // }
-            Init_HUD(getScores(),"Scores: 0", 50, 50);
-            player.nb_lancer = 0;
-            player.x = player.posXDepart;
-            player.y = player.posYDepart;
-            player.vx = 0;
+        // }
+        
+        player.nb_lancer = 0;
+        player.y = player.posYDepart;
+        player.x = player.posXDepart;
+        if( getBaseGame()->state != LOADING )
+        {
+              player.vx = 0;
             player.nb_objet = 0;
+            player.niveau = 1;
+        }
+        
+          
+        
 
             return;
     }
@@ -226,10 +233,9 @@ extern void attaqueJoueur()
 {
     if ( getPlayer()->nb_objet > 0 )
     {
-
-      
+     
         CreerTir(bull, getPlayer()->w , getPlayer()->h, getPlayerX(),  getPlayerY() );
-        SetHUD_IntToTexture(getScores(), "SCORES",--player.nb_objet);
+        SetHUD_IntToTexture(getScores(), "SCORES",--player.nb_objet,getScores()->rect.x,getScores()->rect.y  );
 
     }
     return;

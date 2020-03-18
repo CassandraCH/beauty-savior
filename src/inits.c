@@ -52,14 +52,14 @@ void Init(const char *title)
         exit(EXIT_FAILURE);
     }
 
-    getScores()->police = TTF_OpenFont("fonts/homizio.ttf", 48);
+    getScores()->police = TTF_OpenFont("fonts/arial.ttf", 54);
     if(!getScores()->police )
     {
         printf("Cannot find font file!!\n");
         SDL_Quit();
     }
 
-    getNiveau()->police = TTF_OpenFont("fonts/homizio.ttf", 48);
+    getNiveau()->police = TTF_OpenFont("fonts/arial.ttf", 54);
     if(!getNiveau()->police )
     {
         printf("Cannot find font file!!\n");

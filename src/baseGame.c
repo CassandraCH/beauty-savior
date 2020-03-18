@@ -92,6 +92,12 @@ extern void Rendu_Jeux()
       Dessiner_Menu(getMenu(), 4, 0, 0, 1280, 720 );
       
     }
+    else if ( getBaseGame()->state == LOADING )
+    {
+      Dessiner_Menu(getMenuLoad(), 2, 0,0 , 1280, 720) ;
+      AfficherHUD(getScores());
+      AfficherHUD( getNiveau() );
+    }
     else if ( getBaseGame()->state == LEVEL_COMPLETED )
     {
       Dessiner_Menu(getMenuCon(), 1,0, 0, 1280, 720);

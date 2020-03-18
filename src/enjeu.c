@@ -39,10 +39,11 @@ extern void Input_InGame(SDL_Event *event)
         //Si la touche p est pressee
         if(event->key.keysym.sym == SDLK_p && event->type == SDL_KEYDOWN )
         {
-            //Modification de l'etat du jeu => en pause
-            getBaseGame()->state = PAUSE;
+            
             //Gestion du menu de pause
             Init_MenuPause();
+            //Modification de l'etat du jeu => en pause
+            getBaseGame()->state = PAUSE;
         }
 
         //Si la touche espace est pressee

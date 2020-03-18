@@ -6,7 +6,7 @@
 extern void Init_HUD(HUD * hud, const char * text, int x,  int y)
 {
     
-    hud->surface = TTF_RenderText_Solid(hud->police, text,(SDL_Color){0, 0, 0,0});
+    hud->surface = TTF_RenderText_Solid(hud->police, text,(SDL_Color){0xFF, 0, 0,0});
     hud->tex = SDL_CreateTextureFromSurface( getRenderer(), hud->surface );
     
     int width, height;
@@ -19,7 +19,7 @@ extern void Init_HUD(HUD * hud, const char * text, int x,  int y)
     
 }
 
-extern void SetHUD_IntToTexture(HUD * hud, const char * nom, int scores)
+extern void SetHUD_IntToTexture(HUD * hud, const char * nom, int scores, int posX, int posY)
 {
     SDL_Texture * tex = hud->tex;
 
@@ -42,6 +42,9 @@ extern void SetHUD_IntToTexture(HUD * hud, const char * nom, int scores)
 
     hud->rect.w = width;
     hud->rect.h = height;
+    hud->rect.x = posX;
+    hud->rect.y = posY;
+    
 }
 
 extern void AfficherHUD(HUD * hud)

@@ -13,13 +13,12 @@ extern void Init_MenuLoad()
      int width = LARGEUR_FENETRE, height = HAUTEUR_FENETRE;
     printf("Chargement Menu principal");
     
-    SetHUD_IntToTexture(getScores(), "SCORES", getPlayer()->nb_objet);
-    getScores()->rect.x = 530;
-    getScores()->rect.y = 245;
+      
+    ChargerPartie();
+    SetHUD_IntToTexture(getScores(), "SCORES", getPlayer()->nb_objet, 490, 245);
 
-    SetHUD_IntToTexture(getNiveau(), "NIVEAU", getPlayer()->niveau );
-    getNiveau()->rect.x = 535;
-    getNiveau()->rect.y = 374;
+
+    SetHUD_IntToTexture(getNiveau(), "NIVEAU", getPlayer()->niveau , 490, 374 );
 
     /* 
      * Premiere option : Reprendre la partie
@@ -27,10 +26,11 @@ extern void Init_MenuLoad()
      */ 
 
     ChargerData_Menu(0,0,&menu_load , "Retour"
-                ,"graphics_assets/icons_buttons/back_on_xs.png"
-                ,"graphics_assets/icons_buttons/back_off_xs.png"
+                
+                ,"graphics_assets/icons_buttons/return_on_xs.png"
+                ,"graphics_assets/icons_buttons/return_off_xs.png"
                 ,339
-                ,491 );
+                ,570 );
 
 
     /* 
@@ -41,13 +41,13 @@ extern void Init_MenuLoad()
                 ,"graphics_assets/icons_buttons/load_on_xs.png"
                 ,"graphics_assets/icons_buttons/load_off_xs.png"
                 ,620
-                ,491 );
+                ,570 );
 
 
     //Option selectionnee = Reprendre partie
     menu_load.selectedOption = 0;
 
-    menu_load.bg = ChargerTexture("graphics_assets/pause.png");
+    menu_load.bg = ChargerTexture("graphics_assets/chargement.png");
     
 
 }
@@ -70,28 +70,37 @@ extern void Input_MenuLoad(SDL_Event *event)
             switch (event->key.keysym.sym)
             {
             case SDLK_LEFT:
-                Gauche(getMenuPause());
+                Gauche(getMenuLoad());
                 break;
             case SDLK_RIGHT:
-                Droite(getMenuPause());
+                Droite(getMenuLoad());
                 break;
           
             case SDLK_RETURN:
-                switch (getTouchePresse(getMenuPause()))
+                switch (getTouchePresse(getMenuLoad()))
                 {
                 case 0:
-                    getBaseGame()->state = IN_GAME;                    
+
+                    Nettoyer_Menu(getMenuLoad(), 2);
+                    Nettoyer_Menu( getMenu_Over() , 4);
+                    actualiserJoueur();
+                    getBaseGame()->state = MENU_PRINCIPAL;                     
                     break;
                 case 1:
                     
-                    actualiserJoueur();   
-                    getBaseGame()->state = MENU_PRINCIPAL;       
+                    DestructionNiveau();
+                    actualiserJoueur();
+                    getPlayer()->estMort = false;
+                    SetHUD_IntToTexture(getScores(), "SCORES", getPlayer()->nb_objet, 10, 0);
+                  
+                    Nettoyer_Menu(getMenu(), 4);
+                    ChargerNiveau();
+                   
+                    getBaseGame()->state = IN_GAME;
+                    Mix_HaltMusic();
+                   
                     return;
 
-                    break;
-                case 2:
-                    getBaseGame()->estActif = false;
-                    return;
                     break;
                 default:
                     break;

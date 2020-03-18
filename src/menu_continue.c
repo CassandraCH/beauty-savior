@@ -1,7 +1,6 @@
 #include "baseGame.h"
 
 
-#include "menu.h"
 
 Menu_t menu_continue;
 
@@ -21,13 +20,9 @@ extern void Init_MenuContinue()
      * Actif par défaut
      */ 
 
-    SetHUD_IntToTexture(getScores(), "SCORES", getPlayer()->nb_objet);
-    getScores()->rect.x = 530;
-    getScores()->rect.y = 245;
-
-    SetHUD_IntToTexture(getNiveau(), "NIVEAU", getPlayer()->niveau );
-    getNiveau()->rect.x = 535;
-    getNiveau()->rect.y = 374;
+    SetHUD_IntToTexture(getScores(), "SCORES", getPlayer()->nb_objet, 530, 245);
+   
+    SetHUD_IntToTexture(getNiveau(), "NIVEAU", getPlayer()->niveau , 535, 374);
 
     ChargerData_Menu(0, 0, &menu_continue, "Continuer", "graphics_assets/icons_buttons/continue.png", "null", 707, 562);
 
@@ -63,6 +58,7 @@ extern void Input_MenuContinue(SDL_Event *event)
 
                         getBaseGame()->state = IN_GAME;
                         setNiveau(2);
+                        SauvegarderPartie();
                         suppListe(getCollider());
                         suppListe(getEnnemis());
                         suppListe(getBullets());
