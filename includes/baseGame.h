@@ -1,3 +1,14 @@
+/**
+ * \file baseGame.h
+ * \author CALVADOS Cindy, CHAUMULON Cassandra, CHELLI Célia, OUSMANOVA Karina
+ * \version 1.0
+ * \date mars 2020
+ * \brief Programme qui gère les menus principal du jeu
+ */
+
+
+
+
 #ifndef __BASE_GAME_H
 #define __BASE_GAME_H
 
