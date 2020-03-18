@@ -75,8 +75,8 @@ extern void SaveCollider_Position()
         fprintf(stderr, "Erreur avec le fichier\n");
         exit(1);    
     }
-    Node * pt; /**< Pointeur utilise pour parcourir la liste de colliders */
-    
+    Node *pt; /**< Node * pt : Pointeur utilise pour parcourir la liste de colliders */
+
     //Ecrire la position en x et en y des colliders dans le fichier
     if( getCollider()->nodeCount  > 0 )
     {
@@ -110,7 +110,7 @@ extern void ChargementCollider(const char * filename)
         fprintf(stderr, "Erreur avec le fichier\n");
         exit(1);    
     }
-    Node *pt; /**< Pointeur utilise pour parcourir la liste de colliders */
+    Node *pt; /**< Node *pt : Pointeur utilise pour parcourir la liste de colliders */
 
     //Parcours de la liste si il y a au moins un collider
     if( getCollider()->nodeCount  > 0 )
@@ -144,7 +144,7 @@ extern void Chargement_CreationPNJ(LinkedList * lst, char * filename)
         fprintf(stderr, "Erreur avec le fichier\n");
         exit(1);    
     }
-    int typeCollider; /**< Variable qui permet de savoir le type du collider */
+    int typeCollider; /**< int typeCollider : Variable qui permet de savoir le type du collider */
 
     while( !feof(file) )
     {
@@ -180,7 +180,7 @@ extern void ChargementItems(const char * filename, SDL_Texture * tex)
         exit(1);    
     }
 
-    int w, h; /**<Largeur et hauteur de l'item */
+    int w, h; //Largeur et hauteur de l'item
     SDL_QueryTexture(tex, NULL,NULL, &w, &h );
 
     while( !feof(file) )
@@ -215,7 +215,7 @@ extern void ChargementEnnemis(const char * filename)
         fprintf(stderr, "Erreur avec le fichier\n");
         exit(1);    
     }
-    int actif; /**< Variable qui permet de stocker l'etat de l'ennemi = actif */
+    int actif; //Variable qui permet de stocker l'etat de l'ennemi = actif
    
     while( !feof(file) )
     {

@@ -9,8 +9,13 @@
 
 #include "baseGame.h"
 
-Menu_t menu_over;
+Menu_t menu_over; /**< Structure de type menu_t */
 
+/**
+ * \fn extern Menu_t * getMenu_Over()
+ * \brief Fonction qui permet retourner le menu du game over
+ * \return une structure menu de type Menu_t
+*/
 extern Menu_t * getMenu_Over()
 {
     return &menu_over;

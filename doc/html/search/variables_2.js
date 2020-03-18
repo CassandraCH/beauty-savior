@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['game_94',['game',['../base_game_8c.html#a9e1da7e436a315594c2bfb20bc8b240c',1,'baseGame.c']]]
+  ['estactif_106',['estActif',['../structbase_game.html#ad89867021ac1f6bf309e9a79313123fc',1,'baseGame']]]
 ];

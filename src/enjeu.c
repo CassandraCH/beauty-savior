@@ -71,7 +71,7 @@ extern void Input_InGame(SDL_Event *event)
 
     /* Gestion de la camera */
 
-    const Uint8 *keystates = SDL_GetKeyboardState(NULL); /**< Variable qui permet de savoir si une touche est pressee ou non*/
+    const Uint8 *keystates = SDL_GetKeyboardState(NULL); //Variable qui permet de savoir si une touche est pressee ou non
 
     InputJoueur(event);
     //Initialisation de la position en x et en y de la camera

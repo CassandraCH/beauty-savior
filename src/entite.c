@@ -19,7 +19,7 @@
 */
 extern bool UpdateBullets( typeEntite typeA, typeEntite typeB )
 {
-    Node *pt; /**< Pointeur sur le bullet actuel */
+    Node *pt; //Pointeur sur le bullet actuel
 
     //sI il y a au moins un bullet dans la liste
     if( getBullets()->nodeCount > 0 )
@@ -85,7 +85,7 @@ extern bool UpdateBullets( typeEntite typeA, typeEntite typeB )
 extern void SetNombreTir_Ennemis()
 {
 
-    Node *pt = getEnnemis()->tete; /**< Pointeur sur l'ennemi actuel */
+    Node *pt = getEnnemis()->tete; // Pointeur sur l'ennemi actuel 
 
     //Parcours de la liste des ennemis 
     for(; pt != NULL; pt = pt->suivant)
@@ -120,7 +120,7 @@ extern void SetNombreTir_Ennemis()
 */
 extern void CreerTir(typeEntite type, int width, int height, int startX, int startY)
 {
-    SDL_Rect *rect = malloc(sizeof(SDL_Rect)); /**< Creation d'une structure de type rectangle en SDL */
+    SDL_Rect *rect = malloc(sizeof(SDL_Rect)); //Creation d'une structure de type rectangle en SDL
 
     /* Ajout des valeurs dans les champs de la structure */
     rect->w = 41;
@@ -140,7 +140,7 @@ extern void CreerTir(typeEntite type, int width, int height, int startX, int sta
 */
 extern void attaqueEnnemis() 
 {
-    Node * pt = getEnnemis()->tete; /**< pointeur de l'ennemi actuel */
+    Node * pt = getEnnemis()->tete; // pointeur de l'ennemi actuel
 
     //Parcours de la liste des ennemis
     for(; pt != NULL; pt = pt->suivant)
@@ -172,7 +172,7 @@ extern void attaqueEnnemis()
 */
 extern void UpdateEnnemis()
 {
-    Node *pt = getEnnemis()->tete; /**< pointeur de l'ennemi actuel */
+    Node *pt = getEnnemis()->tete; //pointeur de l'ennemi actuel 
 
     //Parcours de la liste des ennemis
     for(; pt != NULL; pt = pt->suivant)
@@ -199,12 +199,12 @@ extern void collisionDetection()
     
     /*##### JOUEUR ######*/
     // Largeur et Hauteur du joueur
-    float joueur_w = getPlayer()->tex.w ; /**< variable qui stocke la largeur du joueur */
-    float joueur_h = getPlayer()->tex.h;  /**< variable qui stocke la hauteur du joueur */
+    float joueur_w = getPlayer()->tex.w ; // variable qui stocke la largeur du joueur 
+    float joueur_h = getPlayer()->tex.h;  // variable qui stocke la hauteur du joueur 
 
     // Position X & Y du joueur
-    float joueur_x = getPlayerX(); /**< variable qui stocke la position en x du joueur */
-    float joueur_y = getPlayerY(); /**< variable qui stocke la position en y du joueur */
+    float joueur_x = getPlayerX(); // variable qui stocke la position en x du joueur 
+    float joueur_y = getPlayerY(); // variable qui stocke la position en y du joueur 
 
     /*
         côté droit = x + largeur;
@@ -222,12 +222,12 @@ extern void collisionDetection()
     {
         /*##### ENNEMI ######*/
         // Largeur et Hauteur de l'ennemi
-        float ennemi_w = pt->rect->w; /**< variable qui stocke la largeur de l'ennemi */
-        float ennemi_h = pt->rect->h; /**< variable qui stocke la hauteur du joueur */
+        float ennemi_w = pt->rect->w; // variable qui stocke la largeur de l'ennemi 
+        float ennemi_h = pt->rect->h; // variable qui stocke la hauteur du joueur 
 
         // Position X & Y de l'ennemi
-        float ennemi_x = pt->rect->x; /**< variable qui stocke la position en x du joueur */
-        float ennemi_y = pt->rect->y; /**< variable qui stocke la position en y du joueur */
+        float ennemi_x = pt->rect->x; // variable qui stocke la position en x du joueur 
+        float ennemi_y = pt->rect->y; // variable qui stocke la position en y du joueur 
 
         // Vérifie les collisions à gauche , droite, bas et en haut
         if (collide2d(joueur_x, joueur_y, ennemi_x, ennemi_y, joueur_w, joueur_h, ennemi_w, ennemi_h) && pt->type == ennemi)
@@ -292,12 +292,12 @@ extern void collision_Decor( typeEntite type, float type_w, float type_h , float
     {   
             /*##### BRIQUES ######*/
             // Largeur et Hauteur des blocs de collisions
-            float collider_w = pt->rect->w; /**< variable qui stocke la largeur du collider */
-            float collider_h = pt->rect->h; /**< variable qui stocke la hauteur du collider */
+            float collider_w = pt->rect->w; // variable qui stocke la largeur du collider 
+            float collider_h = pt->rect->h; // variable qui stocke la hauteur du collider 
 
             // Position X & Y des blocs de collisions
-            float collider_x = pt->rect->x; /**< variable qui stocke la position en x du collider */
-            float collider_y = pt->rect->y; /**< variable qui stocke la position en y du collider */
+            float collider_x = pt->rect->x; // variable qui stocke la position en x du collider 
+            float collider_y = pt->rect->y; // variable qui stocke la position en y du collider 
 
             /*
                 Gestion des colisions avec le décor

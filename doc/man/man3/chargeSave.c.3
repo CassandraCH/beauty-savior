@@ -1,4 +1,4 @@
-.TH "src/chargeSave.c" 3 "Vendredi 13 Mars 2020" "Version 0.1" "Beauty Savior" \" -*- nroff -*-
+.TH "src/chargeSave.c" 3 "Mercredi 18 Mars 2020" "Version 0.1" "Beauty Savior" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -82,9 +82,9 @@ Fonction qui permet de charger et créer toutes les entités (sauf le joueur) a 
 pas de valeur de retour (void) 
 .RE
 .PP
-< Variable qui permet de savoir le type du collider
+< int typeCollider : Variable qui permet de savoir le type du collider
 .SS "void ChargementCollider (const char * filename)"
-< Pointeur utilise pour parcourir la liste de colliders
+< \fBNode\fP *pt : Pointeur utilise pour parcourir la liste de colliders
 .SS "void ChargementEnnemis (const char * filename)"
 
 .PP
@@ -100,7 +100,7 @@ Fonction qui permet de charger les ennemis a partir d'un fichier\&.
 pas de valeur de retour (void) 
 .RE
 .PP
-< Variable qui permet de stocker l'etat de l'ennemi = actif
+
 .SS "void ChargementItems (const char * filename, SDL_Texture * tex)"
 
 .PP
@@ -118,7 +118,7 @@ Fonction qui permet de charger les items a partir d'un fichier\&.
 pas de valeur de retour (void) 
 .RE
 .PP
-<Largeur et hauteur de l'item
+
 .SS "void ChargerPartie ()"
 
 .PP
@@ -167,7 +167,7 @@ Utilisation d'un pointeur pour pouvoir parcourir la liste de colliders
 pas de valeur de retour (void) 
 .RE
 .PP
-< Pointeur utilise pour parcourir la liste de colliders
+< \fBNode\fP * pt : Pointeur utilise pour parcourir la liste de colliders
 .SH "Auteur"
 .PP 
 Généré automatiquement par Doxygen pour Beauty Savior à partir du code source\&.

@@ -1,4 +1,4 @@
-.TH "src/entite.c" 3 "Vendredi 13 Mars 2020" "Version 0.1" "Beauty Savior" \" -*- nroff -*-
+.TH "src/entite.c" 3 "Mercredi 18 Mars 2020" "Version 0.1" "Beauty Savior" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -16,24 +16,31 @@ src/entite.c \- Programme qui gère le comportement des entités\&.
 .ti -1c
 .RI "bool \fBUpdateBullets\fP (typeEntite typeA, typeEntite typeB)"
 .br
+.RI "Fonction qui permet mettre a jour les bullets\&. "
 .ti -1c
 .RI "void \fBSetNombreTir_Ennemis\fP ()"
 .br
+.RI "Fonction qui configurer le nombre de tir des ennemis\&. "
 .ti -1c
 .RI "void \fBCreerTir\fP (typeEntite type, int width, int height, int startX, int startY)"
 .br
+.RI "Fonction qui creer un tir\&. "
 .ti -1c
 .RI "void \fBattaqueEnnemis\fP ()"
 .br
+.RI "Fonction qui gère les attaques des ennemis\&. "
 .ti -1c
 .RI "void \fBUpdateEnnemis\fP ()"
 .br
+.RI "Fonction qui met a jour les ennemis\&. "
 .ti -1c
 .RI "void \fBcollisionDetection\fP ()"
 .br
+.RI "Fonction qui gere les collision entre le joueur et le decor, le joueur et les ennemis; et si le joueur tombe dans le vide\&. "
 .ti -1c
 .RI "void \fBcollision_Decor\fP (typeEntite type, float type_w, float type_h, float *type_x, float *type_y, float *vy, bool *estSurSol)"
 .br
+.RI "Fonction qui gere les collisions avec le decor\&. "
 .in -1c
 .SH "Description détaillée"
 .PP 
@@ -60,13 +67,121 @@ Gestion des collisions entre le joueur et le décor (plateformes), le joueur et 
 .SH "Documentation des fonctions"
 .PP 
 .SS "void attaqueEnnemis ()"
-Fonction qui s'occupe de la gestion des attaques des ennemies\&. 
+
+.PP
+Fonction qui gère les attaques des ennemis\&. Parcours des ennemis, verification qu'il n'est pas mort et de son compteur de lancer 
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void collision_Decor (typeEntite type, float type_w, float type_h, float * type_x, float * type_y, float * vy, bool * estSurSol)"
+
+.PP
+Fonction qui gere les collisions avec le decor\&. 
+.PP
+\fBParamètres\fP
+.RS 4
+\fItype\fP type de l'entite 
+.br
+\fItype_w\fP largeur de l'entite 
+.br
+\fItype_h\fP hauteur de l'entite 
+.br
+\fItype_x\fP position en x de l'entite 
+.br
+\fItype_y\fP position en y de l'entite 
+.br
+\fIvy\fP gravite de l'entite 
+.br
+\fIestSurSol\fP 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
 .SS "void collisionDetection ()"
-Fonction de detection du joueur avec le décor et les s 
+
+.PP
+Fonction qui gere les collision entre le joueur et le decor, le joueur et les ennemis; et si le joueur tombe dans le vide\&. 
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
 .SS "void CreerTir (typeEntite type, int width, int height, int startX, int startY)"
-Fonction de création d'un tir Prend en paramètre le type du tir, la largeur du sprite, sa hauteur\&. La position en X et Y du début du tir\&. 
+
+.PP
+Fonction qui creer un tir\&. 
+.PP
+\fBParamètres\fP
+.RS 4
+\fItype\fP type du tir 
+.br
+\fIwidth\fP largeur du sprite 
+.br
+\fIheight\fP hauteur du sprite 
+.br
+\fIstartX\fP position en x du sprite 
+.br
+\fIstartY\fP position en y du sprite 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void SetNombreTir_Ennemis ()"
+
+.PP
+Fonction qui configurer le nombre de tir des ennemis\&. 
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
 .SS "bool UpdateBullets (typeEntite typeA, typeEntite typeB)"
-Mis à jour des Bullets() 
+
+.PP
+Fonction qui permet mettre a jour les bullets\&. Parcours de la listes des bullets
+.PP
+En fonction de si il s'agit d'un ennemi ou du joueur, le comportement des bullets est différent 
+.PP
+\fBParamètres\fP
+.RS 4
+\fItypeA\fP type de la premiere entite : item, joueur, ennemi, platform , bull, feu 
+.br
+\fItypeB\fP type de la deuxieme entite : item, joueur, ennemi, platform , bull, feu 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+Une valeur de type booleen 
+.RE
+.PP
+
+.SS "void UpdateEnnemis ()"
+
+.PP
+Fonction qui met a jour les ennemis\&. 
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
 .SH "Auteur"
 .PP 
 Généré automatiquement par Doxygen pour Beauty Savior à partir du code source\&.

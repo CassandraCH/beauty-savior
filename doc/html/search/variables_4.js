@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['m_5fframewidth_96',['m_frameWidth',['../structplayer.html#a06970f5536dc17a71b6a1da7dec055bb',1,'player']]]
+  ['last_5fframe_5ftime_108',['last_frame_time',['../base_game_8c.html#aa988bffcd6557ee70ef1b3b4d13ce6f8',1,'baseGame.c']]]
 ];
