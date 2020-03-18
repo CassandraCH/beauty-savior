@@ -6,5 +6,7 @@ var level_8c =
     [ "Debug_AfficherCollider", "level_8c.html#a2ca40c89f5d9919989aa0f95fbe7e66d", null ],
     [ "DestructionNiveau", "level_8c.html#a9508faf96c0cf5fc7e2474af8acd7134", null ],
     [ "getLevel", "level_8c.html#af8ac1c82d8390af43712e856ad7641e8", null ],
+    [ "NiveauSuivant", "level_8c.html#af03a5f30c8e752132aa2bd0751324be8", null ],
+    [ "setNiveau", "level_8c.html#aeed25b1dade20227404a8d808709e7f4", null ],
     [ "level", "level_8c.html#a083b6d36ebd55b2e07bedb04440cb325", null ]
 ];

@@ -7,8 +7,6 @@ src/scores.c \- Programme qui gère le score\&.
 .SH SYNOPSIS
 .br
 .PP
-\fC#include 'scores\&.h'\fP
-.br
 \fC#include 'baseGame\&.h'\fP
 .br
 
@@ -16,33 +14,15 @@ src/scores.c \- Programme qui gère le score\&.
 
 .in +1c
 .ti -1c
-.RI "\fBScores\fP * \fBgetScores\fP ()"
+.RI "\fBHUD\fP * \fBgetScores\fP ()"
 .br
 .RI "Retourne l'instance de l'objet score\&. "
-.ti -1c
-.RI "void \fBInit_Scores\fP ()"
-.br
-.ti -1c
-.RI "void \fBPlayerScore\fP (const char *text, int x, int y)"
-.br
-.ti -1c
-.RI "void \fBNettoyerScore\fP ()"
-.br
-.ti -1c
-.RI "void \fBAfficherScores\fP ()"
-.br
-.ti -1c
-.RI "void \fBSetScore\fP (const char *nom, int scores)"
-.br
-.ti -1c
-.RI "void \fBnouveauScore\fP (int nouveauScore)"
-.br
 .in -1c
 .SS "Variables"
 
 .in +1c
 .ti -1c
-.RI "\fBScores\fP \fBscore\fP"
+.RI "\fBHUD\fP \fBscore\fP"
 .br
 .in -1c
 .SH "Description détaillée"

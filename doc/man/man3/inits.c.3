@@ -22,7 +22,7 @@ src/inits.c \- Programme qui gère l'initialisation\&.
 .RI "void \fBInit\fP (const char *title)"
 .br
 .ti -1c
-.RI "void \fBQuitter_Jeux\fP ()"
+.RI "void \fBLibererRessources_Jeux\fP (void)"
 .br
 .in -1c
 .SS "Variables"
@@ -59,6 +59,10 @@ janvier 2020
 Initialisation de la fenêtre, du rendu, du son, du menu principal, du score et du joueur
 .PP
 Destruction du son, des ennemis, de la fenêtre, du menu prinicpal, du rendu\&.\&.\&. 
+.SH "Documentation des fonctions"
+.PP 
+.SS "void LibererRessources_Jeux (void)"
+S'occupe de la libération de toutes les ressources du jeux Ainsi que de la destruction du Renderer et du Window 
 .SH "Auteur"
 .PP 
 Généré automatiquement par Doxygen pour Beauty Savior à partir du code source\&.

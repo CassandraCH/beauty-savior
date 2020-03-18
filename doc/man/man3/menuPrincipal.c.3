@@ -32,13 +32,22 @@ src/menuPrincipal.c \- Programme qui gère le menu principal\&.
 .RI "void \fBToucheBas\fP (\fBMenu_t\fP *\fBmenu\fP)"
 .br
 .ti -1c
-.RI "void \fBDessiner_MenuPrincipal\fP ()"
+.RI "void \fBDroite\fP (\fBMenu_t\fP *\fBmenu\fP)"
+.br
+.ti -1c
+.RI "void \fBGauche\fP (\fBMenu_t\fP *\fBmenu\fP)"
+.br
+.ti -1c
+.RI "void \fBDessiner_Menu\fP (\fBMenu_t\fP *\fBmenu\fP, int nombresOptions, int posX, int posY, int largeurBG, int hauteurBG)"
 .br
 .ti -1c
 .RI "void \fBInput_MenuPrincipal\fP (SDL_Event *event)"
 .br
 .ti -1c
-.RI "void \fBNettoyer_MenuPrincipal\fP ()"
+.RI "void \fBChargerData_Menu\fP (int numero, int num_image, \fBMenu_t\fP *\fBmenu\fP, char *nomOption, char *image_on, char *image_off, int positionX, int positionY)"
+.br
+.ti -1c
+.RI "void \fBNettoyer_Menu\fP (\fBMenu_t\fP *\fBmenu\fP, int nombreOptions)"
 .br
 .in -1c
 .SS "Variables"

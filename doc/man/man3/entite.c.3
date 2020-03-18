@@ -38,9 +38,8 @@ src/entite.c \- Programme qui gère le comportement des entités\&.
 .br
 .RI "Fonction qui gere les collision entre le joueur et le decor, le joueur et les ennemis; et si le joueur tombe dans le vide\&. "
 .ti -1c
-.RI "void \fBcollision_Decor\fP (typeEntite type, float type_w, float type_h, float *type_x, float *type_y, float *vy, bool *estSurSol)"
+.RI "void \fBcollision_Decor\fP ()"
 .br
-.RI "Fonction qui gere les collisions avec le decor\&. "
 .in -1c
 .SH "Description détaillée"
 .PP 
@@ -70,34 +69,6 @@ Gestion des collisions entre le joueur et le décor (plateformes), le joueur et 
 
 .PP
 Fonction qui gère les attaques des ennemis\&. Parcours des ennemis, verification qu'il n'est pas mort et de son compteur de lancer 
-.PP
-\fBRenvoie\fP
-.RS 4
-pas de valeur de retour (void) 
-.RE
-.PP
-
-.SS "void collision_Decor (typeEntite type, float type_w, float type_h, float * type_x, float * type_y, float * vy, bool * estSurSol)"
-
-.PP
-Fonction qui gere les collisions avec le decor\&. 
-.PP
-\fBParamètres\fP
-.RS 4
-\fItype\fP type de l'entite 
-.br
-\fItype_w\fP largeur de l'entite 
-.br
-\fItype_h\fP hauteur de l'entite 
-.br
-\fItype_x\fP position en x de l'entite 
-.br
-\fItype_y\fP position en y de l'entite 
-.br
-\fIvy\fP gravite de l'entite 
-.br
-\fIestSurSol\fP 
-.RE
 .PP
 \fBRenvoie\fP
 .RS 4

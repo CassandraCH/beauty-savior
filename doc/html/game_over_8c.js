@@ -1,6 +1,5 @@
 var game_over_8c =
 [
-    [ "Dessiner_MenuGameOver", "game_over_8c.html#ae888c5dbd8009b259ab96f3b99f09088", null ],
     [ "getMenu_Over", "game_over_8c.html#a84947749265456b7ea0fdd03f584bbb1", null ],
     [ "Init_GameOver", "game_over_8c.html#a1430bf170c733fc0c2e1e056532fed87", null ],
     [ "Init_MenuGameOver", "game_over_8c.html#a9b3680d573b9b1e4ee3007aa8eb97f43", null ],
