@@ -1,3 +1,13 @@
+/**
+ * \file hud.h
+ * \author CALVADOS Cindy, CHAUMULON Cassandra, CHELLI Célia, OUSMANOVA Karina
+ * \version 1.0
+ * \date mars 2020
+ * \brief programme gere l'affichage et la mise a jour graphique des éléments.
+ */
+
+
+
 #ifndef HUD_H
 #define HUD_H
 
