@@ -11,14 +11,15 @@
 /**
  * \fn extern bool UpdateBullets( typeEntite typeA, typeEntite typeB )
  * \brief Fonction qui permet mettre a jour les bullets
- * \details 
+ * \details Parcours de la listes des bullets 
+ * \details En fonction de si il s'agit d'un ennemi ou du joueur, le comportement des bullets est différent
  * \param typeA type de la premiere entite : item, joueur, ennemi, platform , bull, feu
  * \param typeB type de la deuxieme entite : item, joueur, ennemi, platform , bull, feu
  * \return Une valeur de type booleen
 */
 extern bool UpdateBullets( typeEntite typeA, typeEntite typeB )
 {
-    Node *pt; //pointeur sur le bullet actuel
+    Node *pt; /**< Pointeur sur le bullet actuel */
 
     //sI il y a au moins un bullet dans la liste
     if( getBullets()->nodeCount > 0 )
@@ -77,56 +78,66 @@ extern bool UpdateBullets( typeEntite typeA, typeEntite typeB )
 
 /**
  * \fn extern void SetNombreTir_Ennemis()
- * \brief Fonction qui permet mettre a jour les bullets
+ * \brief Fonction qui configurer le nombre de tir des ennemis
  * \details 
- * \return Une valeur de type booleen
+ * \return pas de valeur de retour (void)
 */
 extern void SetNombreTir_Ennemis()
 {
-    
-    Node * pt = getEnnemis()->tete;
+
+    Node *pt = getEnnemis()->tete; /**< Pointeur sur l'ennemi actuel */
 
     //Parcours de la liste des ennemis 
     for(; pt != NULL; pt = pt->suivant)
     {
+        //Si l'ennemi n'a pas ete tue
         if ( !pt->estMort )
         {
+            //Si son compteur de lancer est inferieur a 1 => le remettre a 1
             if( pt->nb_lancer < 1  ) 
             {
                 pt->nb_lancer = 1;
             }
-
+            //Sinon, le mettre a 0
             else 
             {
                 pt->nb_lancer = 0;
             }
         }
     }
-    
 }
 
-
 /**
- *  Fonction de création d'un tir 
- *  Prend en paramètre le type du tir, la largeur du sprite, sa hauteur. La position en X et Y du début du tir.
- */
-extern void CreerTir( typeEntite type,int width, int height, int startX, int startY )  
+ * \fn extern void CreerTir(typeEntite type, int width, int height, int startX, int startY)
+ * \brief Fonction qui creer un tir
+ * \details 
+ * \param type type du tir
+ * \param width largeur du sprite
+ * \param height hauteur du sprite
+ * \param startX position en x du sprite
+ * \param startY position en y du sprite
+ * \return pas de valeur de retour (void)
+*/
+extern void CreerTir(typeEntite type, int width, int height, int startX, int startY)
 {
-    SDL_Rect *rect = malloc( sizeof(SDL_Rect) );
+    SDL_Rect *rect = malloc(sizeof(SDL_Rect)); /**< Creation d'une structure de type rectangle en SDL */
+
+    /* Ajout des valeurs dans les champs de la structure */
     rect->w = 41;
     rect->h = 47;
-    rect->y = ( startY +  height  / 2 ) - rect->h / 2;
+    rect->y = (startY + height / 2) - rect->h / 2;
     rect->x = startX + 25;
-    
-    insertion( &bullet, rect, type, false );
+
+    //Gestion de l'affichage
+    insertion(&bullet, rect, type, false);
 }
 
-
 /**
- *  
- * Fonction qui s'occupe de la gestion des attaques des ennemies.
- *  
- */ 
+ * \fn extern void attaqueEnnemis() 
+ * \brief Fonction qui gère les attaques des ennemis
+ * \details 
+ * \return pas de valeur de retour (void)
+*/
 extern void attaqueEnnemis() 
 {
     Node * pt = getEnnemis()->tete;
@@ -150,9 +161,11 @@ extern void attaqueEnnemis()
 
 }
 
-
-/*
-    Mise à jour des ennemis
+/**
+ * \fn extern void UpdateEnnemis()
+ * \brief Fonction qui met a jour les ennemis
+ * \details 
+ * \return pas de valeur de retour (void)
 */
 extern void UpdateEnnemis()
 {
@@ -172,11 +185,12 @@ extern void UpdateEnnemis()
     }
 }   
 
-
 /**
- *  
- * Fonction de detection du joueur avec le décor et les s
- */
+ * \fn extern void collisionDetection()
+ * \brief Fonction qui gere les collision entre le joueur et le decor
+ * \details 
+ * \return pas de valeur de retour (void)
+*/
 extern void collisionDetection()
 {
     
@@ -229,28 +243,25 @@ extern void collisionDetection()
                     }
                      break;   
                 }
+
+                // Sinon c'est que le joueur rentre en collision sur le cote
                 else
                 {
-                    // Sinon c'est que le joueur rentre en collision sur le côté. 
-                    //actualiserJoueur(); 
+                     
                     Init_GameOver();
                 }
             } 
-
-            
-             break;
+            break;
         }
     }
 
-    //Vérifie si le joueur tombe dans le vide et qu'il dépasse la hauteur de l'écran
+    //Verifie si le joueur tombe dans le vide et qu'il dépasse la hauteur de l'écran = > la partie est perdu
     if( getPlayer()->y > 720 ) 
     {
-        //actualiserJoueur();
         Init_GameOver();
     }
-    // Vérifie les collisions avec le décor
+    //Verifie les collisions avec le décor
     collision_Decor(joueur,joueur_w, joueur_h, &getPlayer()->x , &getPlayer()->y , &getPlayer()->vy , &getPlayer()->estSurSol );
-
 }
 
 
