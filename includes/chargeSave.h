@@ -3,7 +3,10 @@
  * \author CALVADOS Cindy, CHAUMULON Cassandra, CHELLI Célia, OUSMANOVA Karina
  * \version 1.0
  * \date mars 2020
- * \brief Programme qui gère les fonctions du sauvegarde.
+ * \brief Programme qui s'occupe du chargement et sauvegarde de manière globaliser,
+ chargement des niveaux, des items, des boites de collisions
+ Sauvegarde du joueur.
+ En general la sauvegarde et chargement én général.
  */
 
 
