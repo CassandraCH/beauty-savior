@@ -3,40 +3,58 @@
  * \author CALVADOS Cindy, CHAUMULON Cassandra, CHELLI Célia, OUSMANOVA Karina
  * \version 1.0
  * \date janvier 2020
- * \brief Programme qui gère l'initialisation
+ * \brief Programme qui gère les initialisations
  * \brief Initialisation de la fenêtre, du rendu, du son, du menu principal, du score et du joueur 
  * \brief Destruction du son, des ennemis, de la fenêtre, du menu prinicpal, du rendu...
  */
 #include "commun.h"
 #include "baseGame.h"
 
-SDL_Renderer *rendu = NULL;
-SDL_Window *fenetre = NULL;
+SDL_Renderer *rendu = NULL; /**< Structure du rendu */
+SDL_Window *fenetre = NULL; /**< Structure de la fenetre */
 
-
+/**
+ * \fn extern SDL_Renderer* getRenderer(void)
+ * \brief Fonction qui permet d'acceder a la structure du rendu
+ * \details 
+ * \return un pointeur sur une structure de type SDL_Renderer
+*/
 extern SDL_Renderer* getRenderer(void)
 {
 	return rendu;
 }
 
+/**
+ * \fn void Init(const char *title)
+ * \brief Fonction qui permet d'initialiser 
+ * \details Creation de la fenetre
+ * \details Chargement des polices, de l'audio et des entites
+ * \param title chaine de caracteres
+ * \return pas de valeur de retour (void)
+*/
 void Init(const char *title)
 {
-    
+    //Verifie que l'API des polices a bien ete initialise
     if(TTF_Init() == -1)
     {
         fprintf(stderr, "Erreur d'initialisation de TTF_Init : %s\n", TTF_GetError());
         exit(EXIT_FAILURE);
     }
 
-     if( SDL_Init(SDL_INIT_EVENTS || SDL_INIT_VIDEO) != 0 )
+    //Verifie que la bibliotheque SDL a bien ete initialisee
+    if( SDL_Init(SDL_INIT_EVENTS || SDL_INIT_VIDEO) != 0 )
     {
         printf("%s\n", SDL_GetError() );
         exit(EXIT_FAILURE);
     }
 
+    //Creation de la fenetre
     fenetre = SDL_CreateWindow(title, SDL_WINDOWPOS_CENTERED,SDL_WINDOWPOS_CENTERED,LARGEUR_FENETRE , HAUTEUR_FENETRE ,SDL_WINDOW_SHOWN );
 
-    rendu= SDL_CreateRenderer( fenetre , -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC );
+    //Creation du rendu
+    rendu = SDL_CreateRenderer( fenetre , -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC );
+
+    //Verifie que la fenetre et le rendu ont ete cree correctements
     if (fenetre == NULL || rendu == NULL)
     {
         printf("Erreur d'initialisation de l'ecran: %s \n", SDL_GetError() ) ;				                                                    ;
@@ -45,6 +63,8 @@ void Init(const char *title)
 
     /*############### CHARGEMENT DES POLICES *###############*/
     getMenu()->police = TTF_OpenFont("fonts/homizio.ttf", 20);
+
+    //Verifie que la police a bien ete charge
     if(!getMenu()->police )
     {
         printf("Cannot find font file!!\n");
@@ -53,13 +73,17 @@ void Init(const char *title)
     }
 
     getScores()->police = TTF_OpenFont("fonts/BingBam.ttf", 48);
+
+    //Verifie que la police a bien ete charge
     if(!getScores()->police )
     {
         printf("Cannot find font file!!\n");
         SDL_Quit();
     }
+
     /*############### GESTION DES AUDIO *###############*/
-    Mix_OpenAudio(MIX_DEFAULT_FREQUENCY, MIX_DEFAULT_FORMAT, MIX_DEFAULT_CHANNELS, 4096); //initialize sound
+    //Initialisation du son
+    Mix_OpenAudio(MIX_DEFAULT_FREQUENCY, MIX_DEFAULT_FORMAT, MIX_DEFAULT_CHANNELS, 4096);
 
 
     /*############### INITIALISATION DES ENTITES *###############*/        
