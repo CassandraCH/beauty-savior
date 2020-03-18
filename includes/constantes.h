@@ -1,3 +1,15 @@
+/**
+ * \file constantes.h
+ * \author CALVADOS Cindy, CHAUMULON Cassandra, CHELLI Célia, OUSMANOVA Karina
+ * \version 1.0
+ * \date mars 2020
+ * \brief Programme qui gère les constantes du tout le jeu, notamment les dimensions du niveau, dimensions de la fenetre et le menu pricipal.
+ */
+
+
+
+
+
 #ifndef CONSTANTS_H
 #define CONSTANTS_H
 
