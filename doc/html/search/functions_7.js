@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['update_100',['Update',['../base_game_8c.html#acb21945d67d98b8ce4fc097ead0c6515',1,'baseGame.c']]],
-  ['update_5flistes_101',['Update_Listes',['../base_game_8c.html#a42fd91da1c159bcb3ef0805dd742a5ce',1,'baseGame.c']]],
-  ['updatebullets_102',['UpdateBullets',['../entite_8c.html#a48a46773f7a54ff924d3fe18676da527',1,'entite.c']]],
-  ['updateennemis_103',['UpdateEnnemis',['../entite_8c.html#a6254e69c73b49b05628238188813f020',1,'entite.c']]]
+  ['sauvegarderpartie_103',['SauvegarderPartie',['../charge_save_8c.html#a091d034d1ae628356d3251461e3dace2',1,'chargeSave.c']]],
+  ['savecollider_5fposition_104',['SaveCollider_Position',['../charge_save_8c.html#a1154ecfe153a8c8ff20d73bc3cf2fe5e',1,'chargeSave.c']]],
+  ['setnombretir_5fennemis_105',['SetNombreTir_Ennemis',['../entite_8c.html#ad05db5f8734978421f1b6050b5aaeb4d',1,'entite.c']]]
 ];
