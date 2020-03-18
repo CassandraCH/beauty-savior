@@ -3,7 +3,7 @@
  * \author CALVADOS Cindy, CHAUMULON Cassandra, CHELLI Célia, OUSMANOVA Karina
  * \version 1.0
  * \date mars 2020
- * \brief Programme qui gère les menus principal du jeu
+ * \brief Programme qui gère les menus principal du jeu.
  */
 
 
