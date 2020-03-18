@@ -8,53 +8,66 @@
  */
 #include "baseGame.h"
 
-
-
-
 /**
- *  Mis à jour des Bullets() 
- */ 
+ * \fn extern bool UpdateBullets( typeEntite typeA, typeEntite typeB )
+ * \brief Fonction qui permet mettre a jour les bullets
+ * \details 
+ * \param typeA type de la premiere entite : item, joueur, ennemi, platform , bull, feu
+ * \param typeB type de la deuxieme entite : item, joueur, ennemi, platform , bull, feu
+ * \return Une valeur de type booleen
+*/
 extern bool UpdateBullets( typeEntite typeA, typeEntite typeB )
 {
-    
-    Node *pt;
-    if( getBullets()->nodeCount  > 0 )
+    Node *pt; //pointeur sur le bullet actuel
+
+    //sI il y a au moins un bullet dans la liste
+    if( getBullets()->nodeCount > 0 )
     {   
+        //Parcours de liste des bullets
         for( pt = getBullets()->tete; pt!= NULL; pt= pt->suivant )
         {
-
+            //Si le joueur est suffisamment proche de l'ennemi
             if(  pt->rect->x > 0-15  && pt->rect->x < camera.x+camera.w )
             {   
-
+                //Si le bullet actuel peut etre lancer
                 if ( pt->lancer )
                 {
-
+                    //Si l'entite est le joueur et que le bullet actuel est de type bull => le bullet est tire a gauche ou a droite en fonction de la position du joueur
                     if ( typeA == joueur && pt->type == bull ) 
                     {
-                         printf("Joueur\n");
-                        // Si le joueur est tourné on inverse le sens du tir
+                        printf("Joueur\n");
+
+                        //Si le joueur est tourné on inverse le sens du tir
                         if( getPlayer()->estTourne )
                             pt->movingX = -6;
+
+                        //Sinon le sens de tir n'est pas inverse
                         else 
                             pt->movingX =  6;
                     }
+
+                    //Si l'entite est un ennemi et que le bullet actuel est de type feu => le bullet est tire a gauche ou a droite en fonction de a position du joueur par rapport a l'ennemi
                     else if ( typeB == ennemi && pt->type == feu )
                     {  
-
                         printf("Ennemi\n");
-                        if( getPlayerX() + getPlayer()->w  <=pt->rect->x )
+
+                        if( getPlayerX() + getPlayer()->w  <= pt->rect->x )
                             pt->movingX = -6;
+                            
                         else 
                             pt->movingX = 6;
                     }
+                    //Mise a jour de l'etat du lancer du bullet => ne peut plus etre lancer
                     pt->lancer = false;
                 }
                
                 pt->rect->x += pt->movingX;
             }
+            //Sinon
             else 
             {
                 SetNombreTir_Ennemis();
+                //Mise a jour de l'etat du bullet
                 pt->estMort = true;   
             }
 
@@ -62,12 +75,19 @@ extern bool UpdateBullets( typeEntite typeA, typeEntite typeB )
     }
 }
 
-
+/**
+ * \fn extern void SetNombreTir_Ennemis()
+ * \brief Fonction qui permet mettre a jour les bullets
+ * \details 
+ * \return Une valeur de type booleen
+*/
 extern void SetNombreTir_Ennemis()
 {
     
     Node * pt = getEnnemis()->tete;
-     for(; pt != NULL; pt = pt->suivant)
+
+    //Parcours de la liste des ennemis 
+    for(; pt != NULL; pt = pt->suivant)
     {
         if ( !pt->estMort )
         {
@@ -75,6 +95,7 @@ extern void SetNombreTir_Ennemis()
             {
                 pt->nb_lancer = 1;
             }
+
             else 
             {
                 pt->nb_lancer = 0;
@@ -145,10 +166,8 @@ extern void UpdateEnnemis()
             pt->rect->x = pt->baseX;
             pt->rect->y = pt->baseY;
 
-
             pt->rect->x = pt->baseX+ sinf( (pt->phase*2)+ getBaseGame()->time * 0.04f ) *55;
        }
-
 
     }
 }   
@@ -178,7 +197,7 @@ extern void collisionDetection()
     */
 
     // Vérifie la collision avec les ennemies sur la gauche et la droite.
-     for( Node * pt = listEnnemis.tete ; pt != NULL; pt = pt->suivant)
+    for( Node * pt = listEnnemis.tete ; pt != NULL; pt = pt->suivant)
     {
             /*##### ENNEMI ######*/
         // Largeur et Hauteur de l'ennemi
@@ -207,7 +226,6 @@ extern void collisionDetection()
                     if( !pt->estMort )
                     {
                         pt->estMort = true;  
-                      
                     }
                      break;   
                 }
@@ -294,7 +312,6 @@ extern void collision_Decor( typeEntite type, float type_w, float type_h , float
                  // Le côté droit du joueur est en collision avec le coté gauche du bloc
                 if((*type_x)  < collider_x+collider_w && (*type_x)+type_w > collider_x+collider_w && (*vy) < 0)
                 {
-    
                     (*type_x) = collider_x+collider_w;
                     (*type_x) = collider_x+collider_w;
 
