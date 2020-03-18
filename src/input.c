@@ -25,6 +25,10 @@ extern void ProcessInput(SDL_Event * event)
    {
        Input_MenuPause(event);
    }
+   else if( getBaseGame()->state == LEVEL_COMPLETED )
+   {
+       Input_MenuContinue(event);
+   }
    else if (getBaseGame()->state == GAMEOVER)
    {
        Input_MenuGameOver(event);

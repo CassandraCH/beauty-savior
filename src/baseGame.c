@@ -82,11 +82,11 @@ extern void Update(float dt)
 extern void Rendu_Jeux() 
 {
  
-    if ( getBaseGame()->state != PAUSE )
+    if ( getBaseGame()->state != PAUSE  )
     {
            
-      SDL_SetRenderDrawColor(getRenderer(), 0xFF,0xFF,0xFF,0);
-         SDL_RenderClear( getRenderer() );
+        SDL_SetRenderDrawColor(getRenderer(), 0xFF,0xFF,0xFF,0);
+        SDL_RenderClear( getRenderer() );
     }
     else 
     {
@@ -100,6 +100,11 @@ extern void Rendu_Jeux()
       Dessiner_MenuPrincipal();
 
       
+    }
+    else if ( getBaseGame()->state == LEVEL_COMPLETED )
+    {
+      Dessiner_MenuContinue();
+      AfficherScores();
     }
     else if ( getBaseGame()->state == PAUSE )
     {
@@ -125,7 +130,7 @@ extern void Rendu_Jeux()
       AfficherJoueur();
 
 
-      // Debug_AfficherCollider();
+      Debug_AfficherCollider();
       afficher_textures_niveau(1);
  
 

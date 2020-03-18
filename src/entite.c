@@ -297,11 +297,8 @@ extern void collision_Decor()
                     if( typeCollider == checkpoint )
                     {
                         // Init_GameOver();
-                        setNiveau(2);
-                        getPlayer()->x = 86;
-	                    getPlayer()->y = 495;
-                        ChargerNiveau();
-                        
+                        Init_Continue();
+
                     }
                     else 
                     {
@@ -330,10 +327,7 @@ extern void collision_Decor()
                 if( typeCollider == checkpoint )
                 {
                         // Init_GameOver();
-                        setNiveau(2);
-                        getPlayer()->x = 86;
-	                    getPlayer()->y = 495;
-                        ChargerNiveau();
+                        Init_Continue();
                         
                 }       
                 else 
@@ -352,10 +346,7 @@ extern void collision_Decor()
                 if( typeCollider == checkpoint )
                 {
                         // Init_GameOver();
-                        setNiveau(2);
-                    	getPlayer()->x = 86;
-	                    getPlayer()->y = 495;
-                        ChargerNiveau();
+                       Init_Continue();
 
                 }
                 else 

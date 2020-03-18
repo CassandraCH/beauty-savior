@@ -29,15 +29,10 @@ extern void Init_MenuGameOver()
     SetScore("SCORES", getPlayer()->nb_objet);
     getScores()->rect.x = 100;
     getScores()->rect.y = 300;
-
-
-    SetScore("SCORES", getPlayer()->nb_objet);
-    getScores()->rect.x = 100;
-    getScores()->rect.y = 300;
  
 
     //chargement du son
-/* Son a modifier */
+    /* Son a modifier */
     menu_over.son = Mix_LoadWAV("sounds/menu_click.wav");
 
     menu_over.bgm = Mix_LoadMUS("sounds/awesomeness.wav");
@@ -237,6 +232,7 @@ extern void Init_GameOver()
 
 
     getPlayer()->estMort = true;
+    setNiveau(1);
     Nettoyer_MenuPrincipal();
     Init_MenuGameOver();
     DestructionNiveau();

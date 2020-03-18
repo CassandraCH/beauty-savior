@@ -19,8 +19,11 @@
 #include "texture.h"
 #include "enjeu.h"
 #include "entite.h"
+// #include "menu.h"
 #include "menuPrincipal.h"
 #include "menuPause.h"
+#include "menu_continue.h"
+
 #include "gameOver.h"
 
 typedef struct baseGame 
@@ -31,6 +34,7 @@ typedef struct baseGame
 
 
 }Base_Game;
+
 
 /*######## GETTER & SETTER ######## */
 extern SDL_Window* getWindow(void);

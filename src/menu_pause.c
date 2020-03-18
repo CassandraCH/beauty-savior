@@ -18,29 +18,22 @@ extern void Init_MenuPause()
      * Actif par défaut
      */ 
 
-    menu_pause.menu[0].nomOption = "Reprendre partie";
-    menu_pause.menu[0].filename[0] = "graphics_assets/icons_buttons/back_on_xs.png";
-    menu_pause.menu[0].filename[1] = "graphics_assets/icons_buttons/back_off_xs.png";
+    ChargerData_Menu(0,0,&menu_pause , "Reprendre partie"
+                ,"graphics_assets/icons_buttons/back_on_xs.png"
+                ,"graphics_assets/icons_buttons/back_off_xs.png"
+                ,339
+                ,491 );
 
-    //Refraichissement de l'affichage de l'option
-    UpdateOption( &menu_pause.menu[0], 0  );
-    
-    //Position (en x et y) de l'option dans la fenetre
-    menu_pause.menu[0].x = 339;
-    menu_pause.menu[0].y = 491;
 
     /* 
      * Deuxieme option : Retour sur le menu principal
      */
-    menu_pause.menu[1].nomOption = "Retour menu";
-    menu_pause.menu[1].filename[0] = "graphics_assets/icons_buttons/menu_on_xs.png";
-    menu_pause.menu[1].filename[1] = "graphics_assets/icons_buttons/menu_off_xs.png";
 
-    //Refraichissement de l'affichage de l'option
-    UpdateOption(&menu_pause.menu[1], 1);
-    //Position (en x et y) de l'option dans la fenetre
-    menu_pause.menu[1].x = 620;
-    menu_pause.menu[1].y = 491;
+     ChargerData_Menu(1,1, &menu_pause ,"Retour menu"
+                ,"graphics_assets/icons_buttons/menu_on_xs.png"
+                ,"graphics_assets/icons_buttons/menu_off_xs.png"
+                ,620
+                ,491 );
 
 
     //Option selectionnee = Reprendre partie

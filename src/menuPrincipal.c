@@ -28,6 +28,23 @@ extern int getTouchePresse(Menu_t *menu)
     return menu->selectedOption; 
 }
 
+extern void ChargerData_Menu(int numero,int num_image, Menu_t * menu,  char * nomOption,  char * image_on,  char * image_off,
+int positionX, int positionY
+)
+
+{
+    menu->menu[numero].nomOption = nomOption;
+    menu->menu[numero].filename[0] = image_on;
+    menu->menu[numero].filename[1] = image_off;
+
+    //Refraichissement de l'affichage de l'option
+    UpdateOption( &menu->menu[numero], num_image  );
+    
+    //Position (en x et y) de l'option dans la fenetre
+    menu->menu[numero].x = positionX;
+    menu->menu[numero].y = positionY;
+}
+
 /* 
  * Fonction qui initialise le menu principal
  */
@@ -47,57 +64,43 @@ extern void Init_MenuPrincipal()
      * Actif par défaut
      */ 
 
-    menu.menu[0].nomOption = "Jouer";
-    menu.menu[0].filename[0] = "graphics_assets/icons_buttons/jouer_on_xs.png";
-    menu.menu[0].filename[1] = "graphics_assets/icons_buttons/jouer_off_xs.png";
-
-    //Refraichissement de l'affichage de l'option
-    UpdateOption( &menu.menu[0], 0  );
-    
-    //Position (en x et y) de l'option dans la fenetre
-    menu.menu[0].x = 469;
-    menu.menu[0].y = 366;
+     ChargerData_Menu(0,0,&menu , "Jouer"
+                ,"graphics_assets/icons_buttons/jouer_on_xs.png"
+                ,"graphics_assets/icons_buttons/jouer_off_xs.png"
+                ,469
+                ,366 );
 
     /* 
      * Deuxieme option : Chargement d'un partie
      */
-    menu.menu[1].nomOption = "Chargement";
-    menu.menu[1].filename[0] = "graphics_assets/icons_buttons/load_on_xs.png";
-    menu.menu[1].filename[1] = "graphics_assets/icons_buttons/load_off_xs.png";
 
-    //Refraichissement de l'affichage de l'option
-    UpdateOption(&menu.menu[1], 1);
-    //Position (en x et y) de l'option dans la fenetre
-    menu.menu[1].x = 455;
-    menu.menu[1].y = 449;
+    ChargerData_Menu(1,1,&menu , "Chargement"
+            ,"graphics_assets/icons_buttons/load_on_xs.png"
+            ,"graphics_assets/icons_buttons/load_off_xs.png"
+            ,455
+            ,449 );
+
 
     /* 
      * Troisieme option : quitter le jeu 
      */
-    menu.menu[2].nomOption = "Quitter";
-    menu.menu[2].filename[0] = "graphics_assets/icons_buttons/quitter_on_xs.png";
-    menu.menu[2].filename[1] = "graphics_assets/icons_buttons/quitter_off_xs.png";
 
-    //Refraichissement de l'affichage de l'option
-    UpdateOption(&menu.menu[2], 1  );
-    //Position (en x et y) de l'option dans la fenetremake
-
-    menu.menu[2].x = 469;
-    menu.menu[2].y = 491;
+    ChargerData_Menu(2,1,&menu , "Quitter"
+            ,"graphics_assets/icons_buttons/quitter_on_xs.png"
+            ,"graphics_assets/icons_buttons/quitter_off_xs.png"
+            ,469
+            ,491 );
 
      /* 
      * Quatrième option : Couper/Activer Son
      */
-    menu.menu[3].nomOption = "Son";
-    menu.menu[3].filename[0] = "graphics_assets/icons_buttons/sound_on_xs.png";
-    menu.menu[3].filename[1] = "graphics_assets/icons_buttons/sound_off_xs.png";
+   
+    ChargerData_Menu(3,1,&menu , "Quitter"
+            ,"graphics_assets/icons_buttons/sound_on_xs.png"
+            ,"graphics_assets/icons_buttons/sound_off_xs.png"
+            ,487
+            ,627 );
 
-
-    //Refraichissement de l'affichage de l'option
-    UpdateOption(&menu.menu[3], 0  );
-    //Position (en x et y) de l'option dans la fenetre
-    menu.menu[3].x = 487;
-    menu.menu[3].y = 627;
 
 
     //Option selectionnee = la premiere (nouvelle partie)

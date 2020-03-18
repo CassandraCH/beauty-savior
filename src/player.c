@@ -64,13 +64,13 @@ extern void InitJoueur()
 	chargerImage(&player.tex, "graphics_assets/rect10.png");	
 	player.h = player.tex.h;
 	player.w = player.tex.w;
-	player.x = 100;
+	player.x = 8000;
 
-	player.y = 100;
+	player.y = 495;
     player.frame = 0;
 
     player.nb_lancer = 0;
-    player.nb_objet = 0;
+    player.nb_objet = 4;
     player.posXDepart = 100;
     player.posYDepart = 100;
 

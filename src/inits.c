@@ -67,13 +67,9 @@ void Init(const char *title)
     InitJoueur( getPlayer() );
 	Init_MenuPrincipal();
     
-    
 
     Init_Scores();
-    
-
-
-  
+      
     getBaseGame()->estActif = true;
 }
 

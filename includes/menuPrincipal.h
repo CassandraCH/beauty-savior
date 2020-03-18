@@ -25,7 +25,9 @@ typedef struct option
  *\struct menu
  *\details Structure 
  */
-typedef struct menu
+typedef struct menu Menu_t;
+
+struct menu
 {
     int selectedOption;
     Options_t menu[4];
@@ -34,7 +36,7 @@ typedef struct menu
     SDL_Texture * bg;
     Mix_Music * bgm;
 
-}Menu_t;
+};
 
 
 
@@ -51,6 +53,14 @@ extern void Input_MenuPrincipal(SDL_Event* event);
 
 
 extern void Nettoyer_MenuPrincipal();
+
+extern void ChargerData_Menu(int numero,int num_image, Menu_t * menu,  char * nomOption,  char * image_on,  char * image_off,
+int positionX, int positionY
+);
+
+extern void Droite(Menu_t *menu);
+extern void Gauche(Menu_t *menu);
+extern void Nettoyer_Menu(Menu_t * menu);
 
 
 
