@@ -1,5 +1,5 @@
 /**
- * \file attributs.h
+ * \file entite.h
  * \author CALVADOS Cindy, CHAUMULON Cassandra, CHELLI Célia, OUSMANOVA Karina
  * \version 1.0
  * \date mars 2020
