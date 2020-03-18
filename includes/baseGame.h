@@ -42,6 +42,7 @@ extern LinkedList* getCollider(void);
 extern LinkedList* getItems(void);
 extern LinkedList* getBullets(void);
 extern HUD* getScores(void);
+extern HUD* getNiveau();
 extern Menu_t* getMenu(void);
 extern Menu_t * getMenuCon(void);
 extern Menu_t * getMenuPause();

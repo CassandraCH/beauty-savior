@@ -22,10 +22,14 @@ extern void Init_MenuContinue()
      */ 
 
     SetHUD_IntToTexture(getScores(), "SCORES", getPlayer()->nb_objet);
-    getScores()->rect.x = 100;
-    getScores()->rect.y = 300;
+    getScores()->rect.x = 530;
+    getScores()->rect.y = 245;
 
-    ChargerData_Menu(0, 0, &menu_continue, "Continuer", "graphics_assets/icons_buttons/continue.png", "null", 620, 491);
+    SetHUD_IntToTexture(getNiveau(), "NIVEAU", getPlayer()->niveau );
+    getNiveau()->rect.x = 535;
+    getNiveau()->rect.y = 374;
+
+    ChargerData_Menu(0, 0, &menu_continue, "Continuer", "graphics_assets/icons_buttons/continue.png", "null", 707, 562);
 
     //Option selectionnee = Reprendre partie
     menu_continue.selectedOption = 0;
@@ -84,7 +88,10 @@ extern void Init_Continue()
 {
     // NettoyerScore();
     // DestructionNiveau();
+    Init_HUD(getNiveau(), "NIVEAU : 0", 530, 374);
     Init_MenuContinue();
+    
+    
     getBaseGame()->state = LEVEL_COMPLETED;
     getBaseGame()->time = 0;
     setTimerBullet(0);
