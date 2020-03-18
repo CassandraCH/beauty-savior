@@ -1,3 +1,12 @@
+/**
+ * \file chargeSave.h
+ * \author CALVADOS Cindy, CHAUMULON Cassandra, CHELLI Célia, OUSMANOVA Karina
+ * \version 1.0
+ * \date mars 2020
+ * \brief Programme qui gère les fonctions du sauvegarde.
+ */
+
+
 #ifndef __LOAD_SAVE_H
 #define __LOAD_SAVE_H
 
