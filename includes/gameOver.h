@@ -1,3 +1,13 @@
+/**
+ * \file attributs.h
+ * \author CALVADOS Cindy, CHAUMULON Cassandra, CHELLI Célia, OUSMANOVA Karina
+ * \version 1.0
+ * \date mars 2020
+ * \brief Programme qui gère les fonction en rapport avec le menu de "game over"
+ */
+
+
+
 #ifndef _MENU_GAMEOVER_H
 #define _MENU_GAMEOVER_H
 
