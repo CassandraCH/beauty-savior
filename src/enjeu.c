@@ -21,7 +21,9 @@ SDL_Rect camera = {0, 0, LARGEUR_FENETRE, HAUTEUR_FENETRE}; /**< Structure qui g
 extern void Input_InGame(SDL_Event *event)
 {
 
-    bool isKeyPressed = false; /**< Variable booleenne qui permet de savoir si une touche est pressee ou non*/
+    bool isKeyPressed = false; 
+    
+    /* Gestion des entrees clavier de l'utilisateur */
 
     //Tant que qu'il y a un evenement dans la file d'attente
     while( SDL_PollEvent(event) )
@@ -34,26 +36,31 @@ extern void Input_InGame(SDL_Event *event)
             return;
         }
 
-        //Si la touche  p est presse
+        //Si la touche p est pressee
         if(event->key.keysym.sym == SDLK_p && event->type == SDL_KEYDOWN )
         {
             //Modification de l'etat du jeu => en pause
             getBaseGame()->state = PAUSE;
+            //Gestion du menu de pause
             Init_MenuPause();
         }
-        
+
+        //Si la touche espace est pressee
         if(event->key.keysym.sym == SDLK_SPACE && event->type == SDL_KEYDOWN )
         {
-            
+            //Verification que le joueur a au moins un objet a lancer
             if( getPlayer()->nb_lancer < 1 && !isKeyPressed )
             {
-
+                //Gestion de l'attaque
                 attaqueJoueur();
+                //Changement de l'etat de la touche => pressee
                 isKeyPressed = true;
                 return;
             }
+
             if(event->key.keysym.sym == SDLK_a && event->type == SDL_KEYUP )
             {
+                //Changement de l'etat de la touche => pas pressee
                 isKeyPressed = false;
             }
 
@@ -62,31 +69,38 @@ extern void Input_InGame(SDL_Event *event)
     } // fin while (SDL_PollEvent)
 
 
-        const Uint8 *keystates  = SDL_GetKeyboardState(NULL);
-        InputJoueur(event);
-        camera.x = ( getPlayer()->x + getPlayer()->tex.w / 2 ) - LARGEUR_FENETRE / 2;
-        camera.y = ( getPlayer()->y+  getPlayer()->tex.h / 2 ) - HAUTEUR_FENETRE / 2;
-        
-        if( camera.x < 0 )
-        { 
+    /* Gestion de la camera */
+
+    const Uint8 *keystates = SDL_GetKeyboardState(NULL); /**< Variable qui permet de savoir si une touche est pressee ou non*/
+
+    InputJoueur(event);
+    //Initialisation de la position en x et en y de la camera
+    camera.x = ( getPlayer()->x + getPlayer()->tex.w / 2 ) - LARGEUR_FENETRE / 2;
+    camera.y = ( getPlayer()->y+  getPlayer()->tex.h / 2 ) - HAUTEUR_FENETRE / 2;
+    
+    //Gestion de la position en x : si le x est en dehors de la fenetre, la repositionner
+    if( camera.x < 0 )
+    { 
         camera.x = 0;
-        }
-        if(camera.y < 0 )
-        {
-            
-            camera.y = 0;
-        }
-        if( camera.x + camera.w >= LARGEUR_NIVEAU )
-        {
-            camera.x = LARGEUR_NIVEAU - LARGEUR_FENETRE;
-        }
-        if( camera.y + camera.h >= HAUTEUR_NIVEAU)
-        {
-            camera.y = HAUTEUR_NIVEAU - HAUTEUR_FENETRE;
+    }
 
-        }
+    //Gestion de la position en y : si le x est en dehors de la fenetre, la repositionner
+    if(camera.y < 0 )
+    {
+        camera.y = 0;
+    }
 
-   
-   
+    //Gestion de l'affichage en largeur de la camera
+    if( camera.x + camera.w >= LARGEUR_NIVEAU )
+    {
+        camera.x = LARGEUR_NIVEAU - LARGEUR_FENETRE;
+    }
+
+    //Gestion de l'affichage en hauteur de la camera
+    if( camera.y + camera.h >= HAUTEUR_NIVEAU)
+    {
+        camera.y = HAUTEUR_NIVEAU - HAUTEUR_FENETRE;
+
+    }
 }
 
