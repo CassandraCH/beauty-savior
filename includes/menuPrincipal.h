@@ -45,22 +45,18 @@ extern int getTouchePresse(Menu_t *menu);
 
 extern void ToucheHaut(Menu_t * menu);
 extern void ToucheBas(Menu_t *menu);
-
+extern void Droite(Menu_t *menu);
+extern void Gauche(Menu_t *menu);
+extern void Dessiner_Menu(Menu_t* menu, int nombresOptions, int posX, int posY , int largeurBG, int hauteurBG);
 extern void Init_MenuPrincipal();
-extern void Dessiner_MenuPrincipal();
-
 extern void Input_MenuPrincipal(SDL_Event* event);
-
-
-extern void Nettoyer_MenuPrincipal();
 
 extern void ChargerData_Menu(int numero,int num_image, Menu_t * menu,  char * nomOption,  char * image_on,  char * image_off,
 int positionX, int positionY
 );
 
-extern void Droite(Menu_t *menu);
-extern void Gauche(Menu_t *menu);
-extern void Nettoyer_Menu(Menu_t * menu);
+extern void Nettoyer_Menu(Menu_t * menu, int nombreOptions);
+
 
 
 

@@ -39,13 +39,16 @@ typedef struct baseGame
 /*######## GETTER & SETTER ######## */
 extern SDL_Window* getWindow(void);
 extern Base_Game*  getBaseGame(void);
-extern LinkedList* getEnnemis();
-extern LinkedList* getCollider();
-extern LinkedList* getItems();
-extern LinkedList* getBullets();
+extern LinkedList* getEnnemis(void);
+extern LinkedList* getCollider(void);
+extern LinkedList* getItems(void);
+extern LinkedList* getBullets(void);
 extern HUD* getScores(void);
 extern Menu_t* getMenu(void);
-extern int getTimerBullet();
+extern Menu_t * getMenuCon(void);
+extern Menu_t * getMenuPause();
+extern Menu_t * getMenu_Over();
+extern int getTimerBullet(void);
 extern void setTimerBullet(int time);
 
 

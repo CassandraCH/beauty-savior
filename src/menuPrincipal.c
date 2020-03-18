@@ -89,7 +89,7 @@ extern void Init_MenuPrincipal()
     menu.selectedOption = 0;
 
     menu.bg = ChargerTexture("graphics_assets/menu_bg_xs.png");
-
+    
 
 }
 
@@ -163,23 +163,68 @@ extern void ToucheBas(Menu_t *menu)
     }
 }
 
-/*
- * Fonction qui permet d'afficher le menu principal
- * => affichage les differentes options
- */
-extern void Dessiner_MenuPrincipal() 
+extern void Droite(Menu_t* menu)
 {
 
-    SDL_Rect rect = {0,0, 1280, 720 };
+    //Si l'option actuellement selectionnee est differente de la premiere
+    //Si on est sur la dernière option => on ne peut pas aller sur une option au-dessus 
+    if (menu->selectedOption + 1 < MAX_NUMBER - 1 )
+    {
+        //Rafraichir l'affichage
+        UpdateOption(&menu->menu[menu->selectedOption], 1);
 
-    SDL_RenderCopy( getRenderer(), menu.bg , NULL, &rect );
+        //Modifier l'option selectionnee => passe a l'option precedente
+        menu->selectedOption++;
+
+        //Rafraichir l'affichage
+        UpdateOption(&menu->menu[menu->selectedOption], 0);
+    }
+}
+
+
+extern void Gauche(Menu_t* menu)
+{
+    //Si l'option actuellement selectionnee est differente de la premiere
+    //Si on est sur la premiere option => on ne peut pas aller sur une option au-dessus
+    if (menu->selectedOption - 1 >= 0)
+    {  
+  
+        //Rafraichir l'affichage
+        UpdateOption(&menu->menu[menu->selectedOption] , 1);
+
+        //Modifier l'option selectionnee => passe a l'option suivante
+        menu->selectedOption--;
+
+        //Rafraichir l'affichage
+        UpdateOption(&menu->menu[menu->selectedOption], 0 );
+    }
+    
+}
+
+
+/*
+ * Fonction qui permet d'afficher un menu
+ * => affichage les differentes options
+ */
+
+/*  
+    Prend en paramètre le menu, le nombres d'options qu'il comporte, la position x du background, celle en y
+    La largeur et hauteur du background.
+*/
+extern void Dessiner_Menu(Menu_t* menu, int nombresOptions, int posX, int posY , int largeurBG, int hauteurBG) 
+{
+
+    SDL_Rect rect = {posX,posY, largeurBG, hauteurBG };
+    // SDL_Rect rect = {posX,posY, 1280, 720 };
+
+    SDL_RenderCopy( getRenderer(), menu->bg , NULL, &rect );
 
     //Pour chaque option, afficher a l'ecran son rendu
-	for (int i = 0; i < MAX_NUMBER+1; i++)
+	for (int i = 0; i < nombresOptions; i++)
 	{
         //Rectangle tampon 
-        SDL_Rect rect = {menu.menu[i].x, menu.menu[i].y, menu.menu[i].largeur, menu.menu[i].hauteur};
-        SDL_RenderCopy( getRenderer(), menu.menu[i].texture , NULL, &rect);
+        SDL_Rect rect = {menu->menu[i].x, menu->menu[i].y, menu->menu[i].largeur, menu->menu[i].hauteur};
+        SDL_RenderCopy( getRenderer(), menu->menu[i].texture , NULL, &rect);
 	}
 
     
@@ -250,12 +295,14 @@ extern void Input_MenuPrincipal(SDL_Event *event)
                         if( Mix_PausedMusic() == 1 )
                         {
                             UpdateOption(&menu.menu[3], 0  );
+
                             //On enlève la pause (la musique repart où elle en était)
                             Mix_ResumeMusic();
                         }
                         //Si la musique est en train de jouer
                         else
                         {
+
                             UpdateOption(&menu.menu[3], 1  );
                             //On met en pause la musique
                             Mix_PauseMusic();
@@ -298,23 +345,20 @@ int positionX, int positionY
 }
 
 
-
 /*
- * Fonction qui permet de supprimer le menu => liberation de la memoire
+ * Fonction qui permet de supprimer un menu => liberation de la memoire
  */
-extern void Nettoyer_MenuPrincipal()
+extern void Nettoyer_Menu(Menu_t * menu, int nombreOptions)
 {
-    // NettoyerScore();
     printf("Suppression Menu principal\n");
-    for(int i = 0; i < MAX_NUMBER+1; i++)
+    for(int i = 0; i < nombreOptions; i++)
     {
-       if( menu.menu[i].texture != NULL ) 
+       if( menu->menu[i].texture != NULL ) 
         {
-            free(menu.menu[i].texture);
+            free(menu->menu[i].texture);
         }
-      
     }
-    printf("Fin Suppression Menu principal\n");
+    printf("Fin Suppression Menu\n");
    return;
 
 }

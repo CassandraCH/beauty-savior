@@ -73,7 +73,7 @@ void Init(const char *title)
  *  S'occupe de la libération de toutes les ressources du jeux
  *  Ainsi que de la destruction du Renderer et du Window
  */
-void LibererRessources_Jeux()
+void LibererRessources_Jeux(void)
 {
      
     SDL_DestroyWindow(fenetre) ;
@@ -90,9 +90,9 @@ void LibererRessources_Jeux()
     suppListe(&bullet);
     suppListe(&listCollider);
     suppListe(&listEnnemis);
-    Nettoyer_MenuPrincipal();
-    Nettoyer_MenuPause(getMenu());
-    Nettoyer_MenuGameOver();
+    Nettoyer_Menu(getMenuCon(), 1);
+    Nettoyer_Menu(getMenu(), 4 );
+    Nettoyer_Menu(getMenuPause(), 2);
 
     TTF_Quit();
     SDL_Quit();

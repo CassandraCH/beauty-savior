@@ -91,24 +91,22 @@ extern void Rendu_Jeux()
     else 
     {
       // SDL_SetRenderDrawColor(getRenderer(), 0xFF,0xFF,0xFF,0);
-     
     }
 
     if ( getBaseGame()->state == MENU_PRINCIPAL )
     {
       
-      Dessiner_MenuPrincipal();
-
+      Dessiner_Menu(getMenu(), 4, 0, 0, 1280, 720 );
       
     }
     else if ( getBaseGame()->state == LEVEL_COMPLETED )
     {
-      Dessiner_MenuContinue();
+      Dessiner_Menu(getMenuCon(), 1,300, 200, 647, 434);
       AfficherScores(getScores());
     }
     else if ( getBaseGame()->state == PAUSE )
     {
-      Dessiner_MenuPause();
+      Dessiner_Menu(getMenuPause(), 2,300, 200,  645, 432 );
     }
     else if ( getBaseGame()->state == IN_GAME )
     
@@ -136,13 +134,9 @@ extern void Rendu_Jeux()
 
     
     }
-    else if ( getBaseGame()->state == PAUSE )
-    {
-      // A définir 
-    }
     else if (getBaseGame()->state == GAMEOVER )
     {
-      Dessiner_MenuGameOver();
+      Dessiner_Menu(getMenu_Over(), 4, 0, 0 , 1280, 720 );
       AfficherScores(getScores());
     }
 

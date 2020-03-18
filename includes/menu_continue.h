@@ -4,7 +4,7 @@
 
 
 extern void Init_MenuContinue();
-extern void Dessiner_MenuContinue();
+
 
 extern void Droite();
 extern void Gauche();

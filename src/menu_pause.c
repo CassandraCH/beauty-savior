@@ -2,7 +2,7 @@
 
 Menu_t menu_pause;
 
-Menu_t * getMenuPause()
+extern Menu_t * getMenuPause()
 {
     return &menu_pause;
 }
@@ -40,23 +40,8 @@ extern void Init_MenuPause()
     menu_pause.selectedOption = 0;
 
     menu_pause.bg = ChargerTexture("graphics_assets/pause.png");
-
-
-}
-extern void Dessiner_MenuPause()
-{
     
-    SDL_Rect rect = {300, 200, 645,432 };
 
-    SDL_RenderCopy(getRenderer(), menu_pause.bg, NULL, &rect);
-
-    //Pour chaque option, afficher a l'ecran son rendu
-    for (int i = 0; i < MAX_NUMBER-1; i++)
-    {
-        //Rectangle tampon
-        SDL_Rect rect = {menu_pause.menu[i].x, menu_pause.menu[i].y, menu_pause.menu[i].largeur, menu_pause.menu[i].hauteur};
-        SDL_RenderCopy(getRenderer(), menu_pause.menu[i].texture, NULL, &rect);       
-    }
 }
 
 extern void Input_MenuPause(SDL_Event *event)
@@ -112,54 +97,3 @@ extern void Input_MenuPause(SDL_Event *event)
 }
 
 
-
-extern void Droite(Menu_t* menu)
-{
-
-    //Si l'option actuellement selectionnee est differente de la premiere
-    //Si on est sur la dernière option => on ne peut pas aller sur une option au-dessus 
-    if (menu->selectedOption + 1 < MAX_NUMBER - 1 )
-    {
-        //Rafraichir l'affichage
-        UpdateOption(&menu->menu[menu->selectedOption], 1);
-
-        //Modifier l'option selectionnee => passe a l'option precedente
-        menu->selectedOption++;
-
-        //Rafraichir l'affichage
-        UpdateOption(&menu->menu[menu->selectedOption], 0);
-    }
-}
-extern void Gauche(Menu_t* menu)
-{
-    //Si l'option actuellement selectionnee est differente de la premiere
-    //Si on est sur la premiere option => on ne peut pas aller sur une option au-dessus
-    if (menu->selectedOption - 1 >= 0)
-    {  
-  
-        //Rafraichir l'affichage
-        UpdateOption(&menu->menu[menu->selectedOption] , 1);
-
-        //Modifier l'option selectionnee => passe a l'option suivante
-        menu->selectedOption--;
-
-        //Rafraichir l'affichage
-        UpdateOption(&menu->menu[menu->selectedOption], 0 );
-    }
-    
-}
-
-
-extern void Nettoyer_MenuPause(Menu_t * menu)
-{
-     // NettoyerScore();
-    printf("Suppression Menu Pause\n");
-    for (int i = 0; i < MAX_NUMBER - 1; i++)
-    {
-        if (menu->menu[i].texture != NULL)
-        {
-            free(menu->menu[i].texture);
-        }
-    }
-    printf("Fin Suppression Menu Pause\n");
-}

@@ -5,7 +5,7 @@
 
 Menu_t menu_continue;
 
-Menu_t * getMenuCon()
+extern Menu_t * getMenuCon()
 {
     return &menu_continue;
 }
@@ -31,19 +31,7 @@ extern void Init_MenuContinue()
     menu_continue.selectedOption = 0;
 
     menu_continue.bg = ChargerTexture("graphics_assets/levelComplete.png");
-
-
-}
-extern void Dessiner_MenuContinue()
-{
     
-    SDL_Rect rect1 = {300, 200, 647,434 };
-
-    SDL_RenderCopy(getRenderer(), menu_continue.bg, NULL, &rect1);
-
-    //Rectangle tampon
-    SDL_Rect rect = {menu_continue.menu[0].x, menu_continue.menu[0].y, menu_continue.menu[0].largeur, menu_continue.menu[0].hauteur};
-    SDL_RenderCopy(getRenderer(), menu_continue.menu[0].texture, NULL, &rect);       
 
 }
 

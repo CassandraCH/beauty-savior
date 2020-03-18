@@ -101,29 +101,12 @@ extern void Init_MenuGameOver()
     menu_over.selectedOption = 0;
 
     menu_over.bg = ChargerTexture("graphics_assets/menu_over_bg.png");
+
+    
 }
 
 
 
-/*
- * Fonction qui permet d'afficher le menu principal
- * => affichage les differentes options
- */
-extern void Dessiner_MenuGameOver()
-{
-
-    SDL_Rect rect = {0, 0, 1280, 720};
-
-    SDL_RenderCopy(getRenderer(), menu_over.bg, NULL, &rect);
-
-    //Pour chaque option, afficher a l'ecran son rendu
-    for (int i = 0; i < MAX_NUMBER + 1; i++)
-    {
-        //Rectangle tampon
-        SDL_Rect rect = {menu_over.menu[i].x, menu_over.menu[i].y, menu_over.menu[i].largeur, menu_over.menu[i].hauteur};
-        SDL_RenderCopy(getRenderer(), menu_over.menu[i].texture, NULL, &rect);
-    }
-}
 
 /*
  * Fonction qui permet de gérer les evenements 
@@ -168,7 +151,6 @@ extern void Input_MenuGameOver(SDL_Event *event)
                     suppListe(getBullets());
                     actualiserJoueur();
                     Init_HUD(getScores(), "SCORES : 0", 10, 0);
-
                     getBaseGame()->state = IN_GAME;
                     ChargerNiveau();
                     // Nettoyer_MenuPrincipal();
@@ -230,10 +212,9 @@ extern void Nettoyer_MenuGameOver()
 extern void Init_GameOver()
 {
 
-
     getPlayer()->estMort = true;
     setNiveau(1);
-    Nettoyer_MenuPrincipal();
+    Nettoyer_Menu(getMenu(), 4);
     Init_MenuGameOver();
     DestructionNiveau();
     getBaseGame()->state = GAMEOVER;
