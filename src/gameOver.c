@@ -111,25 +111,10 @@ extern void Init_MenuGameOver()
     menu_over.selectedOption = 0;
 
     menu_over.bg = ChargerTexture("graphics_assets/menu_over_bg.png");
-<<<<<<< HEAD
+
+   
 }
 
-/**
- * \fn extern void Dessiner_MenuGameOver()
- * \brief Fonction qui affiche le menu game over a l'ecran
- * \details Affichage des differentes options
- * \return pas de valeur de retour (void)
-*/
-extern void Dessiner_MenuGameOver()
-{
-
-    SDL_Rect rect = {0, 0, 1280, 720};
-=======
-
-    
-}
-
->>>>>>> master
 
 
 
@@ -160,83 +145,84 @@ extern void Input_MenuGameOver(SDL_Event *event)
             switch (event->key.keysym.sym)
             {
 
-            case SDLK_UP:
-                Mix_PlayChannel(-1, getMenu()->son, 0);
-                ToucheHaut(getMenu_Over());
-                break;
-            case SDLK_DOWN:
-                Mix_PlayChannel(-1, getMenu()->son, 0);
-                ToucheBas(getMenu_Over());
-                break;
-            case SDLK_LEFT:
-
-                break;
-            case SDLK_RETURN:
-                switch (getTouchePresse(getMenu_Over()))
-                {
-                case 0:
-                    getPlayer()->estMort = false;
-                    suppListe(getCollider());
-                    suppListe(getEnnemis());
-                    suppListe(getBullets());
-                    actualiserJoueur();
-                    Init_HUD(getScores(), "SCORES : 0", 10, 0);
-                    getBaseGame()->state = IN_GAME;
-                    ChargerNiveau();
-                    // Nettoyer_MenuPrincipal();
-                    Mix_HaltMusic();
-                    return;
+                case SDLK_UP:
+                    Mix_PlayChannel(-1, getMenu()->son, 0);
+                    ToucheHaut(getMenu_Over());
+                    break;
+                case SDLK_DOWN:
+                    Mix_PlayChannel(-1, getMenu()->son, 0);
+                    ToucheBas(getMenu_Over());
+                    break;
+                case SDLK_LEFT:
 
                     break;
-                //trouche entree
                 case SDLK_RETURN:
                     switch (getTouchePresse(getMenu_Over()))
                     {
-                        
                         case 0:
                             getPlayer()->estMort = false;
                             suppListe(getCollider());
                             suppListe(getEnnemis());
                             suppListe(getBullets());
                             actualiserJoueur();
-                            PlayerScore("SCORES : 0", 10, 0);
+                            Init_HUD(getScores(), "SCORES : 0", 10, 0);
                             getBaseGame()->state = IN_GAME;
                             ChargerNiveau();
                             // Nettoyer_MenuPrincipal();
                             Mix_HaltMusic();
                             return;
+
                             break;
-                        case 1:
-                            printf("Bouton option press%c\n", 130);
+                        //trouche entree
+                        case SDLK_RETURN:
+                            switch (getTouchePresse(getMenu_Over()))
+                            {
+                                
+                                case 0:
+                                    getPlayer()->estMort = false;
+                                    suppListe(getCollider());
+                                    suppListe(getEnnemis());
+                                    suppListe(getBullets());
+                                    actualiserJoueur();
+                                    //PlayerScore("SCORES : 0", 10, 0);
+                                    getBaseGame()->state = IN_GAME;
+                                    ChargerNiveau();
+                                    // Nettoyer_MenuPrincipal();
+                                    Mix_HaltMusic();
+                                    return;
+                                    break;
+                                case 1:
+                                    printf("Bouton option press%c\n", 130);
+                                    break;
+                                case 2:
+                                    getBaseGame()->estActif = false;
+                                    return;
+                                    break;
+                                default:
+                                    break;
+                            }
                             break;
-                        case 2:
-                            getBaseGame()->estActif = false;
-                            return;
+                        case SDLK_s:
+                            //Si la musique est en pause
+                            if (Mix_PausedMusic() == 1)
+                            {
+                                UpdateOption(&menu_over.menu[3], 0);
+                                //On enlève la pause (la musique repart où elle en était)
+                                Mix_ResumeMusic();
+                            }
+                            //Si la musique est en train de jouer
+                            else
+                            {
+                                UpdateOption(&menu_over.menu[3], 1);
+                                //On met en pause la musique
+                                Mix_PauseMusic();
+                            }
                             break;
                         default:
                             break;
-                    }
-                    break;
-                case SDLK_s:
-                    //Si la musique est en pause
-                    if (Mix_PausedMusic() == 1)
-                    {
-                        UpdateOption(&menu_over.menu[3], 0);
-                        //On enlève la pause (la musique repart où elle en était)
-                        Mix_ResumeMusic();
-                    }
-                    //Si la musique est en train de jouer
-                    else
-                    {
-                        UpdateOption(&menu_over.menu[3], 1);
-                        //On met en pause la musique
-                        Mix_PauseMusic();
-                    }
-                    break;
-                default:
-                    break;
-            }
-        }
+                    }//fin switch
+            }//fin switch
+        }//fin if
     } // fin while (SDL_PollEvent)
 }
 

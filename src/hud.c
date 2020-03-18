@@ -1,6 +1,13 @@
+/**
+ * \file hud.c
+ * \author CALVADOS Cindy, CHAUMULON Cassandra, CHELLI Célia, OUSMANOVA Karina
+ * \version 1.0
+ * \date mars 2020
+ * \brief Programme qui gère le compteur de temps, le compteur de vie et le score à afficher
+ * \brief Affichage et mise à jour graphique des éléments
+ */
+
 #include "baseGame.h"
-
-
 
 
 extern void Init_HUD(HUD * hud, const char * text, int x,  int y)
