@@ -19,7 +19,7 @@
 #include "texture.h"
 #include "enjeu.h"
 #include "entite.h"
-// #include "menu.h"
+#include "hud.h"
 #include "menuPrincipal.h"
 #include "menuPause.h"
 #include "menu_continue.h"

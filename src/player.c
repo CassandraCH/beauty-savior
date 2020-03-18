@@ -70,7 +70,7 @@ extern void InitJoueur()
     player.frame = 0;
 
     player.nb_lancer = 0;
-    player.nb_objet = 4;
+    player.nb_objet = 0;
     player.posXDepart = 100;
     player.posYDepart = 100;
 

@@ -1,6 +1,7 @@
 #include "baseGame.h"
 
 
+#include "menu.h"
 
 Menu_t menu_continue;
 
@@ -24,15 +25,7 @@ extern void Init_MenuContinue()
     getScores()->rect.x = 100;
     getScores()->rect.y = 300;
 
-    menu_continue.menu[0].nomOption = "Continue";
-    menu_continue.menu[0].filename[0] = "graphics_assets/icons_buttons/continue.png";
-
-    //Refraichissement de l'affichage de l'option
-    UpdateOption( &menu_continue.menu[0], 0  );
-    
-    menu_continue.menu[0].x = 620;
-    menu_continue.menu[0].y = 491;
-
+    ChargerData_Menu(0, 0, &menu_continue, "Continuer", "graphics_assets/icons_buttons/continue.png", "null", 620, 491);
 
     //Option selectionnee = Reprendre partie
     menu_continue.selectedOption = 0;
@@ -75,7 +68,7 @@ extern void Input_MenuContinue(SDL_Event *event)
                 switch (getTouchePresse(getMenuCon()))
                 {
                 case 0:
-                        // DestructionNiveau();
+
                         getBaseGame()->state = IN_GAME;
                         setNiveau(2);
                         suppListe(getCollider());
@@ -85,6 +78,7 @@ extern void Input_MenuContinue(SDL_Event *event)
                         getPlayer()->x = 86;
                         getPlayer()->y = 495;
                         ChargerNiveau();       
+                
                     break;
                 default:
                     break;

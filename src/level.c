@@ -114,14 +114,6 @@ extern void DestructionNiveau()
 {
    printf("Destruction Niveau\n");
    
-   // if(  getPlayer()->niveau == 1 )
-   // {
-   //    LibererRessources(&getLevel()->levelTextures[0]);
-   // }  
-   // else if(  getPlayer()->niveau == 2 )
-   // {  
-   //    LibererRessources(&getLevel()->levelTextures[1]);     
-   // }
    LibererRessources( &getLevel()->levelTextures[0] );
    LibererRessources( &getLevel()->levelTextures[1] );
 

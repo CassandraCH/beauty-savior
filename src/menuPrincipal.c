@@ -28,23 +28,6 @@ extern int getTouchePresse(Menu_t *menu)
     return menu->selectedOption; 
 }
 
-extern void ChargerData_Menu(int numero,int num_image, Menu_t * menu,  char * nomOption,  char * image_on,  char * image_off,
-int positionX, int positionY
-)
-
-{
-    menu->menu[numero].nomOption = nomOption;
-    menu->menu[numero].filename[0] = image_on;
-    menu->menu[numero].filename[1] = image_off;
-
-    //Refraichissement de l'affichage de l'option
-    UpdateOption( &menu->menu[numero], num_image  );
-    
-    //Position (en x et y) de l'option dans la fenetre
-    menu->menu[numero].x = positionX;
-    menu->menu[numero].y = positionY;
-}
-
 /* 
  * Fonction qui initialise le menu principal
  */
@@ -100,7 +83,6 @@ extern void Init_MenuPrincipal()
             ,"graphics_assets/icons_buttons/sound_off_xs.png"
             ,487
             ,627 );
-
 
 
     //Option selectionnee = la premiere (nouvelle partie)
@@ -285,6 +267,37 @@ extern void Input_MenuPrincipal(SDL_Event *event)
         }   
     } // fin while (SDL_PollEvent)
 }
+
+/*
+    Fonction qui s'occupe de chargement des données
+    Prends en paramètre le numero de l'option, 
+                        le numéro de l'image sélectionné par défaut,
+                        Un pointeur vers le menu, 
+                        Le nom de l'option,
+                        Le chemin vers l'image séléctionner,
+                        Le chemin vers l'image déséléctionner,
+                        La position en X 
+                        La position en Y
+
+*/
+extern void ChargerData_Menu(int numero,int num_image, Menu_t * menu,  char * nomOption,  char * image_on,  char * image_off,
+int positionX, int positionY
+)
+
+{
+    menu->menu[numero].nomOption = nomOption;
+    menu->menu[numero].filename[0] = image_on;
+    menu->menu[numero].filename[1] = image_off;
+
+    //Refraichissement de l'affichage de l'option
+    UpdateOption( &menu->menu[numero], num_image  );
+    
+    //Position (en x et y) de l'option dans la fenetre
+    menu->menu[numero].x = positionX;
+    menu->menu[numero].y = positionY;
+}
+
+
 
 /*
  * Fonction qui permet de supprimer le menu => liberation de la memoire
