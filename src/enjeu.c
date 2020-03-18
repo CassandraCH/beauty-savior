@@ -3,29 +3,41 @@
  * \author CALVADOS Cindy, CHAUMULON Cassandra, CHELLI Célia, OUSMANOVA Karina
  * \version 1.0
  * \date janvier 2020
- * \brief Programme qui gère les entrées utilisateur (touches) et la caméra
+ * \brief Programme qui gère les entrées utilisateur (touches) et la caméra lorsqu'une partie est en cours
  */
 #include "enjeu.h"
 #include "baseGame.h"
 
-SDL_Rect camera = {0,0,LARGEUR_FENETRE, HAUTEUR_FENETRE}; 
+SDL_Rect camera = {0, 0, LARGEUR_FENETRE, HAUTEUR_FENETRE}; /**< Structure qui gère la camera*/
 
+/**
+ * \fn extern void Input_InGame(SDL_Event *event)
+ * \brief Fonction qui permet gerer les entrees clavier lorsqu'une partie est en cours
+ * \details 
+ * \details 
+ * \param event pointeur sur une structure SDL evenement
+ * \return pas de valeur de retour (void)
+*/
 extern void Input_InGame(SDL_Event *event)
 {
 
-    bool isKeyPressed = false;
-  
-       
+    bool isKeyPressed = false; /**< Variable booleenne qui permet de savoir si une touche est pressee ou non*/
+
+    //Tant que qu'il y a un evenement dans la file d'attente
     while( SDL_PollEvent(event) )
     {
+        //Si la touche echap est pressee ou si l'utilisateur clique sur la croix
         if( event->type == SDL_QUIT || event->key.keysym.sym == SDLK_ESCAPE )
-        {
+        {   
+            //Modification de l'etat du jeu => n'est plu actif
             getBaseGame()->estActif = false;
             return;
         }
 
+        //Si la touche  p est presse
         if(event->key.keysym.sym == SDLK_p && event->type == SDL_KEYDOWN )
-        {   
+        {
+            //Modification de l'etat du jeu => en pause
             getBaseGame()->state = PAUSE;
             Init_MenuPause();
         }
