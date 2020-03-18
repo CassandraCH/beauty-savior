@@ -135,25 +135,28 @@ extern void CreerTir(typeEntite type, int width, int height, int startX, int sta
 /**
  * \fn extern void attaqueEnnemis() 
  * \brief Fonction qui gère les attaques des ennemis
- * \details 
+ * \details Parcours des ennemis, verification qu'il n'est pas mort et de son compteur de lancer
  * \return pas de valeur de retour (void)
 */
 extern void attaqueEnnemis() 
 {
-    Node * pt = getEnnemis()->tete;
-     for(; pt != NULL; pt = pt->suivant)
+    Node * pt = getEnnemis()->tete; /**< pointeur de l'ennemi actuel */
+
+    //Parcours de la liste des ennemis
+    for(; pt != NULL; pt = pt->suivant)
     {
-    
+        //Si l'ennemi n'est pas mort
         if ( !pt->estMort )
         {
             float distance = sqrt(pow(pt->rect->x - getPlayerX(), 2) +  pow(pt->rect->y - getPlayerY(), 2)); 
             if( distance < (pt->rect->w*3) + getPlayer()->w )
             {
-                    if( pt->nb_lancer < 1) 
-                    {
-                        SetNombreTir_Ennemis();
-                        CreerTir(feu, pt->rect->w, pt->rect->h, pt->rect->x, pt->rect->y );
-                    }
+                //Si le compteur de lancer disponible est inferieur a 1 => on reconfigure ce compteur et on cree un tir
+                if( pt->nb_lancer < 1) 
+                {
+                    SetNombreTir_Ennemis();
+                    CreerTir(feu, pt->rect->w, pt->rect->h, pt->rect->x, pt->rect->y );
+                }
             }
         }
 
@@ -169,12 +172,12 @@ extern void attaqueEnnemis()
 */
 extern void UpdateEnnemis()
 {
-     Node * pt = getEnnemis()->tete;
+    Node *pt = getEnnemis()->tete; /**< pointeur de l'ennemi actuel */
 
-     for(; pt != NULL; pt = pt->suivant)
+    //Parcours de la liste des ennemis
+    for(; pt != NULL; pt = pt->suivant)
     {
-    
-        if ( !pt->estMort &&pt->actif )
+        if ( !pt->estMort && pt->actif )
         {
             pt->rect->x = pt->baseX;
             pt->rect->y = pt->baseY;
@@ -187,21 +190,21 @@ extern void UpdateEnnemis()
 
 /**
  * \fn extern void collisionDetection()
- * \brief Fonction qui gere les collision entre le joueur et le decor
+ * \brief Fonction qui gere les collision entre le joueur et le decor, le joueur et les ennemis; et si le joueur tombe dans le vide
  * \details 
  * \return pas de valeur de retour (void)
 */
 extern void collisionDetection()
 {
     
-     /*##### JOUEUR ######*/
+    /*##### JOUEUR ######*/
     // Largeur et Hauteur du joueur
-    float joueur_w = getPlayer()->tex.w ;
-    float joueur_h = getPlayer()->tex.h;
-    
+    float joueur_w = getPlayer()->tex.w ; /**< variable qui stocke la largeur du joueur */
+    float joueur_h = getPlayer()->tex.h;  /**< variable qui stocke la hauteur du joueur */
+
     // Position X & Y du joueur
-    float joueur_x = getPlayerX();
-    float joueur_y = getPlayerY();
+    float joueur_x = getPlayerX(); /**< variable qui stocke la position en x du joueur */
+    float joueur_y = getPlayerY(); /**< variable qui stocke la position en y du joueur */
 
     /*
         côté droit = x + largeur;
@@ -210,97 +213,109 @@ extern void collisionDetection()
         coté haut = y 
     */
 
-    // Vérifie la collision avec les ennemies sur la gauche et la droite.
+    /* 
+        Verifie la collision avec les ennemis sur la gauche et la droite
+        Parcours de la liste des ennemis
+        *pt = pointeur sur l'ennemi actuel
+    */
     for( Node * pt = listEnnemis.tete ; pt != NULL; pt = pt->suivant)
     {
-            /*##### ENNEMI ######*/
+        /*##### ENNEMI ######*/
         // Largeur et Hauteur de l'ennemi
-        float ennemi_w = pt->rect->w;
-        float ennemi_h = pt->rect->h;
+        float ennemi_w = pt->rect->w; /**< variable qui stocke la largeur de l'ennemi */
+        float ennemi_h = pt->rect->h; /**< variable qui stocke la hauteur du joueur */
 
         // Position X & Y de l'ennemi
-        float ennemi_x = pt->rect->x;
-        float ennemi_y = pt->rect->y;
-         
-        
+        float ennemi_x = pt->rect->x; /**< variable qui stocke la position en x du joueur */
+        float ennemi_y = pt->rect->y; /**< variable qui stocke la position en y du joueur */
+
         // Vérifie les collisions à gauche , droite, bas et en haut
-        if(collide2d( joueur_x, joueur_y, ennemi_x, ennemi_y , joueur_w, joueur_h, ennemi_w, ennemi_h ) && pt->type == ennemi )
+        if (collide2d(joueur_x, joueur_y, ennemi_x, ennemi_y, joueur_w, joueur_h, ennemi_w, ennemi_h) && pt->type == ennemi)
         {
-            
             /*
                 Gestion de la collision pour le saut 
                 Vérifie que le joueur ce trouve bien au dessus de l'ennemi 
             */
-            if( joueur_x+joueur_w > ennemi_x && joueur_x < ennemi_x+ennemi_w  )
-            {   
-                /* Vérifie si lorsque le joueur tombe, il touche le haut de l'ennemi  */
-                if( joueur_y+joueur_h > ennemi_y && joueur_y < ennemi_y && getPlayer()->vy > 0 )
+            if (joueur_x + joueur_w > ennemi_x && joueur_x < ennemi_x + ennemi_w)
+            {
+                // Vérifie si lorsque le joueur tombe, il touche le haut de l'ennemi 
+                if (joueur_y + joueur_h > ennemi_y && joueur_y < ennemi_y && getPlayer()->vy > 0)
                 {
-                    // Si il n'est pas déjà mort alors il le devient.
-                    if( !pt->estMort )
+                    // Si l'ennemi n'est pas deja mort alors il le devient
+                    if (!pt->estMort)
                     {
-                        pt->estMort = true;  
+                        pt->estMort = true;
                     }
-                     break;   
+                    break;
                 }
 
-                // Sinon c'est que le joueur rentre en collision sur le cote
+                // Sinon c'est que le joueur rentre en collision sur le cote => la partie est perdu
                 else
                 {
-                     
                     Init_GameOver();
                 }
-            } 
+            }
             break;
         }
-    }
+    }//Fin du parcours de la liste des ennemis
 
     //Verifie si le joueur tombe dans le vide et qu'il dépasse la hauteur de l'écran = > la partie est perdu
     if( getPlayer()->y > 720 ) 
     {
         Init_GameOver();
     }
+
     //Verifie les collisions avec le décor
     collision_Decor(joueur,joueur_w, joueur_h, &getPlayer()->x , &getPlayer()->y , &getPlayer()->vy , &getPlayer()->estSurSol );
 }
 
-
-// extern void collision_Decor()
+/**
+ * \fn extern void collision_Decor( typeEntite type, float type_w, float type_h , float * type_x, float * type_y, float *vy, bool *estSurSol)
+ * \brief Fonction qui gere les collisions avec le decor
+ * \details 
+ * \param type type de l'entite
+ * \param type_w largeur de l'entite
+ * \param type_h hauteur de l'entite
+ * \param type_x position en x de l'entite
+ * \param type_y position en y de l'entite
+ * \param vy gravite de l'entite
+ * \param estSurSol
+ * \return pas de valeur de retour (void)
+*/
 extern void collision_Decor( typeEntite type, float type_w, float type_h , float * type_x, float * type_y, float *vy, bool *estSurSol)
 {   
-    
-     for(Node * pt = getCollider()->tete ; pt != NULL; pt = pt->suivant)
+    /*
+        Parcours de la liste des colliders
+        *pt = pointeur sur le collider actuel
+    */
+    for(Node * pt = getCollider()->tete ; pt != NULL; pt = pt->suivant)
     {   
             /*##### BRIQUES ######*/
             // Largeur et Hauteur des blocs de collisions
-            float collider_w = pt->rect->w;
-            float collider_h = pt->rect->h;
+            float collider_w = pt->rect->w; /**< variable qui stocke la largeur du collider */
+            float collider_h = pt->rect->h; /**< variable qui stocke la hauteur du collider */
 
             // Position X & Y des blocs de collisions
-            float collider_x = pt->rect->x;
-            float collider_y = pt->rect->y;
-            
+            float collider_x = pt->rect->x; /**< variable qui stocke la position en x du collider */
+            float collider_y = pt->rect->y; /**< variable qui stocke la position en y du collider */
+
             /*
-                Gestion des colisions avec le décor .
+                Gestion des colisions avec le décor
                 Divers traitement 
                 Cas du haut, bas, droit & gauche
             */
             if( (*type_x) + type_w / 2 > collider_x && (*type_x) + type_w / 2 < collider_x+collider_w  )
             {
-                // Le haut du joueur rentre en collision avec le bas d'un bloc.
-
+                // Le haut du joueur rentre en collision avec le bas d'un bloc
                 if( (*type_y) < collider_y+collider_h && (*type_y) > collider_y && (*vy) < 0 )
-
                 {
-                    
                     (*type_y) = collider_y + collider_h;
                     (*type_y) = collider_y + collider_h;
 
-                    // On arrête le saut 
+                    // On arrete le saut 
                     (*vy) = 0;
                 }
             }
-
            
             if( (*type_x)+type_w > collider_x && (*type_x) < collider_x+collider_w  )
             {   
@@ -320,7 +335,7 @@ extern void collision_Decor( typeEntite type, float type_w, float type_h , float
 
             if( (*type_y) + type_h > collider_y && (*type_y)<collider_y+collider_h)
             {
-                 // Le côté droit du joueur est en collision avec le coté gauche du bloc
+                // Le cote droit du joueur est en collision avec le cote gauche du bloc
                 if((*type_x)  < collider_x+collider_w && (*type_x)+type_w > collider_x+collider_w && (*vy) < 0)
                 {
                     (*type_x) = collider_x+collider_w;
@@ -328,13 +343,15 @@ extern void collision_Decor( typeEntite type, float type_w, float type_h , float
 
                     (*vy) = 0;
                 }
-                 // Le côté gauche du joueur est en collision avec le coté droit du bloc
+
+                // Le cote gauche du joueur est en collision avec le cote droit du bloc
                 else if( (*type_x)+type_w > collider_x && (*type_x) < collider_x && (*type_x) > 0)
                 {
                     //correct x
                     (*type_x)  = collider_x-type_w;
                     (*type_x) = collider_x-type_w;
 
+                    // On arrete le saut
                     (*vy) = 0;
                 }
             }
