@@ -128,7 +128,7 @@ extern void Rendu_Jeux()
       AfficherJoueur();
 
 
-      Debug_AfficherCollider();
+      // Debug_AfficherCollider();
       afficher_textures_niveau(1);
  
 
