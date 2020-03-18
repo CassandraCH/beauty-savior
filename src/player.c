@@ -148,7 +148,7 @@ extern void CollisionItems()
             {
                pt->estMort = true;
                supprimeCible(getItems(), true);
-               SetScore("SCORES", ++player.nb_objet);
+               SetHUD_IntToTexture(getScores(), "SCORES", ++player.nb_objet);
             }
             break;
         }
@@ -201,7 +201,7 @@ extern void actualiserJoueur(void)
            
 
             // }
-            PlayerScore("Scores: 0", 50, 50);
+            Init_HUD(getScores(),"Scores: 0", 50, 50);
             player.nb_lancer = 0;
             player.x = player.posXDepart;
             player.y = player.posYDepart;
@@ -229,7 +229,7 @@ extern void attaqueJoueur()
 
       
         CreerTir(bull, getPlayer()->w , getPlayer()->h, getPlayerX(),  getPlayerY() );
-        SetScore("SCORES",--player.nb_objet);
+        SetHUD_IntToTexture(getScores(), "SCORES",--player.nb_objet);
 
     }
     return;

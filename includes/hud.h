@@ -12,7 +12,10 @@ typedef struct hud_s
 
 
 
-extern void Init_HUD(const char * text, int x,  int y);
-extern void NettoyerHUD()
+extern void Init_HUD(HUD * hud, const char * text, int x,  int y);
+extern void NettoyerHUD(HUD * hud);
+extern void SetHUD_IntToTexture(HUD * hud, const char * nom, int valeur);
+extern void AfficherScores(HUD * hud);
+
 
 #endif

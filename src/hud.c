@@ -2,28 +2,61 @@
 
 
 
-extern void Init_HUD(const char * text, int x,  int y)
+
+extern void Init_HUD(HUD * hud, const char * text, int x,  int y)
 {
-    score.surface = TTF_RenderText_Solid(score.police, text,(SDL_Color){0, 0, 0,0});
-    score.tex = SDL_CreateTextureFromSurface( getRenderer(), score.surface );
+    hud->surface = TTF_RenderText_Solid(hud->police, text,(SDL_Color){0, 0, 0,0});
+    hud->tex = SDL_CreateTextureFromSurface( getRenderer(), hud->surface );
     
     int width, height;
-    SDL_QueryTexture(score.tex, NULL, NULL, &width, &height);
+    SDL_QueryTexture(hud->tex, NULL, NULL, &width, &height);
 
-    score.rect.x = x;
-    score.rect.y = y;
-    score.rect.w = width;
-    score.rect.h = height;
+    hud->rect.x = x;
+    hud->rect.y = y;
+    hud->rect.w = width;
+    hud->rect.h = height;
     
 }
 
-extern void NettoyerHUD()
+extern void SetHUD_IntToTexture(HUD * hud, const char * nom, int scores)
 {
-    if(score.tex != NULL)
+    SDL_Texture * tex = hud->tex;
+
+    if( tex != NULL )
     {
-        printf("Nettoyer scores\n");
-        SDL_FreeSurface(score.surface);
-        SDL_DestroyTexture(score.tex);
+        SDL_FreeSurface(hud->surface);
+        SDL_DestroyTexture(hud->tex);
+    }
+
+    char sc[30];
+
+    sprintf( sc, "%s : %d" , nom, scores ); 
+    
+    hud->surface = TTF_RenderText_Solid(hud->police, sc, (SDL_Color){0, 0, 0,0});
+    hud->tex = SDL_CreateTextureFromSurface( getRenderer() , hud->surface );
+
+   
+    int width, height;
+    SDL_QueryTexture(hud->tex, NULL, NULL, &width, &height);
+
+    hud->rect.w = width;
+    hud->rect.h = height;
+}
+
+extern void AfficherScores(HUD * hud)
+{
+    SDL_Rect scor = {hud->rect.x - camera.x  ,hud->rect.y - camera.y, hud->rect.w ,hud->rect.h };
+    SDL_RenderCopy(getRenderer(), hud->tex, NULL, &hud->rect);
+}
+
+
+extern void NettoyerHUD(HUD * hud)
+{
+    if(hud->tex != NULL)
+    {
+        printf("Nettoyer HUD\n");
+        SDL_FreeSurface(hud->surface);
+        SDL_DestroyTexture(hud->tex);
     }
     
 }

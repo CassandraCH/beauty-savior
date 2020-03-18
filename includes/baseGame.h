@@ -43,7 +43,7 @@ extern LinkedList* getEnnemis();
 extern LinkedList* getCollider();
 extern LinkedList* getItems();
 extern LinkedList* getBullets();
-extern Scores* getScores(void);
+extern HUD* getScores(void);
 extern Menu_t* getMenu(void);
 extern int getTimerBullet();
 extern void setTimerBullet(int time);

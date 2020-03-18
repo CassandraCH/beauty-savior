@@ -5,25 +5,25 @@
 #include "texture.h"
 
 
-typedef struct score
-{
-    int meilleurScore;
-    int scoreActuel;
+// typedef struct score
+// {
+//     int meilleurScore;
+//     int scoreActuel;
 
-    TTF_Font* police;
-	SDL_Surface* surface;
-    SDL_Texture *tex;
-	SDL_Rect rect;
+//     TTF_Font* police;
+// 	SDL_Surface* surface;
+//     SDL_Texture *tex;
+// 	SDL_Rect rect;
 
-}Scores;
+// }Scores;
 
 
-extern void Init_Scores();
-extern void AfficherScores();
-extern void SetScore(const char *nom, int scores);
-extern void PlayerScore(const char *text, int x, int y);
-extern void nouveauScore();
-extern void NettoyerScore();
+// extern void Init_Scores();
+// extern void AfficherScores();
+// extern void SetScore(const char *nom, int scores);
+// extern void PlayerScore(const char *text, int x, int y);
+// extern void nouveauScore();
+// extern void NettoyerScore();
 
 
 

@@ -21,7 +21,7 @@ extern void Init_MenuContinue()
      * Actif par défaut
      */ 
 
-    SetScore("SCORES", getPlayer()->nb_objet);
+    SetHUD_IntToTexture(getScores(), "SCORES", getPlayer()->nb_objet);
     getScores()->rect.x = 100;
     getScores()->rect.y = 300;
 
@@ -74,7 +74,7 @@ extern void Input_MenuContinue(SDL_Event *event)
                         suppListe(getCollider());
                         suppListe(getEnnemis());
                         suppListe(getBullets());
-                        PlayerScore("SCORES : 0", 10, 0);
+                        Init_HUD(getScores(), "SCORES : 0", 10, 0);
                         getPlayer()->x = 86;
                         getPlayer()->y = 495;
                         ChargerNiveau();       

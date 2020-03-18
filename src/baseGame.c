@@ -104,7 +104,7 @@ extern void Rendu_Jeux()
     else if ( getBaseGame()->state == LEVEL_COMPLETED )
     {
       Dessiner_MenuContinue();
-      AfficherScores();
+      AfficherScores(getScores());
     }
     else if ( getBaseGame()->state == PAUSE )
     {
@@ -125,7 +125,7 @@ extern void Rendu_Jeux()
       Afficher_ElementsListes( &bullet , itemTex, bull );
       Afficher_ElementsListes( &bullet , itemTex, feu );
       
-      AfficherScores();
+      AfficherScores(getScores());
       Afficher_ElementsListes( &items, itemTex, item ); 
       AfficherJoueur();
 
@@ -143,7 +143,7 @@ extern void Rendu_Jeux()
     else if (getBaseGame()->state == GAMEOVER )
     {
       Dessiner_MenuGameOver();
-      AfficherScores();
+      AfficherScores(getScores());
     }
 
     SDL_RenderPresent(getRenderer());

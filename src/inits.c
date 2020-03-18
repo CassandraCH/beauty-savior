@@ -65,11 +65,7 @@ void Init(const char *title)
     /*############### INITIALISATION DES ENTITES *###############*/        
     
     InitJoueur( getPlayer() );
-	Init_MenuPrincipal();
-    
-
-    Init_Scores();
-      
+	Init_MenuPrincipal();      
     getBaseGame()->estActif = true;
 }
 

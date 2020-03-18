@@ -26,7 +26,7 @@ extern void Init_MenuGameOver()
     printf("Chargement Menu Game Over");
     // NettoyerScore();
 
-    SetScore("SCORES", getPlayer()->nb_objet);
+    SetHUD_IntToTexture(getScores(), "SCORES", getPlayer()->nb_objet);
     getScores()->rect.x = 100;
     getScores()->rect.y = 300;
  
@@ -167,7 +167,7 @@ extern void Input_MenuGameOver(SDL_Event *event)
                     suppListe(getEnnemis());
                     suppListe(getBullets());
                     actualiserJoueur();
-                    PlayerScore("SCORES : 0", 10, 0);
+                    Init_HUD(getScores(), "SCORES : 0", 10, 0);
 
                     getBaseGame()->state = IN_GAME;
                     ChargerNiveau();

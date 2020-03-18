@@ -227,7 +227,7 @@ extern void Input_MenuPrincipal(SDL_Event *event)
                             suppListe( getCollider() );
                             suppListe(getEnnemis());
                             suppListe(getBullets());
-                            PlayerScore("SCORES : 0", 10, 0);
+                            Init_HUD(getScores(),"SCORES : 0", 10, 0);
                             ChargerNiveau();
                             // Nettoyer_MenuPrincipal();
                             getBaseGame()->state = IN_GAME;
