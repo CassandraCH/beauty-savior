@@ -94,32 +94,38 @@ void Init(const char *title)
 }
 
 /**
- *  S'occupe de la libération de toutes les ressources du jeux
- *  Ainsi que de la destruction du Renderer et du Window
- */
+ * \fn void LibererRessources_Jeux(void)
+ * \brief Fonction qui libere toutes les ressources du jeu 
+ * \details Destruction des structures rendu et fenetre 
+ * \return pas de valeur de retour (void)
+*/
 void LibererRessources_Jeux(void)
 {
-     
+    //Destruction de la fenetre, du rendu et du niveau 
     SDL_DestroyWindow(fenetre) ;
     SDL_DestroyRenderer (rendu);
     DestructionNiveau();
     rendu = NULL;
     fenetre = NULL;
     
+    //Suppression des audios et des polices qui ont ete charges
     Mix_FreeChunk(getMenu()->son);
     Mix_FreeMusic( getMenu()->bgm  );
     TTF_CloseFont(getMenu()->police);
     TTF_CloseFont(getScores()->police);
     
+    //Suppression des listes
     suppListe(&bullet);
     suppListe(&listCollider);
     suppListe(&listEnnemis);
+
+    //Destruction des menus
     Nettoyer_Menu(getMenuCon(), 1);
     Nettoyer_Menu(getMenu(), 4 );
     Nettoyer_Menu(getMenuPause(), 2);
 
-    TTF_Quit();
-    SDL_Quit();
+    TTF_Quit(); //Quitter TTF
+    SDL_Quit(); //Quitter SDL
     
     printf("fin sdl quit\n");
 }
