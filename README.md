@@ -17,9 +17,7 @@ L'idée est très simple, le but est de finir un niveau dans un temps imparti.
 
 Chaque niveau possède un nombre d'ennemis différents, ainsi que divers objets à récupérer.
 
-L'entièreté des visuels on était créés dans le cadre de ce projet par un membre de notre équipe.
-
-
+L'ensemble des visuels du projet ont été réalisés par un membre de l'équipe, Calvados Cindy.
 
 ## Comment jouer ?
 
