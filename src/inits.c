@@ -99,9 +99,14 @@ void LibererRessources_Jeux()
     suppListe(&listCollider);
     suppListe(&listEnnemis);
     Nettoyer_MenuPrincipal();
+<<<<<<< Updated upstream
     Nettoyer_MenuPause();
     Nettoyer_MenuGameOver();    
 
+=======
+    Nettoyer_MenuPause(getMenu());
+    Nettoyer_MenuGameOver();
+>>>>>>> Stashed changes
 
     TTF_Quit();
     SDL_Quit();

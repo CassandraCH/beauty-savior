@@ -84,10 +84,10 @@ extern void Input_MenuPause(SDL_Event *event)
             switch (event->key.keysym.sym)
             {
             case SDLK_LEFT:
-                Gauche();
+                Gauche(getMenuPause());
                 break;
             case SDLK_RIGHT:
-                Droite();
+                Droite(getMenuPause());
                 break;
           
             case SDLK_RETURN:
@@ -120,51 +120,52 @@ extern void Input_MenuPause(SDL_Event *event)
 
 
 
-extern void Droite()
+extern void Droite(Menu_t* menu)
 {
+
     //Si l'option actuellement selectionnee est differente de la premiere
     //Si on est sur la dernière option => on ne peut pas aller sur une option au-dessus 
-    if (menu_pause.selectedOption + 1 < MAX_NUMBER - 1 )
+    if (menu->selectedOption + 1 < MAX_NUMBER - 1 )
     {
         //Rafraichir l'affichage
-        UpdateOption(&menu_pause.menu[menu_pause.selectedOption], 1);
+        UpdateOption(&menu->menu[menu->selectedOption], 1);
 
         //Modifier l'option selectionnee => passe a l'option precedente
-        menu_pause.selectedOption++;
+        menu->selectedOption++;
 
         //Rafraichir l'affichage
-        UpdateOption(&menu_pause.menu[menu_pause.selectedOption], 0);
+        UpdateOption(&menu->menu[menu->selectedOption], 0);
     }
 }
-extern void Gauche()
+extern void Gauche(Menu_t* menu)
 {
     //Si l'option actuellement selectionnee est differente de la premiere
     //Si on est sur la premiere option => on ne peut pas aller sur une option au-dessus
-    if (menu_pause.selectedOption - 1 >= 0)
+    if (menu->selectedOption - 1 >= 0)
     {  
   
         //Rafraichir l'affichage
-        UpdateOption(&menu_pause.menu[menu_pause.selectedOption] , 1);
+        UpdateOption(&menu->menu[menu->selectedOption] , 1);
 
         //Modifier l'option selectionnee => passe a l'option suivante
-        menu_pause.selectedOption--;
+        menu->selectedOption--;
 
         //Rafraichir l'affichage
-        UpdateOption(&menu_pause.menu[menu_pause.selectedOption], 0 );
+        UpdateOption(&menu->menu[menu->selectedOption], 0 );
     }
     
 }
 
 
-extern void Nettoyer_MenuPause()
+extern void Nettoyer_MenuPause(Menu_t * menu)
 {
      // NettoyerScore();
     printf("Suppression Menu Pause\n");
     for (int i = 0; i < MAX_NUMBER - 1; i++)
     {
-        if (menu_pause.menu[i].texture != NULL)
+        if (menu->menu[i].texture != NULL)
         {
-            free(menu_pause.menu[i].texture);
+            free(menu->menu[i].texture);
         }
     }
     printf("Fin Suppression Menu Pause\n");

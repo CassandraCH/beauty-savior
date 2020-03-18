@@ -123,7 +123,9 @@ extern void Rendu_Jeux()
       AfficherScores();
       Afficher_ElementsListes( &items, itemTex, item ); 
       AfficherJoueur();
-      Debug_AfficherCollider();
+
+
+      // Debug_AfficherCollider();
       afficher_textures_niveau(1);
  
 

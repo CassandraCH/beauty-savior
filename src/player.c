@@ -57,7 +57,7 @@ extern void SetValeurDuNiveau(int valeur)
 // Initialisation du joueur
 extern void InitJoueur()
 {
-	player.niveau = 2;
+	player.niveau = 1;
     player.nombreVies = 3;
 
 	// player = (Player) { 0 };
