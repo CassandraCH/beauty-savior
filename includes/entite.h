@@ -6,6 +6,7 @@
  * \brief Programme qui gère toutes les entites du jeu, les collisions, les attaques ...
  */
 
+
 #ifndef ENTITY_H
 #define ENTITY_H
 
