@@ -1,3 +1,11 @@
+/**
+ * \file attributs.h
+ * \author CALVADOS Cindy, CHAUMULON Cassandra, CHELLI Célia, OUSMANOVA Karina
+ * \version 1.0
+ * \date mars 2020
+ * \brief Programme qui gère toutes les entites du jeu, les collisions, les attaques ...
+ */
+
 #ifndef ENTITY_H
 #define ENTITY_H
 
