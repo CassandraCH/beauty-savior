@@ -10,67 +10,101 @@
 
 #include "baseGame.h"
 
-Level level;
+Level level; /**< Structure d'un niveau */
 
-
+/**
+ * \fn extern Level* getLevel()
+ * \brief Fonction qui permet d'accéder à la structure d'un niveau
+ * \return Un pointeur sur une structure de données de type Level
+*/
 extern Level* getLevel()
 {
    return &level;
 }
 
+/**
+ * \fn extern void setNiveau(int niveau) 
+ * \brief Fonction qui permet de mettre a jour le niveau du joueur
+ * \details
+ * \param niveau numero du niveau
+ * \return pas de valeur de retour (void)
+*/
 extern void setNiveau(int niveau) 
 {
    getPlayer()->niveau = niveau;
 }
 
+/**
+ * \fn extern void ChargerNiveau()
+ * \brief Fonction qui permet de charger un niveau
+ * \details Initialisation des listes (ennemis, bullets,items et colliders)
+ * \return pas de valeur de retour (void)
+*/
 extern void ChargerNiveau()
 {
    printf("Chargement Niveau\n");
    
+   //Initialisation des listes
    init_List(&listEnnemis);
    init_List(&bullet);
    init_List(&items);
    init_List(&listCollider);
       
-   
+   //Chargement du niveau 1
    if(  getPlayer()->niveau == 1 )
    {
-      
+      //Chargement de toutes les entites (sauf joueur)
       Chargement_CreationPNJ(getCollider(),"files_assets/niveau1.txt") ;
+
+      //Chargement des ennemis
       ChargementEnnemis("files_assets/ennemi.txt");
 
+      //Chargement des textures
       SDL_Texture * itemTex = ChargerTexture("graphics_assets/coin.png");
       ChargementItems("files_assets/coin.txt", itemTex);
       ChargerTextureManager( &level.levelTextures[0], "graphics_assets/level_1/back.png");
       ChargerTextureManager( &level.levelTextures[1], "graphics_assets/level_1/front.png");
 
    }  
+
+   //Chargement du niveau 2
    else if(  getPlayer()->niveau == 2 )
    {  
-
+         //Destruction du niveau precedent
          DestructionNiveau();
+         //Chargement de toutes les entites (sauf joueur)
          Chargement_CreationPNJ(getCollider(),"files_assets/niveau2.txt") ;
          // ChargementEnnemis("files_assets/ennemi.txt");
 
+         //Chargement des textures
          SDL_Texture * itemTex = ChargerTexture("graphics_assets/coin.png");
-         suppListe(getItems() );
+         suppListe(getItems()); //Suppression de la liste d'item precedente
          ChargementItems("files_assets/coin.txt", itemTex);
-
          ChargerTextureManager( &level.levelTextures[0], "graphics_assets/level_2/back.png");
          ChargerTextureManager( &level.levelTextures[1], "graphics_assets/level_2/front.png");
-
    }
    
    printf("Fin chargement niveau\n");
-
 }
 
+/**
+ * \fn extern void NiveauSuivant()
+ * \brief Fonction qui permet de charger un niveau suivant
+ * \details Appel de la fonction ChargerNiveau()
+ * \return pas de valeur de retour (void)
+*/
 extern void NiveauSuivant()
 {
    ChargerNiveau();
-
 }
 
+/**
+ * \fn extern void Debug_AfficherCollider() 
+ * \brief Fonction qui permet de mettre a jour le niveau du joueur
+ * \details
+ * \param niveau numero du niveau
+ * \return pas de valeur de retour (void)
+*/
 extern void Debug_AfficherCollider() 
 {
    SDL_Rect rect;
