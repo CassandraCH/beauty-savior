@@ -194,7 +194,7 @@ extern void Input_MenuGameOver(SDL_Event *event)
 /**
  * \fn extern void Init_GameOver()
  * \brief Fonction qui initialise l'etat game over
- * \details Gestion des entrees clavier de l'utilisateur
+ * \details
  * \return pas de valeur de retour (void)
 */
 extern void Init_GameOver()

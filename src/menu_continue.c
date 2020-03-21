@@ -113,17 +113,26 @@ extern void Input_MenuContinue(SDL_Event *event)
     } // fin while (SDL_PollEvent)
 }
 
-
+/**
+ * \fn extern void Init_Continue()
+ * \brief Fonction qui initialise l'etat continue
+ * \details 
+ * \return pas de valeur de retour (void)
+*/
 extern void Init_Continue()
 {
     // NettoyerScore();
     // DestructionNiveau();
+
+    //Initialisation du hud de score
     Init_HUD(getNiveau(), "NIVEAU : 0", 530, 374);
+
+    //Initialisation du menu "continuer"
     Init_MenuContinue();
     
-    
+    //Changement de l'etat du jeu
     getBaseGame()->state = LEVEL_COMPLETED;
+
     getBaseGame()->time = 0;
     setTimerBullet(0);
-
 }
