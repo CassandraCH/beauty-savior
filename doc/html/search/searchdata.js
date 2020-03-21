@@ -10,7 +10,7 @@ var indexSectionsWithContent =
   0: "abcdeghilmnoprstu",
   1: "bhilmnopt",
   2: "bceghilmpst",
-  3: "acgilprsu",
+  3: "acgilnprsu",
   4: "cdeglms"
 >>>>>>> Mise a jour du doxy_beauty
 };
