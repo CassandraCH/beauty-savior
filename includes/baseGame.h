@@ -19,16 +19,15 @@
 #include "constantes.h"
 
 
-#include "inputs.h"
+
 #include "entite.h"
 #include "player.h"
 #include "level.h"
-#include "scores.h"
 #include "items.h"
 #include "listeElements.h"
 #include "chargeSave.h"
 #include "texture.h"
-#include "enjeu.h"
+
 #include "entite.h"
 #include "hud.h"
 #include "menuPrincipal.h"
@@ -62,6 +61,9 @@ extern Menu_t * getMenuPause();
 extern Menu_t * getMenu_Over();
 extern int getTimerBullet(void);
 extern void setTimerBullet(int time);
+
+extern void ProcessInput(SDL_Event* event);
+extern void Input_InGame(SDL_Event *event);
 
 
 /*######## LISTES ######## */
