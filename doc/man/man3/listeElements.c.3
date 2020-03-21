@@ -16,15 +16,19 @@ src/listeElements.c \- Programme qui permet de gérer les listes\&.
 .ti -1c
 .RI "\fBLinkedList\fP * \fBgetEnnemis\fP ()"
 .br
+.RI "Fonction qui permet d'acceder a la liste des ennemis\&. "
 .ti -1c
 .RI "\fBLinkedList\fP * \fBgetCollider\fP ()"
 .br
+.RI "Fonction qui permet d'acceder a la liste des colliders\&. "
 .ti -1c
 .RI "\fBLinkedList\fP * \fBgetBullets\fP ()"
 .br
+.RI "Fonction qui permet d'acceder a la liste des bullets\&. "
 .ti -1c
 .RI "\fBLinkedList\fP * \fBgetItems\fP ()"
 .br
+.RI "Fonction qui permet d'acceder a la liste des items\&. "
 .ti -1c
 .RI "int \fBgetTimerBullet\fP ()"
 .br
@@ -34,33 +38,39 @@ src/listeElements.c \- Programme qui permet de gérer les listes\&.
 .ti -1c
 .RI "void \fBinit_List\fP (\fBLinkedList\fP *list)"
 .br
+.RI "Fonction qui permet d'initialiser la liste passee en parametre\&. "
 .ti -1c
-.RI "\fBNode\fP * \fBcreerRect\fP (SDL_Rect *rect, typeEntite item_t, bool actif)"
+.RI "\fBNode\fP * \fBcreerElement\fP (SDL_Rect *rect, typeEntite item_t, bool actif)"
 .br
+.RI "Fonction qui permet de créer un rectangle (portion de l'ecran) "
 .ti -1c
 .RI "void \fBinsertion\fP (\fBLinkedList\fP *list, SDL_Rect *rect, typeEntite items_t, bool actif)"
 .br
+.RI "Fonction qui permet d'inserer un element dans une liste passee en parametre\&. "
 .ti -1c
 .RI "void \fBsuppListe\fP (\fBLinkedList\fP *lst)"
 .br
-.ti -1c
-.RI "void \fBdeleteQueue\fP (\fBLinkedList\fP *lstPtr)"
-.br
+.RI "Fonction qui permet de supprimer la liste passee en parametre\&. "
 .ti -1c
 .RI "bool \fBsuppPremier\fP (\fBLinkedList\fP *lst)"
 .br
+.RI "Fonction qui permet de supprimer la tete de la liste passee en parametre\&. "
 .ti -1c
 .RI "bool \fBsuppDernier\fP (\fBLinkedList\fP *lst)"
 .br
+.RI "Fonction qui permet de supprimer la queue de la liste passee en parametre\&. "
 .ti -1c
 .RI "\fBNode\fP * \fBtrouve\fP (\fBLinkedList\fP *lsptr, int target, \fBNode\fP **prvPtr)"
 .br
+.RI "Fonction qui permet de chercher un element dans une liste\&. "
 .ti -1c
 .RI "bool \fBsupprimeCible\fP (\fBLinkedList\fP *lsptr, int target)"
 .br
+.RI "Fonction qui permet de supprimer un element cible dans une liste\&. "
 .ti -1c
 .RI "void \fBAfficher_ElementsListes\fP (\fBLinkedList\fP *lst, SDL_Texture *tex, typeEntite typeE)"
 .br
+.RI "Fonction qui permet d'afficher les elements d'une liste\&. "
 .in -1c
 .SS "Variables"
 
@@ -103,6 +113,230 @@ janvier 2020
 .RE
 .PP
 Création d'une liste, ajout de nouvel élément, suppression de la tête, suppresion de la queue, accès à une liste, affichage d'une liste' 
+.SH "Documentation des fonctions"
+.PP 
+.SS "void Afficher_ElementsListes (\fBLinkedList\fP * lst, SDL_Texture * tex, typeEntite typeE)"
+
+.PP
+Fonction qui permet d'afficher les elements d'une liste\&. 
+.PP
+\fBParamètres\fP
+.RS 4
+\fIlst\fP liste dont on veut afficher les elements 
+.br
+\fItex\fP texture 
+.br
+\fItypeE\fP type des elements a afficher 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "\fBNode\fP * creerElement (SDL_Rect * rect, typeEntite item_t, bool actif)"
+
+.PP
+Fonction qui permet de créer un rectangle (portion de l'ecran) Ce rectangle sera utilise pour la texture 
+.PP
+\fBParamètres\fP
+.RS 4
+\fIrect\fP rectangle SDL 
+.br
+\fIitem_t\fP type de l'entite 
+.br
+\fIactif\fP etat de l'entite 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+Pointeur sur une structure de type \fBNode\fP 
+.RE
+.PP
+
+.SS "\fBLinkedList\fP * getBullets ()"
+
+.PP
+Fonction qui permet d'acceder a la liste des bullets\&. Fonction qui permet d'acceder a la duree de vie/temps d'apparition a l'ecran des bullets\&.
+.PP
+\fBRenvoie\fP
+.RS 4
+un pointeur sur une liste de type \fBLinkedList\fP
+.PP
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "\fBLinkedList\fP * getCollider ()"
+
+.PP
+Fonction qui permet d'acceder a la liste des colliders\&. 
+.PP
+\fBRenvoie\fP
+.RS 4
+un pointeur sur une liste de type \fBLinkedList\fP 
+.RE
+.PP
+
+.SS "\fBLinkedList\fP * getEnnemis ()"
+
+.PP
+Fonction qui permet d'acceder a la liste des ennemis\&. 
+.PP
+\fBRenvoie\fP
+.RS 4
+un pointeur sur une liste de type \fBLinkedList\fP 
+.RE
+.PP
+
+.SS "\fBLinkedList\fP * getItems ()"
+
+.PP
+Fonction qui permet d'acceder a la liste des items\&. 
+.PP
+\fBRenvoie\fP
+.RS 4
+un pointeur sur une liste de type \fBLinkedList\fP 
+.RE
+.PP
+
+.SS "void init_List (\fBLinkedList\fP * list)"
+
+.PP
+Fonction qui permet d'initialiser la liste passee en parametre\&. 
+.PP
+\fBParamètres\fP
+.RS 4
+\fIlist\fP liste a initialiser 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void insertion (\fBLinkedList\fP * list, SDL_Rect * rect, typeEntite items_t, bool actif)"
+
+.PP
+Fonction qui permet d'inserer un element dans une liste passee en parametre\&. 
+.PP
+\fBParamètres\fP
+.RS 4
+\fIlist\fP pointeur sur la liste dans laquelle on veut inserer un element 
+.br
+\fIrect\fP pointeur sur l'element a ajouter 
+.br
+\fIitems_t\fP type de l'element a ajouter : ennemi, bullet, collider\&.\&.\&. 
+.br
+\fIactif\fP etat de l'element 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "bool suppDernier (\fBLinkedList\fP * lst)"
+
+.PP
+Fonction qui permet de supprimer la queue de la liste passee en parametre\&. 
+.PP
+\fBParamètres\fP
+.RS 4
+\fIlst\fP pointeur sur la liste dans laquelle on veut inserer un element 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+un booleen si l'element a bien ete supprime ou non 
+.RE
+.PP
+
+.SS "void suppListe (\fBLinkedList\fP * lst)"
+
+.PP
+Fonction qui permet de supprimer la liste passee en parametre\&. 
+.PP
+\fBParamètres\fP
+.RS 4
+\fIlist\fP pointeur sur la liste dans laquelle on veut inserer un element 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "bool suppPremier (\fBLinkedList\fP * lst)"
+
+.PP
+Fonction qui permet de supprimer la tete de la liste passee en parametre\&. 
+.PP
+\fBParamètres\fP
+.RS 4
+\fIlst\fP pointeur sur la liste dans laquelle on veut inserer un element 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+un booleen si l'element a bien ete supprime ou non 
+.RE
+.PP
+
+.SS "bool supprimeCible (\fBLinkedList\fP * lsptr, int target)"
+
+.PP
+Fonction qui permet de supprimer un element cible dans une liste\&. 
+.PP
+\fBParamètres\fP
+.RS 4
+\fIlsptr\fP pointeur sur la liste dans laquelle on veut supprimer un element 
+.br
+\fItarget\fP element cible qu'on veut supprimer 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+un booleen si l'element cible a bien ete supprime ou non 
+.RE
+.PP
+
+.SS "\fBNode\fP * trouve (\fBLinkedList\fP * lsptr, int target, \fBNode\fP ** prvPtr)"
+
+.PP
+Fonction qui permet de chercher un element dans une liste\&. 
+.PP
+\fBParamètres\fP
+.RS 4
+\fIlsptr\fP pointeur sur la liste dans laquelle on cherche un element 
+.br
+\fItarget\fP element cible qui est cherche 
+.br
+\fIprvPtr\fP pointeur sur l'element precedent 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+Pointeur sur une structure de type \fBNode\fP 
+.RE
+.PP
+
+.SH "Documentation des variables"
+.PP 
+.SS "\fBLinkedList\fP bullet"
+Liste des bullets 
+.SS "\fBLinkedList\fP items"
+Liste des items 
+.SS "\fBLinkedList\fP listCollider"
+Liste des colliders 
+.SS "\fBLinkedList\fP listEnnemis"
+Liste des ennemis 
+.SS "int timerBullets"
+Temps d'apparition a l'ecran des bullets 
 .SH "Auteur"
 .PP 
 Généré automatiquement par Doxygen pour Beauty Savior à partir du code source\&.

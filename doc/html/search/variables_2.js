@@ -1,8 +1,4 @@
 var searchData=
 [
-<<<<<<< HEAD
-  ['estactif_142',['estActif',['../structbase_game.html#ad89867021ac1f6bf309e9a79313123fc',1,'baseGame']]]
-=======
-  ['estactif_120',['estActif',['../structbase_game.html#ad89867021ac1f6bf309e9a79313123fc',1,'baseGame']]]
->>>>>>> Ajout de la documentation et des commentaires du fichier hud.c
+  ['dt_177',['dt',['../base_game_8c.html#a778e38aa889751afffa2dea6b803e67a',1,'baseGame.c']]]
 ];

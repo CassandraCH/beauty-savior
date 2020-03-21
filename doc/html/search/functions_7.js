@@ -1,8 +1,5 @@
 var searchData=
 [
-<<<<<<< HEAD
-  ['processinput_129',['ProcessInput',['../input_8c.html#af9658d8e7a4d94f46954586e8f10d5a1',1,'input.c']]]
-=======
-  ['rendu_5fjeux_109',['Rendu_Jeux',['../base_game_8c.html#a84b7d8c161bc3ba1be25eab70f664a67',1,'baseGame.c']]]
->>>>>>> Ajout de la documentation et des commentaires du fichier hud.c
+  ['nettoyerhud_157',['NettoyerHUD',['../hud_8c.html#af36b747248c55fe2868fd998ab00e87d',1,'hud.c']]],
+  ['niveausuivant_158',['NiveauSuivant',['../level_8c.html#af03a5f30c8e752132aa2bd0751324be8',1,'level.c']]]
 ];

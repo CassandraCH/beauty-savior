@@ -281,22 +281,12 @@ extern void collisionDetection()
 
 }
 
-
 /**
- * \fn extern void collision_Decor( typeEntite type, float type_w, float type_h , float * type_x, float * type_y, float *vy, bool *estSurSol)
+ * \fn extern void collision_Decor()
  * \brief Fonction qui gere les collisions avec le decor
  * \details 
- * \param type type de l'entite
- * \param type_w largeur de l'entite
- * \param type_h hauteur de l'entite
- * \param type_x position en x de l'entite
- * \param type_y position en y de l'entite
- * \param vy gravite de l'entite
- * \param estSurSol
  * \return pas de valeur de retour (void)
 */
-
-
 extern void collision_Decor()
 {
     

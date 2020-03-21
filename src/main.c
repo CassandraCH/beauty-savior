@@ -10,18 +10,27 @@
 
 #include "baseGame.h"
 
-
-
+/**
+ * \fn int main( int argc, char ** argv )
+ * \brief Programme principal du jeu
+ * \details 
+ * \param argc 
+ * \param argv 
+ * \return 0
+*/
 int main( int argc, char ** argv )
 {
-   
+    //Initialisation de la fenetre 
     Init("Beauty Savior");
 	SDL_Event event;
 	
-     srand( (int) time(NULL));
+    //initialisation du generateur de nombres aleatoires
+    srand( (int) time(NULL));
 
     int flPreviousTime = 0, flCurrentTime = 0;
     float dt = 0.0f;
+
+    //Tant que le jeu est actif (le jeu n'a pas ete quitte)
 	while( getBaseGame()->estActif )
     {   
         
@@ -38,14 +47,10 @@ int main( int argc, char ** argv )
       
         Update(dt);
         
-       
 		Rendu_Jeux( getBaseGame() );
-
-
     } 
-
     
-    
+    //Liberation de la memoire 
     LibererRessources_Jeux();
 
     return 0;

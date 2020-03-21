@@ -37,16 +37,17 @@ extern void Init_HUD(HUD * hud, const char * text, int x,  int y)
     hud->rect.h = height; //Hauteur du hud
 }
 
-
 /**
- * \fn extern void SetHUD_IntToTexture(HUD * hud, const char * nom, int scores)
+ * \fn extern void SetHUD_IntToTexture(HUD * hud, const char * nom, int value, int posX, int posY)
  * \brief Fonction qui permet de creer la texture d'un hud
  * \param hud pointeur sur une structure de type HUD 
  * \param nom chaine de caractere a ce qu'on veut afficher
- * \param scores position en x du hud
+ * \param value valeur numerique a afficher dans le hud
+ * \param posX position en x du hud
+ * \param posY position en y du hud
  * \return pas de valeur de retour (void)
 */
-extern void SetHUD_IntToTexture(HUD * hud, const char * nom, int scores, int posX, int posY)
+extern void SetHUD_IntToTexture(HUD * hud, const char * nom, int value, int posX, int posY)
 {
     //Creation d'une texture pour le hud
     SDL_Texture * tex = hud->tex;
@@ -76,8 +77,7 @@ extern void SetHUD_IntToTexture(HUD * hud, const char * nom, int scores, int pos
     hud->rect.w = width;
     hud->rect.h = height;
     hud->rect.x = posX;
-    hud->rect.y = posY;
-    
+    hud->rect.y = posY; 
 }
 
 
