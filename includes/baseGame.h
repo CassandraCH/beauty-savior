@@ -32,6 +32,7 @@
 #include "entite.h"
 #include "hud.h"
 #include "menuPrincipal.h"
+#include "menuLoad.h"
 #include "menuPause.h"
 #include "menu_continue.h"
 
@@ -53,7 +54,9 @@ extern LinkedList* getCollider(void);
 extern LinkedList* getItems(void);
 extern LinkedList* getBullets(void);
 extern HUD* getScores(void);
+extern HUD* getNiveau();
 extern Menu_t* getMenu(void);
+extern Menu_t * getMenuLoad();
 extern Menu_t * getMenuCon(void);
 extern Menu_t * getMenuPause();
 extern Menu_t * getMenu_Over();

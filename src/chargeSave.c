@@ -16,22 +16,24 @@
 extern void ChargerPartie()
 {
     //Ouverture du fichier data.txt
-    FILE * file = fopen("files_assets/data.txt", "r");
+    FILE * file = fopen("files_assets/save_player.txt", "r");
     
     //Verification que le fichier existe bien
     if (file == NULL) {
         fprintf(stderr, "Can't open input file in list!\n");
         exit(1);    
     }
-    
+    int niveau , nb_objet;
     //Lecture dans le fichier des donnees sauvegardees
-    if( fscanf(file,"%f %f", &getPlayer()->x, &getPlayer()->y) )
+    if( fscanf(file,"%d %d", &niveau, &nb_objet)  )
     {
-        printf( "Score charger: %f-%f\n", getPlayer()->x, getPlayer()->y);
+        getPlayer()->niveau = niveau;
+        getPlayer()->nb_objet = nb_objet;
+        printf("%d %d \n", getPlayer()->niveau, getPlayer()->nb_objet);
 
         //Fermeture du fichier
-        fclose(file);
     }
+        fclose(file);
 }
 
 /**
@@ -43,7 +45,7 @@ extern void ChargerPartie()
 extern void SauvegarderPartie()
 {
     //Ouverture ou creation du fichier data.txt
-    FILE * file = fopen("files_assets/data.txt", "a");
+    FILE * file = fopen("files_assets/save_player.txt", "w");
     
     //Gestion des erreurs de creation du fichier
     if (file == NULL) {
@@ -52,7 +54,7 @@ extern void SauvegarderPartie()
     }
 
     //Sauvegarder la position en x et y du joueur
-    fprintf(file,"%f %f", getPlayer()->x , getPlayer()->y );
+    fprintf(file,"%d %d", getPlayer()->niveau, getPlayer()->nb_objet);
     
     //Fermeture du fichier
     fclose(file);

@@ -29,12 +29,10 @@ extern void Init_MenuGameOver()
 
     int width = LARGEUR_FENETRE, height = HAUTEUR_FENETRE;
     printf("Chargement Menu Game Over");
+    
     // NettoyerScore();
+    SetHUD_IntToTexture(getScores(), "SCORES", getPlayer()->nb_objet, 100, 300);
 
-    SetHUD_IntToTexture(getScores(), "SCORES", getPlayer()->nb_objet);
-    getScores()->rect.x = 100;
-    getScores()->rect.y = 300;
- 
 
     //chargement du son
     /* Son a modifier */
@@ -143,9 +141,6 @@ extern void Input_MenuGameOver(SDL_Event *event)
                 Mix_PlayChannel(-1, getMenu()->son, 0);
                 ToucheBas(getMenu_Over());
                 break;
-            case SDLK_LEFT:
-
-                break;
             case SDLK_RETURN:
                 switch (getTouchePresse(getMenu_Over()))
                 {
@@ -163,7 +158,30 @@ extern void Input_MenuGameOver(SDL_Event *event)
                     return;
                     break;
                 case 1:
-                    printf("Bouton option press%c\n", 130);
+                    Nettoyer_Menu(getMenu_Over(), 4);
+                    Nettoyer_Menu( getMenu() , 4);
+                    printf("Chargement depuis gameover");
+                    // Init_MenuLoad();
+                    // getBaseGame()->state = LOADING;
+                    // Mix_HaltMusic();
+
+
+                    //   // getPlayer()->estMort = false;
+                    
+                    // //  ChargerPartie();
+                    // actualiserJoueur();
+                    // SetHUD_IntToTexture(getScores(), "SCORES", getPlayer()->nb_objet);
+                    // getScores()->rect.x = 10;
+                    // getScores()->rect.y = 0;
+                    // Nettoyer_Menu(getMenu(), 4);
+                    // ChargerNiveau();
+                   
+                    // getBaseGame()->state = IN_GAME;
+                    // Mix_HaltMusic();
+                       Init_MenuLoad();
+                        Nettoyer_Menu(getMenu(), 4);
+                        getBaseGame()->state = LOADING;
+                        Mix_HaltMusic();
                     break;
                 case 2:
                     getBaseGame()->estActif = false;
@@ -221,9 +239,13 @@ extern void Init_GameOver()
     setNiveau(1);
     Nettoyer_Menu(getMenu(), 4);
     Init_MenuGameOver();
+suppListe( getCollider() );
+        suppListe(getEnnemis());
+        suppListe(getBullets());
     DestructionNiveau();
     getBaseGame()->state = GAMEOVER;
     getBaseGame()->time = 0;
     setTimerBullet(0);
+
     
 }

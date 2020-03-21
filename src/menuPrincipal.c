@@ -280,7 +280,12 @@ extern void Input_MenuPrincipal(SDL_Event *event)
                             return;
                             break;
                         case 1:
-                            printf("Bouton option press%c\n", 130);
+                            // printf("Bouton option press%c\n", 130);
+                            printf("Chargement depuis menu principal\n");
+                            Init_MenuLoad();
+                            Nettoyer_Menu(getMenu(), 4);
+                            getBaseGame()->state = LOADING;
+                            Mix_HaltMusic();
                             break;
                         case 2:
 			               getBaseGame()->estActif = false;
