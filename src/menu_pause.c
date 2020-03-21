@@ -109,11 +109,11 @@ extern void Input_MenuPause(SDL_Event *event)
                             break;
                         default:
                             break;
-                    }
+                    }//fin du switch
                     break;
                 default:
                     break;
-            }
+                } //fin du switch
         }
     } // fin while (SDL_PollEvent)
 }
