@@ -9,12 +9,13 @@
 
 #include "baseGame.h"
 
+Menu_t menu; /**< Structure de type menu_t */
 
-    Menu_t menu;
-
-/*
- * Fonction qui retourne le menu
- */ 
+/**
+ * \fn extern Menu_t* getMenu()
+ * \brief Fonction qui permet retourner le menu principal
+ * \return une structure menu de type Menu_t
+*/
 extern Menu_t* getMenu()
 {
     return &menu;
@@ -23,31 +24,36 @@ extern Menu_t* getMenu()
 /* 
  * Fonction qui retourne l'option du menu selectionne
  */
+/**
+ * \fn extern int getTouchePresse(Menu_t *menu)
+ * \brief Fonction qui retourne l'option du menu selectionne
+ * \param menu pointeur sur le menu
+ * \return un entier correspondant au numero de l'option selectionnee
+*/
 extern int getTouchePresse(Menu_t *menu)
 { 
     return menu->selectedOption; 
 }
 
-/* 
- * Fonction qui initialise le menu principal
- */
+/**
+ * \fn extern void Init_MenuPrincipal()
+ * \brief Fonction qui initialise le menu principal
+ * \return pas de valeur de retour (void)
+*/
 extern void Init_MenuPrincipal()
-{   
-    
+{       
     int width = LARGEUR_FENETRE, height = HAUTEUR_FENETRE;
     printf("Chargement Menu principal");
     
-    //chargement du son
+    //chargement des sons
     menu.son = Mix_LoadWAV("sounds/menu_click.wav");
-
     menu.bgm = Mix_LoadMUS("sounds/awesomeness.wav");
 
     /* 
-     * Premiere option : demarer une nouvelle partie 
+     * Premiere option : Demarer une nouvelle partie 
      * Actif par défaut
      */ 
-
-     ChargerData_Menu(0,0,&menu , "Jouer"
+    ChargerData_Menu(0,0,&menu , "Jouer"
                 ,"graphics_assets/icons_buttons/jouer_on_xs.png"
                 ,"graphics_assets/icons_buttons/jouer_off_xs.png"
                 ,469
@@ -56,7 +62,6 @@ extern void Init_MenuPrincipal()
     /* 
      * Deuxieme option : Chargement d'un partie
      */
-
     ChargerData_Menu(1,1,&menu , "Chargement"
             ,"graphics_assets/icons_buttons/load_on_xs.png"
             ,"graphics_assets/icons_buttons/load_off_xs.png"
@@ -65,20 +70,18 @@ extern void Init_MenuPrincipal()
 
 
     /* 
-     * Troisieme option : quitter le jeu 
+     * Troisieme option : Quitter le jeu 
      */
-
     ChargerData_Menu(2,1,&menu , "Quitter"
             ,"graphics_assets/icons_buttons/quitter_on_xs.png"
             ,"graphics_assets/icons_buttons/quitter_off_xs.png"
             ,469
             ,491 );
 
-     /* 
+    /* 
      * Quatrième option : Couper/Activer Son
      */
-   
-    ChargerData_Menu(3,1,&menu , "Quitter"
+    ChargerData_Menu(3,1,&menu , "ActiverSon"
             ,"graphics_assets/icons_buttons/sound_on_xs.png"
             ,"graphics_assets/icons_buttons/sound_off_xs.png"
             ,487
@@ -88,21 +91,26 @@ extern void Init_MenuPrincipal()
     //Option selectionnee = la premiere (nouvelle partie)
     menu.selectedOption = 0;
 
-    menu.bg = ChargerTexture("graphics_assets/menu_bg_xs.png");
-    
-
+    //Chargement de la texture du menu principal
+     menu.bg = ChargerTexture("graphics_assets/menu_bg_xs.png");
 }
 
-/* 
- * Fonction qui rafraichit l'affichage des Options 
- */
+/**
+ * \fn extern void UpdateOption(Options_t * menut, int etat )
+ * \brief Fonction qui rafraichit l'affichage des options
+ * \param menut option a mettre a jour
+ * \param etat 
+ * \return pas de valeur de retour (void)
+*/
 extern void UpdateOption(Options_t * menut, int etat )
 {
     /* 
      * Surface tampon => utile pour parametrer la surface
      * TTF_RenderText_Blended => permet de creer une surface et de l'affiche en haute qualite 
      */
+
     // SDL_Surface *tmp = TTF_RenderText_Blended(menu.police, menut->nomOption, menut->couleur);
+    
     SDL_Surface *tmp = IMG_Load( menut->filename[etat] );
     menut->largeur = tmp->w;
     menut->hauteur = tmp->h;
@@ -122,16 +130,18 @@ extern void UpdateOption(Options_t * menut, int etat )
     SDL_FreeSurface(tmp);
 }
 
-/*
- * Fonction qui permer de naviguer dans le menu vers le haut
- */
+/**
+ * \fn extern void ToucheHaut(Menu_t *menu)
+ * \brief Fonction qui permet de naviguer dans le menu vers le haut
+ * \param menu menu 
+ * \return pas de valeur de retour (void)
+*/
 extern void ToucheHaut(Menu_t *menu)
 {
     //Si l'option actuellement selectionnee est differente de la premiere
     //Si on est sur la premiere option => on ne peut pas aller sur une option au-dessus
     if (menu->selectedOption - 1 >= 0)
     {  
-  
         //Rafraichir l'affichage
         UpdateOption(&menu->menu[menu->selectedOption] , 1);
 
@@ -143,9 +153,13 @@ extern void ToucheHaut(Menu_t *menu)
     }
 
 }
-/*
- * Fonction qui permer de naviguer dans le menu vers le bas
- */
+
+/**
+ * \fn extern void ToucheBas(Menu_t *menu)
+ * \brief Fonction qui permet de naviguer dans le menu vers le bas
+ * \param menu
+ * \return pas de valeur de retour (void)
+*/
 extern void ToucheBas(Menu_t *menu)
 {
     //Si l'option actuellement selectionnee est differente de la derniere

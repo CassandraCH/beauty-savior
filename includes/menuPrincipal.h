@@ -3,7 +3,7 @@
 
 #include "texture.h"
 
-#define MAX_NUMBER 3
+#define MAX_NUMBER 3 /** \def MAX_NUMBER */
 
 
 /**
@@ -12,12 +12,12 @@
  */
 typedef struct option
 {   
-    int largeur, hauteur;
-    const char * nomOption;
-    SDL_Texture *texture;
-    SDL_Color couleur;
-    int x, y;
-    char * filename[4];
+    int largeur, hauteur; /**< largeur et hauteur de l'option */
+    const char *nomOption; /**< nom de l'option */
+    SDL_Texture *texture;  /**< texture de l'option */
+    SDL_Color couleur;     /**< couleur de l'option */
+    int x, y;              /**< position en x et en y de l'option */
+    char *filename[4];     /**< nom du fichier pour la texture de l'option */
 
 }Options_t;
 
