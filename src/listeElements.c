@@ -9,48 +9,79 @@
 #include "baseGame.h"
 
 /*#### DONNEES PRIVEES ####*/
-LinkedList listEnnemis;
-LinkedList bullet;
-LinkedList listCollider;
-LinkedList items;
+LinkedList listEnnemis; /**< Liste des ennemis */
+LinkedList bullet; /**< Liste des bullets */
+LinkedList listCollider; /**< Liste des colliders */
+LinkedList items; /**< Liste des items */
 
-int timerBullets;
+int timerBullets; /**< Temps d'apparition a l'ecran des bullets */
 
-/*### ACCESSSEURS ###*/
+/**
+ * \fn extern LinkedList* getEnnemis()
+ * \brief Fonction qui permet d'acceder a la liste des ennemis
+ * \return un pointeur sur une liste de type LinkedList
+*/
 extern LinkedList* getEnnemis()
 {
    return &listEnnemis;
 }
 
-
+/**
+ * \fn extern LinkedList* getCollider()
+ * \brief Fonction qui permet d'acceder a la liste des colliders
+ * \return un pointeur sur une liste de type LinkedList
+*/
 extern LinkedList* getCollider()
 {
    return &listCollider;
 }
 
+/**
+ * \fn extern LinkedList* getBullets()
+ * \brief Fonction qui permet d'acceder a la liste des bullets
+ * \return un pointeur sur une liste de type LinkedList
+*/
 extern LinkedList* getBullets()
 {
    return &bullet;
 }
 
+/**
+ * \fn extern LinkedList* getItems()
+ * \brief Fonction qui permet d'acceder a la liste des items
+ * \return un pointeur sur une liste de type LinkedList
+*/
 extern LinkedList* getItems()
 {
    return &items;
 }
 
+/**
+ * \fn extern LinkedList* getBullets()
+ * \brief Fonction qui permet d'acceder a la duree de vie/temps d'apparition a l'ecran des bullets
+ * \return un pointeur sur une liste de type LinkedList
+*/
 extern int getTimerBullet()
 {
     return timerBullets;   
 }
 
+/**
+ * \fn extern LinkedList* getBullets()
+ * \brief Fonction qui permet d'acceder a la duree de vie/temps d'apparition a l'ecran des bullets
+ * \return pas de valeur de retour (void)
+*/
 extern void setTimerBullet(int time)
 {
     timerBullets = time;
 }
 
-
-/*### METHODES ###*/
-
+/**
+ * \fn extern void init_List(LinkedList *list)
+ * \brief Fonction qui permet d'initialiser la liste passee en parametre
+ * \param list liste a initialiser
+ * \return pas de valeur de retour (void)
+*/
 extern void init_List(LinkedList *list)
 {
   list->tete = NULL;
@@ -58,11 +89,20 @@ extern void init_List(LinkedList *list)
   list->nodeCount = 0;
 }
 
-
+/**
+ * \fn extern Node* creerRect(SDL_Rect*rect, typeEntite item_t, bool actif ) 
+ * \brief Fonction qui permet de créer 
+ * \param rect
+ * \param item_t
+ * \param actif
+ * \return Pointeur sur une structure de type Node
+*/
 extern Node* creerRect(SDL_Rect*rect, typeEntite item_t, bool actif ) 
 {   
+    
     Node * nouvelElement = malloc( sizeof( Node ) );
     nouvelElement->suivant = NULL; 
+
     memset(nouvelElement, 0, sizeof(Node));
     nouvelElement->rect = rect;
     nouvelElement->type = item_t;
@@ -87,7 +127,6 @@ extern Node* creerRect(SDL_Rect*rect, typeEntite item_t, bool actif )
             nouvelElement->vx = -1.8f;
          }
 		nouvelElement->vy = 0;
-
     }
 
     return ( nouvelElement );

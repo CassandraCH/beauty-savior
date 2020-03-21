@@ -47,7 +47,6 @@ extern void Init_HUD(HUD * hud, const char * text, int x,  int y)
  * \return pas de valeur de retour (void)
 */
 extern void SetHUD_IntToTexture(HUD * hud, const char * nom, int scores, int posX, int posY)
-
 {
     //Creation d'une texture pour le hud
     SDL_Texture * tex = hud->tex;
@@ -90,7 +89,6 @@ extern void SetHUD_IntToTexture(HUD * hud, const char * nom, int scores, int pos
  * \return pas de valeur de retour (void)
 */
 extern void AfficherHUD(HUD * hud)
-
 {
     SDL_Rect scor = {hud->rect.x - camera.x  ,hud->rect.y - camera.y, hud->rect.w ,hud->rect.h };
     SDL_RenderCopy(getRenderer(), hud->tex, NULL, &hud->rect);

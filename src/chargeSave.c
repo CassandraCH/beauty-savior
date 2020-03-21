@@ -138,15 +138,13 @@ extern void ChargementCollider(const char * filename)
 */
 extern void Chargement_CreationPNJ(LinkedList * lst, char * filename)
 {
-
-    //Ouverture du fichier
-
-    
+    //Si il y a deja des elements dans la liste => les supprimer
     if( lst->nodeCount > 0 ) 
     {
         suppListe(lst);
     }
 
+    //Ouverture du fichier
     FILE * file = fopen(filename, "r");
 
     //Gestion des erreurs d'ouverture du fichier
@@ -154,6 +152,7 @@ extern void Chargement_CreationPNJ(LinkedList * lst, char * filename)
         fprintf(stderr, "Erreur avec le fichier\n");
         exit(1);    
     }
+    
     int typeCollider; /**< int typeCollider : Variable qui permet de savoir le type du collider */
 
     while( !feof(file) )
