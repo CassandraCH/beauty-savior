@@ -155,7 +155,7 @@ extern Node* creerElement(SDL_Rect*rect, typeEntite item_t, bool actif )
 extern void insertion(LinkedList * list, SDL_Rect *rect, typeEntite items_t, bool actif)
 {
     printf("Insertion objet\n");
-    Node *nouvelElement = creerRect(rect, items_t, actif);
+    Node *nouvelElement = creerElement(rect, items_t, actif);
 
     //Cas lorsque la liste est vide
     if (list->nodeCount == 0)

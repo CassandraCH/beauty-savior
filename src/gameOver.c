@@ -95,14 +95,14 @@ extern void Input_MenuGameOver(SDL_Event *event)
         {
             switch (event->key.keysym.sym)
             {
-                //Cas touche fleche du haut
+                //Cas de la touche fleche du haut
                 case SDLK_UP:
                     //Gestion du son
                     Mix_PlayChannel(-1, getMenu()->son, 0);
                     ToucheHaut(getMenu_Over());
                     break;
 
-                //Cas touche fleche du bas
+                //Cas de la touche fleche du bas
                 case SDLK_DOWN:
                     //Gestion du son
                     Mix_PlayChannel(-1, getMenu()->son, 0);
