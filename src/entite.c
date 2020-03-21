@@ -164,9 +164,7 @@ extern void attaqueEnnemis()
                 }
             }
         }
-
     }
-
 }
 
 /**
@@ -182,14 +180,16 @@ extern void UpdateEnnemis()
     //Parcours de la liste des ennemis
     for(; pt != NULL; pt = pt->suivant)
     {
+        //Verifie que l'ennemi n'est pas mort et qu'il est actif
         if ( !pt->estMort && pt->actif )
         {
+            //Affectation des positions en x et en y initiales
             pt->rect->x = pt->baseX;
             pt->rect->y = pt->baseY;
 
-            pt->rect->x = pt->baseX+ sinf( (pt->phase*2)+ getBaseGame()->time * 0.04f ) *55;
+            //Gestion de l'amplitude du deplacement 
+            pt->rect->x = pt->baseX + sinf( (pt->phase*2)+ getBaseGame()->time * 0.04f ) * 55;
        }
-
     }
 }   
 

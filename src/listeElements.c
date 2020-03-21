@@ -90,72 +90,102 @@ extern void init_List(LinkedList *list)
 }
 
 /**
- * \fn extern Node* creerRect(SDL_Rect*rect, typeEntite item_t, bool actif ) 
- * \brief Fonction qui permet de créer 
- * \param rect
- * \param item_t
- * \param actif
+ * \fn extern Node* creerElement(SDL_Rect*rect, typeEntite item_t, bool actif ) 
+ * \brief Fonction qui permet de créer un rectangle (portion de l'ecran)
+ * \details Ce rectangle sera utilise pour la texture
+ * \param rect rectangle SDL
+ * \param item_t type de l'entite
+ * \param actif etat de l'entite
  * \return Pointeur sur une structure de type Node
 */
-extern Node* creerRect(SDL_Rect*rect, typeEntite item_t, bool actif ) 
+extern Node* creerElement(SDL_Rect*rect, typeEntite item_t, bool actif ) 
 {   
-    
     Node * nouvelElement = malloc( sizeof( Node ) );
     nouvelElement->suivant = NULL; 
 
+    //Remplir la zone memoire avec des 0
     memset(nouvelElement, 0, sizeof(Node));
+
     nouvelElement->rect = rect;
     nouvelElement->type = item_t;
-    nouvelElement->nb_objets = 0;
-    nouvelElement->movingX = 0;
-    nouvelElement->lancer = true;
-   
+
+    /* ### CARACTERISTIQUE LIEE AU TIR ### */
+    nouvelElement->movingX = 0; //Sens du tir de l'ennemi
+    nouvelElement->lancer = true; //Etat du tir
+
     nouvelElement->x = rect->x;
     nouvelElement->y = rect->y;
     nouvelElement->w = rect->w;
     nouvelElement->h = rect->h;
     nouvelElement->actif = actif;
 
+    //Cas si c'est un ennemi
     if( item_t == ennemi ) 
-    {
+    {  
+        //Sauvegarde de la position initialie en x et en y
         nouvelElement->baseX = rect->x;
         nouvelElement->baseY = rect->y;
 
+        //Si il n'est pas mort
         if( actif == true )
-         {
-            nouvelElement->phase = 2*3.14*(rand() % 360) / 360.0f;
+        {
+            //Permet de générer aléatoirement une vitesse de déplacement
+            nouvelElement->phase = 2 * 3.14 * (rand() % 360) / 360.0f;
+
+            //Velocite = vitesse a laquelle il se deplace
             nouvelElement->vx = -1.8f;
-         }
+        }
+        //Gravite 
 		nouvelElement->vy = 0;
     }
 
     return ( nouvelElement );
 }
 
-
+/**
+ * \fn extern void insertion(LinkedList * list, SDL_Rect *rect, typeEntite items_t, bool actif)
+ * \brief Fonction qui permet d'inserer un element dans une liste passee en parametre
+ * \details 
+ * \param list pointeur sue la liste dans laquelle on veut inserer un element
+ * \param rect pointeur sur l'element a ajouter
+ * \param items_t type de l'element a ajouter : ennemi, bullet, collider...
+ * \param actif etat de l'element
+ * \return pas de valeur de retour (void)
+*/
 extern void insertion(LinkedList * list, SDL_Rect *rect, typeEntite items_t, bool actif)
 {
     printf("Insertion objet\n");
-  Node *nouvelElement = creerRect(rect, items_t, actif);
+    Node *nouvelElement = creerRect(rect, items_t, actif);
 
-  if (list->nodeCount == 0){
-    // Cas lorsque la liste est vide
-    list->tete = nouvelElement;
-    list->queue = nouvelElement;
-  }
-  else{
-    // Cas lorsque la liste n'est pas vide
-    list->queue->suivant = nouvelElement;
-    list->queue = nouvelElement;
-  }
+    //Cas lorsque la liste est vide
+    if (list->nodeCount == 0)
+    {
+        list->tete = nouvelElement;
+        list->queue = nouvelElement;
+    }
 
-  list->nodeCount++;
+    //Cas lorsque la liste n'est pas vide
+    else
+    {
+        list->queue->suivant = nouvelElement;
+        list->queue = nouvelElement;
+    }
 
-  return;
-   
+    //Mise a jour du compteur
+    list->nodeCount++;
+    return; 
 }
 
-
+/**
+ * \fn extern void suppListe(LinkedList * lst)
+ * \brief Fonction qui permet d'inserer un element dans une liste passee en parametre
+ * \details 
+ * \param list pointeur sue la liste dans laquelle on veut inserer un element
+ * \param rect pointeur sur l'element a ajouter
+ * \param items_t type de l'element a ajouter : ennemi, bullet, collider...
+ * \param actif etat de l'element
+ * \return pas de valeur de retour (void)
+*/
 extern void suppListe(LinkedList * lst)
 {
     if( lst->nodeCount > 0 ) 
