@@ -1,8 +1,8 @@
-.TH "src/gameOver.c" 3 "Samedi 21 Mars 2020" "Version 0.1" "Beauty Savior" \" -*- nroff -*-
+.TH "src/menu_continue.c" 3 "Samedi 21 Mars 2020" "Version 0.1" "Beauty Savior" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
-src/gameOver.c \- Programme qui gère le menu du game over\&.  
+src/menu_continue.c \- Programme qui gère le menu 'continuer', lorsqu'un niveau vient d'etre termine\&.  
 
 .SH SYNOPSIS
 .br
@@ -14,32 +14,32 @@ src/gameOver.c \- Programme qui gère le menu du game over\&.
 
 .in +1c
 .ti -1c
-.RI "\fBMenu_t\fP * \fBgetMenu_Over\fP ()"
+.RI "\fBMenu_t\fP * \fBgetMenuCon\fP ()"
 .br
-.RI "Fonction qui permet retourner le menu du game over\&. "
+.RI "Fonction qui permet retourner le menu 'continuer'\&. "
 .ti -1c
-.RI "void \fBInit_MenuGameOver\fP ()"
+.RI "void \fBInit_MenuContinue\fP ()"
 .br
-.RI "Fonction qui initialise le menu game over\&. "
+.RI "Fonction qui initialise le menu 'continuer'\&. "
 .ti -1c
-.RI "void \fBInput_MenuGameOver\fP (SDL_Event *event)"
+.RI "void \fBInput_MenuContinue\fP (SDL_Event *event)"
 .br
 .RI "Fonction qui gere les evenements du menu\&. "
 .ti -1c
-.RI "void \fBInit_GameOver\fP ()"
+.RI "void \fBInit_Continue\fP ()"
 .br
-.RI "Fonction qui initialise l'etat game over\&. "
+.RI "Fonction qui initialise l'etat continue\&. "
 .in -1c
 .SS "Variables"
 
 .in +1c
 .ti -1c
-.RI "\fBMenu_t\fP \fBmenu_over\fP"
+.RI "\fBMenu_t\fP \fBmenu_continue\fP"
 .br
 .in -1c
 .SH "Description détaillée"
 .PP 
-Programme qui gère le menu du game over\&. 
+Programme qui gère le menu 'continuer', lorsqu'un niveau vient d'etre termine\&. 
 
 
 .PP
@@ -61,10 +61,10 @@ mars 2020
 Initialisation, affichage du menu, navigation dans le menu, gestion des entrees clavier et destruction du menu 
 .SH "Documentation des fonctions"
 .PP 
-.SS "\fBMenu_t\fP * getMenu_Over ()"
+.SS "\fBMenu_t\fP * getMenuCon ()"
 
 .PP
-Fonction qui permet retourner le menu du game over\&. 
+Fonction qui permet retourner le menu 'continuer'\&. 
 .PP
 \fBRenvoie\fP
 .RS 4
@@ -72,10 +72,10 @@ une structure menu de type Menu_t
 .RE
 .PP
 
-.SS "void Init_GameOver ()"
+.SS "void Init_Continue ()"
 
 .PP
-Fonction qui initialise l'etat game over\&. 
+Fonction qui initialise l'etat continue\&. 
 .PP
 \fBRenvoie\fP
 .RS 4
@@ -83,10 +83,10 @@ pas de valeur de retour (void)
 .RE
 .PP
 
-.SS "void Init_MenuGameOver ()"
+.SS "void Init_MenuContinue ()"
 
 .PP
-Fonction qui initialise le menu game over\&. 
+Fonction qui initialise le menu 'continuer'\&. 
 .PP
 \fBRenvoie\fP
 .RS 4
@@ -94,7 +94,7 @@ pas de valeur de retour (void)
 .RE
 .PP
 
-.SS "void Input_MenuGameOver (SDL_Event * event)"
+.SS "void Input_MenuContinue (SDL_Event * event)"
 
 .PP
 Fonction qui gere les evenements du menu\&. Gestion des entrees clavier de l'utilisateur 
@@ -112,8 +112,8 @@ pas de valeur de retour (void)
 
 .SH "Documentation des variables"
 .PP 
-.SS "\fBMenu_t\fP menu_over"
-Structure de type menu_t 
+.SS "\fBMenu_t\fP menu_continue"
+Structure de type Menu_t 
 .SH "Auteur"
 .PP 
 Généré automatiquement par Doxygen pour Beauty Savior à partir du code source\&.
