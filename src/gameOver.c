@@ -55,8 +55,6 @@ extern void Init_MenuGameOver()
     /* 
      * Troisieme option : quitter le jeu 
      */
-   
-
     ChargerData_Menu(2, 1, &menu_over, "Quitter", "graphics_assets/icons_buttons/quitter_on_xs.png", "graphics_assets/icons_buttons/quitter_off_xs.png", 469, 491);
 
     /* 
