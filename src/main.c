@@ -24,10 +24,13 @@ int main( int argc, char ** argv )
     Init("Beauty Savior");
 	SDL_Event event;
 	
-    //initialisation du generateur de nombres aleatoires
+    //Initialisation du generateur de nombres aleatoires
     srand( (int) time(NULL));
 
+    //
     int flPreviousTime = 0, flCurrentTime = 0;
+
+    //delta-time
     float dt = 0.0f;
 
     //Tant que le jeu est actif (le jeu n'a pas ete quitte)
@@ -42,11 +45,13 @@ int main( int argc, char ** argv )
         if( dt > 0.15f )
             dt = 0.15f;
 
-        
+        //Gestion des entrees utilisateur
         ProcessInput(&event);
       
+        //Gestion du comportement des entites
         Update(dt);
         
+        //Gestion de l'affichage
 		Rendu_Jeux( getBaseGame() );
     } 
     
