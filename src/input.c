@@ -23,6 +23,7 @@ extern void ProcessInput(SDL_Event * event)
     if (getBaseGame()->state == MENU_PRINCIPAL )
     {
         Input_MenuPrincipal(event);
+
     }
 
     //Cas ou l'utilsateur est en cours de partie
@@ -35,7 +36,10 @@ extern void ProcessInput(SDL_Event * event)
     {
         Input_MenuPause(event);
     }
-
+        else if ( getBaseGame()->state == LOADING )
+    {
+        Input_MenuLoad(event);
+    }
     //Cas ou l'utilsateur vient de terminer le niveau
     else if( getBaseGame()->state == LEVEL_COMPLETED )
     {
@@ -47,4 +51,5 @@ extern void ProcessInput(SDL_Event * event)
     {
         Input_MenuGameOver(event);
     }
+
 }

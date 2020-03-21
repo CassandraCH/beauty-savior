@@ -42,7 +42,6 @@ struct menu
 
 extern void UpdateOption(Options_t * menut, int etat);
 extern int getTouchePresse(Menu_t *menu);
-
 extern void ToucheHaut(Menu_t * menu);
 extern void ToucheBas(Menu_t *menu);
 extern void Droite(Menu_t *menu);

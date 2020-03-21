@@ -5,7 +5,7 @@
  * \date janvier 2020
  * \brief Programme qui gère les entrées utilisateur (touches) et la caméra lorsqu'une partie est en cours
  */
-#include "enjeu.h"
+
 #include "baseGame.h"
 
 SDL_Rect camera = {0, 0, LARGEUR_FENETRE, HAUTEUR_FENETRE}; /**< Structure qui gère la camera*/
@@ -39,10 +39,11 @@ extern void Input_InGame(SDL_Event *event)
         //Si la touche p est pressee
         if(event->key.keysym.sym == SDLK_p && event->type == SDL_KEYDOWN )
         {
-            //Modification de l'etat du jeu => en pause
-            getBaseGame()->state = PAUSE;
+            
             //Gestion du menu de pause
             Init_MenuPause();
+            //Modification de l'etat du jeu => en pause
+            getBaseGame()->state = PAUSE;
         }
 
         //Si la touche espace est pressee

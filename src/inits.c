@@ -72,14 +72,23 @@ void Init(const char *title)
         exit(EXIT_FAILURE);
     }
 
-    getScores()->police = TTF_OpenFont("fonts/BingBam.ttf", 48);
 
-    //Verifie que la police a bien ete charge
+    getScores()->police = TTF_OpenFont("fonts/arial.ttf", 54);
+
     if(!getScores()->police )
     {
         printf("Cannot find font file!!\n");
         SDL_Quit();
     }
+
+
+    getNiveau()->police = TTF_OpenFont("fonts/arial.ttf", 54);
+    if(!getNiveau()->police )
+    {
+        printf("Cannot find font file!!\n");
+        SDL_Quit();
+    }
+    
 
     /*############### GESTION DES AUDIO *###############*/
     //Initialisation du son
