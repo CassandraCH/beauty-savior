@@ -100,51 +100,66 @@ extern void NiveauSuivant()
 
 /**
  * \fn extern void Debug_AfficherCollider() 
- * \brief Fonction qui permet de mettre a jour le niveau du joueur
- * \details
- * \param niveau numero du niveau
+ * \brief Fonction de debug qui permet d'afficher les blocs de collision par dessus le decor
+ * \details Cette fonction permet de savoir si les blocs de collisions sont bien positionnes
+ * \details Cette fonction permet de verifier que le joueur entre bien en collision avec les colliders
  * \return pas de valeur de retour (void)
 */
 extern void Debug_AfficherCollider() 
 {
    SDL_Rect rect;
    SDL_Texture * texColider = ChargerTexture("graphics_assets/rect10.png");
+   
+   //Parcours de la liste des colliders
    for(Node* pt = getCollider()->tete ; pt != NULL ; pt = pt->suivant )
    {
-          rect = (SDL_Rect) {  pt->rect->x- camera.x ,pt->rect->y-  camera.y ,pt->rect->w,pt->rect->h };
-         SDL_RenderCopy(getRenderer(), texColider , NULL, &rect);
+      rect = (SDL_Rect) {  pt->rect->x- camera.x ,pt->rect->y-  camera.y ,pt->rect->w,pt->rect->h };
+      SDL_RenderCopy(getRenderer(), texColider , NULL, &rect);
    }
 }
 
+/**
+ * \fn extern void afficher_textures_niveau(int niveau)
+ * \brief Fonction qui permet d'afficher les textures du niveau passe en parametre
+ * \details
+ * \param niveau numero du niveau a afficher
+ * \return pas de valeur de retour (void)
+*/
 extern void afficher_textures_niveau(int niveau)
 {
    SDL_Rect renderQuad = {0, 0, camera.w ,  camera.h };
    SDL_RenderCopy( getRenderer() , getLevel()->levelTextures[niveau].texture,&camera, &renderQuad);
-
 }
 
-extern void Affichage_Niveau ()
+/**
+ * \fn extern void Affichage_Niveau()
+ * \brief Fonction qui permet d'afficher un niveau
+ * \details
+ * \return pas de valeur de retour (void)
+*/
+extern void Affichage_Niveau()
 {  
-
-   // printf("Affichage Niveau\n");
-   
+   //Cas du niveau 1
    if(  getPlayer()->niveau == 1 )
    {
-
       afficher_textures_niveau(0);
       AfficherJoueur();
       afficher_textures_niveau(1);
-      
    }  
+
+   //Cas du niveau 2
    else if(  getPlayer()->niveau == 2 )
    {  
       afficher_textures_niveau(1);
-      
    }
-   
-    
 }
 
+/**
+ * \fn extern void DestructionNiveau()
+ * \brief Fonction qui permet de gerer la destruction des niveaux et la liberation des ressources qui ont ete utilisees
+ * \details
+ * \return pas de valeur de retour (void)
+*/
 extern void DestructionNiveau()
 {
    printf("Destruction Niveau\n");
