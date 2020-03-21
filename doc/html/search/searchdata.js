@@ -1,10 +1,18 @@
 var indexSectionsWithContent =
 {
+<<<<<<< HEAD
   0: "abcdefghilmnoprstu",
   1: "bhilmnopt",
   2: "bceghilmpst",
   3: "acdgilnprsu",
   4: "cdefglmrs"
+=======
+  0: "abcdeghilmnoprstu",
+  1: "bhilmnopt",
+  2: "bceghilmpst",
+  3: "acgilprsu",
+  4: "cdeglms"
+>>>>>>> Mise a jour du doxy_beauty
 };
 
 var indexSectionNames =

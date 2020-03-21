@@ -31,6 +31,7 @@ var menudata={children:[
 {text:"Fichiers",url:"files.html",children:[
 {text:"Liste des fichiers",url:"files.html"},
 {text:"Variables globale",url:"globals.html",children:[
+<<<<<<< HEAD
 {text:"Tout",url:"globals.html",children:[
 {text:"a",url:"globals.html#index_a"},
 {text:"c",url:"globals.html#index_c"},
@@ -57,4 +58,8 @@ var menudata={children:[
 {text:"r",url:"globals_func.html#index_r"},
 {text:"s",url:"globals_func.html#index_s"},
 {text:"u",url:"globals_func.html#index_u"}]},
+=======
+{text:"Tout",url:"globals.html"},
+{text:"Fonctions",url:"globals_func.html"},
+>>>>>>> Mise a jour du doxy_beauty
 {text:"Variables",url:"globals_vars.html"}]}]}]}

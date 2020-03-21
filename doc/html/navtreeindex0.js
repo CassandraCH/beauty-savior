@@ -63,7 +63,11 @@ var NAVTREEINDEX0 =
 "inits_8c.html#a5b163fafde24bef5e6b019af29b92072":[1,0,1,6,4],
 "inits_8c.html#a8103adc0a371d1c5d5c375493105d7fe":[1,0,1,6,2],
 "inits_8c.html#a83273a719e3c35f920b32f1e64e2e22a":[1,0,1,6,3],
+<<<<<<< HEAD
 "inits_8c.html#ae2565fc92725a6507ff7dafe13a8cc7f":[1,0,1,6,0],
+=======
+"inits_8c.html#a9f4702489c36e4ab8acc782762e94d41":[1,0,1,6,0],
+>>>>>>> Mise a jour du doxy_beauty
 "inits_8c.html#afefe7e5d2ab817ec07f05cdd89324fdf":[1,0,1,6,1],
 "input_8c.html":[1,0,1,7],
 "input_8c.html#af9658d8e7a4d94f46954586e8f10d5a1":[1,0,1,7,0],
@@ -73,12 +77,19 @@ var NAVTREEINDEX0 =
 "level_8c.html#a083b6d36ebd55b2e07bedb04440cb325":[1,0,1,8,8],
 "level_8c.html#a2ca40c89f5d9919989aa0f95fbe7e66d":[1,0,1,8,3],
 "level_8c.html#a53ce974f62f5708abe62978204e1130e":[1,0,1,8,1],
+<<<<<<< HEAD
 "level_8c.html#a6d4fd398aa285c4b1cc5785fd1499762":[1,0,1,8,5],
+=======
+>>>>>>> Mise a jour du doxy_beauty
 "level_8c.html#a9508faf96c0cf5fc7e2474af8acd7134":[1,0,1,8,4],
 "level_8c.html#aea12aebb1c1ca4a76b3a0a73961e997f":[1,0,1,8,2],
 "level_8c.html#aeed25b1dade20227404a8d808709e7f4":[1,0,1,8,7],
 "level_8c.html#af03a5f30c8e752132aa2bd0751324be8":[1,0,1,8,6],
 "level_8c.html#af6d1e27a648cff84e654bebee8cb21d9":[1,0,1,8,0],
+<<<<<<< HEAD
+=======
+"level_8c.html#af8ac1c82d8390af43712e856ad7641e8":[1,0,1,8,5],
+>>>>>>> Mise a jour du doxy_beauty
 "level_8h_source.html":[1,0,0,11],
 "liste_elements_8c.html":[1,0,1,9],
 "liste_elements_8c.html#a0ddac4f3518611700b7c7306ac9862ca":[1,0,1,9,3],
