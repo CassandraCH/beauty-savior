@@ -23,8 +23,8 @@ extern void ProcessInput(SDL_Event * event)
     if (getBaseGame()->state == MENU_PRINCIPAL )
     {
         Input_MenuPrincipal(event);
-    }
 
+    }
     //Cas ou l'utilsateur est en cours de partie
     else if (getBaseGame()->state == IN_GAME )
     {
@@ -35,7 +35,6 @@ extern void ProcessInput(SDL_Event * event)
     {
         Input_MenuPause(event);
     }
-    //Cas ou on charge une partie
     else if ( getBaseGame()->state == LOADING )
     {
         Input_MenuLoad(event);
@@ -45,6 +44,7 @@ extern void ProcessInput(SDL_Event * event)
     {
         Input_MenuContinue(event);
     }
+
     //Cas ou l'utilsateur est sur le menu game over
     else if (getBaseGame()->state == GAMEOVER)
     {

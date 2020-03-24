@@ -1,8 +1,4 @@
 var searchData=
 [
-<<<<<<< HEAD
-  ['dt_141',['dt',['../base_game_8c.html#a778e38aa889751afffa2dea6b803e67a',1,'baseGame.c']]]
-=======
-  ['dt_119',['dt',['../base_game_8c.html#a778e38aa889751afffa2dea6b803e67a',1,'baseGame.c']]]
->>>>>>> Ajout de la documentation et des commentaires du fichier hud.c
+  ['camera_172',['camera',['../enjeu_8c.html#a27d2b5b016fe50b9a15dd63a6228ed2a',1,'enjeu.c']]]
 ];

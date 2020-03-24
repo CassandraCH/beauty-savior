@@ -1,10 +1,6 @@
 var searchData=
 [
-<<<<<<< HEAD
-  ['basegame_5',['baseGame',['../structbase_game.html',1,'']]],
-  ['basegame_2ec_6',['baseGame.c',['../base_game_8c.html',1,'']]]
-=======
-  ['basegame_3',['baseGame',['../structbase_game.html',1,'']]],
-  ['basegame_2ec_4',['baseGame.c',['../base_game_8c.html',1,'']]]
->>>>>>> Ajout de la documentation et des commentaires du fichier hud.c
+  ['basegame_6',['baseGame',['../structbase_game.html',1,'']]],
+  ['basegame_2ec_7',['baseGame.c',['../base_game_8c.html',1,'']]],
+  ['bullet_8',['bullet',['../liste_elements_8c.html#a184872af80e53427412c77ba457621e7',1,'listeElements.c']]]
 ];

@@ -14,7 +14,7 @@ typedef struct hud_s
 
 extern void Init_HUD(HUD * hud, const char * text, int x,  int y);
 extern void NettoyerHUD(HUD * hud);
-extern void SetHUD_IntToTexture(HUD * hud, const char * nom, int scores, int posX, int posY);
+extern void SetHUD_IntToTexture(HUD * hud, const char * nom, int valeur, int posX, int posY);
 extern void AfficherHUD(HUD * hud);
 
 

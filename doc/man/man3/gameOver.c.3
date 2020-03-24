@@ -24,13 +24,11 @@ src/gameOver.c \- Programme qui gère le menu du game over\&.
 .ti -1c
 .RI "void \fBInput_MenuGameOver\fP (SDL_Event *event)"
 .br
-.RI "Fonction qui gère les evenements = gestion des entrees clavier\&. "
-.ti -1c
-.RI "void \fBNettoyer_MenuGameOver\fP ()"
-.br
+.RI "Fonction qui gere les evenements du menu\&. "
 .ti -1c
 .RI "void \fBInit_GameOver\fP ()"
 .br
+.RI "Fonction qui initialise l'etat game over\&. "
 .in -1c
 .SS "Variables"
 
@@ -60,7 +58,7 @@ CALVADOS Cindy, CHAUMULON Cassandra, CHELLI Célia, OUSMANOVA Karina
 mars 2020
 .RE
 .PP
-Initialisation, affichage du menu, navigation dans le menu, gestion des entrées clavier et destruction du menu 
+Initialisation, affichage du menu, navigation dans le menu, gestion des entrees clavier et destruction du menu 
 .SH "Documentation des fonctions"
 .PP 
 .SS "\fBMenu_t\fP * getMenu_Over ()"
@@ -71,6 +69,17 @@ Fonction qui permet retourner le menu du game over\&.
 \fBRenvoie\fP
 .RS 4
 une structure menu de type Menu_t 
+.RE
+.PP
+
+.SS "void Init_GameOver ()"
+
+.PP
+Fonction qui initialise l'etat game over\&. Gestion des entrees clavier de l'utilisateur 
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
 .RE
 .PP
 
@@ -88,11 +97,11 @@ pas de valeur de retour (void)
 .SS "void Input_MenuGameOver (SDL_Event * event)"
 
 .PP
-Fonction qui gère les evenements = gestion des entrees clavier\&. Affichage des differentes options 
+Fonction qui gere les evenements du menu\&. Gestion des entrees clavier de l'utilisateur 
 .PP
 \fBParamètres\fP
 .RS 4
-\fIevent\fP pointeur sur une structure SDL evenement 
+\fIevent\fP evenement 
 .RE
 .PP
 \fBRenvoie\fP

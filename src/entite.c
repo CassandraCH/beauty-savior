@@ -295,8 +295,6 @@ extern void collisionDetection()
  * \param estSurSol
  * \return pas de valeur de retour (void)
 */
-
-
 extern void collision_Decor()
 {
     
