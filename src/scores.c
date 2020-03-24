@@ -11,6 +11,7 @@
 
 
 HUD score;
+HUD niveau;
 
 
 /** \fn  getScores
@@ -23,4 +24,10 @@ HUD score;
 extern HUD* getScores()
 {
    return &score;
+}
+
+
+extern HUD* getNiveau()
+{
+    return &niveau;
 }

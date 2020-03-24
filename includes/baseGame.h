@@ -19,19 +19,19 @@
 #include "constantes.h"
 
 
-#include "inputs.h"
+
 #include "entite.h"
 #include "player.h"
 #include "level.h"
-#include "scores.h"
 #include "items.h"
 #include "listeElements.h"
 #include "chargeSave.h"
 #include "texture.h"
-#include "enjeu.h"
+
 #include "entite.h"
 #include "hud.h"
 #include "menuPrincipal.h"
+#include "menuLoad.h"
 #include "menuPause.h"
 #include "menu_continue.h"
 
@@ -53,12 +53,17 @@ extern LinkedList* getCollider(void);
 extern LinkedList* getItems(void);
 extern LinkedList* getBullets(void);
 extern HUD* getScores(void);
+extern HUD* getNiveau();
 extern Menu_t* getMenu(void);
+extern Menu_t * getMenuLoad();
 extern Menu_t * getMenuCon(void);
 extern Menu_t * getMenuPause();
 extern Menu_t * getMenu_Over();
 extern int getTimerBullet(void);
 extern void setTimerBullet(int time);
+
+extern void ProcessInput(SDL_Event* event);
+extern void Input_InGame(SDL_Event *event);
 
 
 /*######## LISTES ######## */

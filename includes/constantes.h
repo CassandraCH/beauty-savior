@@ -28,9 +28,10 @@
 
 #define MENU_PRINCIPAL 0
 #define IN_GAME 1
-#define LEVEL_COMPLETED 5
 #define PAUSE 3
 #define GAMEOVER 4
+#define LEVEL_COMPLETED 5
+#define LOADING 6
 
 
 /// MENU PRINCIPAL

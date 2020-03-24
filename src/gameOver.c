@@ -29,12 +29,10 @@ extern void Init_MenuGameOver()
 
     int width = LARGEUR_FENETRE, height = HAUTEUR_FENETRE;
     printf("Chargement Menu Game Over");
+    
     // NettoyerScore();
+    SetHUD_IntToTexture(getScores(), "SCORES", getPlayer()->nb_objet, 100, 300);
 
-    SetHUD_IntToTexture(getScores(), "SCORES", getPlayer()->nb_objet);
-    getScores()->rect.x = 100;
-    getScores()->rect.y = 300;
- 
 
     //chargement du son
     /* Son a modifier */
@@ -47,62 +45,29 @@ extern void Init_MenuGameOver()
      * Actif par défaut
      */
 
-    menu_over.menu[0].nomOption = "Nouvelle partie";
-/* Changer les fichiers => mettre "nouvelle partie" */
-    menu_over.menu[0].filename[0] = "graphics_assets/icons_buttons/newpartie_on_xs.png";
-    menu_over.menu[0].filename[1] = "graphics_assets/icons_buttons/newpartie_off_xs.png";
-
-
-    //Refraichissement de l'affichage de l'option
-    UpdateOption(&menu_over.menu[0], 0);
-
-    //Position (en x et y) de l'option dans la fenetre
-    menu_over.menu[0].x = 469;
-    menu_over.menu[0].y = 366;
+    ChargerData_Menu(0, 0, &menu_over, "Nouvelle partie", "graphics_assets/icons_buttons/newpartie_on_xs.png", "graphics_assets/icons_buttons/newpartie_off_xs.png", 469, 366);
 
     /* 
      * Deuxieme option : Chargement d'un partie
      */
-    menu_over.menu[1].nomOption = "Chargement";
-    menu_over.menu[1].filename[0] = "graphics_assets/icons_buttons/load_on_xs.png";
-    menu_over.menu[1].filename[1] = "graphics_assets/icons_buttons/load_off_xs.png";
 
-    //Refraichissement de l'affichage de l'option
-    UpdateOption(&menu_over.menu[1], 1);
-    //Position (en x et y) de l'option dans la fenetre
-    menu_over.menu[1].x = 455;
-    menu_over.menu[1].y = 449;
 
+    ChargerData_Menu(1, 1, &menu_over, "Chargement", "graphics_assets/icons_buttons/load_on_xs.png", "graphics_assets/icons_buttons/load_off_xs.png", 455, 449);
     /* 
      * Troisieme option : quitter le jeu 
      */
-    menu_over.menu[2].nomOption = "Quitter";
-    menu_over.menu[2].filename[0] = "graphics_assets/icons_buttons/quitter_on_xs.png";
-    menu_over.menu[2].filename[1] = "graphics_assets/icons_buttons/quitter_off_xs.png";
+   
 
-
-    //Refraichissement de l'affichage de l'option
-    UpdateOption(&menu_over.menu[2], 1);
-    //Position (en x et y) de l'option dans la fenetremake
-
-    menu_over.menu[2].x = 469;
-    menu_over.menu[2].y = 491;
+    ChargerData_Menu(2, 1, &menu_over, "Quitter", "graphics_assets/icons_buttons/quitter_on_xs.png", "graphics_assets/icons_buttons/quitter_off_xs.png", 469, 491);
 
     /* 
      * Quatrième option : Couper/Activer Son
      */
-    menu_over.menu[3].nomOption = "Son";
-    menu_over.menu[3].filename[0] = "graphics_assets/icons_buttons/sound_on_xs.png";
-    menu_over.menu[3].filename[1] = "graphics_assets/icons_buttons/sound_off_xs.png";
 
-
-    //Refraichissement de l'affichage de l'option
-    UpdateOption(&menu_over.menu[3], 0);
-    //Position (en x et y) de l'option dans la fenetre
-    menu_over.menu[3].x = 487;
-    menu_over.menu[3].y = 627;
-
-    //Option selectionnee = la premiere (nouvelle partie)
+    ChargerData_Menu(3, 1, &menu_over, "Son", "graphics_assets/icons_buttons/sound_on_xs.png", "graphics_assets/icons_buttons/sound_off_xs.png", 487, 627);
+    
+    
+    //Option selectionnee par défaut = la premiere (nouvelle partie)
     menu_over.selectedOption = 0;
 
     menu_over.bg = ChargerTexture("graphics_assets/menu_over_bg.png");
@@ -143,13 +108,13 @@ extern void Input_MenuGameOver(SDL_Event *event)
                 Mix_PlayChannel(-1, getMenu()->son, 0);
                 ToucheBas(getMenu_Over());
                 break;
-            case SDLK_LEFT:
-
-                break;
             case SDLK_RETURN:
                 switch (getTouchePresse(getMenu_Over()))
                 {
                 case 0:
+                    printf("Nouvelle partie depuis gameover");
+                    Nettoyer_Menu(getMenu_Over(), 4);
+                    Nettoyer_Menu( getMenu() , 4);
                     getPlayer()->estMort = false;
                     suppListe(getCollider());
                     suppListe(getEnnemis());
@@ -158,12 +123,17 @@ extern void Input_MenuGameOver(SDL_Event *event)
                     Init_HUD(getScores(), "SCORES : 0", 10, 0);
                     getBaseGame()->state = IN_GAME;
                     ChargerNiveau();
-                    // Nettoyer_MenuPrincipal();
                     Mix_HaltMusic();
                     return;
                     break;
                 case 1:
-                    printf("Bouton option press%c\n", 130);
+                    printf("Chargement depuis gameover");
+                    Nettoyer_Menu(getMenu_Over(), 4);
+                    Nettoyer_Menu( getMenu() , 4);
+                    Init_MenuLoad();
+                    Nettoyer_Menu(getMenu(), 4);
+                    getBaseGame()->state = LOADING;
+                    Mix_HaltMusic();
                     break;
                 case 2:
                     getBaseGame()->estActif = false;
@@ -196,23 +166,6 @@ extern void Input_MenuGameOver(SDL_Event *event)
     } // fin while (SDL_PollEvent)
 }
 
-/*
- * Fonction qui permet de supprimer le menu => liberation de la memoire
- */
-extern void Nettoyer_MenuGameOver()
-{
-    // NettoyerScore();
-    printf("Suppression Menu Game Over\n");
-    for (int i = 0; i < MAX_NUMBER + 1; i++)
-    {
-        if (menu_over.menu[i].texture != NULL)
-        {
-            free(menu_over.menu[i].texture);
-        }
-    }
-    printf("Fin Suppression Menu Game Over\n");
-    return;
-}
 
 extern void Init_GameOver()
 {
@@ -221,9 +174,13 @@ extern void Init_GameOver()
     setNiveau(1);
     Nettoyer_Menu(getMenu(), 4);
     Init_MenuGameOver();
+    suppListe( getCollider() );
+    suppListe(getEnnemis());
+    suppListe(getBullets());
     DestructionNiveau();
     getBaseGame()->state = GAMEOVER;
     getBaseGame()->time = 0;
     setTimerBullet(0);
+
     
 }

@@ -92,10 +92,17 @@ extern void Rendu_Jeux()
       Dessiner_Menu(getMenu(), 4, 0, 0, 1280, 720 );
       
     }
+    else if ( getBaseGame()->state == LOADING )
+    {
+      Dessiner_Menu(getMenuLoad(), 2, 0,0 , 1280, 720) ;
+      AfficherHUD(getScores());
+      AfficherHUD( getNiveau() );
+    }
     else if ( getBaseGame()->state == LEVEL_COMPLETED )
     {
-      Dessiner_Menu(getMenuCon(), 1,300, 200, 647, 434);
-      AfficherScores(getScores());
+      Dessiner_Menu(getMenuCon(), 1,0, 0, 1280, 720);
+      AfficherHUD(getScores());
+      AfficherHUD( getNiveau() );
     }
     else if ( getBaseGame()->state == PAUSE )
     {
@@ -116,12 +123,12 @@ extern void Rendu_Jeux()
       Afficher_ElementsListes( &bullet , itemTex, bull );
       Afficher_ElementsListes( &bullet , itemTex, feu );
       
-      AfficherScores(getScores());
+      AfficherHUD(getScores());
       Afficher_ElementsListes( &items, itemTex, item ); 
       AfficherJoueur();
 
 
-      Debug_AfficherCollider();
+      // Debug_AfficherCollider();
       afficher_textures_niveau(1);
  
 
@@ -130,7 +137,7 @@ extern void Rendu_Jeux()
     else if (getBaseGame()->state == GAMEOVER )
     {
       Dessiner_Menu(getMenu_Over(), 4, 0, 0 , 1280, 720 );
-      AfficherScores(getScores());
+      AfficherHUD(getScores());
     }
 
     SDL_RenderPresent(getRenderer());

@@ -95,5 +95,3 @@ extern void Input_MenuPause(SDL_Event *event)
         }
     } // fin while (SDL_PollEvent)
 }
-
-
