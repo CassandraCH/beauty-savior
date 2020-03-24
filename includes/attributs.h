@@ -8,7 +8,7 @@
 
 
 
-float w , h; /** test */
+float w , h; /** test  */
 float x , y;
 float vx, vy;
 typeEntite type;
