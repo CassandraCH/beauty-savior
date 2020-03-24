@@ -8,12 +8,10 @@
 
 
 
-float w , h;
+float w , h; /** test */
 float x , y;
 float vx, vy;
 typeEntite type;
 
 bool estMort;
 int nb_lancer;
-
-

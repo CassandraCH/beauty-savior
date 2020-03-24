@@ -1,3 +1,12 @@
+/**
+ * \file inputs.h
+ * \author CALVADOS Cindy, CHAUMULON Cassandra, CHELLI Célia, OUSMANOVA Karina
+ * \version 1.0
+ * \date mars 2020
+ * \brief Programme 
+ */
+
+
 #ifndef __INPUT_H_
 #define __INPUT_H_
 
