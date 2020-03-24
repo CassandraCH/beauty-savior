@@ -21,9 +21,6 @@ extern Menu_t* getMenu()
     return &menu;
 }
 
-/* 
- * Fonction qui retourne l'option du menu selectionne
- */
 /**
  * \fn extern int getTouchePresse(Menu_t *menu)
  * \brief Fonction qui retourne l'option du menu selectionne
@@ -60,7 +57,7 @@ extern void Init_MenuPrincipal()
                 ,366 );
 
     /* 
-     * Deuxieme option : Chargement d'un partie
+     * Deuxieme option : Chargement d'une partie
      */
     ChargerData_Menu(1,1,&menu , "Chargement"
             ,"graphics_assets/icons_buttons/load_on_xs.png"
@@ -99,7 +96,7 @@ extern void Init_MenuPrincipal()
  * \fn extern void UpdateOption(Options_t * menut, int etat )
  * \brief Fonction qui rafraichit l'affichage des options
  * \param menut option a mettre a jour
- * \param etat 
+ * \param etat etat : selectionne ou non
  * \return pas de valeur de retour (void)
 */
 extern void UpdateOption(Options_t * menut, int etat )
@@ -151,13 +148,12 @@ extern void ToucheHaut(Menu_t *menu)
         //Rafraichir l'affichage
         UpdateOption(&menu->menu[menu->selectedOption], 0 );
     }
-
 }
 
 /**
  * \fn extern void ToucheBas(Menu_t *menu)
  * \brief Fonction qui permet de naviguer dans le menu vers le bas
- * \param menu
+ * \param menu menu
  * \return pas de valeur de retour (void)
 */
 extern void ToucheBas(Menu_t *menu)
@@ -177,6 +173,12 @@ extern void ToucheBas(Menu_t *menu)
     }
 }
 
+/**
+ * \fn extern void Droite(Menu_t* menu)
+ * \brief Fonction qui permet de naviguer dans le menu a droite
+ * \param menu menu
+ * \return pas de valeur de retour (void)
+*/
 extern void Droite(Menu_t* menu)
 {
 
@@ -195,7 +197,12 @@ extern void Droite(Menu_t* menu)
     }
 }
 
-
+/**
+ * \fn extern void Gauche(Menu_t* menu)
+ * \brief Fonction qui permet de naviguer dans le menu a gauche
+ * \param menu menu
+ * \return pas de valeur de retour (void)
+*/
 extern void Gauche(Menu_t* menu)
 {
     //Si l'option actuellement selectionnee est differente de la premiere
@@ -225,6 +232,17 @@ extern void Gauche(Menu_t* menu)
     Prend en paramètre le menu, le nombres d'options qu'il comporte, la position x du background, celle en y
     La largeur et hauteur du background.
 */
+/**
+ * \fn extern void Dessiner_Menu(Menu_t* menu, int nombresOptions, int posX, int posY , int largeurBG, int hauteurBG) 
+ * \brief Fonction qui 
+ * \param menu menu
+ * \param nombresOptions nombre d'options dans le menu
+ * \param posX position en x
+ * \param posY position en y
+ * \param largeurBG largeur
+ * \param hauteurBG hauteur
+ * \return pas de valeur de retour (void)
+*/
 extern void Dessiner_Menu(Menu_t* menu, int nombresOptions, int posX, int posY , int largeurBG, int hauteurBG) 
 {
 
@@ -240,14 +258,15 @@ extern void Dessiner_Menu(Menu_t* menu, int nombresOptions, int posX, int posY ,
         SDL_Rect rect = {menu->menu[i].x, menu->menu[i].y, menu->menu[i].largeur, menu->menu[i].hauteur};
         SDL_RenderCopy( getRenderer(), menu->menu[i].texture , NULL, &rect);
 	}
-
-    
 }
 
-/*
- * Fonction qui permet de gérer les evenements 
- * => gestion des entrees clavier (action utilisateur)
- */
+/**
+ * \fn extern void Input_MenuPrincipal(SDL_Event *event)
+ * \brief Fonction qui gere les evenements du menu principal
+ * \details Gestion des entrees clavier de l'utilisateur
+ * \param event evenement
+ * \return pas de valeur de retour (void)
+*/
 extern void Input_MenuPrincipal(SDL_Event *event)
 {
 
@@ -262,76 +281,100 @@ extern void Input_MenuPrincipal(SDL_Event *event)
             return;
         }
 
-        //
+        //Si une touche est appuyee
         if(  event->type == SDL_KEYUP )
         {
             switch ( event->key.keysym.sym)
             {
+                //Cas de la touche fleche du haut
                 case SDLK_UP:
+                    //Gestion du son
                     Mix_PlayChannel(-1, getMenu()->son, 0);
                     ToucheHaut(getMenu());
                     break;
+
+                //Cas de la touche fleche du bas
                 case SDLK_DOWN:
+                    //Gestion du son
                     Mix_PlayChannel(-1, getMenu()->son, 0);
                     ToucheBas(getMenu());
                     break;
-                case SDLK_LEFT:
-            
-                    break;
+
+                //Cas de la touche entree
                 case SDLK_RETURN:
                     switch (getTouchePresse(getMenu()))
                     {
+                        //Cas de la premiere option : demarer une nouvelle partie
                         case 0:
+                            //Changement de l'etat du joueur
                             getPlayer()->estMort = false;
+
+                            //Suppression des listes
                             suppListe( getCollider() );
                             suppListe(getEnnemis());
                             suppListe(getBullets());
+
+                            //Initialisation du hud score
                             Init_HUD(getScores(),"SCORES : 0", 10, 0);
+
                             ChargerNiveau();
-                            // Nettoyer_MenuPrincipal();
+
+                            //Changement de l'etat du jeu
                             getBaseGame()->state = IN_GAME;
                             Mix_HaltMusic();
                             return;
                             break;
+
+                        //Cas de la deuxieme option : charger une partie
                         case 1:
                             // printf("Bouton option press%c\n", 130);
                             printf("Chargement depuis menu principal\n");
                             Init_MenuLoad();
                             Nettoyer_Menu(getMenu(), 4);
+
+                            //Changement de l'etat du jeu
                             getBaseGame()->state = LOADING;
+
+                            //Arret de la musique
                             Mix_HaltMusic();
                             break;
+
+                        //Cas de la troisieme option : quitter le jeu
                         case 2:
-			               getBaseGame()->estActif = false;
-			                 return;
+                            //Changement de l'etat du jeu
+                            getBaseGame()->estActif = false;
+                            return;
                             break;
                         default:
                             break;
                     }
-                break;
+                    break;
+
+                //Cas de la touche s
                 case SDLK_s:
-                     //Si la musique est en pause
-                        if( Mix_PausedMusic() == 1 )
-                        {
-                            UpdateOption(&menu.menu[3], 0  );
+                    //Si la musique est en pause
+                    if( Mix_PausedMusic() == 1 )
+                    {
+                        UpdateOption(&menu.menu[3], 0);
 
-                            //On enlève la pause (la musique repart où elle en était)
-                            Mix_ResumeMusic();
-                        }
-                        //Si la musique est en train de jouer
-                        else
-                        {
+                        //On enlève la pause (la musique repart où elle en était)
+                        Mix_ResumeMusic();
+                    }
 
-                            UpdateOption(&menu.menu[3], 1  );
-                            //On met en pause la musique
-                            Mix_PauseMusic();
-                        }    
-                break;
+                    //Si la musique est en train de jouer
+                    else
+                    {
+                        UpdateOption(&menu.menu[3], 1);
+
+                        //On met en pause la musique
+                        Mix_PauseMusic();
+                    }    
+                    break;
                 default:
                     break;
-            }
-        }   
-    } // fin while (SDL_PollEvent)
+            }//fin du switch
+        }//fin du if   
+    } //fin while (SDL_PollEvent)
 }
 
 /*

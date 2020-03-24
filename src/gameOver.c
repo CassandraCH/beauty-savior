@@ -133,6 +133,8 @@ extern void Input_MenuGameOver(SDL_Event *event)
 
                             //Initialisation du hud score
                             Init_HUD(getScores(), "SCORES : 0", 10, 0);
+
+                            //Changement de l'etat du jeu
                             getBaseGame()->state = IN_GAME;
 
                             //Charger le niveau
@@ -152,12 +154,17 @@ extern void Input_MenuGameOver(SDL_Event *event)
 
                             Init_MenuLoad();
                             Nettoyer_Menu(getMenu(), 4);
+
+                            //Changement de l'etat du jeu
                             getBaseGame()->state = LOADING;
+
+                            //Arret de la musique
                             Mix_HaltMusic();
                             break;
 
                         //Cas de la troisieme option : quitter
                         case 2:
+                            //Changement de l'etat du jeu
                             getBaseGame()->estActif = false;
                             return;
                             break;
