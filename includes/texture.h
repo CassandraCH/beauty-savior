@@ -5,30 +5,14 @@
 
 typedef struct textures /** structure des differentes  textures du jeu*/
 {
-<<<<<<< HEAD
-    int h, w;/**<la taille , la largueur de la texture*/
-    int row;
-=======
     int h, w;
->>>>>>> master
     SDL_Texture * texture;
 
 }Texture_Manager;  
 
-<<<<<<< HEAD
-
-extern bool chargerImage(Texture_Manager * tex, const char * filename );/**< booleen charger des images*/
-extern void dessinerFullImage(Texture_Manager * tex, int x, int y);
-extern void dessinerImages( Texture_Manager * tex, int x, int y, int width, int height, int currentRow, int currentFrame, SDL_RendererFlip flip );
-extern void ChargerTexte(Texture_Manager* tex, TTF_Font * font, const char * text );
-extern void LibererRessources( Texture_Manager *tex );/**< liberation des ressources*/
-extern SDL_Texture* ChargerTexture(char * filepath);/**< charger de texture de filepath(chemin de fichier)*/
-extern void ChargerTextureManager(Texture_Manager *tex, char * filepath);/**<charger des texture visuel  principal dans le jeu*/
-=======
 extern bool chargerImage(Texture_Manager * tex, const char * filename );
 extern void LibererRessources( Texture_Manager *tex );
 extern SDL_Texture* ChargerTexture(char * filepath);
 extern void ChargerTextureManager(Texture_Manager *tex, char * filepath);
->>>>>>> master
 
 #endif
