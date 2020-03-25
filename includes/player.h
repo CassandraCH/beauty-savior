@@ -1,46 +1,58 @@
+/**
+ * \file player.h
+ * \author CALVADOS Cindy, CHAUMULON Cassandra, CHELLI Célia, OUSMANOVA Karina
+ * \version 1.0
+ * \date mars 2020
+ * \brief programme qui gere le joueur par exemple la vitesse de deplacements,sa position etc.
+ */
+
+
 #ifndef _PLAYER_H
-#define _PLAYER_H
+#define _PLAYER_H/**< \def _PLAYER_H*/
 
 #include "texture.h"
 #include "constantes.h"
 
-
+/**
+ *\struct player
+ *\details Structure gérant les caractéristiques liées au joueur
+ */
 
 typedef struct player
 {
-   
+
     #include "attributs.h"
 
     /**
-        Données pour l'animation 
+        Données pour l'animation
    */
-    int m_frameWidth, m_frameHeight;
-    int m_textureWidth, m_textureHeight;
-    
-    float posXDepart;
-    float posYDepart;
-    float numeroImage;
+    int m_frameWidth, m_frameHeight;/**<la largueur du cadre et sa hauteur*/
+    int m_textureWidth, m_textureHeight;/**< largueur et hauteur de la texture*/
+
+    float posXDepart;/**<sa positon de depart selon x*/
+    float posYDepart;/**<sa positon de depart selon y*/
+    float numeroImage;/**< le numero de l'image*/
 
     SDL_Rect playerRect;
-    SDL_Rect playerPosition;
-    int originX, originY;
+    SDL_Rect playerPosition;/**< la position du joueur*/
+    int originX, originY;/**<l'origin selon le coeifficient x et y*/
     float animationSpeed;
-    
- 
-    int frame;
-    bool estActif;
-    bool estTourne;
 
-    bool estSurSol;
- 
 
-    int nombreVies;
-    bool ralenti;
+    int frame;/**<le cadre*/
+    bool estActif;/**<le booleen est actif*/
+    bool estTourne;/**<le booleen est tourne*/
+
+    bool estSurSol;/**<le booleen est sur le sol*/
+
+
+    int nombreVies;/**< le nombre de vie du joueur*/
+    bool ralenti;/**<le ralentisement du joueur*/
     float scrollX;
-    int niveau;
-    
-    int nb_objet;
-    
+    int niveau;/**< le niveau du joueur */
+
+    int nb_objet;/**< nombres d'objets qui a le joueur*/
+
     Texture_Manager tex;
 
 
@@ -54,17 +66,17 @@ extern int  getPlayerY(void);
 
 extern void ChargerJoueur(char* filepath, int x , int y , int framesX, int framesY);
 
-extern int getPlayerOriginX();
-extern int getPlayerOriginY();
+extern int getPlayerOriginX();/**< la position'l'origine) du joueur selon x*/
+extern int getPlayerOriginY();/**< la position'l'origine) du joueur selon y*/
 
 extern void UpdateJoueur(float dt);
 extern void actualiserJoueur(void);
 
-extern void InitJoueur();
+extern void InitJoueur();/**<initialisation du joueur*/
 extern void setNombretir();
 extern bool collide2d(float x1, float y1, float x2, float y2, float wt1, float ht1, float wt2, float ht2);
-extern void attaqueJoueur();
-extern void collision_tir();
+extern void attaqueJoueur();/**<les attaques du joueurs*/
+extern void collision_tir();/**<collission des tirs du joueur*/
 extern void CollisionItems();
 
 extern void InputJoueur(SDL_Event *event);
