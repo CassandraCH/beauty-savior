@@ -13,7 +13,7 @@
 
 /**
 * \struct hud_s
-* \details structure gerant
+* \details structure gerant les informations concernant le joueur
 */
 
 typedef struct hud_s
