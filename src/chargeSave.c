@@ -66,7 +66,7 @@ extern void SauvegarderPartie()
 /**
  * \fn extern void SaveCollider_Position()
  * \brief Fonction qui permet sauvegarder la position des colliders dans un fichier
- * \details Creation du fichier niveau1_position.txt
+ * \details Creation d'un fichier
  * \details Utilisation d'un pointeur pour pouvoir parcourir la liste de colliders
  * \return pas de valeur de retour (void)
 */
@@ -101,7 +101,7 @@ extern void SaveCollider_Position()
 /**
  * \fn extern void ChargementCollider(const char * filename) 
  * \brief Fonction qui permet de charger les colliders a partir d'un fichier
- * \details Utilisation d'un pointeur pour pouvoir parcourir la liste de colliders
+ * \details Utilisation d'un pointeur pour pouvoir parcourir la liste des colliders
  * \param filename Nom du fichier ou la position des colliders est sauvegardee
  * \return pas de valeur de retour (void)
 */
@@ -135,7 +135,7 @@ extern void ChargementCollider(const char * filename)
 /**
  * \fn extern void Chargement_CreationPNJ(LinkedList*lst, char * filename)
  * \brief Fonction qui permet de charger et créer toutes les entités (sauf le joueur) a partir d'un fichier
- * \param lst Liste des colliders
+ * \param lst Liste des elements
  * \param filename Nom du fichier
  * \return pas de valeur de retour (void)
 */

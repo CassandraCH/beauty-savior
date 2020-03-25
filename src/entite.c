@@ -4,7 +4,7 @@
  * \version 1.0
  * \date janvier 2020
  * \brief Programme qui gère le comportement des entités 
- * \brief Gestion des collisions entre le joueur et le décor (plateformes), le joueur et les ennemis, les ennemis et les projectiles ou si le joueur tombe dans le vide
+ * \details Gestion des collisions entre le joueur et le décor (plateformes), le joueur et les ennemis, les ennemis et les projectiles ou si le joueur tombe dans le vide
  */
 #include "baseGame.h"
 

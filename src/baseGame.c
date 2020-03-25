@@ -27,7 +27,7 @@ Base_Game* getBaseGame()
 
 /**
  * \fn extern void Update(float dt)
- * \brief Fonction qui permet gerer les comportements des entités si on se trouve dans une partie et gerer le son si on se trouve sur le menu principal
+ * \brief Fonction qui permet de gerer les comportements des entités si on se trouve dans une partie et gerer le son si on se trouve sur le menu principal
  * \details Etat du jeu possible : menu principal ou en partie
  * \param dt valeur du delta-time
  * \return pas de valeur de retour (void)
