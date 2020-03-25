@@ -119,11 +119,10 @@ extern void Rendu_Jeux()
     SDL_Texture * texture = ChargerTexture("graphics_assets/rect11.png");
     SDL_Texture * itemTex = ChargerTexture("graphics_assets/coin.png");
 
-
+    //Gestion des affchages des listes, du joueur et du score
     Afficher_ElementsListes( &listEnnemis, texture, ennemi );
     Afficher_ElementsListes( &bullet , itemTex, bull );
     Afficher_ElementsListes( &bullet , itemTex, feu );
-    
     AfficherHUD(getScores());
     Afficher_ElementsListes( &items, itemTex, item ); 
     AfficherJoueur();

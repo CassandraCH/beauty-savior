@@ -23,7 +23,9 @@ extern void ChargerPartie()
         fprintf(stderr, "Can't open input file in list!\n");
         exit(1);    
     }
+
     int niveau , nb_objet;
+    
     //Lecture dans le fichier des donnees sauvegardees
     if( fscanf(file,"%d %d", &niveau, &nb_objet)  )
     {
@@ -31,9 +33,10 @@ extern void ChargerPartie()
         getPlayer()->nb_objet = nb_objet;
         printf("%d %d \n", getPlayer()->niveau, getPlayer()->nb_objet);
 
-        //Fermeture du fichier
+        
     }
-        fclose(file);
+    //Fermeture du fichier
+    fclose(file);
 }
 
 /**
@@ -77,7 +80,8 @@ extern void SaveCollider_Position()
         fprintf(stderr, "Erreur avec le fichier\n");
         exit(1);    
     }
-    Node *pt; /**< Node * pt : Pointeur utilise pour parcourir la liste de colliders */
+
+    Node *pt; // Pointeur utilise pour parcourir la liste de colliders 
 
     //Ecrire la position en x et en y des colliders dans le fichier
     if( getCollider()->nodeCount  > 0 )
@@ -153,7 +157,7 @@ extern void Chargement_CreationPNJ(LinkedList * lst, char * filename)
         exit(1);    
     }
     
-    int typeCollider; /**< int typeCollider : Variable qui permet de savoir le type du collider */
+    int typeCollider; // Variable qui permet de savoir le type du collider 
 
     while( !feof(file) )
     {
@@ -194,6 +198,7 @@ extern void ChargementItems(const char * filename, SDL_Texture * tex)
     int w, h; //Largeur et hauteur de l'item
     SDL_QueryTexture(tex, NULL,NULL, &w, &h );
 
+    //Tant qu'on n'a pas lu entierement le fichier
     while( !feof(file) )
     {
         SDL_Rect *rect = malloc( sizeof(SDL_Rect));
@@ -227,7 +232,8 @@ extern void ChargementEnnemis(const char * filename)
         exit(1);    
     }
     int actif; //Variable qui permet de stocker l'etat de l'ennemi = actif
-   
+
+    //Tant qu'on n'a pas lu entierement le fichier
     while( !feof(file) )
     {
         SDL_Rect *rect = malloc( sizeof(SDL_Rect));

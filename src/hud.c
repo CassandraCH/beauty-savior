@@ -13,7 +13,6 @@
  * \fn extern void Init_HUD(HUD * hud, const char * text, int x,  int y)
  * \brief Fonction qui permet d'initialiser un hud
  * \details Un hud correspond a toutes les informations concernant le joueur tels que le score ou le nombre de vie par exemple
- * \details 
  * \param hud pointeur sur une structure de type HUD 
  * \param text chaine de caractere qui correspond au nom de la texture
  * \param x position en x du hud

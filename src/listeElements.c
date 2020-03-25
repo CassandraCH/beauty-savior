@@ -191,6 +191,7 @@ extern void suppListe(LinkedList * lst)
         Node * temp; //element tampon
         Node * current = lst->tete; //element courant
 
+        //Tant qu'il y a encore des elements dans la liste
         while( current != NULL)
         {
             temp = current;
@@ -217,7 +218,7 @@ extern bool suppPremier(LinkedList * lst)
         return false;
     }
 
-    Node * first = lst->tete;
+    Node * first = lst->tete; //pointeur sur le premier element de la liste
 
     //Si il n'y a qu'un element
     if (lst->nodeCount == 1)
@@ -257,8 +258,8 @@ extern bool suppDernier(LinkedList * lst)
         return false;
     }
 
-    Node * current = lst->tete;
-    Node * last = lst->queue;
+    Node * current = lst->tete; //pointeur sur le premier element de la liste
+    Node * last = lst->queue; //pointeur sur le dernier element de la liste
 
     //Si il n'y a qu'un element
     if (lst->nodeCount == 1)

@@ -13,8 +13,7 @@ SDL_Rect camera = {0, 0, LARGEUR_FENETRE, HAUTEUR_FENETRE}; /**< Structure qui g
 /**
  * \fn extern void Input_InGame(SDL_Event *event)
  * \brief Fonction qui permet gerer les entrees clavier et la camera lorsqu'une partie est en cours 
- * \details 
- * \details 
+ * \details Gestion des entrees de l'utilisateur
  * \param event pointeur sur une structure SDL evenement
  * \return pas de valeur de retour (void)
 */
@@ -64,7 +63,6 @@ extern void Input_InGame(SDL_Event *event)
                 //Changement de l'etat de la touche => pas pressee
                 isKeyPressed = false;
             }
-
         }
 
     } // fin while (SDL_PollEvent)
@@ -72,11 +70,11 @@ extern void Input_InGame(SDL_Event *event)
 
     /* Gestion de la camera */
 
-
     const Uint8 *keystates = SDL_GetKeyboardState(NULL); /**< Variable qui permet de savoir si une touche est pressee ou non*/
 
 
     InputJoueur(event);
+    
     //Initialisation de la position en x et en y de la camera
     camera.x = ( getPlayer()->x + getPlayer()->tex.w / 2 ) - LARGEUR_FENETRE / 2;
     camera.y = ( getPlayer()->y+  getPlayer()->tex.h / 2 ) - HAUTEUR_FENETRE / 2;
