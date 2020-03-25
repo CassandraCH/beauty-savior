@@ -16,15 +16,15 @@ src/entite.c \- Programme qui gère le comportement des entités\&.
 .ti -1c
 .RI "bool \fBUpdateBullets\fP (typeEntite typeA, typeEntite typeB)"
 .br
-.RI "Fonction qui permet mettre a jour les bullets\&. "
+.RI "Fonction qui permet de mettre a jour les bullets\&. "
 .ti -1c
 .RI "void \fBSetNombreTir_Ennemis\fP ()"
 .br
-.RI "Fonction qui configurer le nombre de tir des ennemis\&. "
+.RI "Fonction qui configure le nombre de tir des ennemis\&. "
 .ti -1c
 .RI "void \fBCreerTir\fP (typeEntite type, int width, int height, int startX, int startY)"
 .br
-.RI "Fonction qui creer un tir\&. "
+.RI "Fonction qui cree un tir\&. "
 .ti -1c
 .RI "void \fBattaqueEnnemis\fP ()"
 .br
@@ -36,7 +36,7 @@ src/entite.c \- Programme qui gère le comportement des entités\&.
 .ti -1c
 .RI "void \fBcollisionDetection\fP ()"
 .br
-.RI "Fonction qui gere les collision entre le joueur et le decor, le joueur et les ennemis; et si le joueur tombe dans le vide\&. "
+.RI "Fonction qui gere les collisions entre le joueur et le decor, le joueur et les ennemis; et si le joueur tombe dans le vide\&. "
 .ti -1c
 .RI "void \fBcollision_Decor\fP ()"
 .br
@@ -91,7 +91,7 @@ pas de valeur de retour (void)
 .SS "void collisionDetection ()"
 
 .PP
-Fonction qui gere les collision entre le joueur et le decor, le joueur et les ennemis; et si le joueur tombe dans le vide\&. 
+Fonction qui gere les collisions entre le joueur et le decor, le joueur et les ennemis; et si le joueur tombe dans le vide\&. 
 .PP
 \fBRenvoie\fP
 .RS 4
@@ -102,7 +102,7 @@ pas de valeur de retour (void)
 .SS "void CreerTir (typeEntite type, int width, int height, int startX, int startY)"
 
 .PP
-Fonction qui creer un tir\&. 
+Fonction qui cree un tir\&. 
 .PP
 \fBParamètres\fP
 .RS 4
@@ -126,7 +126,7 @@ pas de valeur de retour (void)
 .SS "void SetNombreTir_Ennemis ()"
 
 .PP
-Fonction qui configurer le nombre de tir des ennemis\&. 
+Fonction qui configure le nombre de tir des ennemis\&. 
 .PP
 \fBRenvoie\fP
 .RS 4
@@ -137,7 +137,7 @@ pas de valeur de retour (void)
 .SS "bool UpdateBullets (typeEntite typeA, typeEntite typeB)"
 
 .PP
-Fonction qui permet mettre a jour les bullets\&. Parcours de la listes des bullets
+Fonction qui permet de mettre a jour les bullets\&. Parcours de la listes des bullets
 .PP
 En fonction de si il s'agit d'un ennemi ou du joueur, le comportement des bullets est différent 
 .PP
@@ -150,7 +150,7 @@ En fonction de si il s'agit d'un ennemi ou du joueur, le comportement des bullet
 .PP
 \fBRenvoie\fP
 .RS 4
-Une valeur de type booleen 
+un booleen 
 .RE
 .PP
 

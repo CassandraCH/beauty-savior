@@ -5,6 +5,7 @@
  * \date mars 2020
  * \brief Programme qui gère le compteur de temps, le compteur de vie et le score à afficher
  * \brief Affichage et mise à jour graphique des éléments
+ * \details Un hud correspond a toutes les informations concernant le joueur tels que le score ou le nombre de vie par exemple
  */
 
 #include "baseGame.h"
@@ -12,7 +13,6 @@
 /**
  * \fn extern void Init_HUD(HUD * hud, const char * text, int x,  int y)
  * \brief Fonction qui permet d'initialiser un hud
- * \details Un hud correspond a toutes les informations concernant le joueur tels que le score ou le nombre de vie par exemple
  * \param hud pointeur sur une structure de type HUD 
  * \param text chaine de caractere qui correspond au nom de la texture
  * \param x position en x du hud

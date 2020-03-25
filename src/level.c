@@ -37,7 +37,7 @@ extern void setNiveau(int niveau)
 /**
  * \fn extern void ChargerNiveau()
  * \brief Fonction qui permet de charger un niveau
- * \details Initialisation des listes (ennemis, bullets,items et colliders)
+ * \details Initialisation des listes (ennemis, bullets, items et colliders)
  * \return pas de valeur de retour (void)
 */
 extern void ChargerNiveau()
@@ -101,7 +101,7 @@ extern void NiveauSuivant()
 /**
  * \fn extern void Debug_AfficherCollider() 
  * \brief Fonction de debug qui permet d'afficher les blocs de collision par dessus le decor
- * \details Cette fonction permet de savoir si les blocs de collisions sont bien positionnes
+ * \details Cette fonction permet de savoir si les blocs de collision sont bien positionnes
  * \details Cette fonction permet de verifier que le joueur entre bien en collision avec les colliders
  * \return pas de valeur de retour (void)
 */

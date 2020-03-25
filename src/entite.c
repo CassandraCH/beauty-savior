@@ -10,12 +10,12 @@
 
 /**
  * \fn extern bool UpdateBullets( typeEntite typeA, typeEntite typeB )
- * \brief Fonction qui permet mettre a jour les bullets
+ * \brief Fonction qui permet de mettre a jour les bullets
  * \details Parcours de la listes des bullets 
  * \details En fonction de si il s'agit d'un ennemi ou du joueur, le comportement des bullets est différent
  * \param typeA type de la premiere entite : item, joueur, ennemi, platform , bull, feu
  * \param typeB type de la deuxieme entite : item, joueur, ennemi, platform , bull, feu
- * \return Une valeur de type booleen
+ * \return un booleen
 */
 extern bool UpdateBullets( typeEntite typeA, typeEntite typeB )
 {
@@ -78,7 +78,7 @@ extern bool UpdateBullets( typeEntite typeA, typeEntite typeB )
 
 /**
  * \fn extern void SetNombreTir_Ennemis()
- * \brief Fonction qui configurer le nombre de tir des ennemis
+ * \brief Fonction qui configure le nombre de tir des ennemis
  * \details 
  * \return pas de valeur de retour (void)
 */
@@ -109,8 +109,7 @@ extern void SetNombreTir_Ennemis()
 
 /**
  * \fn extern void CreerTir(typeEntite type, int width, int height, int startX, int startY)
- * \brief Fonction qui creer un tir
- * \details 
+ * \brief Fonction qui cree un tir
  * \param type type du tir
  * \param width largeur du sprite
  * \param height hauteur du sprite
@@ -190,7 +189,7 @@ extern void UpdateEnnemis()
 
 /**
  * \fn extern void collisionDetection()
- * \brief Fonction qui gere les collision entre le joueur et le decor, le joueur et les ennemis; et si le joueur tombe dans le vide
+ * \brief Fonction qui gere les collisions entre le joueur et le decor, le joueur et les ennemis; et si le joueur tombe dans le vide
  * \details 
  * \return pas de valeur de retour (void)
 */

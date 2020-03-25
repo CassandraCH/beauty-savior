@@ -7,9 +7,7 @@
  */
 #include "baseGame.h"
 
-/**
- * Gestion des entrées utilisateurs.
- */
+
 /**
  * \fn extern void ProcessInput(SDL_Event * event)
  * \brief Fonction qui gere les entrees utilisateur
