@@ -38,11 +38,27 @@ extern LinkedList* getItems()
    return &items;
 }
 
+<<<<<<< HEAD
+=======
+/**
+ * \fn extern int getTimerBullet()
+ * \brief Fonction qui permet d'acceder a la duree de vie/temps d'apparition a l'ecran des bullets
+ * \return un pointeur sur une liste de type LinkedList
+*/
+>>>>>>> origin/Chaumulon_br
 extern int getTimerBullet()
 {
     return timerBullets;   
 }
 
+<<<<<<< HEAD
+=======
+/**
+ * \fn extern void setTimerBullet(int time)
+ * \brief Fonction qui permet d'acceder a la duree de vie/temps d'apparition a l'ecran des bullets
+ * \return pas de valeur de retour (void)
+*/
+>>>>>>> origin/Chaumulon_br
 extern void setTimerBullet(int time)
 {
     timerBullets = time;
@@ -97,6 +113,7 @@ extern Node* creerRect(SDL_Rect*rect, typeEntite item_t, bool actif )
 extern void insertion(LinkedList * list, SDL_Rect *rect, typeEntite items_t, bool actif)
 {
     printf("Insertion objet\n");
+<<<<<<< HEAD
   Node *nouvelElement = creerRect(rect, items_t, actif);
 
   if (list->nodeCount == 0){
@@ -117,12 +134,49 @@ extern void insertion(LinkedList * list, SDL_Rect *rect, typeEntite items_t, boo
 }
 
 
+=======
+    Node *nouvelElement = creerElement(rect, items_t, actif);
+
+    //Cas lorsque la liste est vide
+    if (list->nodeCount == 0)
+    {
+        list->tete = nouvelElement;
+        list->queue = nouvelElement;
+    }
+
+    //Cas lorsque la liste n'est pas vide
+    else
+    {
+        list->queue->suivant = nouvelElement;
+        list->queue = nouvelElement;
+    }
+
+    //Mise a jour du compteur
+    list->nodeCount++;
+    return; 
+}
+
+/**
+ * \fn extern void suppListe(LinkedList * lst)
+ * \brief Fonction qui permet de supprimer la liste passee en parametre
+ * \details 
+ * \param lst pointeur sur la liste dans laquelle on veut inserer un element
+ * \return pas de valeur de retour (void)
+*/
+>>>>>>> origin/Chaumulon_br
 extern void suppListe(LinkedList * lst)
 {
     if( lst->nodeCount > 0 ) 
     {
+<<<<<<< HEAD
         Node * temp;
         Node * current = lst->tete;
+=======
+        Node * temp; //element tampon
+        Node * current = lst->tete; //element courant
+
+        //Tant qu'il y a encore des elements dans la liste
+>>>>>>> origin/Chaumulon_br
         while( current != NULL)
         {
             temp = current;
@@ -169,7 +223,7 @@ extern bool suppPremier(LinkedList * lst)
         return false;
     }
 
-    Node * first = lst->tete;
+    Node * first = lst->tete; //pointeur sur le premier element de la liste
 
     if (lst->nodeCount == 1)
     {
@@ -193,8 +247,8 @@ extern bool suppDernier(LinkedList * lst)
         return false;
     }
 
-    Node * current = lst->tete;
-    Node * last = lst->queue;
+    Node * current = lst->tete; //pointeur sur le premier element de la liste
+    Node * last = lst->queue; //pointeur sur le dernier element de la liste
 
     if (lst->nodeCount == 1)
     {

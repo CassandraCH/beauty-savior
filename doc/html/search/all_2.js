@@ -5,10 +5,22 @@ var searchData=
   ['chargementcollider_11',['ChargementCollider',['../charge_save_8c.html#ae7ffaa7dae394042e30718627d5e8768',1,'chargeSave.c']]],
   ['chargementennemis_12',['ChargementEnnemis',['../charge_save_8c.html#acc5c79f8fd3d805692b97df3be7a473e',1,'chargeSave.c']]],
   ['chargementitems_13',['ChargementItems',['../charge_save_8c.html#a0e2ec5c756bbcac74a4c1fc09739aa1a',1,'chargeSave.c']]],
+<<<<<<< HEAD
   ['chargerniveau_14',['ChargerNiveau',['../level_8c.html#aea12aebb1c1ca4a76b3a0a73961e997f',1,'level.c']]],
   ['chargerpartie_15',['ChargerPartie',['../charge_save_8c.html#add31823f23d075f50a36dca231c11eb2',1,'chargeSave.c']]],
   ['chargesave_2ec_16',['chargeSave.c',['../charge_save_8c.html',1,'']]],
   ['collisiondetection_17',['collisionDetection',['../entite_8c.html#a245251599de796f01b4d187a4bcae01b',1,'entite.c']]],
   ['creerelement_18',['creerElement',['../liste_elements_8c.html#af4e71ddbe7e81a3b59dcef2f9776fcc2',1,'listeElements.c']]],
   ['creertir_19',['CreerTir',['../entite_8c.html#ad22010ae4c30b9f88efac9dc9c4aa51b',1,'entite.c']]]
+=======
+  ['chargerdata_5fmenu_14',['ChargerData_Menu',['../menu_principal_8c.html#a30338f63414e63ccd1c8ad1145e0abf9',1,'menuPrincipal.c']]],
+  ['chargerniveau_15',['ChargerNiveau',['../level_8c.html#aea12aebb1c1ca4a76b3a0a73961e997f',1,'level.c']]],
+  ['chargerpartie_16',['ChargerPartie',['../charge_save_8c.html#add31823f23d075f50a36dca231c11eb2',1,'chargeSave.c']]],
+  ['chargesave_2ec_17',['chargeSave.c',['../charge_save_8c.html',1,'']]],
+  ['collision_5fdecor_18',['collision_Decor',['../entite_8c.html#a82df5417c6ae04171aded998b1302048',1,'entite.c']]],
+  ['collisiondetection_19',['collisionDetection',['../entite_8c.html#a245251599de796f01b4d187a4bcae01b',1,'entite.c']]],
+  ['couleur_20',['couleur',['../structoption.html#a98106836ef07a24e0c807119f86ea929',1,'option']]],
+  ['creerelement_21',['creerElement',['../liste_elements_8c.html#af4e71ddbe7e81a3b59dcef2f9776fcc2',1,'listeElements.c']]],
+  ['creertir_22',['CreerTir',['../entite_8c.html#ad22010ae4c30b9f88efac9dc9c4aa51b',1,'entite.c']]]
+>>>>>>> origin/Chaumulon_br
 ];

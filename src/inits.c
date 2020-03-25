@@ -64,7 +64,7 @@ void Init(const char *title)
     /*############### CHARGEMENT DES POLICES *###############*/
     getMenu()->police = TTF_OpenFont("fonts/homizio.ttf", 20);
 
-    //Verifie que la police a bien ete charge
+    //Verifie que la police a bien ete charge pour le menu
     if(!getMenu()->police )
     {
         printf("Cannot find font file!!\n");
@@ -75,6 +75,7 @@ void Init(const char *title)
 
     getScores()->police = TTF_OpenFont("fonts/arial.ttf", 54);
 
+    //Verifie que la police a bien ete charge pour le score
     if(!getScores()->police )
     {
         printf("Cannot find font file!!\n");
@@ -83,6 +84,8 @@ void Init(const char *title)
 
 
     getNiveau()->police = TTF_OpenFont("fonts/arial.ttf", 54);
+    
+    //Verifie que la police a bien ete charge pour le niveau
     if(!getNiveau()->police )
     {
         printf("Cannot find font file!!\n");

@@ -55,8 +55,6 @@ extern void Init_MenuGameOver()
     /* 
      * Troisieme option : quitter le jeu 
      */
-   
-
     ChargerData_Menu(2, 1, &menu_over, "Quitter", "graphics_assets/icons_buttons/quitter_on_xs.png", "graphics_assets/icons_buttons/quitter_off_xs.png", 469, 491);
 
     /* 
@@ -97,14 +95,14 @@ extern void Input_MenuGameOver(SDL_Event *event)
         {
             switch (event->key.keysym.sym)
             {
-                //Cas touche fleche du haut
+                //Cas de la touche fleche du haut
                 case SDLK_UP:
                     //Gestion du son
                     Mix_PlayChannel(-1, getMenu()->son, 0);
                     ToucheHaut(getMenu_Over());
                     break;
 
-                //Cas touche fleche du bas
+                //Cas de la touche fleche du bas
                 case SDLK_DOWN:
                     //Gestion du son
                     Mix_PlayChannel(-1, getMenu()->son, 0);
@@ -135,6 +133,8 @@ extern void Input_MenuGameOver(SDL_Event *event)
 
                             //Initialisation du hud score
                             Init_HUD(getScores(), "SCORES : 0", 10, 0);
+
+                            //Changement de l'etat du jeu
                             getBaseGame()->state = IN_GAME;
 
                             //Charger le niveau
@@ -154,12 +154,17 @@ extern void Input_MenuGameOver(SDL_Event *event)
 
                             Init_MenuLoad();
                             Nettoyer_Menu(getMenu(), 4);
+
+                            //Changement de l'etat du jeu
                             getBaseGame()->state = LOADING;
+
+                            //Arret de la musique
                             Mix_HaltMusic();
                             break;
 
                         //Cas de la troisieme option : quitter
                         case 2:
+                            //Changement de l'etat du jeu
                             getBaseGame()->estActif = false;
                             return;
                             break;
@@ -196,7 +201,7 @@ extern void Input_MenuGameOver(SDL_Event *event)
 /**
  * \fn extern void Init_GameOver()
  * \brief Fonction qui initialise l'etat game over
- * \details Gestion des entrees clavier de l'utilisateur
+ * \details
  * \return pas de valeur de retour (void)
 */
 extern void Init_GameOver()

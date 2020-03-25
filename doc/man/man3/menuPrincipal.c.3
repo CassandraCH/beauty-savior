@@ -1,4 +1,4 @@
-.TH "src/menuPrincipal.c" 3 "Samedi 21 Mars 2020" "Version 0.1" "Beauty Savior" \" -*- nroff -*-
+.TH "src/menuPrincipal.c" 3 "Mercredi 25 Mars 2020" "Version 0.1" "Beauty Savior" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -16,39 +16,51 @@ src/menuPrincipal.c \- Programme qui gère le menu principal\&.
 .ti -1c
 .RI "\fBMenu_t\fP * \fBgetMenu\fP ()"
 .br
+.RI "Fonction qui permet retourner le menu principal\&. "
 .ti -1c
 .RI "int \fBgetTouchePresse\fP (\fBMenu_t\fP *\fBmenu\fP)"
 .br
+.RI "Fonction qui retourne l'option du menu selectionne\&. "
 .ti -1c
 .RI "void \fBInit_MenuPrincipal\fP ()"
 .br
+.RI "Fonction qui initialise le menu principal\&. "
 .ti -1c
 .RI "void \fBUpdateOption\fP (\fBOptions_t\fP *menut, int etat)"
 .br
+.RI "Fonction qui rafraichit l'affichage des options\&. "
 .ti -1c
 .RI "void \fBToucheHaut\fP (\fBMenu_t\fP *\fBmenu\fP)"
 .br
+.RI "Fonction qui permet de naviguer dans le menu vers le haut\&. "
 .ti -1c
 .RI "void \fBToucheBas\fP (\fBMenu_t\fP *\fBmenu\fP)"
 .br
+.RI "Fonction qui permet de naviguer dans le menu vers le bas\&. "
 .ti -1c
 .RI "void \fBDroite\fP (\fBMenu_t\fP *\fBmenu\fP)"
 .br
+.RI "Fonction qui permet de naviguer dans le menu a droite\&. "
 .ti -1c
 .RI "void \fBGauche\fP (\fBMenu_t\fP *\fBmenu\fP)"
 .br
+.RI "Fonction qui permet de naviguer dans le menu a gauche\&. "
 .ti -1c
 .RI "void \fBDessiner_Menu\fP (\fBMenu_t\fP *\fBmenu\fP, int nombresOptions, int posX, int posY, int largeurBG, int hauteurBG)"
 .br
+.RI "Fonction qui permet d'afficher le menu\&. "
 .ti -1c
 .RI "void \fBInput_MenuPrincipal\fP (SDL_Event *event)"
 .br
+.RI "Fonction qui gere les evenements du menu principal\&. "
 .ti -1c
 .RI "void \fBChargerData_Menu\fP (int numero, int num_image, \fBMenu_t\fP *\fBmenu\fP, char *nomOption, char *image_on, char *image_off, int positionX, int positionY)"
 .br
+.RI "Fonction qui gere le chargement des donnes du menu\&. "
 .ti -1c
 .RI "void \fBNettoyer_Menu\fP (\fBMenu_t\fP *\fBmenu\fP, int nombreOptions)"
 .br
+.RI "Fonction qui permet de nettoyer l'ecran du menu\&. "
 .in -1c
 .SS "Variables"
 
@@ -79,6 +91,222 @@ janvier 2020
 .RE
 .PP
 Initialisation, affichage du menu, navigation dans le menu, gestion des entrées clavier et destruction du menu 
+.SH "Documentation des fonctions"
+.PP 
+.SS "void ChargerData_Menu (int numero, int num_image, \fBMenu_t\fP * menu, char * nomOption, char * image_on, char * image_off, int positionX, int positionY)"
+
+.PP
+Fonction qui gere le chargement des donnes du menu\&. 
+.PP
+\fBParamètres\fP
+.RS 4
+\fInumero\fP numero de l'option 
+.br
+\fInum_image\fP numero de l'image selectionne par defaut 
+.br
+\fImenu\fP pointeur sur le menu 
+.br
+\fInomOption\fP nom de l'option 
+.br
+\fIimage_on\fP chemin pour acceder a l'image selectionnee 
+.br
+\fIimage_off\fP chemin pour acceder a l'image deselectionnee 
+.br
+\fIpositionX\fP position en x 
+.br
+\fIpositionY\fP position en y 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void Dessiner_Menu (\fBMenu_t\fP * menu, int nombresOptions, int posX, int posY, int largeurBG, int hauteurBG)"
+
+.PP
+Fonction qui permet d'afficher le menu\&. Affichage des différentes options 
+.PP
+\fBParamètres\fP
+.RS 4
+\fImenu\fP pointeur sur le menu 
+.br
+\fInombresOptions\fP nombre d'options dans le menu 
+.br
+\fIposX\fP position en x de l'arriere plan 
+.br
+\fIposY\fP position en y de l'arriere plan 
+.br
+\fIlargeurBG\fP largeur de l'arriere plan 
+.br
+\fIhauteurBG\fP hauteur de l'arriere plan 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void Droite (\fBMenu_t\fP * menu)"
+
+.PP
+Fonction qui permet de naviguer dans le menu a droite\&. 
+.PP
+\fBParamètres\fP
+.RS 4
+\fImenu\fP pointeur sur le menu 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void Gauche (\fBMenu_t\fP * menu)"
+
+.PP
+Fonction qui permet de naviguer dans le menu a gauche\&. 
+.PP
+\fBParamètres\fP
+.RS 4
+\fImenu\fP pointeur sur le menu 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "\fBMenu_t\fP * getMenu ()"
+
+.PP
+Fonction qui permet retourner le menu principal\&. 
+.PP
+\fBRenvoie\fP
+.RS 4
+une structure menu de type Menu_t 
+.RE
+.PP
+
+.SS "int getTouchePresse (\fBMenu_t\fP * menu)"
+
+.PP
+Fonction qui retourne l'option du menu selectionne\&. 
+.PP
+\fBParamètres\fP
+.RS 4
+\fImenu\fP pointeur sur le menu 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+un entier correspondant au numero de l'option selectionnee 
+.RE
+.PP
+
+.SS "void Init_MenuPrincipal ()"
+
+.PP
+Fonction qui initialise le menu principal\&. 
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void Input_MenuPrincipal (SDL_Event * event)"
+
+.PP
+Fonction qui gere les evenements du menu principal\&. Gestion des entrees clavier de l'utilisateur 
+.PP
+\fBParamètres\fP
+.RS 4
+\fIevent\fP evenement 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void Nettoyer_Menu (\fBMenu_t\fP * menu, int nombreOptions)"
+
+.PP
+Fonction qui permet de nettoyer l'ecran du menu\&. 
+.PP
+\fBParamètres\fP
+.RS 4
+\fImenu\fP pointeur sur le menu 
+.br
+\fInombreOptions\fP nombre d'options du menu 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void ToucheBas (\fBMenu_t\fP * menu)"
+
+.PP
+Fonction qui permet de naviguer dans le menu vers le bas\&. 
+.PP
+\fBParamètres\fP
+.RS 4
+\fImenu\fP pointeur sur le menu 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void ToucheHaut (\fBMenu_t\fP * menu)"
+
+.PP
+Fonction qui permet de naviguer dans le menu vers le haut\&. 
+.PP
+\fBParamètres\fP
+.RS 4
+\fImenu\fP pointeur sur le menu 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void UpdateOption (\fBOptions_t\fP * menut, int etat)"
+
+.PP
+Fonction qui rafraichit l'affichage des options\&. 
+.PP
+\fBParamètres\fP
+.RS 4
+\fImenut\fP option a mettre a jour 
+.br
+\fIetat\fP etat : selectionne ou non 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SH "Documentation des variables"
+.PP 
+.SS "\fBMenu_t\fP \fBmenu\fP"
+Structure de type menu_t 
 .SH "Auteur"
 .PP 
 Généré automatiquement par Doxygen pour Beauty Savior à partir du code source\&.

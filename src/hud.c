@@ -13,7 +13,6 @@
  * \fn extern void Init_HUD(HUD * hud, const char * text, int x,  int y)
  * \brief Fonction qui permet d'initialiser un hud
  * \details Un hud correspond a toutes les informations concernant le joueur tels que le score ou le nombre de vie par exemple
- * \details 
  * \param hud pointeur sur une structure de type HUD 
  * \param text chaine de caractere qui correspond au nom de la texture
  * \param x position en x du hud
@@ -37,18 +36,29 @@ extern void Init_HUD(HUD * hud, const char * text, int x,  int y)
     hud->rect.h = height; //Hauteur du hud
 }
 
-
 /**
+<<<<<<< HEAD
  * \fn extern void SetHUD_IntToTexture(HUD * hud, const char * nom, int valeur, int posX, int posY)
  * \brief Fonction qui permet de creer la texture d'un hud
  * \param hud pointeur sur une structure de type HUD 
  * \param nom chaine de caractere a ce qu'on veut afficher
  * \param valeur valeur numérique que l'on afficher
+=======
+ * \fn extern void SetHUD_IntToTexture(HUD * hud, const char * nom, int value, int posX, int posY)
+ * \brief Fonction qui permet de creer la texture d'un hud
+ * \param hud pointeur sur une structure de type HUD 
+ * \param nom chaine de caractere a ce qu'on veut afficher
+ * \param value valeur numerique a afficher dans le hud
+>>>>>>> origin/Chaumulon_br
  * \param posX position en x du hud
  * \param posY position en y du hud
  * \return pas de valeur de retour (void)
 */
+<<<<<<< HEAD
 extern void SetHUD_IntToTexture(HUD * hud, const char * nom, int valeur, int posX, int posY)
+=======
+extern void SetHUD_IntToTexture(HUD * hud, const char * nom, int value, int posX, int posY)
+>>>>>>> origin/Chaumulon_br
 {
     //Creation d'une texture pour le hud
     SDL_Texture * tex = hud->tex;
@@ -63,7 +73,11 @@ extern void SetHUD_IntToTexture(HUD * hud, const char * nom, int valeur, int pos
 
     char sc[30];
 
+<<<<<<< HEAD
     sprintf( sc, "%s %d" , nom, valeur ); 
+=======
+    sprintf( sc, "%s : %d" , nom, value ); 
+>>>>>>> origin/Chaumulon_br
     
     //Transformation du texte en surface
     hud->surface = TTF_RenderText_Solid(hud->police, sc, (SDL_Color){0, 0, 0,0});
@@ -78,8 +92,7 @@ extern void SetHUD_IntToTexture(HUD * hud, const char * nom, int valeur, int pos
     hud->rect.w = width;
     hud->rect.h = height;
     hud->rect.x = posX;
-    hud->rect.y = posY;
-    
+    hud->rect.y = posY; 
 }
 
 

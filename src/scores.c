@@ -10,22 +10,35 @@
 #include "baseGame.h"
 
 
+<<<<<<< HEAD
 HUD score;
 HUD niveau;
 HUD time_;
 
 /** \fn  getScores
+=======
+HUD score; /**< hud du score */
+HUD niveau; /**< hud du niveau */
+
+/** \fn  extern HUD* getScores()
+>>>>>>> origin/Chaumulon_br
  *  \brief Retourne l'instance de l'objet score
- *  
+ *  \details Cela permet d'instaurer un contexte privé
  *  \return Retourne un pointeur sur l'objet score 
- *  
- *  \details Cela permet d'instaurer un contexte privée. 
  */
 extern HUD* getScores()
 {
    return &score;
 }
 
+<<<<<<< HEAD
+=======
+/** \fn  extern HUD* getNiveau()
+ *  \brief Retourne l'instance de l'objet niveau
+ *  \details Cela permet d'instaurer un contexte privé
+ *  \return Retourne un pointeur sur l'objet niveau 
+ */
+>>>>>>> origin/Chaumulon_br
 extern HUD* getNiveau()
 {
     return &niveau;

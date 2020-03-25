@@ -1,4 +1,4 @@
-.TH "src/chargeSave.c" 3 "Samedi 21 Mars 2020" "Version 0.1" "Beauty Savior" \" -*- nroff -*-
+.TH "src/chargeSave.c" 3 "Mercredi 25 Mars 2020" "Version 0.1" "Beauty Savior" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -28,6 +28,7 @@ src/chargeSave.c \- Programme qui gère le chargement et la sauvegarde des parti
 .ti -1c
 .RI "void \fBChargementCollider\fP (const char *filename)"
 .br
+.RI "Fonction qui permet de charger les colliders a partir d'un fichier\&. "
 .ti -1c
 .RI "void \fBChargement_CreationPNJ\fP (\fBLinkedList\fP *lst, char *filename)"
 .br
@@ -82,9 +83,23 @@ Fonction qui permet de charger et créer toutes les entités (sauf le joueur) a 
 pas de valeur de retour (void) 
 .RE
 .PP
-< int typeCollider : Variable qui permet de savoir le type du collider
+
 .SS "void ChargementCollider (const char * filename)"
-< \fBNode\fP *pt : Pointeur utilise pour parcourir la liste de colliders
+
+.PP
+Fonction qui permet de charger les colliders a partir d'un fichier\&. Utilisation d'un pointeur pour pouvoir parcourir la liste de colliders 
+.PP
+\fBParamètres\fP
+.RS 4
+\fIfilename\fP Nom du fichier ou la position des colliders est sauvegardee 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
 .SS "void ChargementEnnemis (const char * filename)"
 
 .PP
@@ -150,24 +165,10 @@ Utilisation d'un pointeur pour pouvoir parcourir la liste de colliders
 .PP
 \fBRenvoie\fP
 .RS 4
-pas de valeur de retour (void)
-.RE
-.PP
-Creation du fichier niveau1_position\&.txt
-.PP
-Utilisation d'un pointeur pour pouvoir parcourir la liste de colliders 
-.PP
-\fBParamètres\fP
-.RS 4
-\fIfilename\fP Nom du fichier ou la position des colliders est sauvegardee 
-.RE
-.PP
-\fBRenvoie\fP
-.RS 4
 pas de valeur de retour (void) 
 .RE
 .PP
-< \fBNode\fP * pt : Pointeur utilise pour parcourir la liste de colliders
+
 .SH "Auteur"
 .PP 
 Généré automatiquement par Doxygen pour Beauty Savior à partir du code source\&.

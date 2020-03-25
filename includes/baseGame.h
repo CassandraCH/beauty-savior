@@ -39,7 +39,7 @@
 
 typedef struct baseGame
 {
-    int state; /**< Etat du jeu : en cours de partie, sur le menu principal*/
+    int state; /**< Etat du jeu : en cours de partie, sur le menu principal */
     bool estActif; /**< Etat du jeu : Actif - Non Actif */
     int time;
 

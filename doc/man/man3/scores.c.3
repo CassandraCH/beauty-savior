@@ -1,4 +1,4 @@
-.TH "src/scores.c" 3 "Samedi 21 Mars 2020" "Version 0.1" "Beauty Savior" \" -*- nroff -*-
+.TH "src/scores.c" 3 "Mercredi 25 Mars 2020" "Version 0.1" "Beauty Savior" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -20,6 +20,10 @@ src/scores.c \- Programme qui gère le score\&.
 .ti -1c
 .RI "\fBHUD\fP * \fBgetNiveau\fP ()"
 .br
+<<<<<<< HEAD
+=======
+.RI "Retourne l'instance de l'objet niveau\&. "
+>>>>>>> origin/Chaumulon_br
 .in -1c
 .SS "Variables"
 
@@ -55,17 +59,34 @@ janvier 2020
 Initialisation, mise à jour, affichage et destruction du score 
 .SH "Documentation des fonctions"
 .PP 
-.SS "getScores ()"
+.SS "\fBHUD\fP * getNiveau ()"
 
 .PP
-Retourne l'instance de l'objet score\&. 
+Retourne l'instance de l'objet niveau\&. Cela permet d'instaurer un contexte privé 
 .PP
 \fBRenvoie\fP
 .RS 4
-Retourne un pointeur sur l'objet score
+Retourne un pointeur sur l'objet niveau 
 .RE
 .PP
-Cela permet d'instaurer un contexte privée\&. 
+
+.SS "\fBHUD\fP * getScores ()"
+
+.PP
+Retourne l'instance de l'objet score\&. Cela permet d'instaurer un contexte privé 
+.PP
+\fBRenvoie\fP
+.RS 4
+Retourne un pointeur sur l'objet score 
+.RE
+.PP
+
+.SH "Documentation des variables"
+.PP 
+.SS "\fBHUD\fP niveau"
+hud du niveau 
+.SS "\fBHUD\fP score"
+hud du score 
 .SH "Auteur"
 .PP 
 Généré automatiquement par Doxygen pour Beauty Savior à partir du code source\&.
