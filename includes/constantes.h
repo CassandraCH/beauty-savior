@@ -26,31 +26,31 @@
 
 //Dimensions de la fenetre
 #define LARGEUR_FENETRE 1280
-/**< CONSTANTS_H*/
+/**< \def CONSTANTS_H*/
 #define HAUTEUR_FENETRE 720
-/**< CONSTANTS_H*/
+/**< \def CONSTANTS_H*/
 
 #define MENU_PRINCIPAL 0
-/**< MENU_PRINCIPAL*/
+/**< \def MENU_PRINCIPAL*/
 #define IN_GAME 1
-/**< IN_GAME*/
+/**< \def IN_GAME*/
 #define PAUSE 3
-/**< PAUSE*/
+/**< \def PAUSE*/
 #define GAMEOVER 4
-/**< GAMEOVER*/
+/**<\def  GAMEOVER*/
 #define LEVEL_COMPLETED 5
-/**< LEVEL_COMPLETED*/
+/**< \def LEVEL_COMPLETED*/
 #define LOADING 6
-/**< LOADING*/
+/**<\def  LOADING*/
 
 
 /// MENU PRINCIPAL
 #define NOUVELLE_PARTIE 0
-/**< NOUVELLE_PARTIE*/
+/**< \def NOUVELLE_PARTIE*/
 #define CHARGER_PARTIE 1
-/**< ChargerPartie */
+/**<\def  ChargerPartie */
 #define QUITTER_PARTIE 2
-/**< QUITTER_PARTIE */
+/**<\def  QUITTER_PARTIE */
 
 
 #define NIVEAU1 1
