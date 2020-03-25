@@ -9,7 +9,7 @@ typedef struct textures /** structure des differentes  textures du jeu*/
     int row;
     SDL_Texture * texture;
 
-}Texture_Manager;
+}Texture_Manager;  
 
 
 extern bool chargerImage(Texture_Manager * tex, const char * filename );/**< booleen charger des images*/
