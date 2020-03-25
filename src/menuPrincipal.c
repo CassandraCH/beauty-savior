@@ -302,21 +302,15 @@ extern void Input_MenuPrincipal(SDL_Event *event)
                             suppListe( getCollider() );
                             suppListe(getEnnemis());
                             suppListe(getBullets());
-<<<<<<< HEAD
-                            Nettoyer_Menu(getMenu(), 4);
-
-                            Init_HUD(getScores(),"SCORES : 0", 10, 0);
-                            Init_HUD(getTime(),"1 : 10", 500, 0);
-                            ChargerNiveau();
-=======
 
                             //Initialisation du hud score
                             Init_HUD(getScores(),"SCORES : 0", 10, 0);
+                            //Initialisation du hud time
+                            Init_HUD(getTime(),"1 : 10", 500, 0);
 
                             ChargerNiveau();
 
                             //Changement de l'etat du jeu
->>>>>>> origin/Chaumulon_br
                             getBaseGame()->state = IN_GAME;
                             Mix_HaltMusic();
                             return;

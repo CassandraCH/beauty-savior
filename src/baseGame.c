@@ -157,12 +157,7 @@ extern void Rendu_Jeux()
     Afficher_ElementsListes( &listEnnemis, texture, ennemi );
     Afficher_ElementsListes( &bullet , itemTex, bull );
     Afficher_ElementsListes( &bullet , itemTex, feu );
-<<<<<<< HEAD
     
-=======
-    AfficherHUD(getScores());
-    Afficher_ElementsListes( &items, itemTex, item ); 
->>>>>>> origin/Chaumulon_br
     AfficherJoueur();
 
     AfficherHUD(getScores()); 

@@ -30,17 +30,9 @@ extern void Init_MenuContinue()
     int width = LARGEUR_FENETRE, height = HAUTEUR_FENETRE;
     printf("Chargement Menu Continue");
 
-<<<<<<< HEAD
     SetHUD_IntToTexture(getScores(), "SCORES", getPlayer()->nb_objet, 490, 245);
    
     SetHUD_IntToTexture(getNiveau(), "NIVEAU", getPlayer()->niveau , 510, 374);
-=======
-    //Creation de la texture pour le score
-    SetHUD_IntToTexture(getScores(), "SCORES", getPlayer()->nb_objet, 530, 245);
-
-    //Creation de la texture pour l'affichage du numero du niveau
-    SetHUD_IntToTexture(getNiveau(), "NIVEAU", getPlayer()->niveau , 535, 374);
->>>>>>> origin/Chaumulon_br
 
     /* 
      * Premiere option : Reprendre la partie
@@ -80,29 +72,6 @@ extern void Input_MenuContinue(SDL_Event *event)
         {
             switch (event->key.keysym.sym)
             {
-<<<<<<< HEAD
-            case SDLK_RETURN:
-                switch (getTouchePresse(getMenuCon()))
-                {
-                case 0:
-
-                        getBaseGame()->state = IN_GAME;
-                        setNiveau(2);
-                        SauvegarderPartie();
-                        suppListe(getCollider());
-                        suppListe(getEnnemis());
-                        suppListe(getBullets());
-                        Init_HUD(getScores(), "SCORES : 0", 10, 0);
-                        getBaseGame()->tempsActuel = 0;
-                        getBaseGame()->tempsPrecedent = 0;
-                        getBaseGame()->time_s = 110;
-                        getBaseGame()->min = 60;
-                        getBaseGame()->sec = 10;
-                        getPlayer()->x = 86;
-                        getPlayer()->y = 495;
-                        ChargerNiveau();       
-                
-=======
                 //Cas de la touche entree
                 case SDLK_RETURN:
                     switch (getTouchePresse(getMenuCon()))
@@ -124,6 +93,14 @@ extern void Input_MenuContinue(SDL_Event *event)
                             //Initialisation du hud score
                             Init_HUD(getScores(), "SCORES : 0", 10, 0);
 
+
+                            getBaseGame()->tempsActuel = 0;
+                        getBaseGame()->tempsPrecedent = 0;
+                        getBaseGame()->time_s = 110;
+                        getBaseGame()->min = 60;
+                        getBaseGame()->sec = 10;
+
+                        
                             //Position initiale du joueur 
                             getPlayer()->x = 86;
                             getPlayer()->y = 495;
@@ -134,7 +111,6 @@ extern void Input_MenuContinue(SDL_Event *event)
                         default:
                             break;
                     }//fin du switch
->>>>>>> origin/Chaumulon_br
                     break;
                 default:
                     break;

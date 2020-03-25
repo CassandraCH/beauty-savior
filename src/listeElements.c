@@ -38,27 +38,21 @@ extern LinkedList* getItems()
    return &items;
 }
 
-<<<<<<< HEAD
-=======
 /**
  * \fn extern int getTimerBullet()
  * \brief Fonction qui permet d'acceder a la duree de vie/temps d'apparition a l'ecran des bullets
  * \return un pointeur sur une liste de type LinkedList
 */
->>>>>>> origin/Chaumulon_br
 extern int getTimerBullet()
 {
     return timerBullets;   
 }
 
-<<<<<<< HEAD
-=======
 /**
  * \fn extern void setTimerBullet(int time)
  * \brief Fonction qui permet d'acceder a la duree de vie/temps d'apparition a l'ecran des bullets
  * \return pas de valeur de retour (void)
 */
->>>>>>> origin/Chaumulon_br
 extern void setTimerBullet(int time)
 {
     timerBullets = time;
@@ -75,7 +69,7 @@ extern void init_List(LinkedList *list)
 }
 
 
-extern Node* creerRect(SDL_Rect*rect, typeEntite item_t, bool actif ) 
+extern Node* creerElement(SDL_Rect*rect, typeEntite item_t, bool actif ) 
 {   
     Node * nouvelElement = malloc( sizeof( Node ) );
     nouvelElement->suivant = NULL; 
@@ -113,28 +107,6 @@ extern Node* creerRect(SDL_Rect*rect, typeEntite item_t, bool actif )
 extern void insertion(LinkedList * list, SDL_Rect *rect, typeEntite items_t, bool actif)
 {
     printf("Insertion objet\n");
-<<<<<<< HEAD
-  Node *nouvelElement = creerRect(rect, items_t, actif);
-
-  if (list->nodeCount == 0){
-    // Cas lorsque la liste est vide
-    list->tete = nouvelElement;
-    list->queue = nouvelElement;
-  }
-  else{
-    // Cas lorsque la liste n'est pas vide
-    list->queue->suivant = nouvelElement;
-    list->queue = nouvelElement;
-  }
-
-  list->nodeCount++;
-
-  return;
-   
-}
-
-
-=======
     Node *nouvelElement = creerElement(rect, items_t, actif);
 
     //Cas lorsque la liste est vide
@@ -163,20 +135,14 @@ extern void insertion(LinkedList * list, SDL_Rect *rect, typeEntite items_t, boo
  * \param lst pointeur sur la liste dans laquelle on veut inserer un element
  * \return pas de valeur de retour (void)
 */
->>>>>>> origin/Chaumulon_br
 extern void suppListe(LinkedList * lst)
 {
     if( lst->nodeCount > 0 ) 
     {
-<<<<<<< HEAD
-        Node * temp;
-        Node * current = lst->tete;
-=======
         Node * temp; //element tampon
         Node * current = lst->tete; //element courant
 
         //Tant qu'il y a encore des elements dans la liste
->>>>>>> origin/Chaumulon_br
         while( current != NULL)
         {
             temp = current;

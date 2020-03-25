@@ -87,15 +87,6 @@ extern SDL_Texture *ChargerTexture( char * filepath )
     return texture;
 }
 
-
-
-
-<<<<<<< HEAD
-=======
-
-
-
->>>>>>> origin/Chaumulon_br
 extern void LibererRessources( Texture_Manager *tex )
 {
    SDL_DestroyTexture(tex->texture);
