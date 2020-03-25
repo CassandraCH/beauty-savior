@@ -9,16 +9,16 @@
 
 
 #ifndef _MENU_GAMEOVER_H
-#define _MENU_GAMEOVER_H
+#define _MENU_GAMEOVER_H /**< \def _MENU_GAMEOVER_H*/
 
 
-extern void Init_MenuGameOver();
+extern void Init_MenuGameOver(); /**< fonction d'initialisation de menus game over*/
 
 
-extern void Input_MenuGameOver(SDL_Event *event);
+extern void Input_MenuGameOver(SDL_Event *event);/**< fonction input de menus game over*/
 
-extern void Nettoyer_MenuGameOver();
+extern void Nettoyer_MenuGameOver();/**< fonction Nettoyer_MenuGameOver*/
 
-extern void Init_GameOver();
+extern void Init_GameOver();/**< fonction Init_GameOver*/
 
 #endif
