@@ -228,33 +228,48 @@ extern void AfficherJoueur()
     SDL_RenderCopy(getRenderer(), player.tex.texture , NULL, &rec );
 }
 
-extern void UpdateJoueur( float dt)
+/**
+ * \fn extern void UpdateJoueur( float dt)
+ * \brief Fonction qui met a jour le joueur en fonction du delta-time
+ * \details Gestion du deplacement du joueur
+ * \param dt delta-time (temps ecoule entre l'affichage de 2 images)
+ * \return pas de valeur de retour (void)
+*/
+extern void UpdateJoueur(float dt)
 {   
-
+    //Verifie que le joueur n'est pas mort
 	if( !player.estMort )
     {	
-        
+        //Modification de la position en x en fonction de la velocite
         player.x += player.vx;
+
+        //Mofification de la position en y en fonction de la gravite
         player.y += player.vy;
 
+        //Si le joueur a une velocite non nulle et qu'il est sur le sol
         if( player.vx != 0 && player.estSurSol && !player.ralenti) 
         {
+            //Gestion du frame
             if( getBaseGame()->time % 8 == 0 )
             {
                 player.frame = player.frame + 1;
                 if( player.frame > 5 ) player.frame = 0; 
             }
         }
-
-
-
+        //Si le joueur n'est pas sur le sol, appliquer la gravite
         player.vy += GRAVITY;
     }
 }
 
+/**
+ * \fn extern void actualiserJoueur(void)
+ * \brief Fonction qui reinitialise le joueur
+ * \details Repositionnement du joueur a sa position initiale et remise a 0 de ses compteurs du nombre de lancer et du nombre d'objets
+ * \return pas de valeur de retour (void)
+*/
 extern void actualiserJoueur(void)
 {
-
+    //Si le joueur est vivant ou que le jeu est dans l'etat "chargement d'une partie"
     if( !player.estMort || getBaseGame()->state == LOADING )
     {
         //  if( player.nombreVies > 1 )
@@ -266,41 +281,64 @@ extern void actualiserJoueur(void)
 
         // }
         
+        //Mettre le compteur du nombre de lancers a 0
         player.nb_lancer = 0;
+
+        //Repositionner le joueur a la position de depart
         player.y = player.posYDepart;
         player.x = player.posXDepart;
+
+        //Si l'etat du jeu n'est pas "chargement d'une partie"
         if( getBaseGame()->state != LOADING )
         {
-              player.vx = 0;
+            /*  Reinitialiser le joueur :
+                - supprimer sa vitesse
+                - mettre son compteur d'objets a 0
+                - mettre son niveau actuel au premier
+            */
+            player.vx = 0;
             player.nb_objet = 0;
             player.niveau = 1;
-        }
-        
-          
-        
+        }       
 
-            return;
+        return;
     }
-
 }
 
-//verifie la collision entre 2 elements
+/**
+ * \fn extern bool collide2d(float x1, float y1, float x2, float y2, float wt1, float ht1, float wt2, float ht2)
+ * \brief Fonction qui verifie la collision entre 2 elements
+ * \param x1 position en x du premier element
+ * \param y1 position en y du premier element
+ * \param x2 position en x du deuxieme element
+ * \param y2 position en y du deuxieme element
+ * \param wt1 largeur du premier element
+ * \param ht1 hauteur du premier element
+ * \param wt2 largeur du deuxieme element
+ * \param ht2 hauteur du deuxieme element
+ * \return un booleen : VRAI s'il y a collison, FAUX sinon
+*/
 extern bool collide2d(float x1, float y1, float x2, float y2, float wt1, float ht1, float wt2, float ht2)
 {
     return (! ( (x1 > (x2+wt2)) || (x2 > (x1+wt1)) || (y1 > (y2+ht2)) || (y2 > (y1+ht1))  )  );
 }
 
 /**
- *  Fonction qui s'occupe de gérer les attaques lancer par le joueur
- */
+ * \fn extern void attaqueJoueur()
+ * \brief Fonction qui gere les attaques lancees par le joueur
+ * \details 
+ * \return pas de valeur de retour (void)
+*/
 extern void attaqueJoueur()
 {
+    //Si le joueur a au moins un objet a lancer
     if ( getPlayer()->nb_objet > 0 )
     {
-     
+        //Creation du tir
         CreerTir(bull, getPlayer()->w , getPlayer()->h, getPlayerX(),  getPlayerY() );
-        SetHUD_IntToTexture(getScores(), "SCORES",--player.nb_objet,getScores()->rect.x,getScores()->rect.y  );
 
+        //Mise a jour de la texture du hud score
+        SetHUD_IntToTexture(getScores(), "SCORES",--player.nb_objet,getScores()->rect.x,getScores()->rect.y  );
     }
     return;
 }
