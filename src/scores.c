@@ -10,23 +10,24 @@
 #include "baseGame.h"
 
 
-HUD score;
-HUD niveau;
+HUD score; /**< hud du score */
+HUD niveau; /**< hud du niveau */
 
-
-/** \fn  getScores
+/** \fn  extern HUD* getScores()
  *  \brief Retourne l'instance de l'objet score
- *  
+ *  \details Cela permet d'instaurer un contexte privé
  *  \return Retourne un pointeur sur l'objet score 
- *  
- *  \details Cela permet d'instaurer un contexte privée. 
  */
 extern HUD* getScores()
 {
    return &score;
 }
 
-
+/** \fn  extern HUD* getNiveau()
+ *  \brief Retourne l'instance de l'objet niveau
+ *  \details Cela permet d'instaurer un contexte privé
+ *  \return Retourne un pointeur sur l'objet niveau 
+ */
 extern HUD* getNiveau()
 {
     return &niveau;
