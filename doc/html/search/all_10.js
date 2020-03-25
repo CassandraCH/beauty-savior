@@ -1,10 +1,18 @@
 var searchData=
 [
-  ['texture_129',['texture',['../structoption.html#a859b8efbf9abe8e82757ee5c75a0c97c',1,'option']]],
-  ['texture_2ec_130',['texture.c',['../texture_8c.html',1,'']]],
-  ['textures_131',['textures',['../structtextures.html',1,'']]],
-  ['timerbullets_132',['timerBullets',['../liste_elements_8c.html#aa906b65ac5b6517a50e4ea18998f8b95',1,'listeElements.c']]],
-  ['touchebas_133',['ToucheBas',['../menu_principal_8c.html#a4ac21601ecf46432ea3838da118aac96',1,'menuPrincipal.c']]],
-  ['touchehaut_134',['ToucheHaut',['../menu_principal_8c.html#ad0964a2426f16aa1ebcb4af7b51d36b2',1,'menuPrincipal.c']]],
-  ['trouve_135',['trouve',['../liste_elements_8c.html#aa9d0c8a1652f73bfec09ed17de53f674',1,'listeElements.c']]]
+  ['sauvegarderpartie_120',['SauvegarderPartie',['../charge_save_8c.html#a091d034d1ae628356d3251461e3dace2',1,'chargeSave.c']]],
+  ['savecollider_5fposition_121',['SaveCollider_Position',['../charge_save_8c.html#a1154ecfe153a8c8ff20d73bc3cf2fe5e',1,'chargeSave.c']]],
+  ['score_122',['score',['../scores_8c.html#a6114d54a4a783abb9742f5868d02af92',1,'scores.c']]],
+  ['scores_2ec_123',['scores.c',['../scores_8c.html',1,'']]],
+  ['sethud_5finttotexture_124',['SetHUD_IntToTexture',['../hud_8c.html#ac0145d6bd0f6d077f397bae196c70b25',1,'hud.c']]],
+  ['setniveau_125',['setNiveau',['../level_8c.html#aeed25b1dade20227404a8d808709e7f4',1,'level.c']]],
+  ['setnombretir_126',['setNombretir',['../player_8c.html#a54e0742d4204e45c5d81da77080e493e',1,'player.c']]],
+  ['setnombretir_5fennemis_127',['SetNombreTir_Ennemis',['../entite_8c.html#ad05db5f8734978421f1b6050b5aaeb4d',1,'entite.c']]],
+  ['settimerbullet_128',['setTimerBullet',['../liste_elements_8c.html#af2105d767a38a582a22d0f4e52b83d61',1,'listeElements.c']]],
+  ['setvaleurduniveau_129',['SetValeurDuNiveau',['../player_8c.html#aac8b1eaa3271fc48008443f02f844b19',1,'player.c']]],
+  ['state_130',['state',['../structbase_game.html#a89f234133d3efe315836311cbf21c64b',1,'baseGame']]],
+  ['suppdernier_131',['suppDernier',['../liste_elements_8c.html#a317f6e1658c27df543822ca5569bfe67',1,'listeElements.c']]],
+  ['suppliste_132',['suppListe',['../liste_elements_8c.html#ac5a447ff39fbf89a70c3931ce43b638f',1,'listeElements.c']]],
+  ['supppremier_133',['suppPremier',['../liste_elements_8c.html#ab0ac2ce327ad1fe9a08ab6382f19838b',1,'listeElements.c']]],
+  ['supprimecible_134',['supprimeCible',['../liste_elements_8c.html#a7fa39862308b9f2479a717e645d58440',1,'listeElements.c']]]
 ];

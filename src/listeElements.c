@@ -194,6 +194,7 @@ extern void suppListe(LinkedList * lst)
         //Tant qu'il y a encore des elements dans la liste
         while( current != NULL)
         {
+            //On supprime l'element courant
             temp = current;
             current = current->suivant;
             free(temp);

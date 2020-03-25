@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['update_252',['Update',['../base_game_8c.html#acb21945d67d98b8ce4fc097ead0c6515',1,'baseGame.c']]],
-  ['update_5flistes_253',['Update_Listes',['../base_game_8c.html#a42fd91da1c159bcb3ef0805dd742a5ce',1,'baseGame.c']]],
-  ['updatebullets_254',['UpdateBullets',['../entite_8c.html#a48a46773f7a54ff924d3fe18676da527',1,'entite.c']]],
-  ['updateennemis_255',['UpdateEnnemis',['../entite_8c.html#a6254e69c73b49b05628238188813f020',1,'entite.c']]],
-  ['updateoption_256',['UpdateOption',['../menu_principal_8c.html#ae6aa699ff3aa6f14b0edf596df9c8645',1,'menuPrincipal.c']]]
+  ['touchebas_262',['ToucheBas',['../menu_principal_8c.html#a4ac21601ecf46432ea3838da118aac96',1,'menuPrincipal.c']]],
+  ['touchehaut_263',['ToucheHaut',['../menu_principal_8c.html#ad0964a2426f16aa1ebcb4af7b51d36b2',1,'menuPrincipal.c']]],
+  ['trouve_264',['trouve',['../liste_elements_8c.html#aa9d0c8a1652f73bfec09ed17de53f674',1,'listeElements.c']]]
 ];

@@ -326,7 +326,6 @@ extern bool collide2d(float x1, float y1, float x2, float y2, float wt1, float h
 /**
  * \fn extern void attaqueJoueur()
  * \brief Fonction qui gere les attaques lancees par le joueur
- * \details 
  * \return pas de valeur de retour (void)
 */
 extern void attaqueJoueur()
@@ -343,33 +342,48 @@ extern void attaqueJoueur()
     return;
 }
 
+/**
+ * \fn extern void collision_tir()
+ * \brief Fonction qui gere les collisions entre un bullet et un ennemi
+ * \return pas de valeur de retour (void)
+*/
 extern void collision_tir()
 {
+    Node *tir = NULL; //pointeur sur le bullet actuel
 
-     Node * tir = NULL;
-    Node * enne = NULL;
+    Node * enne = NULL; //pointeur sur l'ennemi actuel
+
+    //Verifie qu'il y a au moins un bullet dans la liste
     if( getBullets()->nodeCount > 0 )
     {
-         //Vérifie la collision avec les armes 
+        //Parcours de la liste des bullets
         for(tir = getBullets()->tete; tir != NULL; tir = tir->suivant)
         {
+            //Parcours de la liste des ennemis
             for(enne = getEnnemis()->tete; enne != NULL; enne = enne->suivant)
             {
+                //Verifie la collision entre le bullet actuel et l'ennemi actuel
                 if(collide2d( tir->rect->x , tir->rect->y, enne->rect->x,enne->rect->y,tir->rect->w ,tir->rect->h,enne->rect->w, enne->rect->h ) && enne->type == ennemi && tir->type == bull ) 
                 {
+                    //Si l'ennemi est vivant
+                    if( !enne->estMort )
+                    {
+                        //Changement de l'etat de l'ennemi => mort
+                        enne->estMort = true;
 
-                        if( !enne->estMort )
-                        {
-                            enne->estMort = true;
-                            tir->estMort = true;
-                            tir->rect->x = 0;
-                            enne->rect->x = 0;
-                        }
-                            
-                        break;
+                        //Changement de l'etat du bullet => mort
+                        tir->estMort = true;
+
+                        tir->rect->x = 0;
+                        enne->rect->x = 0;
+                    }   
+                    break;
                 }
+
+                //Verifie la collision entre le bullet et le joueur
                 else if(collide2d( tir->rect->x , tir->rect->y, getPlayerX(),getPlayerY(),tir->rect->w ,tir->rect->h,getPlayer()->w, getPlayer()->h ) && tir->type == feu ) 
                 {
+                    //Partie perdue => menu game over
                     Init_GameOver();
                     break;
                 }
@@ -379,15 +393,21 @@ extern void collision_tir()
 
 }
 
+/**
+ * \fn extern void joueur_surSol()
+ * \brief Fonction qui permet de mettre le joueur sur le sol
+ * \return pas de valeur de retour (void)
+*/
 extern void joueur_surSol()
 {
+    //mettre la gravite a 0
     player.vy = 0;
-    // Le joueur est posé sur un bloc. 
+
+    //Le joueur est posé sur un bloc. 
     if(!player.estSurSol)
     {
         getPlayer()->estSurSol = true;
     }
-
 }
 
 
