@@ -6,7 +6,7 @@ var player_8c =
     [ "collide2d", "player_8c.html#a3f975bc358d2138dabd1e67263613350", null ],
     [ "collision_tir", "player_8c.html#a9c82ab78b20237c8441f9c2b2bad78bc", null ],
     [ "CollisionItems", "player_8c.html#a41e5645de94682a849a9f90aed83978a", null ],
-    [ "getPlayer", "player_8c.html#a28a648c67e6fd77f689a7d11a2bb771c", null ],
+    [ "getPlayer", "player_8c.html#a416043de4a450e655655b193ee8c97d4", null ],
     [ "getPlayerX", "player_8c.html#a59d9296a0792e47cb2fb984e1507985a", null ],
     [ "getPlayerY", "player_8c.html#a748024009c610d3487f7c3d31b0006f8", null ],
     [ "InitJoueur", "player_8c.html#a588cb885afaf3df6a58ade54253dfcc1", null ],

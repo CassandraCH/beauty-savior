@@ -14,7 +14,11 @@ var searchData=
   ['getmenucon_44',['getMenuCon',['../menu__continue_8c.html#adf75f714b292a7e323384f3ef9425a98',1,'menu_continue.c']]],
   ['getmenuload_45',['getMenuLoad',['../menu_load_8c.html#a2237b072c9e06ab809d88ac23166aa38',1,'menuLoad.c']]],
   ['getmenupause_46',['getMenuPause',['../menu__pause_8c.html#aa0d51d22e796f8bd84516e7e2a4b2463',1,'menu_pause.c']]],
-  ['getrenderer_47',['getRenderer',['../inits_8c.html#ae2565fc92725a6507ff7dafe13a8cc7f',1,'inits.c']]],
-  ['getscores_48',['getScores',['../scores_8c.html#ac625273c55bac118e3b28d6973104059',1,'scores.c']]],
-  ['gettouchepresse_49',['getTouchePresse',['../menu_principal_8c.html#adcfbc9a00de7cd275a57b6f1cd1f7b20',1,'menuPrincipal.c']]]
+  ['getniveau_47',['getNiveau',['../scores_8c.html#ac8329170abebf95447b855fe55e1aa0b',1,'scores.c']]],
+  ['getplayer_48',['getPlayer',['../player_8c.html#a416043de4a450e655655b193ee8c97d4',1,'player.c']]],
+  ['getplayerx_49',['getPlayerX',['../player_8c.html#a59d9296a0792e47cb2fb984e1507985a',1,'player.c']]],
+  ['getplayery_50',['getPlayerY',['../player_8c.html#a748024009c610d3487f7c3d31b0006f8',1,'player.c']]],
+  ['getrenderer_51',['getRenderer',['../inits_8c.html#ae2565fc92725a6507ff7dafe13a8cc7f',1,'inits.c']]],
+  ['getscores_52',['getScores',['../scores_8c.html#a38485d3405813d341dc4b7e71f475f87',1,'scores.c']]],
+  ['gettouchepresse_53',['getTouchePresse',['../menu_principal_8c.html#adcfbc9a00de7cd275a57b6f1cd1f7b20',1,'menuPrincipal.c']]]
 ];

@@ -120,6 +120,7 @@ extern void InputJoueur(SDL_Event *event)
             case SDLK_UP:
                 if( player.estSurSol )
                 {
+                    //Gestion de la gravite
                     player.vy  = -9;
                     player.estSurSol =false;
                 }
@@ -127,6 +128,7 @@ extern void InputJoueur(SDL_Event *event)
         }
     }
  
+    //Variable qui permet de savoir si une touche enfoncee
     const Uint8 *states = SDL_GetKeyboardState(NULL);
 
  

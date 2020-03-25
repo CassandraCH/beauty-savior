@@ -16,24 +16,31 @@ src/player.c \- Programme qui gère le joueur\&.
 .ti -1c
 .RI "\fBPlayer\fP * \fBgetPlayer\fP (void)"
 .br
+.RI "Fonction qui permet retourner l'adresse vers de l'objet Joueur (héros) "
 .ti -1c
 .RI "int \fBgetPlayerX\fP (void)"
 .br
+.RI "Fonction qui permet retourner la position en x du héros\&. "
 .ti -1c
 .RI "int \fBgetPlayerY\fP (void)"
 .br
+.RI "Fonction qui permet retourner la position en y du héros\&. "
 .ti -1c
 .RI "void \fBsetNombretir\fP ()"
 .br
+.RI "Fonction qui permet de regler le nombre de lancer du joueur\&. "
 .ti -1c
 .RI "void \fBSetValeurDuNiveau\fP (int valeur)"
 .br
+.RI "Fonction qui permet de changer la valeur du niveau en cours\&. "
 .ti -1c
 .RI "void \fBInitJoueur\fP ()"
 .br
+.RI "Fonction qui permet d'initialiser le joueur\&. "
 .ti -1c
 .RI "void \fBInputJoueur\fP (SDL_Event *event)"
 .br
+.RI "Fonction qui gere les entrees clavier de l'utilisateur\&. "
 .ti -1c
 .RI "void \fBCollisionItems\fP ()"
 .br
@@ -100,6 +107,93 @@ Gestion des tirs (attaques) et des collisions
 .PP 
 .SS "void attaqueJoueur ()"
 Fonction qui s'occupe de gérer les attaques lancer par le joueur 
+.SS "\fBPlayer\fP * getPlayer (void)"
+
+.PP
+Fonction qui permet retourner l'adresse vers de l'objet Joueur (héros) 
+.PP
+\fBRenvoie\fP
+.RS 4
+une structure joueur de type Player 
+.RE
+.PP
+
+.SS "int getPlayerX (void)"
+
+.PP
+Fonction qui permet retourner la position en x du héros\&. 
+.PP
+\fBRenvoie\fP
+.RS 4
+un int qui correspond a la position en x 
+.RE
+.PP
+
+.SS "int getPlayerY (void)"
+
+.PP
+Fonction qui permet retourner la position en y du héros\&. 
+.PP
+\fBRenvoie\fP
+.RS 4
+un int qui correspond a la position en y 
+.RE
+.PP
+
+.SS "void InitJoueur ()"
+
+.PP
+Fonction qui permet d'initialiser le joueur\&. Remplissage de tous les champs de la structure Player 
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void InputJoueur (SDL_Event * event)"
+
+.PP
+Fonction qui gere les entrees clavier de l'utilisateur\&. 
+.PP
+\fBParamètres\fP
+.RS 4
+\fIevent\fP evenement de l'utilisateur 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void setNombretir ()"
+
+.PP
+Fonction qui permet de regler le nombre de lancer du joueur\&. 
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void SetValeurDuNiveau (int valeur)"
+
+.PP
+Fonction qui permet de changer la valeur du niveau en cours\&. 
+.PP
+\fBParamètres\fP
+.RS 4
+\fIvaleur\fP numero du niveau en cours 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
 .SH "Documentation des variables"
 .PP 
 .SS "int \fBlevel\fP"
