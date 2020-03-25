@@ -113,10 +113,13 @@ extern SDL_Texture *ChargerTexture( char * filepath )
         exit(1);
     }
 
-    //
+    //Si la surface a bien chargee
     else 
-    {
+    {   
+        //Transformation de la surface en texture
         texture = SDL_CreateTextureFromSurface(getRenderer(), surface);
+
+        //On verifie que la texture a bien ete creee
         if( !texture )
              printf("Erreur: %s",filepath);
     }
@@ -124,15 +127,16 @@ extern SDL_Texture *ChargerTexture( char * filepath )
     //Suppression de la surface tampon
     SDL_FreeSurface(surface);
 
+    //On retourne la texture
     return texture;
 }
 
-
-
-
-
-
-
+/** 
+ * \fn extern void LibererRessources( Texture_Manager *tex )
+ * \brief Fonction qui permet detruire une texture
+ * \param tex pointeur sur la texture a detruire
+ * \return pas de valeur de retour (void)
+ */
 extern void LibererRessources( Texture_Manager *tex )
 {
    SDL_DestroyTexture(tex->texture);

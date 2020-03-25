@@ -16,15 +16,19 @@ src/texture.c \- Programme qui gère les textures (affichage)
 .ti -1c
 .RI "bool \fBchargerImage\fP (\fBTexture_Manager\fP *tex, const char *filename)"
 .br
+.RI "Fonction qui permet de charger un image dans une texture\&. "
 .ti -1c
 .RI "void \fBChargerTextureManager\fP (\fBTexture_Manager\fP *tex, char *filepath)"
 .br
+.RI "Fonction qui permet de charger\&. "
 .ti -1c
 .RI "SDL_Texture * \fBChargerTexture\fP (char *filepath)"
 .br
+.RI "Fonction qui permet de charger une texture a partir d'une image\&. "
 .ti -1c
 .RI "void \fBLibererRessources\fP (\fBTexture_Manager\fP *tex)"
 .br
+.RI "Fonction qui permet detruire une texture\&. "
 .in -1c
 .SH "Description détaillée"
 .PP 
@@ -48,6 +52,76 @@ janvier 2020
 .RE
 .PP
 Chargement des images, des textures, des textes et destruction des textures 
+.SH "Documentation des fonctions"
+.PP 
+.SS "bool chargerImage (\fBTexture_Manager\fP * tex, const char * filename)"
+
+.PP
+Fonction qui permet de charger un image dans une texture\&. 
+.PP
+\fBParamètres\fP
+.RS 4
+\fItex\fP pointeur sur la texture dans laquelle on veut charger l'image 
+.br
+\fIfilename\fP nom du fichier de l'image 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+un booleen : VRAI si l'image a bien ete chargee dans la texture, FAUX sinon 
+.RE
+.PP
+
+.SS "SDL_Texture * ChargerTexture (char * filepath)"
+
+.PP
+Fonction qui permet de charger une texture a partir d'une image\&. 
+.PP
+\fBParamètres\fP
+.RS 4
+\fIfilepath\fP chemin pour acceder a l'image 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+un pointeur sur une texture SDL (SDL_Texture) 
+.RE
+.PP
+
+.SS "void ChargerTextureManager (\fBTexture_Manager\fP * tex, char * filepath)"
+
+.PP
+Fonction qui permet de charger\&. 
+.PP
+\fBParamètres\fP
+.RS 4
+\fItex\fP pointeur sur la texture dans laquelle on veut charger l'image 
+.br
+\fIfilepath\fP nom du fichier de l'image 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void LibererRessources (\fBTexture_Manager\fP * tex)"
+
+.PP
+Fonction qui permet detruire une texture\&. 
+.PP
+\fBParamètres\fP
+.RS 4
+\fItex\fP pointeur sur la texture a detruire 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
 .SH "Auteur"
 .PP 
 Généré automatiquement par Doxygen pour Beauty Savior à partir du code source\&.
