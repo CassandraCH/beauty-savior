@@ -43,6 +43,11 @@ extern int getPlayerY(void)
 	return player.y;
 }
 
+/**
+ * \fn extern void setNombretir() 
+ * \brief Fonction qui permet de regler le nombre de lancer du joueur
+ * \return pas de valeur de retour (void)
+*/
 extern void setNombretir() 
 {
     if( player.nb_lancer < 1  ) 
@@ -55,39 +60,57 @@ extern void setNombretir()
     }           
 }
 
-//Change la valeur du niveau en cours
+/**
+ * \fn extern void SetValeurDuNiveau(int valeur)
+ * \brief Fonction qui permet de changer la valeur du niveau en cours
+ * \param valeur numero du niveau en cours
+ * \return pas de valeur de retour (void)
+*/
 extern void SetValeurDuNiveau(int valeur)
 {
 	level = valeur;
 }
 
-
-// Initialisation du joueur
+/**
+ * \fn extern void InitJoueur()
+ * \brief Fonction qui permet d'initialiser le joueur
+ * \details Remplissage de tous les champs de la structure Player
+ * \return pas de valeur de retour (void)
+*/
 extern void InitJoueur()
 {
+    //niveau en cours et nombre de vies
 	player.niveau = 1;
     player.nombreVies = 3;
 
-	// player = (Player) { 0 };
+    //Chargement de l'image
 	chargerImage(&player.tex, "graphics_assets/rect10.png");	
+
+    //position en x et en y, hauteur et largeur
 	player.h = player.tex.h;
 	player.w = player.tex.w;
 	player.x = 100;
-
 	player.y = 495;
+
     player.frame = 0;
 
+    //inventaire initialise a 0
     player.nb_lancer = 0;
     player.nb_objet = 0;
+
+    //position de depart en x et en y
     player.posXDepart = player.x;
     player.posYDepart = player.y;
-
 }
 
-
- extern void InputJoueur( SDL_Event *event  )
+/**
+ * \fn extern void InputJoueur( SDL_Event *event  )
+ * \brief Fonction qui permet 
+ * \details 
+ * \return pas de valeur de retour (void)
+*/
+extern void InputJoueur(SDL_Event *event)
 {
-
     if( event->type == SDL_KEYDOWN )
     {
         switch(event->key.keysym.sym)
@@ -99,12 +122,10 @@ extern void InitJoueur()
                     player.estSurSol =false;
                 }
             break;
-    
-          
         }
     }
  
-     const Uint8 *states = SDL_GetKeyboardState(NULL);
+    const Uint8 *states = SDL_GetKeyboardState(NULL);
 
  
     if( states[SDL_SCANCODE_LEFT]  && player.x-25 > 0  ){
