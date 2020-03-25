@@ -366,23 +366,22 @@ extern void Input_MenuPrincipal(SDL_Event *event)
     } //fin while (SDL_PollEvent)
 }
 
-/*
-    Fonction qui s'occupe de chargement des données
-    Prends en paramètre le numero de l'option, 
-                        le numéro de l'image sélectionné par défaut,
-                        Un pointeur vers le menu, 
-                        Le nom de l'option,
-                        Le chemin vers l'image séléctionner,
-                        Le chemin vers l'image déséléctionner,
-                        La position en X 
-                        La position en Y
-
+/**
+ * \fn extern void ChargerData_Menu(int numero,int num_image, Menu_t * menu,  char * nomOption,  char * image_on,  char * image_off, int positionX, int positionY)
+ * \brief Fonction qui gere le chargement des donnes du menu
+ * \param numero numero de l'option
+ * \param num_image numero de l'image selectionne par defaut
+ * \param menu pointeur sur le menu
+ * \param nomOption nom de l'option
+ * \param image_on chemin pour acceder a l'image selectionnee
+ * \param image_off chemin pour acceder a l'image deselectionnee
+ * \param positionX position en x
+ * \param positionY position en y
+ * \return pas de valeur de retour (void)
 */
-extern void ChargerData_Menu(int numero,int num_image, Menu_t * menu,  char * nomOption,  char * image_on,  char * image_off,
-int positionX, int positionY
-)
-
+extern void ChargerData_Menu(int numero, int num_image, Menu_t * menu,  char * nomOption,  char * image_on,  char * image_off, int positionX, int positionY)
 {
+    //Chargement des donnees
     menu->menu[numero].nomOption = nomOption;
     menu->menu[numero].filename[0] = image_on;
     menu->menu[numero].filename[1] = image_off;
@@ -395,17 +394,24 @@ int positionX, int positionY
     menu->menu[numero].y = positionY;
 }
 
-
-/*
- * Fonction qui permet de supprimer un menu => liberation de la memoire
- */
+/**
+ * \fn extern void Nettoyer_Menu(Menu_t * menu, int nombreOptions)
+ * \brief Fonction qui permet de nettoyer l'ecran du menu
+ * \param menu pointeur sur le menu
+ * \param nombreOptions nombre d'options du menu
+ * \return pas de valeur de retour (void)
+*/
 extern void Nettoyer_Menu(Menu_t * menu, int nombreOptions)
 {
     printf("Suppression Menu principal\n");
+
+    //Parcours de toute les options
     for(int i = 0; i < nombreOptions; i++)
     {
-       if( menu->menu[i].texture != NULL ) 
+        //Liberation de la memoire utilisee pour la texture de l'option
+        if( menu->menu[i].texture != NULL ) 
         {
+            //Liberation de la memoire utilisee pour la texture de l'option
             free(menu->menu[i].texture);
         }
     }
