@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['state_211',['state',['../structbase_game.html#a89f234133d3efe315836311cbf21c64b',1,'baseGame']]]
+  ['nomoption_254',['nomOption',['../structoption.html#a19154c32c7c9afb77ab7c9943b6d1985',1,'option']]]
 ];
