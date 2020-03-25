@@ -10,10 +10,10 @@
 
 
 #ifndef __BASE_GAME_H
-#define __BASE_GAME_H
+#define __BASE_GAME_H /**< \def __BASE_GAME_H*/
 
 
-// Fichier d'entête pour les différents fichiers 
+// Fichier d'entête pour les différents fichiers
 
 // #include "inventaire.h"
 #include "constantes.h"
@@ -37,7 +37,7 @@
 
 #include "gameOver.h"
 
-typedef struct baseGame 
+typedef struct baseGame
 {
     int state; /**< Etat du jeu : en cours de partie, sur le menu principal*/
     bool estActif; /**< Etat du jeu : Actif - Non Actif */
