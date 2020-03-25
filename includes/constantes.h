@@ -1,5 +1,17 @@
-#ifndef CONSTANTS_H
-#define CONSTANTS_H
+/**
+ * \file constantes.h
+ * \author CALVADOS Cindy, CHAUMULON Cassandra, CHELLI Célia, OUSMANOVA Karina
+ * \version 1.0
+ * \date mars 2020
+ * \brief Programme qui gère les constantes du tout le jeu, notamment les dimensions du niveau, dimensions de la fenetre et le menu pricipal.
+ */
+
+
+
+
+
+#ifndef CONSTANTS_H/**< CONSTANTS_H*/
+#define CONSTANTS_H/**< \def CONSTANTS_H*/
 
 #define GRAVITY 0.35f
 
@@ -8,33 +20,43 @@
 
 //Dimensions du niveau
 #define LARGEUR_NIVEAU 9000
+/**< \def LARGEUR_NIVEAU */
 #define HAUTEUR_NIVEAU  720
+/**< \def HAUTEUR_NIVEAU */
 
 //Dimensions de la fenetre
 #define LARGEUR_FENETRE 1280
+/**< \def CONSTANTS_H*/
 #define HAUTEUR_FENETRE 720
+/**< \def CONSTANTS_H*/
 
 #define MENU_PRINCIPAL 0
+/**< \def MENU_PRINCIPAL*/
 #define IN_GAME 1
+/**< \def IN_GAME*/
 #define PAUSE 3
+/**< \def PAUSE*/
 #define GAMEOVER 4
+/**<\def  GAMEOVER*/
 #define LEVEL_COMPLETED 5
+/**< \def LEVEL_COMPLETED*/
 #define LOADING 6
+/**<\def  LOADING*/
 
 
 /// MENU PRINCIPAL
 #define NOUVELLE_PARTIE 0
+/**< \def NOUVELLE_PARTIE*/
 #define CHARGER_PARTIE 1
+/**<\def  ChargerPartie */
 #define QUITTER_PARTIE 2
+/**<\def  QUITTER_PARTIE */
 
 
 #define NIVEAU1 1
 #define NIVEAU2 2
 
 #define MAX_ITEMS 3
-
-
-
 
 
 

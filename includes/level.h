@@ -1,3 +1,13 @@
+/**
+ * \file level.h
+ * \author CALVADOS Cindy, CHAUMULON Cassandra, CHELLI Célia, OUSMANOVA Karina
+ * \version 1.0
+ * \date mars 2020
+ * \brief programme qui gere le debut de mises en place du passage de niveau .
+ */
+
+
+
 #ifndef __LEVEL_H
 #define __LEVEL_H
 
