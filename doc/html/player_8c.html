@@ -92,7 +92,7 @@ $(document).ready(function(){initNavTree('player_8c.html',''); initResizable(); 
 
 <p>Programme qui gère le joueur.  
 <a href="#details">Plus de détails...</a></p>
-<div class="textblock"><code>#include &quot;baseGame.h&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="base_game_8h_source.html">baseGame.h</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Fonctions</h2></td></tr>
@@ -117,11 +117,11 @@ Fonctions</h2></td></tr>
 <tr class="memitem:a2170f09113bd4915eb8a69e930095ec9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="player_8c.html#a2170f09113bd4915eb8a69e930095ec9">InputJoueur</a> (SDL_Event *event)</td></tr>
 <tr class="memdesc:a2170f09113bd4915eb8a69e930095ec9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui gere les entrees clavier de l'utilisateur.  <a href="player_8c.html#a2170f09113bd4915eb8a69e930095ec9">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a2170f09113bd4915eb8a69e930095ec9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a41e5645de94682a849a9f90aed83978a"><td class="memItemLeft" align="right" valign="top"><a id="a41e5645de94682a849a9f90aed83978a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>CollisionItems</b> ()</td></tr>
+<tr class="memitem:a41e5645de94682a849a9f90aed83978a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="player_8c.html#a41e5645de94682a849a9f90aed83978a">CollisionItems</a> ()</td></tr>
+<tr class="memdesc:a41e5645de94682a849a9f90aed83978a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui gere les collisions avec les items.  <a href="player_8c.html#a41e5645de94682a849a9f90aed83978a">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a41e5645de94682a849a9f90aed83978a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5c6a7993d87c10bd12bfefccdf96a242"><td class="memItemLeft" align="right" valign="top"><a id="a5c6a7993d87c10bd12bfefccdf96a242"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>AfficherJoueur</b> ()</td></tr>
+<tr class="memitem:a5c6a7993d87c10bd12bfefccdf96a242"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="player_8c.html#a5c6a7993d87c10bd12bfefccdf96a242">AfficherJoueur</a> ()</td></tr>
+<tr class="memdesc:a5c6a7993d87c10bd12bfefccdf96a242"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui gere l'affichage du joueur a l'ecran.  <a href="player_8c.html#a5c6a7993d87c10bd12bfefccdf96a242">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a5c6a7993d87c10bd12bfefccdf96a242"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6726e250896449a55d137266b9ccf9d0"><td class="memItemLeft" align="right" valign="top"><a id="a6726e250896449a55d137266b9ccf9d0"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>UpdateJoueur</b> (float <a class="el" href="base_game_8c.html#a778e38aa889751afffa2dea6b803e67a">dt</a>)</td></tr>
@@ -158,6 +158,26 @@ Variables</h2></td></tr>
 <p>Initialisation, affichage (et actualisation en fonction des entrées clavier), positionnement et déplacement du joueur</p>
 <p>Gestion des tirs (attaques) et des collisions </p>
 </div><h2 class="groupheader">Documentation des fonctions</h2>
+<a id="a5c6a7993d87c10bd12bfefccdf96a242"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c6a7993d87c10bd12bfefccdf96a242">&#9670;&nbsp;</a></span>AfficherJoueur()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AfficherJoueur </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction qui gere l'affichage du joueur a l'ecran. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>pas de valeur de retour (void) </dd></dl>
+
+</div>
+</div>
 <a id="a6eefc40165232a89552410f13c2f0e92"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6eefc40165232a89552410f13c2f0e92">&#9670;&nbsp;</a></span>attaqueJoueur()</h2>
 
@@ -173,6 +193,26 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Fonction qui s'occupe de gérer les attaques lancer par le joueur </p>
+
+</div>
+</div>
+<a id="a41e5645de94682a849a9f90aed83978a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41e5645de94682a849a9f90aed83978a">&#9670;&nbsp;</a></span>CollisionItems()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CollisionItems </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction qui gere les collisions avec les items. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>pas de valeur de retour (void) </dd></dl>
 
 </div>
 </div>

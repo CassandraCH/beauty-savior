@@ -1,15 +1,13 @@
 var searchData=
 [
-<<<<<<< HEAD
-  ['update_89',['Update',['../base_game_8c.html#acb21945d67d98b8ce4fc097ead0c6515',1,'baseGame.c']]],
-  ['update_5flistes_90',['Update_Listes',['../base_game_8c.html#a42fd91da1c159bcb3ef0805dd742a5ce',1,'baseGame.c']]],
-  ['updatebullets_91',['UpdateBullets',['../entite_8c.html#a48a46773f7a54ff924d3fe18676da527',1,'entite.c']]],
-  ['updateennemis_92',['UpdateEnnemis',['../entite_8c.html#a6254e69c73b49b05628238188813f020',1,'entite.c']]]
-=======
-  ['update_136',['Update',['../base_game_8c.html#acb21945d67d98b8ce4fc097ead0c6515',1,'baseGame.c']]],
-  ['update_5flistes_137',['Update_Listes',['../base_game_8c.html#a42fd91da1c159bcb3ef0805dd742a5ce',1,'baseGame.c']]],
-  ['updatebullets_138',['UpdateBullets',['../entite_8c.html#a48a46773f7a54ff924d3fe18676da527',1,'entite.c']]],
-  ['updateennemis_139',['UpdateEnnemis',['../entite_8c.html#a6254e69c73b49b05628238188813f020',1,'entite.c']]],
-  ['updateoption_140',['UpdateOption',['../menu_principal_8c.html#ae6aa699ff3aa6f14b0edf596df9c8645',1,'menuPrincipal.c']]]
->>>>>>> origin/Chaumulon_br
+  ['tempsecoule_148',['tempsEcoule',['../base_game_8h.html#af41f31addaf36fbfe84e6b3d5c282f9e',1,'baseGame.h']]],
+  ['texture_149',['texture',['../structoption.html#a859b8efbf9abe8e82757ee5c75a0c97c',1,'option']]],
+  ['texture_2ec_150',['texture.c',['../texture_8c.html',1,'']]],
+  ['textures_151',['textures',['../structtextures.html',1,'']]],
+  ['time_5f_152',['time_',['../scores_8c.html#adb87172f98d060746b910a25df448ad5',1,'scores.c']]],
+  ['timerbullets_153',['timerBullets',['../liste_elements_8c.html#aa906b65ac5b6517a50e4ea18998f8b95',1,'listeElements.c']]],
+  ['touchebas_154',['ToucheBas',['../menu_principal_8c.html#a4ac21601ecf46432ea3838da118aac96',1,'menuPrincipal.c']]],
+  ['touchehaut_155',['ToucheHaut',['../menu_principal_8c.html#ad0964a2426f16aa1ebcb4af7b51d36b2',1,'menuPrincipal.c']]],
+  ['trouve_156',['trouve',['../liste_elements_8c.html#aa9d0c8a1652f73bfec09ed17de53f674',1,'listeElements.c']]],
+  ['type_157',['type',['../struct_node.html#aa76d13a32c8c8f63118ec343df6eb66a',1,'Node::type()'],['../structplayer.html#aa76d13a32c8c8f63118ec343df6eb66a',1,'player::type()']]]
 ];

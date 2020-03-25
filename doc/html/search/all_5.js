@@ -1,9 +1,9 @@
 var searchData=
 [
-<<<<<<< HEAD
-  ['fenetre_26',['fenetre',['../inits_8c.html#a83273a719e3c35f920b32f1e64e2e22a',1,'inits.c']]]
-=======
-  ['fenetre_31',['fenetre',['../inits_8c.html#a83273a719e3c35f920b32f1e64e2e22a',1,'inits.c']]],
-  ['filename_32',['filename',['../structoption.html#ae3fd0a1087aad16edbd627e09f3057b0',1,'option']]]
->>>>>>> origin/Chaumulon_br
+  ['enjeu_2ec_37',['enjeu.c',['../enjeu_8c.html',1,'']]],
+  ['enjeu_2eh_38',['enjeu.h',['../enjeu_8h.html',1,'']]],
+  ['entite_2ec_39',['entite.c',['../entite_8c.html',1,'']]],
+  ['entite_2eh_40',['entite.h',['../entite_8h.html',1,'']]],
+  ['estactif_41',['estActif',['../structbase_game.html#ad89867021ac1f6bf309e9a79313123fc',1,'baseGame']]],
+  ['estmort_42',['estMort',['../struct_node.html#a9498a6f5ea0fa3b07131111087d3c135',1,'Node::estMort()'],['../structplayer.html#a9498a6f5ea0fa3b07131111087d3c135',1,'player::estMort()']]]
 ];

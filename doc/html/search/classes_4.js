@@ -1,8 +1,4 @@
 var searchData=
 [
-<<<<<<< HEAD
-  ['menu_98',['menu',['../structmenu.html',1,'']]]
-=======
-  ['menu_147',['menu',['../structmenu.html',1,'']]]
->>>>>>> origin/Chaumulon_br
+  ['menu_171',['menu',['../structmenu.html',1,'']]]
 ];

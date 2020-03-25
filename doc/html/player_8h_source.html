@@ -90,89 +90,97 @@ $(document).ready(function(){initNavTree('player_8h_source.html',''); initResiza
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define _PLAYER_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;texture.h&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;constantes.h&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="constantes_8h.html">constantes.h</a>&quot;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
 <div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="structplayer.html">    9</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structplayer.html">player</a></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;   </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">    #include &quot;attributs.h&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="structplayer.html#a06970f5536dc17a71b6a1da7dec055bb">   17</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structplayer.html#a06970f5536dc17a71b6a1da7dec055bb">m_frameWidth</a>, m_frameHeight;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">int</span> m_textureWidth, m_textureHeight;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">float</span> posXDepart;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">float</span> posYDepart;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordtype">float</span> numeroImage;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    SDL_Rect playerRect;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    SDL_Rect playerPosition;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">int</span> originX, originY;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">float</span> animationSpeed;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keywordtype">float</span> w , h; </div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="structplayer.html#ad0da36b2558901e21e7a30f6c227a45e">   13</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="structplayer.html#ad0da36b2558901e21e7a30f6c227a45e">x</a> , y; </div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="structplayer.html#a81574a53ca33ab2f60f6481c61e3da21">   14</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="structplayer.html#a81574a53ca33ab2f60f6481c61e3da21">vx</a>, vy;</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="structplayer.html#aa76d13a32c8c8f63118ec343df6eb66a">   15</a></span>&#160;    typeEntite <a class="code" href="structplayer.html#aa76d13a32c8c8f63118ec343df6eb66a">type</a>; </div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="structplayer.html#a9498a6f5ea0fa3b07131111087d3c135">   17</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="structplayer.html#a9498a6f5ea0fa3b07131111087d3c135">estMort</a>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="structplayer.html#ad3830f917515d20b9fe691faa2cdbba1">   18</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structplayer.html#ad3830f917515d20b9fe691faa2cdbba1">nb_lancer</a>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="structplayer.html#a06970f5536dc17a71b6a1da7dec055bb">   23</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structplayer.html#a06970f5536dc17a71b6a1da7dec055bb">m_frameWidth</a>, m_frameHeight;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">int</span> m_textureWidth, m_textureHeight;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">float</span> posXDepart;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">float</span> posYDepart;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">float</span> numeroImage;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">int</span> frame;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">bool</span> estActif;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">bool</span> estTourne;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">bool</span> estSurSol;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    SDL_Rect playerRect;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    SDL_Rect playerPosition;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">int</span> originX, originY;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">float</span> animationSpeed;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    </div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">int</span> nombreVies;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">bool</span> ralenti;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">float</span> scrollX;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">int</span> niveau;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">int</span> nb_objet;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="structtextures.html">Texture_Manager</a> tex;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}<a class="code" href="structplayer.html">Player</a>;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">extern</span> <a class="code" href="structplayer.html">Player</a> *<a class="code" href="player_8c.html#a416043de4a450e655655b193ee8c97d4">getPlayer</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">int</span>  <a class="code" href="player_8c.html#a59d9296a0792e47cb2fb984e1507985a">getPlayerX</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">int</span>  <a class="code" href="player_8c.html#a748024009c610d3487f7c3d31b0006f8">getPlayerY</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">int</span> frame;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">bool</span> estActif;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">bool</span> estTourne;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">bool</span> estSurSol;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">int</span> nombreVies;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">bool</span> ralenti;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">float</span> scrollX;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">int</span> niveau;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">int</span> nb_objet;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <a class="code" href="structtextures.html">Texture_Manager</a> tex;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}<a class="code" href="structplayer.html">Player</a>;</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> ChargerJoueur(<span class="keywordtype">char</span>* filepath, <span class="keywordtype">int</span> x , <span class="keywordtype">int</span> y , <span class="keywordtype">int</span> framesX, <span class="keywordtype">int</span> framesY);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">int</span> getPlayerOriginX();</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">int</span> getPlayerOriginY();</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> UpdateJoueur(<span class="keywordtype">float</span> <a class="code" href="base_game_8c.html#a778e38aa889751afffa2dea6b803e67a">dt</a>);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> actualiserJoueur(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keyword">extern</span> <a class="code" href="structplayer.html">Player</a> *<a class="code" href="player_8c.html#a416043de4a450e655655b193ee8c97d4">getPlayer</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">int</span>  <a class="code" href="player_8c.html#a59d9296a0792e47cb2fb984e1507985a">getPlayerX</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">int</span>  <a class="code" href="player_8c.html#a748024009c610d3487f7c3d31b0006f8">getPlayerY</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> ChargerJoueur(<span class="keywordtype">char</span>* filepath, <span class="keywordtype">int</span> x , <span class="keywordtype">int</span> y , <span class="keywordtype">int</span> framesX, <span class="keywordtype">int</span> framesY);</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="player_8c.html#a588cb885afaf3df6a58ade54253dfcc1">InitJoueur</a>();</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="player_8c.html#a54e0742d4204e45c5d81da77080e493e">setNombretir</a>();</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">bool</span> collide2d(<span class="keywordtype">float</span> x1, <span class="keywordtype">float</span> y1, <span class="keywordtype">float</span> x2, <span class="keywordtype">float</span> y2, <span class="keywordtype">float</span> wt1, <span class="keywordtype">float</span> ht1, <span class="keywordtype">float</span> wt2, <span class="keywordtype">float</span> ht2);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="player_8c.html#a6eefc40165232a89552410f13c2f0e92">attaqueJoueur</a>();</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> collision_tir();</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> CollisionItems();</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="player_8c.html#a2170f09113bd4915eb8a69e930095ec9">InputJoueur</a>(SDL_Event *event);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> AfficherJoueur();</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> joueur_surSol();</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">int</span> getPlayerOriginX();</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">int</span> getPlayerOriginY();</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> UpdateJoueur(<span class="keywordtype">float</span> <a class="code" href="base_game_8c.html#a778e38aa889751afffa2dea6b803e67a">dt</a>);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> actualiserJoueur(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="player_8c.html#a588cb885afaf3df6a58ade54253dfcc1">InitJoueur</a>();</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="player_8c.html#a54e0742d4204e45c5d81da77080e493e">setNombretir</a>();</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">bool</span> collide2d(<span class="keywordtype">float</span> x1, <span class="keywordtype">float</span> y1, <span class="keywordtype">float</span> x2, <span class="keywordtype">float</span> y2, <span class="keywordtype">float</span> wt1, <span class="keywordtype">float</span> ht1, <span class="keywordtype">float</span> wt2, <span class="keywordtype">float</span> ht2);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="player_8c.html#a6eefc40165232a89552410f13c2f0e92">attaqueJoueur</a>();</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> collision_tir();</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="player_8c.html#a41e5645de94682a849a9f90aed83978a">CollisionItems</a>();</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="player_8c.html#a2170f09113bd4915eb8a69e930095ec9">InputJoueur</a>(SDL_Event *event);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="player_8c.html#a5c6a7993d87c10bd12bfefccdf96a242">AfficherJoueur</a>();</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> joueur_surSol();</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="aplayer_8c_html_a41e5645de94682a849a9f90aed83978a"><div class="ttname"><a href="player_8c.html#a41e5645de94682a849a9f90aed83978a">CollisionItems</a></div><div class="ttdeci">void CollisionItems()</div><div class="ttdoc">Fonction qui gere les collisions avec les items.</div><div class="ttdef"><b>Definition:</b> player.c:190</div></div>
 <div class="ttc" id="aplayer_8c_html_a59d9296a0792e47cb2fb984e1507985a"><div class="ttname"><a href="player_8c.html#a59d9296a0792e47cb2fb984e1507985a">getPlayerX</a></div><div class="ttdeci">int getPlayerX(void)</div><div class="ttdoc">Fonction qui permet retourner la position en x du héros.</div><div class="ttdef"><b>Definition:</b> player.c:31</div></div>
 <div class="ttc" id="astructplayer_html"><div class="ttname"><a href="structplayer.html">player</a></div><div class="ttdef"><b>Definition:</b> player.h:9</div></div>
+<div class="ttc" id="astructplayer_html_aa76d13a32c8c8f63118ec343df6eb66a"><div class="ttname"><a href="structplayer.html#aa76d13a32c8c8f63118ec343df6eb66a">player::type</a></div><div class="ttdeci">typeEntite type</div><div class="ttdef"><b>Definition:</b> player.h:15</div></div>
 <div class="ttc" id="astructtextures_html"><div class="ttname"><a href="structtextures.html">textures</a></div><div class="ttdef"><b>Definition:</b> texture.h:6</div></div>
-<<<<<<< HEAD
-<div class="ttc" id="aplayer_8c_html_a6eefc40165232a89552410f13c2f0e92"><div class="ttname"><a href="player_8c.html#a6eefc40165232a89552410f13c2f0e92">attaqueJoueur</a></div><div class="ttdeci">void attaqueJoueur()</div><div class="ttdef"><b>Definition:</b> player.c:232</div></div>
-=======
+<div class="ttc" id="aconstantes_8h_html"><div class="ttname"><a href="constantes_8h.html">constantes.h</a></div><div class="ttdoc">Programme qui gère les constantes du tout le jeu, notamment les dimensions du niveau,...</div></div>
 <div class="ttc" id="aplayer_8c_html_a588cb885afaf3df6a58ade54253dfcc1"><div class="ttname"><a href="player_8c.html#a588cb885afaf3df6a58ade54253dfcc1">InitJoueur</a></div><div class="ttdeci">void InitJoueur()</div><div class="ttdoc">Fonction qui permet d'initialiser le joueur.</div><div class="ttdef"><b>Definition:</b> player.c:80</div></div>
-<div class="ttc" id="aplayer_8c_html_a6eefc40165232a89552410f13c2f0e92"><div class="ttname"><a href="player_8c.html#a6eefc40165232a89552410f13c2f0e92">attaqueJoueur</a></div><div class="ttdeci">void attaqueJoueur()</div><div class="ttdef"><b>Definition:</b> player.c:267</div></div>
->>>>>>> origin/Chaumulon_br
-<div class="ttc" id="astructplayer_html_a06970f5536dc17a71b6a1da7dec055bb"><div class="ttname"><a href="structplayer.html#a06970f5536dc17a71b6a1da7dec055bb">player::m_frameWidth</a></div><div class="ttdeci">int m_frameWidth</div><div class="ttdef"><b>Definition:</b> player.h:17</div></div>
+<div class="ttc" id="aplayer_8c_html_a6eefc40165232a89552410f13c2f0e92"><div class="ttname"><a href="player_8c.html#a6eefc40165232a89552410f13c2f0e92">attaqueJoueur</a></div><div class="ttdeci">void attaqueJoueur()</div><div class="ttdef"><b>Definition:</b> player.c:296</div></div>
+<div class="ttc" id="astructplayer_html_a06970f5536dc17a71b6a1da7dec055bb"><div class="ttname"><a href="structplayer.html#a06970f5536dc17a71b6a1da7dec055bb">player::m_frameWidth</a></div><div class="ttdeci">int m_frameWidth</div><div class="ttdef"><b>Definition:</b> player.h:23</div></div>
 <div class="ttc" id="aplayer_8c_html_a748024009c610d3487f7c3d31b0006f8"><div class="ttname"><a href="player_8c.html#a748024009c610d3487f7c3d31b0006f8">getPlayerY</a></div><div class="ttdeci">int getPlayerY(void)</div><div class="ttdoc">Fonction qui permet retourner la position en y du héros.</div><div class="ttdef"><b>Definition:</b> player.c:41</div></div>
 <div class="ttc" id="aplayer_8c_html_a54e0742d4204e45c5d81da77080e493e"><div class="ttname"><a href="player_8c.html#a54e0742d4204e45c5d81da77080e493e">setNombretir</a></div><div class="ttdeci">void setNombretir()</div><div class="ttdoc">Fonction qui permet de regler le nombre de lancer du joueur.</div><div class="ttdef"><b>Definition:</b> player.c:51</div></div>
+<div class="ttc" id="astructplayer_html_ad3830f917515d20b9fe691faa2cdbba1"><div class="ttname"><a href="structplayer.html#ad3830f917515d20b9fe691faa2cdbba1">player::nb_lancer</a></div><div class="ttdeci">int nb_lancer</div><div class="ttdef"><b>Definition:</b> player.h:18</div></div>
 <div class="ttc" id="abase_game_8c_html_a778e38aa889751afffa2dea6b803e67a"><div class="ttname"><a href="base_game_8c.html#a778e38aa889751afffa2dea6b803e67a">dt</a></div><div class="ttdeci">float dt</div><div class="ttdef"><b>Definition:</b> baseGame.c:16</div></div>
+<div class="ttc" id="aplayer_8c_html_a5c6a7993d87c10bd12bfefccdf96a242"><div class="ttname"><a href="player_8c.html#a5c6a7993d87c10bd12bfefccdf96a242">AfficherJoueur</a></div><div class="ttdeci">void AfficherJoueur()</div><div class="ttdoc">Fonction qui gere l'affichage du joueur a l'ecran.</div><div class="ttdef"><b>Definition:</b> player.c:222</div></div>
+<div class="ttc" id="astructplayer_html_a81574a53ca33ab2f60f6481c61e3da21"><div class="ttname"><a href="structplayer.html#a81574a53ca33ab2f60f6481c61e3da21">player::vx</a></div><div class="ttdeci">float vx</div><div class="ttdef"><b>Definition:</b> player.h:14</div></div>
+<div class="ttc" id="astructplayer_html_a9498a6f5ea0fa3b07131111087d3c135"><div class="ttname"><a href="structplayer.html#a9498a6f5ea0fa3b07131111087d3c135">player::estMort</a></div><div class="ttdeci">bool estMort</div><div class="ttdef"><b>Definition:</b> player.h:17</div></div>
+<div class="ttc" id="astructplayer_html_ad0da36b2558901e21e7a30f6c227a45e"><div class="ttname"><a href="structplayer.html#ad0da36b2558901e21e7a30f6c227a45e">player::x</a></div><div class="ttdeci">float x</div><div class="ttdef"><b>Definition:</b> player.h:13</div></div>
 <div class="ttc" id="aplayer_8c_html_a416043de4a450e655655b193ee8c97d4"><div class="ttname"><a href="player_8c.html#a416043de4a450e655655b193ee8c97d4">getPlayer</a></div><div class="ttdeci">Player * getPlayer(void)</div><div class="ttdoc">Fonction qui permet retourner l'adresse vers de l'objet Joueur (héros)</div><div class="ttdef"><b>Definition:</b> player.c:21</div></div>
 <div class="ttc" id="aplayer_8c_html_a2170f09113bd4915eb8a69e930095ec9"><div class="ttname"><a href="player_8c.html#a2170f09113bd4915eb8a69e930095ec9">InputJoueur</a></div><div class="ttdeci">void InputJoueur(SDL_Event *event)</div><div class="ttdoc">Fonction qui gere les entrees clavier de l'utilisateur.</div><div class="ttdef"><b>Definition:</b> player.c:112</div></div>
 <!-- start footer part -->

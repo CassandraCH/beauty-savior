@@ -1,22 +1,27 @@
 var searchData=
 [
-<<<<<<< HEAD
-  ['last_5fframe_5ftime_52',['last_frame_time',['../base_game_8c.html#aa988bffcd6557ee70ef1b3b4d13ce6f8',1,'baseGame.c']]],
-  ['level_53',['level',['../structlevel.html',1,'level'],['../level_8c.html#a083b6d36ebd55b2e07bedb04440cb325',1,'level():&#160;level.c']]],
-  ['level_2ec_54',['level.c',['../level_8c.html',1,'']]],
-  ['libererressources_5fjeux_55',['LibererRessources_Jeux',['../inits_8c.html#a8103adc0a371d1c5d5c375493105d7fe',1,'inits.c']]],
-  ['linkedlist_56',['LinkedList',['../struct_linked_list.html',1,'']]],
-  ['listcollider_57',['listCollider',['../liste_elements_8c.html#a37f0a458c58c0ccfc3b1cf9f9a57b00c',1,'listeElements.c']]],
-  ['listeelements_2ec_58',['listeElements.c',['../liste_elements_8c.html',1,'']]],
-  ['listennemis_59',['listEnnemis',['../liste_elements_8c.html#ac1b61ab86d27e2cb6e2a904acd358400',1,'listeElements.c']]]
-=======
-  ['last_5fframe_5ftime_81',['last_frame_time',['../base_game_8c.html#aa988bffcd6557ee70ef1b3b4d13ce6f8',1,'baseGame.c']]],
-  ['level_82',['level',['../structlevel.html',1,'level'],['../level_8c.html#a083b6d36ebd55b2e07bedb04440cb325',1,'level():&#160;level.c'],['../player_8c.html#acf4d33ee4cff36f69b924471174dcb11',1,'level():&#160;player.c']]],
-  ['level_2ec_83',['level.c',['../level_8c.html',1,'']]],
-  ['libererressources_5fjeux_84',['LibererRessources_Jeux',['../inits_8c.html#a8103adc0a371d1c5d5c375493105d7fe',1,'inits.c']]],
-  ['linkedlist_85',['LinkedList',['../struct_linked_list.html',1,'']]],
-  ['listcollider_86',['listCollider',['../liste_elements_8c.html#a37f0a458c58c0ccfc3b1cf9f9a57b00c',1,'listeElements.c']]],
-  ['listeelements_2ec_87',['listeElements.c',['../liste_elements_8c.html',1,'']]],
-  ['listennemis_88',['listEnnemis',['../liste_elements_8c.html#ac1b61ab86d27e2cb6e2a904acd358400',1,'listeElements.c']]]
->>>>>>> origin/Chaumulon_br
+  ['init_72',['Init',['../inits_8c.html#afefe7e5d2ab817ec07f05cdd89324fdf',1,'Init(const char *title):&#160;inits.c'],['../base_game_8h.html#afefe7e5d2ab817ec07f05cdd89324fdf',1,'Init(const char *title):&#160;inits.c']]],
+  ['init_5fcontinue_73',['Init_Continue',['../menu__continue_8c.html#a95ef65b5c238f82a69f1a64e2c709f34',1,'menu_continue.c']]],
+  ['init_5fgameover_74',['Init_GameOver',['../game_over_8c.html#a1430bf170c733fc0c2e1e056532fed87',1,'Init_GameOver():&#160;gameOver.c'],['../game_over_8h.html#a1430bf170c733fc0c2e1e056532fed87',1,'Init_GameOver():&#160;gameOver.c']]],
+  ['init_5fhud_75',['Init_HUD',['../hud_8c.html#acce506f9cfe00106d1c8cedd93341190',1,'Init_HUD(HUD *hud, const char *text, int x, int y):&#160;hud.c'],['../hud_8h.html#acce506f9cfe00106d1c8cedd93341190',1,'Init_HUD(HUD *hud, const char *text, int x, int y):&#160;hud.c']]],
+  ['init_5flist_76',['init_List',['../liste_elements_8c.html#a26d8015e77f9fa66a37296a09784391e',1,'listeElements.c']]],
+  ['init_5fmenucontinue_77',['Init_MenuContinue',['../menu__continue_8c.html#a5f0b1983f413031704d72381181562aa',1,'menu_continue.c']]],
+  ['init_5fmenugameover_78',['Init_MenuGameOver',['../game_over_8c.html#a9b3680d573b9b1e4ee3007aa8eb97f43',1,'Init_MenuGameOver():&#160;gameOver.c'],['../game_over_8h.html#a9b3680d573b9b1e4ee3007aa8eb97f43',1,'Init_MenuGameOver():&#160;gameOver.c']]],
+  ['init_5fmenuload_79',['Init_MenuLoad',['../menu_load_8c.html#a4eb9449b8424e7b2fc2d820f433d76c4',1,'menuLoad.c']]],
+  ['init_5fmenupause_80',['Init_MenuPause',['../menu__pause_8c.html#a9ab00b1024a5c2f8d274bbdf76aadd61',1,'menu_pause.c']]],
+  ['init_5fmenuprincipal_81',['Init_MenuPrincipal',['../menu_principal_8c.html#a09b63586f3bd140dc10d786d769e5250',1,'menuPrincipal.c']]],
+  ['initjoueur_82',['InitJoueur',['../player_8c.html#a588cb885afaf3df6a58ade54253dfcc1',1,'player.c']]],
+  ['inits_2ec_83',['inits.c',['../inits_8c.html',1,'']]],
+  ['input_2ec_84',['input.c',['../input_8c.html',1,'']]],
+  ['input_5fingame_85',['Input_InGame',['../enjeu_8c.html#ac14c56a1da1987c322c6892b20611ed4',1,'Input_InGame(SDL_Event *event):&#160;enjeu.c'],['../base_game_8h.html#ac14c56a1da1987c322c6892b20611ed4',1,'Input_InGame(SDL_Event *event):&#160;enjeu.c'],['../enjeu_8h.html#ac14c56a1da1987c322c6892b20611ed4',1,'Input_InGame(SDL_Event *event):&#160;enjeu.c']]],
+  ['input_5fmenucontinue_86',['Input_MenuContinue',['../menu__continue_8c.html#a1239661281e6554e32be75e964e6533f',1,'menu_continue.c']]],
+  ['input_5fmenugameover_87',['Input_MenuGameOver',['../game_over_8c.html#a55f6de6edb31dccda9fddb9e089f8973',1,'Input_MenuGameOver(SDL_Event *event):&#160;gameOver.c'],['../game_over_8h.html#a55f6de6edb31dccda9fddb9e089f8973',1,'Input_MenuGameOver(SDL_Event *event):&#160;gameOver.c']]],
+  ['input_5fmenuload_88',['Input_MenuLoad',['../menu_load_8c.html#aa655175c86d4da18d6e0195755a117bc',1,'menuLoad.c']]],
+  ['input_5fmenupause_89',['Input_MenuPause',['../menu__pause_8c.html#a814184cd60ea3bdea6aa385a2b5b02c5',1,'menu_pause.c']]],
+  ['input_5fmenuprincipal_90',['Input_MenuPrincipal',['../menu_principal_8c.html#ac180ef5e1fa7b135dc9678283b541ac4',1,'menuPrincipal.c']]],
+  ['inputjoueur_91',['InputJoueur',['../player_8c.html#a2170f09113bd4915eb8a69e930095ec9',1,'player.c']]],
+  ['insertion_92',['insertion',['../liste_elements_8c.html#ae37bfae115ed1271acf1478fd5303703',1,'listeElements.c']]],
+  ['item_93',['item',['../structitem.html',1,'']]],
+  ['items_94',['items',['../liste_elements_8c.html#a9b30d68dee6975a7a531167794f4fe49',1,'items():&#160;listeElements.c'],['../base_game_8h.html#a9b30d68dee6975a7a531167794f4fe49',1,'items():&#160;listeElements.c']]],
+  ['items_2eh_95',['items.h',['../items_8h.html',1,'']]]
 ];

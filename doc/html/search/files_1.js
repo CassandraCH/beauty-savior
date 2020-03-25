@@ -1,8 +1,5 @@
 var searchData=
 [
-<<<<<<< HEAD
-  ['chargesave_2ec_104',['chargeSave.c',['../charge_save_8c.html',1,'']]]
-=======
-  ['chargesave_2ec_153',['chargeSave.c',['../charge_save_8c.html',1,'']]]
->>>>>>> origin/Chaumulon_br
+  ['basegame_2ec_177',['baseGame.c',['../base_game_8c.html',1,'']]],
+  ['basegame_2eh_178',['baseGame.h',['../base_game_8h.html',1,'']]]
 ];

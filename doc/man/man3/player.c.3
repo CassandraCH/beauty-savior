@@ -44,9 +44,11 @@ src/player.c \- Programme qui gère le joueur\&.
 .ti -1c
 .RI "void \fBCollisionItems\fP ()"
 .br
+.RI "Fonction qui gere les collisions avec les items\&. "
 .ti -1c
 .RI "void \fBAfficherJoueur\fP ()"
 .br
+.RI "Fonction qui gere l'affichage du joueur a l'ecran\&. "
 .ti -1c
 .RI "void \fBUpdateJoueur\fP (float \fBdt\fP)"
 .br
@@ -105,8 +107,30 @@ Initialisation, affichage (et actualisation en fonction des entrées clavier), p
 Gestion des tirs (attaques) et des collisions 
 .SH "Documentation des fonctions"
 .PP 
+.SS "void AfficherJoueur ()"
+
+.PP
+Fonction qui gere l'affichage du joueur a l'ecran\&. 
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
 .SS "void attaqueJoueur ()"
 Fonction qui s'occupe de gérer les attaques lancer par le joueur 
+.SS "void CollisionItems ()"
+
+.PP
+Fonction qui gere les collisions avec les items\&. 
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
 .SS "\fBPlayer\fP * getPlayer (void)"
 
 .PP

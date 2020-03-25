@@ -10,6 +10,33 @@ player
 
 .in +1c
 .ti -1c
+.RI "float \fBw\fP"
+.br
+.ti -1c
+.RI "float \fBh\fP"
+.br
+.ti -1c
+.RI "float \fBx\fP"
+.br
+.ti -1c
+.RI "float \fBy\fP"
+.br
+.ti -1c
+.RI "float \fBvx\fP"
+.br
+.ti -1c
+.RI "float \fBvy\fP"
+.br
+.ti -1c
+.RI "typeEntite \fBtype\fP"
+.br
+.ti -1c
+.RI "bool \fBestMort\fP"
+.br
+.ti -1c
+.RI "int \fBnb_lancer\fP"
+.br
+.ti -1c
 .RI "int \fBm_frameWidth\fP"
 .br
 .ti -1c
@@ -78,8 +105,18 @@ player
 .in -1c
 .SH "Documentation des champs"
 .PP 
+.SS "bool estMort"
+<le type de l'entite> 
 .SS "int m_frameWidth"
-Données pour l'animation 
+<un compteur pour savoir le nb de lancer, attaque en cours> Données pour l'animation 
+.SS "int nb_lancer"
+<un type booleen pour savoir c'est l'entite est mort> 
+.SS "typeEntite type"
+<la velocite x et velocite y, la vitesse laquelle va l'entite dans une direction> 
+.SS "float vx"
+<la position x et y> 
+.SS "float x"
+<largeur et hauteur de l'entite> 
 
 .SH "Auteur"
 .PP 

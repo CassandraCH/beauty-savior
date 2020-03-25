@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['y_286',['y',['../structoption.html#a0a2f84ed7838f07779ae24c5a9086d33',1,'option']]]
+  ['vx_330',['vx',['../struct_node.html#a81574a53ca33ab2f60f6481c61e3da21',1,'Node::vx()'],['../structplayer.html#a81574a53ca33ab2f60f6481c61e3da21',1,'player::vx()']]]
 ];

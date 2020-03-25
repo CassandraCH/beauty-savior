@@ -1,18 +1,11 @@
 var indexSectionsWithContent =
 {
-<<<<<<< HEAD
-  0: "abcdefghilmnoprstu",
+  0: "_abcdefghilmnoprstuvxy",
   1: "bhilmnopt",
-  2: "bceghilmpst",
-  3: "acdgilnprstu",
-  4: "bcdefgilmrst"
-=======
-  0: "abcdefghilmnoprstuy",
-  1: "bhilmnopt",
-  2: "bceghilmpst",
+  2: "abceghilmpst",
   3: "acdgilmnprstu",
-  4: "bcdefghilmnprsty"
->>>>>>> origin/Chaumulon_br
+  4: "bcdefghilmnprstvxy",
+  5: "_"
 };
 
 var indexSectionNames =
@@ -21,7 +14,8 @@ var indexSectionNames =
   1: "classes",
   2: "files",
   3: "functions",
-  4: "variables"
+  4: "variables",
+  5: "defines"
 };
 
 var indexSectionLabels =
@@ -30,6 +24,7 @@ var indexSectionLabels =
   1: "Structures de données",
   2: "Fichiers",
   3: "Fonctions",
-  4: "Variables"
+  4: "Variables",
+  5: "Macros"
 };
 

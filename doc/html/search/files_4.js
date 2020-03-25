@@ -1,8 +1,5 @@
 var searchData=
 [
-<<<<<<< HEAD
-  ['hud_2ec_108',['hud.c',['../hud_8c.html',1,'']]]
-=======
-  ['hud_2ec_157',['hud.c',['../hud_8c.html',1,'']]]
->>>>>>> origin/Chaumulon_br
+  ['gameover_2ec_187',['gameOver.c',['../game_over_8c.html',1,'']]],
+  ['gameover_2eh_188',['gameOver.h',['../game_over_8h.html',1,'']]]
 ];
