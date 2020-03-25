@@ -134,6 +134,7 @@ extern void InputJoueur(SDL_Event *event)
     //Si la touche fleche gauche est appuyee et que le joueur peut se deplacer vers la gauche
     if( states[SDL_SCANCODE_LEFT]  && player.x-25 > 0  )
     {
+        //Modification de la velocite du joueur
         player.vx -= 0.5;
 
         //Deplacement du joueur vers la gauche    
@@ -141,62 +142,90 @@ extern void InputJoueur(SDL_Event *event)
         {
             player.vx = -6;
         }
+
         player.estTourne = true;
         player.ralenti = 0;
+    }
 
-
-    } else if(   states[SDL_SCANCODE_RIGHT] && player.x < LARGEUR_NIVEAU - player.w ){
-
+    //Si la touche fleche droite est appuyee et que le joueur peut se deplacer vers la droite
+    else if(states[SDL_SCANCODE_RIGHT] && player.x < LARGEUR_NIVEAU - player.w )
+    {
+        //Modification de la velocite du joueur
         player.vx += 0.5;
+
+        //Deplacement du joueur vers la droite
         if(player.vx > 6 )
         {
            player.vx = 6;
         }
-           player.estTourne = false;
-            player.ralenti = 0;
+
+        player.estTourne = false;
+        player.ralenti = 0;
     }
-    else { // friction
-    
+
+    //Sinon => friction
+    else
+    { 
         player.frame = 0;
+
+        //Modification de la velocite
         player.vx *= 0.8f;
+
+        //Relentissement du deplacement du joueur
         player.ralenti = 1;
 
+        //Arreter le deplacement du joueur
         if( fabsf( player.vx) < 0.1f)
         {
-               player.vx = 0;
+            player.vx = 0;
         }
-    }
-   
- }
+    } 
+}
 
+/**
+ * \fn extern void CollisionItems() 
+ * \brief Fonction qui gere les collisions avec les items
+ * \return pas de valeur de retour (void)
+*/
 extern void CollisionItems() 
 {
-    Node * pt;
+    Node * pt; //pointeur sur l'item actuel
     
-    // Vérifie la collision avec les items
-     for(pt = getItems()->tete ; pt != NULL; pt = pt->suivant)
+    //Parcours de la liste des items
+    for(pt = getItems()->tete ; pt != NULL; pt = pt->suivant)
     {
-        if(collide2d(getPlayerX(), getPlayerY(), pt->rect->x,pt->rect->y, player.tex.w,player.tex.h,pt->rect->w , pt->rect->h  ) && pt->type == item )
+        //Si le joueur est en collision avec l'item actuel
+        if(collide2d(getPlayerX(), getPlayerY(), pt->rect->x,pt->rect->y, player.tex.w,player.tex.h,pt->rect->w , pt->rect->h) && pt->type == item )
         {
-
-            if( !pt->estMort )
+            //Si l'item est toujours existant
+            if(!pt->estMort)
             {
-               pt->estMort = true;
-               supprimeCible(getItems(), true);
-               SetHUD_IntToTexture(getScores(), "SCORES", ++player.nb_objet, getScores()->rect.x,getScores()->rect.y );
+                //Changement de l'etat de l'item => mort
+                pt->estMort = true;
+
+                //Suppression de l'item dans la liste
+                supprimeCible(getItems(), true);
+
+                //Incrementation du score
+                SetHUD_IntToTexture(getScores(), "SCORES", ++player.nb_objet, getScores()->rect.x,getScores()->rect.y );
             }
             break;
         }
     }
-
-
 }
 
+/**
+ * \fn extern void AfficherJoueur()
+ * \brief Fonction qui gere l'affichage du joueur a l'ecran
+ * \return pas de valeur de retour (void)
+*/
 extern void AfficherJoueur()
 {
+    //rectangle tampon
 	SDL_Rect rec = { player.x - camera.x , player.y - camera.y , player.tex.w, player.tex.h};
+
+    //Gestion du rendu
     SDL_RenderCopy(getRenderer(), player.tex.texture , NULL, &rec );
-    
 }
 
 extern void UpdateJoueur( float dt)
@@ -255,7 +284,7 @@ extern void actualiserJoueur(void)
 
 }
 
-
+//verifie la collision entre 2 elements
 extern bool collide2d(float x1, float y1, float x2, float y2, float wt1, float ht1, float wt2, float ht2)
 {
     return (! ( (x1 > (x2+wt2)) || (x2 > (x1+wt1)) || (y1 > (y2+ht2)) || (y2 > (y1+ht1))  )  );
