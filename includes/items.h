@@ -14,7 +14,7 @@
 #include "constantes.h"
 /**
 * \struct item
-* \details structure gerant
+* \details structure gerant les principaux objets qui seront reculter par le joueur
 */
 
 typedef struct item
