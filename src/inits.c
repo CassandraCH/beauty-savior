@@ -89,6 +89,12 @@ void Init(const char *title)
         SDL_Quit();
     }
     
+    getTime()->police  = TTF_OpenFont("fonts/arial.ttf", 54);
+    if(!getTime()->police )
+    {
+        printf("Cannot find font file!!\n");
+        SDL_Quit();
+    }
 
     /*############### GESTION DES AUDIO *###############*/
     //Initialisation du son
@@ -99,6 +105,14 @@ void Init(const char *title)
     
     InitJoueur( getPlayer() );
 	Init_MenuPrincipal();      
+
+    getBaseGame()->tempsActuel = 0;
+    getBaseGame()->tempsPrecedent = 0;
+    getBaseGame()->time_s = 110;
+    getBaseGame()->min = 60;
+    getBaseGame()->sec = 10;
+
+
     getBaseGame()->estActif = true;
 }
 
@@ -121,6 +135,7 @@ void LibererRessources_Jeux(void)
     Mix_FreeChunk(getMenu()->son);
     Mix_FreeMusic( getMenu()->bgm  );
     TTF_CloseFont(getMenu()->police);
+    TTF_CloseFont(getTime()->police);
     TTF_CloseFont(getScores()->police);
     
     //Suppression des listes

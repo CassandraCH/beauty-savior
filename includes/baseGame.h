@@ -31,6 +31,12 @@ typedef struct baseGame
     int state; /**< Etat du jeu : en cours de partie, sur le menu principal*/
     bool estActif; /**< Etat du jeu : Actif - Non Actif */
     int time;
+
+    int time_s;
+    int min, sec;
+    int tempsPrecedent, tempsActuel;
+
+
 }Base_Game;
 
 
@@ -43,11 +49,13 @@ extern LinkedList* getItems(void);
 extern LinkedList* getBullets(void);
 extern HUD* getScores(void);
 extern HUD* getNiveau();
+extern HUD* getTime();
 extern Menu_t* getMenu(void);
 extern Menu_t * getMenuLoad();
 extern Menu_t * getMenuCon(void);
 extern Menu_t * getMenuPause();
 extern Menu_t * getMenu_Over();
+
 extern int getTimerBullet(void);
 extern void setTimerBullet(int time);
 

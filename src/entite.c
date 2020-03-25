@@ -30,7 +30,7 @@ extern bool UpdateBullets( typeEntite typeA, typeEntite typeB )
         for( pt = getBullets()->tete; pt!= NULL; pt= pt->suivant )
         {
             //Si le joueur est suffisamment proche de l'ennemi
-            if(  pt->rect->x > 0-15  && pt->rect->x < camera.x+camera.w )
+            if(  pt->rect->x > 0-15  && pt->rect->x < LARGEUR_FENETRE )
             {   
                 //Si le bullet actuel peut etre lancer
                 if ( pt->lancer )

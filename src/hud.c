@@ -63,7 +63,7 @@ extern void SetHUD_IntToTexture(HUD * hud, const char * nom, int valeur, int pos
 
     char sc[30];
 
-    sprintf( sc, "%s : %d" , nom, scores ); 
+    sprintf( sc, "%s %d" , nom, valeur ); 
     
     //Transformation du texte en surface
     hud->surface = TTF_RenderText_Solid(hud->police, sc, (SDL_Color){0, 0, 0,0});

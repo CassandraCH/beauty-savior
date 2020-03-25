@@ -20,9 +20,9 @@ extern void Init_MenuContinue()
      * Actif par défaut
      */ 
 
-    SetHUD_IntToTexture(getScores(), "SCORES", getPlayer()->nb_objet, 530, 245);
+    SetHUD_IntToTexture(getScores(), "SCORES", getPlayer()->nb_objet, 490, 245);
    
-    SetHUD_IntToTexture(getNiveau(), "NIVEAU", getPlayer()->niveau , 535, 374);
+    SetHUD_IntToTexture(getNiveau(), "NIVEAU", getPlayer()->niveau , 510, 374);
 
     ChargerData_Menu(0, 0, &menu_continue, "Continuer", "graphics_assets/icons_buttons/continue.png", "null", 707, 562);
 
@@ -63,6 +63,11 @@ extern void Input_MenuContinue(SDL_Event *event)
                         suppListe(getEnnemis());
                         suppListe(getBullets());
                         Init_HUD(getScores(), "SCORES : 0", 10, 0);
+                        getBaseGame()->tempsActuel = 0;
+                        getBaseGame()->tempsPrecedent = 0;
+                        getBaseGame()->time_s = 110;
+                        getBaseGame()->min = 60;
+                        getBaseGame()->sec = 10;
                         getPlayer()->x = 86;
                         getPlayer()->y = 495;
                         ChargerNiveau();       

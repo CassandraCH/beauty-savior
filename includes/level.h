@@ -14,8 +14,8 @@ typedef struct level
     int departX;
     int departY;
     
-    int cameraX;
-    int cameraY;
+    // int cameraX;
+    // int cameraY;
 
     
 }Level;

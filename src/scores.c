@@ -12,7 +12,7 @@
 
 HUD score;
 HUD niveau;
-
+HUD time_;
 
 /** \fn  getScores
  *  \brief Retourne l'instance de l'objet score
@@ -26,8 +26,12 @@ extern HUD* getScores()
    return &score;
 }
 
-
 extern HUD* getNiveau()
 {
     return &niveau;
+}
+
+extern HUD* getTime()
+{
+    return &time_;
 }

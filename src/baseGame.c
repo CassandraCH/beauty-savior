@@ -44,10 +44,34 @@ extern void Update(float dt)
 
   //Cas ou on est en train de jouer
   else if ( game.state == IN_GAME )
-  {          
+  { 
       //Gestion du timer
       getBaseGame()->time++;
       setTimerBullet(0); 
+
+    
+      getBaseGame()->tempsActuel = SDL_GetTicks();
+      if (getBaseGame()->tempsActuel > getBaseGame()->tempsPrecedent + 1000 ) /* Si 1000 ms soit 1 sec se sont écoulées */
+      {    
+            --getBaseGame()->time_s;
+            printf("%d\n", getBaseGame()->time_s );
+            
+          if( getBaseGame()->time_s > 100 )
+              --getBaseGame()->sec;
+          else 
+              --getBaseGame()->min;
+
+          getBaseGame()->tempsPrecedent = getBaseGame()->tempsActuel; /* Le temps "actuel" devient le temps "precedent" pour nos futurs calculs */
+      } 
+
+      // Si le temps du jeux est ingérieur au timer de 1min10 alors c'est la fin du niveau.
+      if( getBaseGame()->time_s <= 40 )
+      {
+        Init_GameOver();
+      }
+ 
+      
+      
 
       //Gestion des attaques
       attaqueEnnemis();
@@ -62,6 +86,7 @@ extern void Update(float dt)
       collision_tir();
       CollisionItems(); 
       collisionDetection();
+
   }
 }
 
@@ -112,9 +137,18 @@ extern void Rendu_Jeux()
 
   //Cas ou on est en train de jouer
   else if ( getBaseGame()->state == IN_GAME )
-  {
-    // Affichage_Niveau();
-    afficher_textures_niveau(0);
+  { 
+    
+    if( getBaseGame()->time_s > 100 )
+    {
+      SetHUD_IntToTexture(getTime(),"1 : ",getBaseGame()->sec ,500, 0 );
+    }
+    else 
+    {
+      SetHUD_IntToTexture(getTime(),"0 : ", getBaseGame()->min ,500, 0 );
+    }
+
+    // afficher_textures_niveau(0);
     
     SDL_Texture * texture = ChargerTexture("graphics_assets/rect11.png");
     SDL_Texture * itemTex = ChargerTexture("graphics_assets/coin.png");
@@ -124,13 +158,16 @@ extern void Rendu_Jeux()
     Afficher_ElementsListes( &bullet , itemTex, bull );
     Afficher_ElementsListes( &bullet , itemTex, feu );
     
-    AfficherHUD(getScores());
-    Afficher_ElementsListes( &items, itemTex, item ); 
     AfficherJoueur();
 
+    AfficherHUD(getScores()); 
+    AfficherHUD(getTime());
+    Afficher_ElementsListes( &items, itemTex, item ); 
+    
 
-    // Debug_AfficherCollider();
-    afficher_textures_niveau(1);
+    // afficher_textures_niveau(1);
+
+    Debug_AfficherCollider();
   }
 
   //Cas ou on a perdu

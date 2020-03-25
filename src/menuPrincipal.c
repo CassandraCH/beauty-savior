@@ -272,9 +272,11 @@ extern void Input_MenuPrincipal(SDL_Event *event)
                             suppListe( getCollider() );
                             suppListe(getEnnemis());
                             suppListe(getBullets());
+                            Nettoyer_Menu(getMenu(), 4);
+
                             Init_HUD(getScores(),"SCORES : 0", 10, 0);
+                            Init_HUD(getTime(),"1 : 10", 500, 0);
                             ChargerNiveau();
-                            // Nettoyer_MenuPrincipal();
                             getBaseGame()->state = IN_GAME;
                             Mix_HaltMusic();
                             return;

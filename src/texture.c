@@ -87,18 +87,6 @@ extern SDL_Texture *ChargerTexture( char * filepath )
     return texture;
 }
 
-void dessinerFullImage(Texture_Manager * tex, int x, int y)
-{   
- 	SDL_Rect dest;
-
-	/* Règle le rectangle à dessiner selon la taille de l'image source */
-	dest.x = x;
-	dest.y = y;
-
-	/* Dessine l'image entière sur l'écran aux coordonnées x et y */
-	SDL_QueryTexture(tex->texture, NULL, NULL, &dest.w, &dest.h);
-	SDL_RenderCopy(getRenderer(), tex->texture, NULL, &dest);
-}
 
 
 extern void dessinerImages(Texture_Manager * tex, int x, int y, int width, int height, int currentRow, int currentFrame, SDL_RendererFlip flip)
@@ -119,18 +107,6 @@ extern void dessinerImages(Texture_Manager * tex, int x, int y, int width, int h
 
 
 
-
-extern void ChargerTexte(Texture_Manager* tex, TTF_Font * font, const char * text )
-{
-    SDL_Color white = { 0, 0, 0, 0 };
-
-    SDL_Surface *tmp = TTF_RenderText_Blended(font, text, white);
-    tex->w  = tmp->w;
-    tex->h = tmp->h;
-    tex->texture = SDL_CreateTextureFromSurface(getRenderer() , tmp);
-
-    SDL_FreeSurface(tmp);
-}
 
 extern void LibererRessources( Texture_Manager *tex )
 {
