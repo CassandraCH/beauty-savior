@@ -46,24 +46,24 @@ typedef struct baseGame
 
 
 /*######## GETTER & SETTER ######## */
-extern SDL_Window* getWindow(void);
-extern Base_Game*  getBaseGame(void);
-extern LinkedList* getEnnemis(void);
-extern LinkedList* getCollider(void);
-extern LinkedList* getItems(void);
-extern LinkedList* getBullets(void);
-extern HUD* getScores(void);
-extern HUD* getNiveau();
-extern Menu_t* getMenu(void);
-extern Menu_t * getMenuLoad();
-extern Menu_t * getMenuCon(void);
-extern Menu_t * getMenuPause();
-extern Menu_t * getMenu_Over();
-extern int getTimerBullet(void);
-extern void setTimerBullet(int time);
+extern SDL_Window* getWindow(void);/**< fonction SDL_Window qui gere la fenetre*/
+extern Base_Game*  getBaseGame(void);/**< fonction Base_Game*/
+extern LinkedList* getEnnemis(void);/**< fonction getEnnemis qui gere les ennemis*/
+extern LinkedList* getCollider(void);/**< fonction getCollider*/
+extern LinkedList* getItems(void);/**< fonction getItems*/
+extern LinkedList* getBullets(void);/**< fonction getBullets*/
+extern HUD* getScores(void);/**< fonction getScores qui gere le scores*/
+extern HUD* getNiveau();/**< fonction getNiveau qui gere les niveaux*/
+extern Menu_t* getMenu(void);/**< fonction getMenu*/
+extern Menu_t * getMenuLoad();/**< fonction getMenuLoad*/
+extern Menu_t * getMenuCon(void);/**< fonction getMenuCon*/
+extern Menu_t * getMenuPause();/**< fonction getMenuPause*/
+extern Menu_t * getMenu_Over();/**< fonction getMenu_Over*/
+extern int getTimerBullet(void);/**< fonction getTimerBullet*/
+extern void setTimerBullet(int time);/**< fonction setTimerBullet , avec la variable temps*/
 
-extern void ProcessInput(SDL_Event* event);
-extern void Input_InGame(SDL_Event *event);
+extern void ProcessInput(SDL_Event* event);/**< fonction ProcessInput*/
+extern void Input_InGame(SDL_Event *event);/**< fonction Input_InGame*/
 
 
 /*######## LISTES ######## */
