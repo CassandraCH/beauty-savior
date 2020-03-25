@@ -32,9 +32,11 @@ src/listeElements.c \- Programme qui permet de gérer les listes\&.
 .ti -1c
 .RI "int \fBgetTimerBullet\fP ()"
 .br
+.RI "Fonction qui permet d'acceder a la duree de vie/temps d'apparition a l'ecran des bullets\&. "
 .ti -1c
 .RI "void \fBsetTimerBullet\fP (int time)"
 .br
+.RI "Fonction qui permet d'acceder a la duree de vie/temps d'apparition a l'ecran des bullets\&. "
 .ti -1c
 .RI "void \fBinit_List\fP (\fBLinkedList\fP *list)"
 .br
@@ -158,13 +160,11 @@ Pointeur sur une structure de type \fBNode\fP
 .SS "\fBLinkedList\fP * getBullets ()"
 
 .PP
-Fonction qui permet d'acceder a la liste des bullets\&. Fonction qui permet d'acceder a la duree de vie/temps d'apparition a l'ecran des bullets\&.
+Fonction qui permet d'acceder a la liste des bullets\&. 
 .PP
 \fBRenvoie\fP
 .RS 4
-un pointeur sur une liste de type \fBLinkedList\fP
-.PP
-pas de valeur de retour (void) 
+un pointeur sur une liste de type \fBLinkedList\fP 
 .RE
 .PP
 
@@ -194,6 +194,17 @@ un pointeur sur une liste de type \fBLinkedList\fP
 
 .PP
 Fonction qui permet d'acceder a la liste des items\&. 
+.PP
+\fBRenvoie\fP
+.RS 4
+un pointeur sur une liste de type \fBLinkedList\fP 
+.RE
+.PP
+
+.SS "int getTimerBullet ()"
+
+.PP
+Fonction qui permet d'acceder a la duree de vie/temps d'apparition a l'ecran des bullets\&. 
 .PP
 \fBRenvoie\fP
 .RS 4
@@ -239,6 +250,17 @@ pas de valeur de retour (void)
 .RE
 .PP
 
+.SS "void setTimerBullet (int time)"
+
+.PP
+Fonction qui permet d'acceder a la duree de vie/temps d'apparition a l'ecran des bullets\&. 
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
 .SS "bool suppDernier (\fBLinkedList\fP * lst)"
 
 .PP
@@ -262,7 +284,7 @@ Fonction qui permet de supprimer la liste passee en parametre\&.
 .PP
 \fBParamètres\fP
 .RS 4
-\fIlist\fP pointeur sur la liste dans laquelle on veut inserer un element 
+\fIlst\fP pointeur sur la liste dans laquelle on veut inserer un element 
 .RE
 .PP
 \fBRenvoie\fP

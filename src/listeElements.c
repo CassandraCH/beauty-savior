@@ -57,7 +57,7 @@ extern LinkedList* getItems()
 }
 
 /**
- * \fn extern LinkedList* getBullets()
+ * \fn extern int getTimerBullet()
  * \brief Fonction qui permet d'acceder a la duree de vie/temps d'apparition a l'ecran des bullets
  * \return un pointeur sur une liste de type LinkedList
 */
@@ -67,7 +67,7 @@ extern int getTimerBullet()
 }
 
 /**
- * \fn extern LinkedList* getBullets()
+ * \fn extern void setTimerBullet(int time)
  * \brief Fonction qui permet d'acceder a la duree de vie/temps d'apparition a l'ecran des bullets
  * \return pas de valeur de retour (void)
 */
@@ -180,7 +180,7 @@ extern void insertion(LinkedList * list, SDL_Rect *rect, typeEntite items_t, boo
  * \fn extern void suppListe(LinkedList * lst)
  * \brief Fonction qui permet de supprimer la liste passee en parametre
  * \details 
- * \param list pointeur sur la liste dans laquelle on veut inserer un element
+ * \param lst pointeur sur la liste dans laquelle on veut inserer un element
  * \return pas de valeur de retour (void)
 */
 extern void suppListe(LinkedList * lst)

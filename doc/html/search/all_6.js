@@ -20,5 +20,6 @@ var searchData=
   ['getplayery_50',['getPlayerY',['../player_8c.html#a748024009c610d3487f7c3d31b0006f8',1,'player.c']]],
   ['getrenderer_51',['getRenderer',['../inits_8c.html#ae2565fc92725a6507ff7dafe13a8cc7f',1,'inits.c']]],
   ['getscores_52',['getScores',['../scores_8c.html#a38485d3405813d341dc4b7e71f475f87',1,'scores.c']]],
-  ['gettouchepresse_53',['getTouchePresse',['../menu_principal_8c.html#adcfbc9a00de7cd275a57b6f1cd1f7b20',1,'menuPrincipal.c']]]
+  ['gettimerbullet_53',['getTimerBullet',['../liste_elements_8c.html#a401b36b02961675f611523ba83a5cb02',1,'listeElements.c']]],
+  ['gettouchepresse_54',['getTouchePresse',['../menu_principal_8c.html#adcfbc9a00de7cd275a57b6f1cd1f7b20',1,'menuPrincipal.c']]]
 ];
