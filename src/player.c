@@ -105,23 +105,25 @@ extern void InitJoueur()
 
 /**
  * \fn extern void InputJoueur( SDL_Event *event  )
- * \brief Fonction qui permet 
- * \details 
+ * \brief Fonction qui gere les entrees clavier de l'utilisateur 
+ * \param event evenement de l'utilisateur
  * \return pas de valeur de retour (void)
 */
 extern void InputJoueur(SDL_Event *event)
 {
+    //Si une touche a ete relachee
     if( event->type == SDL_KEYDOWN )
     {
         switch(event->key.keysym.sym)
-        {
+        {   
+            //Cas de la touche fleche du haut
             case SDLK_UP:
                 if( player.estSurSol )
                 {
                     player.vy  = -9;
                     player.estSurSol =false;
                 }
-            break;
+                break;
         }
     }
  
