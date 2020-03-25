@@ -10,10 +10,9 @@
 #include "baseGame.h"
 
 
-int level;
-Player player;
-Texture_Manager playerSprite;
-
+int level; /**< numero du niveau */
+Player player; /**< joueur */
+Texture_Manager playerSprite; /**< texture du joueur */
 
 //Renvoie l'adresse vers de l'objet Joueur (héros)
 extern Player *getPlayer(void)

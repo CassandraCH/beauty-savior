@@ -99,9 +99,8 @@ extern void SaveCollider_Position()
 }
 
 /**
- * \fn extern void SaveCollider_Position()
- * \brief Fonction qui permet sauvegarder la position des colliders dans un fichier
- * \details Creation du fichier niveau1_position.txt
+ * \fn extern void ChargementCollider(const char * filename) 
+ * \brief Fonction qui permet de charger les colliders a partir d'un fichier
  * \details Utilisation d'un pointeur pour pouvoir parcourir la liste de colliders
  * \param filename Nom du fichier ou la position des colliders est sauvegardee
  * \return pas de valeur de retour (void)
@@ -116,7 +115,7 @@ extern void ChargementCollider(const char * filename)
         fprintf(stderr, "Erreur avec le fichier\n");
         exit(1);    
     }
-    Node *pt; /**< Node *pt : Pointeur utilise pour parcourir la liste de colliders */
+    Node *pt; //Pointeur utilise pour parcourir la liste de colliders 
 
     //Parcours de la liste si il y a au moins un collider
     if( getCollider()->nodeCount  > 0 )
@@ -177,7 +176,7 @@ extern void Chargement_CreationPNJ(LinkedList * lst, char * filename)
 
 /**
  * \fn extern void ChargementItems(const char * filename, SDL_Texture * tex)
- * \brief Fonction qui permet de charger les items  a partir d'un fichier
+ * \brief Fonction qui permet de charger les items a partir d'un fichier
  * \param filename Nom du fichier
  * \param tex Texture de l'item
  * \return pas de valeur de retour (void)
