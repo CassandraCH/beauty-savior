@@ -9,25 +9,35 @@
  */
 #include "baseGame.h"
 
-
 int level; /**< numero du niveau */
 Player player; /**< joueur */
 Texture_Manager playerSprite; /**< texture du joueur */
 
-//Renvoie l'adresse vers de l'objet Joueur (héros)
+/**
+ * \fn extern Player *getPlayer(void)
+ * \brief Fonction qui permet retourner l'adresse vers de l'objet Joueur (héros)
+ * \return une structure joueur de type Player
+*/
 extern Player *getPlayer(void)
 {
-    
 	return &player;
 }
 
-//Renvoie les coordonnées x du héros
+/**
+ * \fn extern int getPlayerX(void)
+ * \brief Fonction qui permet retourner la position en x du héros
+ * \return un int qui correspond a la position en x
+*/
 extern int getPlayerX(void)
 {
 	return player.x;
 }
 
-//Renvoie les coordonnées y du héros
+/**
+ * \fn extern int getPlayerY(void)
+ * \brief Fonction qui permet retourner la position en y du héros
+ * \return un int qui correspond a la position en y
+*/
 extern int getPlayerY(void)
 {
 	return player.y;
@@ -35,7 +45,6 @@ extern int getPlayerY(void)
 
 extern void setNombretir() 
 {
-
     if( player.nb_lancer < 1  ) 
     {
         player.nb_lancer++;
