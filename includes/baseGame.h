@@ -67,15 +67,15 @@ extern void Input_InGame(SDL_Event *event);
 
 
 /*######## LISTES ######## */
-extern LinkedList listEnnemis;
-extern LinkedList listCollider;
+extern LinkedList listEnnemis;/**< la listes des ennemis*/
+extern LinkedList listCollider;/**< liste des collition*/
 extern LinkedList bullet;
 extern LinkedList items;
 extern void Update_Listes();
 
 
-extern int tempsEcoule;
-extern SDL_Rect camera;
+extern int tempsEcoule;/**< les temps ecouler*/
+extern SDL_Rect camera;/**< la camera*/
 
 
 
