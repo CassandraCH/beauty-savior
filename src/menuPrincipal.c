@@ -130,7 +130,7 @@ extern void UpdateOption(Options_t * menut, int etat )
 /**
  * \fn extern void ToucheHaut(Menu_t *menu)
  * \brief Fonction qui permet de naviguer dans le menu vers le haut
- * \param menu menu 
+ * \param menu pointeur sur le menu
  * \return pas de valeur de retour (void)
 */
 extern void ToucheHaut(Menu_t *menu)
@@ -153,7 +153,7 @@ extern void ToucheHaut(Menu_t *menu)
 /**
  * \fn extern void ToucheBas(Menu_t *menu)
  * \brief Fonction qui permet de naviguer dans le menu vers le bas
- * \param menu menu
+ * \param menu pointeur sur le menu
  * \return pas de valeur de retour (void)
 */
 extern void ToucheBas(Menu_t *menu)
@@ -176,7 +176,7 @@ extern void ToucheBas(Menu_t *menu)
 /**
  * \fn extern void Droite(Menu_t* menu)
  * \brief Fonction qui permet de naviguer dans le menu a droite
- * \param menu menu
+ * \param menu pointeur sur le menu
  * \return pas de valeur de retour (void)
 */
 extern void Droite(Menu_t* menu)
@@ -200,7 +200,7 @@ extern void Droite(Menu_t* menu)
 /**
  * \fn extern void Gauche(Menu_t* menu)
  * \brief Fonction qui permet de naviguer dans le menu a gauche
- * \param menu menu
+ * \param menu pointeur sur le menu
  * \return pas de valeur de retour (void)
 */
 extern void Gauche(Menu_t* menu)
@@ -222,33 +222,23 @@ extern void Gauche(Menu_t* menu)
     
 }
 
-
-/*
- * Fonction qui permet d'afficher un menu
- * => affichage les differentes options
- */
-
-/*  
-    Prend en paramètre le menu, le nombres d'options qu'il comporte, la position x du background, celle en y
-    La largeur et hauteur du background.
-*/
 /**
  * \fn extern void Dessiner_Menu(Menu_t* menu, int nombresOptions, int posX, int posY , int largeurBG, int hauteurBG) 
- * \brief Fonction qui 
- * \param menu menu
+ * \brief Fonction qui permet d'afficher le menu
+ * \details Affichage des différentes options
+ * \param menu pointeur sur le menu
  * \param nombresOptions nombre d'options dans le menu
- * \param posX position en x
- * \param posY position en y
- * \param largeurBG largeur
- * \param hauteurBG hauteur
+ * \param posX position en x de l'arriere plan
+ * \param posY position en y de l'arriere plan
+ * \param largeurBG largeur de l'arriere plan
+ * \param hauteurBG hauteur de l'arriere plan
  * \return pas de valeur de retour (void)
 */
 extern void Dessiner_Menu(Menu_t* menu, int nombresOptions, int posX, int posY , int largeurBG, int hauteurBG) 
 {
-
     SDL_Rect rect = {posX,posY, largeurBG, hauteurBG };
-    // SDL_Rect rect = {posX,posY, 1280, 720 };
 
+    //Gestion de l'affichage du rendu
     SDL_RenderCopy( getRenderer(), menu->bg , NULL, &rect );
 
     //Pour chaque option, afficher a l'ecran son rendu
@@ -269,11 +259,10 @@ extern void Dessiner_Menu(Menu_t* menu, int nombresOptions, int posX, int posY ,
 */
 extern void Input_MenuPrincipal(SDL_Event *event)
 {
-
-
     // Lecture de tous les evenements
     while( SDL_PollEvent(event) != 0 )
     {
+        //Cas ou l'utilisateur veut quitter le jeu : touche echap ou croix de la fenetre
         if( event->type == SDL_QUIT ||  event->key.keysym.sym == SDLK_ESCAPE )
         {
             //changer l'etat du jeu
