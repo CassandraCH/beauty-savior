@@ -10,7 +10,7 @@
 
 /** 
  * \fn bool chargerImage(Texture_Manager * tex,const char * filename )
- * \brief Fonction qui permet de charger un image dans une texture
+ * \brief Fonction qui permet de charger une image dans une texture
  * \param tex pointeur sur la texture dans laquelle on veut charger l'image
  * \param filename nom du fichier de l'image
  * \return un booleen : VRAI si l'image a bien ete chargee dans la texture, FAUX sinon
@@ -49,7 +49,7 @@ bool chargerImage(Texture_Manager * tex, const char * filename )
 
 /** 
  * \fn extern void ChargerTextureManager(Texture_Manager *tex, char * filepath )
- * \brief Fonction qui permet de charger 
+ * \brief Fonction qui permet de charger une texture
  * \param tex pointeur sur la texture dans laquelle on veut charger l'image
  * \param filepath nom du fichier de l'image
  * \return pas de valeur de retour (void)

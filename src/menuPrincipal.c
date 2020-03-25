@@ -13,7 +13,7 @@ Menu_t menu; /**< Structure de type menu_t */
 
 /**
  * \fn extern Menu_t* getMenu()
- * \brief Fonction qui permet retourner le menu principal
+ * \brief Fonction qui permet de retourner le menu principal
  * \return une structure menu de type Menu_t
 */
 extern Menu_t* getMenu()
@@ -23,7 +23,7 @@ extern Menu_t* getMenu()
 
 /**
  * \fn extern int getTouchePresse(Menu_t *menu)
- * \brief Fonction qui retourne l'option du menu selectionne
+ * \brief Fonction qui retourne l'option du menu selectionnee
  * \param menu pointeur sur le menu
  * \return un entier correspondant au numero de l'option selectionnee
 */
@@ -368,9 +368,9 @@ extern void Input_MenuPrincipal(SDL_Event *event)
 
 /**
  * \fn extern void ChargerData_Menu(int numero,int num_image, Menu_t * menu,  char * nomOption,  char * image_on,  char * image_off, int positionX, int positionY)
- * \brief Fonction qui gere le chargement des donnes du menu
+ * \brief Fonction qui gere le chargement des donnees du menu
  * \param numero numero de l'option
- * \param num_image numero de l'image selectionne par defaut
+ * \param num_image numero de l'image selectionnee par defaut
  * \param menu pointeur sur le menu
  * \param nomOption nom de l'option
  * \param image_on chemin pour acceder a l'image selectionnee

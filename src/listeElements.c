@@ -4,7 +4,7 @@
  * \version 1.0
  * \date janvier 2020
  * \brief Programme qui permet de gérer les listes
- * \brief Création d'une liste, ajout de nouvel élément, suppression de la tête, suppresion de la queue, accès à une liste, affichage d'une liste'
+ * \brief Création d'une liste, ajout d'un nouvel élément, suppression de la tête, suppresion de la queue, accès à une liste, affichage d'une liste
  */
 #include "baseGame.h"
 
@@ -209,7 +209,7 @@ extern void suppListe(LinkedList * lst)
  * \brief Fonction qui permet de supprimer la tete de la liste passee en parametre
  * \details 
  * \param lst pointeur sur la liste dans laquelle on veut inserer un element
- * \return un booleen si l'element a bien ete supprime ou non
+ * \return un booleen : VRAI si l'element a bien ete supprime, FAUX sinon
 */
 extern bool suppPremier(LinkedList * lst)
 {
@@ -249,7 +249,7 @@ extern bool suppPremier(LinkedList * lst)
  * \brief Fonction qui permet de supprimer la queue de la liste passee en parametre
  * \details 
  * \param lst pointeur sur la liste dans laquelle on veut inserer un element
- * \return un booleen si l'element a bien ete supprime ou non
+ * \return un booleen : VRAI si l'element a bien ete supprime, FAUX sinon
 */
 extern bool suppDernier(LinkedList * lst)
 {
@@ -328,7 +328,7 @@ extern Node * trouve(LinkedList *lsptr, int target, Node **prvPtr)
  * \details 
  * \param lsptr pointeur sur la liste dans laquelle on veut supprimer un element
  * \param target element cible qu'on veut supprimer
- * \return un booleen si l'element cible a bien ete supprime ou non
+ * \return un booleen : VRAI si l'element cible a bien ete supprime, FAUX sinon
 */
 extern bool supprimeCible(LinkedList *lsptr, int target)
 {   

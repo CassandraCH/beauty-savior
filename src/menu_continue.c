@@ -12,7 +12,7 @@ Menu_t menu_continue; /**< Structure de type Menu_t */
 
 /**
  * \fn extern Menu_t * getMenuCon()
- * \brief Fonction qui permet retourner le menu "continuer"
+ * \brief Fonction qui permet de retourner le menu "continuer"
  * \return une structure menu de type Menu_t
 */
 extern Menu_t * getMenuCon()
@@ -115,7 +115,7 @@ extern void Input_MenuContinue(SDL_Event *event)
 
 /**
  * \fn extern void Init_Continue()
- * \brief Fonction qui initialise l'etat continue
+ * \brief Fonction qui initialise l'etat "continue"
  * \details 
  * \return pas de valeur de retour (void)
 */

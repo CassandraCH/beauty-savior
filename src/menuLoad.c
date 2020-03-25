@@ -12,7 +12,7 @@ Menu_t menu_load; /**< Structure de type menu_t */
 
 /**
  * \fn extern Menu_t * getMenuLoad()
- * \brief Fonction qui permet retourner le menu de chargement
+ * \brief Fonction qui permet de retourner le menu de chargement
  * \return une structure menu de type Menu_t
 */
 extern Menu_t * getMenuLoad()

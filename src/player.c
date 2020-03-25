@@ -15,7 +15,7 @@ Texture_Manager playerSprite; /**< texture du joueur */
 
 /**
  * \fn extern Player *getPlayer(void)
- * \brief Fonction qui permet retourner l'adresse vers de l'objet Joueur (héros)
+ * \brief Fonction qui permet de retourner l'adresse vers de l'objet Joueur (héros)
  * \return une structure joueur de type Player
 */
 extern Player *getPlayer(void)
@@ -25,7 +25,7 @@ extern Player *getPlayer(void)
 
 /**
  * \fn extern int getPlayerX(void)
- * \brief Fonction qui permet retourner la position en x du héros
+ * \brief Fonction qui permet de retourner la position en x du héros
  * \return un int qui correspond a la position en x
 */
 extern int getPlayerX(void)
@@ -35,7 +35,7 @@ extern int getPlayerX(void)
 
 /**
  * \fn extern int getPlayerY(void)
- * \brief Fonction qui permet retourner la position en y du héros
+ * \brief Fonction qui permet de retourner la position en y du héros
  * \return un int qui correspond a la position en y
 */
 extern int getPlayerY(void)
