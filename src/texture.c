@@ -89,24 +89,6 @@ extern SDL_Texture *ChargerTexture( char * filepath )
 
 
 
-extern void dessinerImages(Texture_Manager * tex, int x, int y, int width, int height, int currentRow, int currentFrame, SDL_RendererFlip flip)
-{
-    SDL_Rect srcRect;
-    SDL_Rect destRect;
-    srcRect.x = width * currentFrame;
-    srcRect.y = height * (currentRow - 1);
-
-    srcRect.w = destRect.w = width;
-    srcRect.h = destRect.h = height;
-    
-    destRect.x = x;
-    destRect.y = y;
-
-    SDL_RenderCopyEx(getRenderer(), tex->texture , &srcRect, &destRect, 0, 0, flip);
-}
-
-
-
 
 extern void LibererRessources( Texture_Manager *tex )
 {
