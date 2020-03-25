@@ -1,0 +1,52 @@
+Déplacements
+
+Données          Résultats attendu              Resultats tests                                         Code
+  ←                  gauche                         validé                      if(states[SDL_SCANCODE_LEFT]&&player.x-25>0){
+                                                                                  player.vx -= 0.5;
+                                                                                  if( player.vx < -6 )
+                                                                                     player.vx = -6;
+                                                                                  player.estTourne = true;
+                                                                                  player.ralenti = 0;
+                                                                                 }                              
+  
+  →                  droite                         validé                      if(states[SDL_SCANCODE_RIGHT]&&player.x<LARGEUR_NIVEAU-player.w){
+                                                                                  player.vx += 0.5;
+                                                                                  if(player.vx > 6 )
+                                                                                   player.vx = 6;
+                                                                                  player.estTourne = false;
+                                                                                  player.ralenti = 0;
+                                                                                 }
+                                                                                 
+   ↑                 saut                            validé                     switch(event->key.keysym.sym){
+                                                                                  case SDLK_UP:
+                                                                                    if( player.estSurSol ){
+                                                                                      player.vy  = -9;
+                                                                                      player.estSurSol =false;
+                                                                                    }
+                                                                                  break;
+                                                                                }
+                                                                                
+Attaques
+
+  esp                 lancer d'attaque                validé                    if ( getPlayer()->nb_objet > 0 ){
+                                                                                  CreerTir(bull, getPlayer()->w , getPlayer()->h, getPlayerX(),  getPlayerY() );
+                                                                                  SetHUD_IntToTexture(getScores(), "SCORES",--player.nb_objet,getScores()->rect.x,getScores()->rect.y  );
+                                                                                }
+                                                                              
+Collisions
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
