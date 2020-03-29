@@ -1,4 +1,4 @@
-.TH "src/listeElements.c" 3 "Mercredi 25 Mars 2020" "Version 0.1" "Beauty Savior" \" -*- nroff -*-
+.TH "src/listeElements.c" 3 "Dimanche 29 Mars 2020" "Version 0.1" "Beauty Savior" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -42,11 +42,11 @@ src/listeElements.c \- Programme qui permet de gérer les listes\&.
 .br
 .RI "Fonction qui permet d'initialiser la liste passee en parametre\&. "
 .ti -1c
-.RI "\fBNode\fP * \fBcreerElement\fP (SDL_Rect *rect, typeEntite item_t, bool actif)"
+.RI "\fBNode\fP * \fBcreerElement\fP (SDL_Rect *rect, \fBtypeEntite\fP item_t, \fBbool\fP actif)"
 .br
 .RI "Fonction qui permet de créer un rectangle (portion de l'ecran) "
 .ti -1c
-.RI "void \fBinsertion\fP (\fBLinkedList\fP *list, SDL_Rect *rect, typeEntite items_t, bool actif)"
+.RI "void \fBinsertion\fP (\fBLinkedList\fP *list, SDL_Rect *rect, \fBtypeEntite\fP items_t, \fBbool\fP actif)"
 .br
 .RI "Fonction qui permet d'inserer un element dans une liste passee en parametre\&. "
 .ti -1c
@@ -54,11 +54,11 @@ src/listeElements.c \- Programme qui permet de gérer les listes\&.
 .br
 .RI "Fonction qui permet de supprimer la liste passee en parametre\&. "
 .ti -1c
-.RI "bool \fBsuppPremier\fP (\fBLinkedList\fP *lst)"
+.RI "\fBbool\fP \fBsuppPremier\fP (\fBLinkedList\fP *lst)"
 .br
 .RI "Fonction qui permet de supprimer la tete de la liste passee en parametre\&. "
 .ti -1c
-.RI "bool \fBsuppDernier\fP (\fBLinkedList\fP *lst)"
+.RI "\fBbool\fP \fBsuppDernier\fP (\fBLinkedList\fP *lst)"
 .br
 .RI "Fonction qui permet de supprimer la queue de la liste passee en parametre\&. "
 .ti -1c
@@ -66,11 +66,11 @@ src/listeElements.c \- Programme qui permet de gérer les listes\&.
 .br
 .RI "Fonction qui permet de chercher un element dans une liste\&. "
 .ti -1c
-.RI "bool \fBsupprimeCible\fP (\fBLinkedList\fP *lsptr, int target)"
+.RI "\fBbool\fP \fBsupprimeCible\fP (\fBLinkedList\fP *lsptr, int target)"
 .br
 .RI "Fonction qui permet de supprimer un element cible dans une liste\&. "
 .ti -1c
-.RI "void \fBAfficher_ElementsListes\fP (\fBLinkedList\fP *lst, SDL_Texture *tex, typeEntite typeE)"
+.RI "void \fBAfficher_ElementsListes\fP (\fBLinkedList\fP *lst, SDL_Texture *tex, \fBtypeEntite\fP typeE)"
 .br
 .RI "Fonction qui permet d'afficher les elements d'une liste\&. "
 .in -1c
@@ -117,7 +117,7 @@ janvier 2020
 Création d'une liste, ajout de nouvel élément, suppression de la tête, suppresion de la queue, accès à une liste, affichage d'une liste' 
 .SH "Documentation des fonctions"
 .PP 
-.SS "void Afficher_ElementsListes (\fBLinkedList\fP * lst, SDL_Texture * tex, typeEntite typeE)"
+.SS "void Afficher_ElementsListes (\fBLinkedList\fP * lst, SDL_Texture * tex, \fBtypeEntite\fP typeE)"
 
 .PP
 Fonction qui permet d'afficher les elements d'une liste\&. 
@@ -137,7 +137,7 @@ pas de valeur de retour (void)
 .RE
 .PP
 
-.SS "\fBNode\fP * creerElement (SDL_Rect * rect, typeEntite item_t, bool actif)"
+.SS "\fBNode\fP * creerElement (SDL_Rect * rect, \fBtypeEntite\fP item_t, \fBbool\fP actif)"
 
 .PP
 Fonction qui permet de créer un rectangle (portion de l'ecran) Ce rectangle sera utilise pour la texture 
@@ -228,7 +228,7 @@ pas de valeur de retour (void)
 .RE
 .PP
 
-.SS "void insertion (\fBLinkedList\fP * list, SDL_Rect * rect, typeEntite items_t, bool actif)"
+.SS "void insertion (\fBLinkedList\fP * list, SDL_Rect * rect, \fBtypeEntite\fP items_t, \fBbool\fP actif)"
 
 .PP
 Fonction qui permet d'inserer un element dans une liste passee en parametre\&. 
@@ -261,7 +261,7 @@ pas de valeur de retour (void)
 .RE
 .PP
 
-.SS "bool suppDernier (\fBLinkedList\fP * lst)"
+.SS "\fBbool\fP suppDernier (\fBLinkedList\fP * lst)"
 
 .PP
 Fonction qui permet de supprimer la queue de la liste passee en parametre\&. 
@@ -293,7 +293,7 @@ pas de valeur de retour (void)
 .RE
 .PP
 
-.SS "bool suppPremier (\fBLinkedList\fP * lst)"
+.SS "\fBbool\fP suppPremier (\fBLinkedList\fP * lst)"
 
 .PP
 Fonction qui permet de supprimer la tete de la liste passee en parametre\&. 
@@ -309,7 +309,7 @@ un booleen si l'element a bien ete supprime ou non
 .RE
 .PP
 
-.SS "bool supprimeCible (\fBLinkedList\fP * lsptr, int target)"
+.SS "\fBbool\fP supprimeCible (\fBLinkedList\fP * lsptr, int target)"
 
 .PP
 Fonction qui permet de supprimer un element cible dans une liste\&. 

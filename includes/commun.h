@@ -25,12 +25,27 @@
 
 
 
-typedef enum { false, true } bool;
+/**
+ *\enum bool
+ *\details énumération représentant un type booléen
+ */
+typedef enum 
+{ 
+    false, 
+    true } 
+bool;
 
+/**
+ *\enum typeEntite
+ *\details énumération représentant les types du jeux
+ */
 typedef enum  { item, joueur, ennemi, platform ,checkpoint, bull, feu }  typeEntite;
 
-// typedef enum {  } typeAttaque;
 
+/**
+ *\enum texState
+ *\details énumération les états d'une entité: fixe ou animé
+ */
 typedef enum { fixe, anime } texState;
 
 

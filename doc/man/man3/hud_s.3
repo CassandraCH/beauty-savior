@@ -1,4 +1,4 @@
-.TH "hud_s" 3 "Mercredi 25 Mars 2020" "Version 0.1" "Beauty Savior" \" -*- nroff -*-
+.TH "hud_s" 3 "Dimanche 29 Mars 2020" "Version 0.1" "Beauty Savior" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -6,6 +6,8 @@ hud_s
 .SH SYNOPSIS
 .br
 .PP
+.PP
+\fC#include <hud\&.h>\fP
 .SS "Champs de données"
 
 .in +1c
@@ -22,6 +24,19 @@ hud_s
 .RI "SDL_Rect \fBrect\fP"
 .br
 .in -1c
+.SH "Description détaillée"
+.PP 
+structure gerant les informations concernant le joueur 
+.SH "Documentation des champs"
+.PP 
+.SS "TTF_Font* police"
+la police qui est utilise pour l'affichage du hud 
+.SS "SDL_Rect rect"
+le rectangle ou sera afficher le rendu du hud 
+.SS "SDL_Surface* surface"
+la surface qui sera convertit en texture 
+.SS "SDL_Texture* tex"
+correspond a la texture du hud,c'est a dire ce qui sera affiché 
 
 .SH "Auteur"
 .PP 

@@ -37,19 +37,26 @@
 
 #include "gameOver.h"
 
+
+/**
+ *\struct baseGame
+ *\details Structure principale de jeux, qui gère tous les composants du jeux majeurs.
+ */
 typedef struct baseGame
 {
     int state; /**< Etat du jeu : en cours de partie, sur le menu principal */
     bool estActif; /**< Etat du jeu : Actif - Non Actif */
-    int time;
+    int time;  /**< time : temps du jeux */
 
-    int time_s;
-    int min, sec;
-    int tempsPrecedent, tempsActuel;
+    int time_s;   /**< time_s : temps liée au timer du jeux */
+    int min; /**<  minutes du jeux */
+    int sec;  /**<  secondes du jeux */
+    int tempsPrecedent; /**<  temps précédent en référence au temps écoulé depuis la dernière image */
+    int tempsActuel;  /**<  temps actuel en référence au temps écoulé depuis la dernière image */
 
 
-}Base_Game;
-
+}Base_Game; 
+/**< This is the documentation for the preceding typedef */
 
 /*######## GETTER & SETTER ######## */
 extern SDL_Window* getWindow(void);/**< fonction SDL_Window qui gere la fenetre*/
@@ -92,6 +99,5 @@ extern void Init(const char *title);
 extern void Update(float dt);
 extern void LibererRessources_Jeux();
 extern void Rendu_Jeux() ;
-void delay(unsigned int frameLimit);
 
 #endif

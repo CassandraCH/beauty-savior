@@ -86,35 +86,23 @@ $(document).ready(function(){initNavTree('menu__continue_8h_source.html',''); in
 <div class="title">menu_continue.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef _MENU_CONTINUE_H</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define _MENU_CONTINUE_H</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="menu__continue_8c.html#a5f0b1983f413031704d72381181562aa">Init_MenuContinue</a>();</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="menu_principal_8c.html#af19e28b44c1e6fea87f64781d22e0ed9">Droite</a>();</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="menu_principal_8c.html#a119c9dad78f814d3131796d75ddda133">Gauche</a>();</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="menu__continue_8c.html#a1239661281e6554e32be75e964e6533f">Input_MenuContinue</a>(SDL_Event *event);</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> Nettoyer_MenuContinue();</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="menu__continue_8c.html#a95ef65b5c238f82a69f1a64e2c709f34">Init_Continue</a>();</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#endif</span></div>
+<a href="menu__continue_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#ifndef _MENU_CONTINUE_H</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#define _MENU_CONTINUE_H </span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">extern void Init_MenuContinue();</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">extern void Droite();</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">extern void Gauche();</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">extern void Input_MenuContinue(SDL_Event *event);</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">extern void Nettoyer_MenuContinue();</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">extern void Init_Continue();</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="amenu_principal_8c_html_af19e28b44c1e6fea87f64781d22e0ed9"><div class="ttname"><a href="menu_principal_8c.html#af19e28b44c1e6fea87f64781d22e0ed9">Droite</a></div><div class="ttdeci">void Droite(Menu_t *menu)</div><div class="ttdoc">Fonction qui permet de naviguer dans le menu a droite.</div><div class="ttdef"><b>Definition:</b> menuPrincipal.c:182</div></div>
-<div class="ttc" id="amenu__continue_8c_html_a5f0b1983f413031704d72381181562aa"><div class="ttname"><a href="menu__continue_8c.html#a5f0b1983f413031704d72381181562aa">Init_MenuContinue</a></div><div class="ttdeci">void Init_MenuContinue()</div><div class="ttdoc">Fonction qui initialise le menu &quot;continuer&quot;.</div><div class="ttdef"><b>Definition:</b> menu_continue.c:28</div></div>
-<div class="ttc" id="amenu_principal_8c_html_a119c9dad78f814d3131796d75ddda133"><div class="ttname"><a href="menu_principal_8c.html#a119c9dad78f814d3131796d75ddda133">Gauche</a></div><div class="ttdeci">void Gauche(Menu_t *menu)</div><div class="ttdoc">Fonction qui permet de naviguer dans le menu a gauche.</div><div class="ttdef"><b>Definition:</b> menuPrincipal.c:206</div></div>
-<div class="ttc" id="amenu__continue_8c_html_a1239661281e6554e32be75e964e6533f"><div class="ttname"><a href="menu__continue_8c.html#a1239661281e6554e32be75e964e6533f">Input_MenuContinue</a></div><div class="ttdeci">void Input_MenuContinue(SDL_Event *event)</div><div class="ttdoc">Fonction qui gere les evenements du menu.</div><div class="ttdef"><b>Definition:</b> menu_continue.c:57</div></div>
-<div class="ttc" id="amenu__continue_8c_html_a95ef65b5c238f82a69f1a64e2c709f34"><div class="ttname"><a href="menu__continue_8c.html#a95ef65b5c238f82a69f1a64e2c709f34">Init_Continue</a></div><div class="ttdeci">void Init_Continue()</div><div class="ttdoc">Fonction qui initialise l'etat continue.</div><div class="ttdef"><b>Definition:</b> menu_continue.c:128</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_09e761304027c904456130627fd4dcf5.html">includes</a></li><li class="navelem"><b>menu_continue.h</b></li>
+    <li class="navelem"><a class="el" href="dir_09e761304027c904456130627fd4dcf5.html">includes</a></li><li class="navelem"><a class="el" href="menu__continue_8h.html">menu_continue.h</a></li>
     <li class="footer">Généré par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>

@@ -88,22 +88,83 @@ $(document).ready(function(){initNavTree('structhud__s.html',''); initResizable(
 <div class="title">Référence de la structure hud_s</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="hud_8h_source.html">hud.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Champs de données</h2></td></tr>
-<tr class="memitem:a49a11b0728728090fa1189391c9fe0c8"><td class="memItemLeft" align="right" valign="top"><a id="a49a11b0728728090fa1189391c9fe0c8"></a>
-TTF_Font *&#160;</td><td class="memItemRight" valign="bottom"><b>police</b></td></tr>
+<tr class="memitem:a49a11b0728728090fa1189391c9fe0c8"><td class="memItemLeft" align="right" valign="top">TTF_Font *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structhud__s.html#a49a11b0728728090fa1189391c9fe0c8">police</a></td></tr>
 <tr class="separator:a49a11b0728728090fa1189391c9fe0c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2f5cac12e913bcfcff660305bf88dd3b"><td class="memItemLeft" align="right" valign="top"><a id="a2f5cac12e913bcfcff660305bf88dd3b"></a>
-SDL_Surface *&#160;</td><td class="memItemRight" valign="bottom"><b>surface</b></td></tr>
+<tr class="memitem:a2f5cac12e913bcfcff660305bf88dd3b"><td class="memItemLeft" align="right" valign="top">SDL_Surface *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structhud__s.html#a2f5cac12e913bcfcff660305bf88dd3b">surface</a></td></tr>
 <tr class="separator:a2f5cac12e913bcfcff660305bf88dd3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9efe186b778d531166f7b29ba5f92648"><td class="memItemLeft" align="right" valign="top"><a id="a9efe186b778d531166f7b29ba5f92648"></a>
-SDL_Texture *&#160;</td><td class="memItemRight" valign="bottom"><b>tex</b></td></tr>
+<tr class="memitem:a9efe186b778d531166f7b29ba5f92648"><td class="memItemLeft" align="right" valign="top">SDL_Texture *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structhud__s.html#a9efe186b778d531166f7b29ba5f92648">tex</a></td></tr>
 <tr class="separator:a9efe186b778d531166f7b29ba5f92648"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a55aefd071649ac9dd8133e2d8a52d11f"><td class="memItemLeft" align="right" valign="top"><a id="a55aefd071649ac9dd8133e2d8a52d11f"></a>
-SDL_Rect&#160;</td><td class="memItemRight" valign="bottom"><b>rect</b></td></tr>
+<tr class="memitem:a55aefd071649ac9dd8133e2d8a52d11f"><td class="memItemLeft" align="right" valign="top">SDL_Rect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structhud__s.html#a55aefd071649ac9dd8133e2d8a52d11f">rect</a></td></tr>
 <tr class="separator:a55aefd071649ac9dd8133e2d8a52d11f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>structure gerant les informations concernant le joueur </p>
+</div><h2 class="groupheader">Documentation des champs</h2>
+<a id="a49a11b0728728090fa1189391c9fe0c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49a11b0728728090fa1189391c9fe0c8">&#9670;&nbsp;</a></span>police</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TTF_Font* police</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>la police qui est utilise pour l'affichage du hud </p>
+
+</div>
+</div>
+<a id="a55aefd071649ac9dd8133e2d8a52d11f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55aefd071649ac9dd8133e2d8a52d11f">&#9670;&nbsp;</a></span>rect</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SDL_Rect rect</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>le rectangle ou sera afficher le rendu du hud </p>
+
+</div>
+</div>
+<a id="a2f5cac12e913bcfcff660305bf88dd3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f5cac12e913bcfcff660305bf88dd3b">&#9670;&nbsp;</a></span>surface</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SDL_Surface* surface</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>la surface qui sera convertit en texture </p>
+
+</div>
+</div>
+<a id="a9efe186b778d531166f7b29ba5f92648"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9efe186b778d531166f7b29ba5f92648">&#9670;&nbsp;</a></span>tex</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SDL_Texture* tex</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>correspond a la texture du hud,c'est a dire ce qui sera affiché </p>
+
+</div>
+</div>
 <hr/>La documentation de cette structure a été générée à partir du fichier suivant :<ul>
 <li>includes/<a class="el" href="hud_8h_source.html">hud.h</a></li>
 </ul>

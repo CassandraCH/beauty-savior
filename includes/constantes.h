@@ -10,52 +10,66 @@
 
 
 
-#ifndef CONSTANTS_H/**< CONSTANTS_H*/
-#define CONSTANTS_H/**< \def CONSTANTS_H*/
+#ifndef CONSTANTS_H
+#define CONSTANTS_H/*! CONSTANTS_H */
 
+/** @brief  Gravite applique dans le jeu */
 #define GRAVITY 0.35f
 
+/** @brief  Nombres d'images par seconde à l'écran */
 #define FPS 60
+
+/** @brief  Nombre d'images affichable à l'écran par seconde que l'on cherche à obtenir */
 #define FRAME_TARGET_TIME (1000/FPS)
 
-//Dimensions du niveau
+
+/** @brief LARGEUR NIVEAU */
 #define LARGEUR_NIVEAU 9000
-/**< \def LARGEUR_NIVEAU */
+/** @brief HAUTEUR NIVEAU */
 #define HAUTEUR_NIVEAU  720
-/**< \def HAUTEUR_NIVEAU */
 
-//Dimensions de la fenetre
+/** @brief LARGEUR FENETRE */
 #define LARGEUR_FENETRE 1280
-/**< \def CONSTANTS_H*/
+/** @brief HAUTEUR FENETRE */
 #define HAUTEUR_FENETRE 720
-/**< \def CONSTANTS_H*/
 
+/** @brief MENU PRINCIPAL */
 #define MENU_PRINCIPAL 0
-/**< \def MENU_PRINCIPAL*/
+
+/** @brief PARTIE EN COURS */
 #define IN_GAME 1
-/**< \def IN_GAME*/
+
+/** @brief JEU EN PAUSE */
 #define PAUSE 3
-/**< \def PAUSE*/
+
+/** @brief GAME OVER */
 #define GAMEOVER 4
-/**<\def  GAMEOVER*/
+
+/** @brief NIVEAU TERMINE */
 #define LEVEL_COMPLETED 5
-/**< \def LEVEL_COMPLETED*/
+
+/** @brief PAGE DE CHARGEMENT */
 #define LOADING 6
-/**<\def  LOADING*/
 
 
 /// MENU PRINCIPAL
+/** @brief  Lancer une nouvelle partie */
 #define NOUVELLE_PARTIE 0
-/**< \def NOUVELLE_PARTIE*/
+
+/** @brief  Charger une partie */
 #define CHARGER_PARTIE 1
-/**<\def  ChargerPartie */
+
+/** @brief  Quitter une partie */
 #define QUITTER_PARTIE 2
-/**<\def  QUITTER_PARTIE */
 
 
+
+/** @brief  PREMIER NIVEAU */
 #define NIVEAU1 1
+/** @brief  DEUXIEME NIVEAU */
 #define NIVEAU2 2
 
+/** @brief  Nombre maximum d'items */
 #define MAX_ITEMS 3
 
 

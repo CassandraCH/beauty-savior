@@ -22,33 +22,39 @@
 typedef struct Node
 {
 
-  float w , h;  /** <largeur et hauteur de l'entite> */
-  float x , y;  /** <la position x et y>*/
-  float vx, vy; /** <la velocite x et velocite y, la vitesse laquelle va l'entite dans une direction>*/
-  typeEntite type; /** <le type de l'entite>*/
+    float w;  /** <largeur de l'entite>*/
+    float h;  /** < hauteur de l'entite>*/
+    float x; /** <la position x >*/
+    float y;  /** <la position y>*/
+    float vx; /** <la velocite x la vitesse laquelle va l'entite dans une direction x>*/
+    float vy; /** <la velocite y , la vitesse laquelle va l'entite dans une direction y>*/
+    typeEntite type; /** <le type de l'entite>*/
 
   bool estMort; /** <un type booleen pour savoir c'est l'entite est mort>*/
   int nb_lancer; /** <un compteur pour savoir le nb de lancer, attaque en cours>*/
 
-  SDL_Rect *rect;
-  bool actif;
+  SDL_Rect *rect; /** <Rectangle qui défini la taille d'un éléments>*/
+  bool actif; /** <Défini si l'élement est actif ou non>*/
 
   int nb_objets; /**< le nombres d'objets*/
-  float baseX, baseY;/**< les bases selon le coeifficient x et y*/
+  float baseX;/**< Position de départ en X*/
+  float baseY;/**< Position de départ en Y*/
   float phase;/**< float de la phase*/
   bool lancer;/**< float des lancer*/
   float movingX;/**<les deplacements selon x*/
 
-  Texture_Manager imagesItem[2];
-  int imageCourante;
+  Texture_Manager imagesItem[2];  /**< Tableau de texture pour un element*/
+  int imageCourante; /**<Determine l'image actuellement visible a l'écran*/
 
-  struct Node *suivant;
+  struct Node *suivant; /**<Pointeur vers l'element suivant*/
 }Node;
+/**< This is the documentation for the preceding typedef */
+
+
 /**
 * \struct
 * \details structure gerant les noeud de l'entete et a la fin.
 */
-
 typedef struct
 {
   struct Node *tete; /**<noeud d'entete*/
@@ -64,7 +70,6 @@ extern void init_List(LinkedList *list);/**< initialisation des listes*/
 extern Node* creerElement(SDL_Rect*rect, typeEntite item_t, bool actif ); /**< creation du rectangle*/
 extern void insertion(LinkedList * list, SDL_Rect *rect, typeEntite items_t , bool actif); /**< creation du rectangle*/
 
-extern void deleteQueue(LinkedList *lstPtr);
 extern void Afficher_ElementsListes(LinkedList *lst,SDL_Texture * tex, typeEntite typeE);/**< affiche les elements de la liste*/
 
 extern void suppListe(LinkedList * lst);

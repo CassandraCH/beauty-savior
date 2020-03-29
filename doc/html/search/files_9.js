@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['player_2ec_202',['player.c',['../player_8c.html',1,'']]]
+  ['scores_2ec_306',['scores.c',['../scores_8c.html',1,'']]]
 ];

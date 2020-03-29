@@ -228,6 +228,14 @@ extern void AfficherJoueur()
     SDL_RenderCopy(getRenderer(), player.tex.texture , NULL, &rec );
 }
 
+
+/**
+ * \fn extern void UpdateJoueur( float dt)
+ * \brief Fonction qui met a jour le joueur en fonction du delta-time
+ * \details Gestion du deplacement du joueur
+ * \param dt delta-time (temps ecoule entre l'affichage de 2 images)
+ * \return pas de valeur de retour (void)
+*/
 extern void UpdateJoueur( float dt)
 {   
 
@@ -252,6 +260,12 @@ extern void UpdateJoueur( float dt)
     }
 }
 
+/**
+ * \fn extern void actualiserJoueur(void)
+ * \brief Fonction qui reinitialise le joueur
+ * \details Repositionnement du joueur a sa position initiale et remise a 0 de ses compteurs du nombre de lancer et du nombre d'objets
+ * \return pas de valeur de retour (void)
+*/
 extern void actualiserJoueur(void)
 {
 
@@ -284,7 +298,19 @@ extern void actualiserJoueur(void)
 
 }
 
-//verifie la collision entre 2 elements
+/**
+ * \fn extern bool collide2d(float x1, float y1, float x2, float y2, float wt1, float ht1, float wt2, float ht2)
+ * \brief Fonction qui verifie la collision entre 2 elements
+ * \param x1 position en x du premier element
+ * \param y1 position en y du premier element
+ * \param x2 position en x du deuxieme element
+ * \param y2 position en y du deuxieme element
+ * \param wt1 largeur du premier element
+ * \param ht1 hauteur du premier element
+ * \param wt2 largeur du deuxieme element
+ * \param ht2 hauteur du deuxieme element
+ * \return un booleen : VRAI s'il y a collison, FAUX sinon
+*/
 extern bool collide2d(float x1, float y1, float x2, float y2, float wt1, float ht1, float wt2, float ht2)
 {
     return (! ( (x1 > (x2+wt2)) || (x2 > (x1+wt1)) || (y1 > (y2+ht2)) || (y2 > (y1+ht1))  )  );
@@ -305,6 +331,12 @@ extern void attaqueJoueur()
     return;
 }
 
+
+/**
+ * \fn extern void collision_tir()
+ * \brief Fonction qui gere les collisions entre un bullet et un ennemi
+ * \return pas de valeur de retour (void)
+*/
 extern void collision_tir()
 {
 
@@ -341,6 +373,12 @@ extern void collision_tir()
 
 }
 
+
+/**
+ * \fn extern void joueur_surSol()
+ * \brief Fonction qui permet de mettre le joueur sur le sol
+ * \return pas de valeur de retour (void)
+*/
 extern void joueur_surSol()
 {
     player.vy = 0;

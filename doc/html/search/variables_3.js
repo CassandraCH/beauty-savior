@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['estactif_299',['estActif',['../structbase_game.html#ad89867021ac1f6bf309e9a79313123fc',1,'baseGame']]],
-  ['estmort_300',['estMort',['../struct_node.html#a9498a6f5ea0fa3b07131111087d3c135',1,'Node::estMort()'],['../structplayer.html#a9498a6f5ea0fa3b07131111087d3c135',1,'player::estMort()']]]
+  ['departx_422',['departX',['../structlevel.html#a505b46750c7f9ae828d45bbf08ab8d35',1,'level']]],
+  ['departy_423',['departY',['../structlevel.html#aa43b8450f7191b74989a2653f1a8b139',1,'level']]],
+  ['dt_424',['dt',['../base_game_8c.html#a778e38aa889751afffa2dea6b803e67a',1,'baseGame.c']]]
 ];

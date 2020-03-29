@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['fenetre_301',['fenetre',['../inits_8c.html#a83273a719e3c35f920b32f1e64e2e22a',1,'inits.c']]],
-  ['filename_302',['filename',['../structoption.html#ae3fd0a1087aad16edbd627e09f3057b0',1,'option']]]
+  ['estactif_425',['estActif',['../structbase_game.html#ad89867021ac1f6bf309e9a79313123fc',1,'baseGame::estActif()'],['../structplayer.html#ad89867021ac1f6bf309e9a79313123fc',1,'player::estActif()']]],
+  ['estmort_426',['estMort',['../structitem.html#a9498a6f5ea0fa3b07131111087d3c135',1,'item::estMort()'],['../struct_node.html#a9498a6f5ea0fa3b07131111087d3c135',1,'Node::estMort()'],['../structplayer.html#a9498a6f5ea0fa3b07131111087d3c135',1,'player::estMort()']]],
+  ['estsursol_427',['estSurSol',['../structplayer.html#a5a67f39f9630f2e6fe85eeed83004e87',1,'player']]],
+  ['esttourne_428',['estTourne',['../structplayer.html#a004c72afdc3021650707ef9382c546dc',1,'player']]]
 ];

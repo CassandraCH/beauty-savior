@@ -1,4 +1,4 @@
-.TH "menu" 3 "Mercredi 25 Mars 2020" "Version 0.1" "Beauty Savior" \" -*- nroff -*-
+.TH "menu" 3 "Dimanche 29 Mars 2020" "Version 0.1" "Beauty Savior" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -13,6 +13,9 @@ menu
 .in +1c
 .ti -1c
 .RI "int \fBselectedOption\fP"
+.br
+.ti -1c
+.RI "\fBOptions_t\fP \fBmenu\fP [4]"
 .br
 .ti -1c
 .RI "Mix_Chunk * \fBson\fP"
@@ -30,6 +33,16 @@ menu
 .SH "Description détaillée"
 .PP 
 Structure 
+.SH "Documentation des champs"
+.PP 
+.SS "\fBOptions_t\fP \fBmenu\fP[4]"
+le menu 
+.SS "TTF_Font* police"
+la police utilise pour le menu 
+.SS "int selectedOption"
+selection de l'option 
+.SS "Mix_Chunk* son"
+le son du menu 
 
 .SH "Auteur"
 .PP 

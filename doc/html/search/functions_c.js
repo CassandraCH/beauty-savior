@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['update_290',['Update',['../base_game_8c.html#acb21945d67d98b8ce4fc097ead0c6515',1,'Update(float dt):&#160;baseGame.c'],['../base_game_8h.html#acb21945d67d98b8ce4fc097ead0c6515',1,'Update(float dt):&#160;baseGame.c']]],
-  ['update_5flistes_291',['Update_Listes',['../base_game_8c.html#a42fd91da1c159bcb3ef0805dd742a5ce',1,'Update_Listes():&#160;baseGame.c'],['../base_game_8h.html#a42fd91da1c159bcb3ef0805dd742a5ce',1,'Update_Listes():&#160;baseGame.c']]],
-  ['updatebullets_292',['UpdateBullets',['../entite_8c.html#a48a46773f7a54ff924d3fe18676da527',1,'UpdateBullets(typeEntite typeA, typeEntite typeB):&#160;entite.c'],['../entite_8h.html#a48a46773f7a54ff924d3fe18676da527',1,'UpdateBullets(typeEntite typeA, typeEntite typeB):&#160;entite.c']]],
-  ['updateennemis_293',['UpdateEnnemis',['../entite_8c.html#a6254e69c73b49b05628238188813f020',1,'UpdateEnnemis():&#160;entite.c'],['../entite_8h.html#a6254e69c73b49b05628238188813f020',1,'UpdateEnnemis():&#160;entite.c']]],
-  ['updateoption_294',['UpdateOption',['../menu_principal_8c.html#ae6aa699ff3aa6f14b0edf596df9c8645',1,'menuPrincipal.c']]]
+  ['touchebas_405',['ToucheBas',['../menu_principal_8c.html#a4ac21601ecf46432ea3838da118aac96',1,'ToucheBas(Menu_t *menu):&#160;menuPrincipal.c'],['../menu_principal_8h.html#a4ac21601ecf46432ea3838da118aac96',1,'ToucheBas(Menu_t *menu):&#160;menuPrincipal.c']]],
+  ['touchehaut_406',['ToucheHaut',['../menu_principal_8c.html#ad0964a2426f16aa1ebcb4af7b51d36b2',1,'ToucheHaut(Menu_t *menu):&#160;menuPrincipal.c'],['../menu_principal_8h.html#ad0964a2426f16aa1ebcb4af7b51d36b2',1,'ToucheHaut(Menu_t *menu):&#160;menuPrincipal.c']]],
+  ['trouve_407',['trouve',['../liste_elements_8c.html#aa9d0c8a1652f73bfec09ed17de53f674',1,'trouve(LinkedList *lsptr, int target, Node **prvPtr):&#160;listeElements.c'],['../liste_elements_8h.html#a515d8ded584b4dc647923657de60e0a3',1,'trouve(LinkedList *lsptr, int target, Node **prvPtr):&#160;listeElements.c']]]
 ];

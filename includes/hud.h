@@ -15,7 +15,6 @@
 * \struct hud_s
 * \details structure gerant les informations concernant le joueur
 */
-
 typedef struct hud_s
 {
     TTF_Font* police;/**<la police qui est utilise pour l'affichage du hud*/
@@ -24,7 +23,7 @@ typedef struct hud_s
 	SDL_Rect rect;/**< le rectangle ou sera afficher le rendu du hud*/
 
 }HUD;
-
+/**< This is the documentation for the preceding typedef */
 
 
 extern void Init_HUD(HUD * hud, const char * text, int x,  int y);/**<initialisation de hud*/

@@ -22,7 +22,13 @@ typedef struct player
 {
 
 
-    #include "attributs.h"
+    float w , h;  /** <largeur et hauteur de l'entite> */
+    float x , y;  /** <la position x et y>*/
+    float vx, vy; /** <la velocite x et velocite y, la vitesse laquelle va l'entite dans une direction>*/
+    typeEntite type; /** <le type de l'entite>*/
+
+    bool estMort; /** <un type booleen pour savoir c'est l'entite est mort>*/
+    int nb_lancer; /** <un compteur pour savoir le nb de lancer, attaque en cours>*/
 
     /**
         Données pour l'animation
@@ -58,17 +64,15 @@ typedef struct player
 
 
 }Player;
-
+/**< This is the documentation for the preceding typedef */
 
 
 extern Player *getPlayer(void);
 extern int  getPlayerX(void);
 extern int  getPlayerY(void);
 
-extern void ChargerJoueur(char* filepath, int x , int y , int framesX, int framesY);
-
-extern int getPlayerOriginX();/**< la position'l'origine) du joueur selon x*/
-extern int getPlayerOriginY();/**< la position'l'origine) du joueur selon y*/
+extern int getPlayerOriginX(); /**< la position'l'origine) du joueur selon x*/
+extern int getPlayerOriginY(); /**< la position'l'origine) du joueur selon y*/
 
 extern void UpdateJoueur(float dt);
 extern void actualiserJoueur(void);

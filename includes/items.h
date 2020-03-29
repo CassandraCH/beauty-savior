@@ -19,17 +19,28 @@
 
 typedef struct item
 {
-    #include "attributs.h"
+
+    float w; /** <largeur de l'entite>*/
+    float h; /** < hauteur de l'entite>*/
+    float x; /** <la position x >*/
+    float y;  /** <la position y>*/
+    float vx; /** <la velocite x la vitesse laquelle va l'entite dans une direction x>*/
+    float vy; /** <la velocite y , la vitesse laquelle va l'entite dans une direction y>*/
+    typeEntite type; /** <le type de l'entite>*/
+
+    bool estMort; /** <un type booleen pour savoir c'est l'entite est mort>*/
+    int nb_lancer; /** <un compteur pour savoir le nb de lancer, attaque en cours>*/
 
     int nb_objet;/**< le nombre d'objets*/
     bool lancer;/**< les lancers*/
     float movingX;/**< le mouvement selon la position x*/
 
 
-
 }Items;
+/**< This is the documentation for the preceding typedef */
 
-Items liste_items[MAX_ITEMS];
+
+Items liste_items[MAX_ITEMS]; /**< This is the documentation for the preceding typedef */
 
 // extern void moveRectangle( Items * tab_Items );
 

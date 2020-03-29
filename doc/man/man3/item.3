@@ -1,4 +1,4 @@
-.TH "item" 3 "Mercredi 25 Mars 2020" "Version 0.1" "Beauty Savior" \" -*- nroff -*-
+.TH "item" 3 "Dimanche 29 Mars 2020" "Version 0.1" "Beauty Savior" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -6,19 +6,75 @@ item
 .SH SYNOPSIS
 .br
 .PP
+.PP
+\fC#include <items\&.h>\fP
 .SS "Champs de données"
 
 .in +1c
 .ti -1c
+.RI "float \fBw\fP"
+.br
+.ti -1c
+.RI "float \fBh\fP"
+.br
+.ti -1c
+.RI "float \fBx\fP"
+.br
+.ti -1c
+.RI "float \fBy\fP"
+.br
+.ti -1c
+.RI "float \fBvx\fP"
+.br
+.ti -1c
+.RI "float \fBvy\fP"
+.br
+.ti -1c
+.RI "\fBtypeEntite\fP \fBtype\fP"
+.br
+.ti -1c
+.RI "\fBbool\fP \fBestMort\fP"
+.br
+.ti -1c
+.RI "int \fBnb_lancer\fP"
+.br
+.ti -1c
 .RI "int \fBnb_objet\fP"
 .br
 .ti -1c
-.RI "bool \fBlancer\fP"
+.RI "\fBbool\fP \fBlancer\fP"
 .br
 .ti -1c
 .RI "float \fBmovingX\fP"
 .br
 .in -1c
+.SH "Description détaillée"
+.PP 
+structure gerant les principaux objets qui seront reculter par le joueur 
+.SH "Documentation des champs"
+.PP 
+.SS "\fBbool\fP estMort"
+<le type de l'entite> 
+.SS "float h"
+<largeur de l'entite> 
+.SS "\fBbool\fP lancer"
+les lancers 
+.SS "float movingX"
+le mouvement selon la position x 
+.SS "int nb_lancer"
+<un type booleen pour savoir c'est l'entite est mort> 
+.SS "int nb_objet"
+<un compteur pour savoir le nb de lancer, attaque en cours> le nombre d'objets 
+.SS "\fBtypeEntite\fP type"
+<la velocite y , la vitesse laquelle va l'entite dans une direction y> 
+.SS "float vx"
+<la position y> 
+.SS "float vy"
+<la velocite x la vitesse laquelle va l'entite dans une direction x> 
+.SS "float x"
+< hauteur de l'entite> 
+.SS "float y"
+<la position x > 
 
 .SH "Auteur"
 .PP 

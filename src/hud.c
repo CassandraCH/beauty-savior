@@ -37,11 +37,11 @@ extern void Init_HUD(HUD * hud, const char * text, int x,  int y)
 }
 
 /**
- * \fn extern void SetHUD_IntToTexture(HUD * hud, const char * nom, int value, int posX, int posY)
+ * \fn extern void SetHUD_IntToTexture(HUD * hud, const char * nom, int valeur, int posX, int posY)
  * \brief Fonction qui permet de creer la texture d'un hud
  * \param hud pointeur sur une structure de type HUD 
  * \param nom chaine de caractere a ce qu'on veut afficher
- * \param value valeur numerique a afficher dans le hud
+ * \param valeur valeur numerique a afficher dans le hud
  * \param posX position en x du hud
  * \param posY position en y du hud
  * \return pas de valeur de retour (void)

@@ -1,4 +1,4 @@
-.TH "src/entite.c" 3 "Mercredi 25 Mars 2020" "Version 0.1" "Beauty Savior" \" -*- nroff -*-
+.TH "src/entite.c" 3 "Dimanche 29 Mars 2020" "Version 0.1" "Beauty Savior" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -14,7 +14,7 @@ src/entite.c \- Programme qui gère le comportement des entités\&.
 
 .in +1c
 .ti -1c
-.RI "bool \fBUpdateBullets\fP (typeEntite typeA, typeEntite typeB)"
+.RI "\fBbool\fP \fBUpdateBullets\fP (\fBtypeEntite\fP typeA, \fBtypeEntite\fP typeB)"
 .br
 .RI "Fonction qui permet mettre a jour les bullets\&. "
 .ti -1c
@@ -22,7 +22,7 @@ src/entite.c \- Programme qui gère le comportement des entités\&.
 .br
 .RI "Fonction qui configurer le nombre de tir des ennemis\&. "
 .ti -1c
-.RI "void \fBCreerTir\fP (typeEntite type, int width, int height, int startX, int startY)"
+.RI "void \fBCreerTir\fP (\fBtypeEntite\fP type, int width, int height, int startX, int startY)"
 .br
 .RI "Fonction qui creer un tir\&. "
 .ti -1c
@@ -99,7 +99,7 @@ pas de valeur de retour (void)
 .RE
 .PP
 
-.SS "void CreerTir (typeEntite type, int width, int height, int startX, int startY)"
+.SS "void CreerTir (\fBtypeEntite\fP type, int width, int height, int startX, int startY)"
 
 .PP
 Fonction qui creer un tir\&. 
@@ -134,7 +134,7 @@ pas de valeur de retour (void)
 .RE
 .PP
 
-.SS "bool UpdateBullets (typeEntite typeA, typeEntite typeB)"
+.SS "\fBbool\fP UpdateBullets (\fBtypeEntite\fP typeA, \fBtypeEntite\fP typeB)"
 
 .PP
 Fonction qui permet mettre a jour les bullets\&. Parcours de la listes des bullets

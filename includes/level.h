@@ -24,14 +24,16 @@ typedef struct level
     Texture_Manager layer_2;/**<la couche 2  */
     Texture_Manager layer_3;/**<la couche 3  */
 
-    int departX;
-    int departY;
+    int departX; /**<Position de depart du joueur dans le niveau en X*/
+    int departY; /**<Position de depart du joueur dans le niveau en Y*/
 
     int cameraX; /**< le position x de la camera*/
     int cameraY;/**< la position y de la camera*/
 
 
 }Level;
+/**< This is the documentation for the preceding typedef */
+
 
 extern Level *getLevel(); /**< le niveau*/
 extern void setNiveau(int niveau);/**< le niveau correspond*/

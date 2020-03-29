@@ -1,4 +1,4 @@
-.TH "baseGame" 3 "Mercredi 25 Mars 2020" "Version 0.1" "Beauty Savior" \" -*- nroff -*-
+.TH "baseGame" 3 "Dimanche 29 Mars 2020" "Version 0.1" "Beauty Savior" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -6,6 +6,8 @@ baseGame
 .SH SYNOPSIS
 .br
 .PP
+.PP
+\fC#include <baseGame\&.h>\fP
 .SS "Champs de données"
 
 .in +1c
@@ -13,7 +15,7 @@ baseGame
 .RI "int \fBstate\fP"
 .br
 .ti -1c
-.RI "bool \fBestActif\fP"
+.RI "\fBbool\fP \fBestActif\fP"
 .br
 .ti -1c
 .RI "int \fBtime\fP"
@@ -34,12 +36,27 @@ baseGame
 .RI "int \fBtempsActuel\fP"
 .br
 .in -1c
+.SH "Description détaillée"
+.PP 
+Structure principale de jeux, qui gère tous les composants du jeux majeurs\&. 
 .SH "Documentation des champs"
 .PP 
-.SS "bool estActif"
+.SS "\fBbool\fP estActif"
 Etat du jeu : Actif - Non Actif 
+.SS "int min"
+minutes du jeux 
+.SS "int sec"
+secondes du jeux 
 .SS "int state"
 Etat du jeu : en cours de partie, sur le menu principal 
+.SS "int tempsActuel"
+temps actuel en référence au temps écoulé depuis la dernière image 
+.SS "int tempsPrecedent"
+temps précédent en référence au temps écoulé depuis la dernière image 
+.SS "int time"
+time : temps du jeux 
+.SS "int time_s"
+time_s : temps liée au timer du jeux 
 
 .SH "Auteur"
 .PP 

@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['player_126',['player',['../structplayer.html',1,'player'],['../player_8c.html#af61d6983a9396a11078805087518af88',1,'player():&#160;player.c']]],
-  ['player_2ec_127',['player.c',['../player_8c.html',1,'']]],
-  ['playersprite_128',['playerSprite',['../player_8c.html#ad29d9380b7d353ae07f2a7b4f8e28e98',1,'player.c']]],
-  ['processinput_129',['ProcessInput',['../input_8c.html#af9658d8e7a4d94f46954586e8f10d5a1',1,'ProcessInput(SDL_Event *event):&#160;input.c'],['../base_game_8h.html#af9658d8e7a4d94f46954586e8f10d5a1',1,'ProcessInput(SDL_Event *event):&#160;input.c']]]
+  ['option_194',['option',['../structoption.html',1,'']]],
+  ['options_5ft_195',['Options_t',['../menu_principal_8h.html#a64b2fffe6933fd03b3b025255b223d5c',1,'menuPrincipal.h']]],
+  ['originy_196',['originY',['../structplayer.html#a503a8de08ba4029f70f68623d89f25db',1,'player']]]
 ];

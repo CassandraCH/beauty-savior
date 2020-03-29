@@ -6,16 +6,14 @@
  * \brief programme qui gere le menu  pricipal du  jeu.
  */
 
-
-
-
-
 #ifndef _MENU_PRINCIPAL_H
-#define _MENU_PRINCIPAL_H/**< \def _MENU_PRINCIPAL_H*/
+/**< \def _MENU_PRINCIPAL_H*/
+#define _MENU_PRINCIPAL_H
 
 #include "texture.h"
 
-#define MAX_NUMBER 3 /** \def MAX_NUMBER */
+/** @brief  Nombre maximum d'options disponibles dans un menu */
+#define MAX_NUMBER 3 
 
 
 /**
@@ -32,13 +30,15 @@ typedef struct option
     char * filename[4];/**<le fichiers contenant la texture de l'option*/
 
 }Options_t;
+/**< This is the documentation for the preceding typedef */
+
+typedef struct menu Menu_t;
+/**< This is the documentation for the preceding typedef */
 
 /**
  *\struct menu
  *\details Structure
  */
-typedef struct menu Menu_t;
-
 struct menu
 {
     int selectedOption;/**<selection de l'option*/

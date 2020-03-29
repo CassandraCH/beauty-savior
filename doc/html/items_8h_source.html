@@ -88,33 +88,47 @@ $(document).ready(function(){initNavTree('items_8h_source.html',''); initResizab
 <div class="contents">
 <a href="items_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#ifndef _ITEMS_H</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#define _ITEMS_H</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="constantes_8h.html">constantes.h</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#define _ITEMS_H </span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;constantes.h&quot;</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="structitem.html">   17</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structitem.html">item</a></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="attributs_8h.html">attributs.h</a>&quot;</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">int</span> nb_objet;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordtype">bool</span> lancer;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">float</span> movingX;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}<a class="code" href="structitem.html">Items</a>;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<a class="code" href="structitem.html">Items</a> liste_items[MAX_ITEMS];</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">// extern void moveRectangle( Items * tab_Items );</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="structitem.html">   20</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structitem.html">item</a></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">float</span> w; </div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="structitem.html#a85f2f1bd58b3b44ffdf3881823393959">   24</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="structitem.html#a85f2f1bd58b3b44ffdf3881823393959">h</a>; </div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="structitem.html#ad0da36b2558901e21e7a30f6c227a45e">   25</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="structitem.html#ad0da36b2558901e21e7a30f6c227a45e">x</a>; </div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="structitem.html#aa4f0d3eebc3c443f9be81bf48561a217">   26</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="structitem.html#aa4f0d3eebc3c443f9be81bf48561a217">y</a>;  </div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="structitem.html#a81574a53ca33ab2f60f6481c61e3da21">   27</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="structitem.html#a81574a53ca33ab2f60f6481c61e3da21">vx</a>; </div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="structitem.html#a56ab444d63dfde57a24271cbe3097fdb">   28</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="structitem.html#a56ab444d63dfde57a24271cbe3097fdb">vy</a>; </div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="structitem.html#aa76d13a32c8c8f63118ec343df6eb66a">   29</a></span>&#160;    <a class="code" href="commun_8h.html#a2aba7ee053b5e021d71af3fcf4ea1ae5">typeEntite</a> <a class="code" href="structitem.html#aa76d13a32c8c8f63118ec343df6eb66a">type</a>; </div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="structitem.html#a9498a6f5ea0fa3b07131111087d3c135">   31</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="structitem.html#a9498a6f5ea0fa3b07131111087d3c135">estMort</a>; </div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="structitem.html#ad3830f917515d20b9fe691faa2cdbba1">   32</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structitem.html#ad3830f917515d20b9fe691faa2cdbba1">nb_lancer</a>; </div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="structitem.html#a8d6b043f4511d84b1161cbe4aa2abdfa">   34</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structitem.html#a8d6b043f4511d84b1161cbe4aa2abdfa">nb_objet</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="structitem.html#acfd5b1f8b6cd859f1b655751de7dc302">   35</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="structitem.html#acfd5b1f8b6cd859f1b655751de7dc302">lancer</a>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="structitem.html#adfa3d4f287a51a2284b00ebaf60647aa">   36</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="structitem.html#adfa3d4f287a51a2284b00ebaf60647aa">movingX</a>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}<a class="code" href="items_8h.html#abc280bc29fb9f4ba9ba681e23ced6413">Items</a>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="items_8h.html#a94362c81dc2b96edc0ebff8027003135">   43</a></span>&#160;<a class="code" href="structitem.html">Items</a> <a class="code" href="items_8h.html#a94362c81dc2b96edc0ebff8027003135">liste_items</a>[<a class="code" href="constantes_8h.html#a1b40ceb455086d9cdb68ed3d3bf2775f">MAX_ITEMS</a>]; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">// extern void moveRectangle( Items * tab_Items );</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aattributs_8h_html"><div class="ttname"><a href="attributs_8h.html">attributs.h</a></div><div class="ttdoc">Programme qui gère les attributs communs des entites.</div></div>
-<div class="ttc" id="aconstantes_8h_html"><div class="ttname"><a href="constantes_8h.html">constantes.h</a></div><div class="ttdoc">Programme qui gère les constantes du tout le jeu, notamment les dimensions du niveau,...</div></div>
-<div class="ttc" id="astructitem_html"><div class="ttname"><a href="structitem.html">item</a></div><div class="ttdef"><b>Definition:</b> items.h:17</div></div>
+<div class="ttc" id="aitems_8h_html_abc280bc29fb9f4ba9ba681e23ced6413"><div class="ttname"><a href="items_8h.html#abc280bc29fb9f4ba9ba681e23ced6413">Items</a></div><div class="ttdeci">struct item Items</div></div>
+<div class="ttc" id="aconstantes_8h_html_a1b40ceb455086d9cdb68ed3d3bf2775f"><div class="ttname"><a href="constantes_8h.html#a1b40ceb455086d9cdb68ed3d3bf2775f">MAX_ITEMS</a></div><div class="ttdeci">#define MAX_ITEMS</div><div class="ttdoc">Nombre maximum d'items.</div><div class="ttdef"><b>Definition:</b> constantes.h:73</div></div>
+<div class="ttc" id="astructitem_html_a81574a53ca33ab2f60f6481c61e3da21"><div class="ttname"><a href="structitem.html#a81574a53ca33ab2f60f6481c61e3da21">item::vx</a></div><div class="ttdeci">float vx</div><div class="ttdef"><b>Definition:</b> items.h:27</div></div>
+<div class="ttc" id="astructitem_html_acfd5b1f8b6cd859f1b655751de7dc302"><div class="ttname"><a href="structitem.html#acfd5b1f8b6cd859f1b655751de7dc302">item::lancer</a></div><div class="ttdeci">bool lancer</div><div class="ttdef"><b>Definition:</b> items.h:35</div></div>
+<div class="ttc" id="astructitem_html_ad0da36b2558901e21e7a30f6c227a45e"><div class="ttname"><a href="structitem.html#ad0da36b2558901e21e7a30f6c227a45e">item::x</a></div><div class="ttdeci">float x</div><div class="ttdef"><b>Definition:</b> items.h:25</div></div>
+<div class="ttc" id="astructitem_html_ad3830f917515d20b9fe691faa2cdbba1"><div class="ttname"><a href="structitem.html#ad3830f917515d20b9fe691faa2cdbba1">item::nb_lancer</a></div><div class="ttdeci">int nb_lancer</div><div class="ttdef"><b>Definition:</b> items.h:32</div></div>
+<div class="ttc" id="astructitem_html_adfa3d4f287a51a2284b00ebaf60647aa"><div class="ttname"><a href="structitem.html#adfa3d4f287a51a2284b00ebaf60647aa">item::movingX</a></div><div class="ttdeci">float movingX</div><div class="ttdef"><b>Definition:</b> items.h:36</div></div>
+<div class="ttc" id="astructitem_html"><div class="ttname"><a href="structitem.html">item</a></div><div class="ttdef"><b>Definition:</b> items.h:20</div></div>
+<div class="ttc" id="astructitem_html_aa4f0d3eebc3c443f9be81bf48561a217"><div class="ttname"><a href="structitem.html#aa4f0d3eebc3c443f9be81bf48561a217">item::y</a></div><div class="ttdeci">float y</div><div class="ttdef"><b>Definition:</b> items.h:26</div></div>
+<div class="ttc" id="astructitem_html_a8d6b043f4511d84b1161cbe4aa2abdfa"><div class="ttname"><a href="structitem.html#a8d6b043f4511d84b1161cbe4aa2abdfa">item::nb_objet</a></div><div class="ttdeci">int nb_objet</div><div class="ttdef"><b>Definition:</b> items.h:34</div></div>
+<div class="ttc" id="astructitem_html_aa76d13a32c8c8f63118ec343df6eb66a"><div class="ttname"><a href="structitem.html#aa76d13a32c8c8f63118ec343df6eb66a">item::type</a></div><div class="ttdeci">typeEntite type</div><div class="ttdef"><b>Definition:</b> items.h:29</div></div>
+<div class="ttc" id="astructitem_html_a85f2f1bd58b3b44ffdf3881823393959"><div class="ttname"><a href="structitem.html#a85f2f1bd58b3b44ffdf3881823393959">item::h</a></div><div class="ttdeci">float h</div><div class="ttdef"><b>Definition:</b> items.h:24</div></div>
+<div class="ttc" id="acommun_8h_html_a2aba7ee053b5e021d71af3fcf4ea1ae5"><div class="ttname"><a href="commun_8h.html#a2aba7ee053b5e021d71af3fcf4ea1ae5">typeEntite</a></div><div class="ttdeci">typeEntite</div><div class="ttdef"><b>Definition:</b> commun.h:42</div></div>
+<div class="ttc" id="aitems_8h_html_a94362c81dc2b96edc0ebff8027003135"><div class="ttname"><a href="items_8h.html#a94362c81dc2b96edc0ebff8027003135">liste_items</a></div><div class="ttdeci">Items liste_items[MAX_ITEMS]</div><div class="ttdef"><b>Definition:</b> items.h:43</div></div>
+<div class="ttc" id="astructitem_html_a56ab444d63dfde57a24271cbe3097fdb"><div class="ttname"><a href="structitem.html#a56ab444d63dfde57a24271cbe3097fdb">item::vy</a></div><div class="ttdeci">float vy</div><div class="ttdef"><b>Definition:</b> items.h:28</div></div>
+<div class="ttc" id="astructitem_html_a9498a6f5ea0fa3b07131111087d3c135"><div class="ttname"><a href="structitem.html#a9498a6f5ea0fa3b07131111087d3c135">item::estMort</a></div><div class="ttdeci">bool estMort</div><div class="ttdef"><b>Definition:</b> items.h:31</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

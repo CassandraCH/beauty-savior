@@ -12,10 +12,8 @@
 #define _MENU_PAUSE_H/**< \def _MENU_PAUSE_H*/
 
 
-extern void Init_MenuPause();/**< initialisation du menu pause*/
+extern void Init_MenuPause();
 
-extern void Input_MenuPause(SDL_Event *event);/**< l'input du menu pause*/
-
-extern void Init_Pause();
+extern void Input_MenuPause(SDL_Event *event);
 
 #endif
