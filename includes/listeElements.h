@@ -22,19 +22,19 @@
 typedef struct Node
 {
 
-    float w; /** <largeur de l'entite*/
-    float h; /** < hauteur de l'entite*/
-    float x; /** <la position x */
-    float y;  /** <la position y */
-    float vx; /** <la velocite x la vitesse laquelle va l'entite dans une direction x*/
-    float vy; /** <la velocite y , la vitesse laquelle va l'entite dans une direction y*/
-    typeEntite type; /** <le type de l'entite*/
+    float w; /*!< largeur de l'entite*/
+    float h; /*!<  hauteur de l'entite*/
+    float x; /*!< la position x */
+    float y;  /*!< la position y */
+    float vx; /*!< la velocite x la vitesse laquelle va l'entite dans une direction x*/
+    float vy; /*!< la velocite y , la vitesse laquelle va l'entite dans une direction y*/
+    typeEntite type; /*!< le type de l'entite*/
 
-  bool estMort; /** <un type booleen pour savoir c'est l'entite est mort>*/
-  int nb_lancer; /** <un compteur pour savoir le nb de lancer, attaque en cours>*/
+  bool estMort; /*!< un type booleen pour savoir c'est l'entite est mort>*/
+  int nb_lancer; /*!< un compteur pour savoir le nb de lancer, attaque en cours>*/
 
-  SDL_Rect *rect; /** <Rectangle qui défini la taille d'un éléments>*/
-  bool actif; /** <Défini si l'élement est actif ou non>*/
+  SDL_Rect *rect; /*!< Rectangle qui défini la taille d'un éléments>*/
+  bool actif; /*!< Défini si l'élement est actif ou non>*/
 
   int nb_objets; /**< le nombres d'objets*/
   float baseX;/**< Position de départ en X*/
@@ -52,10 +52,10 @@ typedef struct Node
 
 
 /**
-* \struct
+* \struct list
 * \details structure gerant les noeud de l'entete et a la fin.
 */
-typedef struct
+typedef struct list
 {
   struct Node *tete; /**<noeud d'entete*/
   struct Node *queue;/**< noeud de fin*/
@@ -63,7 +63,7 @@ typedef struct
   int nodeCount;/**<compteur de noeuds*/
 
 }LinkedList;
-
+/**< This is the documentation for the preceding typedef */
 
 extern void init_List(LinkedList *list);/**< initialisation des listes*/
 

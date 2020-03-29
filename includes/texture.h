@@ -18,9 +18,9 @@
 
 typedef struct textures /** structure des differentes  textures du jeu*/
 {
-    int h; /** < hauteur de la texture*/
-    int w; /** <largeur de la texture*/
-    SDL_Texture * texture;
+    int h; /*!<  hauteur de la texture*/
+    int w; /*!< largeur de la texture*/
+    SDL_Texture * texture; /*!< texture */
 
 }Texture_Manager;
 

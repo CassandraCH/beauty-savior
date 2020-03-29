@@ -4,7 +4,7 @@ var annotated_dup =
     [ "hud_s", "structhud__s.html", "structhud__s" ],
     [ "item", "structitem.html", "structitem" ],
     [ "level", "structlevel.html", "structlevel" ],
-    [ "LinkedList", "struct_linked_list.html", "struct_linked_list" ],
+    [ "list", "structlist.html", "structlist" ],
     [ "menu", "structmenu.html", "structmenu" ],
     [ "Node", "struct_node.html", "struct_node" ],
     [ "option", "structoption.html", "structoption" ],
