@@ -22,11 +22,13 @@
  */
 typedef struct option
 {
-    int largeur, hauteur;/**< la largeur, hauteur de l'option*/
+    int largeur; /**< la largeur de l'option*/
+    int hauteur; /**< la hauteur de l'option*/
     const char * nomOption;/**<le nom de l'option*/
     SDL_Texture *texture;/**< le texture de l'option*/
     SDL_Color couleur;/**<la couleur de l'option*/
-    int x, y;/**<la position en x et y de l'option*/
+    int x;/**<la position en x de l'option*/
+    int y;/**<la position en y de l'option*/
     char * filename[4];/**<le fichiers contenant la texture de l'option*/
 
 }Options_t;
@@ -45,8 +47,8 @@ struct menu
     Options_t menu[4];/**< le menu*/
     Mix_Chunk *son;/**< le son du menu*/
     TTF_Font * police;/**< la police utilise pour le menu*/
-    SDL_Texture * bg;
-    Mix_Music * bgm;
+    SDL_Texture * bg;/**< Texture en arrière-plan */
+    Mix_Music * bgm;/**< Musique du jeux en arriere plan*/
 
 };
 

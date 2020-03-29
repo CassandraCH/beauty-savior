@@ -23,7 +23,6 @@ var structplayer =
     [ "posXDepart", "structplayer.html#ac456d6f9c88206712986fff965b49a77", null ],
     [ "posYDepart", "structplayer.html#aee8c046a0ddcd7e9c444095b3cf57229", null ],
     [ "ralenti", "structplayer.html#acacb5a1b2070a6542b1e9527b5cba98c", null ],
-    [ "scrollX", "structplayer.html#a96c4df6b444a1553569713d9e9b79cb3", null ],
     [ "tex", "structplayer.html#a1bec17986f5e71989ca648dcc8b9a138", null ],
     [ "type", "structplayer.html#aa76d13a32c8c8f63118ec343df6eb66a", null ],
     [ "vx", "structplayer.html#a81574a53ca33ab2f60f6481c61e3da21", null ],

@@ -12,10 +12,10 @@ player
 
 .in +1c
 .ti -1c
-.RI "float \fBw\fP"
+.RI "float \fBh\fP"
 .br
 .ti -1c
-.RI "float \fBh\fP"
+.RI "float \fBw\fP"
 .br
 .ti -1c
 .RI "float \fBx\fP"
@@ -93,9 +93,6 @@ player
 .RI "\fBbool\fP \fBralenti\fP"
 .br
 .ti -1c
-.RI "float \fBscrollX\fP"
-.br
-.ti -1c
 .RI "int \fBniveau\fP"
 .br
 .ti -1c
@@ -110,10 +107,12 @@ player
 Structure gérant les caractéristiques liées au joueur 
 .SH "Documentation des champs"
 .PP 
+.SS "float animationSpeed"
+Vitesse de l'animation 
 .SS "\fBbool\fP estActif"
 le booleen est actif 
 .SS "\fBbool\fP estMort"
-<le type de l'entite> 
+<le type de l'entite 
 .SS "\fBbool\fP estSurSol"
 le booleen est sur le sol 
 .SS "\fBbool\fP estTourne"
@@ -121,11 +120,13 @@ le booleen est tourne
 .SS "int frame"
 le cadre 
 .SS "int m_frameHeight"
-la largueur du cadre et sa hauteur 
+la hauteur de l'image a afficher 
 .SS "int m_frameWidth"
-<un compteur pour savoir le nb de lancer, attaque en cours> Données pour l'animation 
+<un compteur pour savoir le nb de lancer, attaque en cours> Données pour l'animation la largueur de l'image a afficher 
 .SS "int m_textureHeight"
-largueur et hauteur de la texture 
+hauteur de la texture 
+.SS "int m_textureWidth"
+largueur de la texture 
 .SS "int nb_lancer"
 <un type booleen pour savoir c'est l'entite est mort> 
 .SS "int nb_objet"
@@ -136,9 +137,13 @@ le niveau du joueur
 le nombre de vie du joueur 
 .SS "float numeroImage"
 le numero de l'image 
+.SS "int originX"
+Origine du personnage en X 
 .SS "int originY"
-l'origin selon le coeifficient x et y 
+Origine du personnage en Y 
 .SS "SDL_Rect playerPosition"
+la position du joueur 
+.SS "SDL_Rect playerRect"
 la position du joueur 
 .SS "float posXDepart"
 sa positon de depart selon x 
@@ -146,12 +151,20 @@ sa positon de depart selon x
 sa positon de depart selon y 
 .SS "\fBbool\fP ralenti"
 le ralentisement du joueur 
+.SS "\fBTexture_Manager\fP tex"
+Texture du joueur 
 .SS "\fBtypeEntite\fP type"
-<la velocite x et velocite y, la vitesse laquelle va l'entite dans une direction> 
+<la velocite y , la vitesse laquelle va l'entite dans une direction y 
 .SS "float vx"
-<la position x et y> 
+<la position y 
+.SS "float vy"
+<la velocite x la vitesse laquelle va l'entite dans une direction x 
+.SS "float w"
+< hauteur de l'entite 
 .SS "float x"
-<largeur et hauteur de l'entite> 
+<largeur de l'entite 
+.SS "float y"
+<la position x 
 
 .SH "Auteur"
 .PP 

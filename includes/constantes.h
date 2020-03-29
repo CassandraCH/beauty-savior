@@ -11,7 +11,8 @@
 
 
 #ifndef CONSTANTS_H
-#define CONSTANTS_H/*! CONSTANTS_H */
+/** @brief Clause de mise en garde pour le fichier CONSTANTS_H */
+#define CONSTANTS_H
 
 /** @brief  Gravite applique dans le jeu */
 #define GRAVITY 0.35f

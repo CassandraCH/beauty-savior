@@ -11,13 +11,15 @@
 
 
 #ifndef __TEXTURE_H
-#define __TEXTURE_H /** \def TEXTURE_H */
+/** @brief Clause de mise en garde pour le fichier TEXTURE_H */
+#define __TEXTURE_H /
 
 #include "commun.h" /** les structures du fichier commun.h */
 
 typedef struct textures /** structure des differentes  textures du jeu*/
 {
-    int h, w;
+    int h; /** < hauteur de la texture*/
+    int w; /** <largeur de la texture*/
     SDL_Texture * texture;
 
 }Texture_Manager;
