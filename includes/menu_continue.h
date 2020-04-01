@@ -16,10 +16,6 @@
 
 extern void Init_MenuContinue();/**< l'initialisation du menu continue*/
 
-
-extern void Droite();/**< fonction pour aller a droite*/
-extern void Gauche();/**< fonction pour aller a gauche*/
-
 extern void Input_MenuContinue(SDL_Event *event);/**<fonction input pour le menu continue*/
 
 extern void Nettoyer_MenuContinue();/**< fonction nettoyer pour le menu continue */

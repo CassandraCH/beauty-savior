@@ -29,7 +29,7 @@ extern Menu_t * getMenuPause()
 extern void Init_MenuPause()
 {
      int width = LARGEUR_FENETRE, height = HAUTEUR_FENETRE;
-    printf("Chargement Menu principal");
+    printf("Chargement Menu Pause");
     
     /* 
      * Premiere option : Reprendre la partie
@@ -51,6 +51,7 @@ extern void Init_MenuPause()
                 ,620
                 ,491 );
 
+    
 
     //Option selectionnee = Reprendre partie
     menu_pause.selectedOption = 0;

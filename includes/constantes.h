@@ -52,6 +52,9 @@
 /** @brief PAGE DE CHARGEMENT */
 #define LOADING 6
 
+/** @brief MENU INVENTAIRE */
+#define INVENTAIRE 7
+
 
 /// MENU PRINCIPAL
 /** @brief  Lancer une nouvelle partie */

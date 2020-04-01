@@ -70,22 +70,20 @@ extern void Update(float dt)
         Init_GameOver();
       }
  
-      
-      
+    
+        //Gestion des attaques
+        attaqueEnnemis();
 
-      //Gestion des attaques
-      attaqueEnnemis();
-
-      //Mise à jour des entités
-      Update_Listes();
-      UpdateJoueur(dt);
-      UpdateBullets(joueur, ennemi);
-      UpdateEnnemis();
-  
-      //Gestion des collisions
-      collision_tir();
-      CollisionItems(); 
-      collisionDetection();
+        //Mise à jour des entités
+        Update_Listes();
+        UpdateJoueur(dt);
+        UpdateBullets(joueur, ennemi);
+        UpdateEnnemis();
+    
+        //Gestion des collisions
+        collision_tir();
+        CollisionItems(); 
+        collisionDetection();
 
   }
 }
@@ -99,7 +97,7 @@ extern void Update(float dt)
 extern void Rendu_Jeux() 
 {
   //Cas ou le jeu n'est pas en pause
-  if ( getBaseGame()->state != PAUSE  )
+  if ( getBaseGame()->state != PAUSE || getBaseGame()->state != INVENTAIRE  )
   {
     SDL_SetRenderDrawColor(getRenderer(), 0xFF,0xFF,0xFF,0);
     SDL_RenderClear( getRenderer() );
@@ -133,6 +131,10 @@ extern void Rendu_Jeux()
   else if ( getBaseGame()->state == PAUSE )
   {
     Dessiner_Menu(getMenuPause(), 2,300, 200,  645, 432 );
+  }
+  else if ( getBaseGame()->state == INVENTAIRE )
+  {
+      Dessiner_Menu( getInventaire(),4, 300, 200, 600, 266 );
   }
 
   //Cas ou on est en train de jouer

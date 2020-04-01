@@ -30,6 +30,7 @@
 
 #include "entite.h"
 #include "hud.h"
+#include "inventaire.h"
 #include "menuPrincipal.h"
 #include "menuLoad.h"
 #include "menuPause.h"
@@ -69,10 +70,11 @@ extern HUD* getScores(void);/**< fonction getScores qui gere le scores*/
 extern HUD* getNiveau();/**< fonction getNiveau qui gere les niveaux*/
 extern HUD* getTime();/**< fonction getNiveau qui gere le timer du jeux*/
 extern Menu_t* getMenu(void);/**< fonction getMenu*/
-extern Menu_t * getMenuLoad();/**< fonction getMenuLoad*/
+extern Menu_t* getInventaire(void);/**< fonction getInventaire*/
+extern Menu_t * getMenuLoad(void);/**< fonction getMenuLoad*/
 extern Menu_t * getMenuCon(void);/**< fonction getMenuCon*/
-extern Menu_t * getMenuPause();/**< fonction getMenuPause*/
-extern Menu_t * getMenu_Over();/**< fonction getMenu_Over*/
+extern Menu_t * getMenuPause(void);/**< fonction getMenuPause*/
+extern Menu_t * getMenu_Over(void);/**< fonction getMenu_Over*/
 extern int getTimerBullet(void);/**< fonction getTimerBullet*/
 extern void setTimerBullet(int time);/**< fonction setTimerBullet , avec la variable temps*/
 

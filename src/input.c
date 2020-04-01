@@ -35,6 +35,10 @@ extern void ProcessInput(SDL_Event * event)
     {
         Input_MenuPause(event);
     }
+    else if ( getBaseGame()->state == INVENTAIRE )
+    {
+        Input_Inventaire(event);
+    }
     else if ( getBaseGame()->state == LOADING )
     {
         Input_MenuLoad(event);
