@@ -99,6 +99,17 @@ void Init(const char *title)
         SDL_Quit();
     }
 
+    getItem(0)->police  = TTF_OpenFont("fonts/arial.ttf",45);
+    if(!getItem(0)->police )
+    {
+        printf("Cannot find font file!!\n");
+        SDL_Quit();
+    }
+
+    getItem(1)->police  = getItem(0)->police;
+    getItem(2)->police  = getItem(0)->police;
+    
+
     /*############### GESTION DES AUDIO *###############*/
     //Initialisation du son
     Mix_OpenAudio(MIX_DEFAULT_FREQUENCY, MIX_DEFAULT_FORMAT, MIX_DEFAULT_CHANNELS, 4096);

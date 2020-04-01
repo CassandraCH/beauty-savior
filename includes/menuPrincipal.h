@@ -60,8 +60,8 @@ extern int getTouchePresse(Menu_t *menu);/**< fonction sur les touches du menu*/
 extern void ToucheHaut(Menu_t * menu);/**< fonction pour la touche haut du menu*/
 extern void ToucheBas(Menu_t *menu);/**<touche bas*/
 
-extern void Droite(Menu_t *menu);/**< pour aller a droite*/
-extern void Gauche(Menu_t *menu);/**< pour aller a gauche*/
+extern void Droite(Menu_t *menu, int nombreOptions);/**< pour aller a droite*/
+extern void Gauche(Menu_t *menu,int nombreOptions);/**< pour aller a gauche*/
 
 extern void Dessiner_Menu(Menu_t* menu, int nombresOptions, int posX, int posY , int largeurBG, int hauteurBG);
 extern void Init_MenuPrincipal();/**<initialise le menu*/

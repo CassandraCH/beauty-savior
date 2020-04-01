@@ -12,6 +12,7 @@
 
 HUD score; /**< hud du score */
 HUD niveau; /**< hud du niveau */
+HUD item_s[3];
 HUD time_; /**< hud du timer */
 
 /** \fn  extern HUD* getScores()
@@ -34,7 +35,22 @@ extern HUD* getNiveau()
     return &niveau;
 }
 
+/** \fn  extern HUD* getTime()
+ *  \brief Retourne l'instance de l'objet niveau
+ *  \details Cela permet d'instaurer un contexte privé
+ *  \return Retourne un pointeur sur l'objet niveau 
+ */
 extern HUD* getTime()
 {
     return &time_;
+}
+
+/** \fn  extern HUD* getItem()
+ *  \brief Retourne l'instance de l'objet niveau
+ *  \details Cela permet d'instaurer un contexte privé
+ *  \return Retourne un pointeur sur l'objet niveau 
+ */
+extern HUD* getItem(int num_item) 
+{
+    return &item_s[num_item];
 }

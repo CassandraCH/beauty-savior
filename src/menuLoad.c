@@ -96,12 +96,12 @@ extern void Input_MenuLoad(SDL_Event *event)
             {
                 //Cas de la fleche gauche
                 case SDLK_LEFT:
-                    Gauche(getMenuLoad());
+                    Gauche(getMenuLoad(), 2);
                     break;
 
                 //Cas de la fleche droite
                 case SDLK_RIGHT:
-                    Droite(getMenuLoad());
+                    Droite(getMenuLoad(), 2);
                     break;
 
                 //Cas de la touche entree

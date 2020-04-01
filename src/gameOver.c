@@ -208,9 +208,13 @@ extern void Init_GameOver()
 {
     //Changement de l'etat du joueur
     getPlayer()->estMort = true;
+    getPlayer()->scores = 0;
 
     //Rechargement le niveau 1
     setNiveau(1);
+    setOs(0);
+    setBranche(0);
+    setRock(0);
 
     Nettoyer_Menu(getMenu(), 4);
     Init_MenuGameOver();

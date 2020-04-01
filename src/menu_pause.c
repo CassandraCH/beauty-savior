@@ -86,12 +86,12 @@ extern void Input_MenuPause(SDL_Event *event)
             {
                 //Cas touche fleche de gauche
                 case SDLK_LEFT:
-                    Gauche(getMenuPause());
+                    Gauche(getMenuPause(), 2);
                     break;
 
                 //Cas touche fleche de droite
                 case SDLK_RIGHT:
-                    Droite(getMenuPause());
+                    Droite(getMenuPause() , 2);
                     break;
 
                 //Cas de la touche entree

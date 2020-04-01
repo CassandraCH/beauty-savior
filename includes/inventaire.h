@@ -16,9 +16,19 @@
 
 extern void Init_Inventaire();/**< l'initialisation du menu continue*/
 
+extern void setOs(int value);
+extern void setRock( int value);
+extern void setBranche(int value);
+
+extern void incrementeOS();
+extern void incrementeRock( );
+extern void incrementeBranche();
+extern void decrementeOS();
+extern void decrementeRock( );
+extern void decrementeBranche();
+
 extern void Input_Inventaire(SDL_Event *event);/**<fonction input pour le menu continue*/
 
-extern void Nettoyer_Inventaire();/**< fonction nettoyer pour le menu continue */
 
 
 #endif

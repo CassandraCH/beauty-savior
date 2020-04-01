@@ -196,6 +196,8 @@ extern void ChargementItems(const char * filename, SDL_Texture * tex)
 
     int w, h; //Largeur et hauteur de l'item
     SDL_QueryTexture(tex, NULL,NULL, &w, &h );
+ 
+    typeEntite typeU;
 
     //Tant qu'on n'a pas lu entierement le fichier
     while( !feof(file) )
@@ -204,9 +206,11 @@ extern void ChargementItems(const char * filename, SDL_Texture * tex)
         rect->w = w;
         rect->h = h;    
         //Recuperation des positions en x et y de l'item dans le fichier         
-        if( fscanf(file, "%d %d",&rect->x , &rect->y) ){
+        if( fscanf(file, "%d %d %d",&rect->x , &rect->y, &typeU) ){
+
+           
             //Ajout de l'item avec les proprietes recuperees dans le fichier
-            insertion(getItems(),  rect, item , false);
+            insertion(getItems(),  rect, typeU , false);
         }
     }
 

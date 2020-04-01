@@ -32,31 +32,20 @@ typedef struct player
     bool estMort; /*!< un type booleen pour savoir c'est l'entite est mort>*/
     int nb_lancer; /*!< un compteur pour savoir le nb de lancer, attaque en cours>*/
 
-    /**
-        Données pour l'animation
-   */
-    int m_frameWidth;/**<la largueur de l'image a afficher*/
-    int m_frameHeight;/**<la hauteur de l'image a afficher*/
-    int m_textureWidth;/**< largueur de la texture*/
-    int m_textureHeight;/**< hauteur de la texture*/
-
+  
     float posXDepart;/**<sa positon de depart selon x*/
     float posYDepart;/**<sa positon de depart selon y*/
-    float numeroImage;/**< le numero de l'image*/
+ 
 
-    SDL_Rect playerRect;/**< la position du joueur*/
-    SDL_Rect playerPosition;/**< la position du joueur*/
-    int originX;/**< Origine du personnage en X*/
-    int originY; /**< Origine du personnage en Y*/
-    float animationSpeed; /**< Vitesse de l'animation */
+    bool osActif;/**< booleen pour vérifier l'os est l'élement actif */
+    bool treeActif;/**< booleen pour vérifier le tree est l'élement actif */
+    bool rockActif;/**< booleen pour vérifier le rock est l'élement actif */
 
-
-    int frame;/**<le cadre*/
     bool estActif;/**<le booleen est actif*/
     bool estTourne;/**<le booleen est tourne*/
 
     bool estSurSol;/**<le booleen est sur le sol*/
-
+    int scores;
 
     int nombreVies;/**< le nombre de vie du joueur*/
     bool ralenti;/**<le ralentisement du joueur*/

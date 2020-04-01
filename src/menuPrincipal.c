@@ -174,17 +174,18 @@ extern void ToucheBas(Menu_t *menu)
 }
 
 /**
- * \fn extern void Droite(Menu_t* menu)
+ * \fn extern void Droite(Menu_t* menu, int nombresOptions)
  * \brief Fonction qui permet de naviguer dans le menu a droite
  * \param menu pointeur sur le menu
+ * \param nombresOptions nombre d'options
  * \return pas de valeur de retour (void)
 */
-extern void Droite(Menu_t* menu)
+extern void Droite(Menu_t* menu, int nombresOptions)
 {
 
     //Si l'option actuellement selectionnee est differente de la premiere
     //Si on est sur la dernière option => on ne peut pas aller sur une option au-dessus 
-    if (menu->selectedOption + 1 < MAX_NUMBER - 1 )
+    if (menu->selectedOption + 1 < nombresOptions  )
     {
         //Rafraichir l'affichage
         UpdateOption(&menu->menu[menu->selectedOption], 1);
@@ -198,12 +199,13 @@ extern void Droite(Menu_t* menu)
 }
 
 /**
- * \fn extern void Gauche(Menu_t* menu)
+ * \fn extern void Gauche(Menu_t* menu, int nombresOptions)
  * \brief Fonction qui permet de naviguer dans le menu a gauche
  * \param menu pointeur sur le menu
+ * \param nombresOptions nombre d'options
  * \return pas de valeur de retour (void)
 */
-extern void Gauche(Menu_t* menu)
+extern void Gauche(Menu_t* menu, int nombresOptions)
 {
     //Si l'option actuellement selectionnee est differente de la premiere
     //Si on est sur la premiere option => on ne peut pas aller sur une option au-dessus

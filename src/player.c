@@ -91,9 +91,7 @@ extern void InitJoueur()
 	player.w = player.tex.w;
 	player.x = 100;
 	player.y = 495;
-
-    player.frame = 0;
-
+    player.scores = 0;
     //inventaire initialise a 0
     player.nb_lancer = 0;
     player.nb_objet = 0;
@@ -166,7 +164,7 @@ extern void InputJoueur(SDL_Event *event)
     //Sinon => friction
     else
     { 
-        player.frame = 0;
+      
 
         //Modification de la velocite
         player.vx *= 0.8f;
@@ -195,19 +193,22 @@ extern void CollisionItems()
     for(pt = getItems()->tete ; pt != NULL; pt = pt->suivant)
     {
         //Si le joueur est en collision avec l'item actuel
-        if(collide2d(getPlayerX(), getPlayerY(), pt->rect->x,pt->rect->y, player.tex.w,player.tex.h,pt->rect->w , pt->rect->h) && pt->type == item )
+        if(collide2d(getPlayerX(), getPlayerY(), pt->rect->x,pt->rect->y, player.tex.w,player.tex.h,pt->rect->w , pt->rect->h) )
         {
             //Si l'item est toujours existant
             if(!pt->estMort)
             {
                 //Changement de l'etat de l'item => mort
                 pt->estMort = true;
-
                 //Suppression de l'item dans la liste
                 supprimeCible(getItems(), true);
-
-                //Incrementation du score
-                SetHUD_IntToTexture(getScores(), "SCORES", ++player.nb_objet, getScores()->rect.x,getScores()->rect.y );
+                
+                if( pt->type == os )
+                    incrementeOS();
+                else if ( pt->type == rock )
+                    incrementeRock();
+                else if ( pt->type == tree )
+                    incrementeBranche(); 
             }
             break;
         }
@@ -245,17 +246,7 @@ extern void UpdateJoueur( float dt)
         player.x += player.vx;
         player.y += player.vy;
 
-        if( player.vx != 0 && player.estSurSol && !player.ralenti) 
-        {
-            if( getBaseGame()->time % 8 == 0 )
-            {
-                player.frame = player.frame + 1;
-                if( player.frame > 5 ) player.frame = 0; 
-            }
-        }
-
-
-
+        
         player.vy += GRAVITY;
     }
 }
@@ -321,13 +312,16 @@ extern bool collide2d(float x1, float y1, float x2, float y2, float wt1, float h
  */
 extern void attaqueJoueur()
 {
-    if ( getPlayer()->nb_objet > 0 )
-    {
-     
+  
+      if( getOs() > 0 )
+      {
+          
+        decrementeOS();
         CreerTir(bull, getPlayer()->w , getPlayer()->h, getPlayerX(),  getPlayerY() );
         SetHUD_IntToTexture(getScores(), "SCORES",--player.nb_objet,getScores()->rect.x,getScores()->rect.y  );
 
-    }
+      }
+
     return;
 }
 

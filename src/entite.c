@@ -28,7 +28,7 @@ extern bool UpdateBullets( typeEntite typeA, typeEntite typeB )
         for( pt = getBullets()->tete; pt!= NULL; pt= pt->suivant )
         {
             //Si le joueur est suffisamment proche de l'ennemi
-            if(  pt->rect->x > 0-15  && pt->rect->x < LARGEUR_FENETRE )
+            if(    pt->rect->x > 0-15  && pt->rect->x < camera.x+camera.w )
             {   
                 //Si le bullet actuel peut etre lancer
                 if ( pt->lancer )
@@ -243,6 +243,9 @@ extern void collisionDetection()
                 // Vérifie si lorsque le joueur tombe, il touche le haut de l'ennemi 
                 if (joueur_y + joueur_h > ennemi_y && joueur_y < ennemi_y && getPlayer()->vy > 0)
                 {
+
+                    //Incrementation du score
+                     SetHUD_IntToTexture(getScores(), "SCORES", ++getPlayer()->scores, getScores()->rect.x,getScores()->rect.y );
                     // Si l'ennemi n'est pas deja mort alors il le devient
                     if (!pt->estMort)
                     {

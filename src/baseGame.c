@@ -97,7 +97,7 @@ extern void Update(float dt)
 extern void Rendu_Jeux() 
 {
   //Cas ou le jeu n'est pas en pause
-  if ( getBaseGame()->state != PAUSE || getBaseGame()->state != INVENTAIRE  )
+  if ( getBaseGame()->state != PAUSE && getBaseGame()->state != INVENTAIRE  )
   {
     SDL_SetRenderDrawColor(getRenderer(), 0xFF,0xFF,0xFF,0);
     SDL_RenderClear( getRenderer() );
@@ -134,7 +134,10 @@ extern void Rendu_Jeux()
   }
   else if ( getBaseGame()->state == INVENTAIRE )
   {
-      Dessiner_Menu( getInventaire(),4, 300, 200, 600, 266 );
+      Dessiner_Menu( getInventaire(),3, 300, 200, 607, 269 );
+      AfficherHUD(getItem(0)); 
+      AfficherHUD(getItem(1));
+      AfficherHUD(getItem(2));
   }
 
   //Cas ou on est en train de jouer
@@ -164,7 +167,8 @@ extern void Rendu_Jeux()
 
     AfficherHUD(getScores()); 
     AfficherHUD(getTime());
-    Afficher_ElementsListes( &items, itemTex, item ); 
+    Afficher_ElementsListes( &items, itemTex, os ); 
+    Afficher_ElementsListes( &items, itemTex, rock ); 
     
 
     // afficher_textures_niveau(1);
