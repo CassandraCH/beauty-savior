@@ -96,6 +96,10 @@ extern void InitJoueur()
     player.nb_lancer = 0;
     player.nb_objet = 0;
 
+    player.osActif = true;
+    player.treeActif = false;
+    player.rockActif = false;
+
     //position de depart en x et en y
     player.posXDepart = player.x;
     player.posYDepart = player.y;
