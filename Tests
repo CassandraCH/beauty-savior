@@ -1,75 +1,65 @@
 Déplacements
 
 Données          Résultats attendu              Resultats tests                                         Code
-  ←                  gauche                         validé                      SDL_Rect camera = {0,0,LARGEUR_FENETRE, HAUTEUR_FENETRE}; 
+  ←                  gauche                         validé                      
   →                  droite
-  ↑                  saut                                                       extern void Input_InGame(SDL_Event *event)
+  ↑                  saut                                                       
+                                                                                extern void InputJoueur( SDL_Event *event  )
                                                                                 {
 
-                                                                                    bool isKeyPressed = false;
-
-
-                                                                                    while( SDL_PollEvent(event) )
+                                                                                    if( event->type == SDL_KEYDOWN )
                                                                                     {
-                                                                                        if( event->type == SDL_QUIT || event->key.keysym.sym == SDLK_ESCAPE )
+                                                                                        switch(event->key.keysym.sym)
                                                                                         {
-                                                                                            getBaseGame()->estActif = false;
-                                                                                            return;
+                                                                                            case SDLK_UP:
+                                                                                                if( player.estSurSol )
+                                                                                                {
+                                                                                                    player.vy  = -9;
+                                                                                                    player.estSurSol =false;
+                                                                                                }
+                                                                                            break;
+
+
                                                                                         }
+                                                                                    }
 
-                                                                                        if(event->key.keysym.sym == SDLK_p && event->type == SDL_KEYDOWN )
-                                                                                        {   
-                                                                                            getBaseGame()->state = PAUSE;
-                                                                                            Init_MenuPause();
-                                                                                        }
+                                                                                     const Uint8 *states = SDL_GetKeyboardState(NULL);
 
-                                                                                        if(event->key.keysym.sym == SDLK_a && event->type == SDL_KEYDOWN )
-                                                                                        {
 
-                                                                                            if( getPlayer()->nb_lancer < 1 && !isKeyPressed )
+                                                                                    if( states[SDL_SCANCODE_LEFT]  && player.x-25 > 0  ){
+                                                                                        player.vx -= 0.5;
+
+                                                                                            if( player.vx < -6 )
                                                                                             {
-
-                                                                                                attaqueJoueur();
-                                                                                                isKeyPressed = true;
-                                                                                                return;
+                                                                                                player.vx = -6;
                                                                                             }
-                                                                                            if(event->key.keysym.sym == SDLK_a && event->type == SDL_KEYUP )
-                                                                                            {
-                                                                                                isKeyPressed = false;
-                                                                                            }
-
-                                                                                        }
-
-                                                                                    } // fin while (SDL_PollEvent)
+                                                                                        player.estTourne = true;
+                                                                                        player.ralenti = 0;
 
 
-                                                                                        const Uint8 *keystates  = SDL_GetKeyboardState(NULL);
-                                                                                        InputJoueur(event);
-                                                                                        camera.x = ( getPlayer()->x + getPlayer()->tex.w / 2 ) - LARGEUR_FENETRE / 2;
-                                                                                        camera.y = ( getPlayer()->y+  getPlayer()->tex.h / 2 ) - HAUTEUR_FENETRE / 2;
+                                                                                    } else if(   states[SDL_SCANCODE_RIGHT] && player.x < LARGEUR_NIVEAU - player.w ){
 
-                                                                                        if( camera.x < 0 )
-                                                                                        { 
-                                                                                        camera.x = 0;
-                                                                                        }
-                                                                                        if(camera.y < 0 )
+                                                                                        player.vx += 0.5;
+                                                                                        if(player.vx > 6 )
                                                                                         {
-
-                                                                                            camera.y = 0;
+                                                                                           player.vx = 6;
                                                                                         }
-                                                                                        if( camera.x + camera.w >= LARGEUR_NIVEAU )
+                                                                                           player.estTourne = false;
+                                                                                            player.ralenti = 0;
+                                                                                    }
+                                                                                    else { // friction
+
+                                                                                        player.frame = 0;
+                                                                                        player.vx *= 0.8f;
+                                                                                        player.ralenti = 1;
+
+                                                                                        if( fabsf( player.vx) < 0.1f)
                                                                                         {
-                                                                                            camera.x = LARGEUR_NIVEAU - LARGEUR_FENETRE;
+                                                                                               player.vx = 0;
                                                                                         }
-                                                                                        if( camera.y + camera.h >= HAUTEUR_NIVEAU)
-                                                                                        {
-                                                                                            camera.y = HAUTEUR_NIVEAU - HAUTEUR_FENETRE;
+                                                                                    }
 
-                                                                                        }
-
-
-
-                                                                                }
+                                                                                 }
                                                                                                                
                                                                                                                                                                                                                                                                                                                                                               
 Attaques
