@@ -2,8 +2,8 @@ var menu_principal_8c =
 [
     [ "ChargerData_Menu", "menu_principal_8c.html#a30338f63414e63ccd1c8ad1145e0abf9", null ],
     [ "Dessiner_Menu", "menu_principal_8c.html#abcf68b1e1dd8324329d5b2c9d9c311a1", null ],
-    [ "Droite", "menu_principal_8c.html#af19e28b44c1e6fea87f64781d22e0ed9", null ],
-    [ "Gauche", "menu_principal_8c.html#a119c9dad78f814d3131796d75ddda133", null ],
+    [ "Droite", "menu_principal_8c.html#a538aba3a827a958ac3323cc5db1e1af4", null ],
+    [ "Gauche", "menu_principal_8c.html#a3c36e47142c66ac4ea2a364c4b9239a3", null ],
     [ "getMenu", "menu_principal_8c.html#a7961cf6f80a1581137f00a2950bb22dd", null ],
     [ "getTouchePresse", "menu_principal_8c.html#adcfbc9a00de7cd275a57b6f1cd1f7b20", null ],
     [ "Init_MenuPrincipal", "menu_principal_8c.html#a09b63586f3bd140dc10d786d769e5250", null ],

@@ -66,10 +66,12 @@ extern LinkedList* getEnnemis(void);/**< fonction getEnnemis qui gere les ennemi
 extern LinkedList* getCollider(void);/**< fonction getCollider*/
 extern LinkedList* getItems(void);/**< fonction getItems*/
 extern LinkedList* getBullets(void);/**< fonction getBullets*/
+
 extern HUD* getScores(void);/**< fonction getScores qui gere le scores*/
 extern HUD* getNiveau();/**< fonction getNiveau qui gere les niveaux*/
 extern HUD* getTime();/**< fonction getNiveau qui gere le timer du jeux*/
 extern HUD* getItem(int num_item) ;
+
 extern Menu_t* getMenu(void);/**< fonction getMenu*/
 extern Menu_t* getInventaire(void);/**< fonction getInventaire*/
 extern Menu_t * getMenuLoad(void);/**< fonction getMenuLoad*/

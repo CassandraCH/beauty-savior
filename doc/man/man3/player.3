@@ -1,4 +1,4 @@
-.TH "player" 3 "Dimanche 29 Mars 2020" "Version 0.1" "Beauty Savior" \" -*- nroff -*-
+.TH "player" 3 "Jeudi 2 Avril 2020" "Version 0.1" "Beauty Savior" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -39,43 +39,19 @@ player
 .RI "int \fBnb_lancer\fP"
 .br
 .ti -1c
-.RI "int \fBm_frameWidth\fP"
-.br
-.ti -1c
-.RI "int \fBm_frameHeight\fP"
-.br
-.ti -1c
-.RI "int \fBm_textureWidth\fP"
-.br
-.ti -1c
-.RI "int \fBm_textureHeight\fP"
-.br
-.ti -1c
 .RI "float \fBposXDepart\fP"
 .br
 .ti -1c
 .RI "float \fBposYDepart\fP"
 .br
 .ti -1c
-.RI "float \fBnumeroImage\fP"
+.RI "\fBbool\fP \fBosActif\fP"
 .br
 .ti -1c
-.RI "SDL_Rect \fBplayerRect\fP"
+.RI "\fBbool\fP \fBtreeActif\fP"
 .br
 .ti -1c
-.RI "SDL_Rect \fBplayerPosition\fP"
-.br
-.ti -1c
-.RI "int \fBoriginX\fP"
-.br
-.ti -1c
-.RI "int \fBoriginY\fP"
-.br
-.ti -1c
-.RI "float \fBanimationSpeed\fP"
-.br
-.ti -1c
-.RI "int \fBframe\fP"
+.RI "\fBbool\fP \fBrockActif\fP"
 .br
 .ti -1c
 .RI "\fBbool\fP \fBestActif\fP"
@@ -85,6 +61,9 @@ player
 .br
 .ti -1c
 .RI "\fBbool\fP \fBestSurSol\fP"
+.br
+.ti -1c
+.RI "int \fBscores\fP"
 .br
 .ti -1c
 .RI "int \fBnombreVies\fP"
@@ -107,8 +86,6 @@ player
 Structure gérant les caractéristiques liées au joueur 
 .SH "Documentation des champs"
 .PP 
-.SS "float animationSpeed"
-Vitesse de l'animation 
 .SS "\fBbool\fP estActif"
 le booleen est actif 
 .SS "\fBbool\fP estMort"
@@ -117,18 +94,8 @@ un type booleen pour savoir c'est l'entite est mort>
 le booleen est sur le sol 
 .SS "\fBbool\fP estTourne"
 le booleen est tourne 
-.SS "int frame"
-le cadre 
 .SS "float h"
 hauteur de l'entite 
-.SS "int m_frameHeight"
-la hauteur de l'image a afficher 
-.SS "int m_frameWidth"
-Données pour l'animation la largueur de l'image a afficher 
-.SS "int m_textureHeight"
-hauteur de la texture 
-.SS "int m_textureWidth"
-largueur de la texture 
 .SS "int nb_lancer"
 un compteur pour savoir le nb de lancer, attaque en cours> 
 .SS "int nb_objet"
@@ -137,24 +104,20 @@ nombres d'objets qui a le joueur
 le niveau du joueur 
 .SS "int nombreVies"
 le nombre de vie du joueur 
-.SS "float numeroImage"
-le numero de l'image 
-.SS "int originX"
-Origine du personnage en X 
-.SS "int originY"
-Origine du personnage en Y 
-.SS "SDL_Rect playerPosition"
-la position du joueur 
-.SS "SDL_Rect playerRect"
-la position du joueur 
+.SS "\fBbool\fP osActif"
+booleen pour vérifier l'os est l'élement actif 
 .SS "float posXDepart"
 sa positon de depart selon x 
 .SS "float posYDepart"
 sa positon de depart selon y 
 .SS "\fBbool\fP ralenti"
 le ralentisement du joueur 
+.SS "\fBbool\fP rockActif"
+booleen pour vérifier le rock est l'élement actif 
 .SS "\fBTexture_Manager\fP tex"
 Texture du joueur 
+.SS "\fBbool\fP treeActif"
+booleen pour vérifier le tree est l'élement actif 
 .SS "\fBtypeEntite\fP type"
 le type de l'entite 
 .SS "float vx"

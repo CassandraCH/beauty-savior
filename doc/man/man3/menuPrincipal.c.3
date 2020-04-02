@@ -1,4 +1,4 @@
-.TH "src/menuPrincipal.c" 3 "Dimanche 29 Mars 2020" "Version 0.1" "Beauty Savior" \" -*- nroff -*-
+.TH "src/menuPrincipal.c" 3 "Jeudi 2 Avril 2020" "Version 0.1" "Beauty Savior" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -38,11 +38,11 @@ src/menuPrincipal.c \- Programme qui gère le menu principal\&.
 .br
 .RI "Fonction qui permet de naviguer dans le menu vers le bas\&. "
 .ti -1c
-.RI "void \fBDroite\fP (\fBMenu_t\fP *\fBmenu\fP)"
+.RI "void \fBDroite\fP (\fBMenu_t\fP *\fBmenu\fP, int nombresOptions)"
 .br
 .RI "Fonction qui permet de naviguer dans le menu a droite\&. "
 .ti -1c
-.RI "void \fBGauche\fP (\fBMenu_t\fP *\fBmenu\fP)"
+.RI "void \fBGauche\fP (\fBMenu_t\fP *\fBmenu\fP, int nombresOptions)"
 .br
 .RI "Fonction qui permet de naviguer dans le menu a gauche\&. "
 .ti -1c
@@ -149,7 +149,7 @@ pas de valeur de retour (void)
 .RE
 .PP
 
-.SS "void Droite (\fBMenu_t\fP * menu)"
+.SS "void Droite (\fBMenu_t\fP * menu, int nombresOptions)"
 
 .PP
 Fonction qui permet de naviguer dans le menu a droite\&. 
@@ -157,6 +157,8 @@ Fonction qui permet de naviguer dans le menu a droite\&.
 \fBParamètres\fP
 .RS 4
 \fImenu\fP pointeur sur le menu 
+.br
+\fInombresOptions\fP nombre d'options 
 .RE
 .PP
 \fBRenvoie\fP
@@ -165,7 +167,7 @@ pas de valeur de retour (void)
 .RE
 .PP
 
-.SS "void Gauche (\fBMenu_t\fP * menu)"
+.SS "void Gauche (\fBMenu_t\fP * menu, int nombresOptions)"
 
 .PP
 Fonction qui permet de naviguer dans le menu a gauche\&. 
@@ -173,6 +175,8 @@ Fonction qui permet de naviguer dans le menu a gauche\&.
 \fBParamètres\fP
 .RS 4
 \fImenu\fP pointeur sur le menu 
+.br
+\fInombresOptions\fP nombre d'options 
 .RE
 .PP
 \fBRenvoie\fP

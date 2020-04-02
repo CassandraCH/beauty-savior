@@ -45,10 +45,11 @@ extern HUD* getTime()
     return &time_;
 }
 
-/** \fn  extern HUD* getItem()
- *  \brief Retourne l'instance de l'objet niveau
+/** \fn  extern HUD* getItem(int num_item) 
+ *  \brief Retourne de l'item séléction
+ *  \param num_item correspond au numéro de l'item selectionné
  *  \details Cela permet d'instaurer un contexte privé
- *  \return Retourne un pointeur sur l'objet niveau 
+ *  \return Retourne un pointeur sur l'objet séléctionné 
  */
 extern HUD* getItem(int num_item) 
 {

@@ -1,4 +1,4 @@
-.TH "src/scores.c" 3 "Dimanche 29 Mars 2020" "Version 0.1" "Beauty Savior" \" -*- nroff -*-
+.TH "src/scores.c" 3 "Jeudi 2 Avril 2020" "Version 0.1" "Beauty Savior" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -24,6 +24,10 @@ src/scores.c \- Programme qui gère le score\&.
 .ti -1c
 .RI "\fBHUD\fP * \fBgetTime\fP ()"
 .br
+.RI "Retourne l'instance de l'objet niveau\&. "
+.ti -1c
+.RI "\fBHUD\fP * \fBgetItem\fP (int num_item)"
+.br
 .in -1c
 .SS "Variables"
 
@@ -33,6 +37,9 @@ src/scores.c \- Programme qui gère le score\&.
 .br
 .ti -1c
 .RI "\fBHUD\fP \fBniveau\fP"
+.br
+.ti -1c
+.RI "\fBHUD\fP \fBitem_s\fP [3]"
 .br
 .ti -1c
 .RI "\fBHUD\fP \fBtime_\fP"
@@ -84,8 +91,17 @@ Retourne un pointeur sur l'objet score
 .RE
 .PP
 
-.SS "\fBHUD\fP* getTime ()"
-fonction getNiveau qui gere le timer du jeux 
+.SS "\fBHUD\fP * getTime ()"
+
+.PP
+Retourne l'instance de l'objet niveau\&. Cela permet d'instaurer un contexte privé 
+.PP
+\fBRenvoie\fP
+.RS 4
+Retourne un pointeur sur l'objet niveau 
+.RE
+.PP
+
 .SH "Documentation des variables"
 .PP 
 .SS "\fBHUD\fP niveau"

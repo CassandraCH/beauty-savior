@@ -7,7 +7,6 @@ var searchData=
   ['afficher_5ftextures_5fniveau_8',['afficher_textures_niveau',['../level_8c.html#a53ce974f62f5708abe62978204e1130e',1,'afficher_textures_niveau(int niveau):&#160;level.c'],['../level_8h.html#a53ce974f62f5708abe62978204e1130e',1,'afficher_textures_niveau(int niveau):&#160;level.c']]],
   ['afficherhud_9',['AfficherHUD',['../hud_8c.html#a4f49d6dce188b88579a49345270f0463',1,'AfficherHUD(HUD *hud):&#160;hud.c'],['../hud_8h.html#a4f49d6dce188b88579a49345270f0463',1,'AfficherHUD(HUD *hud):&#160;hud.c']]],
   ['afficherjoueur_10',['AfficherJoueur',['../player_8c.html#a5c6a7993d87c10bd12bfefccdf96a242',1,'AfficherJoueur():&#160;player.c'],['../player_8h.html#a5c6a7993d87c10bd12bfefccdf96a242',1,'AfficherJoueur():&#160;player.c']]],
-  ['animationspeed_11',['animationSpeed',['../structplayer.html#a5b68360a66199e508b85785a0871029a',1,'player']]],
-  ['attaqueennemis_12',['attaqueEnnemis',['../entite_8c.html#adf33bce05406e0cd2662f95f88a69bad',1,'attaqueEnnemis():&#160;entite.c'],['../entite_8h.html#adf33bce05406e0cd2662f95f88a69bad',1,'attaqueEnnemis():&#160;entite.c']]],
-  ['attaquejoueur_13',['attaqueJoueur',['../player_8c.html#a6eefc40165232a89552410f13c2f0e92',1,'attaqueJoueur():&#160;player.c'],['../player_8h.html#a6eefc40165232a89552410f13c2f0e92',1,'attaqueJoueur():&#160;player.c']]]
+  ['attaqueennemis_11',['attaqueEnnemis',['../entite_8c.html#adf33bce05406e0cd2662f95f88a69bad',1,'attaqueEnnemis():&#160;entite.c'],['../entite_8h.html#adf33bce05406e0cd2662f95f88a69bad',1,'attaqueEnnemis():&#160;entite.c']]],
+  ['attaquejoueur_12',['attaqueJoueur',['../player_8c.html#a6eefc40165232a89552410f13c2f0e92',1,'attaqueJoueur():&#160;player.c'],['../player_8h.html#a6eefc40165232a89552410f13c2f0e92',1,'attaqueJoueur():&#160;player.c']]]
 ];
