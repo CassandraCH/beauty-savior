@@ -38,3 +38,5 @@ doc/*
 *.fdb_latexmk
 *.fls
 
+includes/interface.h
+src/interface.c

@@ -149,19 +149,25 @@ extern void Rendu_Jeux()
     
     SDL_Texture * texture = ChargerTexture("graphics_assets/rect11.png");
     SDL_Texture * itemTex = ChargerTexture("graphics_assets/coin.png");
+    SDL_Texture * rockTex = ChargerTexture("graphics_assets/tex_rock.png");
+    SDL_Texture * treeTex = ChargerTexture("graphics_assets/tex_tree.png");
+    SDL_Texture * osTex = ChargerTexture("graphics_assets/tex_os.png");
 
-
+    
 
     //Gestion des affchages des listes, du joueur et du score
-    Afficher_ElementsListes( &listEnnemis, texture, ennemi );
-    Afficher_ElementsListes( &bullet , itemTex, bull );
-    Afficher_ElementsListes( &bullet , itemTex, feu );
+    Afficher_ElementsListes( &listEnnemis, texture, ennemi, 50, 50 );
+    Afficher_ElementsListes( &bullet , itemTex, feu , 41, 47 );
+    Afficher_ElementsListes( &bullet , rockTex, rock, 37, 35 );
+    Afficher_ElementsListes( &bullet , osTex, os , 36, 51 );
+    Afficher_ElementsListes( &bullet , treeTex, tree , 31, 49 );
     
     AfficherJoueur();
 
 
-    Afficher_ElementsListes( &items, itemTex, os ); 
-    Afficher_ElementsListes( &items, itemTex, rock ); 
+    Afficher_ElementsListes( &items, osTex, os, 36, 51 ); 
+    Afficher_ElementsListes( &items, rockTex, rock ,37, 35 ); 
+    Afficher_ElementsListes( &items, treeTex, tree, 31, 49 ); 
     
 
     // afficher_textures_niveau(1);

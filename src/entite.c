@@ -34,7 +34,7 @@ extern bool UpdateBullets( typeEntite typeA, typeEntite typeB )
                 if ( pt->lancer )
                 {
                     //Si l'entite est le joueur et que le bullet actuel est de type bull => le bullet est tire a gauche ou a droite en fonction de la position du joueur
-                    if ( typeA == joueur && pt->type == bull ) 
+                    if ( typeA == joueur &&  ( pt->type == os || pt->type == tree || pt->type == rock)  ) 
                     {
                         printf("Joueur\n");
 
@@ -123,8 +123,8 @@ extern void CreerTir(typeEntite type, int width, int height, int startX, int sta
     SDL_Rect *rect = malloc(sizeof(SDL_Rect)); //Creation d'une structure de type rectangle en SDL
 
     /* Ajout des valeurs dans les champs de la structure */
-    rect->w = 41;
-    rect->h = 47;
+    rect->w = width;
+    rect->h = height;
     rect->y = (startY + height / 2) - rect->h / 2;
     rect->x = startX + 25;
 

@@ -70,7 +70,7 @@ extern void init_List(LinkedList *list);/**< initialisation des listes*/
 extern Node* creerElement(SDL_Rect*rect, typeEntite item_t, bool actif ); /**< creation du rectangle*/
 extern void insertion(LinkedList * list, SDL_Rect *rect, typeEntite items_t , bool actif); /**< creation du rectangle*/
 
-extern void Afficher_ElementsListes(LinkedList *lst,SDL_Texture * tex, typeEntite typeE);/**< affiche les elements de la liste*/
+extern void Afficher_ElementsListes(LinkedList *lst, SDL_Texture * tex, typeEntite typeE, int largeurTex, int hauteurTex);/**< affiche les elements de la liste*/
 
 extern void suppListe(LinkedList * lst);
 extern bool suppPremier(LinkedList * lst);

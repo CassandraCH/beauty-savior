@@ -208,11 +208,21 @@ extern void CollisionItems()
                 supprimeCible(getItems(), true);
                 
                 if( pt->type == os )
+                {
                     incrementeOS();
+                    printf("Nombre Os: %d\n", getOs());
+                }
                 else if ( pt->type == rock )
+                {
                     incrementeRock();
+                    printf("Nombre Rock: %d\n", getRock());
+                }
                 else if ( pt->type == tree )
-                    incrementeBranche(); 
+                    {
+                        incrementeBranche(); 
+                        printf("Nombre branche: %d\n", getBranche());
+                    }
+                        
             }
             break;
         }
@@ -317,13 +327,22 @@ extern bool collide2d(float x1, float y1, float x2, float y2, float wt1, float h
 extern void attaqueJoueur()
 {
   
-      if( getOs() > 0 )
-      {
-          
-        decrementeOS();
-        CreerTir(bull, getPlayer()->w , getPlayer()->h, getPlayerX(),  getPlayerY() );
-        
-      }
+        if( getOs() > 0 && player.osActif )
+        {
+            decrementeOS();
+            CreerTir(os, getPlayer()->w , getPlayer()->h, getPlayerX(),  getPlayerY() );
+        }   
+        else if (  getRock() > 0 && player.rockActif  )
+        {
+            decrementeRock();
+            CreerTir(rock, getPlayer()->w , getPlayer()->h, getPlayerX(),  getPlayerY() );
+        }
+        else if( getBranche() > 0 && player.treeActif )
+        {
+            decrementeBranche();
+            CreerTir(tree, getPlayer()->w , getPlayer()->h, getPlayerX(),  getPlayerY() );
+        }
+  
 
     return;
 }
@@ -346,7 +365,8 @@ extern void collision_tir()
         {
             for(enne = getEnnemis()->tete; enne != NULL; enne = enne->suivant)
             {
-                if(collide2d( tir->rect->x , tir->rect->y, enne->rect->x,enne->rect->y,tir->rect->w ,tir->rect->h,enne->rect->w, enne->rect->h ) && enne->type == ennemi && tir->type == bull ) 
+                if(collide2d( tir->rect->x , tir->rect->y, enne->rect->x,enne->rect->y,tir->rect->w ,tir->rect->h,enne->rect->w, enne->rect->h ) && 
+                ( tir->type == os || tir->type == tree || tir->type == rock) ) 
                 {
 
                         if( !enne->estMort )

@@ -128,6 +128,41 @@ extern void UpdateOption(Options_t * menut, int etat )
 }
 
 /**
+ * \fn extern void UpdateImage_Option(Options_t * menut, const char * filename)
+ * \brief Fonction qui rafraichit l'affichage des options
+ * \param menut option a mettre a jour
+ * \param etat etat : selectionne ou non
+ * \return pas de valeur de retour (void)
+*/
+extern void UpdateImage_Option(Options_t * menut, const char * filename)
+{
+   /* 
+     * Surface tampon => utile pour parametrer la surface
+     * TTF_RenderText_Blended => permet de creer une surface et de l'affiche en haute qualite 
+     */
+
+    
+    SDL_Surface *tmp = IMG_Load( filename );
+    menut->largeur = tmp->w;
+    menut->hauteur = tmp->h;
+
+    //Liberer la memoire utilisee pour l'ancienne structure
+    if( menut->texture != NULL)
+    {   
+        printf("Texture libéré\n");
+        SDL_DestroyTexture(menut->texture);
+        menut->texture = NULL;
+    }
+
+    //Creer la nouvelle texture avec les parametres dans la surface tampon
+    menut->texture = SDL_CreateTextureFromSurface( getRenderer() , tmp);
+
+    //Liberer la memoire utilisee pour la surface tampon
+    SDL_FreeSurface(tmp);
+}
+
+
+/**
  * \fn extern void ToucheHaut(Menu_t *menu)
  * \brief Fonction qui permet de naviguer dans le menu vers le haut
  * \param menu pointeur sur le menu

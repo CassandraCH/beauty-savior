@@ -75,6 +75,7 @@ extern HUD* getItem(int num_item) ;
 
 extern Menu_t* getMenu(void);/**< fonction getMenu*/
 extern Menu_t* getInventaire(void);/**< fonction getInventaire*/
+extern Menu_t* getInterface(void);
 extern Menu_t * getMenuLoad(void);/**< fonction getMenuLoad*/
 extern Menu_t * getMenuCon(void);/**< fonction getMenuCon*/
 extern Menu_t * getMenuPause(void);/**< fonction getMenuPause*/

@@ -104,15 +104,16 @@ extern void Input_Inventaire(SDL_Event *event)
 
                 //Cas de la touche entree
                 case SDLK_RETURN:
-                    switch (getTouchePresse(getMenuPause()))
+                    switch (getTouchePresse(getInventaire()))
                     {
                           //Cas 1 : on séléctionne l'os comme objet
                         case 0:
-                            if( getOs() > 0 )
+                            if( getOs() > 0 && !getPlayer()->osActif)
                             {
                                   getPlayer()->osActif = true;  
                                   getPlayer()->rockActif = false;  
                                   getPlayer()->treeActif = false;  
+                                  UpdateImage_Option( &getInterface()->menu[2], "graphics_assets/items.png" );
                             }
                             getBaseGame()->state = IN_GAME;                    
                             break;
@@ -123,8 +124,9 @@ extern void Input_Inventaire(SDL_Event *event)
                                   getPlayer()->osActif = false;  
                                   getPlayer()->rockActif = true;  
                                   getPlayer()->treeActif = false;   
+                                  UpdateImage_Option( &getInterface()->menu[2], "graphics_assets/items2.png" );
                             }
-                            return;
+                            getBaseGame()->state = IN_GAME;        
                             break;
                         //Cas 3 : on séléctionne la branche comme objet    
                         case 2:
@@ -133,10 +135,11 @@ extern void Input_Inventaire(SDL_Event *event)
                                   getPlayer()->osActif = false;  
                                   getPlayer()->rockActif = false;  
                                   getPlayer()->treeActif = true;   
+                                  UpdateImage_Option( &getInterface()->menu[2], "graphics_assets/items1.png" );
                             }
+                            getBaseGame()->state = IN_GAME;        
                             break;
-                        default:
-                            break;
+                
                     }//fin du switch
                     break;
                 default:

@@ -52,8 +52,8 @@ struct menu
 };
 
 
-
-extern void UpdateOption(Options_t * menut, int etat);/**< fonction d'etat du menu*/
+extern void UpdateOption(Options_t * menut, int etat); /**< fonction de mise à jour des options du menu*/
+extern void UpdateImage_Option(Options_t * menut, const char * filename);/**< fonction de mise à jour des options du menu à partir*/
 extern int getTouchePresse(Menu_t *menu);/**< fonction sur les touches du menu*/
 
 extern void ToucheHaut(Menu_t * menu);/**< fonction pour la touche haut du menu*/

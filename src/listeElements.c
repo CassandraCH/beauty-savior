@@ -372,7 +372,7 @@ extern bool supprimeCible(LinkedList *lsptr, int target)
  * \param typeE type des elements a afficher
  * \return pas de valeur de retour (void)
 */
-extern void Afficher_ElementsListes(LinkedList *lst, SDL_Texture * tex, typeEntite typeE)
+extern void Afficher_ElementsListes(LinkedList *lst, SDL_Texture * tex, typeEntite typeE, int largeurTex, int hauteurTex)
 {
     Node *pt;
 
@@ -385,7 +385,10 @@ extern void Afficher_ElementsListes(LinkedList *lst, SDL_Texture * tex, typeEnti
             //Si l'element n'est pas mort
             if ( pt->estMort != true && pt->type == typeE )
             {
-                SDL_Rect rect = { pt->rect->x- camera.x, pt->rect->y-  camera.y, pt->rect->w, pt->rect->h };
+                pt->rect->w = largeurTex;
+                pt->rect->h = hauteurTex;
+
+                SDL_Rect rect = { pt->rect->x- camera.x, pt->rect->y -  camera.y, pt->rect->w, pt->rect->h };
                 SDL_RenderCopy( getRenderer() , tex , NULL, &rect );
             }
         }
