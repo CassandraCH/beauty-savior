@@ -144,17 +144,13 @@ extern void Rendu_Jeux()
   else if ( getBaseGame()->state == IN_GAME )
   { 
     
-    if( getBaseGame()->time_s > 100 )
-    {
-      SetHUD_IntToTexture(getTime(),"1 : ",getBaseGame()->sec ,500, 0 );
-    }
-    else 
-    {
-      SetHUD_IntToTexture(getTime(),"0 : ", getBaseGame()->min ,500, 0 );
-    }
+    
+    AfficherInterface();
     
     SDL_Texture * texture = ChargerTexture("graphics_assets/rect11.png");
     SDL_Texture * itemTex = ChargerTexture("graphics_assets/coin.png");
+
+
 
     //Gestion des affchages des listes, du joueur et du score
     Afficher_ElementsListes( &listEnnemis, texture, ennemi );
@@ -163,7 +159,6 @@ extern void Rendu_Jeux()
     
     AfficherJoueur();
 
-    AfficherInterface();
 
     Afficher_ElementsListes( &items, itemTex, os ); 
     Afficher_ElementsListes( &items, itemTex, rock ); 

@@ -34,7 +34,7 @@ extern void Init_MenuLoad()
     ChargerPartie();
 
     //Creation de la texture pour le score
-    SetHUD_IntToTexture(getScores(), "SCORES", getPlayer()->nb_objet, 490, 245);
+    SetHUD_IntToTexture(getScores(), "SCORES", getPlayer()->scores, 490, 245);
 
     //Creation de la texture pour le numero du niveau
     SetHUD_IntToTexture(getNiveau(), "NIVEAU", getPlayer()->niveau , 490, 374 );
@@ -129,7 +129,7 @@ extern void Input_MenuLoad(SDL_Event *event)
                             getPlayer()->estMort = false;
 
                             //Initialisation du hud score
-                            SetHUD_IntToTexture(getScores(), "SCORES", getPlayer()->nb_objet, 10, 0);
+                            SetHUD_IntToTexture(getScores(), "", getPlayer()->scores,565, 17);
 
                             //Nettoyage de l'affichage
                             Nettoyer_Menu(getMenu(), 4);

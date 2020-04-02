@@ -30,7 +30,7 @@ extern void Init_MenuContinue()
     int width = LARGEUR_FENETRE, height = HAUTEUR_FENETRE;
     printf("Chargement Menu Continue");
 
-    SetHUD_IntToTexture(getScores(), "SCORES", getPlayer()->nb_objet, 490, 245);
+    SetHUD_IntToTexture(getScores(), "SCORES", getPlayer()->scores, 490, 245);
    
     SetHUD_IntToTexture(getNiveau(), "NIVEAU", getPlayer()->niveau , 510, 374);
 
@@ -91,7 +91,7 @@ extern void Input_MenuContinue(SDL_Event *event)
                             suppListe(getBullets());
 
                             //Initialisation du hud score
-                            Init_HUD(getScores(), "SCORES : 0", 10, 0);
+                            Init_HUD(getScores(), "0", 565, 17);
 
 
                             getBaseGame()->tempsActuel = 0;

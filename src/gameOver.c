@@ -33,7 +33,7 @@ extern void Init_MenuGameOver()
     printf("Chargement Menu Game Over");
     
     //Creation de la texture pour le score
-    SetHUD_IntToTexture(getScores(), "SCORES", getPlayer()->nb_objet, 100, 300);
+    SetHUD_IntToTexture(getScores(), "SCORES", getPlayer()->scores, 100, 300);
 
 
     //chargement du son
@@ -132,7 +132,7 @@ extern void Input_MenuGameOver(SDL_Event *event)
                             actualiserJoueur();
 
                             //Initialisation du hud score
-                            Init_HUD(getScores(), "0", 10, 0);
+                            Init_HUD(getScores(), "0", 565, 17);
 
                             //Changement de l'etat du jeu
                             getBaseGame()->state = IN_GAME;

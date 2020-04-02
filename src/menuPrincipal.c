@@ -241,7 +241,8 @@ extern void Dessiner_Menu(Menu_t* menu, int nombresOptions, int posX, int posY ,
     SDL_Rect rect = {posX,posY, largeurBG, hauteurBG };
 
     //Gestion de l'affichage du rendu
-    SDL_RenderCopy( getRenderer(), menu->bg , NULL, &rect );
+    if( menu->bg != NULL )
+        SDL_RenderCopy( getRenderer(), menu->bg , NULL, &rect );
 
     //Pour chaque option, afficher a l'ecran son rendu
 	for (int i = 0; i < nombresOptions; i++)
