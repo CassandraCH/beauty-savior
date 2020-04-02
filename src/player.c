@@ -318,7 +318,7 @@ extern void attaqueJoueur()
           
         decrementeOS();
         CreerTir(bull, getPlayer()->w , getPlayer()->h, getPlayerX(),  getPlayerY() );
-        SetHUD_IntToTexture(getScores(), "SCORES",--player.nb_objet,getScores()->rect.x,getScores()->rect.y  );
+        SetHUD_IntToTexture(getScores(), "",--player.nb_objet,getScores()->rect.x,getScores()->rect.y  );
 
       }
 

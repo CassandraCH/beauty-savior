@@ -35,6 +35,7 @@
 #include "menuLoad.h"
 #include "menuPause.h"
 #include "menu_continue.h"
+#include "interface.h"
 
 #include "gameOver.h"
 

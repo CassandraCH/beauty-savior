@@ -26,7 +26,6 @@ typedef struct option
     int hauteur; /**< la hauteur de l'option*/
     const char * nomOption;/**<le nom de l'option*/
     SDL_Texture *texture;/**< le texture de l'option*/
-    SDL_Color couleur;/**<la couleur de l'option*/
     int x;/**<la position en x de l'option*/
     int y;/**<la position en y de l'option*/
     char * filename[4];/**<le fichiers contenant la texture de l'option*/

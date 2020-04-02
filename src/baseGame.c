@@ -152,8 +152,6 @@ extern void Rendu_Jeux()
     {
       SetHUD_IntToTexture(getTime(),"0 : ", getBaseGame()->min ,500, 0 );
     }
-
-    // afficher_textures_niveau(0);
     
     SDL_Texture * texture = ChargerTexture("graphics_assets/rect11.png");
     SDL_Texture * itemTex = ChargerTexture("graphics_assets/coin.png");
@@ -165,8 +163,8 @@ extern void Rendu_Jeux()
     
     AfficherJoueur();
 
-    AfficherHUD(getScores()); 
-    AfficherHUD(getTime());
+    AfficherInterface();
+
     Afficher_ElementsListes( &items, itemTex, os ); 
     Afficher_ElementsListes( &items, itemTex, rock ); 
     

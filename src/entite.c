@@ -245,7 +245,7 @@ extern void collisionDetection()
                 {
 
                     //Incrementation du score
-                     SetHUD_IntToTexture(getScores(), "SCORES", ++getPlayer()->scores, getScores()->rect.x,getScores()->rect.y );
+                     SetHUD_IntToTexture(getScores(), "", ++getPlayer()->scores, getScores()->rect.x,getScores()->rect.y );
                     // Si l'ennemi n'est pas deja mort alors il le devient
                     if (!pt->estMort)
                     {

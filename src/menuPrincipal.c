@@ -305,11 +305,8 @@ extern void Input_MenuPrincipal(SDL_Event *event)
                             suppListe(getEnnemis());
                             suppListe(getBullets());
 
-                            //Initialisation du hud score
-                            Init_HUD(getScores(),"SCORES : 0", 10, 0);
-                            //Initialisation du hud time
-                            Init_HUD(getTime(),"1 : 10", 500, 0);
-
+                            Init_Interface();
+                            
                             ChargerNiveau();
 
                             //Changement de l'etat du jeu

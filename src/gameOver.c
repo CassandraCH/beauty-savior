@@ -132,7 +132,7 @@ extern void Input_MenuGameOver(SDL_Event *event)
                             actualiserJoueur();
 
                             //Initialisation du hud score
-                            Init_HUD(getScores(), "SCORES : 0", 10, 0);
+                            Init_HUD(getScores(), "0", 10, 0);
 
                             //Changement de l'etat du jeu
                             getBaseGame()->state = IN_GAME;
