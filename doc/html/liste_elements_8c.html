@@ -138,9 +138,8 @@ Fonctions</h2></td></tr>
 <tr class="memitem:a7fa39862308b9f2479a717e645d58440"><td class="memItemLeft" align="right" valign="top"><a class="el" href="commun_8h.html#af6a258d8f3ee5206d682d799316314b1">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="liste_elements_8c.html#a7fa39862308b9f2479a717e645d58440">supprimeCible</a> (<a class="el" href="liste_elements_8h.html#a030286e4cb8b6aa168edf87519ab6e12">LinkedList</a> *lsptr, int target)</td></tr>
 <tr class="memdesc:a7fa39862308b9f2479a717e645d58440"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui permet de supprimer un element cible dans une liste.  <a href="liste_elements_8c.html#a7fa39862308b9f2479a717e645d58440">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a7fa39862308b9f2479a717e645d58440"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a90edb24ac275ea1e2960773718e07315"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="liste_elements_8c.html#a90edb24ac275ea1e2960773718e07315">Afficher_ElementsListes</a> (<a class="el" href="liste_elements_8h.html#a030286e4cb8b6aa168edf87519ab6e12">LinkedList</a> *lst, SDL_Texture *tex, <a class="el" href="commun_8h.html#a2aba7ee053b5e021d71af3fcf4ea1ae5">typeEntite</a> typeE)</td></tr>
-<tr class="memdesc:a90edb24ac275ea1e2960773718e07315"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui permet d'afficher les elements d'une liste.  <a href="liste_elements_8c.html#a90edb24ac275ea1e2960773718e07315">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a90edb24ac275ea1e2960773718e07315"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae087771833803603462871d31cd9235f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="liste_elements_8c.html#ae087771833803603462871d31cd9235f">Afficher_ElementsListes</a> (<a class="el" href="liste_elements_8h.html#a030286e4cb8b6aa168edf87519ab6e12">LinkedList</a> *lst, SDL_Texture *tex, <a class="el" href="commun_8h.html#a2aba7ee053b5e021d71af3fcf4ea1ae5">typeEntite</a> typeE, int largeurTex, int hauteurTex)</td></tr>
+<tr class="separator:ae087771833803603462871d31cd9235f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -162,8 +161,8 @@ Variables</h2></td></tr>
 <dl class="section date"><dt>Date</dt><dd>janvier 2020</dd></dl>
 <p>Création d'une liste, ajout de nouvel élément, suppression de la tête, suppresion de la queue, accès à une liste, affichage d'une liste' </p>
 </div><h2 class="groupheader">Documentation des fonctions</h2>
-<a id="a90edb24ac275ea1e2960773718e07315"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a90edb24ac275ea1e2960773718e07315">&#9670;&nbsp;</a></span>Afficher_ElementsListes()</h2>
+<a id="ae087771833803603462871d31cd9235f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae087771833803603462871d31cd9235f">&#9670;&nbsp;</a></span>Afficher_ElementsListes()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -184,7 +183,19 @@ Variables</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="commun_8h.html#a2aba7ee053b5e021d71af3fcf4ea1ae5">typeEntite</a>&#160;</td>
-          <td class="paramname"><em>typeE</em>&#160;</td>
+          <td class="paramname"><em>typeE</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>largeurTex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>hauteurTex</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -193,17 +204,7 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Fonction qui permet d'afficher les elements d'une liste. </p>
-<dl class="params"><dt>Paramètres</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">lst</td><td>liste dont on veut afficher les elements </td></tr>
-    <tr><td class="paramname">tex</td><td>texture </td></tr>
-    <tr><td class="paramname">typeE</td><td>type des elements a afficher </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Renvoie</dt><dd>pas de valeur de retour (void) </dd></dl>
+<p>affiche les elements de la liste </p>
 
 </div>
 </div>

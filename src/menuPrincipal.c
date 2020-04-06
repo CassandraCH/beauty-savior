@@ -131,7 +131,7 @@ extern void UpdateOption(Options_t * menut, int etat )
  * \fn extern void UpdateImage_Option(Options_t * menut, const char * filename)
  * \brief Fonction qui rafraichit l'affichage des options
  * \param menut option a mettre a jour
- * \param etat etat : selectionne ou non
+ * \param filename nom du fichier à partir duquel on charge la texture
  * \return pas de valeur de retour (void)
 */
 extern void UpdateImage_Option(Options_t * menut, const char * filename)

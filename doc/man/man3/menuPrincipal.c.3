@@ -30,6 +30,10 @@ src/menuPrincipal.c \- Programme qui gère le menu principal\&.
 .br
 .RI "Fonction qui rafraichit l'affichage des options\&. "
 .ti -1c
+.RI "void \fBUpdateImage_Option\fP (\fBOptions_t\fP *menut, const char *filename)"
+.br
+.RI "Fonction qui rafraichit l'affichage des options\&. "
+.ti -1c
 .RI "void \fBToucheHaut\fP (\fBMenu_t\fP *\fBmenu\fP)"
 .br
 .RI "Fonction qui permet de naviguer dans le menu vers le haut\&. "
@@ -281,6 +285,24 @@ Fonction qui permet de naviguer dans le menu vers le haut\&.
 \fBParamètres\fP
 .RS 4
 \fImenu\fP pointeur sur le menu 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void UpdateImage_Option (\fBOptions_t\fP * menut, const char * filename)"
+
+.PP
+Fonction qui rafraichit l'affichage des options\&. 
+.PP
+\fBParamètres\fP
+.RS 4
+\fImenut\fP option a mettre a jour 
+.br
+\fIfilename\fP nom du fichier à partir duquel on charge la texture 
 .RE
 .PP
 \fBRenvoie\fP

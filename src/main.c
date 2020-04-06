@@ -23,10 +23,10 @@ int main( int argc, char ** argv )
     //Initialisation de la fenetre 
     Init("Beauty Savior");
 	SDL_Event event;
-	
+    
     //Initialisation du generateur de nombres aleatoires
     srand( (int) time(NULL));
-
+    unsigned int frameLimit = SDL_GetTicks() + 16;
     //
     int flPreviousTime = 0, flCurrentTime = 0;
 
@@ -36,15 +36,6 @@ int main( int argc, char ** argv )
     //Tant que le jeu est actif (le jeu n'a pas ete quitte)
 	while( getBaseGame()->estActif )
     {   
-        
-        flPreviousTime = flCurrentTime;
-        flCurrentTime = SDL_GetTicks();
-
-        dt = (flCurrentTime - flPreviousTime) / 1000.0f;
-
-        if( dt > 0.15f )
-            dt = 0.15f;
-
         //Gestion des entrees utilisateur
         ProcessInput(&event);
       
@@ -53,6 +44,10 @@ int main( int argc, char ** argv )
         
         //Gestion de l'affichage
 		Rendu_Jeux( getBaseGame() );
+        
+        // Gestion des 60 fps (1000ms/60 = 16.6 -> 16 
+        delay(frameLimit);
+		frameLimit = SDL_GetTicks() + 16;
     } 
     
     //Liberation de la memoire 

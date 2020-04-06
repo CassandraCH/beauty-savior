@@ -40,11 +40,11 @@ extern bool UpdateBullets( typeEntite typeA, typeEntite typeB )
 
                         //Si le joueur est tourné on inverse le sens du tir
                         if( getPlayer()->estTourne )
-                            pt->movingX = -6;
+                            pt->movingX = -20;
 
                         //Sinon le sens de tir n'est pas inverse
                         else 
-                            pt->movingX =  6;
+                            pt->movingX =  20;
                     }
 
                     //Si l'entite est un ennemi et que le bullet actuel est de type feu => le bullet est tire a gauche ou a droite en fonction de a position du joueur par rapport a l'ennemi
@@ -53,10 +53,10 @@ extern bool UpdateBullets( typeEntite typeA, typeEntite typeB )
                         printf("Ennemi\n");
 
                         if( getPlayerX() + getPlayer()->w  <= pt->rect->x )
-                            pt->movingX = -6;
+                            pt->movingX = -20;
                             
                         else 
-                            pt->movingX = 6;
+                            pt->movingX =20;
                     }
                     //Mise a jour de l'etat du lancer du bullet => ne peut plus etre lancer
                     pt->lancer = false;
@@ -149,7 +149,7 @@ extern void attaqueEnnemis()
         if ( !pt->estMort )
         {
             float distance = sqrt(pow(pt->rect->x - getPlayerX(), 2) +  pow(pt->rect->y - getPlayerY(), 2)); 
-            if( distance < (pt->rect->w*3) + getPlayer()->w )
+            if( distance < (pt->rect->w*6) + getPlayer()->w )
             {
                 //Si le compteur de lancer disponible est inferieur a 1 => on reconfigure ce compteur et on cree un tir
                 if( pt->nb_lancer < 1) 

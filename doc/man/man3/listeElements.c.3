@@ -70,9 +70,8 @@ src/listeElements.c \- Programme qui permet de gérer les listes\&.
 .br
 .RI "Fonction qui permet de supprimer un element cible dans une liste\&. "
 .ti -1c
-.RI "void \fBAfficher_ElementsListes\fP (\fBLinkedList\fP *lst, SDL_Texture *tex, \fBtypeEntite\fP typeE)"
+.RI "void \fBAfficher_ElementsListes\fP (\fBLinkedList\fP *lst, SDL_Texture *tex, \fBtypeEntite\fP typeE, int largeurTex, int hauteurTex)"
 .br
-.RI "Fonction qui permet d'afficher les elements d'une liste\&. "
 .in -1c
 .SS "Variables"
 
@@ -117,26 +116,8 @@ janvier 2020
 Création d'une liste, ajout de nouvel élément, suppression de la tête, suppresion de la queue, accès à une liste, affichage d'une liste' 
 .SH "Documentation des fonctions"
 .PP 
-.SS "void Afficher_ElementsListes (\fBLinkedList\fP * lst, SDL_Texture * tex, \fBtypeEntite\fP typeE)"
-
-.PP
-Fonction qui permet d'afficher les elements d'une liste\&. 
-.PP
-\fBParamètres\fP
-.RS 4
-\fIlst\fP liste dont on veut afficher les elements 
-.br
-\fItex\fP texture 
-.br
-\fItypeE\fP type des elements a afficher 
-.RE
-.PP
-\fBRenvoie\fP
-.RS 4
-pas de valeur de retour (void) 
-.RE
-.PP
-
+.SS "void Afficher_ElementsListes (\fBLinkedList\fP * lst, SDL_Texture * tex, \fBtypeEntite\fP typeE, int largeurTex, int hauteurTex)"
+affiche les elements de la liste 
 .SS "\fBNode\fP * creerElement (SDL_Rect * rect, \fBtypeEntite\fP item_t, \fBbool\fP actif)"
 
 .PP

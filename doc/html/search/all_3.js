@@ -24,7 +24,6 @@ var searchData=
   ['commun_2eh_44',['commun.h',['../commun_8h.html',1,'']]],
   ['constantes_2eh_45',['constantes.h',['../constantes_8h.html',1,'']]],
   ['constants_5fh_46',['CONSTANTS_H',['../constantes_8h.html#ac7a36608ac7b2450d147e32c12ef6182',1,'constantes.h']]],
-  ['couleur_47',['couleur',['../structoption.html#a98106836ef07a24e0c807119f86ea929',1,'option']]],
-  ['creerelement_48',['creerElement',['../liste_elements_8c.html#af4e71ddbe7e81a3b59dcef2f9776fcc2',1,'creerElement(SDL_Rect *rect, typeEntite item_t, bool actif):&#160;listeElements.c'],['../liste_elements_8h.html#ab8e6667f55faeda7974831ef4cfc8645',1,'creerElement(SDL_Rect *rect, typeEntite item_t, bool actif):&#160;listeElements.c']]],
-  ['creertir_49',['CreerTir',['../entite_8c.html#ad22010ae4c30b9f88efac9dc9c4aa51b',1,'CreerTir(typeEntite type, int width, int height, int startX, int startY):&#160;entite.c'],['../entite_8h.html#ad22010ae4c30b9f88efac9dc9c4aa51b',1,'CreerTir(typeEntite type, int width, int height, int startX, int startY):&#160;entite.c']]]
+  ['creerelement_47',['creerElement',['../liste_elements_8c.html#af4e71ddbe7e81a3b59dcef2f9776fcc2',1,'creerElement(SDL_Rect *rect, typeEntite item_t, bool actif):&#160;listeElements.c'],['../liste_elements_8h.html#ab8e6667f55faeda7974831ef4cfc8645',1,'creerElement(SDL_Rect *rect, typeEntite item_t, bool actif):&#160;listeElements.c']]],
+  ['creertir_48',['CreerTir',['../entite_8c.html#ad22010ae4c30b9f88efac9dc9c4aa51b',1,'CreerTir(typeEntite type, int width, int height, int startX, int startY):&#160;entite.c'],['../entite_8h.html#ad22010ae4c30b9f88efac9dc9c4aa51b',1,'CreerTir(typeEntite type, int width, int height, int startX, int startY):&#160;entite.c']]]
 ];

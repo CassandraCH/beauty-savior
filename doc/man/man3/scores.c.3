@@ -28,6 +28,7 @@ src/scores.c \- Programme qui gère le score\&.
 .ti -1c
 .RI "\fBHUD\fP * \fBgetItem\fP (int num_item)"
 .br
+.RI "Retourne de l'item séléction\&. "
 .in -1c
 .SS "Variables"
 
@@ -69,6 +70,24 @@ janvier 2020
 Initialisation, mise à jour, affichage et destruction du score 
 .SH "Documentation des fonctions"
 .PP 
+.SS "\fBHUD\fP * getItem (int num_item)"
+
+.PP
+Retourne de l'item séléction\&. 
+.PP
+\fBParamètres\fP
+.RS 4
+\fInum_item\fP correspond au numéro de l'item selectionné
+.RE
+.PP
+Cela permet d'instaurer un contexte privé 
+.PP
+\fBRenvoie\fP
+.RS 4
+Retourne un pointeur sur l'objet séléctionné 
+.RE
+.PP
+
 .SS "\fBHUD\fP * getNiveau ()"
 
 .PP
@@ -104,6 +123,8 @@ Retourne un pointeur sur l'objet niveau
 
 .SH "Documentation des variables"
 .PP 
+.SS "\fBHUD\fP item_s[3]"
+hud des items du jeux 
 .SS "\fBHUD\fP niveau"
 hud du niveau 
 .SS "\fBHUD\fP score"

@@ -31,6 +31,10 @@ src/baseGame.c \- Programme qui gère les différents comportements du jeu en fo
 .RI "void \fBUpdate_Listes\fP ()"
 .br
 .RI "Fonction qui met a jour les listes de bullets et ennemis\&. "
+.ti -1c
+.RI "void \fBdelay\fP (unsigned int frameLimit)"
+.br
+.RI "Fonction qui permet de gérer le délai du jeu\&. "
 .in -1c
 .SS "Variables"
 
@@ -69,6 +73,17 @@ janvier 2020
 
 .SH "Documentation des fonctions"
 .PP 
+.SS "delay (unsigned int frameLimit)"
+
+.PP
+Fonction qui permet de gérer le délai du jeu\&. Gestion d'un délai lors de la mise à jour du jeu, afin de laisser respirer le processeur 
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
 .SS "\fBBase_Game\fP * getBaseGame ()"
 
 .PP

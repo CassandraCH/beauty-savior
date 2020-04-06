@@ -183,6 +183,9 @@ extern void Rendu_Jeux()
   }
 
   SDL_RenderPresent(getRenderer());
+
+  // Délai pour laisser respirer le proc
+    SDL_Delay(1);
 }
 
 /**
@@ -196,4 +199,34 @@ extern void Update_Listes()
   supprimeCible(getBullets(), true);
   supprimeCible(getEnnemis(), true);
 }
+
+/**
+ * \fn extern delay(unsigned int frameLimit)
+ * \brief Fonction qui permet de gérer le délai du jeu
+ * \details Gestion d'un délai lors de la mise à jour du jeu, afin de laisser respirer le processeur
+ * \return pas de valeur de retour (void)
+*/
+extern void delay(unsigned int frameLimit)
+{
+	// Gestion des 60 fps (images/stories/seconde)
+	unsigned int ticks = SDL_GetTicks();
+
+	if (frameLimit < ticks)
+	{
+		return;
+	}
+
+	if (frameLimit > ticks + 16)
+	{
+		SDL_Delay(16);
+	}
+
+	else
+	{
+		SDL_Delay(frameLimit - ticks);
+	}
+}
+
+
+
 

@@ -140,9 +140,9 @@ extern void InputJoueur(SDL_Event *event)
         player.vx -= 0.5;
 
         //Deplacement du joueur vers la gauche    
-        if( player.vx < -6 )
+        if( player.vx < -8)
         {
-            player.vx = -6;
+            player.vx = -8;
         }
 
         player.estTourne = true;
@@ -156,9 +156,9 @@ extern void InputJoueur(SDL_Event *event)
         player.vx += 0.5;
 
         //Deplacement du joueur vers la droite
-        if(player.vx > 6 )
+        if(player.vx > 8)
         {
-           player.vx = 6;
+           player.vx = 8;
         }
 
         player.estTourne = false;
@@ -369,6 +369,8 @@ extern void collision_tir()
                 ( tir->type == os || tir->type == tree || tir->type == rock) ) 
                 {
 
+                        //Incrementation du score
+                         SetHUD_IntToTexture(getScores(), "", ++getPlayer()->scores, 565, 17 );
                         if( !enne->estMort )
                         {
                             enne->estMort = true;
@@ -376,6 +378,7 @@ extern void collision_tir()
                             tir->rect->x = 0;
                             enne->rect->x = 0;
                         }
+                        
                             
                         break;
                 }

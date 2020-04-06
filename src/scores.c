@@ -12,7 +12,7 @@
 
 HUD score; /**< hud du score */
 HUD niveau; /**< hud du niveau */
-HUD item_s[3];
+HUD item_s[3];/**< hud des items du jeux */
 HUD time_; /**< hud du timer */
 
 /** \fn  extern HUD* getScores()

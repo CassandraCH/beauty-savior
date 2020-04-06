@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['debug_5faffichercollider_50',['Debug_AfficherCollider',['../level_8c.html#a2ca40c89f5d9919989aa0f95fbe7e66d',1,'Debug_AfficherCollider():&#160;level.c'],['../level_8h.html#a2ca40c89f5d9919989aa0f95fbe7e66d',1,'Debug_AfficherCollider():&#160;level.c']]],
+  ['debug_5faffichercollider_49',['Debug_AfficherCollider',['../level_8c.html#a2ca40c89f5d9919989aa0f95fbe7e66d',1,'Debug_AfficherCollider():&#160;level.c'],['../level_8h.html#a2ca40c89f5d9919989aa0f95fbe7e66d',1,'Debug_AfficherCollider():&#160;level.c']]],
+  ['delay_50',['delay',['../base_game_8c.html#a302dca4767118e018db546a9fd717be0',1,'delay(unsigned int frameLimit):&#160;baseGame.c'],['../base_game_8h.html#a278a2ffbb995f7837d4970a4d7435b63',1,'delay(unsigned int frameLimit):&#160;baseGame.c']]],
   ['departx_51',['departX',['../structlevel.html#a505b46750c7f9ae828d45bbf08ab8d35',1,'level']]],
   ['departy_52',['departY',['../structlevel.html#aa43b8450f7191b74989a2653f1a8b139',1,'level']]],
   ['dessiner_5fmenu_53',['Dessiner_Menu',['../menu_principal_8c.html#abcf68b1e1dd8324329d5b2c9d9c311a1',1,'Dessiner_Menu(Menu_t *menu, int nombresOptions, int posX, int posY, int largeurBG, int hauteurBG):&#160;menuPrincipal.c'],['../menu_principal_8h.html#abcf68b1e1dd8324329d5b2c9d9c311a1',1,'Dessiner_Menu(Menu_t *menu, int nombresOptions, int posX, int posY, int largeurBG, int hauteurBG):&#160;menuPrincipal.c']]],
