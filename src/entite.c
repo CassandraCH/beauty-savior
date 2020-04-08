@@ -34,7 +34,7 @@ extern bool UpdateBullets( typeEntite typeA, typeEntite typeB )
                 if ( pt->lancer )
                 {
                     //Si l'entite est le joueur et que le bullet actuel est de type bull => le bullet est tire a gauche ou a droite en fonction de la position du joueur
-                    if ( typeA == joueur &&  ( pt->type == os || pt->type == tree || pt->type == rock)  ) 
+                    if ( typeA == joueur &&  ( pt->type == tree || pt->type == rock)  ) 
                     {
                         printf("Joueur\n");
 
@@ -53,10 +53,10 @@ extern bool UpdateBullets( typeEntite typeA, typeEntite typeB )
                         printf("Ennemi\n");
 
                         if( getPlayerX() + getPlayer()->w  <= pt->rect->x )
-                            pt->movingX = -20;
+                            pt->movingX = -12;
                             
                         else 
-                            pt->movingX =20;
+                            pt->movingX =12;
                     }
                     //Mise a jour de l'etat du lancer du bullet => ne peut plus etre lancer
                     pt->lancer = false;
@@ -258,8 +258,15 @@ extern void collisionDetection()
                 // Sinon c'est que le joueur rentre en collision sur le cote => la partie est perdu
                 else
                 {
-
-                    Init_GameOver();
+                     if( getPlayer()->nombreVies > 0 )
+                    {
+                        getPlayer()->nombreVies--;
+                        printf("Il reste %d points de vie\n", getPlayer()->nombreVies );
+                    }
+                    else 
+                    {
+                        Init_GameOver();
+                    }
 
                 }
             }

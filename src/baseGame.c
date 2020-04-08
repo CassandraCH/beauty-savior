@@ -76,9 +76,9 @@ extern void Update(float dt)
 
         //Mise à jour des entités
         Update_Listes();
-        UpdateJoueur(dt);
-        UpdateBullets(joueur, ennemi);
         UpdateEnnemis();
+        UpdateBullets(joueur, ennemi);
+        UpdateJoueur(dt);
     
         //Gestion des collisions
         collision_tir();
@@ -157,14 +157,15 @@ extern void Rendu_Jeux()
 
     //Gestion des affchages des listes, du joueur et du score
     Afficher_ElementsListes( &listEnnemis, texture, ennemi, 50, 50 );
+    
+    // Liste des élements attaques
     Afficher_ElementsListes( &bullet , itemTex, feu , 41, 47 );
     Afficher_ElementsListes( &bullet , rockTex, rock, 37, 35 );
-    Afficher_ElementsListes( &bullet , osTex, os , 36, 51 );
     Afficher_ElementsListes( &bullet , treeTex, tree , 31, 49 );
     
     AfficherJoueur();
 
-
+    // Liste de l'inventaire
     Afficher_ElementsListes( &items, osTex, os, 36, 51 ); 
     Afficher_ElementsListes( &items, rockTex, rock ,37, 35 ); 
     Afficher_ElementsListes( &items, treeTex, tree, 31, 49 ); 
@@ -184,7 +185,7 @@ extern void Rendu_Jeux()
 
   SDL_RenderPresent(getRenderer());
 
-  // Délai pour laisser respirer le proc
+  // Délai pour laisser respirer le processeur
     SDL_Delay(1);
 }
 
@@ -199,6 +200,7 @@ extern void Update_Listes()
   supprimeCible(getBullets(), true);
   supprimeCible(getEnnemis(), true);
 }
+
 
 /**
  * \fn extern delay(unsigned int frameLimit)

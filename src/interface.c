@@ -46,12 +46,18 @@ extern void Init_Interface()
 
 
     ChargerData_Menu(2,0, &interface ,"Items"
-                ,"graphics_assets/items.png"
+                ,"graphics_assets/items2.png"
                 ,"NULL"
                 ,700
                 ,18 );
 
-    
+
+    ChargerData_Menu(3,0, &interface ,"Vie"
+                ,"graphics_assets/vie_3.png"
+                ,"NULL"
+                ,1091
+                ,18 );
+
 
     interface.selectedOption = 0;
 
@@ -64,7 +70,7 @@ extern void Init_Interface()
 extern void AfficherInterface()
 {
     
-    Dessiner_Menu( &interface ,3, 0, 0, 0,0 );
+    Dessiner_Menu( &interface ,4, 0, 0, 0,0 );
 
     if( getBaseGame()->time_s > 100 )
     {

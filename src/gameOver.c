@@ -123,6 +123,8 @@ extern void Input_MenuGameOver(SDL_Event *event)
 
                             //Changement de l'etat du joueur
                             getPlayer()->estMort = false;
+                            getPlayer()->nombreVies = 3;
+                            UpdateImage_Option( &getInterface()->menu[3], "graphics_assets/vie_3.png" );
 
                             //Suppression des listes
                             suppListe(getCollider());
@@ -206,9 +208,11 @@ extern void Input_MenuGameOver(SDL_Event *event)
 */
 extern void Init_GameOver()
 {
+
     //Changement de l'etat du joueur
     getPlayer()->estMort = true;
     getPlayer()->scores = 0;
+    
 
     //Rechargement le niveau 1
     setNiveau(1);

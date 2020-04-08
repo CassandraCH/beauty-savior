@@ -134,7 +134,7 @@ extern void UpdateOption(Options_t * menut, int etat )
  * \param filename nom du fichier à partir duquel on charge la texture
  * \return pas de valeur de retour (void)
 */
-extern void UpdateImage_Option(Options_t * menut, const char * filename)
+extern void UpdateImage_Option(Options_t * menut, const char * filename )
 {
    /* 
      * Surface tampon => utile pour parametrer la surface
@@ -335,6 +335,8 @@ extern void Input_MenuPrincipal(SDL_Event *event)
                         case 0:
                             //Changement de l'etat du joueur
                             getPlayer()->estMort = false;
+                            incrementeRock();
+                            getPlayer()->rockActif = true;
 
                             //Suppression des listes
                             suppListe( getCollider() );

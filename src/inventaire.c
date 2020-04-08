@@ -108,12 +108,21 @@ extern void Input_Inventaire(SDL_Event *event)
                     {
                           //Cas 1 : on séléctionne l'os comme objet
                         case 0:
-                            if( getOs() > 0 && !getPlayer()->osActif)
+                            
+                            if( getOs() > 0 )
                             {
-                                  getPlayer()->osActif = true;  
-                                  getPlayer()->rockActif = false;  
-                                  getPlayer()->treeActif = false;  
-                                  UpdateImage_Option( &getInterface()->menu[2], "graphics_assets/items.png" );
+                                  getPlayer()->nombreVies++;
+                                  decrementeOS();
+                                 
+                                  switch( getPlayer()->nombreVies )
+                                {
+                                    case 1: UpdateImage_Option( &getInterface()->menu[3], "graphics_assets/vie_1.png" ); break;
+                                    case 2: UpdateImage_Option( &getInterface()->menu[3], "graphics_assets/vie_2.png" ); break;
+                                    case 3: UpdateImage_Option( &getInterface()->menu[3], "graphics_assets/vie_3.png" ); break;
+                                }
+
+                                 printf("Il reste %d points de vie\n", getPlayer()->nombreVies );
+                                  
                             }
                             getBaseGame()->state = IN_GAME;                    
                             break;

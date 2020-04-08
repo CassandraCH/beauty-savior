@@ -92,6 +92,7 @@ extern void InitJoueur()
 	player.x = 100;
 	player.y = 495;
     player.scores = 0;
+
     //inventaire initialise a 0
     player.nb_lancer = 0;
     player.nb_objet = 0;
@@ -218,10 +219,10 @@ extern void CollisionItems()
                     printf("Nombre Rock: %d\n", getRock());
                 }
                 else if ( pt->type == tree )
-                    {
-                        incrementeBranche(); 
-                        printf("Nombre branche: %d\n", getBranche());
-                    }
+                {
+                    incrementeBranche(); 
+                    printf("Nombre branche: %d\n", getBranche());
+                }
                         
             }
             break;
@@ -276,29 +277,18 @@ extern void actualiserJoueur(void)
 
     if( !player.estMort || getBaseGame()->state == LOADING )
     {
-        //  if( player.nombreVies > 1 )
-        // {
-        //     player.nombreVies--;
-        //     printf("Il reste %d points de vie\n", getPlayer()->nombreVies );
-        // }else 
-        // {
-
-        // }
-        
-        player.nb_lancer = 0;
-        player.y = player.posYDepart;
-        player.x = player.posXDepart;
-        if( getBaseGame()->state != LOADING )
-        {
-              player.vx = 0;
-            player.nb_objet = 0;
-            player.niveau = 1;
-        }
-        
           
-        
-
-            return;
+            player.nb_lancer = 0;
+            player.y = player.posYDepart;
+            player.x = player.posXDepart;
+            if( getBaseGame()->state != LOADING )
+            {
+                player.vx = 0;
+                player.nb_objet = 0;
+                player.niveau = 1;
+            }
+            
+        return;
     }
 
 }
@@ -327,12 +317,8 @@ extern bool collide2d(float x1, float y1, float x2, float y2, float wt1, float h
 extern void attaqueJoueur()
 {
   
-        if( getOs() > 0 && player.osActif )
-        {
-            decrementeOS();
-            CreerTir(os, getPlayer()->w , getPlayer()->h, getPlayerX(),  getPlayerY() );
-        }   
-        else if (  getRock() > 0 && player.rockActif  )
+         
+        if (  getRock() > 0 && player.rockActif  )
         {
             decrementeRock();
             CreerTir(rock, getPlayer()->w , getPlayer()->h, getPlayerX(),  getPlayerY() );
@@ -366,7 +352,7 @@ extern void collision_tir()
             for(enne = getEnnemis()->tete; enne != NULL; enne = enne->suivant)
             {
                 if(collide2d( tir->rect->x , tir->rect->y, enne->rect->x,enne->rect->y,tir->rect->w ,tir->rect->h,enne->rect->w, enne->rect->h ) && 
-                ( tir->type == os || tir->type == tree || tir->type == rock) ) 
+                ( tir->type == tree || tir->type == rock) ) 
                 {
 
                         //Incrementation du score
@@ -384,7 +370,22 @@ extern void collision_tir()
                 }
                 else if(collide2d( tir->rect->x , tir->rect->y, getPlayerX(),getPlayerY(),tir->rect->w ,tir->rect->h,getPlayer()->w, getPlayer()->h ) && tir->type == feu ) 
                 {
-                    Init_GameOver();
+                     if( !getPlayer()->estMort && getPlayer()->nombreVies > 1 )
+                    {
+                        getPlayer()->nombreVies--;
+                        switch( getPlayer()->nombreVies )
+                        {
+                            case 1: UpdateImage_Option( &getInterface()->menu[3], "graphics_assets/vie_1.png" ); break;
+                            case 2: UpdateImage_Option( &getInterface()->menu[3], "graphics_assets/vie_2.png" ); break;
+                        }
+                        SetNombreTir_Ennemis();
+                        tir->estMort = true;
+                        printf("Il reste %d points de vie\n", getPlayer()->nombreVies );
+                    }
+                    else 
+                    {
+                        Init_GameOver();
+                    }
                     break;
                 }
             }
@@ -409,5 +410,3 @@ extern void joueur_surSol()
     }
 
 }
-
-
