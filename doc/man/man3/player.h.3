@@ -1,0 +1,306 @@
+.TH "includes/player.h" 3 "Dimanche 5 Avril 2020" "Version 0.1" "Beauty Savior" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+includes/player.h \- programme qui gere le joueur par exemple la vitesse de deplacements,sa position etc\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'texture\&.h'\fP
+.br
+\fC#include 'constantes\&.h'\fP
+.br
+
+.SS "Structures de données"
+
+.in +1c
+.ti -1c
+.RI "struct \fBplayer\fP"
+.br
+.in -1c
+.SS "Définitions de type"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fBplayer\fP \fBPlayer\fP"
+.br
+.in -1c
+.SS "Fonctions"
+
+.in +1c
+.ti -1c
+.RI "\fBPlayer\fP * \fBgetPlayer\fP (void)"
+.br
+.RI "Fonction qui permet retourner l'adresse vers de l'objet Joueur (héros) "
+.ti -1c
+.RI "int \fBgetPlayerX\fP (void)"
+.br
+.RI "Fonction qui permet retourner la position en x du héros\&. "
+.ti -1c
+.RI "int \fBgetPlayerY\fP (void)"
+.br
+.RI "Fonction qui permet retourner la position en y du héros\&. "
+.ti -1c
+.RI "int \fBgetPlayerOriginX\fP ()"
+.br
+.ti -1c
+.RI "int \fBgetPlayerOriginY\fP ()"
+.br
+.ti -1c
+.RI "void \fBUpdateJoueur\fP (float \fBdt\fP)"
+.br
+.RI "Fonction qui met a jour le joueur en fonction du delta-time\&. "
+.ti -1c
+.RI "void \fBactualiserJoueur\fP (void)"
+.br
+.RI "Fonction qui reinitialise le joueur\&. "
+.ti -1c
+.RI "void \fBInitJoueur\fP ()"
+.br
+.RI "Fonction qui permet d'initialiser le joueur\&. "
+.ti -1c
+.RI "void \fBsetNombretir\fP ()"
+.br
+.RI "Fonction qui permet de regler le nombre de lancer du joueur\&. "
+.ti -1c
+.RI "\fBbool\fP \fBcollide2d\fP (float x1, float y1, float x2, float y2, float wt1, float ht1, float wt2, float ht2)"
+.br
+.RI "Fonction qui verifie la collision entre 2 elements\&. "
+.ti -1c
+.RI "void \fBattaqueJoueur\fP ()"
+.br
+.ti -1c
+.RI "void \fBcollision_tir\fP ()"
+.br
+.RI "Fonction qui gere les collisions entre un bullet et un ennemi\&. "
+.ti -1c
+.RI "void \fBCollisionItems\fP ()"
+.br
+.RI "Fonction qui gere les collisions avec les items\&. "
+.ti -1c
+.RI "void \fBInputJoueur\fP (SDL_Event *event)"
+.br
+.RI "Fonction qui gere les entrees clavier de l'utilisateur\&. "
+.ti -1c
+.RI "void \fBAfficherJoueur\fP ()"
+.br
+.RI "Fonction qui gere l'affichage du joueur a l'ecran\&. "
+.ti -1c
+.RI "void \fBjoueur_surSol\fP ()"
+.br
+.RI "Fonction qui permet de mettre le joueur sur le sol\&. "
+.in -1c
+.SH "Description détaillée"
+.PP 
+programme qui gere le joueur par exemple la vitesse de deplacements,sa position etc\&. 
+
+
+.PP
+\fBAuteur\fP
+.RS 4
+CALVADOS Cindy, CHAUMULON Cassandra, CHELLI Célia, OUSMANOVA Karina 
+.RE
+.PP
+\fBVersion\fP
+.RS 4
+1\&.0 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+mars 2020 
+.RE
+.PP
+
+.SH "Documentation des définitions de type"
+.PP 
+.SS "typedef struct \fBplayer\fP \fBPlayer\fP"
+This is the documentation for the preceding typedef 
+.SH "Documentation des fonctions"
+.PP 
+.SS "void actualiserJoueur (void)"
+
+.PP
+Fonction qui reinitialise le joueur\&. Repositionnement du joueur a sa position initiale et remise a 0 de ses compteurs du nombre de lancer et du nombre d'objets 
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void AfficherJoueur ()"
+
+.PP
+Fonction qui gere l'affichage du joueur a l'ecran\&. 
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void attaqueJoueur ()"
+les attaques du joueurs
+.PP
+Fonction qui s'occupe de gérer les attaques lancer par le joueur 
+.SS "\fBbool\fP collide2d (float x1, float y1, float x2, float y2, float wt1, float ht1, float wt2, float ht2)"
+
+.PP
+Fonction qui verifie la collision entre 2 elements\&. 
+.PP
+\fBParamètres\fP
+.RS 4
+\fIx1\fP position en x du premier element 
+.br
+\fIy1\fP position en y du premier element 
+.br
+\fIx2\fP position en x du deuxieme element 
+.br
+\fIy2\fP position en y du deuxieme element 
+.br
+\fIwt1\fP largeur du premier element 
+.br
+\fIht1\fP hauteur du premier element 
+.br
+\fIwt2\fP largeur du deuxieme element 
+.br
+\fIht2\fP hauteur du deuxieme element 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+un booleen : VRAI s'il y a collison, FAUX sinon 
+.RE
+.PP
+
+.SS "void collision_tir ()"
+
+.PP
+Fonction qui gere les collisions entre un bullet et un ennemi\&. collission des tirs du joueur
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void CollisionItems ()"
+
+.PP
+Fonction qui gere les collisions avec les items\&. 
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "\fBPlayer\fP* getPlayer (void)"
+
+.PP
+Fonction qui permet retourner l'adresse vers de l'objet Joueur (héros) 
+.PP
+\fBRenvoie\fP
+.RS 4
+une structure joueur de type Player 
+.RE
+.PP
+
+.SS "int getPlayerOriginX ()"
+la position'l'origine) du joueur selon x 
+.SS "int getPlayerOriginY ()"
+la position'l'origine) du joueur selon y 
+.SS "int getPlayerX (void)"
+
+.PP
+Fonction qui permet retourner la position en x du héros\&. 
+.PP
+\fBRenvoie\fP
+.RS 4
+un int qui correspond a la position en x 
+.RE
+.PP
+
+.SS "int getPlayerY (void)"
+
+.PP
+Fonction qui permet retourner la position en y du héros\&. 
+.PP
+\fBRenvoie\fP
+.RS 4
+un int qui correspond a la position en y 
+.RE
+.PP
+
+.SS "void InitJoueur ()"
+
+.PP
+Fonction qui permet d'initialiser le joueur\&. initialisation du joueur
+.PP
+Remplissage de tous les champs de la structure Player 
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void InputJoueur (SDL_Event * event)"
+
+.PP
+Fonction qui gere les entrees clavier de l'utilisateur\&. 
+.PP
+\fBParamètres\fP
+.RS 4
+\fIevent\fP evenement de l'utilisateur 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void joueur_surSol ()"
+
+.PP
+Fonction qui permet de mettre le joueur sur le sol\&. 
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void setNombretir ()"
+
+.PP
+Fonction qui permet de regler le nombre de lancer du joueur\&. 
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void UpdateJoueur (float dt)"
+
+.PP
+Fonction qui met a jour le joueur en fonction du delta-time\&. Gestion du deplacement du joueur 
+.PP
+\fBParamètres\fP
+.RS 4
+\fIdt\fP delta-time (temps ecoule entre l'affichage de 2 images) 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Beauty Savior à partir du code source\&.

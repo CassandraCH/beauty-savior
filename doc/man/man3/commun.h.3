@@ -1,0 +1,95 @@
+.TH "includes/commun.h" 3 "Dimanche 5 Avril 2020" "Version 0.1" "Beauty Savior" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+includes/commun.h \- Programme qui a les enumerations\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <math\&.h>\fP
+.br
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <string\&.h>\fP
+.br
+\fC#include <SDL2/SDL\&.h>\fP
+.br
+\fC#include <SDL2/SDL_image\&.h>\fP
+.br
+\fC#include <SDL2/SDL_ttf\&.h>\fP
+.br
+\fC#include <time\&.h>\fP
+.br
+\fC#include <SDL2/SDL_mixer\&.h>\fP
+.br
+
+.SS "Énumérations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBbool\fP { \fBfalse\fP, \fBtrue\fP }"
+.br
+.ti -1c
+.RI "enum \fBtypeEntite\fP { \fBitem\fP, \fBjoueur\fP, \fBennemi\fP, \fBplatform\fP, \fBcheckpoint\fP, \fBbull\fP, \fBfeu\fP }"
+.br
+.ti -1c
+.RI "enum \fBtexState\fP { \fBfixe\fP, \fBanime\fP }"
+.br
+.in -1c
+.SS "Fonctions"
+
+.in +1c
+.ti -1c
+.RI "SDL_Renderer * \fBgetRenderer\fP (void)"
+.br
+.RI "Fonction qui permet d'acceder a la structure du rendu\&. "
+.in -1c
+.SH "Description détaillée"
+.PP 
+Programme qui a les enumerations\&. 
+
+
+.PP
+\fBAuteur\fP
+.RS 4
+CALVADOS Cindy, CHAUMULON Cassandra, CHELLI Célia, OUSMANOVA Karina 
+.RE
+.PP
+\fBVersion\fP
+.RS 4
+1\&.0 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+mars 2020 
+.RE
+.PP
+
+.SH "Documentation du type de l'énumération"
+.PP 
+.SS "enum \fBbool\fP"
+énumération représentant un type booléen 
+.SS "enum \fBtexState\fP"
+énumération les états d'une entité: fixe ou animé 
+.SS "enum \fBtypeEntite\fP"
+énumération représentant les types du jeux 
+.SH "Documentation des fonctions"
+.PP 
+.SS "SDL_Renderer* getRenderer (void)"
+
+.PP
+Fonction qui permet d'acceder a la structure du rendu\&. 
+.PP
+\fBRenvoie\fP
+.RS 4
+un pointeur sur une structure de type SDL_Renderer 
+.RE
+.PP
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Beauty Savior à partir du code source\&.

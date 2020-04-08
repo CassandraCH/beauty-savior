@@ -1,0 +1,486 @@
+.TH "includes/baseGame.h" 3 "Dimanche 5 Avril 2020" "Version 0.1" "Beauty Savior" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+includes/baseGame.h \- Programme qui gère les menus principal du jeu\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'constantes\&.h'\fP
+.br
+\fC#include 'entite\&.h'\fP
+.br
+\fC#include 'player\&.h'\fP
+.br
+\fC#include 'level\&.h'\fP
+.br
+\fC#include 'items\&.h'\fP
+.br
+\fC#include 'listeElements\&.h'\fP
+.br
+\fC#include 'chargeSave\&.h'\fP
+.br
+\fC#include 'texture\&.h'\fP
+.br
+\fC#include 'hud\&.h'\fP
+.br
+\fC#include 'menuPrincipal\&.h'\fP
+.br
+\fC#include 'menuLoad\&.h'\fP
+.br
+\fC#include 'menuPause\&.h'\fP
+.br
+\fC#include 'menu_continue\&.h'\fP
+.br
+\fC#include 'gameOver\&.h'\fP
+.br
+
+.SS "Structures de données"
+
+.in +1c
+.ti -1c
+.RI "struct \fBbaseGame\fP"
+.br
+.in -1c
+.SS "Définitions de type"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fBbaseGame\fP \fBBase_Game\fP"
+.br
+.in -1c
+.SS "Fonctions"
+
+.in +1c
+.ti -1c
+.RI "SDL_Window * \fBgetWindow\fP (void)"
+.br
+.ti -1c
+.RI "\fBBase_Game\fP * \fBgetBaseGame\fP (void)"
+.br
+.RI "Fonction qui permet d'accéder à la structure qui gère l'état du jeu\&. "
+.ti -1c
+.RI "\fBLinkedList\fP * \fBgetEnnemis\fP (void)"
+.br
+.RI "Fonction qui permet d'acceder a la liste des ennemis\&. "
+.ti -1c
+.RI "\fBLinkedList\fP * \fBgetCollider\fP (void)"
+.br
+.RI "Fonction qui permet d'acceder a la liste des colliders\&. "
+.ti -1c
+.RI "\fBLinkedList\fP * \fBgetItems\fP (void)"
+.br
+.RI "Fonction qui permet d'acceder a la liste des items\&. "
+.ti -1c
+.RI "\fBLinkedList\fP * \fBgetBullets\fP (void)"
+.br
+.RI "Fonction qui permet d'acceder a la liste des bullets\&. "
+.ti -1c
+.RI "\fBHUD\fP * \fBgetScores\fP (void)"
+.br
+.RI "Retourne l'instance de l'objet score\&. "
+.ti -1c
+.RI "\fBHUD\fP * \fBgetNiveau\fP ()"
+.br
+.RI "Retourne l'instance de l'objet niveau\&. "
+.ti -1c
+.RI "\fBHUD\fP * \fBgetTime\fP ()"
+.br
+.ti -1c
+.RI "\fBMenu_t\fP * \fBgetMenu\fP (void)"
+.br
+.RI "Fonction qui permet retourner le menu principal\&. "
+.ti -1c
+.RI "\fBMenu_t\fP * \fBgetMenuLoad\fP ()"
+.br
+.RI "Fonction qui permet retourner le menu de chargement\&. "
+.ti -1c
+.RI "\fBMenu_t\fP * \fBgetMenuCon\fP (void)"
+.br
+.RI "Fonction qui permet retourner le menu 'continuer'\&. "
+.ti -1c
+.RI "\fBMenu_t\fP * \fBgetMenuPause\fP ()"
+.br
+.RI "Fonction qui permet retourner le menu de pause\&. "
+.ti -1c
+.RI "\fBMenu_t\fP * \fBgetMenu_Over\fP ()"
+.br
+.RI "Fonction qui permet retourner le menu du game over\&. "
+.ti -1c
+.RI "int \fBgetTimerBullet\fP (void)"
+.br
+.RI "Fonction qui permet d'acceder a la duree de vie/temps d'apparition a l'ecran des bullets\&. "
+.ti -1c
+.RI "void \fBsetTimerBullet\fP (int time)"
+.br
+.RI "Fonction qui permet d'acceder a la duree de vie/temps d'apparition a l'ecran des bullets\&. "
+.ti -1c
+.RI "void \fBProcessInput\fP (SDL_Event *event)"
+.br
+.RI "Fonction qui gere les entrees utilisateur\&. "
+.ti -1c
+.RI "void \fBInput_InGame\fP (SDL_Event *event)"
+.br
+.RI "Fonction qui permet gerer les entrees clavier et la camera lorsqu'une partie est en cours\&. "
+.ti -1c
+.RI "void \fBUpdate_Listes\fP ()"
+.br
+.RI "Fonction qui met a jour les listes de bullets et ennemis\&. "
+.ti -1c
+.RI "void \fBInit\fP (const char *title)"
+.br
+.RI "Fonction qui permet d'initialiser\&. "
+.ti -1c
+.RI "void \fBUpdate\fP (float \fBdt\fP)"
+.br
+.RI "Fonction qui permet gerer les comportements des entités si on se trouve dans une partie et gerer le son si on se trouve sur le menu principal\&. "
+.ti -1c
+.RI "void \fBLibererRessources_Jeux\fP ()"
+.br
+.RI "Fonction qui libere toutes les ressources du jeu\&. "
+.ti -1c
+.RI "void \fBRendu_Jeux\fP ()"
+.br
+.RI "Fonction qui permet de gérer le rendu\&. "
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBLinkedList\fP \fBlistEnnemis\fP"
+.br
+.ti -1c
+.RI "\fBLinkedList\fP \fBlistCollider\fP"
+.br
+.ti -1c
+.RI "\fBLinkedList\fP \fBbullet\fP"
+.br
+.ti -1c
+.RI "\fBLinkedList\fP \fBitems\fP"
+.br
+.ti -1c
+.RI "int \fBtempsEcoule\fP"
+.br
+.ti -1c
+.RI "SDL_Rect \fBcamera\fP"
+.br
+.in -1c
+.SH "Description détaillée"
+.PP 
+Programme qui gère les menus principal du jeu\&. 
+
+
+.PP
+\fBAuteur\fP
+.RS 4
+CALVADOS Cindy, CHAUMULON Cassandra, CHELLI Célia, OUSMANOVA Karina 
+.RE
+.PP
+\fBVersion\fP
+.RS 4
+1\&.0 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+mars 2020 
+.RE
+.PP
+
+.SH "Documentation des définitions de type"
+.PP 
+.SS "typedef struct \fBbaseGame\fP \fBBase_Game\fP"
+This is the documentation for the preceding typedef 
+.SH "Documentation des fonctions"
+.PP 
+.SS "\fBBase_Game\fP* getBaseGame ()"
+
+.PP
+Fonction qui permet d'accéder à la structure qui gère l'état du jeu\&. fonction Base_Game
+.PP
+\fBRenvoie\fP
+.RS 4
+Un pointeur sur une structure de données de type Base_Game 
+.RE
+.PP
+
+.SS "\fBLinkedList\fP* getBullets ()"
+
+.PP
+Fonction qui permet d'acceder a la liste des bullets\&. fonction getBullets
+.PP
+\fBRenvoie\fP
+.RS 4
+un pointeur sur une liste de type LinkedList 
+.RE
+.PP
+
+.SS "\fBLinkedList\fP* getCollider ()"
+
+.PP
+Fonction qui permet d'acceder a la liste des colliders\&. fonction getCollider
+.PP
+\fBRenvoie\fP
+.RS 4
+un pointeur sur une liste de type LinkedList 
+.RE
+.PP
+
+.SS "\fBLinkedList\fP* getEnnemis ()"
+
+.PP
+Fonction qui permet d'acceder a la liste des ennemis\&. fonction getEnnemis qui gere les ennemis
+.PP
+\fBRenvoie\fP
+.RS 4
+un pointeur sur une liste de type LinkedList 
+.RE
+.PP
+
+.SS "\fBLinkedList\fP* getItems ()"
+
+.PP
+Fonction qui permet d'acceder a la liste des items\&. fonction getItems
+.PP
+\fBRenvoie\fP
+.RS 4
+un pointeur sur une liste de type LinkedList 
+.RE
+.PP
+
+.SS "\fBMenu_t\fP* getMenu ()"
+
+.PP
+Fonction qui permet retourner le menu principal\&. fonction getMenu
+.PP
+\fBRenvoie\fP
+.RS 4
+une structure menu de type Menu_t 
+.RE
+.PP
+
+.SS "\fBMenu_t\fP* getMenu_Over ()"
+
+.PP
+Fonction qui permet retourner le menu du game over\&. fonction getMenu_Over
+.PP
+\fBRenvoie\fP
+.RS 4
+une structure menu de type Menu_t 
+.RE
+.PP
+
+.SS "\fBMenu_t\fP* getMenuCon ()"
+
+.PP
+Fonction qui permet retourner le menu 'continuer'\&. fonction getMenuCon
+.PP
+\fBRenvoie\fP
+.RS 4
+une structure menu de type Menu_t 
+.RE
+.PP
+
+.SS "\fBMenu_t\fP* getMenuLoad ()"
+
+.PP
+Fonction qui permet retourner le menu de chargement\&. fonction getMenuLoad
+.PP
+\fBRenvoie\fP
+.RS 4
+une structure menu de type Menu_t 
+.RE
+.PP
+
+.SS "\fBMenu_t\fP* getMenuPause ()"
+
+.PP
+Fonction qui permet retourner le menu de pause\&. fonction getMenuPause
+.PP
+\fBRenvoie\fP
+.RS 4
+une structure menu de type Menu_t 
+.RE
+.PP
+
+.SS "\fBHUD\fP* getNiveau ()"
+
+.PP
+Retourne l'instance de l'objet niveau\&. fonction getNiveau qui gere les niveaux
+.PP
+Cela permet d'instaurer un contexte privé 
+.PP
+\fBRenvoie\fP
+.RS 4
+Retourne un pointeur sur l'objet niveau 
+.RE
+.PP
+
+.SS "\fBHUD\fP* getScores ()"
+
+.PP
+Retourne l'instance de l'objet score\&. fonction getScores qui gere le scores
+.PP
+Cela permet d'instaurer un contexte privé 
+.PP
+\fBRenvoie\fP
+.RS 4
+Retourne un pointeur sur l'objet score 
+.RE
+.PP
+
+.SS "\fBHUD\fP* getTime ()"
+fonction getNiveau qui gere le timer du jeux 
+.SS "int getTimerBullet ()"
+
+.PP
+Fonction qui permet d'acceder a la duree de vie/temps d'apparition a l'ecran des bullets\&. fonction getTimerBullet
+.PP
+\fBRenvoie\fP
+.RS 4
+un pointeur sur une liste de type LinkedList 
+.RE
+.PP
+
+.SS "SDL_Window* getWindow (void)"
+fonction SDL_Window qui gere la fenetre 
+.SS "void Init (const char * title)"
+
+.PP
+Fonction qui permet d'initialiser\&. Creation de la fenetre
+.PP
+Chargement des polices, de l'audio et des entites 
+.PP
+\fBParamètres\fP
+.RS 4
+\fItitle\fP chaine de caracteres 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void Input_InGame (SDL_Event * event)"
+
+.PP
+Fonction qui permet gerer les entrees clavier et la camera lorsqu'une partie est en cours\&. fonction Input_InGame
+.PP
+Gestion des entrees de l'utilisateur 
+.PP
+\fBParamètres\fP
+.RS 4
+\fIevent\fP pointeur sur une structure SDL evenement 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void LibererRessources_Jeux (void)"
+
+.PP
+Fonction qui libere toutes les ressources du jeu\&. Destruction des structures rendu et fenetre 
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void ProcessInput (SDL_Event * event)"
+
+.PP
+Fonction qui gere les entrees utilisateur\&. fonction ProcessInput
+.PP
+Gestion des entrées utilisateurs\&.
+.PP
+En fonction de si l'utilisateur est en cours de partie, sur le menu principal, sur le menu pause, sur le menu game over ou si le niveau vient d'etre acheve 
+.PP
+\fBParamètres\fP
+.RS 4
+\fIevent\fP evenement (entree utilisateur) 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void Rendu_Jeux ()"
+
+.PP
+Fonction qui permet de gérer le rendu\&. Affichage en fonction de l'etat dans lequel se trouve le jeu 
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void setTimerBullet (int time)"
+
+.PP
+Fonction qui permet d'acceder a la duree de vie/temps d'apparition a l'ecran des bullets\&. fonction setTimerBullet , avec la variable temps
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void Update (float dt)"
+
+.PP
+Fonction qui permet gerer les comportements des entités si on se trouve dans une partie et gerer le son si on se trouve sur le menu principal\&. Etat du jeu possible : menu principal ou en partie 
+.PP
+\fBParamètres\fP
+.RS 4
+\fIdt\fP valeur du delta-time 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void Update_Listes ()"
+
+.PP
+Fonction qui met a jour les listes de bullets et ennemis\&. Suppression des listes si nécessaire 
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SH "Documentation des variables"
+.PP 
+.SS "\fBLinkedList\fP bullet"
+Liste des bullets 
+.SS "SDL_Rect camera"
+la camera
+.PP
+Structure qui gère la camera 
+.SS "\fBLinkedList\fP items"
+Liste des items 
+.SS "\fBLinkedList\fP listCollider"
+liste des collition
+.PP
+Liste des colliders 
+.SS "\fBLinkedList\fP listEnnemis"
+la listes des ennemis
+.PP
+Liste des ennemis 
+.SS "int tempsEcoule"
+les temps ecouler 
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Beauty Savior à partir du code source\&.

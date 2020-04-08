@@ -1,0 +1,176 @@
+.TH "includes/entite.h" 3 "Dimanche 5 Avril 2020" "Version 0.1" "Beauty Savior" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+includes/entite.h \- Programme qui gère toutes les entites du jeu, les collisions, les attaques \&.\&.\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'commun\&.h'\fP
+.br
+\fC#include 'listeElements\&.h'\fP
+.br
+
+.SS "Fonctions"
+
+.in +1c
+.ti -1c
+.RI "\fBbool\fP \fBUpdateBullets\fP (\fBtypeEntite\fP typeA, \fBtypeEntite\fP typeB)"
+.br
+.RI "Fonction qui permet mettre a jour les bullets\&. "
+.ti -1c
+.RI "void \fBattaqueEnnemis\fP ()"
+.br
+.RI "Fonction qui gère les attaques des ennemis\&. "
+.ti -1c
+.RI "void \fBCreerTir\fP (\fBtypeEntite\fP type, int width, int height, int startX, int startY)"
+.br
+.RI "Fonction qui creer un tir\&. "
+.ti -1c
+.RI "void \fBSetNombreTir_Ennemis\fP ()"
+.br
+.RI "Fonction qui configurer le nombre de tir des ennemis\&. "
+.ti -1c
+.RI "void \fBUpdateEnnemis\fP ()"
+.br
+.RI "Fonction qui met a jour les ennemis\&. "
+.ti -1c
+.RI "void \fBcollision_Decor\fP ()"
+.br
+.RI "Fonction qui gere les collisions avec le decor\&. "
+.ti -1c
+.RI "void \fBcollisionDetection\fP ()"
+.br
+.RI "Fonction qui gere les collision entre le joueur et le decor, le joueur et les ennemis; et si le joueur tombe dans le vide\&. "
+.in -1c
+.SH "Description détaillée"
+.PP 
+Programme qui gère toutes les entites du jeu, les collisions, les attaques \&.\&.\&. 
+
+
+.PP
+\fBAuteur\fP
+.RS 4
+CALVADOS Cindy, CHAUMULON Cassandra, CHELLI Célia, OUSMANOVA Karina 
+.RE
+.PP
+\fBVersion\fP
+.RS 4
+1\&.0 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+mars 2020 
+.RE
+.PP
+
+.SH "Documentation des fonctions"
+.PP 
+.SS "void attaqueEnnemis ()"
+
+.PP
+Fonction qui gère les attaques des ennemis\&. fonction attaque Ennemis
+.PP
+Parcours des ennemis, verification qu'il n'est pas mort et de son compteur de lancer 
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void collision_Decor ()"
+
+.PP
+Fonction qui gere les collisions avec le decor\&. fonction collision de decor
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void collisionDetection ()"
+
+.PP
+Fonction qui gere les collision entre le joueur et le decor, le joueur et les ennemis; et si le joueur tombe dans le vide\&. les detection de collisions
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void CreerTir (\fBtypeEntite\fP type, int width, int height, int startX, int startY)"
+
+.PP
+Fonction qui creer un tir\&. fonction tir avec parametres le type,selon la largueur, la taille et selon les vecteurs x et y
+.PP
+\fBParamètres\fP
+.RS 4
+\fItype\fP type du tir 
+.br
+\fIwidth\fP largeur du sprite 
+.br
+\fIheight\fP hauteur du sprite 
+.br
+\fIstartX\fP position en x du sprite 
+.br
+\fIstartY\fP position en y du sprite 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void SetNombreTir_Ennemis ()"
+
+.PP
+Fonction qui configurer le nombre de tir des ennemis\&. fonction les tirs ennemis
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "\fBbool\fP UpdateBullets (\fBtypeEntite\fP typeA, \fBtypeEntite\fP typeB)"
+
+.PP
+Fonction qui permet mettre a jour les bullets\&. booleen pour les UpdateBullets
+.PP
+Parcours de la listes des bullets
+.PP
+En fonction de si il s'agit d'un ennemi ou du joueur, le comportement des bullets est différent 
+.PP
+\fBParamètres\fP
+.RS 4
+\fItypeA\fP type de la premiere entite : item, joueur, ennemi, platform , bull, feu 
+.br
+\fItypeB\fP type de la deuxieme entite : item, joueur, ennemi, platform , bull, feu 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+Une valeur de type booleen 
+.RE
+.PP
+
+.SS "void UpdateEnnemis ()"
+
+.PP
+Fonction qui met a jour les ennemis\&. fonction UpdateEnnemis
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Beauty Savior à partir du code source\&.

@@ -1,0 +1,843 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Beauty Savior: Référence du fichier includes/baseGame.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Beauty Savior
+   &#160;<span id="projectnumber">0.1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('base_game_8h.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Structures de données</a> &#124;
+<a href="#define-members">Macros</a> &#124;
+<a href="#typedef-members">Définitions de type</a> &#124;
+<a href="#func-members">Fonctions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence du fichier baseGame.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Programme qui gère les menus principal du jeu.  
+<a href="#details">Plus de détails...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="constantes_8h_source.html">constantes.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="entite_8h_source.html">entite.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="player_8h_source.html">player.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="level_8h_source.html">level.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="items_8h_source.html">items.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="liste_elements_8h_source.html">listeElements.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="charge_save_8h_source.html">chargeSave.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="texture_8h_source.html">texture.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="hud_8h_source.html">hud.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="menu_principal_8h_source.html">menuPrincipal.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="menu_load_8h_source.html">menuLoad.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="menu_pause_8h_source.html">menuPause.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="menu__continue_8h_source.html">menu_continue.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="game_over_8h_source.html">gameOver.h</a>&quot;</code><br />
+</div>
+<p><a href="base_game_8h_source.html">Aller au code source de ce fichier.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Structures de données</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structbase_game.html">baseGame</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Définitions de type</h2></td></tr>
+<tr class="memitem:a8493a94df4b942048b28ca811751ef18"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structbase_game.html">baseGame</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="base_game_8h.html#a8493a94df4b942048b28ca811751ef18">Base_Game</a></td></tr>
+<tr class="separator:a8493a94df4b942048b28ca811751ef18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:a9d2eed0cc98378eaee255ad52b5f53ab"><td class="memItemLeft" align="right" valign="top">SDL_Window *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="base_game_8h.html#a9d2eed0cc98378eaee255ad52b5f53ab">getWindow</a> (void)</td></tr>
+<tr class="separator:a9d2eed0cc98378eaee255ad52b5f53ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a723a5ea9b6e1f0ba848043de38ba55ba"><td class="memItemLeft" align="right" valign="top"><a class="el" href="base_game_8h.html#a8493a94df4b942048b28ca811751ef18">Base_Game</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="base_game_8h.html#a723a5ea9b6e1f0ba848043de38ba55ba">getBaseGame</a> (void)</td></tr>
+<tr class="memdesc:a723a5ea9b6e1f0ba848043de38ba55ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui permet d'accéder à la structure qui gère l'état du jeu.  <a href="base_game_8h.html#a723a5ea9b6e1f0ba848043de38ba55ba">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a723a5ea9b6e1f0ba848043de38ba55ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa446255186b601c8eae5f78249f9f56"><td class="memItemLeft" align="right" valign="top"><a class="el" href="liste_elements_8h.html#a030286e4cb8b6aa168edf87519ab6e12">LinkedList</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="base_game_8h.html#afa446255186b601c8eae5f78249f9f56">getEnnemis</a> (void)</td></tr>
+<tr class="memdesc:afa446255186b601c8eae5f78249f9f56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui permet d'acceder a la liste des ennemis.  <a href="base_game_8h.html#afa446255186b601c8eae5f78249f9f56">Plus de détails...</a><br /></td></tr>
+<tr class="separator:afa446255186b601c8eae5f78249f9f56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a616efe224a4e672efcd010f9a7d14950"><td class="memItemLeft" align="right" valign="top"><a class="el" href="liste_elements_8h.html#a030286e4cb8b6aa168edf87519ab6e12">LinkedList</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="base_game_8h.html#a616efe224a4e672efcd010f9a7d14950">getCollider</a> (void)</td></tr>
+<tr class="memdesc:a616efe224a4e672efcd010f9a7d14950"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui permet d'acceder a la liste des colliders.  <a href="base_game_8h.html#a616efe224a4e672efcd010f9a7d14950">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a616efe224a4e672efcd010f9a7d14950"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41861cd4b7373473b5b29fab100a2e1d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="liste_elements_8h.html#a030286e4cb8b6aa168edf87519ab6e12">LinkedList</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="base_game_8h.html#a41861cd4b7373473b5b29fab100a2e1d">getItems</a> (void)</td></tr>
+<tr class="memdesc:a41861cd4b7373473b5b29fab100a2e1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui permet d'acceder a la liste des items.  <a href="base_game_8h.html#a41861cd4b7373473b5b29fab100a2e1d">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a41861cd4b7373473b5b29fab100a2e1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97a33115666a842df058340168fb18a8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="liste_elements_8h.html#a030286e4cb8b6aa168edf87519ab6e12">LinkedList</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="base_game_8h.html#a97a33115666a842df058340168fb18a8">getBullets</a> (void)</td></tr>
+<tr class="memdesc:a97a33115666a842df058340168fb18a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui permet d'acceder a la liste des bullets.  <a href="base_game_8h.html#a97a33115666a842df058340168fb18a8">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a97a33115666a842df058340168fb18a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7b6f942529b230c073e575a15ce324e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="hud_8h.html#a66dba29682c45eda180ae3a6c7ea95db">HUD</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="base_game_8h.html#ab7b6f942529b230c073e575a15ce324e">getScores</a> (void)</td></tr>
+<tr class="memdesc:ab7b6f942529b230c073e575a15ce324e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne l'instance de l'objet score.  <a href="base_game_8h.html#ab7b6f942529b230c073e575a15ce324e">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ab7b6f942529b230c073e575a15ce324e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47cca4d0945b90685b736f6a38a89d80"><td class="memItemLeft" align="right" valign="top"><a class="el" href="hud_8h.html#a66dba29682c45eda180ae3a6c7ea95db">HUD</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="base_game_8h.html#a47cca4d0945b90685b736f6a38a89d80">getNiveau</a> ()</td></tr>
+<tr class="memdesc:a47cca4d0945b90685b736f6a38a89d80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne l'instance de l'objet niveau.  <a href="base_game_8h.html#a47cca4d0945b90685b736f6a38a89d80">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a47cca4d0945b90685b736f6a38a89d80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ef43510a7613637ac308c79681b86dc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="hud_8h.html#a66dba29682c45eda180ae3a6c7ea95db">HUD</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="base_game_8h.html#a9ef43510a7613637ac308c79681b86dc">getTime</a> ()</td></tr>
+<tr class="separator:a9ef43510a7613637ac308c79681b86dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17db0e599f21738d43d31f0ed25a4bfe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="menu_principal_8h.html#af21471837d60cd289756556c3887c58a">Menu_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="base_game_8h.html#a17db0e599f21738d43d31f0ed25a4bfe">getMenu</a> (void)</td></tr>
+<tr class="memdesc:a17db0e599f21738d43d31f0ed25a4bfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui permet retourner le menu principal.  <a href="base_game_8h.html#a17db0e599f21738d43d31f0ed25a4bfe">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a17db0e599f21738d43d31f0ed25a4bfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd1c6f0393092cecd4709e7d574e15fd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="menu_principal_8h.html#af21471837d60cd289756556c3887c58a">Menu_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="base_game_8h.html#acd1c6f0393092cecd4709e7d574e15fd">getMenuLoad</a> ()</td></tr>
+<tr class="memdesc:acd1c6f0393092cecd4709e7d574e15fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui permet retourner le menu de chargement.  <a href="base_game_8h.html#acd1c6f0393092cecd4709e7d574e15fd">Plus de détails...</a><br /></td></tr>
+<tr class="separator:acd1c6f0393092cecd4709e7d574e15fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a205bd29ed63744c68ef7ce11d220bb1e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="menu_principal_8h.html#af21471837d60cd289756556c3887c58a">Menu_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="base_game_8h.html#a205bd29ed63744c68ef7ce11d220bb1e">getMenuCon</a> (void)</td></tr>
+<tr class="memdesc:a205bd29ed63744c68ef7ce11d220bb1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui permet retourner le menu "continuer".  <a href="base_game_8h.html#a205bd29ed63744c68ef7ce11d220bb1e">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a205bd29ed63744c68ef7ce11d220bb1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3341405982cca8a2b97b6751d4e05bff"><td class="memItemLeft" align="right" valign="top"><a class="el" href="menu_principal_8h.html#af21471837d60cd289756556c3887c58a">Menu_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="base_game_8h.html#a3341405982cca8a2b97b6751d4e05bff">getMenuPause</a> ()</td></tr>
+<tr class="memdesc:a3341405982cca8a2b97b6751d4e05bff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui permet retourner le menu de pause.  <a href="base_game_8h.html#a3341405982cca8a2b97b6751d4e05bff">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a3341405982cca8a2b97b6751d4e05bff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab58f02e8c7ab5c36177b51c133e0e00a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="menu_principal_8h.html#af21471837d60cd289756556c3887c58a">Menu_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="base_game_8h.html#ab58f02e8c7ab5c36177b51c133e0e00a">getMenu_Over</a> ()</td></tr>
+<tr class="memdesc:ab58f02e8c7ab5c36177b51c133e0e00a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui permet retourner le menu du game over.  <a href="base_game_8h.html#ab58f02e8c7ab5c36177b51c133e0e00a">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ab58f02e8c7ab5c36177b51c133e0e00a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d2204475949c893c1167a7a0916fc15"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="base_game_8h.html#a1d2204475949c893c1167a7a0916fc15">getTimerBullet</a> (void)</td></tr>
+<tr class="memdesc:a1d2204475949c893c1167a7a0916fc15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui permet d'acceder a la duree de vie/temps d'apparition a l'ecran des bullets.  <a href="base_game_8h.html#a1d2204475949c893c1167a7a0916fc15">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a1d2204475949c893c1167a7a0916fc15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2105d767a38a582a22d0f4e52b83d61"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="base_game_8h.html#af2105d767a38a582a22d0f4e52b83d61">setTimerBullet</a> (int time)</td></tr>
+<tr class="memdesc:af2105d767a38a582a22d0f4e52b83d61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui permet d'acceder a la duree de vie/temps d'apparition a l'ecran des bullets.  <a href="base_game_8h.html#af2105d767a38a582a22d0f4e52b83d61">Plus de détails...</a><br /></td></tr>
+<tr class="separator:af2105d767a38a582a22d0f4e52b83d61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9658d8e7a4d94f46954586e8f10d5a1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="base_game_8h.html#af9658d8e7a4d94f46954586e8f10d5a1">ProcessInput</a> (SDL_Event *event)</td></tr>
+<tr class="memdesc:af9658d8e7a4d94f46954586e8f10d5a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui gere les entrees utilisateur.  <a href="base_game_8h.html#af9658d8e7a4d94f46954586e8f10d5a1">Plus de détails...</a><br /></td></tr>
+<tr class="separator:af9658d8e7a4d94f46954586e8f10d5a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac14c56a1da1987c322c6892b20611ed4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="base_game_8h.html#ac14c56a1da1987c322c6892b20611ed4">Input_InGame</a> (SDL_Event *event)</td></tr>
+<tr class="memdesc:ac14c56a1da1987c322c6892b20611ed4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui permet gerer les entrees clavier et la camera lorsqu'une partie est en cours.  <a href="base_game_8h.html#ac14c56a1da1987c322c6892b20611ed4">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ac14c56a1da1987c322c6892b20611ed4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42fd91da1c159bcb3ef0805dd742a5ce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="base_game_8h.html#a42fd91da1c159bcb3ef0805dd742a5ce">Update_Listes</a> ()</td></tr>
+<tr class="memdesc:a42fd91da1c159bcb3ef0805dd742a5ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui met a jour les listes de bullets et ennemis.  <a href="base_game_8h.html#a42fd91da1c159bcb3ef0805dd742a5ce">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a42fd91da1c159bcb3ef0805dd742a5ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afefe7e5d2ab817ec07f05cdd89324fdf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="base_game_8h.html#afefe7e5d2ab817ec07f05cdd89324fdf">Init</a> (const char *title)</td></tr>
+<tr class="memdesc:afefe7e5d2ab817ec07f05cdd89324fdf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui permet d'initialiser.  <a href="base_game_8h.html#afefe7e5d2ab817ec07f05cdd89324fdf">Plus de détails...</a><br /></td></tr>
+<tr class="separator:afefe7e5d2ab817ec07f05cdd89324fdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb21945d67d98b8ce4fc097ead0c6515"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="base_game_8h.html#acb21945d67d98b8ce4fc097ead0c6515">Update</a> (float <a class="el" href="base_game_8c.html#a778e38aa889751afffa2dea6b803e67a">dt</a>)</td></tr>
+<tr class="memdesc:acb21945d67d98b8ce4fc097ead0c6515"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui permet gerer les comportements des entités si on se trouve dans une partie et gerer le son si on se trouve sur le menu principal.  <a href="base_game_8h.html#acb21945d67d98b8ce4fc097ead0c6515">Plus de détails...</a><br /></td></tr>
+<tr class="separator:acb21945d67d98b8ce4fc097ead0c6515"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab05de8e68dbbf87d49c970c01b692d76"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="base_game_8h.html#ab05de8e68dbbf87d49c970c01b692d76">LibererRessources_Jeux</a> ()</td></tr>
+<tr class="memdesc:ab05de8e68dbbf87d49c970c01b692d76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui libere toutes les ressources du jeu.  <a href="base_game_8h.html#ab05de8e68dbbf87d49c970c01b692d76">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ab05de8e68dbbf87d49c970c01b692d76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84b7d8c161bc3ba1be25eab70f664a67"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="base_game_8h.html#a84b7d8c161bc3ba1be25eab70f664a67">Rendu_Jeux</a> ()</td></tr>
+<tr class="memdesc:a84b7d8c161bc3ba1be25eab70f664a67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui permet de gérer le rendu.  <a href="base_game_8h.html#a84b7d8c161bc3ba1be25eab70f664a67">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a84b7d8c161bc3ba1be25eab70f664a67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:ac1b61ab86d27e2cb6e2a904acd358400"><td class="memItemLeft" align="right" valign="top"><a class="el" href="liste_elements_8h.html#a030286e4cb8b6aa168edf87519ab6e12">LinkedList</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="base_game_8h.html#ac1b61ab86d27e2cb6e2a904acd358400">listEnnemis</a></td></tr>
+<tr class="separator:ac1b61ab86d27e2cb6e2a904acd358400"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37f0a458c58c0ccfc3b1cf9f9a57b00c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="liste_elements_8h.html#a030286e4cb8b6aa168edf87519ab6e12">LinkedList</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="base_game_8h.html#a37f0a458c58c0ccfc3b1cf9f9a57b00c">listCollider</a></td></tr>
+<tr class="separator:a37f0a458c58c0ccfc3b1cf9f9a57b00c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a184872af80e53427412c77ba457621e7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="liste_elements_8h.html#a030286e4cb8b6aa168edf87519ab6e12">LinkedList</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="base_game_8h.html#a184872af80e53427412c77ba457621e7">bullet</a></td></tr>
+<tr class="separator:a184872af80e53427412c77ba457621e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b30d68dee6975a7a531167794f4fe49"><td class="memItemLeft" align="right" valign="top"><a class="el" href="liste_elements_8h.html#a030286e4cb8b6aa168edf87519ab6e12">LinkedList</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="base_game_8h.html#a9b30d68dee6975a7a531167794f4fe49">items</a></td></tr>
+<tr class="separator:a9b30d68dee6975a7a531167794f4fe49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af41f31addaf36fbfe84e6b3d5c282f9e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="base_game_8h.html#af41f31addaf36fbfe84e6b3d5c282f9e">tempsEcoule</a></td></tr>
+<tr class="separator:af41f31addaf36fbfe84e6b3d5c282f9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27d2b5b016fe50b9a15dd63a6228ed2a"><td class="memItemLeft" align="right" valign="top">SDL_Rect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="base_game_8h.html#a27d2b5b016fe50b9a15dd63a6228ed2a">camera</a></td></tr>
+<tr class="separator:a27d2b5b016fe50b9a15dd63a6228ed2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>Programme qui gère les menus principal du jeu. </p>
+<dl class="section author"><dt>Auteur</dt><dd>CALVADOS Cindy, CHAUMULON Cassandra, CHELLI Célia, OUSMANOVA Karina </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.0 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>mars 2020 </dd></dl>
+</div><h2 class="groupheader">Documentation des définitions de type</h2>
+<a id="a8493a94df4b942048b28ca811751ef18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8493a94df4b942048b28ca811751ef18">&#9670;&nbsp;</a></span>Base_Game</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structbase_game.html">baseGame</a> <a class="el" href="base_game_8h.html#a8493a94df4b942048b28ca811751ef18">Base_Game</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This is the documentation for the preceding typedef </p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des fonctions</h2>
+<a id="a723a5ea9b6e1f0ba848043de38ba55ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a723a5ea9b6e1f0ba848043de38ba55ba">&#9670;&nbsp;</a></span>getBaseGame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="base_game_8h.html#a8493a94df4b942048b28ca811751ef18">Base_Game</a>* getBaseGame </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction qui permet d'accéder à la structure qui gère l'état du jeu. </p>
+<p>fonction Base_Game</p>
+<dl class="section return"><dt>Renvoie</dt><dd>Un pointeur sur une structure de données de type Base_Game </dd></dl>
+
+</div>
+</div>
+<a id="a97a33115666a842df058340168fb18a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97a33115666a842df058340168fb18a8">&#9670;&nbsp;</a></span>getBullets()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="liste_elements_8h.html#a030286e4cb8b6aa168edf87519ab6e12">LinkedList</a>* getBullets </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction qui permet d'acceder a la liste des bullets. </p>
+<p>fonction getBullets</p>
+<dl class="section return"><dt>Renvoie</dt><dd>un pointeur sur une liste de type LinkedList </dd></dl>
+
+</div>
+</div>
+<a id="a616efe224a4e672efcd010f9a7d14950"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a616efe224a4e672efcd010f9a7d14950">&#9670;&nbsp;</a></span>getCollider()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="liste_elements_8h.html#a030286e4cb8b6aa168edf87519ab6e12">LinkedList</a>* getCollider </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction qui permet d'acceder a la liste des colliders. </p>
+<p>fonction getCollider</p>
+<dl class="section return"><dt>Renvoie</dt><dd>un pointeur sur une liste de type LinkedList </dd></dl>
+
+</div>
+</div>
+<a id="afa446255186b601c8eae5f78249f9f56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa446255186b601c8eae5f78249f9f56">&#9670;&nbsp;</a></span>getEnnemis()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="liste_elements_8h.html#a030286e4cb8b6aa168edf87519ab6e12">LinkedList</a>* getEnnemis </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction qui permet d'acceder a la liste des ennemis. </p>
+<p>fonction getEnnemis qui gere les ennemis</p>
+<dl class="section return"><dt>Renvoie</dt><dd>un pointeur sur une liste de type LinkedList </dd></dl>
+
+</div>
+</div>
+<a id="a41861cd4b7373473b5b29fab100a2e1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41861cd4b7373473b5b29fab100a2e1d">&#9670;&nbsp;</a></span>getItems()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="liste_elements_8h.html#a030286e4cb8b6aa168edf87519ab6e12">LinkedList</a>* getItems </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction qui permet d'acceder a la liste des items. </p>
+<p>fonction getItems</p>
+<dl class="section return"><dt>Renvoie</dt><dd>un pointeur sur une liste de type LinkedList </dd></dl>
+
+</div>
+</div>
+<a id="a17db0e599f21738d43d31f0ed25a4bfe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17db0e599f21738d43d31f0ed25a4bfe">&#9670;&nbsp;</a></span>getMenu()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="menu_principal_8h.html#af21471837d60cd289756556c3887c58a">Menu_t</a>* getMenu </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction qui permet retourner le menu principal. </p>
+<p>fonction getMenu</p>
+<dl class="section return"><dt>Renvoie</dt><dd>une structure menu de type Menu_t </dd></dl>
+
+</div>
+</div>
+<a id="ab58f02e8c7ab5c36177b51c133e0e00a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab58f02e8c7ab5c36177b51c133e0e00a">&#9670;&nbsp;</a></span>getMenu_Over()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="menu_principal_8h.html#af21471837d60cd289756556c3887c58a">Menu_t</a>* getMenu_Over </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction qui permet retourner le menu du game over. </p>
+<p>fonction getMenu_Over</p>
+<dl class="section return"><dt>Renvoie</dt><dd>une structure menu de type Menu_t </dd></dl>
+
+</div>
+</div>
+<a id="a205bd29ed63744c68ef7ce11d220bb1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a205bd29ed63744c68ef7ce11d220bb1e">&#9670;&nbsp;</a></span>getMenuCon()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="menu_principal_8h.html#af21471837d60cd289756556c3887c58a">Menu_t</a>* getMenuCon </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction qui permet retourner le menu "continuer". </p>
+<p>fonction getMenuCon</p>
+<dl class="section return"><dt>Renvoie</dt><dd>une structure menu de type Menu_t </dd></dl>
+
+</div>
+</div>
+<a id="acd1c6f0393092cecd4709e7d574e15fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd1c6f0393092cecd4709e7d574e15fd">&#9670;&nbsp;</a></span>getMenuLoad()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="menu_principal_8h.html#af21471837d60cd289756556c3887c58a">Menu_t</a>* getMenuLoad </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction qui permet retourner le menu de chargement. </p>
+<p>fonction getMenuLoad</p>
+<dl class="section return"><dt>Renvoie</dt><dd>une structure menu de type Menu_t </dd></dl>
+
+</div>
+</div>
+<a id="a3341405982cca8a2b97b6751d4e05bff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3341405982cca8a2b97b6751d4e05bff">&#9670;&nbsp;</a></span>getMenuPause()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="menu_principal_8h.html#af21471837d60cd289756556c3887c58a">Menu_t</a>* getMenuPause </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction qui permet retourner le menu de pause. </p>
+<p>fonction getMenuPause</p>
+<dl class="section return"><dt>Renvoie</dt><dd>une structure menu de type Menu_t </dd></dl>
+
+</div>
+</div>
+<a id="a47cca4d0945b90685b736f6a38a89d80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47cca4d0945b90685b736f6a38a89d80">&#9670;&nbsp;</a></span>getNiveau()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="hud_8h.html#a66dba29682c45eda180ae3a6c7ea95db">HUD</a>* getNiveau </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retourne l'instance de l'objet niveau. </p>
+<p>fonction getNiveau qui gere les niveaux</p>
+<p>Cela permet d'instaurer un contexte privé </p><dl class="section return"><dt>Renvoie</dt><dd>Retourne un pointeur sur l'objet niveau </dd></dl>
+
+</div>
+</div>
+<a id="ab7b6f942529b230c073e575a15ce324e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7b6f942529b230c073e575a15ce324e">&#9670;&nbsp;</a></span>getScores()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="hud_8h.html#a66dba29682c45eda180ae3a6c7ea95db">HUD</a>* getScores </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retourne l'instance de l'objet score. </p>
+<p>fonction getScores qui gere le scores</p>
+<p>Cela permet d'instaurer un contexte privé </p><dl class="section return"><dt>Renvoie</dt><dd>Retourne un pointeur sur l'objet score </dd></dl>
+
+</div>
+</div>
+<a id="a9ef43510a7613637ac308c79681b86dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ef43510a7613637ac308c79681b86dc">&#9670;&nbsp;</a></span>getTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="hud_8h.html#a66dba29682c45eda180ae3a6c7ea95db">HUD</a>* getTime </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>fonction getNiveau qui gere le timer du jeux </p>
+
+</div>
+</div>
+<a id="a1d2204475949c893c1167a7a0916fc15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d2204475949c893c1167a7a0916fc15">&#9670;&nbsp;</a></span>getTimerBullet()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int getTimerBullet </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction qui permet d'acceder a la duree de vie/temps d'apparition a l'ecran des bullets. </p>
+<p>fonction getTimerBullet</p>
+<dl class="section return"><dt>Renvoie</dt><dd>un pointeur sur une liste de type LinkedList </dd></dl>
+
+</div>
+</div>
+<a id="a9d2eed0cc98378eaee255ad52b5f53ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d2eed0cc98378eaee255ad52b5f53ab">&#9670;&nbsp;</a></span>getWindow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SDL_Window* getWindow </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>fonction SDL_Window qui gere la fenetre </p>
+
+</div>
+</div>
+<a id="afefe7e5d2ab817ec07f05cdd89324fdf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afefe7e5d2ab817ec07f05cdd89324fdf">&#9670;&nbsp;</a></span>Init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Init </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>title</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction qui permet d'initialiser. </p>
+<p>Creation de la fenetre</p>
+<p>Chargement des polices, de l'audio et des entites </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">title</td><td>chaine de caracteres </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>pas de valeur de retour (void) </dd></dl>
+
+</div>
+</div>
+<a id="ac14c56a1da1987c322c6892b20611ed4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac14c56a1da1987c322c6892b20611ed4">&#9670;&nbsp;</a></span>Input_InGame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Input_InGame </td>
+          <td>(</td>
+          <td class="paramtype">SDL_Event *&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction qui permet gerer les entrees clavier et la camera lorsqu'une partie est en cours. </p>
+<p>fonction Input_InGame</p>
+<p>Gestion des entrees de l'utilisateur </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td>pointeur sur une structure SDL evenement </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>pas de valeur de retour (void) </dd></dl>
+
+</div>
+</div>
+<a id="ab05de8e68dbbf87d49c970c01b692d76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab05de8e68dbbf87d49c970c01b692d76">&#9670;&nbsp;</a></span>LibererRessources_Jeux()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LibererRessources_Jeux </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction qui libere toutes les ressources du jeu. </p>
+<p>Destruction des structures rendu et fenetre </p><dl class="section return"><dt>Renvoie</dt><dd>pas de valeur de retour (void) </dd></dl>
+
+</div>
+</div>
+<a id="af9658d8e7a4d94f46954586e8f10d5a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9658d8e7a4d94f46954586e8f10d5a1">&#9670;&nbsp;</a></span>ProcessInput()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ProcessInput </td>
+          <td>(</td>
+          <td class="paramtype">SDL_Event *&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction qui gere les entrees utilisateur. </p>
+<p>fonction ProcessInput</p>
+<p>Gestion des entrées utilisateurs.</p>
+<p>En fonction de si l'utilisateur est en cours de partie, sur le menu principal, sur le menu pause, sur le menu game over ou si le niveau vient d'etre acheve </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td>evenement (entree utilisateur) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>pas de valeur de retour (void) </dd></dl>
+
+</div>
+</div>
+<a id="a84b7d8c161bc3ba1be25eab70f664a67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84b7d8c161bc3ba1be25eab70f664a67">&#9670;&nbsp;</a></span>Rendu_Jeux()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Rendu_Jeux </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction qui permet de gérer le rendu. </p>
+<p>Affichage en fonction de l'etat dans lequel se trouve le jeu </p><dl class="section return"><dt>Renvoie</dt><dd>pas de valeur de retour (void) </dd></dl>
+
+</div>
+</div>
+<a id="af2105d767a38a582a22d0f4e52b83d61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2105d767a38a582a22d0f4e52b83d61">&#9670;&nbsp;</a></span>setTimerBullet()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setTimerBullet </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>time</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction qui permet d'acceder a la duree de vie/temps d'apparition a l'ecran des bullets. </p>
+<p>fonction setTimerBullet , avec la variable temps</p>
+<dl class="section return"><dt>Renvoie</dt><dd>pas de valeur de retour (void) </dd></dl>
+
+</div>
+</div>
+<a id="acb21945d67d98b8ce4fc097ead0c6515"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb21945d67d98b8ce4fc097ead0c6515">&#9670;&nbsp;</a></span>Update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Update </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>dt</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction qui permet gerer les comportements des entités si on se trouve dans une partie et gerer le son si on se trouve sur le menu principal. </p>
+<p>Etat du jeu possible : menu principal ou en partie </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dt</td><td>valeur du delta-time </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>pas de valeur de retour (void) </dd></dl>
+
+</div>
+</div>
+<a id="a42fd91da1c159bcb3ef0805dd742a5ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42fd91da1c159bcb3ef0805dd742a5ce">&#9670;&nbsp;</a></span>Update_Listes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Update_Listes </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction qui met a jour les listes de bullets et ennemis. </p>
+<p>Suppression des listes si nécessaire </p><dl class="section return"><dt>Renvoie</dt><dd>pas de valeur de retour (void) </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des variables</h2>
+<a id="a184872af80e53427412c77ba457621e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a184872af80e53427412c77ba457621e7">&#9670;&nbsp;</a></span>bullet</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="liste_elements_8h.html#a030286e4cb8b6aa168edf87519ab6e12">LinkedList</a> bullet</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Liste des bullets </p>
+
+</div>
+</div>
+<a id="a27d2b5b016fe50b9a15dd63a6228ed2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27d2b5b016fe50b9a15dd63a6228ed2a">&#9670;&nbsp;</a></span>camera</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SDL_Rect camera</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>la camera</p>
+<p>Structure qui gère la camera </p>
+
+</div>
+</div>
+<a id="a9b30d68dee6975a7a531167794f4fe49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b30d68dee6975a7a531167794f4fe49">&#9670;&nbsp;</a></span>items</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="liste_elements_8h.html#a030286e4cb8b6aa168edf87519ab6e12">LinkedList</a> items</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Liste des items </p>
+
+</div>
+</div>
+<a id="a37f0a458c58c0ccfc3b1cf9f9a57b00c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37f0a458c58c0ccfc3b1cf9f9a57b00c">&#9670;&nbsp;</a></span>listCollider</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="liste_elements_8h.html#a030286e4cb8b6aa168edf87519ab6e12">LinkedList</a> listCollider</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>liste des collition</p>
+<p>Liste des colliders </p>
+
+</div>
+</div>
+<a id="ac1b61ab86d27e2cb6e2a904acd358400"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1b61ab86d27e2cb6e2a904acd358400">&#9670;&nbsp;</a></span>listEnnemis</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="liste_elements_8h.html#a030286e4cb8b6aa168edf87519ab6e12">LinkedList</a> listEnnemis</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>la listes des ennemis</p>
+<p>Liste des ennemis </p>
+
+</div>
+</div>
+<a id="af41f31addaf36fbfe84e6b3d5c282f9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af41f31addaf36fbfe84e6b3d5c282f9e">&#9670;&nbsp;</a></span>tempsEcoule</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int tempsEcoule</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>les temps ecouler </p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_09e761304027c904456130627fd4dcf5.html">includes</a></li><li class="navelem"><a class="el" href="base_game_8h.html">baseGame.h</a></li>
+    <li class="footer">Généré par
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
+</body>
+</html>

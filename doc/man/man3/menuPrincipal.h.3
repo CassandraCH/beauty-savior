@@ -1,0 +1,327 @@
+.TH "includes/menuPrincipal.h" 3 "Dimanche 5 Avril 2020" "Version 0.1" "Beauty Savior" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+includes/menuPrincipal.h \- programme qui gere le menu pricipal du jeu\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'texture\&.h'\fP
+.br
+
+.SS "Structures de données"
+
+.in +1c
+.ti -1c
+.RI "struct \fBoption\fP"
+.br
+.ti -1c
+.RI "struct \fBmenu\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fB_MENU_PRINCIPAL_H\fP"
+.br
+.ti -1c
+.RI "#define \fBMAX_NUMBER\fP   3"
+.br
+.RI "Nombre maximum d'options disponibles dans un menu\&. "
+.in -1c
+.SS "Définitions de type"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fBoption\fP \fBOptions_t\fP"
+.br
+.ti -1c
+.RI "typedef struct \fBmenu\fP \fBMenu_t\fP"
+.br
+.in -1c
+.SS "Fonctions"
+
+.in +1c
+.ti -1c
+.RI "void \fBUpdateOption\fP (\fBOptions_t\fP *menut, int etat)"
+.br
+.RI "Fonction qui rafraichit l'affichage des options\&. "
+.ti -1c
+.RI "int \fBgetTouchePresse\fP (\fBMenu_t\fP *\fBmenu\fP)"
+.br
+.RI "Fonction qui retourne l'option du menu selectionne\&. "
+.ti -1c
+.RI "void \fBToucheHaut\fP (\fBMenu_t\fP *\fBmenu\fP)"
+.br
+.RI "Fonction qui permet de naviguer dans le menu vers le haut\&. "
+.ti -1c
+.RI "void \fBToucheBas\fP (\fBMenu_t\fP *\fBmenu\fP)"
+.br
+.RI "Fonction qui permet de naviguer dans le menu vers le bas\&. "
+.ti -1c
+.RI "void \fBDroite\fP (\fBMenu_t\fP *\fBmenu\fP)"
+.br
+.RI "Fonction qui permet de naviguer dans le menu a droite\&. "
+.ti -1c
+.RI "void \fBGauche\fP (\fBMenu_t\fP *\fBmenu\fP)"
+.br
+.RI "Fonction qui permet de naviguer dans le menu a gauche\&. "
+.ti -1c
+.RI "void \fBDessiner_Menu\fP (\fBMenu_t\fP *\fBmenu\fP, int nombresOptions, int posX, int posY, int largeurBG, int hauteurBG)"
+.br
+.RI "Fonction qui permet d'afficher le menu\&. "
+.ti -1c
+.RI "void \fBInit_MenuPrincipal\fP ()"
+.br
+.RI "Fonction qui initialise le menu principal\&. "
+.ti -1c
+.RI "void \fBInput_MenuPrincipal\fP (SDL_Event *event)"
+.br
+.RI "Fonction qui gere les evenements du menu principal\&. "
+.ti -1c
+.RI "void \fBChargerData_Menu\fP (int numero, int num_image, \fBMenu_t\fP *\fBmenu\fP, char *nomOption, char *image_on, char *image_off, int positionX, int positionY)"
+.br
+.RI "Fonction qui gere le chargement des donnes du menu\&. "
+.ti -1c
+.RI "void \fBNettoyer_Menu\fP (\fBMenu_t\fP *\fBmenu\fP, int nombreOptions)"
+.br
+.RI "Fonction qui permet de nettoyer l'ecran du menu\&. "
+.in -1c
+.SH "Description détaillée"
+.PP 
+programme qui gere le menu pricipal du jeu\&. 
+
+
+.PP
+\fBAuteur\fP
+.RS 4
+CALVADOS Cindy, CHAUMULON Cassandra, CHELLI Célia, OUSMANOVA Karina 
+.RE
+.PP
+\fBVersion\fP
+.RS 4
+1\&.0 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+mars 2020 
+.RE
+.PP
+
+.SH "Documentation des macros"
+.PP 
+.SS "#define _MENU_PRINCIPAL_H"
+< 
+.SH "Documentation des définitions de type"
+.PP 
+.SS "typedef struct \fBmenu\fP \fBMenu_t\fP"
+This is the documentation for the preceding typedef 
+.SS "typedef struct \fBoption\fP \fBOptions_t\fP"
+This is the documentation for the preceding typedef 
+.SH "Documentation des fonctions"
+.PP 
+.SS "void ChargerData_Menu (int numero, int num_image, \fBMenu_t\fP * menu, char * nomOption, char * image_on, char * image_off, int positionX, int positionY)"
+
+.PP
+Fonction qui gere le chargement des donnes du menu\&. rechargement du menu
+.PP
+\fBParamètres\fP
+.RS 4
+\fInumero\fP numero de l'option 
+.br
+\fInum_image\fP numero de l'image selectionne par defaut 
+.br
+\fImenu\fP pointeur sur le menu 
+.br
+\fInomOption\fP nom de l'option 
+.br
+\fIimage_on\fP chemin pour acceder a l'image selectionnee 
+.br
+\fIimage_off\fP chemin pour acceder a l'image deselectionnee 
+.br
+\fIpositionX\fP position en x 
+.br
+\fIpositionY\fP position en y 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void Dessiner_Menu (\fBMenu_t\fP * menu, int nombresOptions, int posX, int posY, int largeurBG, int hauteurBG)"
+
+.PP
+Fonction qui permet d'afficher le menu\&. Affichage des différentes options 
+.PP
+\fBParamètres\fP
+.RS 4
+\fImenu\fP pointeur sur le menu 
+.br
+\fInombresOptions\fP nombre d'options dans le menu 
+.br
+\fIposX\fP position en x de l'arriere plan 
+.br
+\fIposY\fP position en y de l'arriere plan 
+.br
+\fIlargeurBG\fP largeur de l'arriere plan 
+.br
+\fIhauteurBG\fP hauteur de l'arriere plan 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void Droite (\fBMenu_t\fP * menu)"
+
+.PP
+Fonction qui permet de naviguer dans le menu a droite\&. pour aller a droite
+.PP
+\fBParamètres\fP
+.RS 4
+\fImenu\fP pointeur sur le menu 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void Gauche (\fBMenu_t\fP * menu)"
+
+.PP
+Fonction qui permet de naviguer dans le menu a gauche\&. pour aller a gauche
+.PP
+\fBParamètres\fP
+.RS 4
+\fImenu\fP pointeur sur le menu 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "int getTouchePresse (\fBMenu_t\fP * menu)"
+
+.PP
+Fonction qui retourne l'option du menu selectionne\&. fonction sur les touches du menu
+.PP
+\fBParamètres\fP
+.RS 4
+\fImenu\fP pointeur sur le menu 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+un entier correspondant au numero de l'option selectionnee 
+.RE
+.PP
+
+.SS "void Init_MenuPrincipal ()"
+
+.PP
+Fonction qui initialise le menu principal\&. initialise le menu
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void Input_MenuPrincipal (SDL_Event * event)"
+
+.PP
+Fonction qui gere les evenements du menu principal\&. Gestion des entrees clavier de l'utilisateur 
+.PP
+\fBParamètres\fP
+.RS 4
+\fIevent\fP evenement 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void Nettoyer_Menu (\fBMenu_t\fP * menu, int nombreOptions)"
+
+.PP
+Fonction qui permet de nettoyer l'ecran du menu\&. fonction nettoyer le menu remmetre a zero
+.PP
+\fBParamètres\fP
+.RS 4
+\fImenu\fP pointeur sur le menu 
+.br
+\fInombreOptions\fP nombre d'options du menu 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void ToucheBas (\fBMenu_t\fP * menu)"
+
+.PP
+Fonction qui permet de naviguer dans le menu vers le bas\&. touche bas
+.PP
+\fBParamètres\fP
+.RS 4
+\fImenu\fP pointeur sur le menu 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void ToucheHaut (\fBMenu_t\fP * menu)"
+
+.PP
+Fonction qui permet de naviguer dans le menu vers le haut\&. fonction pour la touche haut du menu
+.PP
+\fBParamètres\fP
+.RS 4
+\fImenu\fP pointeur sur le menu 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void UpdateOption (\fBOptions_t\fP * menut, int etat)"
+
+.PP
+Fonction qui rafraichit l'affichage des options\&. fonction d'etat du menu
+.PP
+\fBParamètres\fP
+.RS 4
+\fImenut\fP option a mettre a jour 
+.br
+\fIetat\fP etat : selectionne ou non 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Beauty Savior à partir du code source\&.
