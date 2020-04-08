@@ -45,7 +45,7 @@ typedef struct player
     bool estTourne;/**<le booleen est tourne*/
 
     bool estSurSol;/**<le booleen est sur le sol*/
-    int scores;
+    int scores;/**<score du joueur*/
 
     int nombreVies;/**< le nombre de vie du joueur*/
     bool ralenti;/**<le ralentisement du joueur*/

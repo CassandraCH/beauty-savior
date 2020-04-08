@@ -84,12 +84,12 @@ extern void InitJoueur()
     player.nombreVies = 3;
 
     //Chargement de l'image
-	chargerImage(&player.tex, "graphics_assets/rect10.png");	
+	chargerImage(&player.tex, "graphics_assets/player.png");	
 
     //position en x et en y, hauteur et largeur
 	player.h = player.tex.h;
 	player.w = player.tex.w;
-	player.x = 5299;
+	player.x = 100;
 	player.y = 495;
     player.scores = 0;
 

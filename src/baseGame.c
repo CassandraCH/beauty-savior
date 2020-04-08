@@ -145,7 +145,6 @@ extern void Rendu_Jeux()
   { 
     
     
-    AfficherInterface();
     
     SDL_Texture * texture = ChargerTexture("graphics_assets/rect11.png");
     SDL_Texture * itemTex = ChargerTexture("graphics_assets/coin.png");
@@ -154,7 +153,8 @@ extern void Rendu_Jeux()
     SDL_Texture * osTex = ChargerTexture("graphics_assets/tex_os.png");
 
     
-
+    afficher_textures_niveau(0);
+    AfficherInterface();
     //Gestion des affchages des listes, du joueur et du score
     Afficher_ElementsListes( &listEnnemis, texture, ennemi, 50, 50 );
     
