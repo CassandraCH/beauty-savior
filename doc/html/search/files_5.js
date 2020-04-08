@@ -1,6 +1,11 @@
 var searchData=
 [
+<<<<<<< HEAD
   ['inits_2ec_301',['inits.c',['../inits_8c.html',1,'']]],
   ['input_2ec_302',['input.c',['../input_8c.html',1,'']]],
   ['items_2eh_303',['items.h',['../items_8h.html',1,'']]]
+=======
+  ['inits_2ec_170',['inits.c',['../inits_8c.html',1,'']]],
+  ['input_2ec_171',['input.c',['../input_8c.html',1,'']]]
+>>>>>>> e729f8f72566b54784014691529246df224fb911
 ];

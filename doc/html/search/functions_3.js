@@ -1,5 +1,6 @@
 var searchData=
 [
+<<<<<<< HEAD
   ['gauche_352',['Gauche',['../menu_principal_8c.html#a3c36e47142c66ac4ea2a364c4b9239a3',1,'Gauche(Menu_t *menu, int nombresOptions):&#160;menuPrincipal.c'],['../menu_principal_8h.html#a4444f7cc0b64d5f148a4d79ed7f9f9e8',1,'Gauche(Menu_t *menu, int nombreOptions):&#160;menuPrincipal.c']]],
   ['getbasegame_353',['getBaseGame',['../base_game_8c.html#a4a9a8fc9fd5aa1cc1612a8ec90c6461e',1,'getBaseGame():&#160;baseGame.c'],['../base_game_8h.html#a723a5ea9b6e1f0ba848043de38ba55ba',1,'getBaseGame(void):&#160;baseGame.c']]],
   ['getbranche_354',['getBranche',['../base_game_8h.html#a8279a01ed04962c9cf6dd3f3dbcdaa57',1,'inventaire.c']]],
@@ -30,4 +31,26 @@ var searchData=
   ['gettimerbullet_379',['getTimerBullet',['../liste_elements_8c.html#a401b36b02961675f611523ba83a5cb02',1,'getTimerBullet():&#160;listeElements.c'],['../base_game_8h.html#a1d2204475949c893c1167a7a0916fc15',1,'getTimerBullet(void):&#160;listeElements.c']]],
   ['gettouchepresse_380',['getTouchePresse',['../menu_principal_8c.html#adcfbc9a00de7cd275a57b6f1cd1f7b20',1,'getTouchePresse(Menu_t *menu):&#160;menuPrincipal.c'],['../menu_principal_8h.html#adcfbc9a00de7cd275a57b6f1cd1f7b20',1,'getTouchePresse(Menu_t *menu):&#160;menuPrincipal.c']]],
   ['getwindow_381',['getWindow',['../base_game_8h.html#a9d2eed0cc98378eaee255ad52b5f53ab',1,'baseGame.h']]]
+=======
+  ['gauche_212',['Gauche',['../menu_principal_8c.html#a119c9dad78f814d3131796d75ddda133',1,'menuPrincipal.c']]],
+  ['getbasegame_213',['getBaseGame',['../base_game_8c.html#a4a9a8fc9fd5aa1cc1612a8ec90c6461e',1,'baseGame.c']]],
+  ['getbullets_214',['getBullets',['../liste_elements_8c.html#a40f4e8797e9e3c73e8d47cb28ae1222a',1,'listeElements.c']]],
+  ['getcollider_215',['getCollider',['../liste_elements_8c.html#aab5663943e8c7d034795473b357999f8',1,'listeElements.c']]],
+  ['getennemis_216',['getEnnemis',['../liste_elements_8c.html#af69e6319697df4945c6c406676c70570',1,'listeElements.c']]],
+  ['getitems_217',['getItems',['../liste_elements_8c.html#abe306f2a5bf65e70b717be6bc58c9e00',1,'listeElements.c']]],
+  ['getlevel_218',['getLevel',['../level_8c.html#a6d4fd398aa285c4b1cc5785fd1499762',1,'level.c']]],
+  ['getmenu_219',['getMenu',['../menu_principal_8c.html#a7961cf6f80a1581137f00a2950bb22dd',1,'menuPrincipal.c']]],
+  ['getmenu_5fover_220',['getMenu_Over',['../game_over_8c.html#a84947749265456b7ea0fdd03f584bbb1',1,'gameOver.c']]],
+  ['getmenucon_221',['getMenuCon',['../menu__continue_8c.html#adf75f714b292a7e323384f3ef9425a98',1,'menu_continue.c']]],
+  ['getmenuload_222',['getMenuLoad',['../menu_load_8c.html#a2237b072c9e06ab809d88ac23166aa38',1,'menuLoad.c']]],
+  ['getmenupause_223',['getMenuPause',['../menu__pause_8c.html#aa0d51d22e796f8bd84516e7e2a4b2463',1,'menu_pause.c']]],
+  ['getniveau_224',['getNiveau',['../scores_8c.html#ac8329170abebf95447b855fe55e1aa0b',1,'scores.c']]],
+  ['getplayer_225',['getPlayer',['../player_8c.html#a416043de4a450e655655b193ee8c97d4',1,'player.c']]],
+  ['getplayerx_226',['getPlayerX',['../player_8c.html#a59d9296a0792e47cb2fb984e1507985a',1,'player.c']]],
+  ['getplayery_227',['getPlayerY',['../player_8c.html#a748024009c610d3487f7c3d31b0006f8',1,'player.c']]],
+  ['getrenderer_228',['getRenderer',['../inits_8c.html#ae2565fc92725a6507ff7dafe13a8cc7f',1,'inits.c']]],
+  ['getscores_229',['getScores',['../scores_8c.html#a38485d3405813d341dc4b7e71f475f87',1,'scores.c']]],
+  ['gettimerbullet_230',['getTimerBullet',['../liste_elements_8c.html#a401b36b02961675f611523ba83a5cb02',1,'listeElements.c']]],
+  ['gettouchepresse_231',['getTouchePresse',['../menu_principal_8c.html#adcfbc9a00de7cd275a57b6f1cd1f7b20',1,'menuPrincipal.c']]]
+>>>>>>> e729f8f72566b54784014691529246df224fb911
 ];

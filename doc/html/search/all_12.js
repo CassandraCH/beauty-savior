@@ -1,5 +1,6 @@
 var searchData=
 [
+<<<<<<< HEAD
   ['sauvegarderpartie_223',['SauvegarderPartie',['../charge_save_8c.html#a091d034d1ae628356d3251461e3dace2',1,'SauvegarderPartie():&#160;chargeSave.c'],['../charge_save_8h.html#a091d034d1ae628356d3251461e3dace2',1,'SauvegarderPartie():&#160;chargeSave.c']]],
   ['savecollider_5fposition_224',['SaveCollider_Position',['../charge_save_8c.html#a1154ecfe153a8c8ff20d73bc3cf2fe5e',1,'SaveCollider_Position():&#160;chargeSave.c'],['../charge_save_8h.html#a1154ecfe153a8c8ff20d73bc3cf2fe5e',1,'SaveCollider_Position():&#160;chargeSave.c']]],
   ['score_225',['score',['../scores_8c.html#a6114d54a4a783abb9742f5868d02af92',1,'scores.c']]],
@@ -21,4 +22,12 @@ var searchData=
   ['supppremier_241',['suppPremier',['../liste_elements_8c.html#ab0ac2ce327ad1fe9a08ab6382f19838b',1,'suppPremier(LinkedList *lst):&#160;listeElements.c'],['../liste_elements_8h.html#ab0ac2ce327ad1fe9a08ab6382f19838b',1,'suppPremier(LinkedList *lst):&#160;listeElements.c']]],
   ['supprimecible_242',['supprimeCible',['../liste_elements_8c.html#a7fa39862308b9f2479a717e645d58440',1,'supprimeCible(LinkedList *lsptr, int target):&#160;listeElements.c'],['../liste_elements_8h.html#a7fa39862308b9f2479a717e645d58440',1,'supprimeCible(LinkedList *lsptr, int target):&#160;listeElements.c']]],
   ['surface_243',['surface',['../structhud__s.html#a2f5cac12e913bcfcff660305bf88dd3b',1,'hud_s']]]
+=======
+  ['update_147',['Update',['../base_game_8c.html#acb21945d67d98b8ce4fc097ead0c6515',1,'baseGame.c']]],
+  ['update_5flistes_148',['Update_Listes',['../base_game_8c.html#a42fd91da1c159bcb3ef0805dd742a5ce',1,'baseGame.c']]],
+  ['updatebullets_149',['UpdateBullets',['../entite_8c.html#a48a46773f7a54ff924d3fe18676da527',1,'entite.c']]],
+  ['updateennemis_150',['UpdateEnnemis',['../entite_8c.html#a6254e69c73b49b05628238188813f020',1,'entite.c']]],
+  ['updatejoueur_151',['UpdateJoueur',['../player_8c.html#a6726e250896449a55d137266b9ccf9d0',1,'player.c']]],
+  ['updateoption_152',['UpdateOption',['../menu_principal_8c.html#ae6aa699ff3aa6f14b0edf596df9c8645',1,'menuPrincipal.c']]]
+>>>>>>> e729f8f72566b54784014691529246df224fb911
 ];
