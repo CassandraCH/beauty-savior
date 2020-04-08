@@ -1,0 +1,159 @@
+.TH "includes/texture.h" 3 "Dimanche 5 Avril 2020" "Version 0.1" "Beauty Savior" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+includes/texture.h \- programme qui gere les texture du jeu \&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'commun\&.h'\fP
+.br
+
+.SS "Structures de données"
+
+.in +1c
+.ti -1c
+.RI "struct \fBtextures\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fB__TEXTURE_H\fP   /"
+.br
+.RI "Clause de mise en garde pour le fichier TEXTURE_H\&. "
+.in -1c
+.SS "Définitions de type"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fBtextures\fP \fBTexture_Manager\fP"
+.br
+.in -1c
+.SS "Fonctions"
+
+.in +1c
+.ti -1c
+.RI "\fBbool\fP \fBchargerImage\fP (\fBTexture_Manager\fP *tex, const char *filename)"
+.br
+.RI "Fonction qui permet de charger une image dans une texture\&. "
+.ti -1c
+.RI "void \fBLibererRessources\fP (\fBTexture_Manager\fP *tex)"
+.br
+.RI "Fonction qui permet detruire une texture\&. "
+.ti -1c
+.RI "SDL_Texture * \fBChargerTexture\fP (char *filepath)"
+.br
+.RI "Fonction qui permet de charger une texture a partir d'une image\&. "
+.ti -1c
+.RI "void \fBChargerTextureManager\fP (\fBTexture_Manager\fP *tex, char *filepath)"
+.br
+.RI "Fonction qui permet de charger une texture\&. "
+.in -1c
+.SH "Description détaillée"
+.PP 
+programme qui gere les texture du jeu \&. 
+
+
+.PP
+\fBAuteur\fP
+.RS 4
+CALVADOS Cindy, CHAUMULON Cassandra, CHELLI Célia, OUSMANOVA Karina 
+.RE
+.PP
+\fBVersion\fP
+.RS 4
+1\&.0 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+mars 2020 
+.RE
+.PP
+
+.SH "Documentation des définitions de type"
+.PP 
+.SS "typedef struct \fBtextures\fP \fBTexture_Manager\fP"
+les structures du fichier \fBcommun\&.h\fP structure des differentes textures du jeu 
+.SH "Documentation des fonctions"
+.PP 
+.SS "\fBbool\fP chargerImage (\fBTexture_Manager\fP * tex, const char * filename)"
+
+.PP
+Fonction qui permet de charger une image dans une texture\&. booleen charger des images
+.PP
+chargements des images
+.PP
+\fBParamètres\fP
+.RS 4
+\fItex\fP pointeur sur la texture dans laquelle on veut charger l'image 
+.br
+\fIfilename\fP nom du fichier de l'image 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+un booleen : VRAI si l'image a bien ete chargee dans la texture, FAUX sinon
+.RE
+.PP
+chargements des images 
+.SS "SDL_Texture* ChargerTexture (char * filepath)"
+
+.PP
+Fonction qui permet de charger une texture a partir d'une image\&. charger de texture de filepath(chemin de fichier)
+.PP
+chargement des textures
+.PP
+\fBParamètres\fP
+.RS 4
+\fIfilepath\fP chemin pour acceder a l'image 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+un pointeur sur une texture SDL (SDL_Texture)
+.RE
+.PP
+chargement des textures 
+.SS "void ChargerTextureManager (\fBTexture_Manager\fP * tex, char * filepath)"
+
+.PP
+Fonction qui permet de charger une texture\&. charger des texture visuel principal dans le jeu
+.PP
+\fBParamètres\fP
+.RS 4
+\fItex\fP pointeur sur la texture dans laquelle on veut charger l'image 
+.br
+\fIfilepath\fP nom du fichier de l'image 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void LibererRessources (\fBTexture_Manager\fP * tex)"
+
+.PP
+Fonction qui permet detruire une texture\&. liberation des ressources
+.PP
+les ressources
+.PP
+\fBParamètres\fP
+.RS 4
+\fItex\fP pointeur sur la texture a detruire 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void)
+.RE
+.PP
+les ressources 
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Beauty Savior à partir du code source\&.

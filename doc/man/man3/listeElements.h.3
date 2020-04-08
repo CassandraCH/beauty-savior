@@ -1,0 +1,273 @@
+.TH "includes/listeElements.h" 3 "Dimanche 5 Avril 2020" "Version 0.1" "Beauty Savior" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+includes/listeElements.h \- programme qui gere tous les elements met en place pour le jeu \&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'commun\&.h'\fP
+.br
+\fC#include 'texture\&.h'\fP
+.br
+
+.SS "Structures de données"
+
+.in +1c
+.ti -1c
+.RI "struct \fBNode\fP"
+.br
+.ti -1c
+.RI "struct \fBlist\fP"
+.br
+.in -1c
+.SS "Définitions de type"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fBNode\fP \fBNode\fP"
+.br
+.ti -1c
+.RI "typedef struct \fBlist\fP \fBLinkedList\fP"
+.br
+.in -1c
+.SS "Fonctions"
+
+.in +1c
+.ti -1c
+.RI "void \fBinit_List\fP (\fBLinkedList\fP *\fBlist\fP)"
+.br
+.RI "Fonction qui permet d'initialiser la liste passee en parametre\&. "
+.ti -1c
+.RI "\fBNode\fP * \fBcreerElement\fP (SDL_Rect *rect, \fBtypeEntite\fP item_t, \fBbool\fP actif)"
+.br
+.RI "Fonction qui permet de créer un rectangle (portion de l'ecran) "
+.ti -1c
+.RI "void \fBinsertion\fP (\fBLinkedList\fP *\fBlist\fP, SDL_Rect *rect, \fBtypeEntite\fP items_t, \fBbool\fP actif)"
+.br
+.RI "Fonction qui permet d'inserer un element dans une liste passee en parametre\&. "
+.ti -1c
+.RI "void \fBAfficher_ElementsListes\fP (\fBLinkedList\fP *lst, SDL_Texture *tex, \fBtypeEntite\fP typeE)"
+.br
+.RI "Fonction qui permet d'afficher les elements d'une liste\&. "
+.ti -1c
+.RI "void \fBsuppListe\fP (\fBLinkedList\fP *lst)"
+.br
+.RI "Fonction qui permet de supprimer la liste passee en parametre\&. "
+.ti -1c
+.RI "\fBbool\fP \fBsuppPremier\fP (\fBLinkedList\fP *lst)"
+.br
+.RI "Fonction qui permet de supprimer la tete de la liste passee en parametre\&. "
+.ti -1c
+.RI "\fBbool\fP \fBsuppDernier\fP (\fBLinkedList\fP *lst)"
+.br
+.RI "Fonction qui permet de supprimer la queue de la liste passee en parametre\&. "
+.ti -1c
+.RI "\fBNode\fP * \fBtrouve\fP (\fBLinkedList\fP *lsptr, int target, \fBNode\fP **prvPtr)"
+.br
+.RI "Fonction qui permet de chercher un element dans une liste\&. "
+.ti -1c
+.RI "\fBbool\fP \fBsupprimeCible\fP (\fBLinkedList\fP *lsptr, int target)"
+.br
+.RI "Fonction qui permet de supprimer un element cible dans une liste\&. "
+.in -1c
+.SH "Description détaillée"
+.PP 
+programme qui gere tous les elements met en place pour le jeu \&. 
+
+
+.PP
+\fBAuteur\fP
+.RS 4
+CALVADOS Cindy, CHAUMULON Cassandra, CHELLI Célia, OUSMANOVA Karina 
+.RE
+.PP
+\fBVersion\fP
+.RS 4
+1\&.0 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+mars 2020 
+.RE
+.PP
+
+.SH "Documentation des définitions de type"
+.PP 
+.SS "typedef struct \fBlist\fP \fBLinkedList\fP"
+This is the documentation for the preceding typedef 
+.SS "typedef struct \fBNode\fP \fBNode\fP"
+This is the documentation for the preceding typedef 
+.SH "Documentation des fonctions"
+.PP 
+.SS "void Afficher_ElementsListes (\fBLinkedList\fP * lst, SDL_Texture * tex, \fBtypeEntite\fP typeE)"
+
+.PP
+Fonction qui permet d'afficher les elements d'une liste\&. affiche les elements de la liste
+.PP
+\fBParamètres\fP
+.RS 4
+\fIlst\fP liste dont on veut afficher les elements 
+.br
+\fItex\fP texture 
+.br
+\fItypeE\fP type des elements a afficher 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "\fBNode\fP* creerElement (SDL_Rect * rect, \fBtypeEntite\fP item_t, \fBbool\fP actif)"
+
+.PP
+Fonction qui permet de créer un rectangle (portion de l'ecran) creation du rectangle
+.PP
+Ce rectangle sera utilise pour la texture 
+.PP
+\fBParamètres\fP
+.RS 4
+\fIrect\fP rectangle SDL 
+.br
+\fIitem_t\fP type de l'entite 
+.br
+\fIactif\fP etat de l'entite 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+Pointeur sur une structure de type \fBNode\fP 
+.RE
+.PP
+
+.SS "void init_List (\fBLinkedList\fP * list)"
+
+.PP
+Fonction qui permet d'initialiser la liste passee en parametre\&. initialisation des listes
+.PP
+\fBParamètres\fP
+.RS 4
+\fIlist\fP liste a initialiser 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void insertion (\fBLinkedList\fP * list, SDL_Rect * rect, \fBtypeEntite\fP items_t, \fBbool\fP actif)"
+
+.PP
+Fonction qui permet d'inserer un element dans une liste passee en parametre\&. creation du rectangle
+.PP
+\fBParamètres\fP
+.RS 4
+\fIlist\fP pointeur sur la liste dans laquelle on veut inserer un element 
+.br
+\fIrect\fP pointeur sur l'element a ajouter 
+.br
+\fIitems_t\fP type de l'element a ajouter : ennemi, bullet, collider\&.\&.\&. 
+.br
+\fIactif\fP etat de l'element 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "\fBbool\fP suppDernier (\fBLinkedList\fP * lst)"
+
+.PP
+Fonction qui permet de supprimer la queue de la liste passee en parametre\&. 
+.PP
+\fBParamètres\fP
+.RS 4
+\fIlst\fP pointeur sur la liste dans laquelle on veut inserer un element 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+un booleen si l'element a bien ete supprime ou non 
+.RE
+.PP
+
+.SS "void suppListe (\fBLinkedList\fP * lst)"
+
+.PP
+Fonction qui permet de supprimer la liste passee en parametre\&. 
+.PP
+\fBParamètres\fP
+.RS 4
+\fIlst\fP pointeur sur la liste dans laquelle on veut inserer un element 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "\fBbool\fP suppPremier (\fBLinkedList\fP * lst)"
+
+.PP
+Fonction qui permet de supprimer la tete de la liste passee en parametre\&. 
+.PP
+\fBParamètres\fP
+.RS 4
+\fIlst\fP pointeur sur la liste dans laquelle on veut inserer un element 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+un booleen si l'element a bien ete supprime ou non 
+.RE
+.PP
+
+.SS "\fBbool\fP supprimeCible (\fBLinkedList\fP * lsptr, int target)"
+
+.PP
+Fonction qui permet de supprimer un element cible dans une liste\&. suppime la cible
+.PP
+\fBParamètres\fP
+.RS 4
+\fIlsptr\fP pointeur sur la liste dans laquelle on veut supprimer un element 
+.br
+\fItarget\fP element cible qu'on veut supprimer 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+un booleen si l'element cible a bien ete supprime ou non 
+.RE
+.PP
+
+.SS "\fBNode\fP* trouve (\fBLinkedList\fP * lsptr, int target, \fBNode\fP ** prvPtr)"
+
+.PP
+Fonction qui permet de chercher un element dans une liste\&. 
+.PP
+\fBParamètres\fP
+.RS 4
+\fIlsptr\fP pointeur sur la liste dans laquelle on cherche un element 
+.br
+\fItarget\fP element cible qui est cherche 
+.br
+\fIprvPtr\fP pointeur sur l'element precedent 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+Pointeur sur une structure de type \fBNode\fP 
+.RE
+.PP
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Beauty Savior à partir du code source\&.

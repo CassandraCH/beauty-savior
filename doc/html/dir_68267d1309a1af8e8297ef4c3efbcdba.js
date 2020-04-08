@@ -17,5 +17,6 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
     [ "menuPrincipal.c", "menu_principal_8c.html", "menu_principal_8c" ],
     [ "player.c", "player_8c.html", "player_8c" ],
     [ "scores.c", "scores_8c.html", "scores_8c" ],
+    [ "tests.c", "tests_8c.html", "tests_8c" ],
     [ "texture.c", "texture_8c.html", "texture_8c" ]
 ];

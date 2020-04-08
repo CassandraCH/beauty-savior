@@ -1,0 +1,195 @@
+.TH "includes/chargeSave.h" 3 "Dimanche 5 Avril 2020" "Version 0.1" "Beauty Savior" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+includes/chargeSave.h \- Programme qui s'occupe du chargement et sauvegarde de manière globaliser, chargement des niveaux, des items, des boites de collisions, sauvegarde du joueur\&. En general la sauvegarde et chargement én général\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'commun\&.h'\fP
+.br
+\fC#include 'baseGame\&.h'\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fB__LOAD_SAVE_H\fP"
+.br
+.in -1c
+.SS "Fonctions"
+
+.in +1c
+.ti -1c
+.RI "void \fBChargerPartie\fP ()"
+.br
+.RI "Fonction qui permet de charger une partie sauvegardee\&. "
+.ti -1c
+.RI "void \fBSauvegarderPartie\fP ()"
+.br
+.RI "Fonction qui permet sauvegarder une partie\&. "
+.ti -1c
+.RI "void \fBSaveCollider_Position\fP ()"
+.br
+.RI "Fonction qui permet sauvegarder la position des colliders dans un fichier\&. "
+.ti -1c
+.RI "void \fBChargementCollider\fP (const char *filename)"
+.br
+.RI "Fonction qui permet de charger les colliders a partir d'un fichier\&. "
+.ti -1c
+.RI "void \fBChargement_CreationPNJ\fP (\fBLinkedList\fP *lst, char *filename)"
+.br
+.RI "Fonction qui permet de charger et créer toutes les entités (sauf le joueur) a partir d'un fichier\&. "
+.ti -1c
+.RI "void \fBChargementEnnemis\fP (const char *filename)"
+.br
+.RI "Fonction qui permet de charger les ennemis a partir d'un fichier\&. "
+.ti -1c
+.RI "void \fBChargementItems\fP (const char *filename, SDL_Texture *tex)"
+.br
+.RI "Fonction qui permet de charger les items a partir d'un fichier\&. "
+.in -1c
+.SH "Description détaillée"
+.PP 
+Programme qui s'occupe du chargement et sauvegarde de manière globaliser, chargement des niveaux, des items, des boites de collisions, sauvegarde du joueur\&. En general la sauvegarde et chargement én général\&. 
+
+
+.PP
+\fBAuteur\fP
+.RS 4
+CALVADOS Cindy, CHAUMULON Cassandra, CHELLI Célia, OUSMANOVA Karina 
+.RE
+.PP
+\fBVersion\fP
+.RS 4
+1\&.0 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+mars 2020 
+.RE
+.PP
+
+.SH "Documentation des macros"
+.PP 
+.SS "#define __LOAD_SAVE_H"
+< 
+.SH "Documentation des fonctions"
+.PP 
+.SS "void Chargement_CreationPNJ (\fBLinkedList\fP * lst, char * filename)"
+
+.PP
+Fonction qui permet de charger et créer toutes les entités (sauf le joueur) a partir d'un fichier\&. 
+.PP
+\fBParamètres\fP
+.RS 4
+\fIlst\fP Liste des colliders 
+.br
+\fIfilename\fP Nom du fichier 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void ChargementCollider (const char * filename)"
+
+.PP
+Fonction qui permet de charger les colliders a partir d'un fichier\&. chargements des collider
+.PP
+Utilisation d'un pointeur pour pouvoir parcourir la liste de colliders 
+.PP
+\fBParamètres\fP
+.RS 4
+\fIfilename\fP Nom du fichier ou la position des colliders est sauvegardee 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void ChargementEnnemis (const char * filename)"
+
+.PP
+Fonction qui permet de charger les ennemis a partir d'un fichier\&. chargements des ennemis
+.PP
+\fBParamètres\fP
+.RS 4
+\fIfilename\fP Nom du fichier 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void ChargementItems (const char * filename, SDL_Texture * tex)"
+
+.PP
+Fonction qui permet de charger les items a partir d'un fichier\&. 
+.PP
+\fBParamètres\fP
+.RS 4
+\fIfilename\fP Nom du fichier 
+.br
+\fItex\fP Texture de l'item 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void ChargerPartie ()"
+
+.PP
+Fonction qui permet de charger une partie sauvegardee\&. les charger des parties
+.PP
+Lecture du fichier data\&.txt 
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void SauvegarderPartie ()"
+
+.PP
+Fonction qui permet sauvegarder une partie\&. les sauvegarde de parties
+.PP
+Creation du fichier data\&.txt 
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void SaveCollider_Position ()"
+
+.PP
+Fonction qui permet sauvegarder la position des colliders dans un fichier\&. les collider de position
+.PP
+Creation du fichier niveau1_position\&.txt
+.PP
+Utilisation d'un pointeur pour pouvoir parcourir la liste de colliders 
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Beauty Savior à partir du code source\&.
