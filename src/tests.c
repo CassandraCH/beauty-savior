@@ -7,7 +7,6 @@
  * \brief 
  */
 
-<<<<<<< HEAD
 // #include "commun.h"
 
 
@@ -15,12 +14,3 @@
 // {
 
 // }
-=======
-#include "commun.h"
-
-
-int main()
-{
-
-}
->>>>>>> e729f8f72566b54784014691529246df224fb911
