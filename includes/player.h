@@ -29,7 +29,7 @@ typedef struct player
     float vy; /*!< la velocite y , la vitesse laquelle va l'entite dans une direction y*/
     typeEntite type; /*!< le type de l'entite*/
 
-    bool estMort; /*!< un type booleen pour savoir c'est l'entite est mort>*/
+    bool estMort; /*!< un type booleen pour savoir si le joueur est est mort>*/
     int nb_lancer; /*!< un compteur pour savoir le nb de lancer, attaque en cours>*/
 
   
@@ -41,7 +41,6 @@ typedef struct player
     bool treeActif;/**< booleen pour vérifier le tree est l'élement actif */
     bool rockActif;/**< booleen pour vérifier le rock est l'élement actif */
 
-    bool estActif;/**<le booleen est actif*/
     bool estTourne;/**<le booleen est tourne*/
 
     bool estSurSol;/**<le booleen est sur le sol*/
