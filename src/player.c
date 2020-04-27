@@ -147,7 +147,6 @@ extern void InputJoueur(SDL_Event *event)
         }
 
         player.estTourne = true;
-        player.ralenti = 0;
     }
 
     //Si la touche fleche droite est appuyee et que le joueur peut se deplacer vers la droite
@@ -163,19 +162,14 @@ extern void InputJoueur(SDL_Event *event)
         }
 
         player.estTourne = false;
-        player.ralenti = 0;
     }
 
     //Sinon => friction
     else
     { 
       
-
         //Modification de la velocite
         player.vx *= 0.8f;
-
-        //Relentissement du deplacement du joueur
-        player.ralenti = 1;
 
         //Arreter le deplacement du joueur
         if( fabsf( player.vx) < 0.1f)
