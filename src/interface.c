@@ -1,3 +1,10 @@
+/**
+ * \file interfcae.c
+ * \author CALVADOS Cindy, CHAUMULON Cassandra, CHELLI Célia, OUSMANOVA Karina
+ * \version 1.0
+ * \date janvier 2020
+ * \brief Programme qui gère l'interface de l'utilisateur 
+ */
 #include "baseGame.h"
 
 

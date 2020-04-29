@@ -1,6 +1,6 @@
 
 /**
- * \file menuLoad.h
+ * \file interface.h
  * \author CALVADOS Cindy, CHAUMULON Cassandra, CHELLI Célia, OUSMANOVA Karina
  * \version 1.0
  * \date mars 2020
