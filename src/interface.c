@@ -12,7 +12,7 @@ Menu_t interface; /**< Structure de type menu_t */
 /**
  * \fn extern Menu_t* getInterface()
  * \brief Fonction qui permet de retourner l'interface 
- * \return Retourne un pointeur sur l'interface
+ * \return un pointeur sur l'interface
 */
 extern Menu_t* getInterface()
 {
@@ -61,26 +61,22 @@ extern void Init_Interface()
 
 /**
  * \fn extern void AfficherInterface()
- * \brief Fonction qui 
- * \details 
- * \return Retourne un pointeur sur un menu
+ * \brief Fonction qui gère l'affichage de l'interface utilisateur
+ * \return pas de valeur de retour (void)
 */
 extern void AfficherInterface()
-{
-    
-    Dessiner_Menu( &interface ,4, 0, 0, 0,0 );
+{  
+  Dessiner_Menu( &interface ,4, 0, 0, 0,0 );
 
-    if( getBaseGame()->time_s > 100 )
-    {
-      SetHUD_IntToTexture(getTime(),"1 : ",getBaseGame()->sec ,90, 15 );
-    }
-    else 
-    {
-      SetHUD_IntToTexture(getTime(),"0 : ", getBaseGame()->min ,90, 15 );
-    }
+  if( getBaseGame()->time_s > 100 )
+  {
+    SetHUD_IntToTexture(getTime(),"1 : ",getBaseGame()->sec ,90, 15 );
+  }
+  else 
+  {
+    SetHUD_IntToTexture(getTime(),"0 : ", getBaseGame()->min ,90, 15 );
+  }
 
-    AfficherHUD(getScores()); 
-    AfficherHUD(getTime());
-    
-
+  AfficherHUD(getScores()); 
+  AfficherHUD(getTime());
 }
