@@ -80,8 +80,8 @@ extern void Input_MenuContinue(SDL_Event *event)
                         case 0:
                             //Changer l'etat du jeu
                             getBaseGame()->state = IN_GAME;
-                            setNiveau(2);
-
+                            setNiveau( ++getPlayer()->niveau) ;
+        
                             //Sauvegarder la partie
                             SauvegarderPartie();
 
