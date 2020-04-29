@@ -127,6 +127,7 @@ extern void InputJoueur(SDL_Event *event)
                     player.vy  = -9;
                     player.estSurSol =false;
                 }
+                
                 break;
         }
     }
