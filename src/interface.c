@@ -7,73 +7,64 @@
  */
 #include "baseGame.h"
 
+Menu_t interface; /**< Structure de type menu_t */
 
-Menu_t interface;
-
+/**
+ * \fn extern Menu_t* getInterface()
+ * \brief Fonction qui permet de retourner l'interface 
+ * \return Retourne un pointeur sur l'interface
+*/
 extern Menu_t* getInterface()
 {
     return &interface;
 }
 
-
+/**
+ * \fn extern void Init_Interface()
+ * \brief Fonction qui initialise l'interface
+ * \return pas de valeur de retour (void)
+ */
 extern void Init_Interface()
 {
-    int width = LARGEUR_FENETRE, height = HAUTEUR_FENETRE;
-    printf("Initialisation Interface");
+  int width = LARGEUR_FENETRE, height = HAUTEUR_FENETRE;
+  printf("Initialisation Interface");
 
 
-    //Initialisation du hud score
-    Init_HUD(getScores(),"0", 565, 17);
-    //Initialisation du hud time
-    Init_HUD(getTime(),"1 : 10", 90, 15);
+  //Initialisation du hud score
+  Init_HUD(getScores(),"0", 565, 17);
+  //Initialisation du hud time
+  Init_HUD(getTime(),"1 : 10", 90, 15);
 
-    
+  
 
-     /* 
-     * Premiere option : Retour au menu principal
-     * Actif par défaut
-     */ 
+  /* 
+  * Premiere option : Retour au menu principal
+  * Actif par défaut
+  */
 
-    ChargerData_Menu(0,0,&interface , "Timer"
-                ,"graphics_assets/timer.png"
-                ,"NULL"
-                ,20
-                ,10 );
+  ChargerData_Menu(0, 0, &interface, "Timer", "graphics_assets/timer.png", "NULL", 20, 10);
 
+  /* 
+  * Deuxieme option : Charger la partie
+  */
 
-    /* 
-     * Deuxieme option : Charger la partie
-     */
+  ChargerData_Menu(1, 0, &interface, "Scores", "graphics_assets/score.png", "NULL", 500, 18);
 
-    ChargerData_Menu(1,0, &interface ,"Scores"
-                ,"graphics_assets/score.png"
-                ,"NULL"
-                ,500
-                ,18 );
+  ChargerData_Menu(2, 0, &interface, "Items", "graphics_assets/items2.png", "NULL", 700, 18);
 
+  ChargerData_Menu(3, 0, &interface, "Vie", "graphics_assets/vie_3.png", "NULL", 1091, 18);
 
-    ChargerData_Menu(2,0, &interface ,"Items"
-                ,"graphics_assets/items2.png"
-                ,"NULL"
-                ,700
-                ,18 );
+  interface.selectedOption = 0;
 
-
-    ChargerData_Menu(3,0, &interface ,"Vie"
-                ,"graphics_assets/vie_3.png"
-                ,"NULL"
-                ,1091
-                ,18 );
-
-
-    interface.selectedOption = 0;
-
-    
-    interface.bg = NULL;
-    
+  interface.bg = NULL;
 }
 
-
+/**
+ * \fn extern void AfficherInterface()
+ * \brief Fonction qui 
+ * \details 
+ * \return Retourne un pointeur sur un menu
+*/
 extern void AfficherInterface()
 {
     
