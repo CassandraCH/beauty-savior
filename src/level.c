@@ -83,8 +83,8 @@ extern void ChargerNiveau()
          ChargementItems("files_assets/coin.txt", itemTex);
 
          //ChargerTextureManager( &level.levelTextures[0], "graphics_assets/level2_bgf.png");
-      ChargerTextureManager( &level.levelTextures[0], "graphics_assets/level_2_bf.png");
-      ChargerTextureManager( &level.levelTextures[1], "graphics_assets/level_2_bg.png");
+      ChargerTextureManager( &level.levelTextures[0], "graphics_assets/level_2_bg.png");
+      ChargerTextureManager( &level.levelTextures[1], "graphics_assets/level_2_bf.png");
       
    }
    
