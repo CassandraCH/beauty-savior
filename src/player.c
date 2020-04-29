@@ -80,7 +80,7 @@ extern void SetValeurDuNiveau(int valeur)
 extern void InitJoueur()
 {
     //niveau en cours et nombre de vies
-	player.niveau = 1;
+	player.niveau = 2;
     player.nombreVies = 3;
 
     //Chargement de l'image
@@ -89,8 +89,8 @@ extern void InitJoueur()
     //position en x et en y, hauteur et largeur
 	player.h = player.tex.h;
 	player.w = player.tex.w;
-	player.x = 100;
-	player.y = 495;
+	player.x = 3500;
+	player.y = 195;
     player.scores = 0;
 
     //inventaire initialise a 0
