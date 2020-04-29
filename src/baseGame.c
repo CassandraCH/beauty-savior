@@ -173,7 +173,7 @@ extern void Rendu_Jeux()
 
     afficher_textures_niveau(1);
 
-    // Debug_AfficherCollider();
+    Debug_AfficherCollider();
   }
 
   //Cas ou on a perdu
