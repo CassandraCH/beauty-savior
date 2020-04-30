@@ -64,8 +64,8 @@ extern void ChargerNiveau()
       ChargementItems("files_assets/coin.txt", itemTex);
 
       printf("Chargement niveau 1\n");
-      ChargerTextureManager( &level.levelTextures[0], "graphics_assets/level1_bgf.png");
-      ChargerTextureManager( &level.levelTextures[1], "graphics_assets/level1_bgd.png");
+      ChargerTextureManager( &level.levelTextures[0], "graphics_assets/level1.png");
+      //ChargerTextureManager( &level.levelTextures[1], "graphics_assets/level1bf.png");
       
 
    }  
@@ -86,8 +86,8 @@ extern void ChargerNiveau()
 
          //ChargerTextureManager( &level.levelTextures[0], "graphics_assets/level2_bgf.png");
          printf("Chargement niveau 2\n");
-      ChargerTextureManager( &level.levelTextures[0], "graphics_assets/level_2_bg.png");
-      ChargerTextureManager( &level.levelTextures[1], "graphics_assets/level_2_bf.png");
+      ChargerTextureManager( &level.levelTextures[0], "graphics_assets/level2_bg.png");
+      ChargerTextureManager( &level.levelTextures[1], "graphics_assets/level2_bf.png");
       
    }
    else if(  getPlayer()->niveau == 3 )
@@ -107,8 +107,8 @@ extern void ChargerNiveau()
 
          printf("Chargement niveau 3\n");
          //ChargerTextureManager( &level.levelTextures[0], "graphics_assets/level2_bgf.png");
-         ChargerTextureManager( &level.levelTextures[0], "graphics_assets/level_3_bg.png");
-         ChargerTextureManager( &level.levelTextures[1], "graphics_assets/level_3_bf.png");
+         ChargerTextureManager( &level.levelTextures[0], "./graphics_assets/level3_bg.png");
+         ChargerTextureManager( &level.levelTextures[1], "./graphics_assets/level3_bf.png");
       
    }
    

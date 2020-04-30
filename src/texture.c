@@ -57,15 +57,9 @@ bool chargerImage(Texture_Manager * tex, const char * filename )
 extern void ChargerTextureManager(Texture_Manager *tex, char * filepath )
 {
     printf("Chargement texture DECOR\n");
+    
+    LibererRessources( tex );
 
-    //Si la texture existe deja => on la detruit
-    if( tex->texture != NULL )
-    {
-        SDL_DestroyTexture(tex->texture);
-    }
-    
-    tex->texture = NULL;
-    
     //Surface tampon => chargement de l'image
     SDL_Surface *surface = IMG_Load(filepath);
     
@@ -80,11 +74,14 @@ extern void ChargerTextureManager(Texture_Manager *tex, char * filepath )
     //Sinon, on transforme la surface en texture
     else 
     {
+
         tex->texture = SDL_CreateTextureFromSurface(getRenderer(), surface);
 
         //On verifie que le texture a bien ete creee
-        if( !tex->texture )
+        if( tex->texture == NULL )
+        {
             printf("Erreur: %s\n",filepath);
+        }
     }
 
     //Suppression de la surface tampon

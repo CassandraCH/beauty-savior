@@ -171,7 +171,7 @@ extern void Rendu_Jeux()
     Afficher_ElementsListes( &items, treeTex, tree, 31, 49 ); 
     
 
-    afficher_textures_niveau(1);
+    //afficher_textures_niveau(1);
 
     Debug_AfficherCollider();
   }
