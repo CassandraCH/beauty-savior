@@ -89,7 +89,7 @@ extern void InitJoueur()
     //position en x et en y, hauteur et largeur
 	player.h = player.tex.h;
 	player.w = player.tex.w;
-    player.x = 5400;
+    player.x = 100;
     player.y = 50;
     player.scores = 0;
 
@@ -136,7 +136,7 @@ extern void InputJoueur(SDL_Event *event)
     const Uint8 *states = SDL_GetKeyboardState(NULL);
 
     //Si la touche fleche gauche est appuyee et que le joueur peut se deplacer vers la gauche
-    if( states[SDL_SCANCODE_LEFT]  && player.x-25 > 0  )
+    if( states[SDL_SCANCODE_LEFT]  && player.x - 25 > 0  )
     {
         //Modification de la velocite du joueur
         player.vx -= 0.5;
