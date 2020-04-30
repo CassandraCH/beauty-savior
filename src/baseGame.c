@@ -171,11 +171,7 @@ extern void Rendu_Jeux()
     Afficher_ElementsListes( &items, treeTex, tree, 31, 49 ); 
     
 
-<<<<<<< HEAD
-    //Debug_AfficherCollider();
-=======
     
->>>>>>> 72905ed9a2315aed2719be83b02e7636ebff4749
   }
 
   //Cas ou on a perdu

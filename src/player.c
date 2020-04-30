@@ -89,8 +89,8 @@ extern void InitJoueur()
     //position en x et en y, hauteur et largeur
 	player.h = player.tex.h;
 	player.w = player.tex.w;
-	player.x = 100;
-	player.y = 50;
+    player.x = 5400;
+    player.y = 50;
     player.scores = 0;
 
     //inventaire initialise a 0
