@@ -79,7 +79,6 @@ extern void CollisionItems();
 
 extern void InputJoueur(SDL_Event *event);
 extern void AfficherJoueur();
-extern void joueur_surSol();
 
 
 #endif

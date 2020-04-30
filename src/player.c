@@ -390,18 +390,4 @@ extern void collision_tir()
 }
 
 
-/**
- * \fn extern void joueur_surSol()
- * \brief Fonction qui permet de mettre le joueur sur le sol
- * \return pas de valeur de retour (void)
-*/
-extern void joueur_surSol()
-{
-    player.vy = 0;
-    // Le joueur est posé sur un bloc. 
-    if(!player.estSurSol)
-    {
-        getPlayer()->estSurSol = true;
-    }
 
-}
