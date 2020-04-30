@@ -80,7 +80,7 @@ extern void SetValeurDuNiveau(int valeur)
 extern void InitJoueur()
 {
     //niveau en cours et nombre de vies
-	player.niveau = 3;
+	player.niveau = 1;
     player.nombreVies = 3;
 
     //Chargement de l'image

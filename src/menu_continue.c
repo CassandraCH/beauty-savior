@@ -81,7 +81,7 @@ extern void Input_MenuContinue(SDL_Event *event)
                             //Changer l'etat du jeu
                             getBaseGame()->state = IN_GAME;
                             setNiveau( ++getPlayer()->niveau) ;
-        
+
                             //Sauvegarder la partie
                             SauvegarderPartie();
 
@@ -102,8 +102,8 @@ extern void Input_MenuContinue(SDL_Event *event)
 
                         
                             //Position initiale du joueur 
-                            getPlayer()->x = 86;
-                            getPlayer()->y = 495;
+                            getPlayer()->x = 100;
+                            getPlayer()->y = 50;
 
                             //Charger le niveau suivant
                             ChargerNiveau();       
