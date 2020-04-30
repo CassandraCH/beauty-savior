@@ -65,8 +65,6 @@ extern void ChargerNiveau()
 
       printf("Chargement niveau 1\n");
       ChargerTextureManager( &level.levelTextures[0], "graphics_assets/level1.png");
-      //ChargerTextureManager( &level.levelTextures[1], "graphics_assets/level1bf.png");
-      
 
    }  
 
@@ -77,17 +75,16 @@ extern void ChargerNiveau()
          DestructionNiveau();
          //Chargement de toutes les entites (sauf joueur)
          Chargement_CreationPNJ(getCollider(),"files_assets/niveau2.txt") ;
-         // ChargementEnnemis("files_assets/ennemi.txt");
+         // ChargementEnnemis("files_assets/ennemi_2.txt");
 
          //Chargement des textures
          SDL_Texture * itemTex = ChargerTexture("graphics_assets/coin.png");
          suppListe(getItems()); //Suppression de la liste d'item precedente
          ChargementItems("files_assets/coin.txt", itemTex);
 
-         //ChargerTextureManager( &level.levelTextures[0], "graphics_assets/level2_bgf.png");
          printf("Chargement niveau 2\n");
-      ChargerTextureManager( &level.levelTextures[0], "graphics_assets/level2_bg.png");
-      ChargerTextureManager( &level.levelTextures[1], "graphics_assets/level2_bf.png");
+         ChargerTextureManager( &level.levelTextures[0], "graphics_assets/level2.png");
+      
       
    }
    else if(  getPlayer()->niveau == 3 )
@@ -98,7 +95,7 @@ extern void ChargerNiveau()
          //Chargement de toutes les entites (sauf joueur)
          Chargement_CreationPNJ(getCollider(),"files_assets/niveau3.txt") ;
 
-         // ChargementEnnemis("files_assets/ennemi.txt");
+         // ChargementEnnemis("files_assets/ennemi_3.txt");
 
          //Chargement des textures
          SDL_Texture * itemTex = ChargerTexture("graphics_assets/coin.png");
@@ -106,9 +103,7 @@ extern void ChargerNiveau()
          ChargementItems("files_assets/coin.txt", itemTex);
 
          printf("Chargement niveau 3\n");
-         //ChargerTextureManager( &level.levelTextures[0], "graphics_assets/level2_bgf.png");
-         ChargerTextureManager( &level.levelTextures[0], "./graphics_assets/level3_bg.png");
-         ChargerTextureManager( &level.levelTextures[1], "./graphics_assets/level3_bf.png");
+         ChargerTextureManager( &level.levelTextures[1], "graphics_assets/level3.png");
       
    }
    
