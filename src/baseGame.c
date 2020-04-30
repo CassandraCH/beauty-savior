@@ -146,7 +146,8 @@ extern void Rendu_Jeux()
     
     
     
-    SDL_Texture * texture = ChargerTexture("graphics_assets/rect11.png");
+    SDL_Texture * texture = ChargerTexture("graphics_assets/enemi.png");
+
     SDL_Texture * itemTex = ChargerTexture("graphics_assets/coin.png");
     SDL_Texture * rockTex = ChargerTexture("graphics_assets/tex_rock.png");
     SDL_Texture * treeTex = ChargerTexture("graphics_assets/tex_tree.png");
