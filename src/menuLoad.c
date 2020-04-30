@@ -134,6 +134,7 @@ extern void Input_MenuLoad(SDL_Event *event)
                             //Nettoyage de l'affichage
                             Nettoyer_Menu(getMenu(), 4);
                             
+                             Init_Interface();
                             //Charger le niveau
                             ChargerNiveau();
 
