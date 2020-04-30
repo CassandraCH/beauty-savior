@@ -7,7 +7,7 @@ Projet développé dans le cadre de la 2ème année licence Informatique.
 ## Qu'est-ce que c'est ? 
 Beauty Savior est un jeu original développé en langage C avec pour appui la bibliothèque SDL2.
 
-Ce projet a été réalisé dans le cadre de la Licence informatique à l'Université du Mans.
+Ce projet a été réalisé dans le cadre de la deuxième année de Licence informatique à l'Université du Mans.
 
 Son concept repose sur celui d'un plateformer.
 
@@ -16,7 +16,11 @@ L'idée est très simple, le but est de finir un niveau dans un temps imparti.
 
 Chaque niveau possède un nombre d'ennemis différents, ainsi que divers objets à récupérer.
 
-L'ensemble des visuels du projet ont été réalisés par un membre de l'équipe KCCC, Calvados Cindy.
+L'équipe fut composée de :
+  - Calvados Cindy
+  - Chelli Celia
+  - Chaumulon Cassandra
+  - Ousmanova Karina
 
 
 ## Comment jouer ?
