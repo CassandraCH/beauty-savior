@@ -53,19 +53,15 @@ extern void Update(float dt)
       getBaseGame()->tempsActuel = SDL_GetTicks();
       if (getBaseGame()->tempsActuel > getBaseGame()->tempsPrecedent + 1000 ) /* Si 1000 ms soit 1 sec se sont écoulées */
       {    
-            --getBaseGame()->time_s;
-            printf("%d\n", getBaseGame()->time_s );
-            
-          if( getBaseGame()->time_s > 100 )
-              --getBaseGame()->sec;
-          else 
-              --getBaseGame()->min;
+          
+            --getBaseGame()->min;
+            printf("%d\n", getBaseGame()->min );
 
           getBaseGame()->tempsPrecedent = getBaseGame()->tempsActuel; /* Le temps "actuel" devient le temps "precedent" pour nos futurs calculs */
       } 
 
       // Si le temps du jeux est ingérieur au timer de 1min10 alors c'est la fin du niveau.
-      if( getBaseGame()->time_s <= 40 )
+      if( getBaseGame()->min <= 0 )
       {
         Init_GameOver();
       }

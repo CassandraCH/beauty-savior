@@ -236,9 +236,8 @@ extern void Init_GameOver()
     getBaseGame()->time = 0;
     getBaseGame()->tempsActuel = 0;
     getBaseGame()->tempsPrecedent = 0;
-    getBaseGame()->time_s = 110;
     getBaseGame()->min = 60;
-    getBaseGame()->sec = 10;
+
 
 
     

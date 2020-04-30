@@ -96,10 +96,8 @@ extern void Input_MenuContinue(SDL_Event *event)
 
                             getBaseGame()->tempsActuel = 0;
                             getBaseGame()->tempsPrecedent = 0;
-                            getBaseGame()->time_s = 110;
                             getBaseGame()->min = 60;
-                            getBaseGame()->sec = 10;
-
+                          
                         
                             //Position initiale du joueur 
                             getPlayer()->x = 100;

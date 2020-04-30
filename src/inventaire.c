@@ -55,7 +55,7 @@ extern void Init_Inventaire()
                 ,"graphics_assets/inventaire/rock_on.png"
                 ,"graphics_assets/inventaire/rock_off.png"
                 ,675
-                ,320 );
+                ,310 );
     
     /* 
      * Deuxieme option : Retour sur le menu principal

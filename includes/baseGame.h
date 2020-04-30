@@ -50,9 +50,8 @@ typedef struct baseGame
     bool estActif; /**< Etat du jeu : Actif - Non Actif */
     int time;  /**< time : temps du jeux */
 
-    int time_s;   /**< time_s : temps liée au timer du jeux */
-    int min; /**<  minutes du jeux */
-    int sec;  /**<  secondes du jeux */
+    int min; /**<  : temps liée au timer du jeux : minutes du jeux */
+    
     int tempsPrecedent; /**<  temps précédent en référence au temps écoulé depuis la dernière image */
     int tempsActuel;  /**<  temps actuel en référence au temps écoulé depuis la dernière image */
 

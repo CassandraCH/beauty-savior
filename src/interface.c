@@ -72,14 +72,9 @@ extern void AfficherInterface()
     
     Dessiner_Menu( &interface ,4, 0, 0, 0,0 );
 
-    if( getBaseGame()->time_s > 100 )
-    {
-      SetHUD_IntToTexture(getTime(),"1 : ",getBaseGame()->sec ,90, 15 );
-    }
-    else 
-    {
-      SetHUD_IntToTexture(getTime(),"0 : ", getBaseGame()->min ,90, 15 );
-    }
+    
+    SetHUD_IntToTexture(getTime(),"0 : ", getBaseGame()->min ,90, 15 );
+    
 
     AfficherHUD(getScores()); 
     AfficherHUD(getTime());
