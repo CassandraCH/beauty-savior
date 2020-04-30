@@ -24,14 +24,16 @@ extern void ChargerPartie()
         exit(1);    
     }
 
-    int niveau , nb_objet;
+    int niveau, nbOs, nbRock, nbTree;
     
     //Lecture dans le fichier des donnees sauvegardees
-    if( fscanf(file,"%d %d", &niveau, &nb_objet)  )
+    if( fscanf(file,"%d %d %d %d", &niveau, &nbOs, &nbRock, &nbTree))
     {
         getPlayer()->niveau = niveau;
-        getPlayer()->nb_objet = nb_objet;
-        printf("%d %d \n", getPlayer()->niveau, getPlayer()->nb_objet);
+        setOs( nbOs );
+        setRock( nbRock );
+        setBranche( nbTree );
+        printf("%d %d %d %d \n", getPlayer()->niveau, nbOs, nbRock, nbTree);
 
         
     }
