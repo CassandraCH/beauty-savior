@@ -11,10 +11,10 @@ extern void ChargementCollider(const char * filename)
     FILE * file = fopen(filename, "r");
     
     //Gestion des erreurs d'ouverture du fichier
-    if (file == NULL) {
-        fprintf(stderr, "Erreur avec le fichier\n");
-        exit(1);    
-    }
+    if (file != NULL) 
+       printf("Le test a reussi\n");   
+    else
+        printf("Le test a echoue\n");    
 
 
 
@@ -25,6 +25,9 @@ extern void ChargementCollider(const char * filename)
 int main()
 {
 
+    ChargementCollider( "test.txt ");
+
+    ChargementCollider( "test1.txt ");
 
 
     return 0;
