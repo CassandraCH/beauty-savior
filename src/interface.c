@@ -20,7 +20,6 @@ extern void Init_Interface()
     //Initialisation du hud time
     Init_HUD(getTime(),"1 : 10", 90, 15);
 
-    
 
      /* 
      * Premiere option : Retour au menu principal
@@ -32,8 +31,7 @@ extern void Init_Interface()
                 ,"NULL"
                 ,20
                 ,10 );
-
-
+                
     /* 
      * Deuxieme option : Charger la partie
      */

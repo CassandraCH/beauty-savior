@@ -137,6 +137,7 @@ void Init(const char *title)
 */
 void LibererRessources_Jeux(void)
 {
+
     //Destruction de la fenetre, du rendu et du niveau 
     SDL_DestroyWindow(fenetre) ;
     SDL_DestroyRenderer (rendu);

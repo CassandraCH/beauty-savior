@@ -7,6 +7,7 @@
  */
 #include "chargeSave.h"
 
+
 /**
  * \fn extern void ChargerPartie()
  * \brief Fonction qui permet de charger une partie sauvegardee
@@ -27,7 +28,7 @@ extern void ChargerPartie()
     int niveau, nbOs, nbRock, nbTree;
     
     //Lecture dans le fichier des donnees sauvegardees
-    if( fscanf(file,"%d %d %d %d", &niveau, &nbOs, &nbRock, &nbTree))
+    if( fscanf(file,"%d %d %d %d", &niveau, &nbOs, &nbRock, &nbTree) )
     {
         getPlayer()->niveau = niveau;
         setOs( nbOs );
@@ -40,6 +41,8 @@ extern void ChargerPartie()
     //Fermeture du fichier
     fclose(file);
 }
+
+
 
 /**
  * \fn extern void SauvegarderPartie()

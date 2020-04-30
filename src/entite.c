@@ -28,7 +28,7 @@ extern bool UpdateBullets( typeEntite typeA, typeEntite typeB )
         for( pt = getBullets()->tete; pt!= NULL; pt= pt->suivant )
         {
             //Si le joueur est suffisamment proche de l'ennemi
-            if(    pt->rect->x > 0-15  && pt->rect->x < camera.x+camera.w )
+            if(    pt->rect->x > 0-15  && pt->rect->x < camera.x + camera.w )
             {   
                 //Si le bullet actuel peut etre lancer
                 if ( pt->lancer )
@@ -125,7 +125,7 @@ extern void CreerTir(typeEntite type, int width, int height, int startX, int sta
     /* Ajout des valeurs dans les champs de la structure */
     rect->w = width;
     rect->h = height;
-    rect->y = (startY + height / 2) - rect->h / 2;
+    rect->y = ( startY + height / 2 ) - rect->h / 2;
     rect->x = startX + 25;
 
     //Gestion de l'affichage
@@ -250,7 +250,6 @@ extern void collisionDetection()
                     if (!pt->estMort)
                     {
                         pt->estMort = true;
-
                     }
                     break;
                 }
@@ -388,7 +387,7 @@ extern void collision_Decor()
             }
 
             // Le côté droit du joueur est en collision avec le coté gauche du bloc
-            else if(joueur_x+joueur_w > collider_x && joueur_x < collider_x && getPlayer()->x > 0)
+            else if( joueur_x + joueur_w > collider_x && joueur_x < collider_x && getPlayer()->x > 0)
             {
                 if( typeCollider == checkpoint )
                 {
