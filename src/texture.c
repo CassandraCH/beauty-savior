@@ -56,7 +56,7 @@ bool chargerImage(Texture_Manager * tex, const char * filename )
  */
 extern void ChargerTextureManager(Texture_Manager *tex, char * filepath )
 {
-    printf("Chargement texture DECOR");
+    printf("Chargement texture DECOR\n");
 
     //Si la texture existe deja => on la detruit
     if( tex->texture != NULL )
@@ -84,7 +84,7 @@ extern void ChargerTextureManager(Texture_Manager *tex, char * filepath )
 
         //On verifie que le texture a bien ete creee
         if( !tex->texture )
-            printf("Erreur: %s",filepath);
+            printf("Erreur: %s\n",filepath);
     }
 
     //Suppression de la surface tampon

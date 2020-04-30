@@ -62,6 +62,8 @@ extern void ChargerNiveau()
       //Chargement des textures
       SDL_Texture * itemTex = ChargerTexture("graphics_assets/coin.png");
       ChargementItems("files_assets/coin.txt", itemTex);
+
+      printf("Chargement niveau 1\n");
       ChargerTextureManager( &level.levelTextures[0], "graphics_assets/level1_bgf.png");
       ChargerTextureManager( &level.levelTextures[1], "graphics_assets/level1_bgd.png");
       
@@ -83,6 +85,7 @@ extern void ChargerNiveau()
          ChargementItems("files_assets/coin.txt", itemTex);
 
          //ChargerTextureManager( &level.levelTextures[0], "graphics_assets/level2_bgf.png");
+         printf("Chargement niveau 2\n");
       ChargerTextureManager( &level.levelTextures[0], "graphics_assets/level_2_bg.png");
       ChargerTextureManager( &level.levelTextures[1], "graphics_assets/level_2_bf.png");
       
@@ -102,6 +105,7 @@ extern void ChargerNiveau()
          suppListe(getItems()); //Suppression de la liste d'item precedente
          ChargementItems("files_assets/coin.txt", itemTex);
 
+         printf("Chargement niveau 3\n");
          //ChargerTextureManager( &level.levelTextures[0], "graphics_assets/level2_bgf.png");
          ChargerTextureManager( &level.levelTextures[0], "graphics_assets/level_3_bg.png");
          ChargerTextureManager( &level.levelTextures[1], "graphics_assets/level_3_bf.png");
