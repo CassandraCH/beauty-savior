@@ -169,6 +169,7 @@ extern void Rendu_Jeux()
     Afficher_ElementsListes( &items, osTex, os, 36, 51 ); 
     Afficher_ElementsListes( &items, rockTex, rock ,37, 35 ); 
     Afficher_ElementsListes( &items, treeTex, tree, 31, 49 ); 
+    
 
     Debug_AfficherCollider();
   }
