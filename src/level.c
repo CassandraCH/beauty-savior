@@ -103,7 +103,7 @@ extern void ChargerNiveau()
          ChargementItems("files_assets/coin.txt", itemTex);
 
          printf("Chargement niveau 3\n");
-         ChargerTextureManager( &level.levelTextures[1], "graphics_assets/level3.png");
+         ChargerTextureManager( &level.levelTextures[0], "graphics_assets/level3.png");
       
    }
    
