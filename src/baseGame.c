@@ -76,8 +76,8 @@ extern void Update(float dt)
 
         //Mise à jour des entités
         Update_Listes();
-        // UpdateEnnemis();
-        // UpdateBullets(joueur, ennemi);
+        UpdateEnnemis();
+        UpdateBullets(joueur, ennemi);
         UpdateJoueur(dt);
     
         //Gestion des collisions
@@ -156,7 +156,7 @@ extern void Rendu_Jeux()
     afficher_textures_niveau(0);
     AfficherInterface();
     //Gestion des affchages des listes, du joueur et du score
-    // Afficher_ElementsListes( &listEnnemis, texture, ennemi, 50, 50 );
+    Afficher_ElementsListes( &listEnnemis, texture, ennemi, 50, 50 );
     
     // Liste des élements attaques
     Afficher_ElementsListes( &bullet , itemTex, feu , 41, 47 );
@@ -171,7 +171,7 @@ extern void Rendu_Jeux()
     Afficher_ElementsListes( &items, treeTex, tree, 31, 49 ); 
     
 
-    Debug_AfficherCollider();
+    
   }
 
   //Cas ou on a perdu

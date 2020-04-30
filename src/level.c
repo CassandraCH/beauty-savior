@@ -45,8 +45,8 @@ extern void ChargerNiveau()
    printf("Chargement Niveau\n");
    
    //Initialisation des listes
-   // init_List(&listEnnemis);
-   // init_List(&bullet);
+   init_List(&listEnnemis);
+   init_List(&bullet);
    init_List(&items);
    init_List(&listCollider);
       
@@ -57,7 +57,7 @@ extern void ChargerNiveau()
       Chargement_CreationPNJ(getCollider(),"files_assets/niveau1.txt") ;
 
       //Chargement des ennemis
-      // ChargementEnnemis("files_assets/ennemi.txt");
+      ChargementEnnemis("files_assets/ennemi_1.txt");
 
       //Chargement des textures
       SDL_Texture * itemTex = ChargerTexture("graphics_assets/coin.png");
