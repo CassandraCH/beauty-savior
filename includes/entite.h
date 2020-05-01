@@ -14,16 +14,12 @@
 #include "listeElements.h"
 
 
-
-// extern bool UpdateBullets();
-
 extern bool UpdateBullets( typeEntite typeA, typeEntite typeB );/**< booleen pour les UpdateBullets*/
 extern void attaqueEnnemis();/**< fonction attaque Ennemis*/
 extern void CreerTir( typeEntite type,int width, int height, int startX, int startY );/**< fonction tir avec parametres le type,selon la largueur, la taille et selon les vecteurs x et y */
 extern void SetNombreTir_Ennemis();/**< fonction les tirs ennemis */
 extern void UpdateEnnemis();/**< fonction UpdateEnnemis */
 extern void collision_Decor();/**< fonction collision de decor*/
-// extern void collision_Decor( typeEntite type, float w, float h , float * x, float * y , float *vy, bool * estSurSol );
 extern void collisionDetection();/**< les detection de collisions*/
 
 

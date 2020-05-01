@@ -7,23 +7,18 @@
  */
 
 
-
-
 #ifndef __BASE_GAME_H
 #define __BASE_GAME_H /**< \def __BASE_GAME_H*/
 
 
 // Fichier d'entête pour les différents fichiers
 
-// #include "inventaire.h"
 #include "constantes.h"
-
 
 
 #include "entite.h"
 #include "player.h"
 #include "level.h"
-#include "items.h"
 #include "listeElements.h"
 #include "chargeSave.h"
 #include "texture.h"
@@ -60,6 +55,7 @@ typedef struct baseGame
 /**< This is the documentation for the preceding typedef */
 
 /*######## GETTER & SETTER ######## */
+
 extern SDL_Window* getWindow(void);/**< fonction SDL_Window qui gere la fenetre*/
 extern Base_Game*  getBaseGame(void);/**< fonction Base_Game*/
 extern LinkedList* getEnnemis(void);/**< fonction getEnnemis qui gere les ennemis*/
@@ -71,6 +67,8 @@ extern HUD* getScores(void);/**< fonction getScores qui gere le scores*/
 extern HUD* getNiveau();/**< fonction getNiveau qui gere les niveaux*/
 extern HUD* getTime();/**< fonction getNiveau qui gere le timer du jeux*/
 extern HUD* getItem(int num_item) ;/**< fonction getItem*/
+
+
 extern Menu_t* getMenu(void);/**< fonction getMenu*/
 extern Menu_t* getInventaire(void);/**< fonction getInventaire*/
 extern Menu_t* getInterface(void);/**< fonction getInterface*/
@@ -83,8 +81,6 @@ extern int getOs();/**< fonction getOs*/
 extern int getRock( );/**< fonction getRock*/
 extern int getBranche();/**< fonction getBranche*/
 
-extern int getTimerBullet(void);/**< fonction getTimerBullet*/
-extern void setTimerBullet(int time);/**< fonction setTimerBullet , avec la variable temps*/
 
 extern void ProcessInput(SDL_Event* event);/**< fonction ProcessInput*/
 extern void Input_InGame(SDL_Event *event);/**< fonction Input_InGame*/
@@ -96,7 +92,6 @@ extern LinkedList listEnnemis;/**< la listes des ennemis*/
 extern LinkedList listCollider;/**< liste des collition*/
 extern LinkedList bullet;
 extern LinkedList items;
-extern void Update_Listes();
 
 
 extern int tempsEcoule;/**< les temps ecouler*/
@@ -107,7 +102,8 @@ extern SDL_Rect camera;/**< la camera*/
 /*####### FONCTION PRINCIPAL ############ */
 extern void Init(const char *title);
 extern void Update(float dt);
-extern void LibererRessources_Jeux();
 extern void Rendu_Jeux() ;
+
+extern void LibererRessources_Jeux();
 
 #endif

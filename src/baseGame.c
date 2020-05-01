@@ -47,8 +47,7 @@ extern void Update(float dt)
   { 
       //Gestion du timer
       getBaseGame()->time++;
-      setTimerBullet(0); 
-
+     
     
       getBaseGame()->tempsActuel = SDL_GetTicks();
       if (getBaseGame()->tempsActuel > getBaseGame()->tempsPrecedent + 1000 ) /* Si 1000 ms soit 1 sec se sont écoulées */
@@ -74,7 +73,7 @@ extern void Update(float dt)
         Update_Listes();
         UpdateEnnemis();
         UpdateBullets(joueur, ennemi);
-        UpdateJoueur(dt);
+        UpdateJoueur();
     
         //Gestion des collisions
         collision_tir();

@@ -56,7 +56,7 @@ extern bool UpdateBullets( typeEntite typeA, typeEntite typeB )
                             pt->movingX = -12;
                             
                         else 
-                            pt->movingX =12;
+                            pt->movingX = 12;
                     }
                     //Mise a jour de l'etat du lancer du bullet => ne peut plus etre lancer
                     pt->lancer = false;

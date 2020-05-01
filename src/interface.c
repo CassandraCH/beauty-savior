@@ -70,7 +70,6 @@ extern void Init_Interface()
  * \return pas de valeur de retour (void)
 */
 extern void AfficherInterface()
-<<<<<<< HEAD
 {
     
     Dessiner_Menu( &interface ,4, 0, 0, 0,0 );
@@ -83,20 +82,4 @@ extern void AfficherInterface()
     AfficherHUD(getTime());
     
 
-=======
-{  
-  Dessiner_Menu( &interface ,4, 0, 0, 0,0 );
-
-  if( getBaseGame()->time_s > 100 )
-  {
-    SetHUD_IntToTexture(getTime(),"1 : ",getBaseGame()->sec ,90, 15 );
-  }
-  else 
-  {
-    SetHUD_IntToTexture(getTime(),"0 : ", getBaseGame()->min ,90, 15 );
-  }
-
-  AfficherHUD(getScores()); 
-  AfficherHUD(getTime());
->>>>>>> Chaumulon_br
 }

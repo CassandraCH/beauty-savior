@@ -240,6 +240,5 @@ extern void Init_GameOver()
 
 
 
-    
-    setTimerBullet(0);
+
 }
