@@ -241,7 +241,7 @@ extern void AfficherJoueur()
 
 
 /**
- * \fn extern void UpdateJoueur( float dt)
+ * \fn extern void UpdateJoueur()
  * \brief Fonction qui met a jour le joueur en fonction du delta-time
  * \details Gestion du deplacement du joueur
  * \return pas de valeur de retour (void)
