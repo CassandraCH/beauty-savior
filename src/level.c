@@ -106,7 +106,26 @@ extern void ChargerNiveau()
          ChargerTextureManager( &level.levelTextures[0], "graphics_assets/level3.png");
       
    }
-   
+   else if(  getPlayer()->niveau == 4 )
+   {  
+         //Destruction du niveau precedent
+         DestructionNiveau();
+
+         //Chargement de toutes les entites (sauf joueur)
+         Chargement_CreationPNJ(getCollider(),"files_assets/niveau4.txt") ;
+         
+         ChargementEnnemis("files_assets/ennemi_4.txt");
+
+         //Chargement des textures
+         SDL_Texture * itemTex = ChargerTexture("graphics_assets/coin.png");
+         suppListe(getItems()); //Suppression de la liste d'item precedente
+         ChargementItems("files_assets/items.txt", itemTex);
+
+         printf("Chargement niveau 3\n");
+         ChargerTextureManager( &level.levelTextures[0], "graphics_assets/level4.png");
+      
+   }
+
 
 
    printf("Fin chargement niveau\n");
