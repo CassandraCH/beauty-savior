@@ -89,7 +89,7 @@ extern void InitJoueur()
     //position en x et en y, hauteur et largeur
 	player.h = player.tex.h;
 	player.w = player.tex.w;
-    player.x = 100;
+    player.x = 8500;
     player.y = 50;
     player.scores = 0;
 
@@ -336,6 +336,7 @@ extern void attaqueJoueur()
 extern void collision_tir()
 {
 
+    bool collide = false;
      Node * tir = NULL;
     Node * enne = NULL;
     if( getBullets()->nodeCount > 0 )
@@ -345,12 +346,12 @@ extern void collision_tir()
         {
             for(enne = getEnnemis()->tete; enne != NULL; enne = enne->suivant)
             {
-                if(collide2d( tir->rect->x , tir->rect->y, enne->rect->x,enne->rect->y,tir->rect->w ,tir->rect->h,enne->rect->w, enne->rect->h ) && 
+                if(collide = ( collide2d( tir->rect->x , tir->rect->y, enne->rect->x,enne->rect->y,tir->rect->w ,tir->rect->h,enne->rect->w, enne->rect->h ) ) && 
                 ( tir->type == tree || tir->type == rock) ) 
                 {
 
                         //Incrementation du score
-                         SetHUD_IntToTexture(getScores(), "", ++getPlayer()->scores, 565, 17 );
+                         if( collide ) SetHUD_IntToTexture(getScores(), "", ++getPlayer()->scores, 565, 17 );
                         if( !enne->estMort )
                         {
                             enne->estMort = true;

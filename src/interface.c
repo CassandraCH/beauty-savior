@@ -53,7 +53,7 @@ extern void Init_Interface()
   * Deuxieme option : Charger la partie
   */
 
-  ChargerData_Menu(1, 0, &interface, "Scores", "graphics_assets/score.png", "NULL", 500, 18);
+  ChargerData_Menu(1, 0, &interface, "Scores", "graphics_assets/dead.png", "NULL", 500, 18);
 
   ChargerData_Menu(2, 0, &interface, "Items", "graphics_assets/items2.png", "NULL", 700, 18);
 

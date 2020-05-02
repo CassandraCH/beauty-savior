@@ -158,7 +158,3 @@ extern void Input_Inventaire(SDL_Event *event)
     } // fin while (SDL_PollEvent)
 }
 
-extern void Nettoyer_Inventaire()
-{
-
-}

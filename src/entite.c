@@ -53,10 +53,10 @@ extern bool UpdateBullets( typeEntite typeA, typeEntite typeB )
                         printf("Ennemi\n");
 
                         if( getPlayerX() + getPlayer()->w  <= pt->rect->x )
-                            pt->movingX = -12;
+                            pt->movingX = -18;
                             
                         else 
-                            pt->movingX = 12;
+                            pt->movingX = 18;
                     }
                     //Mise a jour de l'etat du lancer du bullet => ne peut plus etre lancer
                     pt->lancer = false;
@@ -149,7 +149,7 @@ extern void attaqueEnnemis()
         if ( !pt->estMort )
         {
             float distance = sqrt(pow(pt->rect->x - getPlayerX(), 2) +  pow(pt->rect->y - getPlayerY(), 2)); 
-            if( distance < (pt->rect->w*6) + getPlayer()->w )
+            if( distance < (pt->rect->w*6) + getPlayer()->w*3 )
             {
                 //Si le compteur de lancer disponible est inferieur a 1 => on reconfigure ce compteur et on cree un tir
                 if( pt->nb_lancer < 1) 
@@ -350,6 +350,12 @@ extern void collision_Decor()
                     Init_Continue();
 
                 }
+                else if ( typeCollider == gamewin )
+                {
+                        Init_MenuWin();
+                        getBaseGame()->state = GAMEWIN;
+                }
+
                 else 
                 {
                     // correct y
@@ -375,7 +381,12 @@ extern void collision_Decor()
                 {
                     //Init_GameOver();
                     Init_Continue();    
-                }       
+                }      
+                else if ( typeCollider == gamewin )
+                {
+                        Init_MenuWin();
+                        getBaseGame()->state = GAMEWIN;
+                } 
                 else 
                 {
                     //correct x

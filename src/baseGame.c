@@ -92,7 +92,7 @@ extern void Update(float dt)
 extern void Rendu_Jeux() 
 {
   //Cas ou le jeu n'est pas en pause
-  if ( getBaseGame()->state != PAUSE && getBaseGame()->state != INVENTAIRE  )
+  if ( getBaseGame()->state != PAUSE && getBaseGame()->state != INVENTAIRE && getBaseGame()->state != GAMEWIN )
   {
     SDL_SetRenderDrawColor(getRenderer(), 0xFF,0xFF,0xFF,0);
     SDL_RenderClear( getRenderer() );
@@ -118,7 +118,7 @@ extern void Rendu_Jeux()
   else if ( getBaseGame()->state == LEVEL_COMPLETED )
   {
     Dessiner_Menu(getMenuCon(), 1,0, 0, 1280, 720);
-    AfficherHUD(getScores());
+    AfficherHUD(  getScores() );
     AfficherHUD( getNiveau() );
   }
 
@@ -133,6 +133,14 @@ extern void Rendu_Jeux()
       AfficherHUD(getItem(0)); 
       AfficherHUD(getItem(1));
       AfficherHUD(getItem(2));
+  }
+
+  else if ( getBaseGame()->state == GAMEWIN )
+  {
+    Dessiner_Menu( getMenu_Win() ,1, 413, 74,433, 478  );
+   AfficherHUD(getNombreVie());
+    AfficherHUD( getScores() );
+
   }
 
   //Cas ou on est en train de jouer
@@ -165,9 +173,9 @@ extern void Rendu_Jeux()
     Afficher_ElementsListes( &items, osTex, os, 36, 51 ); 
     Afficher_ElementsListes( &items, rockTex, rock ,37, 35 ); 
     Afficher_ElementsListes( &items, treeTex, tree, 31, 49 ); 
-    
 
-    Debug_AfficherCollider();
+    
+    
     
   }
 

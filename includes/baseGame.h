@@ -29,6 +29,7 @@
 #include "menuPrincipal.h"
 #include "menuLoad.h"
 #include "menuPause.h"
+#include "menu_win.h"
 #include "menu_continue.h"
 #include "interface.h"
 
@@ -67,7 +68,7 @@ extern HUD* getScores(void);/**< fonction getScores qui gere le scores*/
 extern HUD* getNiveau();/**< fonction getNiveau qui gere les niveaux*/
 extern HUD* getTime();/**< fonction getNiveau qui gere le timer du jeux*/
 extern HUD* getItem(int num_item) ;/**< fonction getItem*/
-
+extern HUD* getNombreVie(); /**< fonction getNombreVie*/
 
 extern Menu_t* getMenu(void);/**< fonction getMenu*/
 extern Menu_t* getInventaire(void);/**< fonction getInventaire*/
@@ -75,6 +76,7 @@ extern Menu_t* getInterface(void);/**< fonction getInterface*/
 extern Menu_t * getMenuLoad(void);/**< fonction getMenuLoad*/
 extern Menu_t * getMenuCon(void);/**< fonction getMenuCon*/
 extern Menu_t * getMenuPause(void);/**< fonction getMenuPause*/
+extern Menu_t * getMenu_Win(void);/**< fonction getMenu_Win*/
 extern Menu_t * getMenu_Over(void);/**< fonction getMenu_Over*/
 
 extern int getOs();/**< fonction getOs*/

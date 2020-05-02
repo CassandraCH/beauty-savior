@@ -11,9 +11,21 @@
 
 
 HUD score; /**< hud du score */
+HUD vie; 
 HUD niveau; /**< hud du niveau */
 HUD item_s[3];/**< hud des items du jeux */
 HUD time_; /**< hud du timer */
+
+/** \fn  extern HUD* getNombreVie()
+ *  \brief Retourne le hud du nombre de vie
+ *  \details 
+ *  \return Retourne un pointeur sur l'objet séléctionné 
+ */
+extern HUD* getNombreVie()
+{
+    return &vie;
+}
+
 
 /** \fn  extern HUD* getScores()
  *  \brief Retourne l'instance de l'objet score
@@ -55,3 +67,7 @@ extern HUD* getItem(int num_item)
 {
     return &item_s[num_item];
 }
+
+
+
+

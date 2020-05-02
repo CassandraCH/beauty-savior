@@ -48,6 +48,8 @@ extern void Init_HUD(HUD * hud, const char * text, int x,  int y)
 */
 extern void SetHUD_IntToTexture(HUD * hud, const char * nom, int valeur, int posX, int posY)
 {
+
+   
     //Creation d'une texture pour le hud
     SDL_Texture * tex = hud->tex;
 
@@ -76,7 +78,9 @@ extern void SetHUD_IntToTexture(HUD * hud, const char * nom, int valeur, int pos
     hud->rect.w = width;
     hud->rect.h = height;
     hud->rect.x = posX;
-    hud->rect.y = posY; 
+    hud->rect.y = posY;
+
+   
 }
 
 

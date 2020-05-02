@@ -55,6 +55,10 @@
 /** @brief MENU INVENTAIRE */
 #define INVENTAIRE 7
 
+/** @brief PARTIE GAGNE */
+#define GAMEWIN 8
+
+
 
 /// MENU PRINCIPAL
 /** @brief  Lancer une nouvelle partie */

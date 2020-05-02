@@ -109,6 +109,12 @@ void Init(const char *title)
     getItem(1)->police  = getItem(0)->police;
     getItem(2)->police  = getItem(0)->police;
     
+    getNombreVie()->police = TTF_OpenFont("fonts/arial.ttf", 54);
+    if(!getNombreVie()->police )
+    {
+        printf("Cannot find font file!!\n");
+        SDL_Quit();
+    }
 
     /*############### GESTION DES AUDIO *###############*/
     //Initialisation du son

@@ -103,8 +103,10 @@ extern void Input_MenuContinue(SDL_Event *event)
                             getPlayer()->x = 100;
                             getPlayer()->y = 50;
 
+                        
                             //Charger le niveau suivant
-                            ChargerNiveau();       
+                            ChargerNiveau();  
+                              
                             break;
                         default:
                             break;
