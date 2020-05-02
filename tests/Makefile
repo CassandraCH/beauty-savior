@@ -9,7 +9,6 @@ fich_test_chargement = test_chargement.o
 
 
 
-
 #
 # Tests (executables+objets)
 #
@@ -56,10 +55,3 @@ clean :
 	del  *.o
 	del *.exe
 
-tests :
-	./adressage_indirect
-	
-
-dist : 
-	- rm  Cours_1_Pointeurs.tar.gz
-	tar cvfz Cours_1_Pointeurs.tar.gz cours_pointeurs.pdf *.c Makefile Makefile.compilation copie.h	

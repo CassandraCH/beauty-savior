@@ -241,13 +241,12 @@ extern void AfficherJoueur()
 
 
 /**
- * \fn extern void UpdateJoueur( float dt)
+ * \fn extern void UpdateJoueur()
  * \brief Fonction qui met a jour le joueur en fonction du delta-time
  * \details Gestion du deplacement du joueur
- * \param dt delta-time (temps ecoule entre l'affichage de 2 images)
  * \return pas de valeur de retour (void)
 */
-extern void UpdateJoueur( float dt)
+extern void UpdateJoueur()
 {   
 
 	if( !player.estMort )

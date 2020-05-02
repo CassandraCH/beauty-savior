@@ -138,5 +138,5 @@ extern void Init_Continue()
     getBaseGame()->state = LEVEL_COMPLETED;
 
     getBaseGame()->time = 0;
-    setTimerBullet(0);
+   
 }

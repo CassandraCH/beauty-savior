@@ -67,7 +67,7 @@ extern int  getPlayerY(void);
 extern int getPlayerOriginX(); /**< la position'l'origine) du joueur selon x*/
 extern int getPlayerOriginY(); /**< la position'l'origine) du joueur selon y*/
 
-extern void UpdateJoueur(float dt);
+extern void UpdateJoueur();
 extern void actualiserJoueur(void);
 
 extern void InitJoueur();/**<initialisation du joueur*/

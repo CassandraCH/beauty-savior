@@ -14,7 +14,6 @@
 
 extern void Init_MenuGameOver(); /**< fonction d'initialisation de menus game over*/
 
-
 extern void Input_MenuGameOver(SDL_Event *event);/**< fonction input de menus game over*/
 
 extern void Nettoyer_MenuGameOver();/**< fonction Nettoyer_MenuGameOver*/

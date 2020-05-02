@@ -66,6 +66,7 @@ typedef struct list
 /**< This is the documentation for the preceding typedef */
 
 extern void init_List(LinkedList *list);/**< initialisation des listes*/
+extern void Update_Listes();
 
 extern Node* creerElement(SDL_Rect*rect, typeEntite item_t, bool actif ); /**< creation du rectangle*/
 extern void insertion(LinkedList * list, SDL_Rect *rect, typeEntite items_t , bool actif); /**< creation du rectangle*/
@@ -77,6 +78,7 @@ extern bool suppPremier(LinkedList * lst);
 extern bool suppDernier(LinkedList * lst);
 extern Node * trouve (LinkedList *lsptr, int target, Node **prvPtr);
 extern bool supprimeCible(LinkedList *lsptr, int target);/**<suppime la cible*/
+
 
 
 #endif
