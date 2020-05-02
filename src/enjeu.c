@@ -95,7 +95,7 @@ extern void Input_InGame(SDL_Event *event)
         camera.x = 0;
     }
 
-    //Gestion de la position en y : si le x est en dehors de la fenetre, la repositionner
+    //Gestion de la position en y : si le y est en dehors de la fenetre, la repositionner
     if(camera.y < 0 )
     {
         camera.y = 0;
