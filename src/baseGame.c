@@ -137,7 +137,7 @@ extern void Rendu_Jeux()
 
   else if ( getBaseGame()->state == GAMEWIN )
   {
-    Dessiner_Menu( getMenu_Win() ,1, 413, 74,433, 478  );
+    Dessiner_Menu( getMenu_Win() ,2, 413, 74,433, 478  );
    AfficherHUD(getNombreVie());
     AfficherHUD( getScores() );
 

@@ -33,8 +33,8 @@ extern void Init_MenuWin()
 
 
     //Initialisation du hud score
-    SetHUD_IntToTexture( getNombreVie(), "" , 0, 550 , 392) ;
-    SetHUD_IntToTexture( getScores() ,"",  0, 680 , 392 );
+    SetHUD_IntToTexture( getNombreVie(), "" , getPlayer()->nombreVies , 550 , 392) ;
+    SetHUD_IntToTexture( getScores() ,"",  getPlayer()->scores , 680 , 392 );
 
 
     /* 
@@ -42,20 +42,20 @@ extern void Init_MenuWin()
      * Actif par défaut
      */ 
 
-    // ChargerData_Menu(0,0,&menu_win , "Reprendre partie"
-    //             ,"graphics_assets/icons_buttons/back_on_xs.png"
-    //             ,"graphics_assets/icons_buttons/back_off_xs.png"
-    //             ,339
-    //             ,491 );
+    ChargerData_Menu(0,0,&menu_win , "Reprendre partie"
+                ,"graphics_assets/win_icons/quit_on.png"
+                ,"graphics_assets/win_icons/quit_off.png"
+                ,552
+                ,473 );
 
-    // /* 
-    //  * Deuxieme option : Retour sur le menu principal
-    //  */
-    // ChargerData_Menu(1,1, &menu_win ,"Retour menu"
-    //             ,"graphics_assets/icons_buttons/menu_on_xs.png"
-    //             ,"graphics_assets/icons_buttons/menu_off_xs.png"
-    //             ,620
-    //             ,491 );
+    /* 
+     * Deuxieme option : Retour sur le menu principal
+     */
+    ChargerData_Menu(1,1, &menu_win ,"Retour menu"
+                ,"graphics_assets/win_icons/menu_on.png"
+                ,"graphics_assets/win_icons/menu_off.png"
+                ,657
+                ,473 );
 
     
 
@@ -86,13 +86,43 @@ extern void Input_MenuWin(SDL_Event *event)
             return;
         }
 
-        //Si la touche espace est pressee
-        if(event->key.keysym.sym == SDLK_RETURN && event->type == SDL_KEYDOWN )
+         //Si une touche est appuyee
+        if (event->type == SDL_KEYUP)
         {
-            getBaseGame()->state = IN_GAME;
-            return;
-        }
+            switch (event->key.keysym.sym)
+            {
+                //Cas touche fleche de gauche
+                case SDLK_LEFT:
+                    Gauche(getMenu_Win(), 2);
+                    break;
 
+                //Cas touche fleche de droite
+                case SDLK_RIGHT:
+                    Droite(getMenu_Win() , 2);
+                    break;
+
+                //Cas de la touche entree
+                case SDLK_RETURN:
+                    switch (getTouchePresse(getMenu_Win()))
+                    {
+                        //Cas de la premiere option : Quitter le jeux
+                        case 0:
+                            getBaseGame()->estActif = false;                  
+                            break;
+                        //Cas de la deuxieme option : retour sur le menu principal
+                        case 1:
+                            actualiserJoueur();   
+                            getBaseGame()->state = MENU_PRINCIPAL;       
+                            return;
+                            break;
+                        default:
+                            break;
+                    }//fin du switch
+                    break;
+                default:
+                    break;
+                } //fin du switch
+        }
         
     } // fin while (SDL_PollEvent)
 }

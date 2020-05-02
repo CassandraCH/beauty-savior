@@ -149,7 +149,7 @@ extern void attaqueEnnemis()
         if ( !pt->estMort )
         {
             float distance = sqrt(pow(pt->rect->x - getPlayerX(), 2) +  pow(pt->rect->y - getPlayerY(), 2)); 
-            if( distance < (pt->rect->w*6) + getPlayer()->w*3 )
+            if( distance < (pt->rect->w*7) + getPlayer()->w )
             {
                 //Si le compteur de lancer disponible est inferieur a 1 => on reconfigure ce compteur et on cree un tir
                 if( pt->nb_lancer < 1) 
