@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['processinput_411',['ProcessInput',['../input_8c.html#af9658d8e7a4d94f46954586e8f10d5a1',1,'ProcessInput(SDL_Event *event):&#160;input.c'],['../base_game_8h.html#af9658d8e7a4d94f46954586e8f10d5a1',1,'ProcessInput(SDL_Event *event):&#160;input.c']]]
+  ['rendu_5fjeux_403',['Rendu_Jeux',['../base_game_8c.html#a84b7d8c161bc3ba1be25eab70f664a67',1,'Rendu_Jeux():&#160;baseGame.c'],['../base_game_8h.html#a84b7d8c161bc3ba1be25eab70f664a67',1,'Rendu_Jeux():&#160;baseGame.c']]]
 ];

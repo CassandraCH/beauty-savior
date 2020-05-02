@@ -10,7 +10,6 @@ var dir_09e761304027c904456130627fd4dcf5 =
     [ "hud.h", "hud_8h.html", "hud_8h" ],
     [ "interface.h", "interface_8h_source.html", null ],
     [ "inventaire.h", "inventaire_8h_source.html", null ],
-    [ "items.h", "items_8h.html", "items_8h" ],
     [ "level.h", "level_8h.html", "level_8h" ],
     [ "listeElements.h", "liste_elements_8h.html", "liste_elements_8h" ],
     [ "menu_continue.h", "menu__continue_8h.html", "menu__continue_8h" ],

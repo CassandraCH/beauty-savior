@@ -26,8 +26,6 @@ var searchData=
   ['inputjoueur_135',['InputJoueur',['../player_8c.html#a2170f09113bd4915eb8a69e930095ec9',1,'InputJoueur(SDL_Event *event):&#160;player.c'],['../player_8h.html#a2170f09113bd4915eb8a69e930095ec9',1,'InputJoueur(SDL_Event *event):&#160;player.c']]],
   ['insertion_136',['insertion',['../liste_elements_8c.html#ae37bfae115ed1271acf1478fd5303703',1,'insertion(LinkedList *list, SDL_Rect *rect, typeEntite items_t, bool actif):&#160;listeElements.c'],['../liste_elements_8h.html#ae37bfae115ed1271acf1478fd5303703',1,'insertion(LinkedList *list, SDL_Rect *rect, typeEntite items_t, bool actif):&#160;listeElements.c']]],
   ['inventaire_137',['INVENTAIRE',['../constantes_8h.html#af0b7530357a5e9e7ba3aa8150f83fc2c',1,'constantes.h']]],
-  ['item_138',['item',['../structitem.html',1,'']]],
-  ['item_5fs_139',['item_s',['../scores_8c.html#a1c845b472ee3497dd6bd651ce12bbf13',1,'scores.c']]],
-  ['items_140',['items',['../liste_elements_8c.html#a9b30d68dee6975a7a531167794f4fe49',1,'items():&#160;listeElements.c'],['../base_game_8h.html#a9b30d68dee6975a7a531167794f4fe49',1,'items():&#160;listeElements.c'],['../items_8h.html#abc280bc29fb9f4ba9ba681e23ced6413',1,'Items():&#160;items.h']]],
-  ['items_2eh_141',['items.h',['../items_8h.html',1,'']]]
+  ['item_5fs_138',['item_s',['../scores_8c.html#a1c845b472ee3497dd6bd651ce12bbf13',1,'scores.c']]],
+  ['items_139',['items',['../liste_elements_8c.html#a9b30d68dee6975a7a531167794f4fe49',1,'items():&#160;listeElements.c'],['../base_game_8h.html#a9b30d68dee6975a7a531167794f4fe49',1,'items():&#160;listeElements.c']]]
 ];

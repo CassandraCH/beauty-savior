@@ -1,6 +1,5 @@
 var structplayer =
 [
-    [ "estActif", "structplayer.html#ad89867021ac1f6bf309e9a79313123fc", null ],
     [ "estMort", "structplayer.html#a9498a6f5ea0fa3b07131111087d3c135", null ],
     [ "estSurSol", "structplayer.html#a5a67f39f9630f2e6fe85eeed83004e87", null ],
     [ "estTourne", "structplayer.html#a004c72afdc3021650707ef9382c546dc", null ],

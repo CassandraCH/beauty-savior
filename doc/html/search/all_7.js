@@ -31,7 +31,7 @@ var searchData=
   ['getrock_97',['getRock',['../base_game_8h.html#aea25da5924be1d7cc760333766916c05',1,'inventaire.c']]],
   ['getscores_98',['getScores',['../scores_8c.html#a38485d3405813d341dc4b7e71f475f87',1,'getScores():&#160;scores.c'],['../base_game_8h.html#ab7b6f942529b230c073e575a15ce324e',1,'getScores(void):&#160;scores.c']]],
   ['gettime_99',['getTime',['../scores_8c.html#a85590d2a5271236bede7a636c864bcc2',1,'getTime():&#160;scores.c'],['../base_game_8h.html#a9ef43510a7613637ac308c79681b86dc',1,'getTime():&#160;scores.c']]],
-  ['gettimerbullet_100',['getTimerBullet',['../liste_elements_8c.html#a401b36b02961675f611523ba83a5cb02',1,'getTimerBullet():&#160;listeElements.c'],['../base_game_8h.html#a1d2204475949c893c1167a7a0916fc15',1,'getTimerBullet(void):&#160;listeElements.c']]],
+  ['gettimerbullet_100',['getTimerBullet',['../liste_elements_8c.html#a401b36b02961675f611523ba83a5cb02',1,'listeElements.c']]],
   ['gettouchepresse_101',['getTouchePresse',['../menu_principal_8c.html#adcfbc9a00de7cd275a57b6f1cd1f7b20',1,'getTouchePresse(Menu_t *menu):&#160;menuPrincipal.c'],['../menu_principal_8h.html#adcfbc9a00de7cd275a57b6f1cd1f7b20',1,'getTouchePresse(Menu_t *menu):&#160;menuPrincipal.c']]],
   ['getwindow_102',['getWindow',['../base_game_8h.html#a9d2eed0cc98378eaee255ad52b5f53ab',1,'baseGame.h']]],
   ['gravity_103',['GRAVITY',['../constantes_8h.html#a6801baa546c6112d19eb095111d24720',1,'constantes.h']]]
