@@ -236,12 +236,10 @@ extern void Init_GameOver()
 
     //Changement de l'etat du jeu = game over
     getBaseGame()->state = GAMEOVER;
+
+    //Gestion du temps
     getBaseGame()->time = 0;
     getBaseGame()->tempsActuel = 0;
     getBaseGame()->tempsPrecedent = 0;
     getBaseGame()->min = 60;
-
-
-
-
 }
