@@ -9,25 +9,17 @@ CC=gcc
 # Valeurs possibles : yes , no  
 DEBUG=no
 # Valeurs possibles : win , linux 
-ARCH=linux
+ARCH=win
 
-ifeq ($(DEBUG),yes)
-	 CFLAGS=-Wall -g -D_DEBUG_
-else
+ifeq ($(ARCH),win)
 	 CFLAGS= -Iincludes/ -Wfatal-errors -O 
-     LDFLAGS= -lSDL2main -lSDL2_image -lSDL2_ttf -lSDL2_mixer -lSDL2 
-	EXEC= win_prog
+     LDFLAGS= -lmingw32 -lSDL2main -lSDL2_image -lSDL2_ttf -lSDL2_mixer -lSDL2 
+	 EXEC= win_prog
 endif
 
 ifeq ($(ARCH),linux)
-	LIBMATH=-lm
-
-	ifeq ($(DEBUG),yes)
-	      CFLAGS=-Wall -g -D_DEBUG_ -D_LINUX_
-	else
-	      CFLAGS= -Iincludes/ -Wfatal-errors
-          LDFLAGS= -lm -lSDL2main -lSDL2_image -lSDL2_ttf -lSDL2_mixer -lSDL2 
-		  EXEC= linux_prog
-	endif
+	CFLAGS= -Iincludes/ -Wfatal-errors
+	LDFLAGS= -lm -lSDL2main -lSDL2_image -lSDL2_ttf -lSDL2_mixer -lSDL2 
+	EXEC= linux_prog
 endif
 
