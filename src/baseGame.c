@@ -103,7 +103,8 @@ extern void Update(float dt)
 extern void Rendu_Jeux() 
 {
   //Cas ou le jeu n'est pas en pause
-  if ( getBaseGame()->state != PAUSE && getBaseGame()->state != INVENTAIRE && getBaseGame()->state != GAMEWIN )
+  if ( getBaseGame()->state != PAUSE && getBaseGame()->state != INVENTAIRE 
+    && getBaseGame()->state != GAMEWIN && getBaseGame()->state != HELP  )
   {
     SDL_SetRenderDrawColor(getRenderer(), 0xFF,0xFF,0xFF,0);
     SDL_RenderClear( getRenderer() );
@@ -114,7 +115,7 @@ extern void Rendu_Jeux()
   if ( getBaseGame()->state == MENU_PRINCIPAL )
   {    
     Dessiner_Menu(getMenu(), 4, 0, 0, 1280, 720 );
-    
+  
   }
 
   //Cas ou on on charge une partie
@@ -152,6 +153,11 @@ extern void Rendu_Jeux()
     AfficherHUD(getNombreVie());
     AfficherHUD( getScores() );
 
+  }
+  else if ( getBaseGame()->state == HELP )
+  {
+    Dessiner_Menu( getHelp() ,0, 322, 150, 637, 363  );
+    
   }
 
   //Cas ou on est en train de jouer

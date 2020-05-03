@@ -31,6 +31,8 @@
 #include "menuPause.h"
 #include "menu_win.h"
 #include "menu_continue.h"
+#include "menu_help.h"
+
 #include "interface.h"
 
 #include "gameOver.h"
@@ -71,6 +73,7 @@ extern HUD* getItem(int num_item) ;/**< fonction getItem*/
 extern HUD* getNombreVie(); /**< fonction getNombreVie*/
 
 extern Menu_t* getMenu(void);/**< fonction getMenu*/
+extern Menu_t * getHelp(void);/**< fonction getHelp*/
 extern Menu_t* getInventaire(void);/**< fonction getInventaire*/
 extern Menu_t* getInterface(void);/**< fonction getInterface*/
 extern Menu_t * getMenuLoad(void);/**< fonction getMenuLoad*/

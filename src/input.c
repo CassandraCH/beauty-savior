@@ -35,6 +35,10 @@ extern void ProcessInput(SDL_Event * event)
     {
         Input_MenuPause(event);
     }
+    else if ( getBaseGame()->state == HELP )
+    {
+        Input_Help(event);
+    }
     else if ( getBaseGame()->state == INVENTAIRE )
     {
         Input_Inventaire(event);
@@ -48,6 +52,7 @@ extern void ProcessInput(SDL_Event * event)
     {
         Input_MenuContinue(event);
     }
+    
     else if ( getBaseGame()->state == GAMEWIN )
     {
         Input_MenuWin( event );

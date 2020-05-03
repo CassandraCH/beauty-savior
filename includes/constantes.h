@@ -58,6 +58,9 @@
 /** @brief PARTIE GAGNE */
 #define GAMEWIN 8
 
+/** @brief AIDE  */
+#define HELP 9
+
 
 
 /// MENU PRINCIPAL

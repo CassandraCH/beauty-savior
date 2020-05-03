@@ -35,6 +35,7 @@ extern void Init_Interface()
     //Initialisation du hud time
     Init_HUD(getTime(),"1 : 10", 90, 15);
 
+    
 
 
     ChargerData_Menu(0,0,&interface , "Timer"
@@ -59,6 +60,8 @@ extern void Init_Interface()
 
   ChargerData_Menu(3, 0, &interface, "Vie", "graphics_assets/vie_3.png", "NULL", 1091, 18);
 
+  ChargerData_Menu(4, 0, &interface, "Help", "graphics_assets/help_info.png", "NULL", 18, 699);
+
   interface.selectedOption = 0;
 
   interface.bg = NULL;
@@ -72,12 +75,12 @@ extern void Init_Interface()
 extern void AfficherInterface()
 {
     
-    Dessiner_Menu( &interface ,4, 0, 0, 0,0 );
+    Dessiner_Menu( &interface ,5, 0, 0, 0,0 );
 
     
     SetHUD_IntToTexture(getTime(),"0 : ", getBaseGame()->min ,90, 15 );
     
-
+    
     AfficherHUD(getScores()); 
     AfficherHUD(getTime());
     
