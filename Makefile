@@ -2,9 +2,6 @@
 include Makefile.compilation
 
 
-
-
-
 SRC=$(wildcard src/*.c)
 OBJ=$(SRC:.c=.o)
 
@@ -18,14 +15,17 @@ $(EXEC): $(OBJ)
 	$(CC) -o $@ -c $< $(CFLAGS)
 
 
-clean_linux:
-	rm src/*.o 
-
-clean_win: 
-	del src\*.o
-
 run_linux:
 	./$(EXEC) 
 
+
+clean_linux:
+	rm src/*.o 
+
+
 run_win:
 	$(EXEC) 
+
+
+clean_win: 
+	del src\*.o
