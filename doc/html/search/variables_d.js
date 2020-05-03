@@ -1,9 +1,23 @@
 var searchData=
 [
-  ['phase_496',['phase',['../struct_node.html#a275dd6dafe5d4455e599ffd15feb06f8',1,'Node']]],
-  ['player_497',['player',['../player_8c.html#af61d6983a9396a11078805087518af88',1,'player.c']]],
-  ['playersprite_498',['playerSprite',['../player_8c.html#ad29d9380b7d353ae07f2a7b4f8e28e98',1,'player.c']]],
-  ['police_499',['police',['../structhud__s.html#a49a11b0728728090fa1189391c9fe0c8',1,'hud_s::police()'],['../structmenu.html#a49a11b0728728090fa1189391c9fe0c8',1,'menu::police()']]],
-  ['posxdepart_500',['posXDepart',['../structplayer.html#ac456d6f9c88206712986fff965b49a77',1,'player']]],
-  ['posydepart_501',['posYDepart',['../structplayer.html#aee8c046a0ddcd7e9c444095b3cf57229',1,'player']]]
+  ['magnitude_2536',['magnitude',['../struct_s_d_l___haptic_periodic.html#a976c0cada4fae99d95d309257abdd71b',1,'SDL_HapticPeriodic']]],
+  ['major_2537',['major',['../struct_s_d_l__version.html#a302f1b7284c3bcdfa0dee1aa267b955e',1,'SDL_version']]],
+  ['map_2538',['map',['../struct_s_d_l___surface.html#a6305e21db64c3e35a648981e733414b3',1,'SDL_Surface']]],
+  ['max_5ftexture_5fheight_2539',['max_texture_height',['../struct_s_d_l___renderer_info.html#a0660205b899cefb8b2c807dc244296f7',1,'SDL_RendererInfo']]],
+  ['max_5ftexture_5fwidth_2540',['max_texture_width',['../struct_s_d_l___renderer_info.html#abe1e7efe1a1dae989c33c89e0597493d',1,'SDL_RendererInfo']]],
+  ['menu_2541',['menu',['../structmenu.html#a6fff02296f7c939dd76405a4f675605c',1,'menu']]],
+  ['menu_5fcontinue_2542',['menu_continue',['../menu__continue_8c.html#af4cde4703b6ea8d61c8536b60b423e96',1,'menu_continue.c']]],
+  ['menu_5fload_2543',['menu_load',['../menu_load_8c.html#aaf987cb3d1416138f1cc0660e206fa16',1,'menuLoad.c']]],
+  ['menu_5fover_2544',['menu_over',['../game_over_8c.html#a4800d3e5c2031960bad7e41945554e2b',1,'gameOver.c']]],
+  ['menu_5fpause_2545',['menu_pause',['../menu__pause_8c.html#a009d80a41dacf61e170d88934dcf9c30',1,'menu_pause.c']]],
+  ['menu_5fwin_2546',['menu_win',['../menu__win_8c.html#a051079fac61a1da0008c1123088e68c4',1,'menu_win.c']]],
+  ['message_2547',['message',['../struct_s_d_l___message_box_data.html#a254bf0858da09c96a48daf64404eb4f8',1,'SDL_MessageBoxData']]],
+  ['mgesture_2548',['mgesture',['../union_s_d_l___event.html#aa0605c4f966521b135a1a429a2a255f4',1,'SDL_Event']]],
+  ['min_2549',['min',['../structbase_game.html#a3e202b201e6255d975cd6d3aff1f5a4d',1,'baseGame']]],
+  ['minor_2550',['minor',['../struct_s_d_l__version.html#a8eb06ff08bc41ff4eed7c42fc8b40d50',1,'SDL_version']]],
+  ['mod_2551',['mod',['../struct_s_d_l___keysym.html#a09294cbc86473d2bcb27513748b81aec',1,'SDL_Keysym']]],
+  ['mode_2552',['mode',['../struct_s_d_l___window_shape_mode.html#ab4a7dfd410934bebf80e105f6fa72b74',1,'SDL_WindowShapeMode']]],
+  ['motion_2553',['motion',['../union_s_d_l___event.html#a8b74ec063362bbd2e4ec6d1a878eb0ca',1,'SDL_Event']]],
+  ['movingx_2554',['movingX',['../struct_node.html#adfa3d4f287a51a2284b00ebaf60647aa',1,'Node']]],
+  ['msg_2555',['msg',['../struct_s_d_l___sys_w_m_event.html#a7b74458e040fff2d0b02a00df56049b0',1,'SDL_SysWMEvent::msg()'],['../struct_s_d_l___sys_w_mmsg.html#a43204af3a61671f6c669bf2539b7475f',1,'SDL_SysWMmsg::msg()']]]
 ];

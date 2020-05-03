@@ -13,5 +13,5 @@ var menu_principal_8c =
     [ "ToucheHaut", "menu_principal_8c.html#ad0964a2426f16aa1ebcb4af7b51d36b2", null ],
     [ "UpdateImage_Option", "menu_principal_8c.html#afa67a2053b99b8ed31b3e0dcda2234b4", null ],
     [ "UpdateOption", "menu_principal_8c.html#ae6aa699ff3aa6f14b0edf596df9c8645", null ],
-    [ "menu", "menu_principal_8c.html#a244b1d4bf50ef12affad56e54011b9db", null ]
+    [ "_menu", "menu_principal_8c.html#ad73d4bec4dc3278ab9e90fc57097f4a8", null ]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['beauty_20savior_5',['Beauty Savior',['../md__r_e_a_d_m_e.html',1,'']]]
+  ['liste_20des_20éléments_20obsolètes_3144',['Liste des éléments obsolètes',['../deprecated.html',1,'']]]
 ];

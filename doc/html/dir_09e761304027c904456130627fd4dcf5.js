@@ -1,12 +1,13 @@
 var dir_09e761304027c904456130627fd4dcf5 =
 [
+    [ "SDL2", "dir_2d9384fcef5159eda840a83d9e0ea43c.html", "dir_2d9384fcef5159eda840a83d9e0ea43c" ],
     [ "baseGame.h", "base_game_8h.html", "base_game_8h" ],
     [ "chargeSave.h", "charge_save_8h.html", "charge_save_8h" ],
     [ "commun.h", "commun_8h.html", "commun_8h" ],
     [ "constantes.h", "constantes_8h.html", "constantes_8h" ],
     [ "enjeu.h", "enjeu_8h.html", "enjeu_8h" ],
     [ "entite.h", "entite_8h.html", "entite_8h" ],
-    [ "gameOver.h", "game_over_8h_source.html", null ],
+    [ "gameOver.h", "game_over_8h.html", "game_over_8h" ],
     [ "hud.h", "hud_8h.html", "hud_8h" ],
     [ "interface.h", "interface_8h_source.html", null ],
     [ "inventaire.h", "inventaire_8h_source.html", null ],
