@@ -2,7 +2,7 @@
  * \file interface.c
  * \author CALVADOS Cindy, CHAUMULON Cassandra, CHELLI Célia, OUSMANOVA Karina
  * \version 1.0
- * \date janvier 2020
+ * \date avril 2020
  * \brief Programme qui gère l'interface de l'utilisateur 
  */
 #include "baseGame.h"
@@ -29,39 +29,41 @@ extern void Init_Interface()
     int width = LARGEUR_FENETRE, height = HAUTEUR_FENETRE;
     printf("Initialisation Interface");
 
-
     //Initialisation du hud score
     Init_HUD(getScores(),"0", 565, 17);
     //Initialisation du hud time
     Init_HUD(getTime(),"1 : 10", 90, 15);
 
-
-
+    //Charegement de l'interface du timer
     ChargerData_Menu(0,0,&interface , "Timer"
-                ,"graphics_assets/timer.png"
-                ,"NULL"
-                ,20
-                ,10 );
-                
-    /* 
-     * Deuxieme option : Charger la partie
-     */
+                , "graphics_assets/timer.png"
+                , "NULL"
+                , 20
+                , 10);
 
-  ChargerData_Menu(0, 0, &interface, "Timer", "graphics_assets/timer.png", "NULL", 20, 10);
+    //Charegement de l'interface du score
+    ChargerData_Menu(1, 0, &interface, "Scores"
+                , "graphics_assets/dead.png"
+                , "NULL"
+                , 500
+                , 18);
+    //Charegement de l'interface des items
+    ChargerData_Menu(2, 0, &interface, "Items"
+                , "graphics_assets/items2.png"
+                , "NULL"
+                , 700
+                , 18);
 
-  /* 
-  * Deuxieme option : Charger la partie
-  */
+    //Charegement de l'interface du compteur de vies
+    ChargerData_Menu(3, 0, &interface, "Vie"
+                , "graphics_assets/vie_3.png"
+                , "NULL"
+                , 1091
+                , 18);
 
-  ChargerData_Menu(1, 0, &interface, "Scores", "graphics_assets/dead.png", "NULL", 500, 18);
+    interface.selectedOption = 0;
 
-  ChargerData_Menu(2, 0, &interface, "Items", "graphics_assets/items2.png", "NULL", 700, 18);
-
-  ChargerData_Menu(3, 0, &interface, "Vie", "graphics_assets/vie_3.png", "NULL", 1091, 18);
-
-  interface.selectedOption = 0;
-
-  interface.bg = NULL;
+    interface.bg = NULL;
 }
 
 /**
@@ -71,15 +73,11 @@ extern void Init_Interface()
 */
 extern void AfficherInterface()
 {
-    
     Dessiner_Menu( &interface ,4, 0, 0, 0,0 );
-
     
     SetHUD_IntToTexture(getTime(),"0 : ", getBaseGame()->min ,90, 15 );
     
-
+    //Affichage du score et du timer
     AfficherHUD(getScores()); 
     AfficherHUD(getTime());
-    
-
 }
