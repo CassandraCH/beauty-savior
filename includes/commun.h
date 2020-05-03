@@ -40,7 +40,8 @@ bool;
  *\enum typeEntite
  *\details énumération représentant les types du jeux
  */
-typedef enum  { item,  joueur, ennemi, platform ,checkpoint, bull, feu,os, rock , tree, gamewin }  typeEntite;
+typedef enum  { item,  joueur, ennemi, platform ,checkpoint, 
+    bull, feu,os, rock , tree, gamewin , passport }  typeEntite;
 
 
 /**

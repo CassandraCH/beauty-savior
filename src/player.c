@@ -80,7 +80,7 @@ extern void SetValeurDuNiveau(int valeur)
 extern void InitJoueur()
 {
     //niveau en cours et nombre de vies
-	player.niveau = 4;
+	player.niveau = 1;
     player.nombreVies = 3;
 
     //Chargement de l'image
@@ -89,9 +89,12 @@ extern void InitJoueur()
     //position en x et en y, hauteur et largeur
 	player.h = player.tex.h;
 	player.w = player.tex.w;
-    player.x = 8500;
+    player.x = 100;
     player.y = 50;
     player.scores = 0;
+
+   // le passport n'est pas collecté par défaut
+    player.isPasspordCollected = false;
 
     //inventaire initialise a 0
     player.nb_lancer = 0;
@@ -218,6 +221,11 @@ extern void CollisionItems()
                     incrementeBranche(); 
                     printf("Nombre branche: %d\n", getBranche());
                 }
+                else if ( pt->type == passport )
+                {
+                    player.isPasspordCollected = true;
+                }    
+                
                         
             }
             break;

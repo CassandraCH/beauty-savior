@@ -58,7 +58,7 @@ extern void SauvegarderPartie()
     }
 
     //Sauvegarder le niveau du joueur et les compteurs des objets
-    fprintf(file,"%d %d", getPlayer()->niveau, getPlayer()->nb_objet);
+    fprintf(file,"%d %d %d %d", getPlayer()->niveau, getOs() ,getRock(), getBranche() );
     
     //Fermeture du fichier
     fclose(file);

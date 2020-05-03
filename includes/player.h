@@ -55,6 +55,8 @@ typedef struct player
 
     Texture_Manager tex; /**< Texture du joueur */
 
+    bool isPasspordCollected; /**< booleen pour connaître la collecte ou du passpord dans un niveau */
+
 
 }Player;
 /**< This is the documentation for the preceding typedef */

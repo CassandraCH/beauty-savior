@@ -17,6 +17,7 @@ SDL_Texture * itemTex; /**< Texture pour les pièces */
 SDL_Texture * rockTex; /**< Texture pour les cailloux */
 SDL_Texture * treeTex; /**< Texture pour les branches */
 SDL_Texture * osTex;   /**< Texture pour les os */
+SDL_Texture * passportTex; /**< Texture pour le passport */
 
 int last_frame_time = 0; /**< Temps écoulé depuis la dernière image*/
 float dt = 0.0f; /**< Delta-time = temps écoulé entre l'affichage de chaque image*/
@@ -178,6 +179,11 @@ extern void Rendu_Jeux()
     Afficher_ElementsListes( &items, osTex, os, 36, 51 ); 
     Afficher_ElementsListes( &items, rockTex, rock ,37, 35 ); 
     Afficher_ElementsListes( &items, treeTex, tree, 31, 49 );  
+    
+    // Afficher Passport
+    Afficher_ElementsListes( &items, passportTex, passport, 43, 56 );  
+
+
   }
 
   //Cas où on a perdu
@@ -217,6 +223,7 @@ extern void Init_Textures()
   rockTex = ChargerTexture("graphics_assets/tex_rock.png");
   treeTex = ChargerTexture("graphics_assets/tex_tree.png");
   osTex = ChargerTexture("graphics_assets/tex_os.png");   
+  passportTex = ChargerTexture("graphics_assets/passport.png");   
 }
 
 /**
@@ -231,6 +238,7 @@ extern void Nettoyers_Textures()
   SDL_DestroyTexture( rockTex );
   SDL_DestroyTexture( treeTex );
   SDL_DestroyTexture( osTex );
+  SDL_DestroyTexture( passportTex );
 }
 
 /**
