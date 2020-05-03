@@ -29,6 +29,7 @@ L'équipe fut composée de :
 - Pour effectuer un saut, utilisez la touche `haut`.
 - Pour mettre le jeu en pause, appuyer sur la touche `p`.
 - Pour récupérer un objet, il suffit de le toucher.
+- Pour accéder à l'inventaire, appuyez sur la touche `i`.
 - Pour lancer une attaque, appuyez sur la touche `espace`.
 - La sauvegarde se fait automatiquement à la fin d'un niveau.
 - Pour quitter le jeu, appuyez sur `esc` ou cliquer sur la `croix`.
