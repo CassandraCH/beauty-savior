@@ -12,19 +12,19 @@
 /**
  * \fn extern void Init_HUD(HUD * hud, const char * text, int x,  int y)
  * \brief Fonction qui permet d'initialiser un hud
- * \details Un hud correspond a toutes les informations concernant le joueur tels que le score ou le nombre de vie par exemple
+ * \details Un hud correspond à toutes les informations concernant le joueur tels que le score ou le nombre de vie par exemple
  * \param hud pointeur sur une structure de type HUD 
- * \param text chaine de caractere qui correspond au nom de la texture
+ * \param text chaîne de caractère qui correspond au nom de la texture
  * \param x position en x du hud
  * \param y position en y du hud
  * \return pas de valeur de retour (void)
 */
 extern void Init_HUD(HUD * hud, const char * text, int x,  int y)
 {
-
     //Transformation du texte en une surface
     hud->surface = TTF_RenderText_Solid(hud->police, text,(SDL_Color){0, 0, 0,0});
 
+    //Transformation de la texture en surface
     hud->tex = SDL_CreateTextureFromSurface( getRenderer(), hud->surface );
     
     int width, height;
@@ -40,23 +40,21 @@ extern void Init_HUD(HUD * hud, const char * text, int x,  int y)
  * \fn extern void SetHUD_IntToTexture(HUD * hud, const char * nom, int valeur, int posX, int posY)
  * \brief Fonction qui permet de creer la texture d'un hud
  * \param hud pointeur sur une structure de type HUD 
- * \param nom chaine de caractere a ce qu'on veut afficher
- * \param valeur valeur numerique a afficher dans le hud
+ * \param nom chaîne de caractère de ce qu'on veut afficher
+ * \param valeur valeur numérique à afficher dans le hud
  * \param posX position en x du hud
  * \param posY position en y du hud
  * \return pas de valeur de retour (void)
 */
 extern void SetHUD_IntToTexture(HUD * hud, const char * nom, int valeur, int posX, int posY)
 {
-
-   
-    //Creation d'une texture pour le hud
+    //Création d'une texture pour le hud
     SDL_Texture * tex = hud->tex;
 
-    //Verifie que la texture a ete creee correctement
+    //Verifie que la texture a été créé correctement
     if( tex != NULL )
     {
-        //Liberation de la memoire et destruction de la texture
+        //Libération de la mémoire et destruction de la texture
         SDL_FreeSurface(hud->surface);
         SDL_DestroyTexture(hud->tex);
     }
@@ -75,20 +73,17 @@ extern void SetHUD_IntToTexture(HUD * hud, const char * nom, int valeur, int pos
     int width, height;
     SDL_QueryTexture(hud->tex, NULL, NULL, &width, &height);
 
-    hud->rect.w = width;
-    hud->rect.h = height;
-    hud->rect.x = posX;
-    hud->rect.y = posY;
-
-   
+    hud->rect.w = width; //Largeur du hud
+    hud->rect.h = height;//Hauteur du hud
+    hud->rect.x = posX;  //Position en x du hud
+    hud->rect.y = posY;  //Position en y du hud
 }
 
 
 /**
  * \fn extern void AfficherHUD(HUD * hud)
  * \brief Fonction qui permet d'afficher un hud
- * \details 
- * \param hud pointeur sur le hud a afficher
+ * \param hud pointeur sur le hud à afficher
  * \return pas de valeur de retour (void)
 */
 extern void AfficherHUD(HUD * hud)
@@ -101,17 +96,17 @@ extern void AfficherHUD(HUD * hud)
  * \fn extern void NettoyerHUD(HUD * hud)
  * \brief Fonction qui detruit un hud
  * \details 
- * \param hud pointeur sur le hud a supprimer
+ * \param hud pointeur sur le hud à supprimer
  * \return pas de valeur de retour (void)
 */
 extern void NettoyerHUD(HUD * hud)
 {
-    //Verifie que la texture a ete correctement creee
+    //Vérifie que la texture a été correctement créé
     if(hud->tex != NULL)
     {
         printf("Nettoyer HUD\n");
 
-        //Liberation de la memoire
+        //Libération de la mémoire
         SDL_FreeSurface(hud->surface);
 
         //Destruction de la texture du hud

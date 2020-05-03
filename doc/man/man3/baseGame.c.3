@@ -22,7 +22,7 @@ src/baseGame.c \- Programme qui gère les différents comportements du jeu en fo
 .ti -1c
 .RI "void \fBUpdate\fP (float \fBdt\fP)"
 .br
-.RI "Fonction qui permet gerer les comportements des entités si on se trouve dans une partie et gerer le son si on se trouve sur le menu principal\&. "
+.RI "Fonction qui permet gérer les comportements des entités si on se trouve dans une partie et gérer le son si on se trouve sur le menu principal\&. "
 .ti -1c
 .RI "void \fBRendu_Jeux\fP ()"
 .br
@@ -30,7 +30,14 @@ src/baseGame.c \- Programme qui gère les différents comportements du jeu en fo
 .ti -1c
 .RI "void \fBUpdate_Listes\fP ()"
 .br
-.RI "Fonction qui met a jour les listes de bullets et ennemis\&. "
+.RI "Fonction qui met à jour les listes des bullets et des ennemis\&. "
+.ti -1c
+.RI "void \fBInit_Textures\fP ()"
+.br
+.RI "Fonction qui charge les textures des ennemis, des pièces, des cailloux, des branches et des os\&. "
+.ti -1c
+.RI "void \fBNettoyers_Textures\fP ()"
+.br
 .ti -1c
 .RI "void \fBdelay\fP (unsigned int frameLimit)"
 .br
@@ -41,6 +48,21 @@ src/baseGame.c \- Programme qui gère les différents comportements du jeu en fo
 .in +1c
 .ti -1c
 .RI "\fBBase_Game\fP \fBgame\fP"
+.br
+.ti -1c
+.RI "SDL_Texture * \fBtexture\fP"
+.br
+.ti -1c
+.RI "SDL_Texture * \fBitemTex\fP"
+.br
+.ti -1c
+.RI "SDL_Texture * \fBrockTex\fP"
+.br
+.ti -1c
+.RI "SDL_Texture * \fBtreeTex\fP"
+.br
+.ti -1c
+.RI "SDL_Texture * \fBosTex\fP"
 .br
 .ti -1c
 .RI "int \fBlast_frame_time\fP = 0"
@@ -67,10 +89,10 @@ CALVADOS Cindy, CHAUMULON Cassandra, CHELLI Célia, OUSMANOVA Karina
 .PP
 \fBDate\fP
 .RS 4
-janvier 2020 
+janvier 2020
 .RE
 .PP
-
+Etat possible : en cours de partie, en pause\&.\&.\&. 
 .SH "Documentation des fonctions"
 .PP 
 .SS "delay (unsigned int frameLimit)"
@@ -95,6 +117,17 @@ Un pointeur sur une structure de données de type Base_Game
 .RE
 .PP
 
+.SS "void Init_Textures ()"
+
+.PP
+Fonction qui charge les textures des ennemis, des pièces, des cailloux, des branches et des os\&. Fonction qui détruit les textures des ennemis, des pièces, des cailloux, des branches et des os\&.
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
 .SS "void Rendu_Jeux ()"
 
 .PP
@@ -109,7 +142,7 @@ pas de valeur de retour (void)
 .SS "void Update (float dt)"
 
 .PP
-Fonction qui permet gerer les comportements des entités si on se trouve dans une partie et gerer le son si on se trouve sur le menu principal\&. Etat du jeu possible : menu principal ou en partie 
+Fonction qui permet gérer les comportements des entités si on se trouve dans une partie et gérer le son si on se trouve sur le menu principal\&. Etat du jeu possible : menu principal ou en partie 
 .PP
 \fBParamètres\fP
 .RS 4
@@ -125,7 +158,7 @@ pas de valeur de retour (void)
 .SS "void Update_Listes ()"
 
 .PP
-Fonction qui met a jour les listes de bullets et ennemis\&. Suppression des listes si nécessaire 
+Fonction qui met à jour les listes des bullets et des ennemis\&. Suppression des listes si nécessaire 
 .PP
 \fBRenvoie\fP
 .RS 4
@@ -139,8 +172,18 @@ pas de valeur de retour (void)
 Delta-time = temps écoulé entre l'affichage de chaque image 
 .SS "\fBBase_Game\fP game"
 Structure qui gère l'état du jeu 
+.SS "SDL_Texture* itemTex"
+Texture pour les pièces 
 .SS "int last_frame_time = 0"
 Temps écoulé depuis la dernière image 
+.SS "SDL_Texture* osTex"
+Texture pour les os 
+.SS "SDL_Texture* rockTex"
+Texture pour les cailloux 
+.SS "SDL_Texture* texture"
+Texture pour les ennemis 
+.SS "SDL_Texture* treeTex"
+Texture pour les branches 
 .SH "Auteur"
 .PP 
 Généré automatiquement par Doxygen pour Beauty Savior à partir du code source\&.

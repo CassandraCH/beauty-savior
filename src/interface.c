@@ -2,7 +2,7 @@
  * \file interface.c
  * \author CALVADOS Cindy, CHAUMULON Cassandra, CHELLI Célia, OUSMANOVA Karina
  * \version 1.0
- * \date janvier 2020
+ * \date avril 2020
  * \brief Programme qui gère l'interface de l'utilisateur 
  */
 #include "baseGame.h"
@@ -28,7 +28,6 @@ extern void Init_Interface()
 {
     int width = LARGEUR_FENETRE, height = HAUTEUR_FENETRE;
     printf("Initialisation Interface");
-
 
     //Initialisation du hud score
     Init_HUD(getScores(),"0", 565, 17);
@@ -83,6 +82,4 @@ extern void AfficherInterface()
     
     AfficherHUD(getScores()); 
     AfficherHUD(getTime());
-    
-
 }

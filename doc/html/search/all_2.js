@@ -1,13 +1,19 @@
 var searchData=
 [
-  ['base_5fgame_14',['Base_Game',['../base_game_8h.html#a8493a94df4b942048b28ca811751ef18',1,'baseGame.h']]],
-  ['basegame_15',['baseGame',['../structbase_game.html',1,'']]],
-  ['basegame_2ec_16',['baseGame.c',['../base_game_8c.html',1,'']]],
-  ['basegame_2eh_17',['baseGame.h',['../base_game_8h.html',1,'']]],
-  ['basex_18',['baseX',['../struct_node.html#a55d0bd90e3b7d8747086fb4cffa628a3',1,'Node']]],
-  ['basey_19',['baseY',['../struct_node.html#aa6733345a1163765ef8e0f57d455a1ef',1,'Node']]],
-  ['bg_20',['bg',['../structmenu.html#a4ed1389c10516234b19584ff707051c8',1,'menu']]],
-  ['bgm_21',['bgm',['../structmenu.html#a015eb04e0a2b9b43b073ff5abf39a6ea',1,'menu']]],
-  ['bool_22',['bool',['../commun_8h.html#af6a258d8f3ee5206d682d799316314b1',1,'commun.h']]],
-  ['bullet_23',['bullet',['../liste_elements_8c.html#a184872af80e53427412c77ba457621e7',1,'bullet():&#160;listeElements.c'],['../base_game_8h.html#a184872af80e53427412c77ba457621e7',1,'bullet():&#160;listeElements.c']]]
+  ['ball_31',['ball',['../struct_s_d_l___joy_ball_event.html#ad1cef643ea7d0bbd1ad484dcd61290e6',1,'SDL_JoyBallEvent']]],
+  ['base_5fgame_32',['Base_Game',['../base_game_8h.html#a8493a94df4b942048b28ca811751ef18',1,'baseGame.h']]],
+  ['basegame_33',['baseGame',['../structbase_game.html',1,'']]],
+  ['basegame_2ec_34',['baseGame.c',['../base_game_8c.html',1,'']]],
+  ['basegame_2eh_35',['baseGame.h',['../base_game_8h.html',1,'']]],
+  ['basex_36',['baseX',['../struct_node.html#a55d0bd90e3b7d8747086fb4cffa628a3',1,'Node']]],
+  ['basey_37',['baseY',['../struct_node.html#aa6733345a1163765ef8e0f57d455a1ef',1,'Node']]],
+  ['begin_5fcode_2eh_38',['begin_code.h',['../begin__code_8h.html',1,'']]],
+  ['bg_39',['bg',['../structmenu.html#a4ed1389c10516234b19584ff707051c8',1,'menu']]],
+  ['bgm_40',['bgm',['../structmenu.html#a015eb04e0a2b9b43b073ff5abf39a6ea',1,'menu']]],
+  ['binarizationcutoff_41',['binarizationCutoff',['../union_s_d_l___window_shape_params.html#a4cd674dc6ce063fa26ee9251ec4c962e',1,'SDL_WindowShapeParams']]],
+  ['bool_42',['bool',['../commun_8h.html#af6a258d8f3ee5206d682d799316314b1',1,'commun.h']]],
+  ['buf_43',['buf',['../struct_s_d_l___audio_c_v_t.html#ab9daf3b7604bbd1d7c1c1a5cabcc4076',1,'SDL_AudioCVT']]],
+  ['bullet_44',['bullet',['../liste_elements_8c.html#a184872af80e53427412c77ba457621e7',1,'bullet():&#160;listeElements.c'],['../base_game_8h.html#a184872af80e53427412c77ba457621e7',1,'bullet():&#160;listeElements.c']]],
+  ['button_45',['button',['../struct_s_d_l___mouse_button_event.html#a63c1d3c03e676c0ea5864dc6d0b0082c',1,'SDL_MouseButtonEvent::button()'],['../struct_s_d_l___joy_button_event.html#a63c1d3c03e676c0ea5864dc6d0b0082c',1,'SDL_JoyButtonEvent::button()'],['../struct_s_d_l___controller_button_event.html#a63c1d3c03e676c0ea5864dc6d0b0082c',1,'SDL_ControllerButtonEvent::button()'],['../union_s_d_l___event.html#a84c8b783a58353ba95917b1756af68d9',1,'SDL_Event::button()'],['../struct_s_d_l___haptic_constant.html#a9dab31b41646c5d046ea33d0cfb3794a',1,'SDL_HapticConstant::button()'],['../struct_s_d_l___haptic_periodic.html#a9dab31b41646c5d046ea33d0cfb3794a',1,'SDL_HapticPeriodic::button()'],['../struct_s_d_l___haptic_condition.html#a9dab31b41646c5d046ea33d0cfb3794a',1,'SDL_HapticCondition::button()'],['../struct_s_d_l___haptic_ramp.html#a9dab31b41646c5d046ea33d0cfb3794a',1,'SDL_HapticRamp::button()'],['../struct_s_d_l___haptic_custom.html#a9dab31b41646c5d046ea33d0cfb3794a',1,'SDL_HapticCustom::button()']]],
+  ['buttonid_46',['buttonid',['../struct_s_d_l___message_box_button_data.html#a0a58b3764551f49ae76eb734277e547d',1,'SDL_MessageBoxButtonData']]]
 ];

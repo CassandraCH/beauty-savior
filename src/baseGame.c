@@ -4,19 +4,19 @@
  * \version 1.0
  * \date janvier 2020
  * \brief Programme qui gère les différents comportements du jeu en fonction de l'état
+ * \details Etat possible : en cours de partie, en pause...
  */
 #include "baseGame.h"
 #include "commun.h"
 
 
-Base_Game game; /**< Structure qui gère l'état du jeu*/
+Base_Game game; /**< Structure qui gère l'état du jeu */
 
-SDL_Texture * texture;
-SDL_Texture * itemTex;
-SDL_Texture * rockTex;
-SDL_Texture * treeTex;
-SDL_Texture * osTex;
-
+SDL_Texture * texture; /**< Texture pour les ennemis */
+SDL_Texture * itemTex; /**< Texture pour les pièces */
+SDL_Texture * rockTex; /**< Texture pour les cailloux */
+SDL_Texture * treeTex; /**< Texture pour les branches */
+SDL_Texture * osTex;   /**< Texture pour les os */
 
 int last_frame_time = 0; /**< Temps écoulé depuis la dernière image*/
 float dt = 0.0f; /**< Delta-time = temps écoulé entre l'affichage de chaque image*/
@@ -31,20 +31,19 @@ Base_Game* getBaseGame()
   return &game;
 }
 
-
-
 /**
  * \fn extern void Update(float dt)
- * \brief Fonction qui permet gerer les comportements des entités si on se trouve dans une partie et gerer le son si on se trouve sur le menu principal
+ * \brief Fonction qui permet gérer les comportements des entités si on se trouve dans une partie et gérer le son si on se trouve sur le menu principal
  * \details Etat du jeu possible : menu principal ou en partie
  * \param dt valeur du delta-time
  * \return pas de valeur de retour (void)
 */
 extern void Update(float dt)
 { 
+  //Si la partie n'est pas gagnée 
   if( getBaseGame()->state != GAMEWIN )
   {
-      //Cas ou on se trouve dans le menu principal
+    //Cas ou on se trouve dans le menu principal
     if ( game.state == MENU_PRINCIPAL )
     {
         //Gestion de la musique du menu principal
@@ -55,41 +54,38 @@ extern void Update(float dt)
     //Cas ou on est en train de jouer
     else if ( game.state == IN_GAME )
     { 
-        //Gestion du timer
-        getBaseGame()->time++;
-      
-      
-        getBaseGame()->tempsActuel = SDL_GetTicks();
-        if (getBaseGame()->tempsActuel > getBaseGame()->tempsPrecedent + 1000 ) /* Si 1000 ms soit 1 sec se sont écoulées */
-        {    
-            
-              --getBaseGame()->min;
-              printf("%d\n", getBaseGame()->min );
+      //Gestion du timer
+      getBaseGame()->time++;
+    
+    
+      getBaseGame()->tempsActuel = SDL_GetTicks();
+      if (getBaseGame()->tempsActuel > getBaseGame()->tempsPrecedent + 1000 ) /* Si 1000 ms soit 1 sec se sont écoulées */
+      {              
+        --getBaseGame()->min;
+        printf("%d\n", getBaseGame()->min );
 
-            getBaseGame()->tempsPrecedent = getBaseGame()->tempsActuel; /* Le temps "actuel" devient le temps "precedent" pour nos futurs calculs */
-        } 
+        getBaseGame()->tempsPrecedent = getBaseGame()->tempsActuel; /* Le temps "actuel" devient le temps "precedent" pour nos futurs calculs */
+      } 
 
-        // Si le temps du jeux est ingérieur au timer de 1min10 alors c'est la fin du niveau.
-        if( getBaseGame()->min <= 0 )
-        {
-          Init_GameOver();
-        }
+      // Si le temps du jeux est ingérieur au timer de 1min10 alors c'est la fin du niveau.
+      if( getBaseGame()->min <= 0 )
+      {
+        Init_GameOver();
+      }
+
+      //Gestion des attaques
+      attaqueEnnemis();
+
+      //Mise à jour des entités
+      Update_Listes();
+      UpdateEnnemis();
+      UpdateBullets(joueur, ennemi);
+      UpdateJoueur();
   
-      
-          //Gestion des attaques
-          attaqueEnnemis();
-
-          //Mise à jour des entités
-          Update_Listes();
-          UpdateEnnemis();
-          UpdateBullets(joueur, ennemi);
-          UpdateJoueur();
-      
-          //Gestion des collisions
-          collision_tir();
-          CollisionItems(); 
-          collisionDetection();
-
+      //Gestion des collisions
+      collision_tir();
+      CollisionItems(); 
+      collisionDetection();
     }
   }
 }
@@ -102,23 +98,23 @@ extern void Update(float dt)
 */
 extern void Rendu_Jeux() 
 {
-  //Cas ou le jeu n'est pas en pause
+  //Cas où le jeu n'est pas en pause, n'est pas sur l'inventaire, 
+  // le jeu n'est pas terminé ni sur l'affichage de l'aide
   if ( getBaseGame()->state != PAUSE && getBaseGame()->state != INVENTAIRE 
     && getBaseGame()->state != GAMEWIN && getBaseGame()->state != HELP  )
   {
     SDL_SetRenderDrawColor(getRenderer(), 0xFF,0xFF,0xFF,0);
     SDL_RenderClear( getRenderer() );
   }
-  
-  
-  //Cas ou on est sur le menu principal
+
+  //Cas où on est sur le menu principal
   if ( getBaseGame()->state == MENU_PRINCIPAL )
   {    
     Dessiner_Menu(getMenu(), 4, 0, 0, 1280, 720 );
   
   }
 
-  //Cas ou on on charge une partie
+  //Cas où on on charge une partie
   else if ( getBaseGame()->state == LOADING )
   {
     Dessiner_Menu(getMenuLoad(), 2, 0,0 , 1280, 720) ;
@@ -126,7 +122,7 @@ extern void Rendu_Jeux()
     AfficherHUD( getNiveau() );
   }
 
-  //Cas ou un niveau a ete termine
+  //Cas où un niveau est terminé
   else if ( getBaseGame()->state == LEVEL_COMPLETED )
   {
     Dessiner_Menu(getMenuCon(), 1,0, 0, 1280, 720);
@@ -134,11 +130,13 @@ extern void Rendu_Jeux()
     AfficherHUD( getNiveau() );
   }
 
-  //Cas ou le jeu est en pause
+  //Cas où le jeu est en pause
   else if ( getBaseGame()->state == PAUSE )
   {
     Dessiner_Menu(getMenuPause(), 2,300, 200,  645, 432 );
   }
+
+  //Cas où on affiche l'inventaire
   else if ( getBaseGame()->state == INVENTAIRE )
   {
       Dessiner_Menu( getInventaire(),3, 300, 200, 607, 269 );
@@ -147,6 +145,7 @@ extern void Rendu_Jeux()
       AfficherHUD(getItem(2));
   }
 
+  //Cas où le jeu est terminé = tous les niveaux sont terminés
   else if ( getBaseGame()->state == GAMEWIN )
   {
     Dessiner_Menu( getMenu_Win() ,2, 413, 74,433, 478  );
@@ -160,11 +159,9 @@ extern void Rendu_Jeux()
     
   }
 
-  //Cas ou on est en train de jouer
+  //Cas où on est en train de jouer
   else if ( getBaseGame()->state == IN_GAME )
   { 
-  
-  
     afficher_textures_niveau(0);
     AfficherInterface();
     //Gestion des affchages des listes, du joueur et du score
@@ -180,14 +177,10 @@ extern void Rendu_Jeux()
     // Liste de l'inventaire
     Afficher_ElementsListes( &items, osTex, os, 36, 51 ); 
     Afficher_ElementsListes( &items, rockTex, rock ,37, 35 ); 
-    Afficher_ElementsListes( &items, treeTex, tree, 31, 49 ); 
-
-    
-    
-    
+    Afficher_ElementsListes( &items, treeTex, tree, 31, 49 );  
   }
 
-  //Cas ou on a perdu
+  //Cas où on a perdu
   else if (getBaseGame()->state == GAMEOVER )
   {
     Dessiner_Menu(getMenu_Over(), 4, 0, 0 , 1280, 720 );
@@ -197,12 +190,12 @@ extern void Rendu_Jeux()
   SDL_RenderPresent(getRenderer());
 
   // Délai pour laisser respirer le processeur
-    SDL_Delay(1);
+  SDL_Delay(1);
 }
 
 /**
  * \fn extern void Update_Listes()
- * \brief Fonction qui met a jour les listes de bullets et ennemis
+ * \brief Fonction qui met à jour les listes des bullets et des ennemis
  * \details Suppression des listes si nécessaire
  * \return pas de valeur de retour (void)
 */
@@ -212,17 +205,25 @@ extern void Update_Listes()
   supprimeCible(getEnnemis(), true);
 }
 
-
+/**
+ * \fn extern void Init_Textures()
+ * \brief Fonction qui charge les textures des ennemis, des pièces, des cailloux, des branches et des os
+ * \return pas de valeur de retour (void)
+*/
 extern void Init_Textures()
 {
-    texture = ChargerTexture("graphics_assets/enemi.png");
-    itemTex = ChargerTexture("graphics_assets/coin.png");
-    rockTex = ChargerTexture("graphics_assets/tex_rock.png");
-    treeTex = ChargerTexture("graphics_assets/tex_tree.png");
-    osTex = ChargerTexture("graphics_assets/tex_os.png");   
+  texture = ChargerTexture("graphics_assets/enemi.png");
+  itemTex = ChargerTexture("graphics_assets/coin.png");
+  rockTex = ChargerTexture("graphics_assets/tex_rock.png");
+  treeTex = ChargerTexture("graphics_assets/tex_tree.png");
+  osTex = ChargerTexture("graphics_assets/tex_os.png");   
 }
 
-
+/**
+ * \fn extern void Init_Textures()
+ * \brief Fonction qui détruit les textures des ennemis, des pièces, des cailloux, des branches et des os
+ * \return pas de valeur de retour (void)
+*/
 extern void Nettoyers_Textures()
 {
   SDL_DestroyTexture( texture );

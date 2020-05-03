@@ -42,11 +42,11 @@ src/listeElements.c \- Programme qui permet de gérer les listes\&.
 .br
 .RI "Fonction qui permet d'initialiser la liste passee en parametre\&. "
 .ti -1c
-.RI "\fBNode\fP * \fBcreerElement\fP (SDL_Rect *rect, \fBtypeEntite\fP item_t, \fBbool\fP actif)"
+.RI "\fBNode\fP * \fBcreerElement\fP (\fBSDL_Rect\fP *rect, \fBtypeEntite\fP item_t, \fBbool\fP actif)"
 .br
 .RI "Fonction qui permet de créer un rectangle (portion de l'ecran) "
 .ti -1c
-.RI "void \fBinsertion\fP (\fBLinkedList\fP *\fBlist\fP, SDL_Rect *rect, \fBtypeEntite\fP items_t, \fBbool\fP actif)"
+.RI "void \fBinsertion\fP (\fBLinkedList\fP *\fBlist\fP, \fBSDL_Rect\fP *rect, \fBtypeEntite\fP items_t, \fBbool\fP actif)"
 .br
 .RI "Fonction qui permet d'inserer un element dans une liste passee en parametre\&. "
 .ti -1c
@@ -118,7 +118,7 @@ Création d'une liste, ajout de nouvel élément, suppression de la tête, suppr
 .PP 
 .SS "void Afficher_ElementsListes (\fBLinkedList\fP * lst, SDL_Texture * tex, \fBtypeEntite\fP typeE, int largeurTex, int hauteurTex)"
 affiche les elements de la liste 
-.SS "\fBNode\fP * creerElement (SDL_Rect * rect, \fBtypeEntite\fP item_t, \fBbool\fP actif)"
+.SS "\fBNode\fP * creerElement (\fBSDL_Rect\fP * rect, \fBtypeEntite\fP item_t, \fBbool\fP actif)"
 
 .PP
 Fonction qui permet de créer un rectangle (portion de l'ecran) Ce rectangle sera utilise pour la texture 
@@ -209,7 +209,7 @@ pas de valeur de retour (void)
 .RE
 .PP
 
-.SS "void insertion (\fBLinkedList\fP * list, SDL_Rect * rect, \fBtypeEntite\fP items_t, \fBbool\fP actif)"
+.SS "void insertion (\fBLinkedList\fP * list, \fBSDL_Rect\fP * rect, \fBtypeEntite\fP items_t, \fBbool\fP actif)"
 
 .PP
 Fonction qui permet d'inserer un element dans une liste passee en parametre\&. 

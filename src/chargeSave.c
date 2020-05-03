@@ -7,19 +7,18 @@
  */
 #include "chargeSave.h"
 
-
 /**
  * \fn extern void ChargerPartie()
- * \brief Fonction qui permet de charger une partie sauvegardee
- * \details Lecture du fichier data.txt
+ * \brief Fonction qui permet de charger une partie sauvegardée
+ * \details Lecture du fichier save_player.txt
  * \return pas de valeur de retour (void)
 */
 extern void ChargerPartie()
 {
-    //Ouverture du fichier data.txt
+    //Ouverture du fichier save_player.txt
     FILE * file = fopen("files_assets/save_player.txt", "r");
     
-    //Verification que le fichier existe bien
+    //Vérification que le fichier existe bien
     if (file == NULL) {
         fprintf(stderr, "Can't open input file in list!\n");
         exit(1);    
@@ -27,32 +26,29 @@ extern void ChargerPartie()
 
     int niveau, nbOs, nbRock, nbTree;
     
-    //Lecture dans le fichier des donnees sauvegardees
+    //Lecture dans le fichier des données sauvegardées : le niveau du joueur et le nombre d'os, de cailloux et de branches en sa possession
     if( fscanf(file,"%d %d %d %d", &niveau, &nbOs, &nbRock, &nbTree) )
     {
+        //Paramétrer les données
         getPlayer()->niveau = niveau;
         setOs( nbOs );
         setRock( nbRock );
         setBranche( nbTree );
-        printf("%d %d %d %d \n", getPlayer()->niveau, nbOs, nbRock, nbTree);
-
-        
+        printf("%d %d %d %d \n", getPlayer()->niveau, nbOs, nbRock, nbTree);        
     }
     //Fermeture du fichier
     fclose(file);
 }
 
-
-
 /**
  * \fn extern void SauvegarderPartie()
  * \brief Fonction qui permet sauvegarder une partie
- * \details Creation du fichier data.txt
+ * \details Creation du fichier save_player.txt
  * \return pas de valeur de retour (void)
 */
 extern void SauvegarderPartie()
 {
-    //Ouverture ou creation du fichier data.txt
+    //Ouverture ou creation du fichier save_player.txt
     FILE * file = fopen("files_assets/save_player.txt", "w");
     
     //Gestion des erreurs de creation du fichier
@@ -61,7 +57,7 @@ extern void SauvegarderPartie()
         exit(1);    
     }
 
-    //Sauvegarder la position en x et y du joueur
+    //Sauvegarder le niveau du joueur et les compteurs des objets
     fprintf(file,"%d %d", getPlayer()->niveau, getPlayer()->nb_objet);
     
     //Fermeture du fichier
@@ -70,7 +66,7 @@ extern void SauvegarderPartie()
 
 /**
  * \fn extern void SaveCollider_Position()
- * \brief Fonction qui permet sauvegarder la position des colliders dans un fichier
+ * \brief Fonction qui permet de sauvegarder la position des colliders dans un fichier
  * \details Creation du fichier niveau1_position.txt
  * \details Utilisation d'un pointeur pour pouvoir parcourir la liste de colliders
  * \return pas de valeur de retour (void)
@@ -86,7 +82,7 @@ extern void SaveCollider_Position()
         exit(1);    
     }
 
-    Node *pt; // Pointeur utilise pour parcourir la liste de colliders 
+    Node *pt; // Pointeur utilisé pour parcourir la liste de colliders 
 
     //Ecrire la position en x et en y des colliders dans le fichier
     if( getCollider()->nodeCount  > 0 )
@@ -112,7 +108,7 @@ extern void SaveCollider_Position()
 */
 extern void ChargementCollider(const char * filename) 
 {
-    //Ouverture du fichier 
+    //Ouverture du fichier en lecture
     FILE * file = fopen(filename, "r");
     
     //Gestion des erreurs d'ouverture du fichier
@@ -120,7 +116,8 @@ extern void ChargementCollider(const char * filename)
         fprintf(stderr, "Erreur avec le fichier\n");
         exit(1);    
     }
-    Node *pt; //Pointeur utilise pour parcourir la liste de colliders 
+
+    Node *pt; //Pointeur utilisé pour parcourir la liste de colliders 
 
     //Parcours de la liste si il y a au moins un collider
     if( getCollider()->nodeCount  > 0 )
@@ -139,20 +136,20 @@ extern void ChargementCollider(const char * filename)
 
 /**
  * \fn extern void Chargement_CreationPNJ(LinkedList*lst, char * filename)
- * \brief Fonction qui permet de charger et créer toutes les entités (sauf le joueur) a partir d'un fichier
+ * \brief Fonction qui permet de charger et de créer toutes les entités (sauf le joueur) à partir d'un fichier
  * \param lst Liste des colliders
  * \param filename Nom du fichier
  * \return pas de valeur de retour (void)
 */
 extern void Chargement_CreationPNJ(LinkedList * lst, char * filename)
 {
-    //Si il y a deja des elements dans la liste => les supprimer
+    //Si il y a déjà des éléments dans la liste => les supprimer
     if( lst->nodeCount > 0 ) 
     {
         suppListe(lst);
     }
 
-    //Ouverture du fichier
+    //Ouverture du fichier en lecture
     FILE * file = fopen(filename, "r");
 
     //Gestion des erreurs d'ouverture du fichier
@@ -161,8 +158,9 @@ extern void Chargement_CreationPNJ(LinkedList * lst, char * filename)
         exit(1);    
     }
     
-    int typeCollider; // Variable qui permet de savoir le type du collider 
+    int typeCollider; // Variable qui permet de savoir le type du collider
 
+    //Tant qu'on n'a pas lu entièrement le fichier
     while( !feof(file) )
     {
         //Creation d'un rectangle en SDL pour chaque entite => Allocation dynamique
@@ -181,7 +179,7 @@ extern void Chargement_CreationPNJ(LinkedList * lst, char * filename)
 
 /**
  * \fn extern void ChargementItems(const char * filename, SDL_Texture * tex)
- * \brief Fonction qui permet de charger les items a partir d'un fichier
+ * \brief Fonction qui permet de charger les items à partir d'un fichier
  * \param filename Nom du fichier
  * \param tex Texture de l'item
  * \return pas de valeur de retour (void)
@@ -189,8 +187,7 @@ extern void Chargement_CreationPNJ(LinkedList * lst, char * filename)
 extern void ChargementItems(const char * filename, SDL_Texture * tex)
 {
 
-    //Ouverture du fichier
-
+    //Ouverture du fichier en lecture
     FILE * file = fopen(filename, "r");
     
     //Gestion des erreurs d'ouverture du fichier
@@ -204,16 +201,15 @@ extern void ChargementItems(const char * filename, SDL_Texture * tex)
  
     int typeU;
 
-    //Tant qu'on n'a pas lu entierement le fichier
+    //Tant qu'on n'a pas lu entièrement le fichier
     while( !feof(file) )
     {
+        //Creation d'un rectangle en SDL pour chaque item => Allocation dynamique
         SDL_Rect *rect = malloc( sizeof(SDL_Rect));
         rect->w = w;
         rect->h = h;    
-        //Recuperation des positions en x et y de l'item dans le fichier         
+        //Recupération des positions en x et y de l'item dans le fichier         
         if( fscanf(file, "%d %d %d",&rect->x , &rect->y, &typeU) ){
-
-           
             //Ajout de l'item avec les proprietes recuperees dans le fichier
             insertion(getItems(),  rect, typeU , false);
         }
@@ -225,13 +221,13 @@ extern void ChargementItems(const char * filename, SDL_Texture * tex)
 
 /**
  * \fn extern void ChargementEnnemis(const char * filename)
- * \brief Fonction qui permet de charger les ennemis a partir d'un fichier
+ * \brief Fonction qui permet de charger les ennemis à partir d'un fichier
  * \param filename Nom du fichier
  * \return pas de valeur de retour (void)
 */
 extern void ChargementEnnemis(const char * filename)
 {
-    //Ouverture du fichier
+    //Ouverture du fichier en lecture
     FILE * file = fopen(filename, "r");
     
     //Gestion des erreurs d'ouverture du fichier
@@ -239,11 +235,13 @@ extern void ChargementEnnemis(const char * filename)
         fprintf(stderr, "Erreur avec le fichier\n");
         exit(1);    
     }
+
     int actif; //Variable qui permet de stocker l'etat de l'ennemi = actif
 
-    //Tant qu'on n'a pas lu entierement le fichier
+    //Tant qu'on n'a pas lu entièrement le fichier
     while( !feof(file) )
     {
+        //Creation d'un rectangle en SDL pour chaque ennemi => Allocation dynamique
         SDL_Rect *rect = malloc( sizeof(SDL_Rect));
         rect->w = 55;
         rect->h = 55; 

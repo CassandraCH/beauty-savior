@@ -1,6 +1,20 @@
 var searchData=
 [
-  ['departx_453',['departX',['../structlevel.html#a505b46750c7f9ae828d45bbf08ab8d35',1,'level']]],
-  ['departy_454',['departY',['../structlevel.html#aa43b8450f7191b74989a2653f1a8b139',1,'level']]],
-  ['dt_455',['dt',['../base_game_8c.html#a778e38aa889751afffa2dea6b803e67a',1,'baseGame.c']]]
+  ['callback_2441',['callback',['../struct_s_d_l___audio_spec.html#ab354de581da426745dcf6bcbc9ae03c2',1,'SDL_AudioSpec']]],
+  ['camera_2442',['camera',['../enjeu_8c.html#a27d2b5b016fe50b9a15dd63a6228ed2a',1,'camera():&#160;enjeu.c'],['../base_game_8h.html#a27d2b5b016fe50b9a15dd63a6228ed2a',1,'camera():&#160;enjeu.c']]],
+  ['camerax_2443',['cameraX',['../structlevel.html#ab8ebe819b6cfefc95a0793d1b44f9152',1,'level']]],
+  ['cameray_2444',['cameraY',['../structlevel.html#afbcb58b5cb41b076a8c32950b7e6c335',1,'level']]],
+  ['caxis_2445',['caxis',['../union_s_d_l___event.html#af8486acab465238416da493c3cc9fc13',1,'SDL_Event']]],
+  ['cbutton_2446',['cbutton',['../union_s_d_l___event.html#a3737e24bb0b43344c5c0c42a3bd164fa',1,'SDL_Event']]],
+  ['cdevice_2447',['cdevice',['../union_s_d_l___event.html#a03c83f444a0a9d6f2e7d86244f61e663',1,'SDL_Event']]],
+  ['center_2448',['center',['../struct_s_d_l___haptic_condition.html#a28fd31ca00c3317c065d75a364a65c37',1,'SDL_HapticCondition']]],
+  ['channels_2449',['channels',['../struct_s_d_l___audio_spec.html#a2a6435e054f3ee99cbef44344bf83289',1,'SDL_AudioSpec::channels()'],['../struct_s_d_l___haptic_custom.html#a2a6435e054f3ee99cbef44344bf83289',1,'SDL_HapticCustom::channels()']]],
+  ['clicks_2450',['clicks',['../struct_s_d_l___mouse_button_event.html#a974b22c04825b730856e92942c3f5997',1,'SDL_MouseButtonEvent']]],
+  ['clip_5frect_2451',['clip_rect',['../struct_s_d_l___surface.html#ada87d50bed22f849936519c4912a5a98',1,'SDL_Surface']]],
+  ['code_2452',['code',['../struct_s_d_l___user_event.html#ad8f8a20f97a86a504de0f82933da62ab',1,'SDL_UserEvent']]],
+  ['colorscheme_2453',['colorScheme',['../struct_s_d_l___message_box_data.html#afcad43ea8520ac57b30b35bee0077618',1,'SDL_MessageBoxData']]],
+  ['common_2454',['common',['../union_s_d_l___event.html#a4f63dd7ac333bd53cd0b4a7436b8653c',1,'SDL_Event']]],
+  ['condition_2455',['condition',['../union_s_d_l___haptic_effect.html#af8fd644eaf678d5400af856cba7d235b',1,'SDL_HapticEffect']]],
+  ['constant_2456',['constant',['../union_s_d_l___haptic_effect.html#ad87e37f1a81c2ae7f4d6f4adb91ccbb3',1,'SDL_HapticEffect']]],
+  ['custom_2457',['custom',['../union_s_d_l___haptic_effect.html#a0f40180fec16fe524abd712def126ca1',1,'SDL_HapticEffect']]]
 ];

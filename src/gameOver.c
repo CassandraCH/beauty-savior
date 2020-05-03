@@ -13,7 +13,7 @@ Menu_t menu_over; /**< Structure de type menu_t */
 
 /**
  * \fn extern Menu_t * getMenu_Over()
- * \brief Fonction qui permet retourner le menu du game over
+ * \brief Fonction qui permet de retourner le menu du game over
  * \return une structure menu de type Menu_t
 */
 extern Menu_t * getMenu_Over()
@@ -28,32 +28,30 @@ extern Menu_t * getMenu_Over()
 */
 extern void Init_MenuGameOver()
 {
-
     int width = LARGEUR_FENETRE, height = HAUTEUR_FENETRE;
     printf("Chargement Menu Game Over");
     
-    //Creation de la texture pour le score
+    //Création de la texture pour le score
     SetHUD_IntToTexture(getScores(), "SCORES", getPlayer()->scores, 100, 300);
 
 
     //chargement du son
-    /* Son a modifier */
     menu_over.son = Mix_LoadWAV("sounds/menu_click.wav");
     menu_over.bgm = Mix_LoadMUS("sounds/awesomeness.wav");
 
     /* 
-     * Premiere option : demarer une nouvelle partie 
+     * Première option : demarer une nouvelle partie 
      * Actif par défaut
      */
     ChargerData_Menu(0, 0, &menu_over, "Nouvelle partie", "graphics_assets/icons_buttons/newpartie_on_xs.png", "graphics_assets/icons_buttons/newpartie_off_xs.png", 469, 366);
 
     /* 
-     * Deuxieme option : Chargement d'une partie
+     * Deuxième option : Chargement d'une partie
      */
     ChargerData_Menu(1, 1, &menu_over, "Chargement", "graphics_assets/icons_buttons/load_on_xs.png", "graphics_assets/icons_buttons/load_off_xs.png", 455, 449);
     
     /* 
-     * Troisieme option : quitter le jeu 
+     * Troisième option : quitter le jeu 
      */
     ChargerData_Menu(2, 1, &menu_over, "Quitter", "graphics_assets/icons_buttons/quitter_on_xs.png", "graphics_assets/icons_buttons/quitter_off_xs.png", 469, 491);
 
@@ -63,7 +61,7 @@ extern void Init_MenuGameOver()
     ChargerData_Menu(3, 1, &menu_over, "Son", "graphics_assets/icons_buttons/sound_on_xs.png", "graphics_assets/icons_buttons/sound_off_xs.png", 487, 627);
     
     
-    //Option selectionnee par défaut = la premiere (nouvelle partie)
+    //Option selectionnée par défaut = la première (nouvelle partie)
     menu_over.selectedOption = 0;
 
     //Chargement de la texture du menu game over
@@ -72,14 +70,14 @@ extern void Init_MenuGameOver()
 
 /**
  * \fn extern void Input_MenuGameOver(SDL_Event *event)
- * \brief Fonction qui gere les evenements du menu
- * \details Gestion des entrees clavier de l'utilisateur
- * \param event evenement
+ * \brief Fonction qui gère les évènements du menu
+ * \details Gestion des entrées clavier de l'utilisateur
+ * \param event évènement
  * \return pas de valeur de retour (void)
 */
 extern void Input_MenuGameOver(SDL_Event *event)
 {
-    // Lecture de tous les evenements
+    // Lecture de tous les évènements
     while (SDL_PollEvent(event) != 0)
     {
         //Si l'utilisateur clique sur la croix ou le bouton echap
@@ -90,30 +88,32 @@ extern void Input_MenuGameOver(SDL_Event *event)
             return;
         }
 
-        //Si une touche est appuyee
+        //Si une touche est appuyée
         if (event->type == SDL_KEYUP)
         {
             switch (event->key.keysym.sym)
             {
-                //Cas de la touche fleche du haut
+                //Cas de la touche flèche du haut
                 case SDLK_UP:
                     //Gestion du son
                     Mix_PlayChannel(-1, getMenu()->son, 0);
+                    //Navigation dans le menu
                     ToucheHaut(getMenu_Over());
                     break;
 
-                //Cas de la touche fleche du bas
+                //Cas de la touche flèche du bas
                 case SDLK_DOWN:
                     //Gestion du son
                     Mix_PlayChannel(-1, getMenu()->son, 0);
+                    //Navigation dans le menu
                     ToucheBas(getMenu_Over());
                     break;
 
-                //Cas de la touche entree
+                //Cas de la touche entrée
                 case SDLK_RETURN:
                     switch (getTouchePresse(getMenu_Over()))
                     {
-                        //Cas de la premiere option : nouvelle partie
+                        //Cas de la première option : nouvelle partie
                         case 0:
                             printf("Nouvelle partie depuis gameover");
 
@@ -121,9 +121,10 @@ extern void Input_MenuGameOver(SDL_Event *event)
                             Nettoyer_Menu(getMenu_Over(), 4);
                             Nettoyer_Menu( getMenu() , 4);
 
-                            //Changement de l'etat du joueur
+                            //Changement de l'état du joueur
                             getPlayer()->estMort = false;
                             getPlayer()->nombreVies = 3;
+                            //Chargement du hud avec 3 vies
                             UpdateImage_Option( &getInterface()->menu[3], "graphics_assets/vie_3.png" );
 
                             //Suppression des listes
@@ -136,7 +137,7 @@ extern void Input_MenuGameOver(SDL_Event *event)
                             //Initialisation du hud score
                             Init_HUD(getScores(), "0", 565, 17);
 
-                            //Changement de l'etat du jeu
+                            //Changement de l'état du jeu
                             getBaseGame()->state = IN_GAME;
 
                             //Charger le niveau
@@ -146,7 +147,7 @@ extern void Input_MenuGameOver(SDL_Event *event)
                             return;
                             break;
 
-                        //Cas de la deuxiemme option : chargement d'une partie
+                        //Cas de la deuxièmme option : chargement d'une partie
                         case 1:
                             printf("Chargement depuis gameover");
 
@@ -157,19 +158,20 @@ extern void Input_MenuGameOver(SDL_Event *event)
                             Init_MenuLoad();
                             Nettoyer_Menu(getMenu(), 4);
 
-                            //Changement de l'etat du jeu
+                            //Changement de l'état du jeu
                             getBaseGame()->state = LOADING;
 
-                            //Arret de la musique
+                            //Arrêt de la musique
                             Mix_HaltMusic();
                             break;
 
-                        //Cas de la troisieme option : quitter
+                        //Cas de la troisième option : quitter
                         case 2:
-                            //Changement de l'etat du jeu
+                            //Changement de l'état du jeu
                             getBaseGame()->estActif = false;
                             return;
                             break;
+
                         default:
                             break;
                     }//fin switch
@@ -180,6 +182,7 @@ extern void Input_MenuGameOver(SDL_Event *event)
                     //Si la musique est en pause
                     if (Mix_PausedMusic() == 1)
                     {
+                        //Rafraîchir l'affichage
                         UpdateOption(&menu_over.menu[3], 0);
                         //On enlève la pause (la musique repart où elle en était)
                         Mix_ResumeMusic();
@@ -188,11 +191,13 @@ extern void Input_MenuGameOver(SDL_Event *event)
                     //Si la musique est en train de jouer
                     else
                     {
+                        //Rafraîchir l'affichage
                         UpdateOption(&menu_over.menu[3], 1);
                         //On met en pause la musique
                         Mix_PauseMusic();
                     }
                     break;
+                    
                 default:
                     break;
             }//fin switch
@@ -202,19 +207,17 @@ extern void Input_MenuGameOver(SDL_Event *event)
 
 /**
  * \fn extern void Init_GameOver()
- * \brief Fonction qui initialise l'etat game over
- * \details
+ * \brief Fonction qui initialise l'état game over
  * \return pas de valeur de retour (void)
 */
 extern void Init_GameOver()
 {
-
-    //Changement de l'etat du joueur
+    //Changement de l'etat du joueur et remise à 0 du score
     getPlayer()->estMort = true;
     getPlayer()->scores = 0;
     
 
-    //Rechargement le niveau 1
+    //Rechargement du niveau 1
     setNiveau(1);
     setOs(0);
     setBranche(0);
@@ -233,12 +236,10 @@ extern void Init_GameOver()
 
     //Changement de l'etat du jeu = game over
     getBaseGame()->state = GAMEOVER;
+
+    //Gestion du temps
     getBaseGame()->time = 0;
     getBaseGame()->tempsActuel = 0;
     getBaseGame()->tempsPrecedent = 0;
     getBaseGame()->min = 60;
-
-
-
-
 }

@@ -1,31 +1,120 @@
+/**
+ * \file inventaire.c
+ * \author CALVADOS Cindy, CHAUMULON Cassandra, CHELLI Célia, OUSMANOVA Karina
+ * \version 1.0
+ * \date avril 2020
+ * \brief Programme qui gère l'inventaire (liste des objets collectés par le joueur) 
+ */
 #include "baseGame.h"
 
-Menu_t inventaire;
+Menu_t inventaire; /**< Structure de type menu_t */
 
-int nombreOs = 0;
-int nombreRock = 0;
-int nombreBranche = 0;
+int nombreOs = 0; /**< Compteur du nombre d'os*/
+int nombreRock = 0; /**< Compteur du nombre de cailloux*/
+int nombreBranche = 0; /**< Compteur du nombre de branches*/
 
+/**
+ * \fn extern Menu_t* getInventaire()
+ * \brief Fonction qui permet de retourner l'interface 
+ * \return un pointeur sur l'interface
+*/
 extern Menu_t* getInventaire()
 {
     return &inventaire;
 }
 
-extern int getOs(){ return nombreOs; }
-extern int getRock( ){ return nombreRock; };
-extern int getBranche(){ return nombreBranche; };
+/**
+ * \fn extern int getOs()
+ * \brief Fonction qui permet de retourner le nombre d'os
+ * \return le compteur d'os
+*/
+extern int getOs()
+{ 
+    return nombreOs; 
+}
 
-extern void setOs(int value){ nombreOs = value; }
-extern void setRock( int value){ nombreRock= value;  };
-extern void setBranche(int value){ nombreBranche= value;  };
+/**
+ * \fn extern int getRock()
+ * \brief Fonction qui permet de retourner le nombre de cailloux
+ * \return le compteur de cailloux
+*/
+extern int getRock()
+{
+    return nombreRock; 
+}
 
-extern void incrementeOS(){ ++nombreOs; }
-extern void incrementeRock( ){++nombreRock; };
-extern void incrementeBranche(){++nombreBranche; };
+/**
+ * \fn extern int getBranche()
+ * \brief Fonction qui permet de retourner le nombre de branches
+ * \return le compteur de branches
+*/
+extern int getBranche()
+{ 
+    return nombreBranche;
+}
 
-extern void decrementeOS(){ --nombreOs; }
-extern void decrementeRock( ){--nombreRock; };
-extern void decrementeBranche(){--nombreBranche; };
+/**
+ * \fn extern void setOs(int value)
+ * \param value valeur à appliquer au compteur
+ * \brief Fonction qui permet d'initialiser le compteur d'os
+ * \return pas de valeur de retour (void)
+*/
+extern void setOs(int value)
+{ 
+    nombreOs = value; 
+}
+
+/**
+ * \fn extern void setRock(int value)
+ * \param value valeur à appliquer au compteur
+ * \brief Fonction qui permet d'initialiser le compteur de cailloux
+ * \return pas de valeur de retour (void)
+*/
+extern void setRock(int value)
+{ 
+    nombreRock= value;  
+}
+
+/**
+ * \fn extern void setBranche(int value)
+ * \param value valeur à appliquer au compteur
+ * \brief Fonction qui permet d'initialiser le compteur de branches
+ * \return pas de valeur de retour (void)
+*/
+extern void setBranche(int value)
+{ 
+    nombreBranche= value;  
+}
+
+extern void incrementeOS()
+{
+    ++nombreOs; 
+}
+
+extern void incrementeRock()
+{
+    ++nombreRock; 
+}
+
+extern void incrementeBranche()
+{
+    ++nombreBranche; 
+}
+
+extern void decrementeOS()
+{ 
+    --nombreOs; 
+}
+
+extern void decrementeRock()
+{
+    --nombreRock; 
+}
+
+extern void decrementeBranche()
+{
+    --nombreBranche; 
+}
 
 
 extern void Init_Inventaire()

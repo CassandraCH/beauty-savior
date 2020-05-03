@@ -10,9 +10,9 @@
 
 /**
  * \fn extern bool UpdateBullets( typeEntite typeA, typeEntite typeB )
- * \brief Fonction qui permet mettre a jour les bullets
+ * \brief Fonction qui permet de mettre a jour les bullets
  * \details Parcours de la listes des bullets 
- * \details En fonction de si il s'agit d'un ennemi ou du joueur, le comportement des bullets est différent
+ * \details En fonction de s'il s'agit d'un ennemi ou du joueur, le comportement des bullets est différent
  * \param typeA type de la premiere entite : item, joueur, ennemi, platform , bull, feu
  * \param typeB type de la deuxieme entite : item, joueur, ennemi, platform , bull, feu
  * \return Une valeur de type booleen
@@ -21,7 +21,7 @@ extern bool UpdateBullets( typeEntite typeA, typeEntite typeB )
 {
     Node *pt; //Pointeur sur le bullet actuel
 
-    //sI il y a au moins un bullet dans la liste
+    //S'il y a au moins un bullet dans la liste
     if( getBullets()->nodeCount > 0 )
     {   
         //Parcours de liste des bullets
@@ -33,32 +33,34 @@ extern bool UpdateBullets( typeEntite typeA, typeEntite typeB )
                 //Si le bullet actuel peut etre lancer
                 if ( pt->lancer )
                 {
-                    //Si l'entite est le joueur et que le bullet actuel est de type bull => le bullet est tire a gauche ou a droite en fonction de la position du joueur
+                    //Si l'entité A est le joueur et que le bullet actuel est de type bull => le bullet est tiré a gauche ou a droite en fonction de la position du joueur
                     if ( typeA == joueur &&  ( pt->type == tree || pt->type == rock)  ) 
                     {
                         printf("Joueur\n");
 
-                        //Si le joueur est tourné on inverse le sens du tir
+                        //Si le joueur est tourné, on inverse le sens du tir
                         if( getPlayer()->estTourne )
                             pt->movingX = -20;
 
-                        //Sinon le sens de tir n'est pas inverse
+                        //Sinon le sens de tir n'est pas inversé
                         else 
                             pt->movingX =  20;
                     }
 
-                    //Si l'entite est un ennemi et que le bullet actuel est de type feu => le bullet est tire a gauche ou a droite en fonction de a position du joueur par rapport a l'ennemi
+                    //Si l'entité A est un ennemi et que le bullet actuel est de type feu => le bullet est tiré a gauche ou a droite en fonction de la position du joueur par rapport a l'ennemi
                     else if ( typeB == ennemi && pt->type == feu )
                     {  
                         printf("Ennemi\n");
 
+                        //Si le joueur est à gauche de l'ennemi, on inverse le sens du tir
                         if( getPlayerX() + getPlayer()->w  <= pt->rect->x )
                             pt->movingX = -18;
-                            
+
+                        //Sinon le sens de tir n'est pas inversé
                         else 
                             pt->movingX = 18;
                     }
-                    //Mise a jour de l'etat du lancer du bullet => ne peut plus etre lancer
+                    //Mise a jour de l'état du lancer du bullet => ne peut plus être lancer
                     pt->lancer = false;
                 }
                
@@ -68,7 +70,7 @@ extern bool UpdateBullets( typeEntite typeA, typeEntite typeB )
             else 
             {
                 SetNombreTir_Ennemis();
-                //Mise a jour de l'etat du bullet
+                //Mise a jour de l'état du bullet
                 pt->estMort = true;   
             }
 
@@ -79,7 +81,6 @@ extern bool UpdateBullets( typeEntite typeA, typeEntite typeB )
 /**
  * \fn extern void SetNombreTir_Ennemis()
  * \brief Fonction qui configurer le nombre de tir des ennemis
- * \details 
  * \return pas de valeur de retour (void)
 */
 extern void SetNombreTir_Ennemis()
@@ -89,16 +90,16 @@ extern void SetNombreTir_Ennemis()
     //Parcours de la liste des ennemis 
     for(; pt != NULL; pt = pt->suivant)
     {
-        //Si l'ennemi n'a pas ete tue
+        //Si l'ennemi n'a pas été tué
         if ( !pt->estMort )
         {
-            //Si son compteur de lancer est inferieur a 1 => le remettre a 1
+            //Si son compteur de lancer est inférieur à 1 => le remettre à 1
             if( pt->nb_lancer < 1  ) 
             {
                 pt->nb_lancer = 1;
             }
-            //Sinon, le mettre a 0
 
+            //Sinon, le mettre à 0
             else 
             {
                 pt->nb_lancer = 0;
@@ -110,7 +111,6 @@ extern void SetNombreTir_Ennemis()
 /**
  * \fn extern void CreerTir(typeEntite type, int width, int height, int startX, int startY)
  * \brief Fonction qui creer un tir
- * \details 
  * \param type type du tir
  * \param width largeur du sprite
  * \param height hauteur du sprite
@@ -148,10 +148,12 @@ extern void attaqueEnnemis()
         //Si l'ennemi n'est pas mort
         if ( !pt->estMort )
         {
+            //distance pour que le joueur soit détectable par l'ennemi
             float distance = sqrt(pow(pt->rect->x - getPlayerX(), 2) +  pow(pt->rect->y - getPlayerY(), 2)); 
+
             if( distance < (pt->rect->w*7) + getPlayer()->w )
             {
-                //Si le compteur de lancer disponible est inferieur a 1 => on reconfigure ce compteur et on cree un tir
+                //Si le compteur de lancer disponible est inférieur à 1 => on reconfigure ce compteur et on créé un tir
                 if( pt->nb_lancer < 1) 
                 {
                     SetNombreTir_Ennemis();
@@ -164,8 +166,7 @@ extern void attaqueEnnemis()
 
 /**
  * \fn extern void UpdateEnnemis()
- * \brief Fonction qui met a jour les ennemis
- * \details 
+ * \brief Fonction qui met à jour les ennemis
  * \return pas de valeur de retour (void)
 */
 extern void UpdateEnnemis()
@@ -190,8 +191,7 @@ extern void UpdateEnnemis()
 
 /**
  * \fn extern void collisionDetection()
- * \brief Fonction qui gere les collision entre le joueur et le decor, le joueur et les ennemis; et si le joueur tombe dans le vide
- * \details 
+ * \brief Fonction qui gère les collision entre le joueur et le decor, le joueur et les ennemis; et si le joueur tombe dans le vide
  * \return pas de valeur de retour (void)
 */
 extern void collisionDetection()
@@ -212,7 +212,6 @@ extern void collisionDetection()
         coté bas = y + haut
         coté haut = y 
     */
-
 
     /* 
         Verifie la collision avec les ennemis sur la gauche et la droite
@@ -236,16 +235,16 @@ extern void collisionDetection()
         {
             /*
                 Gestion de la collision pour le saut 
-                Vérifie que le joueur ce trouve bien au dessus de l'ennemi 
+                Vérifie que le joueur se trouve bien au-dessus de l'ennemi 
             */
             if (joueur_x + joueur_w > ennemi_x && joueur_x < ennemi_x + ennemi_w)
             {
                 // Vérifie si lorsque le joueur tombe, il touche le haut de l'ennemi 
                 if (joueur_y + joueur_h > ennemi_y && joueur_y < ennemi_y && getPlayer()->vy > 0)
                 {
-
-                    //Incrementation du score
+                    //Incrémentation du score
                      SetHUD_IntToTexture(getScores(), "", ++getPlayer()->scores, 565, 17 );
+
                     // Si l'ennemi n'est pas deja mort alors il le devient
                     if (!pt->estMort)
                     {
@@ -254,14 +253,17 @@ extern void collisionDetection()
                     break;
                 }
 
-                // Sinon c'est que le joueur rentre en collision sur le cote => la partie est perdu
+                // Sinon c'est que le joueur rentre en collision sur le côté => la partie est perdu
                 else
                 {
-                     if( getPlayer()->nombreVies > 0 )
+                    //Si le joueur possède encore des vies
+                    if( getPlayer()->nombreVies > 0 )
                     {
+                        //On décrémente le nombre de vie
                         getPlayer()->nombreVies--;
                         printf("Il reste %d points de vie\n", getPlayer()->nombreVies );
                     }
+                    //Sinon le joueur a perdu
                     else 
                     {
                         Init_GameOver();
@@ -273,7 +275,7 @@ extern void collisionDetection()
         }
     }//Fin du parcours de la liste des ennemis
 
-    //Verifie si le joueur tombe dans le vide et qu'il dépasse la hauteur de l'écran = > la partie est perdu
+    //Verifie si le joueur tombe dans le vide et qu'il dépasse la hauteur de l'écran => la partie est perdu
     if( getPlayer()->y > 720 ) 
     {
         Init_GameOver();
@@ -281,13 +283,11 @@ extern void collisionDetection()
 
     // Vérifie les collisions avec le décor
     collision_Decor( );
-
 }
 
 /**
  * \fn extern void collision_Decor()
- * \brief Fonction qui gere les collisions avec le decor
- * \details 
+ * \brief Fonction qui gère les collisions avec le décor
  * \return pas de valeur de retour (void)
 */
 extern void collision_Decor()
@@ -323,11 +323,10 @@ extern void collision_Decor()
             Cas du haut, bas, droit & gauche
         */
 
-        
-        //  player.x+player.w/2 > collider.x && player.x+player.w/2 < collider.x+ collider.w
+        //Si le joueur est situé dans l'alignement du collider
         if( joueur_x+joueur_w/2 > collider_x && joueur_x+joueur_w/2 < collider_x+collider_w  )
         {
-            // Le haut du joueur rentre en collision avec le bas d'un bloc..
+            // Le haut du joueur rentre en collision avec le bas du collider
             if( joueur_y < collider_y+collider_h && joueur_y > collider_y && getPlayer()->vy < 0 )
             {         
                 // correct y
@@ -339,24 +338,26 @@ extern void collision_Decor()
             }
         }
 
+
         if( joueur_x+joueur_w > collider_x && joueur_x < collider_x+collider_w  )
         {   
             // Le bas du joueur est en collision avec le haut du bloc
             if( joueur_y+joueur_h > collider_y && joueur_y < collider_y && getPlayer()->vy > 0 )
             {
+                //Si c'est la fin d'un niveau
                 if( typeCollider == checkpoint )
                 {
                     Init_Continue();
-
                 }
+
+                //Si c'est la fin du jeu = dernier niveau
                 else if ( typeCollider == gamewin )
-                {   
-
-                        
-                        Init_MenuWin();
-                        getBaseGame()->state = GAMEWIN;
+                {  
+                    Init_MenuWin();
+                    getBaseGame()->state = GAMEWIN;
                 }
 
+                //Sinon
                 else 
                 {
                     // correct y
@@ -378,17 +379,21 @@ extern void collision_Decor()
             //Le côté droit du joueur est en collision avec le coté gauche du bloc
             if(joueur_x < collider_x+collider_w && joueur_x+joueur_w > collider_x+collider_w && getPlayer()->vx < 0)
             {
+                //Si c'est la fin d'un niveau
                 if( typeCollider == checkpoint )
-                {
-                    
+                {                    
                     Init_Continue();    
-                }      
+                }
+
+                //Si c'est la fin du jeu = dernier niveau
                 else if ( typeCollider == gamewin )
                 {
                     
                         Init_MenuWin();
                         getBaseGame()->state = GAMEWIN;
-                } 
+                }
+
+                //Sinon
                 else 
                 {
                     //correct x
@@ -399,23 +404,24 @@ extern void collision_Decor()
                 }
             }
 
-            // Le côté droit du joueur est en collision avec le coté droite du bloc
+            // Le côté droit du joueur est en collision avec le coté droit du bloc
             else if( joueur_x + joueur_w > collider_x && joueur_x < collider_x && getPlayer()->x > 0)
             {
+                //Si c'est la fin d'un niveau
                 if( typeCollider == checkpoint )
-                {
-                      
-                        Init_Continue();
-
+                { 
+                    Init_Continue();
                 }
+
+                //Si c'est la fin du jeu = dernier niveau
                 else if ( typeCollider == gamewin )
                 {
-                   
-                        Init_MenuWin();
-                        getBaseGame()->state = GAMEWIN;
-                } 
-                else 
+                    Init_MenuWin();
+                    getBaseGame()->state = GAMEWIN;
+                }
 
+                //Sinon
+                else 
                 {
                     //correct x
                     getPlayer()->x = collider_x-joueur_w;
