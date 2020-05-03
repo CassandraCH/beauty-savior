@@ -24,7 +24,7 @@ extern Level* getLevel()
 
 /**
  * \fn extern void setNiveau(int niveau) 
- * \brief Fonction qui permet de mettre a jour le niveau du joueur
+ * \brief Fonction qui permet de mettre à jour le niveau du joueur
  * \details
  * \param niveau numero du niveau
  * \return pas de valeur de retour (void)
@@ -65,28 +65,31 @@ extern void ChargerNiveau()
 
       printf("Chargement niveau 1\n");
       ChargerTextureManager( &level.levelTextures[0], "graphics_assets/level1.png");
-
    }  
 
    //Chargement du niveau 2
    else if(  getPlayer()->niveau == 2 )
    {  
-         //Destruction du niveau precedent
-         DestructionNiveau();
-         //Chargement de toutes les entites (sauf joueur)
-         Chargement_CreationPNJ(getCollider(),"files_assets/niveau2.txt") ;
-         ChargementEnnemis("files_assets/ennemi_2.txt");
+      //Destruction du niveau precedent
+      DestructionNiveau();
 
-         //Chargement des textures
-         SDL_Texture * itemTex = ChargerTexture("graphics_assets/coin.png");
-         suppListe(getItems()); //Suppression de la liste d'item precedente
-         ChargementItems("files_assets/items.txt", itemTex);
+      //Chargement de toutes les entites (sauf joueur)
+      Chargement_CreationPNJ(getCollider(),"files_assets/niveau2.txt") ;
+      ChargementEnnemis("files_assets/ennemi_2.txt");
 
-         printf("Chargement niveau 2\n");
-         ChargerTextureManager( &level.levelTextures[0], "graphics_assets/level2.png");
-      
-      
+      //Chargement des textures
+      SDL_Texture * itemTex = ChargerTexture("graphics_assets/coin.png");
+
+      //Suppression de la liste d'item precedente
+      suppListe(getItems()); 
+
+      ChargementItems("files_assets/items.txt", itemTex);
+
+      printf("Chargement niveau 2\n");
+      ChargerTextureManager( &level.levelTextures[0], "graphics_assets/level2.png");
    }
+
+   //Chargement du niveau 3
    else if(  getPlayer()->niveau == 3 )
    {  
          //Destruction du niveau precedent
@@ -94,18 +97,21 @@ extern void ChargerNiveau()
 
          //Chargement de toutes les entites (sauf joueur)
          Chargement_CreationPNJ(getCollider(),"files_assets/niveau3.txt") ;
-
          ChargementEnnemis("files_assets/ennemi_3.txt");
 
          //Chargement des textures
          SDL_Texture * itemTex = ChargerTexture("graphics_assets/coin.png");
-         suppListe(getItems()); //Suppression de la liste d'item precedente
+
+         //Suppression de la liste d'item precedente
+         suppListe(getItems()); 
+
          ChargementItems("files_assets/items.txt", itemTex);
 
          printf("Chargement niveau 3\n");
-         ChargerTextureManager( &level.levelTextures[0], "graphics_assets/level3.png");
-      
+         ChargerTextureManager( &level.levelTextures[0], "graphics_assets/level3.png");  
    }
+
+   //Chargement du niveau 4
    else if(  getPlayer()->niveau == 4 )
    {  
          //Destruction du niveau precedent
@@ -118,16 +124,15 @@ extern void ChargerNiveau()
 
          //Chargement des textures
          SDL_Texture * itemTex = ChargerTexture("graphics_assets/coin.png");
-         suppListe(getItems()); //Suppression de la liste d'item precedente
+
+         //Suppression de la liste d'item precedente
+         suppListe(getItems()); 
+
          // ChargementItems("files_assets/items.txt", itemTex);
 
          printf("Chargement niveau 4\n");
          ChargerTextureManager( &level.levelTextures[0], "graphics_assets/level4.png");
-      
    }
-
-
-
    printf("Fin chargement niveau\n");
 }
 
@@ -145,7 +150,7 @@ extern void NiveauSuivant()
 /**
  * \fn extern void Debug_AfficherCollider() 
  * \brief Fonction de debug qui permet d'afficher les blocs de collision par dessus le decor
- * \details Cette fonction permet de savoir si les blocs de collisions sont bien positionnes
+ * \details Cette fonction permet de savoir si les blocs de collisions sont bien positionnés
  * \details Cette fonction permet de verifier que le joueur entre bien en collision avec les colliders
  * \return pas de valeur de retour (void)
 */
@@ -158,14 +163,15 @@ extern void Debug_AfficherCollider()
    for(Node* pt = getCollider()->tete ; pt != NULL ; pt = pt->suivant )
    {
       rect = (SDL_Rect) {  pt->rect->x- camera.x ,pt->rect->y-  camera.y ,pt->rect->w,pt->rect->h };
+
+      //Affichage des colliders
       SDL_RenderCopy(getRenderer(), texColider , NULL, &rect);
    }
 }
 
 /**
  * \fn extern void afficher_textures_niveau(int niveau)
- * \brief Fonction qui permet d'afficher les textures du niveau passe en parametre
- * \details
+ * \brief Fonction qui permet d'afficher les textures du niveau passé en paramètre
  * \param niveau numero du niveau a afficher
  * \return pas de valeur de retour (void)
 */
@@ -178,7 +184,6 @@ extern void afficher_textures_niveau(int niveau)
 /**
  * \fn extern void Affichage_Niveau()
  * \brief Fonction qui permet d'afficher un niveau
- * \details
  * \return pas de valeur de retour (void)
 */
 extern void Affichage_Niveau()
@@ -200,8 +205,7 @@ extern void Affichage_Niveau()
 
 /**
  * \fn extern void DestructionNiveau()
- * \brief Fonction qui permet de gerer la destruction des niveaux et la liberation des ressources qui ont ete utilisees
- * \details
+ * \brief Fonction qui permet de gérer la destruction des niveaux et la libération des ressources qui ont été utilisées
  * \return pas de valeur de retour (void)
 */
 extern void DestructionNiveau()
