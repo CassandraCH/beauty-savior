@@ -86,31 +86,61 @@ extern void setBranche(int value)
     nombreBranche= value;  
 }
 
+/**
+ * \fn extern void incrementeOS()
+ * \brief Fonction qui permet d'incrémenter le compteur d'os
+ * \return pas de valeur de retour (void)
+*/
 extern void incrementeOS()
 {
     ++nombreOs; 
 }
 
+/**
+ * \fn extern void incrementeRock()
+ * \brief Fonction qui permet d'incrémenter le compteur de cailloux
+ * \return pas de valeur de retour (void)
+*/
 extern void incrementeRock()
 {
     ++nombreRock; 
 }
 
+/**
+ * \fn extern void incrementeBranche()
+ * \brief Fonction qui permet d'incrémenter le compteur de branches
+ * \return pas de valeur de retour (void)
+*/
 extern void incrementeBranche()
 {
     ++nombreBranche; 
 }
 
+/**
+ * \fn extern void decrementeOS()
+ * \brief Fonction qui permet de décrémenter le compteur d'os
+ * \return pas de valeur de retour (void)
+*/
 extern void decrementeOS()
 { 
     --nombreOs; 
 }
 
+/**
+ * \fn extern void decrementeRock()
+ * \brief Fonction qui permet de décrémenter le compteur de cailloux
+ * \return pas de valeur de retour (void)
+*/
 extern void decrementeRock()
 {
     --nombreRock; 
 }
 
+/**
+ * \fn extern void decrementeBranche()
+ * \brief Fonction qui permet de décrémenter le compteur de branches
+ * \return pas de valeur de retour (void)
+*/
 extern void decrementeBranche()
 {
     --nombreBranche; 
