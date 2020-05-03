@@ -350,7 +350,7 @@ extern void collision_Decor()
                     Init_Continue();
                 }
 
-                //Si la fin du jeu = dernier niveau
+                //Si c'est la fin du jeu = dernier niveau
                 else if ( typeCollider == gamewin )
                 {  
                     Init_MenuWin();
@@ -379,17 +379,21 @@ extern void collision_Decor()
             //Le côté droit du joueur est en collision avec le coté gauche du bloc
             if(joueur_x < collider_x+collider_w && joueur_x+joueur_w > collider_x+collider_w && getPlayer()->vx < 0)
             {
+                //Si c'est la fin d'un niveau
                 if( typeCollider == checkpoint )
-                {
-                    
+                {                    
                     Init_Continue();    
-                }      
+                }
+
+                //Si c'est la fin du jeu = dernier niveau
                 else if ( typeCollider == gamewin )
                 {
                     
                         Init_MenuWin();
                         getBaseGame()->state = GAMEWIN;
-                } 
+                }
+
+                //Sinon
                 else 
                 {
                     //correct x
@@ -400,23 +404,24 @@ extern void collision_Decor()
                 }
             }
 
-            // Le côté droit du joueur est en collision avec le coté droite du bloc
+            // Le côté droit du joueur est en collision avec le coté droit du bloc
             else if( joueur_x + joueur_w > collider_x && joueur_x < collider_x && getPlayer()->x > 0)
             {
+                //Si c'est la fin d'un niveau
                 if( typeCollider == checkpoint )
-                {
-                      
-                        Init_Continue();
-
+                { 
+                    Init_Continue();
                 }
+
+                //Si c'est la fin du jeu = dernier niveau
                 else if ( typeCollider == gamewin )
                 {
-                   
-                        Init_MenuWin();
-                        getBaseGame()->state = GAMEWIN;
-                } 
-                else 
+                    Init_MenuWin();
+                    getBaseGame()->state = GAMEWIN;
+                }
 
+                //Sinon
+                else 
                 {
                     //correct x
                     getPlayer()->x = collider_x-joueur_w;
