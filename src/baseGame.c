@@ -155,7 +155,6 @@ extern void Rendu_Jeux()
     SDL_Texture * rockTex = ChargerTexture("graphics_assets/tex_rock.png");
     SDL_Texture * treeTex = ChargerTexture("graphics_assets/tex_tree.png");
     SDL_Texture * osTex = ChargerTexture("graphics_assets/tex_os.png");
-
     
     afficher_textures_niveau(0);
     AfficherInterface();

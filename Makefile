@@ -1,6 +1,7 @@
-CC=gcc
-CFLAGS= -Iincludes/ -Wfatal-errors -O 
-LDFLAGS=  -lmingw32 -lSDL2main -lSDL2_image -lSDL2_ttf -lSDL2_mixer -lSDL2 
+
+include Makefile.compilation
+
+
 EXEC= game.exe
 SRC=$(wildcard src/*.c)
 OBJ=$(SRC:.c=.o)
@@ -20,16 +21,10 @@ clean:
 	del src\*.o 
 
 mrproper: clean
-	del -f $(EXEC)
+	del $(EXEC)
 
 run:
 	$(EXEC) 
 
 
 
-
-#-lSDL2main \
-#	-lSDL2_image \
-#	-lSDL2_ttf \
-#~ 	-lSDL2_mixer \
-#~ 	-lSDL2 
