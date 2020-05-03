@@ -14,12 +14,12 @@ ARCH=win
 ifeq ($(ARCH),win)
 	 CFLAGS= -I includes -Wfatal-errors -O 
      LDFLAGS= -lmingw32 -lSDL2main -lSDL2_image -lSDL2_ttf -lSDL2_mixer -lSDL2 
-	 EXEC= win_prog
+	 EXEC= bin/win_prog
 endif
 
 ifeq ($(ARCH),linux)
 	CFLAGS= -I includes -Wfatal-errors
 	LDFLAGS= -lm -lSDL2main -lSDL2_image -lSDL2_ttf -lSDL2_mixer -lSDL2 
-	EXEC= linux_prog
+	EXEC= bin\linux_prog
 endif
 

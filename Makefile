@@ -16,7 +16,7 @@ $(EXEC): $(OBJ)
 
 
 run_linux:
-	./$(EXEC) 
+	./bin/$(EXEC) 
 
 
 clean_linux:
@@ -24,7 +24,7 @@ clean_linux:
 
 
 run_win:
-	$(EXEC) 
+	bin\$(EXEC) 
 
 
 clean_win: 
