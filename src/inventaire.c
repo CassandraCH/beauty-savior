@@ -146,7 +146,11 @@ extern void decrementeBranche()
     --nombreBranche; 
 }
 
-
+/**
+ * \fn extern void Init_Inventaire()
+ * \brief Fonction qui initialise l'inventaire
+ * \return pas de valeur de retour (void)
+*/
 extern void Init_Inventaire()
 {  
     int width = LARGEUR_FENETRE, height = HAUTEUR_FENETRE;
@@ -156,29 +160,21 @@ extern void Init_Inventaire()
     SetHUD_IntToTexture(getItem(1), "", nombreRock , 720, 347);
     SetHUD_IntToTexture(getItem(2), "", nombreBranche ,835, 347);
 
-    /* 
-     * Premiere option : Reprendre la partie
-     * Actif par défaut
-     */ 
-
+    //Première option : Sélectionner les os
     ChargerData_Menu(0,0, &inventaire ,"OS"
                 ,"graphics_assets/inventaire/os_on.png"
                 ,"graphics_assets/inventaire/os_off.png"
                 ,555
                 ,300 );
 
-    /* 
-     * Deuxieme option : Retour sur le menu principal
-     */
+    //Deuxième option : Sélectionner les cailloux
     ChargerData_Menu(1,1, &inventaire ,"ROCK"
                 ,"graphics_assets/inventaire/rock_on.png"
                 ,"graphics_assets/inventaire/rock_off.png"
                 ,675
                 ,310 );
-    
-    /* 
-     * Deuxieme option : Retour sur le menu principal
-     */
+
+    //Troisième option : Sélectionner les branches
     ChargerData_Menu(2,1, &inventaire ,"TREE"
                 ,"graphics_assets/inventaire/tree_on.png"
                 ,"graphics_assets/inventaire/tree_off.png"
@@ -186,22 +182,29 @@ extern void Init_Inventaire()
                 ,300 );
 
 
-    //Option selectionnee = Reprendre partie
+    //Option selectionnee = Sélectionner les os
     inventaire.selectedOption = 0;
 
-    //Chargement de la texture du menu de pause
+    //Chargement de la texture de l'inventaire
     inventaire.bg = ChargerTexture("graphics_assets/inventaire/bg_inventaire.png");
 }
 
-
+/**
+ * \fn extern void Input_Inventaire(SDL_Event *event)
+ * \brief Fonction qui gère les évènements de l'inventaire
+ * \details Gestion des entrées clavier de l'utilisateur
+ * \param event évènement
+ * \return pas de valeur de retour (void)
+*/
 extern void Input_Inventaire(SDL_Event *event)
 {
     // Lecture de tous les evenements
     while (SDL_PollEvent(event) != 0)
     {
+        //Cas où l'utilsateur appuie sur la croix ou sur la touche echap
         if (event->type == SDL_QUIT || event->key.keysym.sym == SDLK_ESCAPE)
         {
-            //changer l'etat du jeu
+            //changer l'état du jeu
             getBaseGame()->estActif = false;
             return;
         }
@@ -211,59 +214,70 @@ extern void Input_Inventaire(SDL_Event *event)
         {
             switch (event->key.keysym.sym)
             {
-                //Cas touche fleche de gauche
+                //Cas touche flèche de gauche
                 case SDLK_LEFT:
                     Gauche(getInventaire(), 3);
                     break;
 
-                //Cas touche fleche de droite
+                //Cas touche flèche de droite
                 case SDLK_RIGHT:
                     Droite(getInventaire(), 3);
                     break;
 
-                //Cas de la touche entree
+                //Cas de la touche entrée
                 case SDLK_RETURN:
                     switch (getTouchePresse(getInventaire()))
                     {
-                          //Cas 1 : on séléctionne l'os comme objet
+                        //Cas 1 : on sélectionne l'os comme objet
                         case 0:
-                            
+                            //Si le joueur a récolté au moins 1 vie
                             if( getOs() > 0 )
                             {
-                                  getPlayer()->nombreVies++;
-                                  decrementeOS();
-                                 
-                                  switch( getPlayer()->nombreVies )
+                                //Ajouter un point de vie
+                                getPlayer()->nombreVies++;
+                                
+                                //Mise à jour du compteur d'os
+                                decrementeOS();
+                                
+                                //Gestion de l'affichage => mise à jour
+                                switch( getPlayer()->nombreVies )
                                 {
                                     case 1: UpdateImage_Option( &getInterface()->menu[3], "graphics_assets/vie_1.png" ); break;
                                     case 2: UpdateImage_Option( &getInterface()->menu[3], "graphics_assets/vie_2.png" ); break;
                                     case 3: UpdateImage_Option( &getInterface()->menu[3], "graphics_assets/vie_3.png" ); break;
                                 }
-
-                                 printf("Il reste %d points de vie\n", getPlayer()->nombreVies );
-                                  
+                                printf("Il reste %d points de vie\n", getPlayer()->nombreVies );
                             }
+                            //changer l'état du jeu
                             getBaseGame()->state = IN_GAME;                    
                             break;
-                        //Cas 2 : on séléctionne le rocher comme objet
+
+                        //Cas 2 : on sélectionne le rocher comme objet
                         case 1:
-                           if( getRock() > 0 )
+                            //Si le joueur a récolté au moins 1 caillou
+                            if (getRock() > 0)
                             {
-                                  getPlayer()->osActif = false;  
-                                  getPlayer()->rockActif = true;  
-                                  getPlayer()->treeActif = false;   
-                                  UpdateImage_Option( &getInterface()->menu[2], "graphics_assets/items2.png" );
+                                getPlayer()->osActif = false;  
+                                getPlayer()->rockActif = true;  
+                                getPlayer()->treeActif = false;
+
+                                //Gestion de l'affichage => mise à jour
+                                UpdateImage_Option( &getInterface()->menu[2], "graphics_assets/items2.png" );
                             }
                             getBaseGame()->state = IN_GAME;        
                             break;
-                        //Cas 3 : on séléctionne la branche comme objet    
+
+                        //Cas 3 : on sélectionne la branche comme objet    
                         case 2:
+                            //Si le joueur a récolté au moins 1 branche
                             if( getBranche() > 0 )
                             {
-                                  getPlayer()->osActif = false;  
-                                  getPlayer()->rockActif = false;  
-                                  getPlayer()->treeActif = true;   
-                                  UpdateImage_Option( &getInterface()->menu[2], "graphics_assets/items1.png" );
+                                getPlayer()->osActif = false;  
+                                getPlayer()->rockActif = false;  
+                                getPlayer()->treeActif = true;
+
+                                //Gestion de l'affichage => mise à jour
+                                UpdateImage_Option( &getInterface()->menu[2], "graphics_assets/items1.png" );
                             }
                             getBaseGame()->state = IN_GAME;        
                             break;
