@@ -136,7 +136,10 @@ extern SDL_Texture *ChargerTexture( char * filepath )
  */
 extern void LibererRessources( Texture_Manager *tex )
 {
-   SDL_DestroyTexture(tex->texture);
-   tex->texture = NULL;
-
+    if( tex->texture  != NULL )
+    {
+           SDL_DestroyTexture(tex->texture);
+           tex->texture = NULL;
+    }    
+    
 }

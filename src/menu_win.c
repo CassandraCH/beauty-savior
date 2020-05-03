@@ -29,13 +29,14 @@ extern Menu_t * getMenu_Win()
 extern void Init_MenuWin()
 {
      int width = LARGEUR_FENETRE, height = HAUTEUR_FENETRE;
-    printf("Chargement Menu Win");
+    printf("Chargement Menu Win\n");
 
 
     //Initialisation du hud score
     SetHUD_IntToTexture( getNombreVie(), "" , getPlayer()->nombreVies , 550 , 392) ;
     SetHUD_IntToTexture( getScores() ,"",  getPlayer()->scores , 680 , 392 );
-
+    
+    menu_win.nom_menu = "Menu Victoire";
 
     /* 
      * Premiere option : Reprendre la partie
@@ -64,6 +65,9 @@ extern void Init_MenuWin()
 
     //Chargement de la texture du menu de pause
     menu_win.bg = ChargerTexture("graphics_assets/game_win.png");
+
+    printf("Fin Chargement Menu Win\n");
+
 }
 
 /**

@@ -11,6 +11,12 @@
 
 Base_Game game; /**< Structure qui gère l'état du jeu*/
 
+SDL_Texture * texture;
+SDL_Texture * itemTex;
+SDL_Texture * rockTex;
+SDL_Texture * treeTex;
+SDL_Texture * osTex;
+
 
 int last_frame_time = 0; /**< Temps écoulé depuis la dernière image*/
 float dt = 0.0f; /**< Delta-time = temps écoulé entre l'affichage de chaque image*/
@@ -24,6 +30,8 @@ Base_Game* getBaseGame()
 {
   return &game;
 }
+
+
 
 /**
  * \fn extern void Update(float dt)
@@ -138,7 +146,7 @@ extern void Rendu_Jeux()
   else if ( getBaseGame()->state == GAMEWIN )
   {
     Dessiner_Menu( getMenu_Win() ,2, 413, 74,433, 478  );
-   AfficherHUD(getNombreVie());
+    AfficherHUD(getNombreVie());
     AfficherHUD( getScores() );
 
   }
@@ -146,16 +154,8 @@ extern void Rendu_Jeux()
   //Cas ou on est en train de jouer
   else if ( getBaseGame()->state == IN_GAME )
   { 
-    
-    
-    
-    SDL_Texture * texture = ChargerTexture("graphics_assets/enemi.png");
-
-    SDL_Texture * itemTex = ChargerTexture("graphics_assets/coin.png");
-    SDL_Texture * rockTex = ChargerTexture("graphics_assets/tex_rock.png");
-    SDL_Texture * treeTex = ChargerTexture("graphics_assets/tex_tree.png");
-    SDL_Texture * osTex = ChargerTexture("graphics_assets/tex_os.png");
-    
+  
+  
     afficher_textures_niveau(0);
     AfficherInterface();
     //Gestion des affchages des listes, du joueur et du score
@@ -203,6 +203,25 @@ extern void Update_Listes()
   supprimeCible(getEnnemis(), true);
 }
 
+
+extern void Init_Textures()
+{
+    texture = ChargerTexture("graphics_assets/enemi.png");
+    itemTex = ChargerTexture("graphics_assets/coin.png");
+    rockTex = ChargerTexture("graphics_assets/tex_rock.png");
+    treeTex = ChargerTexture("graphics_assets/tex_tree.png");
+    osTex = ChargerTexture("graphics_assets/tex_os.png");   
+}
+
+
+extern void Nettoyers_Textures()
+{
+  SDL_DestroyTexture( texture );
+  SDL_DestroyTexture( itemTex );
+  SDL_DestroyTexture( rockTex );
+  SDL_DestroyTexture( treeTex );
+  SDL_DestroyTexture( osTex );
+}
 
 /**
  * \fn extern delay(unsigned int frameLimit)

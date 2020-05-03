@@ -48,6 +48,7 @@ struct menu
     TTF_Font * police;/**< la police utilise pour le menu*/
     SDL_Texture * bg;/**< Texture en arrière-plan */
     Mix_Music * bgm;/**< Musique du jeux en arriere plan*/
+    char * nom_menu;
 
 };
 

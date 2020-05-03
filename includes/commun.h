@@ -12,7 +12,7 @@
 #define _COMMUN_H /**< \def _COMMUN_H*/
 
 /**< les entites */
-#include <math.h>
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
@@ -20,6 +20,7 @@
 #include <SDL2/SDL_image.h>
 #include <SDL2/SDL_ttf.h>
 #include <time.h>
+#include <math.h>
 #include <SDL2/SDL_mixer.h>
 
 

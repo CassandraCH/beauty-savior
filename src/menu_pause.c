@@ -36,6 +36,8 @@ extern void Init_MenuPause()
      * Actif par défaut
      */ 
 
+    menu_pause.nom_menu = "Menu Pause";
+
     ChargerData_Menu(0,0,&menu_pause , "Reprendre partie"
                 ,"graphics_assets/icons_buttons/back_on_xs.png"
                 ,"graphics_assets/icons_buttons/back_off_xs.png"

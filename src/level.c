@@ -121,7 +121,7 @@ extern void ChargerNiveau()
          suppListe(getItems()); //Suppression de la liste d'item precedente
          // ChargementItems("files_assets/items.txt", itemTex);
 
-         printf("Chargement niveau 3\n");
+         printf("Chargement niveau 4\n");
          ChargerTextureManager( &level.levelTextures[0], "graphics_assets/level4.png");
       
    }

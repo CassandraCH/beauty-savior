@@ -39,6 +39,8 @@ extern void Init_MenuLoad()
     //Creation de la texture pour le numero du niveau
     SetHUD_IntToTexture(getNiveau(), "NIVEAU", getPlayer()->niveau , 490, 374 );
 
+    menu_load.nom_menu = "Menu Chargement";
+
     /* 
      * Premiere option : Retour au menu principal
      * Actif par défaut

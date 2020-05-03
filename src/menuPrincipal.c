@@ -9,7 +9,7 @@
 
 #include "baseGame.h"
 
-Menu_t menu; /**< Structure de type menu_t */
+Menu_t _menu; /**< Structure de type menu_t */
 
 /**
  * \fn extern Menu_t* getMenu()
@@ -18,7 +18,7 @@ Menu_t menu; /**< Structure de type menu_t */
 */
 extern Menu_t* getMenu()
 {
-    return &menu;
+    return &_menu;
 }
 
 /**
@@ -40,17 +40,19 @@ extern int getTouchePresse(Menu_t *menu)
 extern void Init_MenuPrincipal()
 {       
     int width = LARGEUR_FENETRE, height = HAUTEUR_FENETRE;
-    printf("Chargement Menu principal");
+    printf("Chargement Menu principal\n");
     
     //chargement des sons
-    menu.son = Mix_LoadWAV("sounds/menu_click.wav");
-    menu.bgm = Mix_LoadMUS("sounds/awesomeness.wav");
+    _menu.son = Mix_LoadWAV("sounds/menu_click.wav");
+    _menu.bgm = Mix_LoadMUS("sounds/awesomeness.wav");
+
+    _menu.nom_menu = "Menu Principal";
 
     /* 
      * Premiere option : Demarer une nouvelle partie 
      * Actif par défaut
      */ 
-    ChargerData_Menu(0,0,&menu , "Jouer"
+    ChargerData_Menu(0,0,&_menu , "Jouer"
                 ,"graphics_assets/icons_buttons/jouer_on_xs.png"
                 ,"graphics_assets/icons_buttons/jouer_off_xs.png"
                 ,469
@@ -59,7 +61,7 @@ extern void Init_MenuPrincipal()
     /* 
      * Deuxieme option : Chargement d'une partie
      */
-    ChargerData_Menu(1,1,&menu , "Chargement"
+    ChargerData_Menu(1,1,&_menu , "Chargement"
             ,"graphics_assets/icons_buttons/load_on_xs.png"
             ,"graphics_assets/icons_buttons/load_off_xs.png"
             ,455
@@ -69,7 +71,7 @@ extern void Init_MenuPrincipal()
     /* 
      * Troisieme option : Quitter le jeu 
      */
-    ChargerData_Menu(2,1,&menu , "Quitter"
+    ChargerData_Menu(2,1,&_menu , "Quitter"
             ,"graphics_assets/icons_buttons/quitter_on_xs.png"
             ,"graphics_assets/icons_buttons/quitter_off_xs.png"
             ,469
@@ -78,7 +80,7 @@ extern void Init_MenuPrincipal()
     /* 
      * Quatrième option : Couper/Activer Son
      */
-    ChargerData_Menu(3,1,&menu , "ActiverSon"
+    ChargerData_Menu(3,1,&_menu , "ActiverSon"
             ,"graphics_assets/icons_buttons/sound_on_xs.png"
             ,"graphics_assets/icons_buttons/sound_off_xs.png"
             ,487
@@ -86,10 +88,12 @@ extern void Init_MenuPrincipal()
 
 
     //Option selectionnee = la premiere (nouvelle partie)
-    menu.selectedOption = 0;
+    _menu.selectedOption = 0;
 
     //Chargement de la texture du menu principal
-     menu.bg = ChargerTexture("graphics_assets/menu_bg_xs.png");
+     _menu.bg = ChargerTexture("graphics_assets/menu_bg_xs.png");
+
+     printf("Fin Chargement Menu principal\n");
 }
 
 /**
@@ -383,7 +387,7 @@ extern void Input_MenuPrincipal(SDL_Event *event)
                     //Si la musique est en pause
                     if( Mix_PausedMusic() == 1 )
                     {
-                        UpdateOption(&menu.menu[3], 0);
+                        UpdateOption(&_menu.menu[3], 0);
 
                         //On enlève la pause (la musique repart où elle en était)
                         Mix_ResumeMusic();
@@ -392,7 +396,7 @@ extern void Input_MenuPrincipal(SDL_Event *event)
                     //Si la musique est en train de jouer
                     else
                     {
-                        UpdateOption(&menu.menu[3], 1);
+                        UpdateOption(&_menu.menu[3], 1);
 
                         //On met en pause la musique
                         Mix_PauseMusic();
@@ -442,19 +446,23 @@ extern void ChargerData_Menu(int numero, int num_image, Menu_t * menu,  char * n
 */
 extern void Nettoyer_Menu(Menu_t * menu, int nombreOptions)
 {
-    printf("Suppression Menu principal\n");
+    printf("Suppression Menu %s\n", menu->nom_menu );
 
-    //Parcours de toute les options
-    for(int i = 0; i < nombreOptions; i++)
+    if( menu != NULL )
     {
-        //Liberation de la memoire utilisee pour la texture de l'option
-        if( menu->menu[i].texture != NULL ) 
+         //Parcours de toute les options
+        for(int i = 0; i < nombreOptions; i++)
         {
             //Liberation de la memoire utilisee pour la texture de l'option
-            free(menu->menu[i].texture);
+            if( menu->menu[i].texture != NULL ) 
+            {
+                //Liberation de la memoire utilisee pour la texture de l'option
+                SDL_DestroyTexture(menu->menu[i].texture);
+            }
         }
+        printf("Fin Suppression Menu %s \n", menu->nom_menu);
+
     }
-    printf("Fin Suppression Menu\n");
-   return;
+      return;
 
 }

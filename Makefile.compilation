@@ -9,13 +9,13 @@ CC=gcc
 # Valeurs possibles : yes , no  
 DEBUG=no
 # Valeurs possibles : apple , linux 
-ARCH=apple
+ARCH=linux
 
 ifeq ($(DEBUG),yes)
 	 CFLAGS=-Wall -g -D_DEBUG_
 else
 	 CFLAGS= -Iincludes/ -Wfatal-errors -O 
-     LDFLAGS=  -lmingw32 -lSDL2main -lSDL2_image -lSDL2_ttf -lSDL2_mixer -lSDL2 
+     LDFLAGS= -lSDL2main -lSDL2_image -lSDL2_ttf -lSDL2_mixer -lSDL2 
 endif
 
 
@@ -25,7 +25,7 @@ ifeq ($(ARCH),apple)
 	      CFLAGS=-Wall -g -D_DEBUG_ -D_APPLE_
 	else
 	      CFLAGS= -Iincludes/ -Wfatal-errors -O 
-          LDFLAGS=  -lmingw32 -lSDL2main -lSDL2_image -lSDL2_ttf -lSDL2_mixer -lSDL2 
+          LDFLAGS=  - -lSDL2main -lSDL2_image -lSDL2_ttf -lSDL2_mixer -lSDL2 
 	endif
 endif
 
@@ -35,7 +35,7 @@ ifeq ($(ARCH),linux)
 	ifeq ($(DEBUG),yes)
 	      CFLAGS=-Wall -g -D_DEBUG_ -D_LINUX_
 	else
-	      CFLAGS= -Iincludes/ -Wfatal-errors -O 
-          LDFLAGS=  -lmingw32 -lSDL2main -lSDL2_image -lSDL2_ttf -lSDL2_mixer -lSDL2 
+	      CFLAGS= -Iincludes/ -Wfatal-errors
+          LDFLAGS= -lm -lSDL2main -lSDL2_image -lSDL2_ttf -lSDL2_mixer -lSDL2 
 	endif
 endif

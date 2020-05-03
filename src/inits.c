@@ -129,6 +129,8 @@ void Init(const char *title)
     getBaseGame()->tempsActuel = 0;
     getBaseGame()->tempsPrecedent = 0;
     getBaseGame()->min = 60;
+
+    Init_Textures();
   
 
 
@@ -144,19 +146,19 @@ void Init(const char *title)
 void LibererRessources_Jeux(void)
 {
 
-    //Destruction de la fenetre, du rendu et du niveau 
-    SDL_DestroyWindow(fenetre) ;
-    SDL_DestroyRenderer (rendu);
-    DestructionNiveau();
-    rendu = NULL;
-    fenetre = NULL;
-    
+   
+    //Suppression textures
+    DestructionNiveau(); 
+    Nettoyers_Textures();
+
     //Suppression des audios et des polices qui ont ete charges
     Mix_FreeChunk(getMenu()->son);
     Mix_FreeMusic( getMenu()->bgm  );
+    
     TTF_CloseFont(getMenu()->police);
     TTF_CloseFont(getTime()->police);
     TTF_CloseFont(getScores()->police);
+    TTF_CloseFont( getMenu_Win()->police );
     
     //Suppression des listes
     suppListe(&bullet);
@@ -167,6 +169,16 @@ void LibererRessources_Jeux(void)
     Nettoyer_Menu(getMenuCon(), 1);
     Nettoyer_Menu(getMenu(), 4 );
     Nettoyer_Menu(getMenuPause(), 2);
+    Nettoyer_Menu( getMenu_Win(), 2);
+
+
+    //Destruction de la fenetre, du rendu et du niveau 
+    SDL_DestroyWindow(fenetre) ;
+    SDL_DestroyRenderer (rendu);
+    
+    rendu = NULL;
+    fenetre = NULL;
+        
 
     TTF_Quit(); //Quitter TTF
     SDL_Quit(); //Quitter SDL

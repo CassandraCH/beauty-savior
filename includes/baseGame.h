@@ -87,7 +87,8 @@ extern int getBranche();/**< fonction getBranche*/
 extern void ProcessInput(SDL_Event* event);/**< fonction ProcessInput*/
 extern void Input_InGame(SDL_Event *event);/**< fonction Input_InGame*/
 extern void delay(unsigned int frameLimit);
-
+extern void Init_Textures();
+extern void Nettoyers_Textures();
 
 /*######## LISTES ######## */
 extern LinkedList listEnnemis;/**< la listes des ennemis*/

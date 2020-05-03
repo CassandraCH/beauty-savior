@@ -34,6 +34,7 @@ extern void Init_MenuContinue()
    
     SetHUD_IntToTexture(getNiveau(), "NIVEAU", getPlayer()->niveau , 510, 374);
 
+    menu_continue.nom_menu = "Menu Continue";
     /* 
      * Premiere option : Reprendre la partie
      * Actif par défaut

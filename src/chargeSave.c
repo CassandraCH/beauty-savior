@@ -202,7 +202,7 @@ extern void ChargementItems(const char * filename, SDL_Texture * tex)
     int w, h; //Largeur et hauteur de l'item
     SDL_QueryTexture(tex, NULL,NULL, &w, &h );
  
-    typeEntite typeU;
+    int typeU;
 
     //Tant qu'on n'a pas lu entierement le fichier
     while( !feof(file) )

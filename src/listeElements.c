@@ -186,7 +186,7 @@ extern void insertion(LinkedList * list, SDL_Rect *rect, typeEntite items_t, boo
 extern void suppListe(LinkedList * lst)
 {
     //Si la liste n'est pas vide
-    if( lst->nodeCount > 0 ) 
+    if( lst->nodeCount > 0 && lst->tete != NULL) 
     {
         Node * temp; //element tampon
         Node * current = lst->tete; //element courant
@@ -199,8 +199,9 @@ extern void suppListe(LinkedList * lst)
             free(temp);
             lst->nodeCount--;
         }
+        printf("TOUS LES NŒUDS DE LA LISTE ONT ETAIENT DETRUIT\n");
     }
-    printf("TOUS LES NŒUDS DE LA LISTE ONT ETAIENT DETRUIT\n");
+    
 }
 
 /**

@@ -14,6 +14,7 @@
 #include "listeElements.h"
 
 
+
 extern bool UpdateBullets( typeEntite typeA, typeEntite typeB );/**< booleen pour les UpdateBullets*/
 extern void attaqueEnnemis();/**< fonction attaque Ennemis*/
 extern void CreerTir( typeEntite type,int width, int height, int startX, int startY );/**< fonction tir avec parametres le type,selon la largueur, la taille et selon les vecteurs x et y */
