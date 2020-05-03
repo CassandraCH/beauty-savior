@@ -158,8 +158,9 @@ extern void Chargement_CreationPNJ(LinkedList * lst, char * filename)
         exit(1);    
     }
     
-    int typeCollider; // Variable qui permet de savoir le type du collider 
+    int typeCollider; // Variable qui permet de savoir le type du collider
 
+    //Tant qu'on n'a pas lu entièrement le fichier
     while( !feof(file) )
     {
         //Creation d'un rectangle en SDL pour chaque entite => Allocation dynamique
@@ -178,7 +179,7 @@ extern void Chargement_CreationPNJ(LinkedList * lst, char * filename)
 
 /**
  * \fn extern void ChargementItems(const char * filename, SDL_Texture * tex)
- * \brief Fonction qui permet de charger les items a partir d'un fichier
+ * \brief Fonction qui permet de charger les items à partir d'un fichier
  * \param filename Nom du fichier
  * \param tex Texture de l'item
  * \return pas de valeur de retour (void)
@@ -186,8 +187,7 @@ extern void Chargement_CreationPNJ(LinkedList * lst, char * filename)
 extern void ChargementItems(const char * filename, SDL_Texture * tex)
 {
 
-    //Ouverture du fichier
-
+    //Ouverture du fichier en lecture
     FILE * file = fopen(filename, "r");
     
     //Gestion des erreurs d'ouverture du fichier
@@ -201,16 +201,15 @@ extern void ChargementItems(const char * filename, SDL_Texture * tex)
  
     int typeU;
 
-    //Tant qu'on n'a pas lu entierement le fichier
+    //Tant qu'on n'a pas lu entièrement le fichier
     while( !feof(file) )
     {
+        //Creation d'un rectangle en SDL pour chaque item => Allocation dynamique
         SDL_Rect *rect = malloc( sizeof(SDL_Rect));
         rect->w = w;
         rect->h = h;    
-        //Recuperation des positions en x et y de l'item dans le fichier         
+        //Recupération des positions en x et y de l'item dans le fichier         
         if( fscanf(file, "%d %d %d",&rect->x , &rect->y, &typeU) ){
-
-           
             //Ajout de l'item avec les proprietes recuperees dans le fichier
             insertion(getItems(),  rect, typeU , false);
         }
@@ -222,13 +221,13 @@ extern void ChargementItems(const char * filename, SDL_Texture * tex)
 
 /**
  * \fn extern void ChargementEnnemis(const char * filename)
- * \brief Fonction qui permet de charger les ennemis a partir d'un fichier
+ * \brief Fonction qui permet de charger les ennemis à partir d'un fichier
  * \param filename Nom du fichier
  * \return pas de valeur de retour (void)
 */
 extern void ChargementEnnemis(const char * filename)
 {
-    //Ouverture du fichier
+    //Ouverture du fichier en lecture
     FILE * file = fopen(filename, "r");
     
     //Gestion des erreurs d'ouverture du fichier
@@ -236,11 +235,13 @@ extern void ChargementEnnemis(const char * filename)
         fprintf(stderr, "Erreur avec le fichier\n");
         exit(1);    
     }
+
     int actif; //Variable qui permet de stocker l'etat de l'ennemi = actif
 
-    //Tant qu'on n'a pas lu entierement le fichier
+    //Tant qu'on n'a pas lu entièrement le fichier
     while( !feof(file) )
     {
+        //Creation d'un rectangle en SDL pour chaque ennemi => Allocation dynamique
         SDL_Rect *rect = malloc( sizeof(SDL_Rect));
         rect->w = 55;
         rect->h = 55; 
