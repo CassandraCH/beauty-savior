@@ -188,7 +188,7 @@ extern void Rendu_Jeux()
 
 /**
  * \fn extern void Update_Listes()
- * \brief Fonction qui met a jour les listes de bullets et ennemis
+ * \brief Fonction qui met à jour les listes des bullets et des ennemis
  * \details Suppression des listes si nécessaire
  * \return pas de valeur de retour (void)
 */
@@ -198,17 +198,25 @@ extern void Update_Listes()
   supprimeCible(getEnnemis(), true);
 }
 
-
+/**
+ * \fn extern void Init_Textures()
+ * \brief Fonction qui charge les textures des ennemis, des pièces, des cailloux, des branches et des os
+ * \return pas de valeur de retour (void)
+*/
 extern void Init_Textures()
 {
-    texture = ChargerTexture("graphics_assets/enemi.png");
-    itemTex = ChargerTexture("graphics_assets/coin.png");
-    rockTex = ChargerTexture("graphics_assets/tex_rock.png");
-    treeTex = ChargerTexture("graphics_assets/tex_tree.png");
-    osTex = ChargerTexture("graphics_assets/tex_os.png");   
+  texture = ChargerTexture("graphics_assets/enemi.png");
+  itemTex = ChargerTexture("graphics_assets/coin.png");
+  rockTex = ChargerTexture("graphics_assets/tex_rock.png");
+  treeTex = ChargerTexture("graphics_assets/tex_tree.png");
+  osTex = ChargerTexture("graphics_assets/tex_os.png");   
 }
 
-
+/**
+ * \fn extern void Init_Textures()
+ * \brief Fonction qui détruit les textures des ennemis, des pièces, des cailloux, des branches et des os
+ * \return pas de valeur de retour (void)
+*/
 extern void Nettoyers_Textures()
 {
   SDL_DestroyTexture( texture );
