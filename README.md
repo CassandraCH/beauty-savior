@@ -32,3 +32,16 @@ L'équipe fut composée de :
 - Pour lancer une attaque, appuyez sur la touche `espace`.
 - La sauvegarde se fait automatiquement à la fin d'un niveau.
 - Pour quitter le jeu, appuyez sur `esc` ou cliquer sur la `croix`.
+
+## Sous quelle plateforme est disponible le jeu ? 
+
+Actuellement le jeu est disponible sous Windows et Linux.
+
+Deux exécutables sont fournis:
+- win_prog  => Environnement Windows.
+- linux_prog  => Environnement Linux.
+
+/!\ __NE PAS ESSAYEZ DE RECOMPILER LES SOURCES__ 
+Les sources SDL2 étant liées statiquement au programme, une recompilation causerait une erreur.
+Si vous souhaitez compiler les sources, assurez-vous d'avoir SDL2 , SDL_Image, SDL_Mixer, SDL_TTF installer sur votre environnement de travail.
+Veillez également à vérifier le makefile et à modifier au besoin les chemins vers les librairies SDL2.
