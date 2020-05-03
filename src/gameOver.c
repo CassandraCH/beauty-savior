@@ -207,19 +207,17 @@ extern void Input_MenuGameOver(SDL_Event *event)
 
 /**
  * \fn extern void Init_GameOver()
- * \brief Fonction qui initialise l'etat game over
- * \details
+ * \brief Fonction qui initialise l'état game over
  * \return pas de valeur de retour (void)
 */
 extern void Init_GameOver()
 {
-
-    //Changement de l'etat du joueur
+    //Changement de l'etat du joueur et remise à 0 du score
     getPlayer()->estMort = true;
     getPlayer()->scores = 0;
     
 
-    //Rechargement le niveau 1
+    //Rechargement du niveau 1
     setNiveau(1);
     setOs(0);
     setBranche(0);
