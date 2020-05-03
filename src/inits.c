@@ -151,10 +151,12 @@ void LibererRessources_Jeux(void)
     DestructionNiveau(); 
     Nettoyers_Textures();
 
+    LibererRessources( &getPlayer()->tex );
+
     //Suppression des audios et des polices qui ont ete charges
     Mix_FreeChunk(getMenu()->son);
     Mix_FreeMusic( getMenu()->bgm  );
-    
+
     TTF_CloseFont(getMenu()->police);
     TTF_CloseFont(getTime()->police);
     TTF_CloseFont(getScores()->police);

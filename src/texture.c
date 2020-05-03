@@ -39,11 +39,13 @@ bool chargerImage(Texture_Manager * tex, const char * filename )
     {
         //Supprimer la surface tampon
         SDL_FreeSurface(pTempSurface);
-
         //Mettre la texture tempon dans la texture passee en parametre
         tex->texture = pTexture;
+
         return true;
     }
+
+    SDL_DestroyTexture( pTexture );
     return false;
 }
 

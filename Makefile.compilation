@@ -8,7 +8,7 @@ CC=gcc
 
 # Valeurs possibles : yes , no  
 DEBUG=no
-# Valeurs possibles : apple , linux 
+# Valeurs possibles : win , linux 
 ARCH=linux
 
 ifeq ($(DEBUG),yes)
@@ -16,17 +16,7 @@ ifeq ($(DEBUG),yes)
 else
 	 CFLAGS= -Iincludes/ -Wfatal-errors -O 
      LDFLAGS= -lSDL2main -lSDL2_image -lSDL2_ttf -lSDL2_mixer -lSDL2 
-endif
-
-
-ifeq ($(ARCH),apple)
-
-	ifeq ($(DEBUG),yes)
-	      CFLAGS=-Wall -g -D_DEBUG_ -D_APPLE_
-	else
-	      CFLAGS= -Iincludes/ -Wfatal-errors -O 
-          LDFLAGS=  - -lSDL2main -lSDL2_image -lSDL2_ttf -lSDL2_mixer -lSDL2 
-	endif
+	EXEC= win_prog
 endif
 
 ifeq ($(ARCH),linux)
@@ -37,5 +27,7 @@ ifeq ($(ARCH),linux)
 	else
 	      CFLAGS= -Iincludes/ -Wfatal-errors
           LDFLAGS= -lm -lSDL2main -lSDL2_image -lSDL2_ttf -lSDL2_mixer -lSDL2 
+		  EXEC= linux_prog
 	endif
 endif
+

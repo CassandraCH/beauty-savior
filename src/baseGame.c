@@ -42,52 +42,55 @@ Base_Game* getBaseGame()
 */
 extern void Update(float dt)
 { 
-  //Cas ou on se trouve dans le menu principal
-  if ( game.state == MENU_PRINCIPAL )
+  if( getBaseGame()->state != GAMEWIN )
   {
-      //Gestion de la musique du menu principal
-      if( !Mix_PlayingMusic() )
-        Mix_PlayMusic(getMenu()->bgm, -1);
-  }
+      //Cas ou on se trouve dans le menu principal
+    if ( game.state == MENU_PRINCIPAL )
+    {
+        //Gestion de la musique du menu principal
+        if( !Mix_PlayingMusic() )
+          Mix_PlayMusic(getMenu()->bgm, -1);
+    }
 
-  //Cas ou on est en train de jouer
-  else if ( game.state == IN_GAME )
-  { 
-      //Gestion du timer
-      getBaseGame()->time++;
-     
-    
-      getBaseGame()->tempsActuel = SDL_GetTicks();
-      if (getBaseGame()->tempsActuel > getBaseGame()->tempsPrecedent + 1000 ) /* Si 1000 ms soit 1 sec se sont écoulées */
-      {    
-          
-            --getBaseGame()->min;
-            printf("%d\n", getBaseGame()->min );
+    //Cas ou on est en train de jouer
+    else if ( game.state == IN_GAME )
+    { 
+        //Gestion du timer
+        getBaseGame()->time++;
+      
+      
+        getBaseGame()->tempsActuel = SDL_GetTicks();
+        if (getBaseGame()->tempsActuel > getBaseGame()->tempsPrecedent + 1000 ) /* Si 1000 ms soit 1 sec se sont écoulées */
+        {    
+            
+              --getBaseGame()->min;
+              printf("%d\n", getBaseGame()->min );
 
-          getBaseGame()->tempsPrecedent = getBaseGame()->tempsActuel; /* Le temps "actuel" devient le temps "precedent" pour nos futurs calculs */
-      } 
+            getBaseGame()->tempsPrecedent = getBaseGame()->tempsActuel; /* Le temps "actuel" devient le temps "precedent" pour nos futurs calculs */
+        } 
 
-      // Si le temps du jeux est ingérieur au timer de 1min10 alors c'est la fin du niveau.
-      if( getBaseGame()->min <= 0 )
-      {
-        Init_GameOver();
-      }
- 
-    
-        //Gestion des attaques
-        attaqueEnnemis();
+        // Si le temps du jeux est ingérieur au timer de 1min10 alors c'est la fin du niveau.
+        if( getBaseGame()->min <= 0 )
+        {
+          Init_GameOver();
+        }
+  
+      
+          //Gestion des attaques
+          attaqueEnnemis();
 
-        //Mise à jour des entités
-        Update_Listes();
-        UpdateEnnemis();
-        UpdateBullets(joueur, ennemi);
-        UpdateJoueur();
-    
-        //Gestion des collisions
-        collision_tir();
-        CollisionItems(); 
-        collisionDetection();
+          //Mise à jour des entités
+          Update_Listes();
+          UpdateEnnemis();
+          UpdateBullets(joueur, ennemi);
+          UpdateJoueur();
+      
+          //Gestion des collisions
+          collision_tir();
+          CollisionItems(); 
+          collisionDetection();
 
+    }
   }
 }
 

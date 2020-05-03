@@ -2,7 +2,9 @@
 include Makefile.compilation
 
 
-EXEC= game
+
+
+
 SRC=$(wildcard src/*.c)
 OBJ=$(SRC:.c=.o)
 
@@ -22,8 +24,8 @@ clean_linux:
 clean_win: 
 	del src\*.o
 
-run:
+run_linux:
+	./$(EXEC) 
+
+run_win:
 	$(EXEC) 
-
-
-

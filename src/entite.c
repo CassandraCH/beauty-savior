@@ -346,12 +346,13 @@ extern void collision_Decor()
             {
                 if( typeCollider == checkpoint )
                 {
-                    // Init_GameOver();
                     Init_Continue();
 
                 }
                 else if ( typeCollider == gamewin )
-                {
+                {   
+
+                        
                         Init_MenuWin();
                         getBaseGame()->state = GAMEWIN;
                 }
@@ -379,11 +380,12 @@ extern void collision_Decor()
             {
                 if( typeCollider == checkpoint )
                 {
-                    //Init_GameOver();
+                    
                     Init_Continue();    
                 }      
                 else if ( typeCollider == gamewin )
                 {
+                    
                         Init_MenuWin();
                         getBaseGame()->state = GAMEWIN;
                 } 
@@ -397,15 +399,21 @@ extern void collision_Decor()
                 }
             }
 
-            // Le côté droit du joueur est en collision avec le coté gauche du bloc
+            // Le côté droit du joueur est en collision avec le coté droite du bloc
             else if( joueur_x + joueur_w > collider_x && joueur_x < collider_x && getPlayer()->x > 0)
             {
                 if( typeCollider == checkpoint )
                 {
-                        // Init_GameOver();
+                      
                         Init_Continue();
 
                 }
+                else if ( typeCollider == gamewin )
+                {
+                   
+                        Init_MenuWin();
+                        getBaseGame()->state = GAMEWIN;
+                } 
                 else 
 
                 {
