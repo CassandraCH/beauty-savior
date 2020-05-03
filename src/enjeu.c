@@ -12,14 +12,13 @@ SDL_Rect camera = {0, 0, LARGEUR_FENETRE, HAUTEUR_FENETRE}; /**< Structure qui g
 
 /**
  * \fn extern void Input_InGame(SDL_Event *event)
- * \brief Fonction qui permet gerer les entrees clavier et la camera lorsqu'une partie est en cours 
- * \details Gestion des entrees de l'utilisateur
+ * \brief Fonction qui permet gérer les entr"es clavier et la camera lorsqu'une partie est en cours 
+ * \details Gestion des entrées de l'utilisateur
  * \param event pointeur sur une structure SDL evenement
  * \return pas de valeur de retour (void)
 */
 extern void Input_InGame(SDL_Event *event)
 {
-
     bool isKeyPressed = false; 
     
     /* Gestion des entrees clavier de l'utilisateur */
@@ -27,47 +26,47 @@ extern void Input_InGame(SDL_Event *event)
     //Tant que qu'il y a un evenement dans la file d'attente
     while( SDL_PollEvent(event) )
     {
-        //Si la touche echap est pressee ou si l'utilisateur clique sur la croix
+        //Si la touche echap est pressée ou si l'utilisateur clique sur la croix
         if( event->type == SDL_QUIT || event->key.keysym.sym == SDLK_ESCAPE )
         {   
-            //Modification de l'etat du jeu => n'est plu actif
+            //Modification de l'etat du jeu => n'est plus actif
             getBaseGame()->estActif = false;
             return;
         }
 
-        //Si la touche p est pressee
+        //Si la touche p est pressée
         if(event->key.keysym.sym == SDLK_p && event->type == SDL_KEYDOWN )
         {
-            
             //Gestion du menu de pause
             Init_MenuPause();
             //Modification de l'etat du jeu => en pause
             getBaseGame()->state = PAUSE;
         }
 
-        //Si la touche p est pressee
+        //Si la touche i est pressée
         if(event->key.keysym.sym == SDLK_i && event->type == SDL_KEYDOWN )
         {
             
             //Gestion du menu de pause
             Init_Inventaire();
-            //Modification de l'etat du jeu => en pause
+            //Modification de l'état du jeu => sur le menu de l'inventaire
             getBaseGame()->state = INVENTAIRE;
         }
 
-        //Si la touche espace est pressee
+        //Si la touche espace est pressée
         if(event->key.keysym.sym == SDLK_SPACE && event->type == SDL_KEYDOWN )
         {
-            //Verification que le joueur a au moins un objet a lancer
+            //Vérification que le joueur a au moins un objet à lancer
             if( getPlayer()->nb_lancer < 1 && !isKeyPressed )
             {
                 //Gestion de l'attaque
                 attaqueJoueur();
-                //Changement de l'etat de la touche => pressee
+                //Changement de l'état de la touche => pressée
                 isKeyPressed = true;
                 return;
             }
 
+            //Si la touche a est pressée
             if(event->key.keysym.sym == SDLK_a && event->type == SDL_KEYUP )
             {
                 //Changement de l'etat de la touche => pas pressee
@@ -80,22 +79,22 @@ extern void Input_InGame(SDL_Event *event)
 
     /* Gestion de la camera */
 
-    const Uint8 *keystates = SDL_GetKeyboardState(NULL); //Variable qui permet de savoir si une touche est pressee ou non
+    const Uint8 *keystates = SDL_GetKeyboardState(NULL); //Variable qui permet de savoir si une touche est pressée ou non
 
-
+    //Gestion des entrées claver de l'utilisateur
     InputJoueur(event);
     
     //Initialisation de la position en x et en y de la camera
     camera.x = ( getPlayer()->x + getPlayer()->tex.w / 2 ) - LARGEUR_FENETRE / 2;
     camera.y = ( getPlayer()->y+  getPlayer()->tex.h / 2 ) - HAUTEUR_FENETRE / 2;
     
-    //Gestion de la position en x : si le x est en dehors de la fenetre, la repositionner
+    //Gestion de la position en x : si le x est en dehors de la fenêtre, la repositionner
     if( camera.x < 0 )
     { 
         camera.x = 0;
     }
 
-    //Gestion de la position en y : si le y est en dehors de la fenetre, la repositionner
+    //Gestion de la position en y : si le y est en dehors de la fenêtre, la repositionner
     if(camera.y < 0 )
     {
         camera.y = 0;
