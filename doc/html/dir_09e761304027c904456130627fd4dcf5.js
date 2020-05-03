@@ -13,6 +13,7 @@ var dir_09e761304027c904456130627fd4dcf5 =
     [ "level.h", "level_8h.html", "level_8h" ],
     [ "listeElements.h", "liste_elements_8h.html", "liste_elements_8h" ],
     [ "menu_continue.h", "menu__continue_8h.html", "menu__continue_8h" ],
+    [ "menu_win.h", "menu__win_8h.html", "menu__win_8h" ],
     [ "menuLoad.h", "menu_load_8h.html", "menu_load_8h" ],
     [ "menuPause.h", "menu_pause_8h.html", "menu_pause_8h" ],
     [ "menuPrincipal.h", "menu_principal_8h.html", "menu_principal_8h" ],

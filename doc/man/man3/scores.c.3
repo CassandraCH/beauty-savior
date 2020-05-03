@@ -1,4 +1,4 @@
-.TH "src/scores.c" 3 "Samedi 2 Mai 2020" "Version 0.1" "Beauty Savior" \" -*- nroff -*-
+.TH "src/scores.c" 3 "Dimanche 3 Mai 2020" "Version 0.1" "Beauty Savior" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -13,6 +13,10 @@ src/scores.c \- Programme qui gère le score\&.
 .SS "Fonctions"
 
 .in +1c
+.ti -1c
+.RI "\fBHUD\fP * \fBgetNombreVie\fP ()"
+.br
+.RI "Retourne le hud du nombre de vie\&. "
 .ti -1c
 .RI "\fBHUD\fP * \fBgetScores\fP ()"
 .br
@@ -35,6 +39,9 @@ src/scores.c \- Programme qui gère le score\&.
 .in +1c
 .ti -1c
 .RI "\fBHUD\fP \fBscore\fP"
+.br
+.ti -1c
+.RI "\fBHUD\fP \fBvie\fP"
 .br
 .ti -1c
 .RI "\fBHUD\fP \fBniveau\fP"
@@ -99,6 +106,17 @@ Retourne un pointeur sur l'objet niveau
 .RE
 .PP
 
+.SS "\fBHUD\fP * getNombreVie ()"
+
+.PP
+Retourne le hud du nombre de vie\&. 
+.PP
+\fBRenvoie\fP
+.RS 4
+Retourne un pointeur sur l'objet séléctionné 
+.RE
+.PP
+
 .SS "\fBHUD\fP * getScores ()"
 
 .PP
@@ -131,6 +149,8 @@ hud du niveau
 hud du score 
 .SS "\fBHUD\fP time_"
 hud du timer 
+.SS "\fBHUD\fP vie"
+hud de la vie pour le menu de fin de partie 
 .SH "Auteur"
 .PP 
 Généré automatiquement par Doxygen pour Beauty Savior à partir du code source\&.

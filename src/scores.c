@@ -11,7 +11,7 @@
 
 
 HUD score; /**< hud du score */
-HUD vie; 
+HUD vie; /**< hud de la vie pour le menu de fin de partie */
 HUD niveau; /**< hud du niveau */
 HUD item_s[3];/**< hud des items du jeux */
 HUD time_; /**< hud du timer */
