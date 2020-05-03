@@ -72,7 +72,7 @@ void Init(const char *title)
     }
 
 
-    getScores()->police = TTF_OpenFont("fonts/arial.ttf", 54);
+    getScores()->police = TTF_OpenFont("fonts/arial.ttf", 42);
     //Verifie que la police a bien été chargé pour le score
     if(!getScores()->police )
     {
@@ -90,7 +90,7 @@ void Init(const char *title)
     }
     
 
-    getTime()->police  = TTF_OpenFont("fonts/arial.ttf", 54);
+    getTime()->police  = TTF_OpenFont("fonts/arial.ttf", 42);
     //Verifie que la police a bien été chargé pour le timer
     if(!getTime()->police )
     {

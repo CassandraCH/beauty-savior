@@ -89,7 +89,7 @@ extern void InitJoueur()
     //position en x et en y, hauteur et largeur
 	player.h = player.tex.h;
 	player.w = player.tex.w;
-    player.x = 100;
+    player.x = 8500;
     player.y = 50;
     player.scores = 0;
 
@@ -224,6 +224,7 @@ extern void CollisionItems()
                 else if ( pt->type == passport )
                 {
                     player.isPasspordCollected = true;
+                    UpdateOption( &getInterface()->menu[4], 0);
                 }    
                 
                         
@@ -359,7 +360,7 @@ extern void collision_tir()
                 {
 
                         //Incrementation du score
-                         if( collide ) SetHUD_IntToTexture(getScores(), "", ++getPlayer()->scores, 565, 17 );
+                         if( collide ) SetHUD_IntToTexture(getScores(),(SDL_Color){0xFF,0xFF,0xFF,0xFF}, "", ++getPlayer()->scores, 565, 21 );
                         if( !enne->estMort )
                         {
                             enne->estMort = true;
@@ -378,8 +379,8 @@ extern void collision_tir()
                         getPlayer()->nombreVies--;
                         switch( getPlayer()->nombreVies )
                         {
-                            case 1: UpdateImage_Option( &getInterface()->menu[3], "graphics_assets/vie_1.png" ); break;
-                            case 2: UpdateImage_Option( &getInterface()->menu[3], "graphics_assets/vie_2.png" ); break;
+                            case 1: UpdateImage_Option( &getInterface()->menu[2], "graphics_assets/vie_1.png" ); break;
+                            case 2: UpdateImage_Option( &getInterface()->menu[2], "graphics_assets/vie_2.png" ); break;
                         }
                         SetNombreTir_Ennemis();
                         tir->estMort = true;

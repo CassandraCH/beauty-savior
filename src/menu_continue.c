@@ -30,9 +30,9 @@ extern void Init_MenuContinue()
     int width = LARGEUR_FENETRE, height = HAUTEUR_FENETRE;
     printf("Chargement Menu Continue");
 
-    SetHUD_IntToTexture(getScores(), "SCORES", getPlayer()->scores, 490, 245);
+    SetHUD_IntToTexture(getScores(),(SDL_Color){0,0,0,0}, "SCORES", getPlayer()->scores, 490, 245);
    
-    SetHUD_IntToTexture(getNiveau(), "NIVEAU", getPlayer()->niveau , 510, 374);
+    SetHUD_IntToTexture(getNiveau(),(SDL_Color){0,0,0,0}, "NIVEAU", getPlayer()->niveau , 510, 374);
 
     menu_continue.nom_menu = "Menu Continue";
     /* 
@@ -91,9 +91,9 @@ extern void Input_MenuContinue(SDL_Event *event)
                             suppListe(getEnnemis());
                             suppListe(getBullets());
 
-                            //Initialisation du hud score
-                            Init_HUD(getScores(), "0", 565, 17);
-
+                            //Initialisation du hud score avec le nombre de points du niveau précédent
+                            SetHUD_IntToTexture( getScores(),(SDL_Color){0xFF,0xFF,0xFF,0xFF}, "", getPlayer()->scores,560, 21   );
+                          
 
                             getBaseGame()->tempsActuel = 0;
                             getBaseGame()->tempsPrecedent = 0;
@@ -103,6 +103,10 @@ extern void Input_MenuContinue(SDL_Event *event)
                             //Position initiale du joueur 
                             getPlayer()->x = 100;
                             getPlayer()->y = 50;
+
+                            //le passport est remis en non collecté
+                            getPlayer()->isPasspordCollected = false;
+                            UpdateOption( &getInterface()->menu[4], 1);
 
                         
                             //Charger le niveau suivant
@@ -128,11 +132,11 @@ extern void Input_MenuContinue(SDL_Event *event)
 */
 extern void Init_Continue()
 {
-    // NettoyerScore();
-    // DestructionNiveau();
+   // NettoyerScore();
+    DestructionNiveau();
 
     //Initialisation du hud de score
-    Init_HUD(getNiveau(), "NIVEAU : 0", 530, 374);
+    Init_HUD(getNiveau(),(SDL_Color){0xFF,0xFF,0xFF,0xFF}, "NIVEAU : 0", 530, 374);
 
     //Initialisation du menu "continuer"
     Init_MenuContinue();

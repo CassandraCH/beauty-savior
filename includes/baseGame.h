@@ -53,6 +53,7 @@ typedef struct baseGame
     int tempsPrecedent; /**<  temps précédent en référence au temps écoulé depuis la dernière image */
     int tempsActuel;  /**<  temps actuel en référence au temps écoulé depuis la dernière image */
 
+    SDL_Texture * passportReq; // Passport nécéssaire pour le niveau
 
 }Base_Game; 
 /**< This is the documentation for the preceding typedef */

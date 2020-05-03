@@ -156,9 +156,9 @@ extern void Init_Inventaire()
     int width = LARGEUR_FENETRE, height = HAUTEUR_FENETRE;
     printf("Chargement Inventaire");
 
-    SetHUD_IntToTexture(getItem(0), "", nombreOs, 595, 347);
-    SetHUD_IntToTexture(getItem(1), "", nombreRock , 720, 347);
-    SetHUD_IntToTexture(getItem(2), "", nombreBranche ,835, 347);
+    SetHUD_IntToTexture(getItem(0),(SDL_Color){0xFF,0xFF,0xFF,0xFF}, "", nombreOs, 595, 347);
+    SetHUD_IntToTexture(getItem(1),(SDL_Color){0xFF,0xFF,0xFF,0xFF}, "", nombreRock , 720, 347);
+    SetHUD_IntToTexture(getItem(2),(SDL_Color){0xFF,0xFF,0xFF,0xFF}, "", nombreBranche ,835, 347);
 
     //Première option : Sélectionner les os
     ChargerData_Menu(0,0, &inventaire ,"OS"
@@ -242,9 +242,9 @@ extern void Input_Inventaire(SDL_Event *event)
                                 //Gestion de l'affichage => mise à jour
                                 switch( getPlayer()->nombreVies )
                                 {
-                                    case 1: UpdateImage_Option( &getInterface()->menu[3], "graphics_assets/vie_1.png" ); break;
-                                    case 2: UpdateImage_Option( &getInterface()->menu[3], "graphics_assets/vie_2.png" ); break;
-                                    case 3: UpdateImage_Option( &getInterface()->menu[3], "graphics_assets/vie_3.png" ); break;
+                                    case 1: UpdateImage_Option( &getInterface()->menu[2], "graphics_assets/vie_1.png" ); break;
+                                    case 2: UpdateImage_Option( &getInterface()->menu[2], "graphics_assets/vie_2.png" ); break;
+                                    case 3: UpdateImage_Option( &getInterface()->menu[2], "graphics_assets/vie_3.png" ); break;
                                 }
                                 printf("Il reste %d points de vie\n", getPlayer()->nombreVies );
                             }
@@ -262,7 +262,7 @@ extern void Input_Inventaire(SDL_Event *event)
                                 getPlayer()->treeActif = false;
 
                                 //Gestion de l'affichage => mise à jour
-                                UpdateImage_Option( &getInterface()->menu[2], "graphics_assets/items2.png" );
+                                UpdateImage_Option( &getInterface()->menu[1], "graphics_assets/items2.png" );
                             }
                             getBaseGame()->state = IN_GAME;        
                             break;
@@ -277,7 +277,7 @@ extern void Input_Inventaire(SDL_Event *event)
                                 getPlayer()->treeActif = true;
 
                                 //Gestion de l'affichage => mise à jour
-                                UpdateImage_Option( &getInterface()->menu[2], "graphics_assets/items1.png" );
+                                UpdateImage_Option( &getInterface()->menu[1], "graphics_assets/items1.png" );
                             }
                             getBaseGame()->state = IN_GAME;        
                             break;

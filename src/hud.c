@@ -10,20 +10,23 @@
 #include "baseGame.h"
 
 /**
- * \fn extern void Init_HUD(HUD * hud, const char * text, int x,  int y)
+ * \fn extern void Init_HUD(HUD * hud, SDL_Color color, const char * text, int x,  int y)
  * \brief Fonction qui permet d'initialiser un hud
  * \details Un hud correspond à toutes les informations concernant le joueur tels que le score ou le nombre de vie par exemple
  * \param hud pointeur sur une structure de type HUD 
+ * \param color enumération SDL_Color correspondant à la couleur de la police 
  * \param text chaîne de caractère qui correspond au nom de la texture
  * \param x position en x du hud
  * \param y position en y du hud
  * \return pas de valeur de retour (void)
 */
-extern void Init_HUD(HUD * hud, const char * text, int x,  int y)
+extern void Init_HUD(HUD * hud,SDL_Color color,  const char * text, int x,  int y)
 {
     //Transformation du texte en une surface
-    hud->surface = TTF_RenderText_Solid(hud->police, text,(SDL_Color){0, 0, 0,0});
+   
+    hud->surface = TTF_RenderText_Solid(hud->police, text, color );
 
+    
     //Transformation de la texture en surface
     hud->tex = SDL_CreateTextureFromSurface( getRenderer(), hud->surface );
     
@@ -37,16 +40,17 @@ extern void Init_HUD(HUD * hud, const char * text, int x,  int y)
 }
 
 /**
- * \fn extern void SetHUD_IntToTexture(HUD * hud, const char * nom, int valeur, int posX, int posY)
+ * \fn extern void SetHUD_IntToTexture(HUD * hud, SDL_Color color, const char * nom, int valeur, int posX, int posY)
  * \brief Fonction qui permet de creer la texture d'un hud
  * \param hud pointeur sur une structure de type HUD 
+ * \param color enumération SDL_Color correspondant à la couleur de la police 
  * \param nom chaîne de caractère de ce qu'on veut afficher
  * \param valeur valeur numérique à afficher dans le hud
  * \param posX position en x du hud
  * \param posY position en y du hud
  * \return pas de valeur de retour (void)
 */
-extern void SetHUD_IntToTexture(HUD * hud, const char * nom, int valeur, int posX, int posY)
+extern void SetHUD_IntToTexture(HUD * hud,SDL_Color color, const char * nom, int valeur, int posX, int posY)
 {
     //Création d'une texture pour le hud
     SDL_Texture * tex = hud->tex;
@@ -63,9 +67,10 @@ extern void SetHUD_IntToTexture(HUD * hud, const char * nom, int valeur, int pos
 
     sprintf( sc, "%s %d" , nom, valeur ); 
     
-    //Transformation du texte en surface
-    hud->surface = TTF_RenderText_Solid(hud->police, sc, (SDL_Color){0, 0, 0,0});
 
+ 
+    hud->surface = TTF_RenderText_Solid(hud->police, sc, color );
+   
     //Transformation de la surface en texture
     hud->tex = SDL_CreateTextureFromSurface( getRenderer() , hud->surface );
 

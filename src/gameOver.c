@@ -32,7 +32,7 @@ extern void Init_MenuGameOver()
     printf("Chargement Menu Game Over");
     
     //Création de la texture pour le score
-    SetHUD_IntToTexture(getScores(), "SCORES", getPlayer()->scores, 100, 300);
+    SetHUD_IntToTexture(getScores(), (SDL_Color) {0,0,0,0}, "", getPlayer()->scores, 100, 300);
 
 
     //chargement du son
@@ -125,7 +125,7 @@ extern void Input_MenuGameOver(SDL_Event *event)
                             getPlayer()->estMort = false;
                             getPlayer()->nombreVies = 3;
                             //Chargement du hud avec 3 vies
-                            UpdateImage_Option( &getInterface()->menu[3], "graphics_assets/vie_3.png" );
+                            UpdateImage_Option( &getInterface()->menu[2], "graphics_assets/vie_3.png" );
 
                             //Suppression des listes
                             suppListe(getCollider());
@@ -135,7 +135,7 @@ extern void Input_MenuGameOver(SDL_Event *event)
                             actualiserJoueur();
 
                             //Initialisation du hud score
-                            Init_HUD(getScores(), "0", 565, 17);
+                            Init_HUD(getScores(),(SDL_Color){0xFF,0xFF,0xFF,0xFF}, "0", 565, 17);
 
                             //Changement de l'état du jeu
                             getBaseGame()->state = IN_GAME;
@@ -215,7 +215,8 @@ extern void Init_GameOver()
     //Changement de l'etat du joueur et remise à 0 du score
     getPlayer()->estMort = true;
     getPlayer()->scores = 0;
-    
+    getPlayer()->isPasspordCollected = false;
+    UpdateOption( &getInterface()->menu[4], 1);
 
     //Rechargement du niveau 1
     setNiveau(1);

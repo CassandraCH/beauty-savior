@@ -33,8 +33,8 @@ extern void Init_MenuWin()
 
 
     //Initialisation du hud score
-    SetHUD_IntToTexture( getNombreVie(), "" , getPlayer()->nombreVies , 550 , 392) ;
-    SetHUD_IntToTexture( getScores() ,"",  getPlayer()->scores , 680 , 392 );
+    SetHUD_IntToTexture( getNombreVie(), (SDL_Color){0,0,0,0}, "" , getPlayer()->nombreVies , 550 , 392) ;
+    SetHUD_IntToTexture( getScores() ,(SDL_Color){0,0,0,0}, "",  getPlayer()->scores , 680 , 392 );
     
     menu_win.nom_menu = "Menu Victoire";
 

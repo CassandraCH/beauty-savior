@@ -34,10 +34,10 @@ extern void Init_MenuLoad()
     ChargerPartie();
 
     //Creation de la texture pour le score
-    SetHUD_IntToTexture(getScores(), "SCORES", getPlayer()->scores, 490, 245);
+    SetHUD_IntToTexture(getScores(), (SDL_Color){0,0,0,0} ,"SCORES", getPlayer()->scores, 490, 245);
 
     //Creation de la texture pour le numero du niveau
-    SetHUD_IntToTexture(getNiveau(), "NIVEAU", getPlayer()->niveau , 490, 374 );
+    SetHUD_IntToTexture(getNiveau(), (SDL_Color){0,0,0,0} , "NIVEAU", getPlayer()->niveau , 490, 374 );
 
     menu_load.nom_menu = "Menu Chargement";
 
@@ -131,7 +131,7 @@ extern void Input_MenuLoad(SDL_Event *event)
                             getPlayer()->estMort = false;
 
                             //Initialisation du hud score
-                            SetHUD_IntToTexture(getScores(), "", getPlayer()->scores,565, 17);
+                            SetHUD_IntToTexture(getScores(),(SDL_Color){0xFF,0xFF,0xFF,0xFF}, "", getPlayer()->scores,560, 21);
 
                             //Nettoyage de l'affichage
                             Nettoyer_Menu(getMenu(), 4);

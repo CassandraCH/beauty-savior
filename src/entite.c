@@ -243,7 +243,7 @@ extern void collisionDetection()
                 if (joueur_y + joueur_h > ennemi_y && joueur_y < ennemi_y && getPlayer()->vy > 0)
                 {
                     //Incrémentation du score
-                     SetHUD_IntToTexture(getScores(), "", ++getPlayer()->scores, 565, 17 );
+                     SetHUD_IntToTexture(getScores(),(SDL_Color){0xFF,0xFF,0xFF,0xFF} , "", ++getPlayer()->scores, 560, 21 );
 
                     // Si l'ennemi n'est pas deja mort alors il le devient
                     if (!pt->estMort)
@@ -345,13 +345,13 @@ extern void collision_Decor()
             if( joueur_y+joueur_h > collider_y && joueur_y < collider_y && getPlayer()->vy > 0 )
             {
                 //Si c'est la fin d'un niveau
-                if( typeCollider == checkpoint )
+                if( typeCollider == checkpoint && getPlayer()->isPasspordCollected )
                 {
                     Init_Continue();
                 }
 
                 //Si c'est la fin du jeu = dernier niveau
-                else if ( typeCollider == gamewin )
+                else if ( typeCollider == gamewin  && getPlayer()->isPasspordCollected  )
                 {  
                     Init_MenuWin();
                     getBaseGame()->state = GAMEWIN;
@@ -380,19 +380,17 @@ extern void collision_Decor()
             if(joueur_x < collider_x+collider_w && joueur_x+joueur_w > collider_x+collider_w && getPlayer()->vx < 0)
             {
                 //Si c'est la fin d'un niveau
-                if( typeCollider == checkpoint )
+                if( typeCollider == checkpoint  && getPlayer()->isPasspordCollected )
                 {                    
                     Init_Continue();    
                 }
-
                 //Si c'est la fin du jeu = dernier niveau
-                else if ( typeCollider == gamewin )
+                else if ( typeCollider == gamewin  && getPlayer()->isPasspordCollected )
                 {
                     
                         Init_MenuWin();
                         getBaseGame()->state = GAMEWIN;
                 }
-
                 //Sinon
                 else 
                 {
@@ -408,13 +406,12 @@ extern void collision_Decor()
             else if( joueur_x + joueur_w > collider_x && joueur_x < collider_x && getPlayer()->x > 0)
             {
                 //Si c'est la fin d'un niveau
-                if( typeCollider == checkpoint )
+                if( typeCollider == checkpoint && getPlayer()->isPasspordCollected )
                 { 
                     Init_Continue();
                 }
-
                 //Si c'est la fin du jeu = dernier niveau
-                else if ( typeCollider == gamewin )
+                else if ( typeCollider == gamewin && getPlayer()->isPasspordCollected )
                 {
                     Init_MenuWin();
                     getBaseGame()->state = GAMEWIN;
