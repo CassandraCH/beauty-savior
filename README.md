@@ -42,6 +42,9 @@ Deux exécutables sont fournis:
 - win_prog  => Environnement Windows.
 - linux_prog  => Environnement Linux.
 
+Pour lancer un exécutable il suffit d'entrée en ligne de commande : make <run_plateforme> .
+- Exemple : make run_linux | make run_win 
+
 /!\ __NE PAS ESSAYEZ DE RECOMPILER LES SOURCES__ 
 - Les sources SDL2 étant liées statiquement au programme, une recompilation causerait une erreur.
 Si vous souhaitez compiler les sources, assurez-vous d'avoir SDL2 , SDL_Image, SDL_Mixer, SDL_TTF installer sur votre environnement de travail.
