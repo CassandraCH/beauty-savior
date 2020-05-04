@@ -31,7 +31,6 @@ typedef struct textures /** structure des differentes  textures du jeu*/
 
 extern bool         Image_Load(Texture_Manager * tex, const char * filename );  /**< booleen charger des images*/
 
-
 extern void         TexManager_DestroyRessources( Texture_Manager *tex );       /**< liberation des ressources*/
 extern SDL_Texture* Texture_Load(char * filepath);                              /**< charger de texture de filepath(chemin de fichier)*/
 extern void         TextureManager_Load(Texture_Manager *tex, char * filepath); /**<charger des texture visuel  principal dans le jeu*/

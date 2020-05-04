@@ -5,11 +5,7 @@ var searchData=
   ['hauteur_5ffenetre_124',['HAUTEUR_FENETRE',['../constantes_8h.html#afd1a1e285af564b849b17498e82e1a41',1,'constantes.h']]],
   ['hauteur_5fniveau_125',['HAUTEUR_NIVEAU',['../constantes_8h.html#affb980148faa5e06adbdd2858c1b52e6',1,'constantes.h']]],
   ['head_126',['head',['../structlist.html#ae959b310460c42ab25a11f7680421d52',1,'list']]],
-<<<<<<< HEAD
   ['help_127',['HELP',['../constantes_8h.html#ae8a798ec5e0449028e485688e8241b5e',1,'HELP():&#160;constantes.h'],['../menu__help_8c.html#a46c7bb323c7e3e6d2c7c4b2bffd2dfd9',1,'help():&#160;menu_help.c']]],
-=======
-  ['help_127',['help',['../menu__help_8c.html#a46c7bb323c7e3e6d2c7c4b2bffd2dfd9',1,'help():&#160;menu_help.c'],['../constantes_8h.html#ae8a798ec5e0449028e485688e8241b5e',1,'HELP():&#160;constantes.h']]],
->>>>>>> d83bc28279cd640e177026ac11cd68885153c735
   ['help_5finit_128',['Help_Init',['../menu__help_8c.html#a32db7cb01cf8dfd417bbf82b23cf57d2',1,'Help_Init():&#160;menu_help.c'],['../menu__help_8h.html#a32db7cb01cf8dfd417bbf82b23cf57d2',1,'Help_Init():&#160;menu_help.c']]],
   ['help_5finput_129',['Help_Input',['../menu__help_8c.html#a51105c824f65dd13f9f68cc34a99beb7',1,'Help_Input(SDL_Event *event):&#160;menu_help.c'],['../menu__help_8h.html#a51105c824f65dd13f9f68cc34a99beb7',1,'Help_Input(SDL_Event *event):&#160;menu_help.c']]],
   ['hud_130',['HUD',['../hud_8h.html#a66dba29682c45eda180ae3a6c7ea95db',1,'hud.h']]],
