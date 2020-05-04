@@ -30,8 +30,8 @@ extern void Continue_Init()
     int width = LARGEUR_FENETRE, height = HAUTEUR_FENETRE;
     printf("Chargement Menu Continue");
 
+    //Affichage des huds de score et niveau
     SetHUD_IntToTexture(getScores(),(SDL_Color){0,0,0,0}, "SCORES", getPlayer()->scores, 490, 245);
-   
     SetHUD_IntToTexture(getNiveau(),(SDL_Color){0,0,0,0}, "NIVEAU", getPlayer()->niveau , 510, 374);
 
     menu_continue.nom_gameObject = "Menu Continue";

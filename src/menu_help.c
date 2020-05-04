@@ -1,9 +1,9 @@
 /**
- * \file menu_pause.c
+ * \file menu_help.c
  * \author CALVADOS Cindy, CHAUMULON Cassandra, CHELLI Célia, OUSMANOVA Karina
  * \version 1.0
- * \date mars 2020
- * \brief Programme qui gère le menu de pause
+ * \date mai 2020
+ * \brief Programme qui gère le menu d'aide
  * \brief Initialisation, affichage du menu, navigation dans le menu, gestion des entrees clavier et destruction du menu
  */
 
