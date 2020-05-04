@@ -26,7 +26,6 @@ typedef struct player
     float posXDepart;       /**<sa positon de depart selon x*/
     float posYDepart;       /**<sa positon de depart selon y*/
  
-
     bool osActif;           /**< booleen pour vérifier l'os est l'élement actif */
     bool treeActif;         /**< booleen pour vérifier le tree est l'élement actif */
     bool rockActif;         /**< booleen pour vérifier le rock est l'élement actif */
@@ -60,7 +59,7 @@ extern int      getPlayerOriginX();     /**< la position'l'origine) du joueur se
 extern int      getPlayerOriginY();     /**< la position'l'origine) du joueur selon y*/
 
 extern void     Player_Update();
-extern void     Player_Reset(void);
+extern void     Player_Reset( void );
 
 extern void     Player_Init();           /**<initialisation du joueur*/
 extern void     Player_SetBullets();

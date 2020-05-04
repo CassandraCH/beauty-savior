@@ -14,6 +14,7 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
     [ "listeElements.c", "liste_elements_8c.html", "liste_elements_8c" ],
     [ "main.c", "main_8c.html", "main_8c" ],
     [ "menu_continue.c", "menu__continue_8c.html", "menu__continue_8c" ],
+    [ "menu_help.c", "menu__help_8c.html", "menu__help_8c" ],
     [ "menu_pause.c", "menu__pause_8c.html", "menu__pause_8c" ],
     [ "menu_win.c", "menu__win_8c.html", "menu__win_8c" ],
     [ "menuLoad.c", "menu_load_8c.html", "menu_load_8c" ],
