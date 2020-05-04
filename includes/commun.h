@@ -33,8 +33,8 @@
 typedef enum 
 { 
     false, 
-    true } 
-bool;
+    true 
+}bool;
 
 /**
  *\enum typeEntite
@@ -51,7 +51,7 @@ typedef enum  { item,  joueur, ennemi, platform ,checkpoint,
 typedef enum { fixe, anime } texState;
 
 
-extern SDL_Renderer* getRenderer(void);
+extern SDL_Renderer* getRenderer(void); /**< Accès à la structure d'un rendu */
 
 
 #endif

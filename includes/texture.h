@@ -15,7 +15,10 @@
 #define __TEXTURE_H /
 
 #include "commun.h" /** les structures du fichier commun.h */
-
+/**
+ *\struct Texture_Manager
+ *\details Structure gérant les textures
+ */
 typedef struct textures /** structure des differentes  textures du jeu*/
 {
     int h;          /*!<  hauteur de la texture*/
@@ -35,8 +38,8 @@ extern void         TextureManager_Load(Texture_Manager *tex, char * filepath); 
 extern bool         Image_Load(Texture_Manager * tex, const char * filename );  /**<chargements des images*/
 
 extern void         TexManager_DestroyRessources( Texture_Manager *tex );       /**< les ressources*/
-extern SDL_Texture* Texture_Load(char * filepath);/**<chargement des textures*/
+extern SDL_Texture* Texture_Load(char * filepath);                              /**<chargement des textures à partir d'image*/
 
-extern void         TextureManager_Load(Texture_Manager *tex, char * filepath);
+extern void         TextureManager_Load(Texture_Manager *tex, char *filepath);  /**<chargement d'une texture*/
 
 #endif

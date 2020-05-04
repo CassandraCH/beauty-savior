@@ -11,8 +11,7 @@
 #ifndef _HELP_H
 #define _HELP_H/**< \def _HELP_H*/
 
-
-extern void Help_Init();
-extern void Help_Input(SDL_Event *event);
+extern void Help_Init();                    /**< initialisation du menu de l'aide  */
+extern void Help_Input(SDL_Event *event); /**< Gestion des entrées utilisateur du menu de l'aide  */
 
 #endif

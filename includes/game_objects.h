@@ -3,7 +3,7 @@
  * \author CALVADOS Cindy, CHAUMULON Cassandra, CHELLI Célia, OUSMANOVA Karina
  * \version 1.0
  * \date mars 2020
- * \brief programme qui gere le menu pause du jeu.
+ * \brief programme qui gère les objets
  */
 
 
