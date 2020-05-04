@@ -22,7 +22,7 @@ src/menuPrincipal.c \- Programme qui gère le menu principal\&.
 .br
 .RI "Fonction qui retourne l'option du menu selectionne\&. "
 .ti -1c
-.RI "void \fBInit_MenuPrincipal\fP ()"
+.RI "void \fBPrincipal_Init\fP ()"
 .br
 .RI "Fonction qui initialise le menu principal\&. "
 .ti -1c
@@ -52,7 +52,7 @@ src/menuPrincipal.c \- Programme qui gère le menu principal\&.
 .br
 .RI "Fonction qui permet d'afficher le menu\&. "
 .ti -1c
-.RI "void \fBInput_MenuPrincipal\fP (SDL_Event *event)"
+.RI "void \fBPrincipal_Input\fP (SDL_Event *event)"
 .br
 .RI "Fonction qui gere les evenements du menu principal\&. "
 .ti -1c
@@ -212,33 +212,6 @@ un entier correspondant au numero de l'option selectionnee
 .RE
 .PP
 
-.SS "void Init_MenuPrincipal ()"
-
-.PP
-Fonction qui initialise le menu principal\&. 
-.PP
-\fBRenvoie\fP
-.RS 4
-pas de valeur de retour (void) 
-.RE
-.PP
-
-.SS "void Input_MenuPrincipal (SDL_Event * event)"
-
-.PP
-Fonction qui gere les evenements du menu principal\&. Gestion des entrees clavier de l'utilisateur 
-.PP
-\fBParamètres\fP
-.RS 4
-\fIevent\fP evenement 
-.RE
-.PP
-\fBRenvoie\fP
-.RS 4
-pas de valeur de retour (void) 
-.RE
-.PP
-
 .SS "void LEFT_Key (\fBGameObject\fP * gameObject, int nombresOptions)"
 
 .PP
@@ -249,6 +222,33 @@ Fonction qui permet de naviguer dans le menu a LEFT_Key\&.
 \fI\fBgameObject\fP\fP pointeur sur le menu 
 .br
 \fInombresOptions\fP nombre d'options 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void Principal_Init ()"
+
+.PP
+Fonction qui initialise le menu principal\&. 
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void Principal_Input (SDL_Event * event)"
+
+.PP
+Fonction qui gere les evenements du menu principal\&. Gestion des entrees clavier de l'utilisateur 
+.PP
+\fBParamètres\fP
+.RS 4
+\fIevent\fP evenement 
 .RE
 .PP
 \fBRenvoie\fP
