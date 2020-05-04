@@ -37,6 +37,8 @@ typedef struct component
 }Component;
 /**< Typedef component Component */
 
+typedef struct gameObject GameObject;
+/**< Typedef gameObject GameObject */
 
 /**
  *\struct gameObject
@@ -53,8 +55,8 @@ struct gameObject
     Mix_Music * bgm;                    /**< Musique du jeux en arriere plan*/
     char * nom_gameObject;              /**< Nom du GameObject  */
 
-} GameObject;
-/**< Typedef gameObject GameObject */
+};
+
 
 extern void UpdateComponent(Component * component, int etat);                       /**< fonction de mise à jour du component d'un gameObject */
 extern void UpdateImage_Component(Component * component, const char * filename);    /**< fonction de mise à jour d'image du component d'un gameObject*/
