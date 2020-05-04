@@ -10,7 +10,11 @@ var searchData=
   ['texture_2ec_296',['texture.c',['../texture_8c.html',1,'']]],
   ['texture_2eh_297',['texture.h',['../texture_8h.html',1,'']]],
   ['texture_5fload_298',['Texture_Load',['../texture_8c.html#ab15379dba3cc83443ad654f72fb47a63',1,'Texture_Load(char *filepath):&#160;texture.c'],['../texture_8h.html#a41832dc7a870ddf9244818b5cc533546',1,'Texture_Load(char *filepath):&#160;texture.c']]],
+<<<<<<< HEAD
   ['texture_5fmanager_299',['Texture_Manager',['../texture_8h.html#acbc9d2c28ac70027ba8e1f246232367a',1,'texture.h']]],
+=======
+  ['texture_5fmanager_299',['Texture_Manager',['../struct_texture___manager.html',1,'Texture_Manager'],['../texture_8h.html#acbc9d2c28ac70027ba8e1f246232367a',1,'Texture_Manager():&#160;texture.h']]],
+>>>>>>> d83bc28279cd640e177026ac11cd68885153c735
   ['texturemanager_5fload_300',['TextureManager_Load',['../texture_8c.html#a2817bb3a0cd16d6a6c25b7d3a32b938a',1,'TextureManager_Load(Texture_Manager *tex, char *filepath):&#160;texture.c'],['../texture_8h.html#a2817bb3a0cd16d6a6c25b7d3a32b938a',1,'TextureManager_Load(Texture_Manager *tex, char *filepath):&#160;texture.c']]],
   ['textures_301',['textures',['../structtextures.html',1,'']]],
   ['time_302',['time',['../structbase_game.html#a42715f65f02da52edc5b22021d8ae670',1,'baseGame']]],

@@ -10,7 +10,11 @@ var searchData=
   ['menu_5fhelp_2ec_205',['menu_help.c',['../menu__help_8c.html',1,'']]],
   ['menu_5fhelp_2eh_206',['menu_help.h',['../menu__help_8h.html',1,'']]],
   ['menu_5fload_207',['menu_load',['../menu_load_8c.html#ac0fdc42fc650ab79ed6e6b7c7a349969',1,'menuLoad.c']]],
+<<<<<<< HEAD
   ['menu_5fover_208',['menu_over',['../gameover_8c.html#a26219e75fb93dbaeedb89f95bc0d5225',1,'gameover.c']]],
+=======
+  ['menu_5fover_208',['menu_over',['../game_over_8c.html#a26219e75fb93dbaeedb89f95bc0d5225',1,'gameOver.c']]],
+>>>>>>> d83bc28279cd640e177026ac11cd68885153c735
   ['menu_5fpause_209',['menu_pause',['../menu__pause_8c.html#aeb6a4ab82c501c60420ff4c94ef16594',1,'menu_pause.c']]],
   ['menu_5fpause_2ec_210',['menu_pause.c',['../menu__pause_8c.html',1,'']]],
   ['menu_5fprincipal_211',['MENU_PRINCIPAL',['../constantes_8h.html#a2b556d054655da3bd41306dc8a87f03c',1,'constantes.h']]],

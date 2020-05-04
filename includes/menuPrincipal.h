@@ -12,10 +12,7 @@
 
 
 
-extern void Principal_Init();/**<initialise le menu*/
-extern void Principal_Input(SDL_Event* event);
-
-
-
+extern void Principal_Init();                   /**<initialisation du menu principal */
+extern void Principal_Input(SDL_Event *event);  /**<gestion des entrées utilisateur du menu principal */
 
 #endif

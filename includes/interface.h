@@ -13,8 +13,7 @@
 
 
 
-extern void Interface_Init();       /**< fonction d'initialisation de l'inventaire*/
-extern void Interface_Render();
-
+extern void Interface_Init();       /**< fonction d'initialisation de l'interface*/
+extern void Interface_Render();     /**< fonction de gestion de l'affichage de l'interface*/
 
 #endif

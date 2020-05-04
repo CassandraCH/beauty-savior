@@ -13,7 +13,7 @@
 #include "commun.h"
 
 
-extern void Input_InGame(SDL_Event *event);/**< Input_InGame */
+extern void Input_InGame(SDL_Event *event);/**< Gestion entrées clavier et caméra */
 
 
 #endif

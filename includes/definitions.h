@@ -68,8 +68,8 @@ extern SDL_Texture * passportTex; /**< Texture pour le passport */
 
 
 /*####### FONCTION PRINCIPAL ############ */
-extern void Init(const char *title);
-extern void Update(float dt);
-extern void Game_Render() ;
+extern void Init(const char *title); /**< Initialisation */
+extern void Update(float dt);        /**< Mise a jour avec le delta-time */
+extern void Game_Render();           /**< Gestion du rendu */
 
-extern void Game_DestroyRessources();
+extern void Game_DestroyRessources(); /**< Libération de toutes les ressources du jeu */

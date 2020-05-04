@@ -8,5 +8,7 @@ var annotated_dup =
     [ "list", "structlist.html", "structlist" ],
     [ "Node", "struct_node.html", "struct_node" ],
     [ "player", "structplayer.html", "structplayer" ],
+    [ "Player", "struct_player.html", null ],
+    [ "Texture_Manager", "struct_texture___manager.html", null ],
     [ "textures", "structtextures.html", "structtextures" ]
 ];

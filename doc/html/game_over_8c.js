@@ -1,8 +1,8 @@
 var game_over_8c =
 [
-    [ "getMenu_Over", "game_over_8c.html#a84947749265456b7ea0fdd03f584bbb1", null ],
-    [ "Init_GameOver", "game_over_8c.html#a1430bf170c733fc0c2e1e056532fed87", null ],
-    [ "Init_MenuGameOver", "game_over_8c.html#a9b3680d573b9b1e4ee3007aa8eb97f43", null ],
-    [ "Input_MenuGameOver", "game_over_8c.html#a55f6de6edb31dccda9fddb9e089f8973", null ],
-    [ "menu_over", "game_over_8c.html#a4800d3e5c2031960bad7e41945554e2b", null ]
+    [ "GameOver_Init", "game_over_8c.html#ab394c139ae8d0a84c20025415df0fbdb", null ],
+    [ "GameOver_Input", "game_over_8c.html#ab33c9b1c32b3a1c3134cafabc73a69e8", null ],
+    [ "GameOver_Load", "game_over_8c.html#aa776b3feb8965664a5c89a8584a909d2", null ],
+    [ "getMenu_Over", "game_over_8c.html#a7d16c27d308471712a3e5c7331904fe7", null ],
+    [ "menu_over", "game_over_8c.html#a26219e75fb93dbaeedb89f95bc0d5225", null ]
 ];
