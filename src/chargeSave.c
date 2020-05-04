@@ -24,17 +24,18 @@ extern void LoadGame()
         exit(1);    
     }
 
-    int niveau, nbOs, nbRock, nbTree;
+    int niveau, nbOs, nbRock, nbTree, scores;
     
     //Lecture dans le fichier des données sauvegardées : le niveau du joueur et le nombre d'os, de cailloux et de branches en sa possession
-    if( fscanf(file,"%d %d %d %d", &niveau, &nbOs, &nbRock, &nbTree) )
+    if( fscanf(file,"%d %d %d %d %d", &niveau,&scores, &nbOs, &nbRock, &nbTree) )
     {
         //Paramétrer les données
         getPlayer()->niveau = niveau;
+        getPlayer()->scores = scores;
         setOs( nbOs );
         setRock( nbRock );
         setBranche( nbTree );
-        printf("%d %d %d %d \n", getPlayer()->niveau, nbOs, nbRock, nbTree);        
+        printf("%d %d %d %d %d\n", getPlayer()->niveau,getPlayer()->scores, nbOs, nbRock, nbTree);        
     }
     //Fermeture du fichier
     fclose(file);
@@ -58,7 +59,7 @@ extern void SaveGame()
     }
 
     //Sauvegarder le niveau du joueur et les compteurs des objets
-    fprintf(file,"%d %d %d %d", getPlayer()->niveau, getOs() ,getRock(), getBranche() );
+    fprintf(file,"%d %d %d %d %d",getPlayer()->niveau,getPlayer()->scores, getOs() ,getRock(), getBranche() );
     
     //Fermeture du fichier
     fclose(file);

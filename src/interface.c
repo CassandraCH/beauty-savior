@@ -30,7 +30,8 @@ extern void Interface_Init()
     printf("Initialisation Interface");
 
     //Initialisation du hud score
-    Init_HUD(getScores(),(SDL_Color){0xFF,0xFF,0xFF,0xFF},"0", 560, 21);
+    
+    SetHUD_IntToTexture( getScores(),(SDL_Color){0xFF,0xFF,0xFF,0xFF}, "", getPlayer()->scores ,560, 21);
     //Initialisation du hud time
     Init_HUD(getTime(),(SDL_Color){0xFF,0xFF,0xFF,0xFF},"1 : 10", 90, 21);
 
