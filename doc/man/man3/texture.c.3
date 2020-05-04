@@ -1,4 +1,4 @@
-.TH "src/texture.c" 3 "Dimanche 3 Mai 2020" "Version 0.1" "Beauty Savior" \" -*- nroff -*-
+.TH "src/texture.c" 3 "Lundi 4 Mai 2020" "Version 0.2" "Beauty Savior" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -7,7 +7,7 @@ src/texture.c \- Programme qui gère les textures (affichage)
 .SH SYNOPSIS
 .br
 .PP
-\fC#include 'texture\&.h'\fP
+\fC#include 'baseGame\&.h'\fP
 .br
 
 .SS "Fonctions"
@@ -29,6 +29,36 @@ src/texture.c \- Programme qui gère les textures (affichage)
 .RI "void \fBLibererRessources\fP (\fBTexture_Manager\fP *tex)"
 .br
 .RI "Fonction qui permet detruire une texture\&. "
+.ti -1c
+.RI "void \fBInit_Textures\fP ()"
+.br
+.RI "Fonction qui charge les textures des ennemis, des pièces, des cailloux, des branches et des os\&. "
+.ti -1c
+.RI "void \fBNettoyers_Textures\fP ()"
+.br
+.RI "Fonction qui détruit les textures des ennemis, des pièces, des cailloux, des branches et des os\&. "
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "SDL_Texture * \fBtexture\fP"
+.br
+.ti -1c
+.RI "SDL_Texture * \fBitemTex\fP"
+.br
+.ti -1c
+.RI "SDL_Texture * \fBrockTex\fP"
+.br
+.ti -1c
+.RI "SDL_Texture * \fBtreeTex\fP"
+.br
+.ti -1c
+.RI "SDL_Texture * \fBosTex\fP"
+.br
+.ti -1c
+.RI "SDL_Texture * \fBpassportTex\fP"
+.br
 .in -1c
 .SH "Description détaillée"
 .PP 
@@ -106,6 +136,17 @@ pas de valeur de retour (void)
 .RE
 .PP
 
+.SS "void Init_Textures ()"
+
+.PP
+Fonction qui charge les textures des ennemis, des pièces, des cailloux, des branches et des os\&. 
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
 .SS "void LibererRessources (\fBTexture_Manager\fP * tex)"
 
 .PP
@@ -122,6 +163,31 @@ pas de valeur de retour (void)
 .RE
 .PP
 les ressources 
+.SS "void Nettoyers_Textures ()"
+
+.PP
+Fonction qui détruit les textures des ennemis, des pièces, des cailloux, des branches et des os\&. 
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SH "Documentation des variables"
+.PP 
+.SS "SDL_Texture* itemTex"
+Texture pour les pièces 
+.SS "SDL_Texture* osTex"
+Texture pour les os 
+.SS "SDL_Texture* passportTex"
+Texture pour le passport 
+.SS "SDL_Texture* rockTex"
+Texture pour les cailloux 
+.SS "SDL_Texture* texture"
+Texture pour les ennemis 
+.SS "SDL_Texture* treeTex"
+Texture pour les branches 
 .SH "Auteur"
 .PP 
 Généré automatiquement par Doxygen pour Beauty Savior à partir du code source\&.

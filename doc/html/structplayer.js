@@ -4,6 +4,7 @@ var structplayer =
     [ "estSurSol", "structplayer.html#a5a67f39f9630f2e6fe85eeed83004e87", null ],
     [ "estTourne", "structplayer.html#a004c72afdc3021650707ef9382c546dc", null ],
     [ "h", "structplayer.html#a85f2f1bd58b3b44ffdf3881823393959", null ],
+    [ "isPasspordCollected", "structplayer.html#aa1d6bac50e7547fbb640884660ef4163", null ],
     [ "nb_lancer", "structplayer.html#ad3830f917515d20b9fe691faa2cdbba1", null ],
     [ "nb_objet", "structplayer.html#a8d6b043f4511d84b1161cbe4aa2abdfa", null ],
     [ "niveau", "structplayer.html#a01662fc98c8f04492826890e0b34bd72", null ],

@@ -1,4 +1,4 @@
-.TH "src/hud.c" 3 "Dimanche 3 Mai 2020" "Version 0.1" "Beauty Savior" \" -*- nroff -*-
+.TH "src/hud.c" 3 "Lundi 4 Mai 2020" "Version 0.2" "Beauty Savior" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -14,11 +14,11 @@ src/hud.c \- Programme qui gère le compteur de temps, le compteur de vie et le 
 
 .in +1c
 .ti -1c
-.RI "void \fBInit_HUD\fP (\fBHUD\fP *hud, const char *text, int x, int y)"
+.RI "void \fBInit_HUD\fP (\fBHUD\fP *hud, SDL_Color color, const char *text, int x, int y)"
 .br
 .RI "Fonction qui permet d'initialiser un hud\&. "
 .ti -1c
-.RI "void \fBSetHUD_IntToTexture\fP (\fBHUD\fP *hud, const char *nom, int valeur, int posX, int posY)"
+.RI "void \fBSetHUD_IntToTexture\fP (\fBHUD\fP *hud, SDL_Color color, const char *nom, int valeur, int posX, int posY)"
 .br
 .RI "Fonction qui permet de creer la texture d'un hud\&. "
 .ti -1c
@@ -70,7 +70,7 @@ pas de valeur de retour (void)
 .RE
 .PP
 
-.SS "void Init_HUD (\fBHUD\fP * hud, const char * text, int x, int y)"
+.SS "void Init_HUD (\fBHUD\fP * hud, SDL_Color color, const char * text, int x, int y)"
 
 .PP
 Fonction qui permet d'initialiser un hud\&. Un hud correspond à toutes les informations concernant le joueur tels que le score ou le nombre de vie par exemple 
@@ -78,6 +78,8 @@ Fonction qui permet d'initialiser un hud\&. Un hud correspond à toutes les info
 \fBParamètres\fP
 .RS 4
 \fIhud\fP pointeur sur une structure de type HUD 
+.br
+\fIcolor\fP enumération SDL_Color correspondant à la couleur de la police 
 .br
 \fItext\fP chaîne de caractère qui correspond au nom de la texture 
 .br
@@ -108,7 +110,7 @@ pas de valeur de retour (void)
 .RE
 .PP
 
-.SS "void SetHUD_IntToTexture (\fBHUD\fP * hud, const char * nom, int valeur, int posX, int posY)"
+.SS "void SetHUD_IntToTexture (\fBHUD\fP * hud, SDL_Color color, const char * nom, int valeur, int posX, int posY)"
 
 .PP
 Fonction qui permet de creer la texture d'un hud\&. 
@@ -116,6 +118,8 @@ Fonction qui permet de creer la texture d'un hud\&.
 \fBParamètres\fP
 .RS 4
 \fIhud\fP pointeur sur une structure de type HUD 
+.br
+\fIcolor\fP enumération SDL_Color correspondant à la couleur de la police 
 .br
 \fInom\fP chaîne de caractère de ce qu'on veut afficher 
 .br

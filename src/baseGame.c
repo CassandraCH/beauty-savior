@@ -12,13 +12,6 @@
 
 Base_Game game; /**< Structure qui gère l'état du jeu */
 
-SDL_Texture * texture; /**< Texture pour les ennemis */
-SDL_Texture * itemTex; /**< Texture pour les pièces */
-SDL_Texture * rockTex; /**< Texture pour les cailloux */
-SDL_Texture * treeTex; /**< Texture pour les branches */
-SDL_Texture * osTex;   /**< Texture pour les os */
-SDL_Texture * passportTex; /**< Texture pour le passport */
-
 
 int last_frame_time = 0; /**< Temps écoulé depuis la dernière image*/
 float dt = 0.0f; /**< Delta-time = temps écoulé entre l'affichage de chaque image*/
@@ -155,6 +148,7 @@ extern void Rendu_Jeux()
     AfficherHUD( getScores() );
 
   }
+  // Cas où le joueur affiche l'aide 
   else if ( getBaseGame()->state == HELP )
   {
     Dessiner_Menu( getHelp() ,0, 322, 150, 637, 363  );
@@ -168,6 +162,7 @@ extern void Rendu_Jeux()
     AfficherInterface();
     //Gestion des affchages des listes, du joueur et du score
     Afficher_ElementsListes( &listEnnemis, texture, ennemi, 50, 50 );
+    
     
     // Liste des élements attaques
     Afficher_ElementsListes( &bullet , itemTex, feu , 41, 47 );
@@ -212,37 +207,6 @@ extern void Update_Listes()
   supprimeCible(getEnnemis(), true);
 }
 
-/**
- * \fn extern void Init_Textures()
- * \brief Fonction qui charge les textures des ennemis, des pièces, des cailloux, des branches et des os
- * \return pas de valeur de retour (void)
-*/
-extern void Init_Textures()
-{
-  texture = ChargerTexture("graphics_assets/enemi.png");
-  itemTex = ChargerTexture("graphics_assets/coin.png");
-  rockTex = ChargerTexture("graphics_assets/tex_rock.png");
-  treeTex = ChargerTexture("graphics_assets/tex_tree.png");
-  osTex = ChargerTexture("graphics_assets/tex_os.png");   
-  passportTex = ChargerTexture("graphics_assets/passport.png");  
-  getBaseGame()->passportReq = ChargerTexture("graphics_assets/passport_requis.png");
-}
-
-/**
- * \fn extern void Init_Textures()
- * \brief Fonction qui détruit les textures des ennemis, des pièces, des cailloux, des branches et des os
- * \return pas de valeur de retour (void)
-*/
-extern void Nettoyers_Textures()
-{
-  SDL_DestroyTexture( texture );
-  SDL_DestroyTexture( itemTex );
-  SDL_DestroyTexture( rockTex );
-  SDL_DestroyTexture( treeTex );
-  SDL_DestroyTexture( osTex );
-  SDL_DestroyTexture( passportTex );
-  SDL_DestroyTexture( getBaseGame()->passportReq );
-}
 
 /**
  * \fn extern delay(unsigned int frameLimit)

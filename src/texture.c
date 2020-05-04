@@ -6,7 +6,15 @@
  * \brief Programme qui gère les textures (affichage)
  * \brief Chargement des images, des textures, des textes et destruction des textures
  */
-#include "texture.h"
+#include "baseGame.h"
+
+SDL_Texture * texture; /**< Texture pour les ennemis */
+SDL_Texture * itemTex; /**< Texture pour les pièces */
+SDL_Texture * rockTex; /**< Texture pour les cailloux */
+SDL_Texture * treeTex; /**< Texture pour les branches */
+SDL_Texture * osTex;   /**< Texture pour les os */
+SDL_Texture * passportTex; /**< Texture pour le passport */
+
 
 /** 
  * \fn bool chargerImage(Texture_Manager * tex,const char * filename )
@@ -144,4 +152,37 @@ extern void LibererRessources( Texture_Manager *tex )
            tex->texture = NULL;
     }    
     
+}
+
+
+/**
+ * \fn extern void Init_Textures()
+ * \brief Fonction qui charge les textures des ennemis, des pièces, des cailloux, des branches et des os
+ * \return pas de valeur de retour (void)
+*/
+extern void Init_Textures()
+{
+  texture = ChargerTexture("graphics_assets/enemi.png");
+  itemTex = ChargerTexture("graphics_assets/coin.png");
+  rockTex = ChargerTexture("graphics_assets/tex_rock.png");
+  treeTex = ChargerTexture("graphics_assets/tex_tree.png");
+  osTex = ChargerTexture("graphics_assets/tex_os.png");   
+  passportTex = ChargerTexture("graphics_assets/passport.png");  
+  getBaseGame()->passportReq = ChargerTexture("graphics_assets/passport_requis.png");
+}
+
+/**
+ * \fn extern void Nettoyers_Textures()
+ * \brief Fonction qui détruit les textures des ennemis, des pièces, des cailloux, des branches et des os
+ * \return pas de valeur de retour (void)
+*/
+extern void Nettoyers_Textures()
+{
+  SDL_DestroyTexture( texture );
+  SDL_DestroyTexture( itemTex );
+  SDL_DestroyTexture( rockTex );
+  SDL_DestroyTexture( treeTex );
+  SDL_DestroyTexture( osTex );
+  SDL_DestroyTexture( passportTex );
+  SDL_DestroyTexture( getBaseGame()->passportReq );
 }

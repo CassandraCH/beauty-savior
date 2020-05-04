@@ -1,4 +1,4 @@
-.TH "src/inits.c" 3 "Dimanche 3 Mai 2020" "Version 0.1" "Beauty Savior" \" -*- nroff -*-
+.TH "src/inits.c" 3 "Lundi 4 Mai 2020" "Version 0.2" "Beauty Savior" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -18,15 +18,15 @@ src/inits.c \- Programme qui gère les initialisations\&.
 .ti -1c
 .RI "SDL_Renderer * \fBgetRenderer\fP (void)"
 .br
-.RI "Fonction qui permet d'acceder a la structure du rendu\&. "
+.RI "Fonction qui permet d'accéder à la structure du rendu\&. "
 .ti -1c
 .RI "void \fBInit\fP (const char *title)"
 .br
-.RI "Fonction qui permet d'initialiser\&. "
+.RI "Fonction qui permet d'initialiser la fenêtre\&. "
 .ti -1c
 .RI "void \fBLibererRessources_Jeux\fP (void)"
 .br
-.RI "Fonction qui libere toutes les ressources du jeu\&. "
+.RI "Fonction qui libère toutes les ressources du jeu\&. "
 .in -1c
 .SS "Variables"
 
@@ -35,7 +35,7 @@ src/inits.c \- Programme qui gère les initialisations\&.
 .RI "SDL_Renderer * \fBrendu\fP = NULL"
 .br
 .ti -1c
-.RI "\fBSDL_Window\fP * \fBfenetre\fP = NULL"
+.RI "SDL_Window * \fBfenetre\fP = NULL"
 .br
 .in -1c
 .SH "Description détaillée"
@@ -67,7 +67,7 @@ Destruction du son, des ennemis, de la fenêtre, du menu prinicpal, du rendu\&.\
 .SS "SDL_Renderer * getRenderer (void)"
 
 .PP
-Fonction qui permet d'acceder a la structure du rendu\&. 
+Fonction qui permet d'accéder à la structure du rendu\&. 
 .PP
 \fBRenvoie\fP
 .RS 4
@@ -78,7 +78,7 @@ un pointeur sur une structure de type SDL_Renderer
 .SS "void Init (const char * title)"
 
 .PP
-Fonction qui permet d'initialiser\&. Creation de la fenetre
+Fonction qui permet d'initialiser la fenêtre\&. Création de la fenetre
 .PP
 Chargement des polices, de l'audio et des entites 
 .PP
@@ -96,7 +96,7 @@ pas de valeur de retour (void)
 .SS "void LibererRessources_Jeux (void)"
 
 .PP
-Fonction qui libere toutes les ressources du jeu\&. Destruction des structures rendu et fenetre 
+Fonction qui libère toutes les ressources du jeu\&. Destruction des structures rendu et fenêtre 
 .PP
 \fBRenvoie\fP
 .RS 4
@@ -106,8 +106,8 @@ pas de valeur de retour (void)
 
 .SH "Documentation des variables"
 .PP 
-.SS "\fBSDL_Window\fP* fenetre = NULL"
-Structure de la fenetre 
+.SS "SDL_Window* fenetre = NULL"
+Structure de la fenêtre 
 .SS "SDL_Renderer* rendu = NULL"
 Structure du rendu 
 .SH "Auteur"

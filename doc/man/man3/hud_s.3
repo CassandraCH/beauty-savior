@@ -1,4 +1,4 @@
-.TH "hud_s" 3 "Dimanche 3 Mai 2020" "Version 0.1" "Beauty Savior" \" -*- nroff -*-
+.TH "hud_s" 3 "Lundi 4 Mai 2020" "Version 0.2" "Beauty Savior" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -15,13 +15,13 @@ hud_s
 .RI "TTF_Font * \fBpolice\fP"
 .br
 .ti -1c
-.RI "\fBSDL_Surface\fP * \fBsurface\fP"
+.RI "SDL_Surface * \fBsurface\fP"
 .br
 .ti -1c
 .RI "SDL_Texture * \fBtex\fP"
 .br
 .ti -1c
-.RI "\fBSDL_Rect\fP \fBrect\fP"
+.RI "SDL_Rect \fBrect\fP"
 .br
 .in -1c
 .SH "Description détaillée"
@@ -31,9 +31,9 @@ structure gerant les informations concernant le joueur
 .PP 
 .SS "TTF_Font* police"
 la police qui est utilise pour l'affichage du hud 
-.SS "\fBSDL_Rect\fP rect"
+.SS "SDL_Rect rect"
 le rectangle ou sera afficher le rendu du hud 
-.SS "\fBSDL_Surface\fP* surface"
+.SS "SDL_Surface* surface"
 la surface qui sera convertit en texture 
 .SS "SDL_Texture* tex"
 correspond a la texture du hud,c'est a dire ce qui sera affiché 

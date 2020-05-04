@@ -9,6 +9,7 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
     [ "inits.c", "inits_8c.html", "inits_8c" ],
     [ "input.c", "input_8c.html", "input_8c" ],
     [ "interface.c", "interface_8c.html", "interface_8c" ],
+    [ "inventaire.c", "inventaire_8c.html", "inventaire_8c" ],
     [ "level.c", "level_8c.html", "level_8c" ],
     [ "listeElements.c", "liste_elements_8c.html", "liste_elements_8c" ],
     [ "main.c", "main_8c.html", "main_8c" ],
