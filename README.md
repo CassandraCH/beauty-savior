@@ -33,6 +33,7 @@ L'équipe fut composée de :
 - Pour lancer une attaque, appuyez sur la touche `espace`.
 - La sauvegarde se fait automatiquement à la fin d'un niveau.
 - Pour quitter le jeu, appuyez sur `esc` ou cliquer sur la `croix`.
+- Vous pouvez accéder à un rappel des commandes en appuyant sur `h`.
 
 ## Sous quelle plateforme est disponible le jeu ? 
 
