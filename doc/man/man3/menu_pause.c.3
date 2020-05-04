@@ -14,7 +14,7 @@ src/menu_pause.c \- Programme qui gère le menu de pause\&.
 
 .in +1c
 .ti -1c
-.RI "\fBMenu_t\fP * \fBgetMenuPause\fP ()"
+.RI "\fBGameObject\fP * \fBgetMenuPause\fP ()"
 .br
 .RI "Fonction qui permet retourner le menu de pause\&. "
 .ti -1c
@@ -30,7 +30,7 @@ src/menu_pause.c \- Programme qui gère le menu de pause\&.
 
 .in +1c
 .ti -1c
-.RI "\fBMenu_t\fP \fBmenu_pause\fP"
+.RI "\fBGameObject\fP \fBmenu_pause\fP"
 .br
 .in -1c
 .SH "Description détaillée"
@@ -57,14 +57,14 @@ mars 2020
 Initialisation, affichage du menu, navigation dans le menu, gestion des entrees clavier et destruction du menu 
 .SH "Documentation des fonctions"
 .PP 
-.SS "\fBMenu_t\fP * getMenuPause ()"
+.SS "\fBGameObject\fP * getMenuPause ()"
 
 .PP
 Fonction qui permet retourner le menu de pause\&. 
 .PP
 \fBRenvoie\fP
 .RS 4
-une structure menu de type Menu_t 
+une structure menu de type GameObject 
 .RE
 .PP
 
@@ -97,8 +97,8 @@ pas de valeur de retour (void)
 
 .SH "Documentation des variables"
 .PP 
-.SS "\fBMenu_t\fP menu_pause"
-Structure de type menu_t 
+.SS "\fBGameObject\fP menu_pause"
+Structure de type GameObject 
 .SH "Auteur"
 .PP 
 Généré automatiquement par Doxygen pour Beauty Savior à partir du code source\&.

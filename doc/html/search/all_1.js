@@ -9,5 +9,6 @@ var searchData=
   ['afficherinterface_11',['AfficherInterface',['../interface_8c.html#a7c61d7b31a07f9f23e933f768d9b735e',1,'interface.c']]],
   ['afficherjoueur_12',['AfficherJoueur',['../player_8c.html#a5c6a7993d87c10bd12bfefccdf96a242',1,'AfficherJoueur():&#160;player.c'],['../player_8h.html#a5c6a7993d87c10bd12bfefccdf96a242',1,'AfficherJoueur():&#160;player.c']]],
   ['attaqueennemis_13',['attaqueEnnemis',['../entite_8c.html#adf33bce05406e0cd2662f95f88a69bad',1,'attaqueEnnemis():&#160;entite.c'],['../entite_8h.html#adf33bce05406e0cd2662f95f88a69bad',1,'attaqueEnnemis():&#160;entite.c']]],
-  ['attaquejoueur_14',['attaqueJoueur',['../player_8c.html#a6eefc40165232a89552410f13c2f0e92',1,'attaqueJoueur():&#160;player.c'],['../player_8h.html#a6eefc40165232a89552410f13c2f0e92',1,'attaqueJoueur():&#160;player.c']]]
+  ['attaquejoueur_14',['attaqueJoueur',['../player_8c.html#a6eefc40165232a89552410f13c2f0e92',1,'attaqueJoueur():&#160;player.c'],['../player_8h.html#a6eefc40165232a89552410f13c2f0e92',1,'attaqueJoueur():&#160;player.c']]],
+  ['attributs_2eh_15',['attributs.h',['../attributs_8h.html',1,'']]]
 ];

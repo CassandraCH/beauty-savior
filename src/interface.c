@@ -7,14 +7,14 @@
  */
 #include "baseGame.h"
 
-Menu_t interface; /**< Structure de type menu_t */
+GameObject interface; /**< Structure de type GameObject */
 
 /**
- * \fn extern Menu_t* getInterface()
+ * \fn extern GameObject* getInterface()
  * \brief Fonction qui permet de retourner l'interface 
  * \return un pointeur sur l'interface
 */
-extern Menu_t* getInterface()
+extern GameObject* getInterface()
 {
     return &interface;
 }

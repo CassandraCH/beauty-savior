@@ -9,27 +9,27 @@
 
 #include "baseGame.h"
 
-Menu_t _menu; /**< Structure de type menu_t */
+GameObject _gameObject; /**< Structure de type GameObject */
 
 /**
- * \fn extern Menu_t* getMenu()
+ * \fn extern GameObject* getGameObject()
  * \brief Fonction qui permet retourner le menu principal
- * \return une structure menu de type Menu_t
+ * \return une structure menu de type GameObject
 */
-extern Menu_t* getMenu()
+extern GameObject* getGameObject()
 {
-    return &_menu;
+    return &_gameObject;
 }
 
 /**
- * \fn extern int getTouchePresse(Menu_t *menu)
+ * \fn extern int getTouchePresse(GameObject *gameObject)
  * \brief Fonction qui retourne l'option du menu selectionne
- * \param menu pointeur sur le menu
+ * \param gameObject pointeur sur le menu
  * \return un entier correspondant au numero de l'option selectionnee
 */
-extern int getTouchePresse(Menu_t *menu)
+extern int getTouchePresse(GameObject *gameObject)
 { 
-    return menu->selectedOption; 
+    return gameObject->selectedOption; 
 }
 
 /**
@@ -43,16 +43,16 @@ extern void Init_MenuPrincipal()
     printf("Chargement Menu principal\n");
     
     //chargement des sons
-    _menu.son = Mix_LoadWAV("sounds/menu_click.wav");
-    _menu.bgm = Mix_LoadMUS("sounds/awesomeness.wav");
+    _gameObject.son = Mix_LoadWAV("sounds/menu_click.wav");
+    _gameObject.bgm = Mix_LoadMUS("sounds/awesomeness.wav");
 
-    _menu.nom_menu = "Menu Principal";
+    _gameObject.nom_gameObject = "Menu Principal";
 
     /* 
      * Premiere option : Demarer une nouvelle partie 
      * Actif par défaut
      */ 
-    ChargerData_Menu(0,0,&_menu , "Jouer"
+    ChargerData_Menu(0,0,&_gameObject , "Jouer"
                 ,"graphics_assets/icons_buttons/jouer_on_xs.png"
                 ,"graphics_assets/icons_buttons/jouer_off_xs.png"
                 ,469
@@ -61,7 +61,7 @@ extern void Init_MenuPrincipal()
     /* 
      * Deuxieme option : Chargement d'une partie
      */
-    ChargerData_Menu(1,1,&_menu , "Chargement"
+    ChargerData_Menu(1,1,&_gameObject , "Chargement"
             ,"graphics_assets/icons_buttons/load_on_xs.png"
             ,"graphics_assets/icons_buttons/load_off_xs.png"
             ,455
@@ -71,7 +71,7 @@ extern void Init_MenuPrincipal()
     /* 
      * Troisieme option : Quitter le jeu 
      */
-    ChargerData_Menu(2,1,&_menu , "Quitter"
+    ChargerData_Menu(2,1,&_gameObject , "Quitter"
             ,"graphics_assets/icons_buttons/quitter_on_xs.png"
             ,"graphics_assets/icons_buttons/quitter_off_xs.png"
             ,469
@@ -80,7 +80,7 @@ extern void Init_MenuPrincipal()
     /* 
      * Quatrième option : Couper/Activer Son
      */
-    ChargerData_Menu(3,1,&_menu , "ActiverSon"
+    ChargerData_Menu(3,1,&_gameObject , "ActiverSon"
             ,"graphics_assets/icons_buttons/sound_on_xs.png"
             ,"graphics_assets/icons_buttons/sound_off_xs.png"
             ,487
@@ -88,57 +88,57 @@ extern void Init_MenuPrincipal()
 
 
     //Option selectionnee = la premiere (nouvelle partie)
-    _menu.selectedOption = 0;
+    _gameObject.selectedOption = 0;
 
     //Chargement de la texture du menu principal
-     _menu.bg = ChargerTexture("graphics_assets/menu_bg_xs.png");
+     _gameObject.bg = ChargerTexture("graphics_assets/menu_bg_xs.png");
 
      printf("Fin Chargement Menu principal\n");
 }
 
 /**
- * \fn extern void UpdateOption(Options_t * menut, int etat )
+ * \fn extern void UpdateComponent(gameObject * component, int etat )
  * \brief Fonction qui rafraichit l'affichage des options
- * \param menut option a mettre a jour
+ * \param component option a mettre a jour
  * \param etat etat : selectionne ou non
  * \return pas de valeur de retour (void)
 */
-extern void UpdateOption(Options_t * menut, int etat )
+extern void UpdateComponent(Component * component, int etat )
 {
     /* 
      * Surface tampon => utile pour parametrer la surface
      * TTF_RenderText_Blended => permet de creer une surface et de l'affiche en haute qualite 
      */
 
-    // SDL_Surface *tmp = TTF_RenderText_Blended(menu.police, menut->nomOption, menut->couleur);
+    // SDL_Surface *tmp = TTF_RenderText_Blended(menu.police, component->nomOption, component->couleur);
     
-    SDL_Surface *tmp = IMG_Load( menut->filename[etat] );
-    menut->largeur = tmp->w;
-    menut->hauteur = tmp->h;
+    SDL_Surface *tmp = IMG_Load( component->filename[etat] );
+    component->largeur = tmp->w;
+    component->hauteur = tmp->h;
 
     //Liberer la memoire utilisee pour l'ancienne structure
-    if( menut->texture != NULL)
+    if( component->texture != NULL)
     {   
         printf("Texture libéré\n");
-        SDL_DestroyTexture(menut->texture);
-        menut->texture = NULL;
+        SDL_DestroyTexture(component->texture);
+        component->texture = NULL;
     }
 
     //Creer la nouvelle texture avec les parametres dans la surface tampon
-    menut->texture = SDL_CreateTextureFromSurface( getRenderer() , tmp);
+    component->texture = SDL_CreateTextureFromSurface( getRenderer() , tmp);
 
     //Liberer la memoire utilisee pour la surface tampon
     SDL_FreeSurface(tmp);
 }
 
 /**
- * \fn extern void UpdateImage_Option(Options_t * menut, const char * filename)
+ * \fn extern void UpdateImage_Component(gameObject * component, const char * filename)
  * \brief Fonction qui rafraichit l'affichage des options
- * \param menut option a mettre a jour
+ * \param component option a mettre a jour
  * \param filename nom du fichier à partir duquel on charge la texture
  * \return pas de valeur de retour (void)
 */
-extern void UpdateImage_Option(Options_t * menut, const char * filename )
+extern void UpdateImage_Component(Component * component, const char * filename )
 {
    /* 
      * Surface tampon => utile pour parametrer la surface
@@ -147,19 +147,19 @@ extern void UpdateImage_Option(Options_t * menut, const char * filename )
 
     
     SDL_Surface *tmp = IMG_Load( filename );
-    menut->largeur = tmp->w;
-    menut->hauteur = tmp->h;
+    component->largeur = tmp->w;
+    component->hauteur = tmp->h;
 
     //Liberer la memoire utilisee pour l'ancienne structure
-    if( menut->texture != NULL)
+    if( component->texture != NULL)
     {   
         printf("Texture libéré\n");
-        SDL_DestroyTexture(menut->texture);
-        menut->texture = NULL;
+        SDL_DestroyTexture(component->texture);
+        component->texture = NULL;
     }
 
     //Creer la nouvelle texture avec les parametres dans la surface tampon
-    menut->texture = SDL_CreateTextureFromSurface( getRenderer() , tmp);
+    component->texture = SDL_CreateTextureFromSurface( getRenderer() , tmp);
 
     //Liberer la memoire utilisee pour la surface tampon
     SDL_FreeSurface(tmp);
@@ -167,107 +167,107 @@ extern void UpdateImage_Option(Options_t * menut, const char * filename )
 
 
 /**
- * \fn extern void ToucheHaut(Menu_t *menu)
+ * \fn extern void ToucheHaut(GameObject *gameObject)
  * \brief Fonction qui permet de naviguer dans le menu vers le haut
- * \param menu pointeur sur le menu
+ * \param gameObject pointeur sur le menu
  * \return pas de valeur de retour (void)
 */
-extern void ToucheHaut(Menu_t *menu)
+extern void ToucheHaut(GameObject *gameObject)
 {
     //Si l'option actuellement selectionnee est differente de la premiere
     //Si on est sur la premiere option => on ne peut pas aller sur une option au-dessus
-    if (menu->selectedOption - 1 >= 0)
+    if (gameObject->selectedOption - 1 >= 0)
     {  
         //Rafraichir l'affichage
-        UpdateOption(&menu->menu[menu->selectedOption] , 1);
+        UpdateComponent(&gameObject->components[gameObject->selectedOption] , 1);
 
         //Modifier l'option selectionnee => passe a l'option suivante
-        menu->selectedOption--;
+        gameObject->selectedOption--;
 
         //Rafraichir l'affichage
-        UpdateOption(&menu->menu[menu->selectedOption], 0 );
+        UpdateComponent(&gameObject->components[gameObject->selectedOption], 0 );
     }
 }
 
 /**
- * \fn extern void ToucheBas(Menu_t *menu)
+ * \fn extern void ToucheBas(GameObject *gameObject)
  * \brief Fonction qui permet de naviguer dans le menu vers le bas
- * \param menu pointeur sur le menu
+ * \param gameObject pointeur sur le menu
  * \return pas de valeur de retour (void)
 */
-extern void ToucheBas(Menu_t *menu)
+extern void ToucheBas(GameObject *gameObject)
 {
     //Si l'option actuellement selectionnee est differente de la derniere
     //Si on est sur la derniere option => on ne peut pas aller sur une option en-dessous
-    if (menu->selectedOption + 1 < MAX_NUMBER)
+    if (gameObject->selectedOption + 1 < MAX_NUMBER)
     {
         //Rafraichir l'affichage
-        UpdateOption(&menu->menu[menu->selectedOption], 1);
+        UpdateComponent(&gameObject->components[gameObject->selectedOption], 1);
 
         //Modifier l'option selectionnee => passe a l'option precedente
-        menu->selectedOption++;
+        gameObject->selectedOption++;
 
         //Rafraichir l'affichage
-        UpdateOption(&menu->menu[menu->selectedOption], 0);
+        UpdateComponent(&gameObject->components[gameObject->selectedOption], 0);
     }
 }
 
 /**
- * \fn extern void Droite(Menu_t* menu, int nombresOptions)
+ * \fn extern void Droite(GameObject* gameObject, int nombresOptions)
  * \brief Fonction qui permet de naviguer dans le menu a droite
- * \param menu pointeur sur le menu
+ * \param gameObject pointeur sur le menu
  * \param nombresOptions nombre d'options
  * \return pas de valeur de retour (void)
 */
-extern void Droite(Menu_t* menu, int nombresOptions)
+extern void Droite(GameObject* gameObject, int nombresOptions)
 {
 
     //Si l'option actuellement selectionnee est differente de la premiere
     //Si on est sur la dernière option => on ne peut pas aller sur une option au-dessus 
-    if (menu->selectedOption + 1 < nombresOptions  )
+    if (gameObject->selectedOption + 1 < nombresOptions  )
     {
         //Rafraichir l'affichage
-        UpdateOption(&menu->menu[menu->selectedOption], 1);
+        UpdateComponent(&gameObject->components[gameObject->selectedOption], 1);
 
         //Modifier l'option selectionnee => passe a l'option precedente
-        menu->selectedOption++;
+        gameObject->selectedOption++;
 
         //Rafraichir l'affichage
-        UpdateOption(&menu->menu[menu->selectedOption], 0);
+        UpdateComponent(&gameObject->components[gameObject->selectedOption], 0);
     }
 }
 
 /**
- * \fn extern void Gauche(Menu_t* menu, int nombresOptions)
+ * \fn extern void Gauche(GameObject* gameObject, int nombresOptions)
  * \brief Fonction qui permet de naviguer dans le menu a gauche
- * \param menu pointeur sur le menu
+ * \param gameObject pointeur sur le menu
  * \param nombresOptions nombre d'options
  * \return pas de valeur de retour (void)
 */
-extern void Gauche(Menu_t* menu, int nombresOptions)
+extern void Gauche(GameObject* gameObject, int nombresOptions)
 {
     //Si l'option actuellement selectionnee est differente de la premiere
     //Si on est sur la premiere option => on ne peut pas aller sur une option au-dessus
-    if (menu->selectedOption - 1 >= 0)
+    if (gameObject->selectedOption - 1 >= 0)
     {  
   
         //Rafraichir l'affichage
-        UpdateOption(&menu->menu[menu->selectedOption] , 1);
+        UpdateComponent(&gameObject->components[gameObject->selectedOption] , 1);
 
         //Modifier l'option selectionnee => passe a l'option suivante
-        menu->selectedOption--;
+        gameObject->selectedOption--;
 
         //Rafraichir l'affichage
-        UpdateOption(&menu->menu[menu->selectedOption], 0 );
+        UpdateComponent(&gameObject->components[gameObject->selectedOption], 0 );
     }
     
 }
 
 /**
- * \fn extern void Dessiner_Menu(Menu_t* menu, int nombresOptions, int posX, int posY , int largeurBG, int hauteurBG) 
+ * \fn extern void Dessiner_Menu(GameObject* gameObject, int nombresOptions, int posX, int posY , int largeurBG, int hauteurBG) 
  * \brief Fonction qui permet d'afficher le menu
  * \details Affichage des différentes options
- * \param menu pointeur sur le menu
+ * \param gameObject pointeur sur le menu
  * \param nombresOptions nombre d'options dans le menu
  * \param posX position en x de l'arriere plan
  * \param posY position en y de l'arriere plan
@@ -275,20 +275,20 @@ extern void Gauche(Menu_t* menu, int nombresOptions)
  * \param hauteurBG hauteur de l'arriere plan
  * \return pas de valeur de retour (void)
 */
-extern void Dessiner_Menu(Menu_t* menu, int nombresOptions, int posX, int posY , int largeurBG, int hauteurBG) 
+extern void Dessiner_Menu(GameObject* gameObject, int nombresOptions, int posX, int posY , int largeurBG, int hauteurBG) 
 {
     SDL_Rect rect = {posX,posY, largeurBG, hauteurBG };
 
     //Gestion de l'affichage du rendu
-    if( menu->bg != NULL )
-        SDL_RenderCopy( getRenderer(), menu->bg , NULL, &rect );
+    if( gameObject->bg != NULL )
+        SDL_RenderCopy( getRenderer(), gameObject->bg , NULL, &rect );
 
     //Pour chaque option, afficher a l'ecran son rendu
 	for (int i = 0; i < nombresOptions; i++)
 	{
         //Rectangle tampon 
-        SDL_Rect rect = {menu->menu[i].x, menu->menu[i].y, menu->menu[i].largeur, menu->menu[i].hauteur};
-        SDL_RenderCopy( getRenderer(), menu->menu[i].texture , NULL, &rect);
+        SDL_Rect rect = {gameObject->components[i].x, gameObject->components[i].y, gameObject->components[i].largeur, gameObject->components[i].hauteur};
+        SDL_RenderCopy( getRenderer(), gameObject->components[i].texture , NULL, &rect);
 	}
 }
 
@@ -320,20 +320,20 @@ extern void Input_MenuPrincipal(SDL_Event *event)
                 //Cas de la touche fleche du haut
                 case SDLK_UP:
                     //Gestion du son
-                    Mix_PlayChannel(-1, getMenu()->son, 0);
-                    ToucheHaut(getMenu());
+                    Mix_PlayChannel(-1, getGameObject()->son, 0);
+                    ToucheHaut(getGameObject());
                     break;
 
                 //Cas de la touche fleche du bas
                 case SDLK_DOWN:
                     //Gestion du son
-                    Mix_PlayChannel(-1, getMenu()->son, 0);
-                    ToucheBas(getMenu());
+                    Mix_PlayChannel(-1, getGameObject()->son, 0);
+                    ToucheBas(getGameObject());
                     break;
 
                 //Cas de la touche entree
                 case SDLK_RETURN:
-                    switch (getTouchePresse(getMenu()))
+                    switch (getTouchePresse(getGameObject()))
                     {
                         //Cas de la premiere option : demarer une nouvelle partie
                         case 0:
@@ -362,7 +362,7 @@ extern void Input_MenuPrincipal(SDL_Event *event)
                             // printf("Bouton option press%c\n", 130);
                             printf("Chargement depuis menu principal\n");
                             Init_MenuLoad();
-                            Nettoyer_Menu(getMenu(), 4);
+                            Nettoyer_Menu(getGameObject(), 4);
 
                             //Changement de l'etat du jeu
                             getBaseGame()->state = LOADING;
@@ -387,7 +387,7 @@ extern void Input_MenuPrincipal(SDL_Event *event)
                     //Si la musique est en pause
                     if( Mix_PausedMusic() == 1 )
                     {
-                        UpdateOption(&_menu.menu[3], 0);
+                        UpdateComponent(&_gameObject.components[3], 0);
 
                         //On enlève la pause (la musique repart où elle en était)
                         Mix_ResumeMusic();
@@ -396,7 +396,7 @@ extern void Input_MenuPrincipal(SDL_Event *event)
                     //Si la musique est en train de jouer
                     else
                     {
-                        UpdateOption(&_menu.menu[3], 1);
+                        UpdateComponent(&_gameObject.components[3], 1);
 
                         //On met en pause la musique
                         Mix_PauseMusic();
@@ -410,11 +410,11 @@ extern void Input_MenuPrincipal(SDL_Event *event)
 }
 
 /**
- * \fn extern void ChargerData_Menu(int numero,int num_image, Menu_t * menu,  char * nomOption,  char * image_on,  char * image_off, int positionX, int positionY)
+ * \fn extern void ChargerData_Menu(int numero,int num_image, GameObject * gameObject,  char * nomOption,  char * image_on,  char * image_off, int positionX, int positionY)
  * \brief Fonction qui gere le chargement des donnes du menu
  * \param numero numero de l'option
  * \param num_image numero de l'image selectionne par defaut
- * \param menu pointeur sur le menu
+ * \param gameObject pointeur sur le menu
  * \param nomOption nom de l'option
  * \param image_on chemin pour acceder a l'image selectionnee
  * \param image_off chemin pour acceder a l'image deselectionnee
@@ -422,45 +422,45 @@ extern void Input_MenuPrincipal(SDL_Event *event)
  * \param positionY position en y
  * \return pas de valeur de retour (void)
 */
-extern void ChargerData_Menu(int numero, int num_image, Menu_t * menu,  char * nomOption,  char * image_on,  char * image_off, int positionX, int positionY)
+extern void ChargerData_Menu(int numero, int num_image, GameObject * gameObject,  char * nomOption,  char * image_on,  char * image_off, int positionX, int positionY)
 {
     //Chargement des donnees
-    menu->menu[numero].nomOption = nomOption;
-    menu->menu[numero].filename[0] = image_on;
-    menu->menu[numero].filename[1] = image_off;
+    gameObject->components[numero].nomOption = nomOption;
+    gameObject->components[numero].filename[0] = image_on;
+    gameObject->components[numero].filename[1] = image_off;
 
     //Refraichissement de l'affichage de l'option
-    UpdateOption( &menu->menu[numero], num_image  );
+    UpdateComponent( &gameObject->components[numero], num_image  );
     
     //Position (en x et y) de l'option dans la fenetre
-    menu->menu[numero].x = positionX;
-    menu->menu[numero].y = positionY;
+    gameObject->components[numero].x = positionX;
+    gameObject->components[numero].y = positionY;
 }
 
 /**
- * \fn extern void Nettoyer_Menu(Menu_t * menu, int nombreOptions)
+ * \fn extern void Nettoyer_Menu(GameObject * gameObject, int nombreOptions)
  * \brief Fonction qui permet de nettoyer l'ecran du menu
- * \param menu pointeur sur le menu
+ * \param gameObject pointeur sur le menu
  * \param nombreOptions nombre d'options du menu
  * \return pas de valeur de retour (void)
 */
-extern void Nettoyer_Menu(Menu_t * menu, int nombreOptions)
+extern void Nettoyer_Menu(GameObject * gameObject, int nombreOptions)
 {
-    printf("Suppression Menu %s\n", menu->nom_menu );
+    printf("Suppression Menu %s\n", gameObject->nom_gameObject );
 
-    if( menu != NULL )
+    if( gameObject != NULL )
     {
          //Parcours de toute les options
         for(int i = 0; i < nombreOptions; i++)
         {
             //Liberation de la memoire utilisee pour la texture de l'option
-            if( menu->menu[i].texture != NULL ) 
+            if( gameObject->components[i].texture != NULL ) 
             {
                 //Liberation de la memoire utilisee pour la texture de l'option
-                SDL_DestroyTexture(menu->menu[i].texture);
+                SDL_DestroyTexture(gameObject->components[i].texture);
             }
         }
-        printf("Fin Suppression Menu %s \n", menu->nom_menu);
+        printf("Fin Suppression Menu %s \n", gameObject->nom_gameObject);
 
     }
       return;

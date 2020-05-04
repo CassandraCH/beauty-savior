@@ -8,14 +8,14 @@
  */
 #include "baseGame.h"
 
-Menu_t menu_continue; /**< Structure de type Menu_t */
+GameObject menu_continue; /**< Structure de type GameObject */
 
 /**
- * \fn extern Menu_t * getMenuCon()
+ * \fn extern GameObject * getMenuCon()
  * \brief Fonction qui permet retourner le menu "continuer"
- * \return une structure menu de type Menu_t
+ * \return une structure menu de type GameObject
 */
-extern Menu_t * getMenuCon()
+extern GameObject * getMenuCon()
 {
     return &menu_continue;
 }
@@ -34,7 +34,7 @@ extern void Init_MenuContinue()
    
     SetHUD_IntToTexture(getNiveau(),(SDL_Color){0,0,0,0}, "NIVEAU", getPlayer()->niveau , 510, 374);
 
-    menu_continue.nom_menu = "Menu Continue";
+    menu_continue.nom_gameObject = "Menu Continue";
     /* 
      * Premiere option : Reprendre la partie
      * Actif par défaut
@@ -106,7 +106,7 @@ extern void Input_MenuContinue(SDL_Event *event)
 
                             //le passport est remis en non collecté
                             getPlayer()->isPasspordCollected = false;
-                            UpdateOption( &getInterface()->menu[4], 1);
+                            UpdateComponent( &getInterface()->components[4], 1);
 
                         
                             //Charger le niveau suivant

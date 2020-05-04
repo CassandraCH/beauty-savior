@@ -35,7 +35,7 @@
 
 #include "interface.h"
 
-#include "gameOver.h"
+#include "gameover.h"
 
 
 /**
@@ -53,7 +53,7 @@ typedef struct baseGame
     int tempsPrecedent; /**<  temps précédent en référence au temps écoulé depuis la dernière image */
     int tempsActuel;  /**<  temps actuel en référence au temps écoulé depuis la dernière image */
 
-    SDL_Texture * passportReq; // Texture du passeport nécéssaire pour le niveau
+    SDL_Texture * passportReq; /**< Texture du passeport nécéssaire pour le niveau */
 
 }Base_Game; 
 /**< This is the documentation for the preceding typedef */

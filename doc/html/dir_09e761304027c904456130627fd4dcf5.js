@@ -1,13 +1,14 @@
 var dir_09e761304027c904456130627fd4dcf5 =
 [
+    [ "attributs.h", "attributs_8h.html", "attributs_8h" ],
     [ "baseGame.h", "base_game_8h.html", "base_game_8h" ],
     [ "chargeSave.h", "charge_save_8h.html", "charge_save_8h" ],
     [ "commun.h", "commun_8h.html", "commun_8h" ],
     [ "constantes.h", "constantes_8h.html", "constantes_8h" ],
-    [ "definitions.h", "definitions_8h_source.html", null ],
+    [ "definitions.h", "definitions_8h.html", "definitions_8h" ],
     [ "enjeu.h", "enjeu_8h.html", "enjeu_8h" ],
     [ "entite.h", "entite_8h.html", "entite_8h" ],
-    [ "gameOver.h", "game_over_8h_source.html", null ],
+    [ "gameover.h", "gameover_8h.html", "gameover_8h" ],
     [ "hud.h", "hud_8h.html", "hud_8h" ],
     [ "interface.h", "interface_8h_source.html", null ],
     [ "inventaire.h", "inventaire_8h_source.html", null ],

@@ -224,7 +224,7 @@ extern void CollisionItems()
                 else if ( pt->type == passport )
                 {
                     player.isPasspordCollected = true;
-                    UpdateOption( &getInterface()->menu[4], 0);
+                    UpdateComponent( &getInterface()->components[4], 0);
                 }    
                 
                         
@@ -379,8 +379,8 @@ extern void collision_tir()
                         getPlayer()->nombreVies--;
                         switch( getPlayer()->nombreVies )
                         {
-                            case 1: UpdateImage_Option( &getInterface()->menu[2], "graphics_assets/vie_1.png" ); break;
-                            case 2: UpdateImage_Option( &getInterface()->menu[2], "graphics_assets/vie_2.png" ); break;
+                            case 1: UpdateImage_Component( &getInterface()->components[2], "graphics_assets/vie_1.png" ); break;
+                            case 2: UpdateImage_Component( &getInterface()->components[2], "graphics_assets/vie_2.png" ); break;
                         }
                         SetNombreTir_Ennemis();
                         tir->estMort = true;

@@ -43,7 +43,7 @@ extern void Update(float dt)
     {
         //Gestion de la musique du menu principal
         if( !Mix_PlayingMusic() )
-          Mix_PlayMusic(getMenu()->bgm, -1);
+          Mix_PlayMusic(getGameObject()->bgm, -1);
     }
 
     //Cas ou on est en train de jouer
@@ -105,7 +105,7 @@ extern void Rendu_Jeux()
   //Cas où on est sur le menu principal
   if ( getBaseGame()->state == MENU_PRINCIPAL )
   {    
-    Dessiner_Menu(getMenu(), 4, 0, 0, 1280, 720 );
+    Dessiner_Menu(getGameObject(), 4, 0, 0, 1280, 720 );
   
   }
 
@@ -163,7 +163,7 @@ extern void Rendu_Jeux()
     //Gestion des affchages des listes, du joueur et du score
     Afficher_ElementsListes( &listEnnemis, texture, ennemi, 50, 50 );
     
-    
+
     // Liste des élements attaques
     Afficher_ElementsListes( &bullet , itemTex, feu , 41, 47 );
     Afficher_ElementsListes( &bullet , rockTex, rock, 37, 35 );

@@ -9,14 +9,14 @@
 
 #include "baseGame.h"
 
-Menu_t menu_win; /**< Structure de type menu_t */
+GameObject menu_win; /**< Structure de type GameObject */
 
 /**
- * \fn extern Menu_t * getMenu_Win()
+ * \fn extern GameObject * getMenu_Win()
  * \brief Fonction qui permet retourner le menu concernant la fin d'une partie gagnée
- * \return une structure menu de type Menu_t
+ * \return une structure menu de type GameObject
 */
-extern Menu_t * getMenu_Win()
+extern GameObject * getMenu_Win()
 {
     return &menu_win;
 }
@@ -36,7 +36,7 @@ extern void Init_MenuWin()
     SetHUD_IntToTexture( getNombreVie(), (SDL_Color){0,0,0,0}, "" , getPlayer()->nombreVies , 550 , 392) ;
     SetHUD_IntToTexture( getScores() ,(SDL_Color){0,0,0,0}, "",  getPlayer()->scores , 680 , 392 );
     
-    menu_win.nom_menu = "Menu Victoire";
+    menu_win.nom_gameObject = "Menu Victoire";
 
     /* 
      * Premiere option : Reprendre la partie

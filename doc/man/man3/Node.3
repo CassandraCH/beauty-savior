@@ -12,33 +12,6 @@ Node
 
 .in +1c
 .ti -1c
-.RI "float \fBw\fP"
-.br
-.ti -1c
-.RI "float \fBh\fP"
-.br
-.ti -1c
-.RI "float \fBx\fP"
-.br
-.ti -1c
-.RI "float \fBy\fP"
-.br
-.ti -1c
-.RI "float \fBvx\fP"
-.br
-.ti -1c
-.RI "float \fBvy\fP"
-.br
-.ti -1c
-.RI "\fBtypeEntite\fP \fBtype\fP"
-.br
-.ti -1c
-.RI "\fBbool\fP \fBestMort\fP"
-.br
-.ti -1c
-.RI "int \fBnb_lancer\fP"
-.br
-.ti -1c
 .RI "SDL_Rect * \fBrect\fP"
 .br
 .ti -1c
@@ -83,10 +56,6 @@ Défini si l'élement est actif ou non>
 Position de départ en X 
 .SS "float baseY"
 Position de départ en Y 
-.SS "\fBbool\fP estMort"
-un type booleen pour savoir c'est l'entite est mort> 
-.SS "float h"
-hauteur de l'entite 
 .SS "int imageCourante"
 Determine l'image actuellement visible a l'écran 
 .SS "\fBTexture_Manager\fP imagesItem[2]"
@@ -95,8 +64,6 @@ Tableau de texture pour un element
 float des lancer 
 .SS "float movingX"
 les deplacements selon x 
-.SS "int nb_lancer"
-un compteur pour savoir le nb de lancer, attaque en cours> 
 .SS "int nb_objets"
 le nombres d'objets 
 .SS "float phase"
@@ -105,18 +72,6 @@ float de la phase
 Rectangle qui défini la taille d'un éléments> 
 .SS "struct \fBNode\fP* suivant"
 Pointeur vers l'element suivant 
-.SS "\fBtypeEntite\fP type"
-le type de l'entite 
-.SS "float vx"
-la velocite x la vitesse laquelle va l'entite dans une direction x 
-.SS "float vy"
-la velocite y , la vitesse laquelle va l'entite dans une direction y 
-.SS "float w"
-largeur de l'entite 
-.SS "float x"
-la position x 
-.SS "float y"
-la position y 
 
 .SH "Auteur"
 .PP 

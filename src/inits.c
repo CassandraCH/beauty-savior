@@ -62,9 +62,9 @@ void Init(const char *title)
 
     /*############### CHARGEMENT DES POLICES *###############*/
 
-    getMenu()->police = TTF_OpenFont("fonts/homizio.ttf", 20);
+    getGameObject()->police = TTF_OpenFont("fonts/homizio.ttf", 20);
     //Vérifie que la police a bien été chargé pour le menu
-    if(!getMenu()->police )
+    if(!getGameObject()->police )
     {
         printf("Cannot find font file!!\n");
         SDL_Quit();
@@ -152,11 +152,11 @@ void LibererRessources_Jeux(void)
     LibererRessources( &getPlayer()->tex );
 
     //Suppression des audios qui ont été chargé
-    Mix_FreeChunk(getMenu()->son);
-    Mix_FreeMusic( getMenu()->bgm  );
+    Mix_FreeChunk(getGameObject()->son);
+    Mix_FreeMusic( getGameObject()->bgm  );
 
     //Suppression des polices qui ont été chargé
-    TTF_CloseFont(getMenu()->police);
+    TTF_CloseFont(getGameObject()->police);
     TTF_CloseFont(getTime()->police);
     TTF_CloseFont(getScores()->police);
     TTF_CloseFont( getMenu_Win()->police );
@@ -168,7 +168,7 @@ void LibererRessources_Jeux(void)
 
     //Destruction des menus
     Nettoyer_Menu(getMenuCon(), 1);
-    Nettoyer_Menu(getMenu(), 4 );
+    Nettoyer_Menu(getGameObject(), 4 );
     Nettoyer_Menu(getMenuPause(), 2);
     Nettoyer_Menu( getMenu_Win(), 2);
 

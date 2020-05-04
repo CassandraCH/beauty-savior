@@ -8,14 +8,14 @@
  */
 #include "baseGame.h"
 
-Menu_t menu_load; /**< Structure de type menu_t */
+GameObject menu_load; /**< Structure de type GameObject */
 
 /**
- * \fn extern Menu_t * getMenuLoad()
+ * \fn extern GameObject * getMenuLoad()
  * \brief Fonction qui permet retourner le menu de chargement
- * \return une structure menu de type Menu_t
+ * \return une structure menu de type GameObject
 */
-extern Menu_t * getMenuLoad()
+extern GameObject * getMenuLoad()
 {
     return &menu_load;
 }
@@ -39,7 +39,7 @@ extern void Init_MenuLoad()
     //Creation de la texture pour le numero du niveau
     SetHUD_IntToTexture(getNiveau(), (SDL_Color){0,0,0,0} , "NIVEAU", getPlayer()->niveau , 490, 374 );
 
-    menu_load.nom_menu = "Menu Chargement";
+    menu_load.nom_gameObject = "Menu Chargement";
 
     /* 
      * Premiere option : Retour au menu principal
@@ -134,7 +134,7 @@ extern void Input_MenuLoad(SDL_Event *event)
                             SetHUD_IntToTexture(getScores(),(SDL_Color){0xFF,0xFF,0xFF,0xFF}, "", getPlayer()->scores,560, 21);
 
                             //Nettoyage de l'affichage
-                            Nettoyer_Menu(getMenu(), 4);
+                            Nettoyer_Menu(getGameObject(), 4);
                             
                              Init_Interface();
                             //Charger le niveau

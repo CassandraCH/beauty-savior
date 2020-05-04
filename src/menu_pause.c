@@ -9,14 +9,14 @@
 
 #include "baseGame.h"
 
-Menu_t menu_pause; /**< Structure de type menu_t */
+GameObject menu_pause; /**< Structure de type GameObject */
 
 /**
- * \fn extern Menu_t * getMenuPause()
+ * \fn extern GameObject * getMenuPause()
  * \brief Fonction qui permet retourner le menu de pause
- * \return une structure menu de type Menu_t
+ * \return une structure menu de type GameObject
 */
-extern Menu_t * getMenuPause()
+extern GameObject * getMenuPause()
 {
     return &menu_pause;
 }
@@ -36,7 +36,7 @@ extern void Init_MenuPause()
      * Actif par défaut
      */ 
 
-    menu_pause.nom_menu = "Menu Pause";
+    menu_pause.nom_gameObject = "Menu Pause";
 
     ChargerData_Menu(0,0,&menu_pause , "Reprendre partie"
                 ,"graphics_assets/icons_buttons/back_on_xs.png"

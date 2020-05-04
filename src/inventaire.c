@@ -7,18 +7,18 @@
  */
 #include "baseGame.h"
 
-Menu_t inventaire; /**< Structure de type menu_t */
+GameObject inventaire; /**< Structure de type GameObject */
 
 int nombreOs = 0; /**< Compteur du nombre d'os*/
 int nombreRock = 0; /**< Compteur du nombre de cailloux*/
 int nombreBranche = 0; /**< Compteur du nombre de branches*/
 
 /**
- * \fn extern Menu_t* getInventaire()
+ * \fn extern GameObject* getInventaire()
  * \brief Fonction qui permet de retourner l'interface 
  * \return un pointeur sur l'interface
 */
-extern Menu_t* getInventaire()
+extern GameObject* getInventaire()
 {
     return &inventaire;
 }
@@ -242,9 +242,9 @@ extern void Input_Inventaire(SDL_Event *event)
                                 //Gestion de l'affichage => mise à jour
                                 switch( getPlayer()->nombreVies )
                                 {
-                                    case 1: UpdateImage_Option( &getInterface()->menu[2], "graphics_assets/vie_1.png" ); break;
-                                    case 2: UpdateImage_Option( &getInterface()->menu[2], "graphics_assets/vie_2.png" ); break;
-                                    case 3: UpdateImage_Option( &getInterface()->menu[2], "graphics_assets/vie_3.png" ); break;
+                                    case 1: UpdateImage_Component( &getInterface()->components[2], "graphics_assets/vie_1.png" ); break;
+                                    case 2: UpdateImage_Component( &getInterface()->components[2], "graphics_assets/vie_2.png" ); break;
+                                    case 3: UpdateImage_Component( &getInterface()->components[2], "graphics_assets/vie_3.png" ); break;
                                 }
                                 printf("Il reste %d points de vie\n", getPlayer()->nombreVies );
                             }
@@ -262,7 +262,7 @@ extern void Input_Inventaire(SDL_Event *event)
                                 getPlayer()->treeActif = false;
 
                                 //Gestion de l'affichage => mise à jour
-                                UpdateImage_Option( &getInterface()->menu[1], "graphics_assets/items2.png" );
+                                UpdateImage_Component( &getInterface()->components[1], "graphics_assets/items2.png" );
                             }
                             getBaseGame()->state = IN_GAME;        
                             break;
@@ -277,7 +277,7 @@ extern void Input_Inventaire(SDL_Event *event)
                                 getPlayer()->treeActif = true;
 
                                 //Gestion de l'affichage => mise à jour
-                                UpdateImage_Option( &getInterface()->menu[1], "graphics_assets/items1.png" );
+                                UpdateImage_Component( &getInterface()->components[1], "graphics_assets/items1.png" );
                             }
                             getBaseGame()->state = IN_GAME;        
                             break;

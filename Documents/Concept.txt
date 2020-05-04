@@ -57,7 +57,7 @@ Player
     -> afficherJoueur()
 
 Menu
-    ->  getMenu()
+    ->  getGameObject()
     ->  Init_Menu()
     ->  Ecran_Afficher()
     ->  Ecran_Actif()

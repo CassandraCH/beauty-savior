@@ -9,14 +9,14 @@
 
 #include "baseGame.h"
 
-Menu_t help; /**< Structure de type menu_t */
+GameObject help; /**< Structure de type GameObject */
 
 /**
- * \fn extern Menu_t * getMenuPause()
+ * \fn extern GameObject * getMenuPause()
  * \brief Fonction qui permet retourner le menu de pause
- * \return une structure menu de type Menu_t
+ * \return une structure menu de type GameObject
 */
-extern Menu_t * getHelp()
+extern GameObject * getHelp()
 {
     return &help;
 }
@@ -36,7 +36,7 @@ extern void Init_Help()
      * Actif par défaut
      */ 
 
-    help.nom_menu = "Help";
+    help.nom_gameObject = "Help";
 
 
     //Option selectionnee = Reprendre partie

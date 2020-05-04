@@ -14,7 +14,7 @@ src/menu_continue.c \- Programme qui gère le menu 'continuer', lorsqu'un niveau
 
 .in +1c
 .ti -1c
-.RI "\fBMenu_t\fP * \fBgetMenuCon\fP ()"
+.RI "\fBGameObject\fP * \fBgetMenuCon\fP ()"
 .br
 .RI "Fonction qui permet retourner le menu 'continuer'\&. "
 .ti -1c
@@ -34,7 +34,7 @@ src/menu_continue.c \- Programme qui gère le menu 'continuer', lorsqu'un niveau
 
 .in +1c
 .ti -1c
-.RI "\fBMenu_t\fP \fBmenu_continue\fP"
+.RI "\fBGameObject\fP \fBmenu_continue\fP"
 .br
 .in -1c
 .SH "Description détaillée"
@@ -61,14 +61,14 @@ mars 2020
 Initialisation, affichage du menu, navigation dans le menu, gestion des entrees clavier et destruction du menu 
 .SH "Documentation des fonctions"
 .PP 
-.SS "\fBMenu_t\fP * getMenuCon ()"
+.SS "\fBGameObject\fP * getMenuCon ()"
 
 .PP
 Fonction qui permet retourner le menu 'continuer'\&. 
 .PP
 \fBRenvoie\fP
 .RS 4
-une structure menu de type Menu_t 
+une structure menu de type GameObject 
 .RE
 .PP
 
@@ -112,8 +112,8 @@ pas de valeur de retour (void)
 
 .SH "Documentation des variables"
 .PP 
-.SS "\fBMenu_t\fP menu_continue"
-Structure de type Menu_t 
+.SS "\fBGameObject\fP menu_continue"
+Structure de type GameObject 
 .SH "Auteur"
 .PP 
 Généré automatiquement par Doxygen pour Beauty Savior à partir du code source\&.

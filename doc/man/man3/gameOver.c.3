@@ -1,8 +1,8 @@
-.TH "src/gameOver.c" 3 "Lundi 4 Mai 2020" "Version 0.2" "Beauty Savior" \" -*- nroff -*-
+.TH "src/gameover.c" 3 "Lundi 4 Mai 2020" "Version 0.2" "Beauty Savior" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
-src/gameOver.c \- Programme qui gère le menu du game over\&.  
+src/gameover.c \- Programme qui gère le menu du game over\&.  
 
 .SH SYNOPSIS
 .br
@@ -14,7 +14,7 @@ src/gameOver.c \- Programme qui gère le menu du game over\&.
 
 .in +1c
 .ti -1c
-.RI "\fBMenu_t\fP * \fBgetMenu_Over\fP ()"
+.RI "\fBGameObject\fP * \fBgetMenu_Over\fP ()"
 .br
 .RI "Fonction qui permet de retourner le menu du game over\&. "
 .ti -1c
@@ -34,7 +34,7 @@ src/gameOver.c \- Programme qui gère le menu du game over\&.
 
 .in +1c
 .ti -1c
-.RI "\fBMenu_t\fP \fBmenu_over\fP"
+.RI "\fBGameObject\fP \fBmenu_over\fP"
 .br
 .in -1c
 .SH "Description détaillée"
@@ -61,14 +61,14 @@ mars 2020
 Initialisation, affichage du menu, navigation dans le menu, gestion des entrees clavier et destruction du menu 
 .SH "Documentation des fonctions"
 .PP 
-.SS "\fBMenu_t\fP * getMenu_Over ()"
+.SS "\fBGameObject\fP * getMenu_Over ()"
 
 .PP
 Fonction qui permet de retourner le menu du game over\&. 
 .PP
 \fBRenvoie\fP
 .RS 4
-une structure menu de type Menu_t 
+une structure menu de type GameObject 
 .RE
 .PP
 
@@ -112,8 +112,8 @@ pas de valeur de retour (void)
 
 .SH "Documentation des variables"
 .PP 
-.SS "\fBMenu_t\fP menu_over"
-Structure de type menu_t 
+.SS "\fBGameObject\fP menu_over"
+Structure de type GameObject 
 .SH "Auteur"
 .PP 
 Généré automatiquement par Doxygen pour Beauty Savior à partir du code source\&.

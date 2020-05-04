@@ -1,11 +1,8 @@
 var structplayer =
 [
-    [ "estMort", "structplayer.html#a9498a6f5ea0fa3b07131111087d3c135", null ],
     [ "estSurSol", "structplayer.html#a5a67f39f9630f2e6fe85eeed83004e87", null ],
     [ "estTourne", "structplayer.html#a004c72afdc3021650707ef9382c546dc", null ],
-    [ "h", "structplayer.html#a85f2f1bd58b3b44ffdf3881823393959", null ],
     [ "isPasspordCollected", "structplayer.html#aa1d6bac50e7547fbb640884660ef4163", null ],
-    [ "nb_lancer", "structplayer.html#ad3830f917515d20b9fe691faa2cdbba1", null ],
     [ "nb_objet", "structplayer.html#a8d6b043f4511d84b1161cbe4aa2abdfa", null ],
     [ "niveau", "structplayer.html#a01662fc98c8f04492826890e0b34bd72", null ],
     [ "nombreVies", "structplayer.html#a48fe96196e7887fcf1dedb046c1d6c5f", null ],
@@ -16,11 +13,5 @@ var structplayer =
     [ "rockActif", "structplayer.html#ae7a6b543a763f86f60f21723fee2b1d6", null ],
     [ "scores", "structplayer.html#a99e47d721cb50b8482fb9bc9eab1cbdd", null ],
     [ "tex", "structplayer.html#a1bec17986f5e71989ca648dcc8b9a138", null ],
-    [ "treeActif", "structplayer.html#a107a3a5b130c35648389404c8e50d7f6", null ],
-    [ "type", "structplayer.html#aa76d13a32c8c8f63118ec343df6eb66a", null ],
-    [ "vx", "structplayer.html#a81574a53ca33ab2f60f6481c61e3da21", null ],
-    [ "vy", "structplayer.html#a56ab444d63dfde57a24271cbe3097fdb", null ],
-    [ "w", "structplayer.html#a56eca241e2896b9f57a79589e76fd24b", null ],
-    [ "x", "structplayer.html#ad0da36b2558901e21e7a30f6c227a45e", null ],
-    [ "y", "structplayer.html#aa4f0d3eebc3c443f9be81bf48561a217", null ]
+    [ "treeActif", "structplayer.html#a107a3a5b130c35648389404c8e50d7f6", null ]
 ];

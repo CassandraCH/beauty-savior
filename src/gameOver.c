@@ -1,5 +1,5 @@
 /**
- * \file gameOver.c
+ * \file gameover.c
  * \author CALVADOS Cindy, CHAUMULON Cassandra, CHELLI Célia, OUSMANOVA Karina
  * \version 1.0
  * \date mars 2020
@@ -9,14 +9,14 @@
 
 #include "baseGame.h"
 
-Menu_t menu_over; /**< Structure de type menu_t */
+GameObject menu_over; /**< Structure de type GameObject */
 
 /**
- * \fn extern Menu_t * getMenu_Over()
+ * \fn extern GameObject * getMenu_Over()
  * \brief Fonction qui permet de retourner le menu du game over
- * \return une structure menu de type Menu_t
+ * \return une structure menu de type GameObject
 */
-extern Menu_t * getMenu_Over()
+extern GameObject * getMenu_Over()
 {
     return &menu_over;
 }
@@ -96,7 +96,7 @@ extern void Input_MenuGameOver(SDL_Event *event)
                 //Cas de la touche flèche du haut
                 case SDLK_UP:
                     //Gestion du son
-                    Mix_PlayChannel(-1, getMenu()->son, 0);
+                    Mix_PlayChannel(-1, getGameObject()->son, 0);
                     //Navigation dans le menu
                     ToucheHaut(getMenu_Over());
                     break;
@@ -104,7 +104,7 @@ extern void Input_MenuGameOver(SDL_Event *event)
                 //Cas de la touche flèche du bas
                 case SDLK_DOWN:
                     //Gestion du son
-                    Mix_PlayChannel(-1, getMenu()->son, 0);
+                    Mix_PlayChannel(-1, getGameObject()->son, 0);
                     //Navigation dans le menu
                     ToucheBas(getMenu_Over());
                     break;
@@ -119,13 +119,13 @@ extern void Input_MenuGameOver(SDL_Event *event)
 
                             //Nettoyage de l'affichage
                             Nettoyer_Menu(getMenu_Over(), 4);
-                            Nettoyer_Menu( getMenu() , 4);
+                            Nettoyer_Menu( getGameObject() , 4);
 
                             //Changement de l'état du joueur
                             getPlayer()->estMort = false;
                             getPlayer()->nombreVies = 3;
                             //Chargement du hud avec 3 vies
-                            UpdateImage_Option( &getInterface()->menu[2], "graphics_assets/vie_3.png" );
+                            UpdateImage_Component( &getInterface()->components[2] , "graphics_assets/vie_3.png" );
 
                             //Suppression des listes
                             suppListe(getCollider());
@@ -153,10 +153,10 @@ extern void Input_MenuGameOver(SDL_Event *event)
 
                             //Nettoyage de l'affichage
                             Nettoyer_Menu(getMenu_Over(), 4);
-                            Nettoyer_Menu( getMenu() , 4);
+                            Nettoyer_Menu( getGameObject() , 4);
 
                             Init_MenuLoad();
-                            Nettoyer_Menu(getMenu(), 4);
+                            Nettoyer_Menu(getGameObject(), 4);
 
                             //Changement de l'état du jeu
                             getBaseGame()->state = LOADING;
@@ -183,7 +183,7 @@ extern void Input_MenuGameOver(SDL_Event *event)
                     if (Mix_PausedMusic() == 1)
                     {
                         //Rafraîchir l'affichage
-                        UpdateOption(&menu_over.menu[3], 0);
+                        UpdateComponent(&menu_over.components[3], 0);
                         //On enlève la pause (la musique repart où elle en était)
                         Mix_ResumeMusic();
                     }
@@ -192,7 +192,7 @@ extern void Input_MenuGameOver(SDL_Event *event)
                     else
                     {
                         //Rafraîchir l'affichage
-                        UpdateOption(&menu_over.menu[3], 1);
+                        UpdateComponent(&menu_over.components[3], 1);
                         //On met en pause la musique
                         Mix_PauseMusic();
                     }
@@ -216,7 +216,7 @@ extern void Init_GameOver()
     getPlayer()->estMort = true;
     getPlayer()->scores = 0;
     getPlayer()->isPasspordCollected = false;
-    UpdateOption( &getInterface()->menu[4], 1);
+    UpdateComponent( &getInterface()->components[4], 1);
 
     //Rechargement du niveau 1
     setNiveau(1);
@@ -224,7 +224,7 @@ extern void Init_GameOver()
     setBranche(0);
     setRock(0);
 
-    Nettoyer_Menu(getMenu(), 4);
+    Nettoyer_Menu(getGameObject(), 4);
     Init_MenuGameOver();
 
     //Suppression des listes
