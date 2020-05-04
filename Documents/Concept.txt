@@ -52,7 +52,7 @@ Player
     -> getPlayer()
     -> getPlayerX()
     -> getPlayerY()
-    -> setNiveau(int niveau)
+    -> Set_Level(int niveau)
     -> deplacement()
     -> afficherJoueur()
 
@@ -72,7 +72,7 @@ Menu
 Texture_Manager -> SDL_Texture
                 -> Largeur , Hauteur de la texture
 
-                -> ChargerImage() 
+                -> Image_Load() 
                 -> dessinerImage()
                 -> dessinerImages() // Dessine une portion de l'image
                 -> ChargerTexte()

@@ -24,7 +24,7 @@ src/inits.c \- Programme qui gère les initialisations\&.
 .br
 .RI "Fonction qui permet d'initialiser la fenêtre\&. "
 .ti -1c
-.RI "void \fBLibererRessources_Jeux\fP (void)"
+.RI "void \fBGame_DestroyRessources\fP (void)"
 .br
 .RI "Fonction qui libère toutes les ressources du jeu\&. "
 .in -1c
@@ -64,6 +64,17 @@ Initialisation de la fenêtre, du rendu, du son, du menu principal, du score et 
 Destruction du son, des ennemis, de la fenêtre, du menu prinicpal, du rendu\&.\&.\&. 
 .SH "Documentation des fonctions"
 .PP 
+.SS "void Game_DestroyRessources (void)"
+
+.PP
+Fonction qui libère toutes les ressources du jeu\&. Destruction des structures rendu et fenêtre 
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
 .SS "SDL_Renderer * getRenderer (void)"
 
 .PP
@@ -86,17 +97,6 @@ Chargement des polices, de l'audio et des entites
 .RS 4
 \fItitle\fP chaine de caracteres 
 .RE
-.PP
-\fBRenvoie\fP
-.RS 4
-pas de valeur de retour (void) 
-.RE
-.PP
-
-.SS "void LibererRessources_Jeux (void)"
-
-.PP
-Fonction qui libère toutes les ressources du jeu\&. Destruction des structures rendu et fenêtre 
 .PP
 \fBRenvoie\fP
 .RS 4

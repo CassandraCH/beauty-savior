@@ -68,7 +68,7 @@ extern void Init_MenuLoad()
     menu_load.componentSelected = 0;
 
     //Chargement de la texture du menu de chargement
-    menu_load.bg = ChargerTexture("graphics_assets/chargement.png");
+    menu_load.bg = Texture_Load("graphics_assets/chargement.png");
 }
 
 /**
@@ -108,13 +108,13 @@ extern void Input_MenuLoad(SDL_Event *event)
 
                 //Cas de la touche entree
                 case SDLK_RETURN:
-                    switch (getKeypressed(getMenuLoad()))
+                    switch (GetKeypressed(getMenuLoad()))
                     {
                     //Cas de la premiere option : retour au menu principal
                         case 0:
                             //Nettoyage de l'affichage
-                            Nettoyer_Menu(getMenuLoad(), 2);
-                            Nettoyer_Menu(getMenu_Over(), 4);
+                            GameObject_Clean(getMenuLoad(), 2);
+                            GameObject_Clean(getMenu_Over(), 4);
 
                             actualiserJoueur();
 
@@ -124,7 +124,7 @@ extern void Input_MenuLoad(SDL_Event *event)
 
                         //Cas de la deuxieme option : charger la partie
                         case 1:
-                            DestructionNiveau();
+                            Level_Destroy();
                             actualiserJoueur();
 
                             //Changer l'etat du joueur
@@ -134,11 +134,11 @@ extern void Input_MenuLoad(SDL_Event *event)
                             SetHUD_IntToTexture(getScores(),(SDL_Color){0xFF,0xFF,0xFF,0xFF}, "", getPlayer()->scores,560, 21);
 
                             //Nettoyage de l'affichage
-                            Nettoyer_Menu(getGameObject(), 4);
+                            GameObject_Clean(getGameObject(), 4);
                             
-                             Init_Interface();
+                             Interface_Init();
                             //Charger le niveau
-                            ChargerNiveau();
+                            Level_Load();
 
                             //Changer l'etat du jeu
                             getBaseGame()->state = IN_GAME;

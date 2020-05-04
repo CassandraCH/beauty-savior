@@ -19,29 +19,29 @@
 typedef struct level
 {
 
-    Texture_Manager levelTextures[5]; /**<levelTextures*/
-    Texture_Manager layer_1; /**<la couche 1  */
-    Texture_Manager layer_2;/**<la couche 2  */
-    Texture_Manager layer_3;/**<la couche 3  */
+    Texture_Manager levelTextures[5];   /**< levelTextures */
+    Texture_Manager layer_1;            /**<la couche 1  */
+    Texture_Manager layer_2;            /**<la couche 2  */
+    Texture_Manager layer_3;            /**<la couche 3  */
 
-    int departX; /**<Position de depart du joueur dans le niveau en X*/
-    int departY; /**<Position de depart du joueur dans le niveau en Y*/
+    int departX;    /**<Position de depart du joueur dans le niveau en X    */
+    int departY;    /**<Position de depart du joueur dans le niveau en Y    */
 
-    int cameraX; /**< le position x de la camera*/
-    int cameraY;/**< la position y de la camera*/
+    int cameraX;    /**< le position x de la camera */
+    int cameraY;    /**< la position y de la camera */
 
 
 }Level;
 /**< This is the documentation for the preceding typedef */
 
 
-extern Level *getLevel(); /**< le niveau*/
-extern void setNiveau(int niveau);/**< le niveau correspond*/
-extern void ChargerNiveau();/**< le chargemnts des niveaux*/
-extern void Affichage_Niveau();/**< l'affichage des niveaux*/
-extern void DestructionNiveau();/**< les destruction des niveaux*/
+extern Level *  Get_Level();                                /**< le niveau  */
+extern void     Set_Level(int niveau);                      /**< le niveau correspond   */
+extern void     Level_Load();                               /**< le chargemnts des niveaux  */
+extern void     Level_Render();                             /**< l'affichage des niveaux    */
+extern void     Level_Destroy();                            /**< les destruction des niveaux    */
 
-extern void afficher_textures_niveau(int niveau);/**<l'affichage des textures des niveaux*/
-extern void Debug_AfficherCollider();/**< le Debug_AfficherCollider*/
+extern void     Level_Textures_Render(int niveau);          /**<l'affichage des textures des niveaux    */
+extern void     Debug_AfficherCollider();                   /**< le Debug_AfficherCollider  */
 
 #endif

@@ -45,7 +45,7 @@ extern void Init_MenuContinue()
     menu_continue.componentSelected = 0;
 
     //Chargement de la texture du menu "continuer"
-    menu_continue.bg = ChargerTexture("graphics_assets/levelComplete.png");
+    menu_continue.bg = Texture_Load("graphics_assets/levelComplete.png");
 }
 
 /**
@@ -75,21 +75,21 @@ extern void Input_MenuContinue(SDL_Event *event)
             {
                 //Cas de la touche entree
                 case SDLK_RETURN:
-                    switch (getKeypressed(getMenuCon()))
+                    switch (GetKeypressed(getMenuCon()))
                     {
                         //Premiere option selectionnee
                         case 0:
                             //Changer l'etat du jeu
                             getBaseGame()->state = IN_GAME;
-                            setNiveau( ++getPlayer()->niveau) ;
+                            Set_Level( ++getPlayer()->niveau) ;
 
                             //Sauvegarder la partie
                             SauvegarderPartie();
 
                             //Suppression des listes
-                            suppListe(getCollider());
-                            suppListe(getEnnemis());
-                            suppListe(getBullets());
+                            Delete_List(getCollider());
+                            Delete_List(getEnnemis());
+                            Delete_List(getBullets());
 
                             //Initialisation du hud score avec le nombre de points du niveau précédent
                             SetHUD_IntToTexture( getScores(),(SDL_Color){0xFF,0xFF,0xFF,0xFF}, "", getPlayer()->scores,560, 21   );
@@ -109,8 +109,8 @@ extern void Input_MenuContinue(SDL_Event *event)
                             UpdateComponent( &getInterface()->components[4], 1);
 
                         
-                            //Charger le niveau suivant
-                            ChargerNiveau();  
+                            //Charger le niveau next
+                            Level_Load();  
                               
                             break;
                         default:
@@ -133,7 +133,7 @@ extern void Input_MenuContinue(SDL_Event *event)
 extern void Init_Continue()
 {
    // NettoyerScore();
-    DestructionNiveau();
+    Level_Destroy();
 
     //Initialisation du hud de score
     Init_HUD(getNiveau(),(SDL_Color){0xFF,0xFF,0xFF,0xFF}, "NIVEAU : 0", 530, 374);

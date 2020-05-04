@@ -17,13 +17,13 @@ SDL_Texture * passportTex; /**< Texture pour le passport */
 
 
 /** 
- * \fn bool chargerImage(Texture_Manager * tex,const char * filename )
+ * \fn bool Image_Load(Texture_Manager * tex,const char * filename )
  * \brief Fonction qui permet de charger une image dans une texture
  * \param tex pointeur sur la texture dans laquelle on veut charger l'image
  * \param filename nom du fichier de l'image
  * \return un booleen : VRAI si l'image a bien ete chargee dans la texture, FAUX sinon
  */
-bool chargerImage(Texture_Manager * tex, const char * filename )
+bool Image_Load(Texture_Manager * tex, const char * filename )
 {
     printf("Charger image\n");
 
@@ -58,17 +58,17 @@ bool chargerImage(Texture_Manager * tex, const char * filename )
 }
 
 /** 
- * \fn extern void ChargerTextureManager(Texture_Manager *tex, char * filepath )
+ * \fn extern void TextureManager_Load(Texture_Manager *tex, char * filepath )
  * \brief Fonction qui permet de charger une texture
  * \param tex pointeur sur la texture dans laquelle on veut charger l'image
  * \param filepath nom du fichier de l'image
  * \return pas de valeur de retour (void)
  */
-extern void ChargerTextureManager(Texture_Manager *tex, char * filepath )
+extern void TextureManager_Load(Texture_Manager *tex, char * filepath )
 {
     printf("Chargement texture DECOR\n");
     
-    LibererRessources( tex );
+    TexManager_DestroyRessources( tex );
 
     //Surface tampon => chargement de l'image
     SDL_Surface *surface = IMG_Load(filepath);
@@ -99,12 +99,12 @@ extern void ChargerTextureManager(Texture_Manager *tex, char * filepath )
 }
 
 /** 
- * \fn extern SDL_Texture *ChargerTexture( char * filepath )
+ * \fn extern SDL_Texture *Texture_Load( char * filepath )
  * \brief Fonction qui permet de charger une texture a partir d'une image
  * \param filepath chemin pour acceder a l'image
  * \return un pointeur sur une texture SDL (SDL_Texture)
  */
-extern SDL_Texture *ChargerTexture( char * filepath )
+extern SDL_Texture *Texture_Load( char * filepath )
 {
     //Creation de la texture
     SDL_Texture *texture = NULL;
@@ -119,6 +119,8 @@ extern SDL_Texture *ChargerTexture( char * filepath )
         SDL_Quit();
         exit(1);
     }
+
+    
 
     //Si la surface a bien chargee
     else 
@@ -139,12 +141,12 @@ extern SDL_Texture *ChargerTexture( char * filepath )
 }
 
 /** 
- * \fn extern void LibererRessources( Texture_Manager *tex )
+ * \fn extern void TexManager_DestroyRessources( Texture_Manager *tex )
  * \brief Fonction qui permet detruire une texture
  * \param tex pointeur sur la texture a detruire
  * \return pas de valeur de retour (void)
  */
-extern void LibererRessources( Texture_Manager *tex )
+extern void TexManager_DestroyRessources( Texture_Manager *tex )
 {
     if( tex->texture  != NULL )
     {
@@ -162,21 +164,21 @@ extern void LibererRessources( Texture_Manager *tex )
 */
 extern void Init_Textures()
 {
-  texture = ChargerTexture("graphics_assets/enemi.png");
-  itemTex = ChargerTexture("graphics_assets/coin.png");
-  rockTex = ChargerTexture("graphics_assets/tex_rock.png");
-  treeTex = ChargerTexture("graphics_assets/tex_tree.png");
-  osTex = ChargerTexture("graphics_assets/tex_os.png");   
-  passportTex = ChargerTexture("graphics_assets/passport.png");  
-  getBaseGame()->passportReq = ChargerTexture("graphics_assets/passport_requis.png");
+  texture = Texture_Load("graphics_assets/enemi.png");
+  itemTex = Texture_Load("graphics_assets/coin.png");
+  rockTex = Texture_Load("graphics_assets/tex_rock.png");
+  treeTex = Texture_Load("graphics_assets/tex_tree.png");
+  osTex = Texture_Load("graphics_assets/tex_os.png");   
+  passportTex = Texture_Load("graphics_assets/passport.png");  
+  getBaseGame()->passportReq = Texture_Load("graphics_assets/passport_requis.png");
 }
 
 /**
- * \fn extern void Nettoyers_Textures()
+ * \fn extern void Clean_Textures()
  * \brief Fonction qui détruit les textures des ennemis, des pièces, des cailloux, des branches et des os
  * \return pas de valeur de retour (void)
 */
-extern void Nettoyers_Textures()
+extern void Clean_Textures()
 {
   SDL_DestroyTexture( texture );
   SDL_DestroyTexture( itemTex );

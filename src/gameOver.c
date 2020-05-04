@@ -22,11 +22,11 @@ extern GameObject * getMenu_Over()
 }
 
 /**
- * \fn extern void Init_MenuGameOver()
+ * \fn extern void GameOver_Init()
  * \brief Fonction qui initialise le menu game over
  * \return pas de valeur de retour (void)
 */
-extern void Init_MenuGameOver()
+extern void GameOver_Init()
 {
     int width = LARGEUR_FENETRE, height = HAUTEUR_FENETRE;
     printf("Chargement Menu Game Over");
@@ -65,17 +65,17 @@ extern void Init_MenuGameOver()
     menu_over.componentSelected = 0;
 
     //Chargement de la texture du menu game over
-    menu_over.bg = ChargerTexture("graphics_assets/menu_over_bg.png");
+    menu_over.bg = Texture_Load("graphics_assets/menu_over_bg.png");
 }
 
 /**
- * \fn extern void Input_MenuGameOver(SDL_Event *event)
+ * \fn extern void GameOver_Input(SDL_Event *event)
  * \brief Fonction qui gère les évènements du menu
  * \details Gestion des entrées clavier de l'utilisateur
  * \param event évènement
  * \return pas de valeur de retour (void)
 */
-extern void Input_MenuGameOver(SDL_Event *event)
+extern void GameOver_Input(SDL_Event *event)
 {
     // Lecture de tous les évènements
     while (SDL_PollEvent(event) != 0)
@@ -111,15 +111,15 @@ extern void Input_MenuGameOver(SDL_Event *event)
 
                 //Cas de la touche entrée
                 case SDLK_RETURN:
-                    switch (getKeypressed(getMenu_Over()))
+                    switch (GetKeypressed(getMenu_Over()))
                     {
                         //Cas de la première option : nouvelle partie
                         case 0:
                             printf("Nouvelle partie depuis gameover");
 
                             //Nettoyage de l'affichage
-                            Nettoyer_Menu(getMenu_Over(), 4);
-                            Nettoyer_Menu( getGameObject() , 4);
+                            GameObject_Clean(getMenu_Over(), 4);
+                            GameObject_Clean( getGameObject() , 4);
 
                             //Changement de l'état du joueur
                             getPlayer()->estMort = false;
@@ -128,9 +128,9 @@ extern void Input_MenuGameOver(SDL_Event *event)
                             UpdateImage_Component( &getInterface()->components[2] , "graphics_assets/vie_3.png" );
 
                             //Suppression des listes
-                            suppListe(getCollider());
-                            suppListe(getEnnemis());
-                            suppListe(getBullets());
+                            Delete_List(getCollider());
+                            Delete_List(getEnnemis());
+                            Delete_List(getBullets());
 
                             actualiserJoueur();
 
@@ -141,7 +141,7 @@ extern void Input_MenuGameOver(SDL_Event *event)
                             getBaseGame()->state = IN_GAME;
 
                             //Charger le niveau
-                            ChargerNiveau();
+                            Level_Load();
 
                             Mix_HaltMusic();
                             return;
@@ -152,11 +152,11 @@ extern void Input_MenuGameOver(SDL_Event *event)
                             printf("Chargement depuis gameover");
 
                             //Nettoyage de l'affichage
-                            Nettoyer_Menu(getMenu_Over(), 4);
-                            Nettoyer_Menu( getGameObject() , 4);
+                            GameObject_Clean(getMenu_Over(), 4);
+                            GameObject_Clean( getGameObject() , 4);
 
                             Init_MenuLoad();
-                            Nettoyer_Menu(getGameObject(), 4);
+                            GameObject_Clean(getGameObject(), 4);
 
                             //Changement de l'état du jeu
                             getBaseGame()->state = LOADING;
@@ -206,11 +206,11 @@ extern void Input_MenuGameOver(SDL_Event *event)
 }
 
 /**
- * \fn extern void Init_GameOver()
+ * \fn extern void GameOver_Load()
  * \brief Fonction qui initialise l'état game over
  * \return pas de valeur de retour (void)
 */
-extern void Init_GameOver()
+extern void GameOver_Load()
 {
     //Changement de l'etat du joueur et remise à 0 du score
     getPlayer()->estMort = true;
@@ -219,21 +219,21 @@ extern void Init_GameOver()
     UpdateComponent( &getInterface()->components[4], 1);
 
     //Rechargement du niveau 1
-    setNiveau(1);
+    Set_Level(1);
     setOs(0);
     setBranche(0);
     setRock(0);
 
-    Nettoyer_Menu(getGameObject(), 4);
-    Init_MenuGameOver();
+    GameObject_Clean(getGameObject(), 4);
+    GameOver_Init();
 
     //Suppression des listes
-    suppListe( getCollider() );
-    suppListe(getEnnemis());
-    suppListe(getBullets());
+    Delete_List( getCollider() );
+    Delete_List(getEnnemis());
+    Delete_List(getBullets());
 
     //Detruire les niveau
-    DestructionNiveau();
+    Level_Destroy();
 
     //Changement de l'etat du jeu = game over
     getBaseGame()->state = GAMEOVER;

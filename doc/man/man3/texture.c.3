@@ -14,19 +14,19 @@ src/texture.c \- Programme qui gère les textures (affichage)
 
 .in +1c
 .ti -1c
-.RI "\fBbool\fP \fBchargerImage\fP (\fBTexture_Manager\fP *tex, const char *filename)"
+.RI "\fBbool\fP \fBImage_Load\fP (\fBTexture_Manager\fP *tex, const char *filename)"
 .br
 .RI "Fonction qui permet de charger une image dans une texture\&. "
 .ti -1c
-.RI "void \fBChargerTextureManager\fP (\fBTexture_Manager\fP *tex, char *filepath)"
+.RI "void \fBTextureManager_Load\fP (\fBTexture_Manager\fP *tex, char *filepath)"
 .br
 .RI "Fonction qui permet de charger une texture\&. "
 .ti -1c
-.RI "SDL_Texture * \fBChargerTexture\fP (char *filepath)"
+.RI "SDL_Texture * \fBTexture_Load\fP (char *filepath)"
 .br
 .RI "Fonction qui permet de charger une texture a partir d'une image\&. "
 .ti -1c
-.RI "void \fBLibererRessources\fP (\fBTexture_Manager\fP *tex)"
+.RI "void \fBTexManager_DestroyRessources\fP (\fBTexture_Manager\fP *tex)"
 .br
 .RI "Fonction qui permet detruire une texture\&. "
 .ti -1c
@@ -34,7 +34,7 @@ src/texture.c \- Programme qui gère les textures (affichage)
 .br
 .RI "Fonction qui charge les textures des ennemis, des pièces, des cailloux, des branches et des os\&. "
 .ti -1c
-.RI "void \fBNettoyers_Textures\fP ()"
+.RI "void \fBClean_Textures\fP ()"
 .br
 .RI "Fonction qui détruit les textures des ennemis, des pièces, des cailloux, des branches et des os\&. "
 .in -1c
@@ -84,7 +84,18 @@ janvier 2020
 Chargement des images, des textures, des textes et destruction des textures 
 .SH "Documentation des fonctions"
 .PP 
-.SS "\fBbool\fP chargerImage (\fBTexture_Manager\fP * tex, const char * filename)"
+.SS "void Clean_Textures ()"
+
+.PP
+Fonction qui détruit les textures des ennemis, des pièces, des cailloux, des branches et des os\&. 
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "\fBbool\fP Image_Load (\fBTexture_Manager\fP * tex, const char * filename)"
 
 .PP
 Fonction qui permet de charger une image dans une texture\&. 
@@ -102,40 +113,6 @@ un booleen : VRAI si l'image a bien ete chargee dans la texture, FAUX sinon
 .RE
 .PP
 chargements des images 
-.SS "SDL_Texture * ChargerTexture (char * filepath)"
-
-.PP
-Fonction qui permet de charger une texture a partir d'une image\&. 
-.PP
-\fBParamètres\fP
-.RS 4
-\fIfilepath\fP chemin pour acceder a l'image 
-.RE
-.PP
-\fBRenvoie\fP
-.RS 4
-un pointeur sur une texture SDL (SDL_Texture)
-.RE
-.PP
-chargement des textures 
-.SS "void ChargerTextureManager (\fBTexture_Manager\fP * tex, char * filepath)"
-
-.PP
-Fonction qui permet de charger une texture\&. 
-.PP
-\fBParamètres\fP
-.RS 4
-\fItex\fP pointeur sur la texture dans laquelle on veut charger l'image 
-.br
-\fIfilepath\fP nom du fichier de l'image 
-.RE
-.PP
-\fBRenvoie\fP
-.RS 4
-pas de valeur de retour (void) 
-.RE
-.PP
-
 .SS "void Init_Textures ()"
 
 .PP
@@ -147,7 +124,7 @@ pas de valeur de retour (void)
 .RE
 .PP
 
-.SS "void LibererRessources (\fBTexture_Manager\fP * tex)"
+.SS "void TexManager_DestroyRessources (\fBTexture_Manager\fP * tex)"
 
 .PP
 Fonction qui permet detruire une texture\&. 
@@ -163,10 +140,33 @@ pas de valeur de retour (void)
 .RE
 .PP
 les ressources 
-.SS "void Nettoyers_Textures ()"
+.SS "SDL_Texture * Texture_Load (char * filepath)"
 
 .PP
-Fonction qui détruit les textures des ennemis, des pièces, des cailloux, des branches et des os\&. 
+Fonction qui permet de charger une texture a partir d'une image\&. 
+.PP
+\fBParamètres\fP
+.RS 4
+\fIfilepath\fP chemin pour acceder a l'image 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+un pointeur sur une texture SDL (SDL_Texture)
+.RE
+.PP
+chargement des textures 
+.SS "void TextureManager_Load (\fBTexture_Manager\fP * tex, char * filepath)"
+
+.PP
+Fonction qui permet de charger une texture\&. 
+.PP
+\fBParamètres\fP
+.RS 4
+\fItex\fP pointeur sur la texture dans laquelle on veut charger l'image 
+.br
+\fIfilepath\fP nom du fichier de l'image 
+.RE
 .PP
 \fBRenvoie\fP
 .RS 4

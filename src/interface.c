@@ -20,11 +20,11 @@ extern GameObject* getInterface()
 }
 
 /**
- * \fn extern void Init_Interface()
+ * \fn extern void Interface_Init()
  * \brief Fonction qui initialise l'interface
  * \return pas de valeur de retour (void)
  */
-extern void Init_Interface()
+extern void Interface_Init()
 {
     int width = LARGEUR_FENETRE, height = HAUTEUR_FENETRE;
     printf("Initialisation Interface");
@@ -52,15 +52,15 @@ extern void Init_Interface()
  
   interface.componentSelected = 0;
 
-  interface.bg = ChargerTexture("graphics_assets/bg_interface.png");
+  interface.bg = Texture_Load("graphics_assets/bg_interface.png");
 }
 
 /**
- * \fn extern void AfficherInterface()
+ * \fn extern void Interface_Render()
  * \brief Fonction qui gère l'affichage de l'interface utilisateur
  * \return pas de valeur de retour (void)
 */
-extern void AfficherInterface()
+extern void Interface_Render()
 {
     
     GameObject_Render( &interface ,5, 20, 20, 1208,50 );

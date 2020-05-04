@@ -48,7 +48,7 @@ extern void Input_InGame(SDL_Event *event)
         {
             
             //Gestion du menu de pause
-            Init_Inventaire();
+            Inventaire_Init();
             //Modification de l'état du jeu => sur le menu de l'inventaire
             getBaseGame()->state = INVENTAIRE;
         }

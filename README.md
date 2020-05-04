@@ -12,7 +12,7 @@ Ce projet a été réalisé dans le cadre de la deuxième année de Licence info
 Son concept repose sur celui d'un plateformer.
 
 L'idée est très simple, le but est de finir un niveau dans un temps imparti. 
-À cela s'ajoute une contrainte qui est, de récupérer le passeport nécessaire à l'accès du niveau suivant.
+À cela s'ajoute une contrainte qui est, de récupérer le passeport nécessaire à l'accès du niveau next.
 
 Chaque niveau possède un nombre d'ennemis différents, ainsi que divers objets à récupérer.
 

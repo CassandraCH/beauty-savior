@@ -3,7 +3,7 @@
 
 
 
-void setNiveau(int niveau) 
+void Set_Level(int niveau) 
 {
 
     if( niveau == 1 || niveau == 2 || niveau == 3 || niveau == 4 )
@@ -13,7 +13,7 @@ void setNiveau(int niveau)
 
 }
 
-void afficher_textures_niveau(int niveau)
+void Level_Textures_Render(int niveau)
 {
     if( niveau == 0 || niveau == 1 || niveau == 2 || niveau == 3 )
         printf("Le test a reussi\n");
@@ -25,13 +25,13 @@ void afficher_textures_niveau(int niveau)
 int main()
 {
 
-    setNiveau(1);
-    setNiveau(3);
-    setNiveau('a');
-    setNiveau(5.5);
-    setNiveau(-3);
+    Set_Level(1);
+    Set_Level(3);
+    Set_Level('a');
+    Set_Level(5.5);
+    Set_Level(-3);
 
-    afficher_textures_niveau( 4 );
+    Level_Textures_Render( 4 );
 
 
     return 0;

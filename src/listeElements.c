@@ -78,20 +78,20 @@ extern void setTimerBullet(int time)
 }
 
 /**
- * \fn extern void init_List(LinkedList *list)
+ * \fn extern void List_Init(LinkedList *list)
  * \brief Fonction qui permet d'initialiser la liste passée en paramètre
  * \param list liste a initialiser
  * \return pas de valeur de retour (void)
 */
-extern void init_List(LinkedList *list)
+extern void List_Init(LinkedList *list)
 {
-  list->tete = NULL;
+  list->head = NULL;
   list->queue = NULL;
   list->nodeCount = 0;
 }
 
 /**
- * \fn extern Node* creerElement(SDL_Rect*rect, typeEntite item_t, bool actif ) 
+ * \fn extern Node* CreateElement(SDL_Rect*rect, typeEntite item_t, bool actif ) 
  * \brief Fonction qui permet de créer un rectangle (portion de l'ecran)
  * \details Ce rectangle sera utilisé pour la texture
  * \param rect rectangle SDL
@@ -99,10 +99,10 @@ extern void init_List(LinkedList *list)
  * \param actif etat de l'entité
  * \return Pointeur sur une structure de type Node
 */
-extern Node* creerElement(SDL_Rect*rect, typeEntite item_t, bool actif ) 
+extern Node* CreateElement(SDL_Rect*rect, typeEntite item_t, bool actif ) 
 {   
     Node * nouvelElement = malloc( sizeof( Node ) );
-    nouvelElement->suivant = NULL; 
+    nouvelElement->next = NULL; 
 
     //Remplir la zone mémoire avec des 0
     memset(nouvelElement, 0, sizeof(Node));
@@ -144,7 +144,7 @@ extern Node* creerElement(SDL_Rect*rect, typeEntite item_t, bool actif )
 }
 
 /**
- * \fn extern void insertion(LinkedList * list, SDL_Rect *rect, typeEntite items_t, bool actif)
+ * \fn extern void Insert_Element(LinkedList * list, SDL_Rect *rect, typeEntite items_t, bool actif)
  * \brief Fonction qui permet d'insérer un élément dans une liste passée en paramètre
  * \param list pointeur sur la liste dans laquelle on veut insérer un élement
  * \param rect pointeur sur l'élement a ajouter
@@ -152,22 +152,22 @@ extern Node* creerElement(SDL_Rect*rect, typeEntite item_t, bool actif )
  * \param actif état de l'élement
  * \return pas de valeur de retour (void)
 */
-extern void insertion(LinkedList * list, SDL_Rect *rect, typeEntite items_t, bool actif)
+extern void Insert_Element(LinkedList * list, SDL_Rect *rect, typeEntite items_t, bool actif)
 {
-    printf("Insertion objet\n");
-    Node *nouvelElement = creerElement(rect, items_t, actif);
+    printf("Insert_Element objet\n");
+    Node *nouvelElement = CreateElement(rect, items_t, actif);
 
     //Cas lorsque la liste est vide
     if (list->nodeCount == 0)
     {
-        list->tete = nouvelElement;
+        list->head = nouvelElement;
         list->queue = nouvelElement;
     }
 
     //Cas lorsque la liste n'est pas vide
     else
     {
-        list->queue->suivant = nouvelElement;
+        list->queue->next = nouvelElement;
         list->queue = nouvelElement;
     }
 
@@ -177,24 +177,24 @@ extern void insertion(LinkedList * list, SDL_Rect *rect, typeEntite items_t, boo
 }
 
 /**
- * \fn extern void suppListe(LinkedList * lst)
+ * \fn extern void Delete_List(LinkedList * lst)
  * \brief Fonction qui permet de supprimer la liste passée en paramètre
  * \param lst pointeur sur la liste dans laquelle on veut insérer un élement
  * \return pas de valeur de retour (void)
 */
-extern void suppListe(LinkedList * lst)
+extern void Delete_List(LinkedList * lst)
 {
     //Si la liste n'est pas vide
-    if( lst->nodeCount > 0 && lst->tete != NULL) 
+    if( lst->nodeCount > 0 && lst->head != NULL) 
     {
         Node *temp;                //élement tampon
-        Node *current = lst->tete; //élement courant
+        Node *current = lst->head; //élement courant
 
         //Tant qu'il y a encore des élements dans la liste
         while( current != NULL)
         {
             temp = current;
-            current = current->suivant;
+            current = current->next;
             free(temp);
             lst->nodeCount--;
         }
@@ -204,12 +204,12 @@ extern void suppListe(LinkedList * lst)
 }
 
 /**
- * \fn extern bool suppPremier(LinkedList * lst)
- * \brief Fonction qui permet de supprimer la tete de la liste passée en paramètre
+ * \fn extern bool Delete_First(LinkedList * lst)
+ * \brief Fonction qui permet de supprimer la head de la liste passée en paramètre
  * \param lst pointeur sur la liste dans laquelle on veut insérer un élement
  * \return un booleen si l'élement a bien été supprimé ou non
 */
-extern bool suppPremier(LinkedList * lst)
+extern bool Delete_First(LinkedList * lst)
 {
     //Verifie que la liste n'est pas vide
     if( lst->nodeCount == 0 )
@@ -217,19 +217,19 @@ extern bool suppPremier(LinkedList * lst)
         return false;
     }
 
-    Node *first = lst->tete; //pointeur sur le premier élement de la liste
+    Node *first = lst->head; //pointeur sur le premier élement de la liste
 
     //S'i 'il n'y a qu'un élement
     if (lst->nodeCount == 1)
     {
-        lst->tete = NULL; 
+        lst->head = NULL; 
         lst->queue = NULL;
     }
 
     //S'il y a plus d'un élement dans la liste
     else 
     {
-        lst->tete = first->suivant;
+        lst->head = first->next;
     }
 
     free(first->rect);
@@ -243,12 +243,12 @@ extern bool suppPremier(LinkedList * lst)
 }
 
 /**
- * \fn extern bool suppDernier(LinkedList * lst)
+ * \fn extern bool Delete_Last(LinkedList * lst)
  * \brief Fonction qui permet de supprimer la queue de la liste liste passée en paramètre
  * \param lst pointeur sur la liste dans laquelle on veut inserer un élement
  * \return un booleen si l'élement a bien été supprimé ou non
 */
-extern bool suppDernier(LinkedList * lst)
+extern bool Delete_Last(LinkedList * lst)
 {
     //Verifie que la liste n'est pas vide
     if( lst->nodeCount == 0 )
@@ -256,24 +256,24 @@ extern bool suppDernier(LinkedList * lst)
         return false;
     }
 
-    Node *current = lst->tete;  //pointeur sur le premier élement de la liste
+    Node *current = lst->head;  //pointeur sur le premier élement de la liste
     Node *last = lst->queue;    //pointeur sur le dernier élement de la liste
 
     //S'il n'y a qu'un élement
     if (lst->nodeCount == 1)
     {
-        lst->tete = NULL; 
+        lst->head = NULL; 
         lst->queue = NULL;
     }
 
     //S'i 'il y a plus d'un élement dans la liste
     else 
     {
-        while( current->suivant != lst->queue )
-            current = current->suivant;
+        while( current->next != lst->queue )
+            current = current->next;
 
         lst->queue= current;
-        lst->queue->suivant = NULL;
+        lst->queue->next = NULL;
 
     }
 
@@ -288,19 +288,19 @@ extern bool suppDernier(LinkedList * lst)
 }
 
 /**
- * \fn extern Node * trouve(LinkedList *lsptr, int target, Node **prvPtr)
+ * \fn extern Node * Find(LinkedList *lsptr, int target, Node **prvPtr)
  * \brief Fonction qui permet de chercher un élement dans une liste
  * \param lsptr pointeur sur la liste dans laquelle on cherche un élement
  * \param target élement cible qui est cherché
  * \param prvPtr pointeur sur l'élément précédent
  * \return Pointeur sur une structure de type Node
 */
-extern Node * trouve(LinkedList *lsptr, int target, Node **prvPtr)
+extern Node * Find(LinkedList *lsptr, int target, Node **prvPtr)
 {
-    Node *current = lsptr->tete; //élement courant
+    Node *current = lsptr->head; //élement courant
     *prvPtr = NULL;              //pointeur sur l'élement precedent
 
-    //tant qu'on n'a pas parcouru toute la liste ou que l'élément cible n'a pas ete trouve
+    //tant qu'on n'a pas parcouru toute la liste ou que l'élément cible n'a pas ete Find
     while( current != NULL )
     {
         //Si l'élément actuel est mort
@@ -312,23 +312,23 @@ extern Node * trouve(LinkedList *lsptr, int target, Node **prvPtr)
         //l'élément courrant devient l'élément precedent
         *prvPtr = current;
 
-        //l'élément actuel devient l'élément suivant
-        current = current->suivant;
+        //l'élément actuel devient l'élément next
+        current = current->next;
     }
     return current;
 }
 
 /**
- * \fn extern bool supprimeCible(LinkedList *lsptr, int target)
+ * \fn extern bool Delete_Target(LinkedList *lsptr, int target)
  * \brief Fonction qui permet de supprimer un élément cible dans une liste
  * \param lsptr pointeur sur la liste dans laquelle on veut supprimer un élément
  * \param target élément cible qu'on veut supprimer
  * \return un booleen si l'élément cible a bien été supprimé ou non
 */
-extern bool supprimeCible(LinkedList *lsptr, int target)
+extern bool Delete_Target(LinkedList *lsptr, int target)
 {   
     Node * current = NULL, *prev = NULL;
-    current = trouve(lsptr,target, &prev);
+    current = Find(lsptr,target, &prev);
     
     //Si la liste est vide
     if( current == NULL ){
@@ -336,21 +336,21 @@ extern bool supprimeCible(LinkedList *lsptr, int target)
     }
 
     //Si l'élément a supprimer est le premier élément de la liste
-    if( current == lsptr->tete )
+    if( current == lsptr->head )
     {
-       return suppPremier(lsptr);
+       return Delete_First(lsptr);
     }
 
     //Si l'élément a supprimer est le dernier élément de la liste
     else if( current == lsptr->queue )
     {
-       return suppDernier(lsptr);
+       return Delete_Last(lsptr);
     }
 
     //Sinon
     else 
     {
-        prev->suivant = current->suivant;
+        prev->next = current->next;
         free(current);
         lsptr->nodeCount--;
 
@@ -360,14 +360,14 @@ extern bool supprimeCible(LinkedList *lsptr, int target)
 }
 
 /**
- * \fn extern void Afficher_ElementsListes(LinkedList *lst,SDL_Texture * tex, typeEntite typeE)
+ * \fn extern void List_RenderElements(LinkedList *lst,SDL_Texture * tex, typeEntite typeE)
  * \brief Fonction qui permet d'afficher les éléments d'une liste
  * \param lst liste dont on veut afficher les éléments
  * \param tex texture 
  * \param typeE type des éléments a afficher
  * \return pas de valeur de retour (void)
 */
-extern void Afficher_ElementsListes(LinkedList *lst, SDL_Texture * tex, typeEntite typeE, int largeurTex, int hauteurTex)
+extern void List_RenderElements(LinkedList *lst, SDL_Texture * tex, typeEntite typeE, int largeurTex, int hauteurTex)
 {
     Node *pt;
 
@@ -375,7 +375,7 @@ extern void Afficher_ElementsListes(LinkedList *lst, SDL_Texture * tex, typeEnti
     if( lst->nodeCount  > 0 )
     {
         //Parcours de la liste
-        for( pt = lst->tete; pt!= NULL; pt= pt->suivant )
+        for( pt = lst->head; pt!= NULL; pt= pt->next )
         {
             //Si l'élément n'est pas mort
             if ( pt->estMort != true && pt->type == typeE )

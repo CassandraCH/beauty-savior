@@ -43,7 +43,7 @@ int main( int argc, char ** argv )
         Update(dt);
         
         //Gestion de l'affichage
-		Rendu_Jeux( getBaseGame() );
+		Game_Render( getBaseGame() );
         
         // Gestion des 60 fps (1000ms/60 = 16.6 -> 16 
         delay(frameLimit);
@@ -51,7 +51,7 @@ int main( int argc, char ** argv )
     } 
     
     //Liberation de la memoire 
-    LibererRessources_Jeux();
+    Game_DestroyRessources();
 
     return 0;
 }

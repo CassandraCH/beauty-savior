@@ -26,17 +26,17 @@ typedef struct textures /** structure des differentes  textures du jeu*/
 
 
 
-extern bool chargerImage(Texture_Manager * tex, const char * filename );/**< booleen charger des images*/
+extern bool Image_Load(Texture_Manager * tex, const char * filename );/**< booleen charger des images*/
 
 
-extern void LibererRessources( Texture_Manager *tex );/**< liberation des ressources*/
-extern SDL_Texture* ChargerTexture(char * filepath);/**< charger de texture de filepath(chemin de fichier)*/
-extern void ChargerTextureManager(Texture_Manager *tex, char * filepath);/**<charger des texture visuel  principal dans le jeu*/
-extern bool chargerImage(Texture_Manager * tex, const char * filename );/**<chargements des images*/
+extern void TexManager_DestroyRessources( Texture_Manager *tex );/**< liberation des ressources*/
+extern SDL_Texture* Texture_Load(char * filepath);/**< charger de texture de filepath(chemin de fichier)*/
+extern void TextureManager_Load(Texture_Manager *tex, char * filepath);/**<charger des texture visuel  principal dans le jeu*/
+extern bool Image_Load(Texture_Manager * tex, const char * filename );/**<chargements des images*/
 
-extern void LibererRessources( Texture_Manager *tex );/**< les ressources*/
-extern SDL_Texture* ChargerTexture(char * filepath);/**<chargement des textures*/
+extern void TexManager_DestroyRessources( Texture_Manager *tex );/**< les ressources*/
+extern SDL_Texture* Texture_Load(char * filepath);/**<chargement des textures*/
 
-extern void ChargerTextureManager(Texture_Manager *tex, char * filepath);
+extern void TextureManager_Load(Texture_Manager *tex, char * filepath);
 
 #endif

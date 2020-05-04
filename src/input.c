@@ -39,7 +39,7 @@ extern void ProcessInput(SDL_Event * event)
     }
     else if ( getBaseGame()->state == INVENTAIRE )
     {
-        Input_Inventaire(event);
+        Inventaire_Input(event);
     }
 
     //Cas où l'utilsateur est sur le menu de chargement
@@ -63,7 +63,7 @@ extern void ProcessInput(SDL_Event * event)
     //Cas où l'utilsateur est sur le menu game over
     else if (getBaseGame()->state == GAMEOVER)
     {
-        Input_MenuGameOver(event);
+        GameOver_Input(event);
     }
 
 }

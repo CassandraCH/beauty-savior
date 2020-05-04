@@ -88,7 +88,7 @@ extern void SaveCollider_Position()
     if( getCollider()->nodeCount  > 0 )
     {
         //Parcours de la liste de colliders
-        for( pt =  getCollider()->tete; pt != NULL; pt = pt->suivant )
+        for( pt =  getCollider()->head; pt != NULL; pt = pt->next )
         {
             //Ecrire la position en x et en y du collider actuel dans le fichier
             fprintf(file,"%d %d\n", pt->rect->x , pt->rect->y );
@@ -123,7 +123,7 @@ extern void ChargementCollider(const char * filename)
     if( getCollider()->nodeCount  > 0 )
     {
         //Parcours de la liste de colliders
-        for( pt = getCollider()->tete ; pt != NULL; pt = pt->suivant )
+        for( pt = getCollider()->head ; pt != NULL; pt = pt->next )
         {
             //Lecture des positions en x et en y dans le fichier
             if (fscanf(file, "%d %d",&pt->rect->x , &pt->rect->y) );            
@@ -146,7 +146,7 @@ extern void Chargement_CreationPNJ(LinkedList * lst, char * filename)
     //Si il y a déjà des éléments dans la liste => les supprimer
     if( lst->nodeCount > 0 ) 
     {
-        suppListe(lst);
+        Delete_List(lst);
     }
 
     //Ouverture du fichier en lecture
@@ -169,7 +169,7 @@ extern void Chargement_CreationPNJ(LinkedList * lst, char * filename)
         if( fscanf(file, "%d %d %d %d %d",&typeCollider, &rect->x , &rect->y, &rect->w, &rect->h) )
         {
             //Ajout dans la liste (lst) les proprietes du collider d
-            insertion(lst, rect, typeCollider, false);
+            Insert_Element(lst, rect, typeCollider, false);
         }
     }
 	
@@ -211,7 +211,7 @@ extern void ChargementItems(const char * filename, SDL_Texture * tex)
         //Recupération des positions en x et y de l'item dans le fichier         
         if( fscanf(file, "%d %d %d",&rect->x , &rect->y, &typeU) ){
             //Ajout de l'item avec les proprietes recuperees dans le fichier
-            insertion(getItems(),  rect, typeU , false);
+            Insert_Element(getItems(),  rect, typeU , false);
         }
     }
 
@@ -248,7 +248,7 @@ extern void ChargementEnnemis(const char * filename)
         //Recuperation des positions en x et en y, et de l'etat de l'ennemi           
         if( fscanf(file, "%d %d %d",&rect->x , &rect->y, &actif ) ){
             //Ajout de l'ennemi avec les proprietes recuperees dans le fichier
-            insertion(getEnnemis(),  rect, ennemi , actif );
+            Insert_Element(getEnnemis(),  rect, ennemi , actif );
         }
     }
 

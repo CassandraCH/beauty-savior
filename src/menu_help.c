@@ -43,7 +43,7 @@ extern void Init_Help()
     help.componentSelected = 0;
 
     //Chargement de la texture de l'aide
-    help.bg = ChargerTexture("graphics_assets/keyboard_help.png");
+    help.bg = Texture_Load("graphics_assets/keyboard_help.png");
 }
 
 /**

@@ -59,7 +59,7 @@ extern void Init_MenuPause()
     menu_pause.componentSelected = 0;
 
     //Chargement de la texture du menu de pause
-    menu_pause.bg = ChargerTexture("graphics_assets/pause.png");
+    menu_pause.bg = Texture_Load("graphics_assets/pause.png");
 }
 
 /**
@@ -98,7 +98,7 @@ extern void Input_MenuPause(SDL_Event *event)
 
                 //Cas de la touche entree
                 case SDLK_RETURN:
-                    switch (getKeypressed(getMenuPause()))
+                    switch (GetKeypressed(getMenuPause()))
                     {
                         //Cas de la premiere option : reprendre la partie
                         case 0:

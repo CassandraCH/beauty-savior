@@ -41,7 +41,7 @@ extern void ProcessInput(SDL_Event* event);/**< fonction ProcessInput*/
 extern void Input_InGame(SDL_Event *event);/**< fonction Input_InGame*/
 extern void delay(unsigned int frameLimit);
 extern void Init_Textures();
-extern void Nettoyers_Textures();
+extern void Clean_Textures();
 
 /*######## LISTES ######## */
 extern LinkedList listEnnemis;/**< la listes des ennemis*/
@@ -70,6 +70,6 @@ extern SDL_Texture * passportTex; /**< Texture pour le passport */
 /*####### FONCTION PRINCIPAL ############ */
 extern void Init(const char *title);
 extern void Update(float dt);
-extern void Rendu_Jeux() ;
+extern void Game_Render() ;
 
-extern void LibererRessources_Jeux();
+extern void Game_DestroyRessources();

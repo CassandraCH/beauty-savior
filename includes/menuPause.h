@@ -13,7 +13,7 @@
 
 
 extern void Init_MenuPause();
-
 extern void Input_MenuPause(SDL_Event *event);
+
 
 #endif

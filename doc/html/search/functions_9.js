@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['rendu_5fjeux_478',['Rendu_Jeux',['../base_game_8c.html#a84b7d8c161bc3ba1be25eab70f664a67',1,'Rendu_Jeux():&#160;baseGame.c'],['../definitions_8h.html#a84b7d8c161bc3ba1be25eab70f664a67',1,'Rendu_Jeux():&#160;baseGame.c']]]
+  ['right_479',['Right',['../menu_principal_8c.html#a01f01665c489da2141d1710825e0acae',1,'Right(GameObject *gameObject, int nombresOptions):&#160;menuPrincipal.c'],['../game__objects_8h.html#a408b0eea448a10533bdc759895054a8d',1,'Right(GameObject *gameObject, int nombreOptions):&#160;menuPrincipal.c']]]
 ];

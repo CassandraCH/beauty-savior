@@ -137,19 +137,19 @@ void Init(const char *title)
 }
 
 /**
- * \fn void LibererRessources_Jeux(void)
+ * \fn void Game_DestroyRessources(void)
  * \brief Fonction qui libère toutes les ressources du jeu 
  * \details Destruction des structures rendu et fenêtre 
  * \return pas de valeur de retour (void)
 */
-void LibererRessources_Jeux(void)
+void Game_DestroyRessources(void)
 { 
     //Suppression des textures
-    DestructionNiveau(); 
-    Nettoyers_Textures();
+    Level_Destroy(); 
+    Clean_Textures();
 
     //Libération des resspurces concernant le joueur
-    LibererRessources( &getPlayer()->tex );
+    TexManager_DestroyRessources( &getPlayer()->tex );
 
     //Suppression des audios qui ont été chargé
     Mix_FreeChunk(getGameObject()->son);
@@ -162,15 +162,15 @@ void LibererRessources_Jeux(void)
     TTF_CloseFont( getMenu_Win()->police );
     
     //Suppression des listes
-    suppListe(&bullet);
-    suppListe(&listCollider);
-    suppListe(&listEnnemis);
+    Delete_List(&bullet);
+    Delete_List(&listCollider);
+    Delete_List(&listEnnemis);
 
     //Destruction des menus
-    Nettoyer_Menu(getMenuCon(), 1);
-    Nettoyer_Menu(getGameObject(), 4 );
-    Nettoyer_Menu(getMenuPause(), 2);
-    Nettoyer_Menu( getMenu_Win(), 2);
+    GameObject_Clean(getMenuCon(), 1);
+    GameObject_Clean(getGameObject(), 4 );
+    GameObject_Clean(getMenuPause(), 2);
+    GameObject_Clean( getMenu_Win(), 2);
 
 
     //Destruction de la fenetre, du rendu et du niveau 

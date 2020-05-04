@@ -1,11 +1,11 @@
 var texture_8c =
 [
-    [ "chargerImage", "texture_8c.html#a4c48c2eee675e3b393bbfec462eb3e50", null ],
-    [ "ChargerTexture", "texture_8c.html#aae773c23e468b801557366ace3f46406", null ],
-    [ "ChargerTextureManager", "texture_8c.html#a12a3e10217dc443d934bfa5025b25722", null ],
+    [ "Clean_Textures", "texture_8c.html#a79f9cedb098dcf50723a6d87dae07cec", null ],
+    [ "Image_Load", "texture_8c.html#a5d2d9bc4592da2662306de3577d27685", null ],
     [ "Init_Textures", "texture_8c.html#a456e5f94b3631c84b9c87e2d83440eaf", null ],
-    [ "LibererRessources", "texture_8c.html#a97da74bfbc24318515cf91f2972dced6", null ],
-    [ "Nettoyers_Textures", "texture_8c.html#a55e846f9f76a4d4101a74c0921f90510", null ],
+    [ "TexManager_DestroyRessources", "texture_8c.html#ac3dedf51cd7a896d720a33333fee8356", null ],
+    [ "Texture_Load", "texture_8c.html#ab15379dba3cc83443ad654f72fb47a63", null ],
+    [ "TextureManager_Load", "texture_8c.html#a2817bb3a0cd16d6a6c25b7d3a32b938a", null ],
     [ "itemTex", "texture_8c.html#aa16f8a82cd7c1e1b436ff6baaec66bec", null ],
     [ "osTex", "texture_8c.html#ae679584e4664b32214e530a4e71c7d45", null ],
     [ "passportTex", "texture_8c.html#a85fc719444059af132d1afaefd5a5a7d", null ],

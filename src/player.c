@@ -84,7 +84,7 @@ extern void InitJoueur()
     player.nombreVies = 3;
 
     //Chargement de l'image
-	chargerImage(&player.tex, "graphics_assets/player.png");	
+	Image_Load(&player.tex, "graphics_assets/player.png");	
 
     //position en x et en y, hauteur et largeur
 	player.h = player.tex.h;
@@ -193,7 +193,7 @@ extern void CollisionItems()
     Node * pt; //pointeur sur l'item actuel
     
     //Parcours de la liste des items
-    for(pt = getItems()->tete ; pt != NULL; pt = pt->suivant)
+    for(pt = getItems()->head ; pt != NULL; pt = pt->next)
     {
         //Si le joueur est en collision avec l'item actuel
         if(collide2d(getPlayerX(), getPlayerY(), pt->rect->x,pt->rect->y, player.tex.w,player.tex.h,pt->rect->w , pt->rect->h) )
@@ -204,21 +204,21 @@ extern void CollisionItems()
                 //Changement de l'etat de l'item => mort
                 pt->estMort = true;
                 //Suppression de l'item dans la liste
-                supprimeCible(getItems(), true);
+                Delete_Target(getItems(), true);
                 
                 if( pt->type == os )
                 {
-                    incrementeOS();
+                    increaseOs();
                     printf("Nombre Os: %d\n", getOs());
                 }
                 else if ( pt->type == rock )
                 {
-                    incrementeRock();
+                    increaseRock();
                     printf("Nombre Rock: %d\n", getRock());
                 }
                 else if ( pt->type == tree )
                 {
-                    incrementeBranche(); 
+                    increaseBranche(); 
                     printf("Nombre branche: %d\n", getBranche());
                 }
                 else if ( pt->type == passport )
@@ -323,13 +323,13 @@ extern void attaqueJoueur()
          
         if (  getRock() > 0 && player.rockActif  )
         {
-            decrementeRock();
-            CreerTir(rock, getPlayer()->w , getPlayer()->h, getPlayerX(),  getPlayerY() );
+            decreaseRock();
+            CreateBullet(rock, getPlayer()->w , getPlayer()->h, getPlayerX(),  getPlayerY() );
         }
         else if( getBranche() > 0 && player.treeActif )
         {
-            decrementeBranche();
-            CreerTir(tree, getPlayer()->w , getPlayer()->h, getPlayerX(),  getPlayerY() );
+            decreaseBranche();
+            CreateBullet(tree, getPlayer()->w , getPlayer()->h, getPlayerX(),  getPlayerY() );
         }
   
 
@@ -351,9 +351,9 @@ extern void collision_tir()
     if( getBullets()->nodeCount > 0 )
     {
          //Vérifie la collision avec les armes 
-        for(tir = getBullets()->tete; tir != NULL; tir = tir->suivant)
+        for(tir = getBullets()->head; tir != NULL; tir = tir->next)
         {
-            for(enne = getEnnemis()->tete; enne != NULL; enne = enne->suivant)
+            for(enne = getEnnemis()->head; enne != NULL; enne = enne->next)
             {
                 if(collide = ( collide2d( tir->rect->x , tir->rect->y, enne->rect->x,enne->rect->y,tir->rect->w ,tir->rect->h,enne->rect->w, enne->rect->h ) ) && 
                 ( tir->type == tree || tir->type == rock) ) 
@@ -382,13 +382,13 @@ extern void collision_tir()
                             case 1: UpdateImage_Component( &getInterface()->components[2], "graphics_assets/vie_1.png" ); break;
                             case 2: UpdateImage_Component( &getInterface()->components[2], "graphics_assets/vie_2.png" ); break;
                         }
-                        SetNombreTir_Ennemis();
+                        Enemy_SetBullets();
                         tir->estMort = true;
                         printf("Il reste %d points de vie\n", getPlayer()->nombreVies );
                     }
                     else 
                     {
-                        Init_GameOver();
+                        GameOver_Load();
                     }
                     break;
                 }

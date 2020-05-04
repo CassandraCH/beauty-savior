@@ -87,71 +87,71 @@ extern void setBranche(int value)
 }
 
 /**
- * \fn extern void incrementeOS()
+ * \fn extern void increaseOs()
  * \brief Fonction qui permet d'incrémenter le compteur d'os
  * \return pas de valeur de retour (void)
 */
-extern void incrementeOS()
+extern void increaseOs()
 {
     ++nombreOs; 
 }
 
 /**
- * \fn extern void incrementeRock()
+ * \fn extern void increaseRock()
  * \brief Fonction qui permet d'incrémenter le compteur de cailloux
  * \return pas de valeur de retour (void)
 */
-extern void incrementeRock()
+extern void increaseRock()
 {
     ++nombreRock; 
 }
 
 /**
- * \fn extern void incrementeBranche()
+ * \fn extern void increaseBranche()
  * \brief Fonction qui permet d'incrémenter le compteur de branches
  * \return pas de valeur de retour (void)
 */
-extern void incrementeBranche()
+extern void increaseBranche()
 {
     ++nombreBranche; 
 }
 
 /**
- * \fn extern void decrementeOS()
+ * \fn extern void decreaseOS()
  * \brief Fonction qui permet de décrémenter le compteur d'os
  * \return pas de valeur de retour (void)
 */
-extern void decrementeOS()
+extern void decreaseOS()
 { 
     --nombreOs; 
 }
 
 /**
- * \fn extern void decrementeRock()
+ * \fn extern void decreaseRock()
  * \brief Fonction qui permet de décrémenter le compteur de cailloux
  * \return pas de valeur de retour (void)
 */
-extern void decrementeRock()
+extern void decreaseRock()
 {
     --nombreRock; 
 }
 
 /**
- * \fn extern void decrementeBranche()
+ * \fn extern void decreaseBranche()
  * \brief Fonction qui permet de décrémenter le compteur de branches
  * \return pas de valeur de retour (void)
 */
-extern void decrementeBranche()
+extern void decreaseBranche()
 {
     --nombreBranche; 
 }
 
 /**
- * \fn extern void Init_Inventaire()
+ * \fn extern void Inventaire_Init()
  * \brief Fonction qui initialise l'inventaire
  * \return pas de valeur de retour (void)
 */
-extern void Init_Inventaire()
+extern void Inventaire_Init()
 {  
     int width = LARGEUR_FENETRE, height = HAUTEUR_FENETRE;
     printf("Chargement Inventaire");
@@ -186,17 +186,17 @@ extern void Init_Inventaire()
     inventaire.componentSelected = 0;
 
     //Chargement de la texture de l'inventaire
-    inventaire.bg = ChargerTexture("graphics_assets/inventaire/bg_inventaire.png");
+    inventaire.bg = Texture_Load("graphics_assets/inventaire/bg_inventaire.png");
 }
 
 /**
- * \fn extern void Input_Inventaire(SDL_Event *event)
+ * \fn extern void Inventaire_Input(SDL_Event *event)
  * \brief Fonction qui gère les évènements de l'inventaire
  * \details Gestion des entrées clavier de l'utilisateur
  * \param event évènement
  * \return pas de valeur de retour (void)
 */
-extern void Input_Inventaire(SDL_Event *event)
+extern void Inventaire_Input(SDL_Event *event)
 {
     // Lecture de tous les evenements
     while (SDL_PollEvent(event) != 0)
@@ -226,7 +226,7 @@ extern void Input_Inventaire(SDL_Event *event)
 
                 //Cas de la touche entrée
                 case SDLK_RETURN:
-                    switch (getKeypressed(getInventaire()))
+                    switch (GetKeypressed(getInventaire()))
                     {
                         //Cas 1 : on sélectionne l'os comme objet
                         case 0:
@@ -237,7 +237,7 @@ extern void Input_Inventaire(SDL_Event *event)
                                 getPlayer()->nombreVies++;
                                 
                                 //Mise à jour du compteur d'os
-                                decrementeOS();
+                                decreaseOS();
                                 
                                 //Gestion de l'affichage => mise à jour
                                 switch( getPlayer()->nombreVies )

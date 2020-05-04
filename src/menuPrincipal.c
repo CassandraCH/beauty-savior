@@ -22,12 +22,12 @@ extern GameObject* getGameObject()
 }
 
 /**
- * \fn extern int getKeypressed(GameObject *gameObject)
+ * \fn extern int GetKeypressed(GameObject *gameObject)
  * \brief Fonction qui retourne l'option du menu selectionne
  * \param gameObject pointeur sur le menu
  * \return un entier correspondant au numero de l'option selectionnee
 */
-extern int getKeypressed(GameObject *gameObject)
+extern int GetKeypressed(GameObject *gameObject)
 { 
     return gameObject->componentSelected; 
 }
@@ -91,7 +91,7 @@ extern void Init_MenuPrincipal()
     _gameObject.componentSelected = 0;
 
     //Chargement de la texture du menu principal
-     _gameObject.bg = ChargerTexture("graphics_assets/menu_bg_xs.png");
+     _gameObject.bg = Texture_Load("graphics_assets/menu_bg_xs.png");
 
      printf("Fin Chargement Menu principal\n");
 }
@@ -333,23 +333,23 @@ extern void Input_MenuPrincipal(SDL_Event *event)
 
                 //Cas de la touche entree
                 case SDLK_RETURN:
-                    switch (getKeypressed(getGameObject()))
+                    switch (GetKeypressed(getGameObject()))
                     {
                         //Cas de la premiere option : demarer une nouvelle partie
                         case 0:
                             //Changement de l'etat du joueur
                             getPlayer()->estMort = false;
-                            incrementeRock();
+                            increaseRock();
                             getPlayer()->rockActif = true;
 
                             //Suppression des listes
-                            suppListe( getCollider() );
-                            suppListe(getEnnemis());
-                            suppListe(getBullets());
+                            Delete_List( getCollider() );
+                            Delete_List(getEnnemis());
+                            Delete_List(getBullets());
 
-                            Init_Interface();
+                            Interface_Init();
                             
-                            ChargerNiveau();
+                            Level_Load();
 
                             //Changement de l'etat du jeu
                             getBaseGame()->state = IN_GAME;
@@ -362,7 +362,7 @@ extern void Input_MenuPrincipal(SDL_Event *event)
                             // printf("Bouton option press%c\n", 130);
                             printf("Chargement depuis menu principal\n");
                             Init_MenuLoad();
-                            Nettoyer_Menu(getGameObject(), 4);
+                            GameObject_Clean(getGameObject(), 4);
 
                             //Changement de l'etat du jeu
                             getBaseGame()->state = LOADING;
@@ -438,13 +438,13 @@ extern void GameObject_LoadRessources(int numero, int num_image, GameObject * ga
 }
 
 /**
- * \fn extern void Nettoyer_Menu(GameObject * gameObject, int nombreOptions)
+ * \fn extern void GameObject_Clean(GameObject * gameObject, int nombreOptions)
  * \brief Fonction qui permet de nettoyer l'ecran du menu
  * \param gameObject pointeur sur le menu
  * \param nombreOptions nombre d'options du menu
  * \return pas de valeur de retour (void)
 */
-extern void Nettoyer_Menu(GameObject * gameObject, int nombreOptions)
+extern void GameObject_Clean(GameObject * gameObject, int nombreOptions)
 {
     printf("Suppression Menu %s\n", gameObject->nom_gameObject );
 

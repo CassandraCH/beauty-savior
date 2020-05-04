@@ -14,20 +14,20 @@
 
 
 
-extern void Init_Inventaire();/**< l'initialisation du menu continue*/
+extern void Inventaire_Init();                  /**< l'initialisation du menu continue  */
+extern void Inventaire_Input(SDL_Event *event); /**< fonction input pour le menu continue   */
 
 extern void setOs(int value);
 extern void setRock( int value);
 extern void setBranche(int value);
 
-extern void incrementeOS();
-extern void incrementeRock( );
-extern void incrementeBranche();
-extern void decrementeOS();
-extern void decrementeRock( );
-extern void decrementeBranche();
+extern void increaseOs();
+extern void increaseRock( );
+extern void increaseBranche();
+extern void decreaseOS();
+extern void decreaseRock( );
+extern void decreaseBranche();
 
-extern void Input_Inventaire(SDL_Event *event);/**<fonction input pour le menu continue*/
 
 
 

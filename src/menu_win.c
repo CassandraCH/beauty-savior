@@ -64,7 +64,7 @@ extern void Init_MenuWin()
     menu_win.componentSelected = 0;
 
     //Chargement de la texture du menu de pause
-    menu_win.bg = ChargerTexture("graphics_assets/game_win.png");
+    menu_win.bg = Texture_Load("graphics_assets/game_win.png");
 
     printf("Fin Chargement Menu Win\n");
 
@@ -107,7 +107,7 @@ extern void Input_MenuWin(SDL_Event *event)
 
                 //Cas de la touche entree
                 case SDLK_RETURN:
-                    switch (getKeypressed(getMenu_Win()))
+                    switch (GetKeypressed(getMenu_Win()))
                     {
                         //Cas de la premiere option : Quitter le jeux
                         case 0:

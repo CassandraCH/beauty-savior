@@ -28,7 +28,7 @@ Base_Game* getBaseGame()
 
 /**
  * \fn extern void Update(float dt)
- * \brief Fonction qui permet gérer les comportements des entités si on se trouve dans une partie et gérer le son si on se trouve sur le menu principal
+ * \brief Fonction qui permet gérer les comportements des entités si on se Find dans une partie et gérer le son si on se Find sur le menu principal
  * \details Etat du jeu possible : menu principal ou en partie
  * \param dt valeur du delta-time
  * \return pas de valeur de retour (void)
@@ -38,7 +38,7 @@ extern void Update(float dt)
   //Si la partie n'est pas gagnée 
   if( getBaseGame()->state != GAMEWIN )
   {
-    //Cas ou on se trouve dans le menu principal
+    //Cas ou on se Find dans le menu principal
     if ( game.state == MENU_PRINCIPAL )
     {
         //Gestion de la musique du menu principal
@@ -65,33 +65,33 @@ extern void Update(float dt)
       // Si le temps du jeux est ingérieur au timer de 1min10 alors c'est la fin du niveau.
       if( getBaseGame()->min <= 0 )
       {
-        Init_GameOver();
+        GameOver_Load();
       }
 
       //Gestion des attaques
-      attaqueEnnemis();
+      Enemy_Attack();
 
       //Mise à jour des entités
-      Update_Listes();
-      UpdateEnnemis();
-      UpdateBullets(joueur, ennemi);
+      List_Update();
+      Enemy_Update();
+      Bullets_Update(joueur, ennemi);
       UpdateJoueur();
   
       //Gestion des collisions
       collision_tir();
       CollisionItems(); 
-      collisionDetection();
+      Collision_Detection();
     }
   }
 }
 
 /**
- * \fn extern void Rendu_Jeux()
+ * \fn extern void Game_Render()
  * \brief Fonction qui permet de gérer le rendu 
- * \details Affichage en fonction de l'etat dans lequel se trouve le jeu
+ * \details Affichage en fonction de l'etat dans lequel se Find le jeu
  * \return pas de valeur de retour (void)
 */
-extern void Rendu_Jeux() 
+extern void Game_Render() 
 {
   //Cas où le jeu n'est pas en pause, n'est pas sur l'inventaire, 
   // le jeu n'est pas terminé ni sur l'affichage de l'aide
@@ -158,26 +158,26 @@ extern void Rendu_Jeux()
   //Cas où on est en train de jouer
   else if ( getBaseGame()->state == IN_GAME )
   { 
-    afficher_textures_niveau(0);
-    AfficherInterface();
+    Level_Textures_Render(0);
+    Interface_Render();
     //Gestion des affchages des listes, du joueur et du score
-    Afficher_ElementsListes( &listEnnemis, texture, ennemi, 50, 50 );
+    List_RenderElements( &listEnnemis, texture, ennemi, 50, 50 );
     
 
     // Liste des élements attaques
-    Afficher_ElementsListes( &bullet , itemTex, feu , 41, 47 );
-    Afficher_ElementsListes( &bullet , rockTex, rock, 37, 35 );
-    Afficher_ElementsListes( &bullet , treeTex, tree , 31, 49 );
+    List_RenderElements( &bullet , itemTex, feu , 41, 47 );
+    List_RenderElements( &bullet , rockTex, rock, 37, 35 );
+    List_RenderElements( &bullet , treeTex, tree , 31, 49 );
     
     AfficherJoueur();
 
     // Liste de l'inventaire
-    Afficher_ElementsListes( &items, osTex, os, 36, 51 ); 
-    Afficher_ElementsListes( &items, rockTex, rock ,37, 35 ); 
-    Afficher_ElementsListes( &items, treeTex, tree, 31, 49 );  
+    List_RenderElements( &items, osTex, os, 36, 51 ); 
+    List_RenderElements( &items, rockTex, rock ,37, 35 ); 
+    List_RenderElements( &items, treeTex, tree, 31, 49 );  
     
     // Afficher Passport
-    Afficher_ElementsListes( &items, passportTex, passport, 43, 56 );  
+    List_RenderElements( &items, passportTex, passport, 43, 56 );  
 
     
   }
@@ -196,15 +196,15 @@ extern void Rendu_Jeux()
 }
 
 /**
- * \fn extern void Update_Listes()
+ * \fn extern void List_Update()
  * \brief Fonction qui met à jour les listes des bullets et des ennemis
  * \details Suppression des listes si nécessaire
  * \return pas de valeur de retour (void)
 */
-extern void Update_Listes()
+extern void List_Update()
 {
-  supprimeCible(getBullets(), true);
-  supprimeCible(getEnnemis(), true);
+  Delete_Target(getBullets(), true);
+  Delete_Target(getEnnemis(), true);
 }
 
 

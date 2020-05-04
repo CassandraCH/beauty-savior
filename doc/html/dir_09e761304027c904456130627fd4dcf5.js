@@ -8,6 +8,7 @@ var dir_09e761304027c904456130627fd4dcf5 =
     [ "definitions.h", "definitions_8h.html", "definitions_8h" ],
     [ "enjeu.h", "enjeu_8h.html", "enjeu_8h" ],
     [ "entite.h", "entite_8h.html", "entite_8h" ],
+    [ "game_objects.h", "game__objects_8h.html", "game__objects_8h" ],
     [ "gameover.h", "gameover_8h.html", "gameover_8h" ],
     [ "hud.h", "hud_8h.html", "hud_8h" ],
     [ "interface.h", "interface_8h.html", "interface_8h" ],

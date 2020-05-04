@@ -9,7 +9,7 @@
 #include "baseGame.h"
 
 /**
- * \fn extern bool UpdateBullets( typeEntite typeA, typeEntite typeB )
+ * \fn extern bool Bullets_Update( typeEntite typeA, typeEntite typeB )
  * \brief Fonction qui permet de mettre a jour les bullets
  * \details Parcours de la listes des bullets 
  * \details En fonction de s'il s'agit d'un ennemi ou du joueur, le comportement des bullets est différent
@@ -17,7 +17,7 @@
  * \param typeB type de la deuxieme entite : item, joueur, ennemi, platform , bull, feu
  * \return Une valeur de type booleen
 */
-extern bool UpdateBullets( typeEntite typeA, typeEntite typeB )
+extern bool Bullets_Update( typeEntite typeA, typeEntite typeB )
 {
     Node *pt; //Pointeur sur le bullet actuel
 
@@ -25,7 +25,7 @@ extern bool UpdateBullets( typeEntite typeA, typeEntite typeB )
     if( getBullets()->nodeCount > 0 )
     {   
         //Parcours de liste des bullets
-        for( pt = getBullets()->tete; pt!= NULL; pt= pt->suivant )
+        for( pt = getBullets()->head; pt!= NULL; pt= pt->next )
         {
             //Si le joueur est suffisamment proche de l'ennemi
             if(    pt->rect->x > 0-15  && pt->rect->x < camera.x + camera.w )
@@ -69,7 +69,7 @@ extern bool UpdateBullets( typeEntite typeA, typeEntite typeB )
             //Sinon
             else 
             {
-                SetNombreTir_Ennemis();
+                Enemy_SetBullets();
                 //Mise a jour de l'état du bullet
                 pt->estMort = true;   
             }
@@ -79,16 +79,16 @@ extern bool UpdateBullets( typeEntite typeA, typeEntite typeB )
 }
 
 /**
- * \fn extern void SetNombreTir_Ennemis()
+ * \fn extern void Enemy_SetBullets()
  * \brief Fonction qui configurer le nombre de tir des ennemis
  * \return pas de valeur de retour (void)
 */
-extern void SetNombreTir_Ennemis()
+extern void Enemy_SetBullets()
 {
-    Node * pt = getEnnemis()->tete; //Pointeur sur l'ennemi actuel
+    Node * pt = getEnnemis()->head; //Pointeur sur l'ennemi actuel
 
     //Parcours de la liste des ennemis 
-    for(; pt != NULL; pt = pt->suivant)
+    for(; pt != NULL; pt = pt->next)
     {
         //Si l'ennemi n'a pas été tué
         if ( !pt->estMort )
@@ -109,7 +109,7 @@ extern void SetNombreTir_Ennemis()
 }
 
 /**
- * \fn extern void CreerTir(typeEntite type, int width, int height, int startX, int startY)
+ * \fn extern void CreateBullet(typeEntite type, int width, int height, int startX, int startY)
  * \brief Fonction qui creer un tir
  * \param type type du tir
  * \param width largeur du sprite
@@ -118,7 +118,7 @@ extern void SetNombreTir_Ennemis()
  * \param startY position en y du sprite
  * \return pas de valeur de retour (void)
 */
-extern void CreerTir(typeEntite type, int width, int height, int startX, int startY)
+extern void CreateBullet(typeEntite type, int width, int height, int startX, int startY)
 {
     SDL_Rect *rect = malloc(sizeof(SDL_Rect)); //Creation d'une structure de type rectangle en SDL
 
@@ -129,21 +129,21 @@ extern void CreerTir(typeEntite type, int width, int height, int startX, int sta
     rect->x = startX + 25;
 
     //Gestion de l'affichage
-    insertion(&bullet, rect, type, false);
+    Insert_Element(&bullet, rect, type, false);
 }
 
 /**
- * \fn extern void attaqueEnnemis() 
+ * \fn extern void Enemy_Attack() 
  * \brief Fonction qui gère les attaques des ennemis
  * \details Parcours des ennemis, verification qu'il n'est pas mort et de son compteur de lancer
  * \return pas de valeur de retour (void)
 */
-extern void attaqueEnnemis() 
+extern void Enemy_Attack() 
 {
-    Node * pt = getEnnemis()->tete; // pointeur sur l'ennemi actuel
+    Node * pt = getEnnemis()->head; // pointeur sur l'ennemi actuel
 
     //Parcours de la liste des ennemis
-    for(; pt != NULL; pt = pt->suivant)
+    for(; pt != NULL; pt = pt->next)
     {
         //Si l'ennemi n'est pas mort
         if ( !pt->estMort )
@@ -156,8 +156,8 @@ extern void attaqueEnnemis()
                 //Si le compteur de lancer disponible est inférieur à 1 => on reconfigure ce compteur et on créé un tir
                 if( pt->nb_lancer < 1) 
                 {
-                    SetNombreTir_Ennemis();
-                    CreerTir(feu, pt->rect->w, pt->rect->h, pt->rect->x, pt->rect->y );
+                    Enemy_SetBullets();
+                    CreateBullet(feu, pt->rect->w, pt->rect->h, pt->rect->x, pt->rect->y );
                 }
             }
         }
@@ -165,16 +165,16 @@ extern void attaqueEnnemis()
 }
 
 /**
- * \fn extern void UpdateEnnemis()
+ * \fn extern void Enemy_Update()
  * \brief Fonction qui met à jour les ennemis
  * \return pas de valeur de retour (void)
 */
-extern void UpdateEnnemis()
+extern void Enemy_Update()
 {
-    Node *pt = getEnnemis()->tete; //pointeur sur l'ennemi actuel 
+    Node *pt = getEnnemis()->head; //pointeur sur l'ennemi actuel 
 
     //Parcours de la liste des ennemis
-    for(; pt != NULL; pt = pt->suivant)
+    for(; pt != NULL; pt = pt->next)
     {
         //Verifie que l'ennemi n'est pas mort et qu'il est actif
         if ( !pt->estMort && pt->actif )
@@ -190,11 +190,11 @@ extern void UpdateEnnemis()
 }   
 
 /**
- * \fn extern void collisionDetection()
+ * \fn extern void Collision_Detection()
  * \brief Fonction qui gère les collision entre le joueur et le decor, le joueur et les ennemis; et si le joueur tombe dans le vide
  * \return pas de valeur de retour (void)
 */
-extern void collisionDetection()
+extern void Collision_Detection()
 {
     
     /*##### JOUEUR ######*/
@@ -218,7 +218,7 @@ extern void collisionDetection()
         *pt = pointeur sur l'ennemi actuel
     */
     //Parcours de la liste des ennemis
-    for( Node * pt = listEnnemis.tete ; pt != NULL; pt = pt->suivant)
+    for( Node * pt = listEnnemis.head ; pt != NULL; pt = pt->next)
     {
         /*##### ENNEMI ######*/
         // Largeur et Hauteur de l'ennemi
@@ -235,7 +235,7 @@ extern void collisionDetection()
         {
             /*
                 Gestion de la collision pour le saut 
-                Vérifie que le joueur se trouve bien au-dessus de l'ennemi 
+                Vérifie que le joueur se Find bien au-dessus de l'ennemi 
             */
             if (joueur_x + joueur_w > ennemi_x && joueur_x < ennemi_x + ennemi_w)
             {
@@ -266,7 +266,7 @@ extern void collisionDetection()
                     //Sinon le joueur a perdu
                     else 
                     {
-                        Init_GameOver();
+                        GameOver_Load();
                     }
 
                 }
@@ -278,19 +278,19 @@ extern void collisionDetection()
     //Verifie si le joueur tombe dans le vide et qu'il dépasse la hauteur de l'écran => la partie est perdu
     if( getPlayer()->y > 720 ) 
     {
-        Init_GameOver();
+        GameOver_Load();
     }
 
     // Vérifie les collisions avec le décor
-    collision_Decor( );
+    Level_Collision( );
 }
 
 /**
- * \fn extern void collision_Decor()
+ * \fn extern void Level_Collision()
  * \brief Fonction qui gère les collisions avec le décor
  * \return pas de valeur de retour (void)
 */
-extern void collision_Decor()
+extern void Level_Collision()
 {
     
     /*##### JOUEUR ######*/
@@ -303,7 +303,7 @@ extern void collision_Decor()
     float joueur_y = getPlayerY();
 
     
-    for(Node * pt = getCollider()->tete ; pt != NULL; pt = pt->suivant)
+    for(Node * pt = getCollider()->head ; pt != NULL; pt = pt->next)
     {   
         /*##### BRIQUES ######*/
         // Largeur et Hauteur des blocs de collisions

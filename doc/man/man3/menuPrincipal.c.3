@@ -18,7 +18,7 @@ src/menuPrincipal.c \- Programme qui gère le menu principal\&.
 .br
 .RI "Fonction qui permet retourner le menu principal\&. "
 .ti -1c
-.RI "int \fBgetTouchePresse\fP (\fBGameObject\fP *\fBgameObject\fP)"
+.RI "int \fBgetKeypressed\fP (\fBGameObject\fP *\fBgameObject\fP)"
 .br
 .RI "Fonction qui retourne l'option du menu selectionne\&. "
 .ti -1c
@@ -32,23 +32,23 @@ src/menuPrincipal.c \- Programme qui gère le menu principal\&.
 .RI "void \fBUpdateImage_Component\fP (\fBComponent\fP *\fBcomponent\fP, const char *filename)"
 .br
 .ti -1c
-.RI "void \fBToucheHaut\fP (\fBGameObject\fP *\fBgameObject\fP)"
+.RI "void \fBUP_Key\fP (\fBGameObject\fP *\fBgameObject\fP)"
 .br
 .RI "Fonction qui permet de naviguer dans le menu vers le haut\&. "
 .ti -1c
-.RI "void \fBToucheBas\fP (\fBGameObject\fP *\fBgameObject\fP)"
+.RI "void \fBDOWN_Key\fP (\fBGameObject\fP *\fBgameObject\fP)"
 .br
 .RI "Fonction qui permet de naviguer dans le menu vers le bas\&. "
 .ti -1c
-.RI "void \fBDroite\fP (\fBGameObject\fP *\fBgameObject\fP, int nombresOptions)"
+.RI "void \fBRight\fP (\fBGameObject\fP *\fBgameObject\fP, int nombresOptions)"
 .br
-.RI "Fonction qui permet de naviguer dans le menu a droite\&. "
+.RI "Fonction qui permet de naviguer dans le menu a Right\&. "
 .ti -1c
-.RI "void \fBGauche\fP (\fBGameObject\fP *\fBgameObject\fP, int nombresOptions)"
+.RI "void \fBLeft\fP (\fBGameObject\fP *\fBgameObject\fP, int nombresOptions)"
 .br
-.RI "Fonction qui permet de naviguer dans le menu a gauche\&. "
+.RI "Fonction qui permet de naviguer dans le menu a Left\&. "
 .ti -1c
-.RI "void \fBDessiner_Menu\fP (\fBGameObject\fP *\fBgameObject\fP, int nombresOptions, int posX, int posY, int largeurBG, int hauteurBG)"
+.RI "void \fBGameObject_Render\fP (\fBGameObject\fP *\fBgameObject\fP, int nombresOptions, int posX, int posY, int largeurBG, int hauteurBG)"
 .br
 .RI "Fonction qui permet d'afficher le menu\&. "
 .ti -1c
@@ -56,11 +56,11 @@ src/menuPrincipal.c \- Programme qui gère le menu principal\&.
 .br
 .RI "Fonction qui gere les evenements du menu principal\&. "
 .ti -1c
-.RI "void \fBChargerData_Menu\fP (int numero, int num_image, \fBGameObject\fP *\fBgameObject\fP, char *nomOption, char *image_on, char *image_off, int positionX, int positionY)"
+.RI "void \fBGameObject_LoadRessources\fP (int numero, int num_image, \fBGameObject\fP *\fBgameObject\fP, char *nomOption, char *image_on, char *image_off, int positionX, int positionY)"
 .br
 .RI "Fonction qui gere le chargement des donnes du menu\&. "
 .ti -1c
-.RI "void \fBNettoyer_Menu\fP (\fBGameObject\fP *\fBgameObject\fP, int nombreOptions)"
+.RI "void \fBGameObject_Clean\fP (\fBGameObject\fP *\fBgameObject\fP, int nombreOptions)"
 .br
 .RI "Fonction qui permet de nettoyer l'ecran du menu\&. "
 .in -1c
@@ -95,7 +95,41 @@ janvier 2020
 Initialisation, affichage du menu, navigation dans le menu, gestion des entrées clavier et destruction du menu 
 .SH "Documentation des fonctions"
 .PP 
-.SS "void ChargerData_Menu (int numero, int num_image, \fBGameObject\fP * gameObject, char * nomOption, char * image_on, char * image_off, int positionX, int positionY)"
+.SS "void DOWN_Key (\fBGameObject\fP * gameObject)"
+
+.PP
+Fonction qui permet de naviguer dans le menu vers le bas\&. 
+.PP
+\fBParamètres\fP
+.RS 4
+\fI\fBgameObject\fP\fP pointeur sur le menu 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void GameObject_Clean (\fBGameObject\fP * gameObject, int nombreOptions)"
+
+.PP
+Fonction qui permet de nettoyer l'ecran du menu\&. 
+.PP
+\fBParamètres\fP
+.RS 4
+\fI\fBgameObject\fP\fP pointeur sur le menu 
+.br
+\fInombreOptions\fP nombre d'options du menu 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void GameObject_LoadRessources (int numero, int num_image, \fBGameObject\fP * gameObject, char * nomOption, char * image_on, char * image_off, int positionX, int positionY)"
 
 .PP
 Fonction qui gere le chargement des donnes du menu\&. 
@@ -125,7 +159,7 @@ pas de valeur de retour (void)
 .RE
 .PP
 
-.SS "void Dessiner_Menu (\fBGameObject\fP * gameObject, int nombresOptions, int posX, int posY, int largeurBG, int hauteurBG)"
+.SS "void GameObject_Render (\fBGameObject\fP * gameObject, int nombresOptions, int posX, int posY, int largeurBG, int hauteurBG)"
 
 .PP
 Fonction qui permet d'afficher le menu\&. Affichage des différentes options 
@@ -151,42 +185,6 @@ pas de valeur de retour (void)
 .RE
 .PP
 
-.SS "void Droite (\fBGameObject\fP * gameObject, int nombresOptions)"
-
-.PP
-Fonction qui permet de naviguer dans le menu a droite\&. 
-.PP
-\fBParamètres\fP
-.RS 4
-\fI\fBgameObject\fP\fP Pointeur sur le \fBgameObject\fP 
-.br
-\fInombresOptions\fP Nombre de components utilisés 
-.RE
-.PP
-\fBRenvoie\fP
-.RS 4
-pas de valeur de retour (void) 
-.RE
-.PP
-
-.SS "void Gauche (\fBGameObject\fP * gameObject, int nombresOptions)"
-
-.PP
-Fonction qui permet de naviguer dans le menu a gauche\&. 
-.PP
-\fBParamètres\fP
-.RS 4
-\fI\fBgameObject\fP\fP pointeur sur le menu 
-.br
-\fInombresOptions\fP nombre d'options 
-.RE
-.PP
-\fBRenvoie\fP
-.RS 4
-pas de valeur de retour (void) 
-.RE
-.PP
-
 .SS "\fBGameObject\fP * getGameObject ()"
 
 .PP
@@ -198,7 +196,7 @@ une structure menu de type GameObject
 .RE
 .PP
 
-.SS "int getTouchePresse (\fBGameObject\fP * gameObject)"
+.SS "int getKeypressed (\fBGameObject\fP * gameObject)"
 
 .PP
 Fonction qui retourne l'option du menu selectionne\&. 
@@ -241,16 +239,16 @@ pas de valeur de retour (void)
 .RE
 .PP
 
-.SS "void Nettoyer_Menu (\fBGameObject\fP * gameObject, int nombreOptions)"
+.SS "void Left (\fBGameObject\fP * gameObject, int nombresOptions)"
 
 .PP
-Fonction qui permet de nettoyer l'ecran du menu\&. 
+Fonction qui permet de naviguer dans le menu a Left\&. 
 .PP
 \fBParamètres\fP
 .RS 4
 \fI\fBgameObject\fP\fP pointeur sur le menu 
 .br
-\fInombreOptions\fP nombre d'options du menu 
+\fInombresOptions\fP nombre d'options 
 .RE
 .PP
 \fBRenvoie\fP
@@ -259,14 +257,16 @@ pas de valeur de retour (void)
 .RE
 .PP
 
-.SS "void ToucheBas (\fBGameObject\fP * gameObject)"
+.SS "void Right (\fBGameObject\fP * gameObject, int nombresOptions)"
 
 .PP
-Fonction qui permet de naviguer dans le menu vers le bas\&. 
+Fonction qui permet de naviguer dans le menu a Right\&. 
 .PP
 \fBParamètres\fP
 .RS 4
-\fI\fBgameObject\fP\fP pointeur sur le menu 
+\fI\fBgameObject\fP\fP Pointeur sur le \fBgameObject\fP 
+.br
+\fInombresOptions\fP Nombre de components utilisés 
 .RE
 .PP
 \fBRenvoie\fP
@@ -275,7 +275,7 @@ pas de valeur de retour (void)
 .RE
 .PP
 
-.SS "void ToucheHaut (\fBGameObject\fP * gameObject)"
+.SS "void UP_Key (\fBGameObject\fP * gameObject)"
 
 .PP
 Fonction qui permet de naviguer dans le menu vers le haut\&. 

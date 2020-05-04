@@ -12,12 +12,12 @@
 #define _MENU_GAMEOVER_H /**< \def _MENU_GAMEOVER_H*/
 
 
-extern void Init_MenuGameOver(); /**< fonction d'initialisation de menus game over*/
+extern void GameOver_Init();                    /**< fonction d'initialisation de menus game over*/
 
-extern void Input_MenuGameOver(SDL_Event *event);/**< fonction input de menus game over*/
+extern void GameOver_Input(SDL_Event *event);   /**< fonction input de menus game over*/
 
-extern void Nettoyer_MenuGameOver();/**< fonction Nettoyer_MenuGameOver*/
+extern void GameOver_Clean();                   /**< fonction GameOver_Clean*/
 
-extern void Init_GameOver();/**< fonction Init_GameOver*/
+extern void GameOver_Load();                    /**< fonction GameOver_Load */
 
 #endif

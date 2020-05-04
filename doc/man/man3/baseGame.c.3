@@ -24,7 +24,7 @@ src/baseGame.c \- Programme qui gère les différents comportements du jeu en fo
 .br
 .RI "Fonction qui permet gérer les comportements des entités si on se trouve dans une partie et gérer le son si on se trouve sur le menu principal\&. "
 .ti -1c
-.RI "void \fBRendu_Jeux\fP ()"
+.RI "void \fBGame_Render\fP ()"
 .br
 .RI "Fonction qui permet de gérer le rendu\&. "
 .ti -1c
@@ -84,6 +84,17 @@ pas de valeur de retour (void)
 .RE
 .PP
 
+.SS "void Game_Render ()"
+
+.PP
+Fonction qui permet de gérer le rendu\&. Affichage en fonction de l'etat dans lequel se trouve le jeu 
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
 .SS "\fBBase_Game\fP * getBaseGame ()"
 
 .PP
@@ -92,17 +103,6 @@ Fonction qui permet d'accéder à la structure qui gère l'état du jeu\&.
 \fBRenvoie\fP
 .RS 4
 Un pointeur sur une structure de données de type Base_Game 
-.RE
-.PP
-
-.SS "void Rendu_Jeux ()"
-
-.PP
-Fonction qui permet de gérer le rendu\&. Affichage en fonction de l'etat dans lequel se trouve le jeu 
-.PP
-\fBRenvoie\fP
-.RS 4
-pas de valeur de retour (void) 
 .RE
 .PP
 

@@ -15,6 +15,7 @@
 
 #include "constantes.h"
 
+#include "game_objects.h"
 
 #include "entite.h"
 #include "player.h"
@@ -44,14 +45,14 @@
  */
 typedef struct baseGame
 {
-    int state; /**< Etat du jeu : en cours de partie, sur le menu principal */
-    bool estActif; /**< Etat du jeu : Actif - Non Actif */
-    int time;  /**< time : temps du jeux */
+    int state;      /**< Etat du jeu : en cours de partie, sur le menu principal */
+    bool estActif;  /**< Etat du jeu : Actif - Non Actif */
+    int time;       /**< time : temps du jeux */
 
-    int min; /**<  : temps liée au timer du jeux : minutes du jeux */
+    int min;        /**<  : temps liée au timer du jeux : minutes du jeux */
     
     int tempsPrecedent; /**<  temps précédent en référence au temps écoulé depuis la dernière image */
-    int tempsActuel;  /**<  temps actuel en référence au temps écoulé depuis la dernière image */
+    int tempsActuel;    /**<  temps actuel en référence au temps écoulé depuis la dernière image */
 
     SDL_Texture * passportReq; /**< Texture du passeport nécéssaire pour le niveau */
 
