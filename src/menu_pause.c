@@ -38,7 +38,7 @@ extern void Init_MenuPause()
 
     menu_pause.nom_gameObject = "Menu Pause";
 
-    ChargerData_Menu(0,0,&menu_pause , "Reprendre partie"
+    GameObject_LoadRessources(0,0,&menu_pause , "Reprendre partie"
                 ,"graphics_assets/icons_buttons/back_on_xs.png"
                 ,"graphics_assets/icons_buttons/back_off_xs.png"
                 ,339
@@ -47,7 +47,7 @@ extern void Init_MenuPause()
     /* 
      * Deuxieme option : Retour sur le menu principal
      */
-    ChargerData_Menu(1,1, &menu_pause ,"Retour menu"
+    GameObject_LoadRessources(1,1, &menu_pause ,"Retour menu"
                 ,"graphics_assets/icons_buttons/menu_on_xs.png"
                 ,"graphics_assets/icons_buttons/menu_off_xs.png"
                 ,620
@@ -56,7 +56,7 @@ extern void Init_MenuPause()
     
 
     //Option selectionnee = Reprendre partie
-    menu_pause.selectedOption = 0;
+    menu_pause.componentSelected = 0;
 
     //Chargement de la texture du menu de pause
     menu_pause.bg = ChargerTexture("graphics_assets/pause.png");
@@ -86,19 +86,19 @@ extern void Input_MenuPause(SDL_Event *event)
         {
             switch (event->key.keysym.sym)
             {
-                //Cas touche fleche de gauche
+                //Cas touche fleche de Left
                 case SDLK_LEFT:
-                    Gauche(getMenuPause(), 2);
+                    Left(getMenuPause(), 2);
                     break;
 
-                //Cas touche fleche de droite
+                //Cas touche fleche de Right
                 case SDLK_RIGHT:
-                    Droite(getMenuPause() , 2);
+                    Right(getMenuPause() , 2);
                     break;
 
                 //Cas de la touche entree
                 case SDLK_RETURN:
-                    switch (getTouchePresse(getMenuPause()))
+                    switch (getKeypressed(getMenuPause()))
                     {
                         //Cas de la premiere option : reprendre la partie
                         case 0:

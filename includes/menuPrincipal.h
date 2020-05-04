@@ -43,36 +43,38 @@ typedef struct gameObject GameObject;
  */
 struct gameObject
 {
-    int selectedOption;/**<selection de l'option*/
-    Component components[4];/**< le menu*/
-    Mix_Chunk *son;/**< le son du menu*/
-    TTF_Font * police;/**< la police utilise pour le menu*/
+    int componentSelected;/**< component selectionne */
+    Component components[4];/**< Tableau de Components*/
+    Mix_Chunk *son;/**< Le son du gameObject*/
+    TTF_Font * police;/**<La police utilise pour le gameObject */
     SDL_Texture * bg;/**< Texture en arrière-plan */
     Mix_Music * bgm;/**< Musique du jeux en arriere plan*/
-    char * nom_menu; /**< Nom du GameObject*/
+    char * nom_gameObject; /**< Nom du GameObject*/
 
 };
 
 
 extern void UpdateComponent(Component * component, int etat); /**< fonction de mise à jour du component d'un gameObject */
 extern void UpdateImage_Component(Component * component, const char * filename);/**< fonction de mise à jour d'image du component d'un gameObject*/
-extern int getTouchePresse(GameObject *gameObject);/**< fonction sur les touches du menu*/
 
-extern void ToucheHaut(GameObject * gameObject);/**< fonction pour la touche haut du menu*/
-extern void ToucheBas(GameObject *gameObject );/**<touche bas*/
+extern int getKeypressed( GameObject *gameObject );/**< fonction sur les touches du gameObject*/
+extern void GameObject_LoadRessources(int numero,int num_image, GameObject * gameObject,  char * nomOption,  char * image_on,  char * image_off,
+int positionX, int positionY ); /**<rechargement du gameObject*/
 
-extern void Droite(GameObject *gameObject, int nombreOptions);/**< pour aller a droite*/
-extern void Gauche(GameObject *gameObject,int nombreOptions);/**< pour aller a gauche*/
 
-extern void Dessiner_Menu(GameObject* gameObject, int nombresOptions, int posX, int posY , int largeurBG, int hauteurBG);
+extern void UP_Key(GameObject * gameObject);/**< fonction pour la touche haut du gameObject*/
+extern void DOWN_Key(GameObject *gameObject );/**<touche bas*/
+
+extern void Right(GameObject *gameObject, int nombreOptions);/**< pour aller a Right*/
+extern void Left(GameObject *gameObject,int nombreOptions);/**< pour aller a Left*/
+
+extern void GameObject_Render(GameObject* gameObject, int nombresOptions, int posX, int posY , int largeurBG, int hauteurBG);
 extern void Init_MenuPrincipal();/**<initialise le menu*/
 extern void Input_MenuPrincipal(SDL_Event* event);
 
-extern void ChargerData_Menu(int numero,int num_image, GameObject * gameObject,  char * nomOption,  char * image_on,  char * image_off,
-int positionX, int positionY ); /**<rechargement du menu*/
 
-extern void Nettoyer_Menu(GameObject * gameObject, int nombreOptions);/**<fonction nettoyer le menu remmetre a zero*/
 
+extern void Nettoyer_Menu(GameObject * gameObject, int nombreOptions);/**<fonction servant à libérer les ressources d'un gameObject */
 
 
 

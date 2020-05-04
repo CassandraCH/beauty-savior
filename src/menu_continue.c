@@ -39,10 +39,10 @@ extern void Init_MenuContinue()
      * Premiere option : Reprendre la partie
      * Actif par défaut
      */
-    ChargerData_Menu(0, 0, &menu_continue, "Continuer", "graphics_assets/icons_buttons/continue.png", "null", 707, 562);
+    GameObject_LoadRessources(0, 0, &menu_continue, "Continuer", "graphics_assets/icons_buttons/continue.png", "null", 707, 562);
 
     //Option selectionnee = Reprendre partie
-    menu_continue.selectedOption = 0;
+    menu_continue.componentSelected = 0;
 
     //Chargement de la texture du menu "continuer"
     menu_continue.bg = ChargerTexture("graphics_assets/levelComplete.png");
@@ -75,7 +75,7 @@ extern void Input_MenuContinue(SDL_Event *event)
             {
                 //Cas de la touche entree
                 case SDLK_RETURN:
-                    switch (getTouchePresse(getMenuCon()))
+                    switch (getKeypressed(getMenuCon()))
                     {
                         //Premiere option selectionnee
                         case 0:

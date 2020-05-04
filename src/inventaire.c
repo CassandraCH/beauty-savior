@@ -161,21 +161,21 @@ extern void Init_Inventaire()
     SetHUD_IntToTexture(getItem(2),(SDL_Color){0xFF,0xFF,0xFF,0xFF}, "", nombreBranche ,835, 347);
 
     //Première option : Sélectionner les os
-    ChargerData_Menu(0,0, &inventaire ,"OS"
+    GameObject_LoadRessources(0,0, &inventaire ,"OS"
                 ,"graphics_assets/inventaire/os_on.png"
                 ,"graphics_assets/inventaire/os_off.png"
                 ,555
                 ,300 );
 
     //Deuxième option : Sélectionner les cailloux
-    ChargerData_Menu(1,1, &inventaire ,"ROCK"
+    GameObject_LoadRessources(1,1, &inventaire ,"ROCK"
                 ,"graphics_assets/inventaire/rock_on.png"
                 ,"graphics_assets/inventaire/rock_off.png"
                 ,675
                 ,310 );
 
     //Troisième option : Sélectionner les branches
-    ChargerData_Menu(2,1, &inventaire ,"TREE"
+    GameObject_LoadRessources(2,1, &inventaire ,"TREE"
                 ,"graphics_assets/inventaire/tree_on.png"
                 ,"graphics_assets/inventaire/tree_off.png"
                 ,790
@@ -183,7 +183,7 @@ extern void Init_Inventaire()
 
 
     //Option selectionnee = Sélectionner les os
-    inventaire.selectedOption = 0;
+    inventaire.componentSelected = 0;
 
     //Chargement de la texture de l'inventaire
     inventaire.bg = ChargerTexture("graphics_assets/inventaire/bg_inventaire.png");
@@ -214,19 +214,19 @@ extern void Input_Inventaire(SDL_Event *event)
         {
             switch (event->key.keysym.sym)
             {
-                //Cas touche flèche de gauche
+                //Cas touche flèche de Left
                 case SDLK_LEFT:
-                    Gauche(getInventaire(), 3);
+                    Left(getInventaire(), 3);
                     break;
 
-                //Cas touche flèche de droite
+                //Cas touche flèche de Right
                 case SDLK_RIGHT:
-                    Droite(getInventaire(), 3);
+                    Right(getInventaire(), 3);
                     break;
 
                 //Cas de la touche entrée
                 case SDLK_RETURN:
-                    switch (getTouchePresse(getInventaire()))
+                    switch (getKeypressed(getInventaire()))
                     {
                         //Cas 1 : on sélectionne l'os comme objet
                         case 0:

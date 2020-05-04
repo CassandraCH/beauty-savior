@@ -43,26 +43,26 @@ extern void Init_MenuGameOver()
      * Première option : demarer une nouvelle partie 
      * Actif par défaut
      */
-    ChargerData_Menu(0, 0, &menu_over, "Nouvelle partie", "graphics_assets/icons_buttons/newpartie_on_xs.png", "graphics_assets/icons_buttons/newpartie_off_xs.png", 469, 366);
+    GameObject_LoadRessources(0, 0, &menu_over, "Nouvelle partie", "graphics_assets/icons_buttons/newpartie_on_xs.png", "graphics_assets/icons_buttons/newpartie_off_xs.png", 469, 366);
 
     /* 
      * Deuxième option : Chargement d'une partie
      */
-    ChargerData_Menu(1, 1, &menu_over, "Chargement", "graphics_assets/icons_buttons/load_on_xs.png", "graphics_assets/icons_buttons/load_off_xs.png", 455, 449);
+    GameObject_LoadRessources(1, 1, &menu_over, "Chargement", "graphics_assets/icons_buttons/load_on_xs.png", "graphics_assets/icons_buttons/load_off_xs.png", 455, 449);
     
     /* 
      * Troisième option : quitter le jeu 
      */
-    ChargerData_Menu(2, 1, &menu_over, "Quitter", "graphics_assets/icons_buttons/quitter_on_xs.png", "graphics_assets/icons_buttons/quitter_off_xs.png", 469, 491);
+    GameObject_LoadRessources(2, 1, &menu_over, "Quitter", "graphics_assets/icons_buttons/quitter_on_xs.png", "graphics_assets/icons_buttons/quitter_off_xs.png", 469, 491);
 
     /* 
      * Quatrième option : Couper/Activer Son
      */
-    ChargerData_Menu(3, 1, &menu_over, "Son", "graphics_assets/icons_buttons/sound_on_xs.png", "graphics_assets/icons_buttons/sound_off_xs.png", 487, 627);
+    GameObject_LoadRessources(3, 1, &menu_over, "Son", "graphics_assets/icons_buttons/sound_on_xs.png", "graphics_assets/icons_buttons/sound_off_xs.png", 487, 627);
     
     
     //Option selectionnée par défaut = la première (nouvelle partie)
-    menu_over.selectedOption = 0;
+    menu_over.componentSelected = 0;
 
     //Chargement de la texture du menu game over
     menu_over.bg = ChargerTexture("graphics_assets/menu_over_bg.png");
@@ -98,7 +98,7 @@ extern void Input_MenuGameOver(SDL_Event *event)
                     //Gestion du son
                     Mix_PlayChannel(-1, getGameObject()->son, 0);
                     //Navigation dans le menu
-                    ToucheHaut(getMenu_Over());
+                    UP_Key(getMenu_Over());
                     break;
 
                 //Cas de la touche flèche du bas
@@ -106,12 +106,12 @@ extern void Input_MenuGameOver(SDL_Event *event)
                     //Gestion du son
                     Mix_PlayChannel(-1, getGameObject()->son, 0);
                     //Navigation dans le menu
-                    ToucheBas(getMenu_Over());
+                    DOWN_Key(getMenu_Over());
                     break;
 
                 //Cas de la touche entrée
                 case SDLK_RETURN:
-                    switch (getTouchePresse(getMenu_Over()))
+                    switch (getKeypressed(getMenu_Over()))
                     {
                         //Cas de la première option : nouvelle partie
                         case 0:

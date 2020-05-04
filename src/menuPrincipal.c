@@ -22,14 +22,14 @@ extern GameObject* getGameObject()
 }
 
 /**
- * \fn extern int getTouchePresse(GameObject *gameObject)
+ * \fn extern int getKeypressed(GameObject *gameObject)
  * \brief Fonction qui retourne l'option du menu selectionne
  * \param gameObject pointeur sur le menu
  * \return un entier correspondant au numero de l'option selectionnee
 */
-extern int getTouchePresse(GameObject *gameObject)
+extern int getKeypressed(GameObject *gameObject)
 { 
-    return gameObject->selectedOption; 
+    return gameObject->componentSelected; 
 }
 
 /**
@@ -52,7 +52,7 @@ extern void Init_MenuPrincipal()
      * Premiere option : Demarer une nouvelle partie 
      * Actif par défaut
      */ 
-    ChargerData_Menu(0,0,&_gameObject , "Jouer"
+    GameObject_LoadRessources(0,0,&_gameObject , "Jouer"
                 ,"graphics_assets/icons_buttons/jouer_on_xs.png"
                 ,"graphics_assets/icons_buttons/jouer_off_xs.png"
                 ,469
@@ -61,7 +61,7 @@ extern void Init_MenuPrincipal()
     /* 
      * Deuxieme option : Chargement d'une partie
      */
-    ChargerData_Menu(1,1,&_gameObject , "Chargement"
+    GameObject_LoadRessources(1,1,&_gameObject , "Chargement"
             ,"graphics_assets/icons_buttons/load_on_xs.png"
             ,"graphics_assets/icons_buttons/load_off_xs.png"
             ,455
@@ -71,7 +71,7 @@ extern void Init_MenuPrincipal()
     /* 
      * Troisieme option : Quitter le jeu 
      */
-    ChargerData_Menu(2,1,&_gameObject , "Quitter"
+    GameObject_LoadRessources(2,1,&_gameObject , "Quitter"
             ,"graphics_assets/icons_buttons/quitter_on_xs.png"
             ,"graphics_assets/icons_buttons/quitter_off_xs.png"
             ,469
@@ -80,7 +80,7 @@ extern void Init_MenuPrincipal()
     /* 
      * Quatrième option : Couper/Activer Son
      */
-    ChargerData_Menu(3,1,&_gameObject , "ActiverSon"
+    GameObject_LoadRessources(3,1,&_gameObject , "ActiverSon"
             ,"graphics_assets/icons_buttons/sound_on_xs.png"
             ,"graphics_assets/icons_buttons/sound_off_xs.png"
             ,487
@@ -88,7 +88,7 @@ extern void Init_MenuPrincipal()
 
 
     //Option selectionnee = la premiere (nouvelle partie)
-    _gameObject.selectedOption = 0;
+    _gameObject.componentSelected = 0;
 
     //Chargement de la texture du menu principal
      _gameObject.bg = ChargerTexture("graphics_assets/menu_bg_xs.png");
@@ -167,104 +167,104 @@ extern void UpdateImage_Component(Component * component, const char * filename )
 
 
 /**
- * \fn extern void ToucheHaut(GameObject *gameObject)
+ * \fn extern void UP_Key(GameObject *gameObject)
  * \brief Fonction qui permet de naviguer dans le menu vers le haut
  * \param gameObject pointeur sur le menu
  * \return pas de valeur de retour (void)
 */
-extern void ToucheHaut(GameObject *gameObject)
+extern void UP_Key(GameObject *gameObject)
 {
     //Si l'option actuellement selectionnee est differente de la premiere
     //Si on est sur la premiere option => on ne peut pas aller sur une option au-dessus
-    if (gameObject->selectedOption - 1 >= 0)
+    if (gameObject->componentSelected - 1 >= 0)
     {  
         //Rafraichir l'affichage
-        UpdateComponent(&gameObject->components[gameObject->selectedOption] , 1);
+        UpdateComponent(&gameObject->components[gameObject->componentSelected] , 1);
 
         //Modifier l'option selectionnee => passe a l'option suivante
-        gameObject->selectedOption--;
+        gameObject->componentSelected--;
 
         //Rafraichir l'affichage
-        UpdateComponent(&gameObject->components[gameObject->selectedOption], 0 );
+        UpdateComponent(&gameObject->components[gameObject->componentSelected], 0 );
     }
 }
 
 /**
- * \fn extern void ToucheBas(GameObject *gameObject)
+ * \fn extern void DOWN_Key(GameObject *gameObject)
  * \brief Fonction qui permet de naviguer dans le menu vers le bas
  * \param gameObject pointeur sur le menu
  * \return pas de valeur de retour (void)
 */
-extern void ToucheBas(GameObject *gameObject)
+extern void DOWN_Key(GameObject *gameObject)
 {
     //Si l'option actuellement selectionnee est differente de la derniere
     //Si on est sur la derniere option => on ne peut pas aller sur une option en-dessous
-    if (gameObject->selectedOption + 1 < MAX_NUMBER)
+    if (gameObject->componentSelected + 1 < MAX_NUMBER)
     {
         //Rafraichir l'affichage
-        UpdateComponent(&gameObject->components[gameObject->selectedOption], 1);
+        UpdateComponent(&gameObject->components[gameObject->componentSelected], 1);
 
         //Modifier l'option selectionnee => passe a l'option precedente
-        gameObject->selectedOption++;
+        gameObject->componentSelected++;
 
         //Rafraichir l'affichage
-        UpdateComponent(&gameObject->components[gameObject->selectedOption], 0);
+        UpdateComponent(&gameObject->components[gameObject->componentSelected], 0);
     }
 }
 
 /**
- * \fn extern void Droite(GameObject* gameObject, int nombresOptions)
- * \brief Fonction qui permet de naviguer dans le menu a droite
- * \param gameObject pointeur sur le menu
- * \param nombresOptions nombre d'options
+ * \fn extern void Right(GameObject* gameObject, int nombresOptions)
+ * \brief Fonction qui permet de naviguer dans le menu a Right
+ * \param gameObject Pointeur sur le gameObject
+ * \param nombresOptions Nombre de components utilisés
  * \return pas de valeur de retour (void)
 */
-extern void Droite(GameObject* gameObject, int nombresOptions)
+extern void Right(GameObject* gameObject, int nombresOptions)
 {
 
     //Si l'option actuellement selectionnee est differente de la premiere
     //Si on est sur la dernière option => on ne peut pas aller sur une option au-dessus 
-    if (gameObject->selectedOption + 1 < nombresOptions  )
+    if (gameObject->componentSelected + 1 < nombresOptions  )
     {
         //Rafraichir l'affichage
-        UpdateComponent(&gameObject->components[gameObject->selectedOption], 1);
+        UpdateComponent(&gameObject->components[gameObject->componentSelected], 1);
 
         //Modifier l'option selectionnee => passe a l'option precedente
-        gameObject->selectedOption++;
+        gameObject->componentSelected++;
 
         //Rafraichir l'affichage
-        UpdateComponent(&gameObject->components[gameObject->selectedOption], 0);
+        UpdateComponent(&gameObject->components[gameObject->componentSelected], 0);
     }
 }
 
 /**
- * \fn extern void Gauche(GameObject* gameObject, int nombresOptions)
- * \brief Fonction qui permet de naviguer dans le menu a gauche
+ * \fn extern void Left(GameObject* gameObject, int nombresOptions)
+ * \brief Fonction qui permet de naviguer dans le menu a Left
  * \param gameObject pointeur sur le menu
  * \param nombresOptions nombre d'options
  * \return pas de valeur de retour (void)
 */
-extern void Gauche(GameObject* gameObject, int nombresOptions)
+extern void Left(GameObject* gameObject, int nombresOptions)
 {
     //Si l'option actuellement selectionnee est differente de la premiere
     //Si on est sur la premiere option => on ne peut pas aller sur une option au-dessus
-    if (gameObject->selectedOption - 1 >= 0)
+    if (gameObject->componentSelected - 1 >= 0)
     {  
   
         //Rafraichir l'affichage
-        UpdateComponent(&gameObject->components[gameObject->selectedOption] , 1);
+        UpdateComponent(&gameObject->components[gameObject->componentSelected] , 1);
 
         //Modifier l'option selectionnee => passe a l'option suivante
-        gameObject->selectedOption--;
+        gameObject->componentSelected--;
 
         //Rafraichir l'affichage
-        UpdateComponent(&gameObject->components[gameObject->selectedOption], 0 );
+        UpdateComponent(&gameObject->components[gameObject->componentSelected], 0 );
     }
     
 }
 
 /**
- * \fn extern void Dessiner_Menu(GameObject* gameObject, int nombresOptions, int posX, int posY , int largeurBG, int hauteurBG) 
+ * \fn extern void GameObject_Render(GameObject* gameObject, int nombresOptions, int posX, int posY , int largeurBG, int hauteurBG) 
  * \brief Fonction qui permet d'afficher le menu
  * \details Affichage des différentes options
  * \param gameObject pointeur sur le menu
@@ -275,7 +275,7 @@ extern void Gauche(GameObject* gameObject, int nombresOptions)
  * \param hauteurBG hauteur de l'arriere plan
  * \return pas de valeur de retour (void)
 */
-extern void Dessiner_Menu(GameObject* gameObject, int nombresOptions, int posX, int posY , int largeurBG, int hauteurBG) 
+extern void GameObject_Render(GameObject* gameObject, int nombresOptions, int posX, int posY , int largeurBG, int hauteurBG) 
 {
     SDL_Rect rect = {posX,posY, largeurBG, hauteurBG };
 
@@ -321,19 +321,19 @@ extern void Input_MenuPrincipal(SDL_Event *event)
                 case SDLK_UP:
                     //Gestion du son
                     Mix_PlayChannel(-1, getGameObject()->son, 0);
-                    ToucheHaut(getGameObject());
+                    UP_Key(getGameObject());
                     break;
 
                 //Cas de la touche fleche du bas
                 case SDLK_DOWN:
                     //Gestion du son
                     Mix_PlayChannel(-1, getGameObject()->son, 0);
-                    ToucheBas(getGameObject());
+                    DOWN_Key(getGameObject());
                     break;
 
                 //Cas de la touche entree
                 case SDLK_RETURN:
-                    switch (getTouchePresse(getGameObject()))
+                    switch (getKeypressed(getGameObject()))
                     {
                         //Cas de la premiere option : demarer une nouvelle partie
                         case 0:
@@ -410,7 +410,7 @@ extern void Input_MenuPrincipal(SDL_Event *event)
 }
 
 /**
- * \fn extern void ChargerData_Menu(int numero,int num_image, GameObject * gameObject,  char * nomOption,  char * image_on,  char * image_off, int positionX, int positionY)
+ * \fn extern void GameObject_LoadRessources(int numero,int num_image, GameObject * gameObject,  char * nomOption,  char * image_on,  char * image_off, int positionX, int positionY)
  * \brief Fonction qui gere le chargement des donnes du menu
  * \param numero numero de l'option
  * \param num_image numero de l'image selectionne par defaut
@@ -422,7 +422,7 @@ extern void Input_MenuPrincipal(SDL_Event *event)
  * \param positionY position en y
  * \return pas de valeur de retour (void)
 */
-extern void ChargerData_Menu(int numero, int num_image, GameObject * gameObject,  char * nomOption,  char * image_on,  char * image_off, int positionX, int positionY)
+extern void GameObject_LoadRessources(int numero, int num_image, GameObject * gameObject,  char * nomOption,  char * image_on,  char * image_off, int positionX, int positionY)
 {
     //Chargement des donnees
     gameObject->components[numero].nomOption = nomOption;

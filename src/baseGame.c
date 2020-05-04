@@ -105,14 +105,14 @@ extern void Rendu_Jeux()
   //Cas où on est sur le menu principal
   if ( getBaseGame()->state == MENU_PRINCIPAL )
   {    
-    Dessiner_Menu(getGameObject(), 4, 0, 0, 1280, 720 );
+    GameObject_Render(getGameObject(), 4, 0, 0, 1280, 720 );
   
   }
 
   //Cas où on on charge une partie
   else if ( getBaseGame()->state == LOADING )
   {
-    Dessiner_Menu(getMenuLoad(), 2, 0,0 , 1280, 720) ;
+    GameObject_Render(getMenuLoad(), 2, 0,0 , 1280, 720) ;
     AfficherHUD(getScores());
     AfficherHUD( getNiveau() );
   }
@@ -120,7 +120,7 @@ extern void Rendu_Jeux()
   //Cas où un niveau est terminé
   else if ( getBaseGame()->state == LEVEL_COMPLETED )
   {
-    Dessiner_Menu(getMenuCon(), 1,0, 0, 1280, 720);
+    GameObject_Render(getMenuCon(), 1,0, 0, 1280, 720);
     AfficherHUD(  getScores() );
     AfficherHUD( getNiveau() );
   }
@@ -128,13 +128,13 @@ extern void Rendu_Jeux()
   //Cas où le jeu est en pause
   else if ( getBaseGame()->state == PAUSE )
   {
-    Dessiner_Menu(getMenuPause(), 2,300, 200,  645, 432 );
+    GameObject_Render(getMenuPause(), 2,300, 200,  645, 432 );
   }
 
   //Cas où on affiche l'inventaire
   else if ( getBaseGame()->state == INVENTAIRE )
   {
-      Dessiner_Menu( getInventaire(),3, 300, 200, 607, 269 );
+      GameObject_Render( getInventaire(),3, 300, 200, 607, 269 );
       AfficherHUD(getItem(0)); 
       AfficherHUD(getItem(1));
       AfficherHUD(getItem(2));
@@ -143,15 +143,15 @@ extern void Rendu_Jeux()
   //Cas où le jeu est terminé = tous les niveaux sont terminés
   else if ( getBaseGame()->state == GAMEWIN )
   {
-    Dessiner_Menu( getMenu_Win() ,2, 413, 74,433, 478  );
-    AfficherHUD(getNombreVie());
-    AfficherHUD( getScores() );
+    GameObject_Render( getMenu_Win() ,2, 413, 74,433, 478  );
+    AfficherHUD( getNombreVie() );
+    AfficherHUD( getScores()  );
 
   }
   // Cas où le joueur affiche l'aide 
   else if ( getBaseGame()->state == HELP )
   {
-    Dessiner_Menu( getHelp() ,0, 322, 150, 637, 363  );
+    GameObject_Render( getHelp() ,0, 322, 150, 637, 363  );
     
   }
 
@@ -185,7 +185,7 @@ extern void Rendu_Jeux()
   //Cas où on a perdu
   else if (getBaseGame()->state == GAMEOVER )
   {
-    Dessiner_Menu(getMenu_Over(), 4, 0, 0 , 1280, 720 );
+    GameObject_Render(getMenu_Over(), 4, 0, 0 , 1280, 720 );
     AfficherHUD(getScores());
   }
 

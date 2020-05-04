@@ -22,8 +22,8 @@ Contrôle du joueur:
 
     - On contrôle le joueur avec les touches du clavier :
     - Flèche du haut pour sauter 
-    - Flèche droite pour aller à droite 
-    - Flèche gauche pour aller à gauche 
+    - Flèche Right pour aller à Right 
+    - Flèche Left pour aller à Left 
     - Espace pour lancer un objet.
 
 

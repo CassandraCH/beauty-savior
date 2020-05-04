@@ -1,5 +1,5 @@
 /**
- * \file menu_continue.h
+ * \file inventaire.h
  * \author CALVADOS Cindy, CHAUMULON Cassandra, CHELLI Célia, OUSMANOVA Karina
  * \version 1.0
  * \date mars 2020

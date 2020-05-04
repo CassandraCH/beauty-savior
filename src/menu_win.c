@@ -43,7 +43,7 @@ extern void Init_MenuWin()
      * Actif par défaut
      */ 
 
-    ChargerData_Menu(0,0,&menu_win , "Reprendre partie"
+    GameObject_LoadRessources(0,0,&menu_win , "Reprendre partie"
                 ,"graphics_assets/win_icons/quit_on.png"
                 ,"graphics_assets/win_icons/quit_off.png"
                 ,552
@@ -52,7 +52,7 @@ extern void Init_MenuWin()
     /* 
      * Deuxieme option : Retour sur le menu principal
      */
-    ChargerData_Menu(1,1, &menu_win ,"Retour menu"
+    GameObject_LoadRessources(1,1, &menu_win ,"Retour menu"
                 ,"graphics_assets/win_icons/menu_on.png"
                 ,"graphics_assets/win_icons/menu_off.png"
                 ,657
@@ -61,7 +61,7 @@ extern void Init_MenuWin()
     
 
     //Option selectionnee = Reprendre partie
-    menu_win.selectedOption = 0;
+    menu_win.componentSelected = 0;
 
     //Chargement de la texture du menu de pause
     menu_win.bg = ChargerTexture("graphics_assets/game_win.png");
@@ -95,19 +95,19 @@ extern void Input_MenuWin(SDL_Event *event)
         {
             switch (event->key.keysym.sym)
             {
-                //Cas touche fleche de gauche
+                //Cas touche fleche de Left
                 case SDLK_LEFT:
-                    Gauche(getMenu_Win(), 2);
+                    Left(getMenu_Win(), 2);
                     break;
 
-                //Cas touche fleche de droite
+                //Cas touche fleche de Right
                 case SDLK_RIGHT:
-                    Droite(getMenu_Win() , 2);
+                    Right(getMenu_Win() , 2);
                     break;
 
                 //Cas de la touche entree
                 case SDLK_RETURN:
-                    switch (getTouchePresse(getMenu_Win()))
+                    switch (getKeypressed(getMenu_Win()))
                     {
                         //Cas de la premiere option : Quitter le jeux
                         case 0:

@@ -138,13 +138,13 @@ extern void InputJoueur(SDL_Event *event)
     //Variable qui permet de savoir si une touche enfoncee
     const Uint8 *states = SDL_GetKeyboardState(NULL);
 
-    //Si la touche fleche gauche est appuyee et que le joueur peut se deplacer vers la gauche
+    //Si la touche fleche Left est appuyee et que le joueur peut se deplacer vers la Left
     if( states[SDL_SCANCODE_LEFT]  && player.x - 25 > 0  )
     {
         //Modification de la velocite du joueur
         player.vx -= 0.5;
 
-        //Deplacement du joueur vers la gauche    
+        //Deplacement du joueur vers la Left    
         if( player.vx < -8)
         {
             player.vx = -8;
@@ -153,13 +153,13 @@ extern void InputJoueur(SDL_Event *event)
         player.estTourne = true;
     }
 
-    //Si la touche fleche droite est appuyee et que le joueur peut se deplacer vers la droite
+    //Si la touche fleche Right est appuyee et que le joueur peut se deplacer vers la Right
     else if(states[SDL_SCANCODE_RIGHT] && player.x < LARGEUR_NIVEAU - player.w )
     {
         //Modification de la velocite du joueur
         player.vx += 0.5;
 
-        //Deplacement du joueur vers la droite
+        //Deplacement du joueur vers la Right
         if(player.vx > 8)
         {
            player.vx = 8;

@@ -46,7 +46,7 @@ extern void Init_MenuLoad()
      * Actif par défaut
      */ 
 
-    ChargerData_Menu(0,0,&menu_load , "Retour"
+    GameObject_LoadRessources(0,0,&menu_load , "Retour"
                 ,"graphics_assets/icons_buttons/return_on_xs.png"
                 ,"graphics_assets/icons_buttons/return_off_xs.png"
                 ,339
@@ -57,7 +57,7 @@ extern void Init_MenuLoad()
      * Deuxieme option : Charger la partie
      */
 
-    ChargerData_Menu(1,1, &menu_load ,"Charger Partie"
+    GameObject_LoadRessources(1,1, &menu_load ,"Charger Partie"
                 ,"graphics_assets/icons_buttons/load_on_xs.png"
                 ,"graphics_assets/icons_buttons/load_off_xs.png"
                 ,620
@@ -65,7 +65,7 @@ extern void Init_MenuLoad()
 
 
     //Option selectionnee = Retour au menu principal
-    menu_load.selectedOption = 0;
+    menu_load.componentSelected = 0;
 
     //Chargement de la texture du menu de chargement
     menu_load.bg = ChargerTexture("graphics_assets/chargement.png");
@@ -96,19 +96,19 @@ extern void Input_MenuLoad(SDL_Event *event)
         {
             switch (event->key.keysym.sym)
             {
-                //Cas de la fleche gauche
+                //Cas de la fleche Left
                 case SDLK_LEFT:
-                    Gauche(getMenuLoad(), 2);
+                    Left(getMenuLoad(), 2);
                     break;
 
-                //Cas de la fleche droite
+                //Cas de la fleche Right
                 case SDLK_RIGHT:
-                    Droite(getMenuLoad(), 2);
+                    Right(getMenuLoad(), 2);
                     break;
 
                 //Cas de la touche entree
                 case SDLK_RETURN:
-                    switch (getTouchePresse(getMenuLoad()))
+                    switch (getKeypressed(getMenuLoad()))
                     {
                     //Cas de la premiere option : retour au menu principal
                         case 0:

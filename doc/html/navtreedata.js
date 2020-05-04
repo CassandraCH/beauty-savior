@@ -51,7 +51,7 @@ var NAVTREEINDEX =
 [
 "annotated.html",
 "interface_8c.html#a7c61d7b31a07f9f23e933f768d9b735e",
-"structhud__s.html#a2f5cac12e913bcfcff660305bf88dd3b"
+"structcomponent.html#a0a2f84ed7838f07779ae24c5a9086d33"
 ];
 
 var SYNCONMSG = 'cliquez pour désactiver la synchronisation du panel';

@@ -22,8 +22,8 @@ extern GameObject * getHelp()
 }
 
 /**
- * \fn extern void Init_MenuPause()
- * \brief Fonction qui initialise le menu de pause
+ * \fn extern void Init_Help()
+ * \brief Fonction qui initialise l'affichage de l'aide
  * \return pas de valeur de retour (void)
 */
 extern void Init_Help()
@@ -40,15 +40,15 @@ extern void Init_Help()
 
 
     //Option selectionnee = Reprendre partie
-    help.selectedOption = 0;
+    help.componentSelected = 0;
 
     //Chargement de la texture de l'aide
     help.bg = ChargerTexture("graphics_assets/keyboard_help.png");
 }
 
 /**
- * \fn extern void Input_MenuPause(SDL_Event *event)
- * \brief Fonction qui gere les evenements du menu
+ * \fn extern void Input_Help(SDL_Event *event)
+ * \brief Fonction qui gere les evenements de l'aide
  * \details Gestion des entrees clavier de l'utilisateur
  * \param event evenement
  * \return pas de valeur de retour (void)

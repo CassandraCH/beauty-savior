@@ -24,8 +24,9 @@ var searchData=
   ['commun_2eh_47',['commun.h',['../commun_8h.html',1,'']]],
   ['component_48',['component',['../structcomponent.html',1,'component'],['../menu_principal_8h.html#ad9e2910eec221978e490706e75d9b610',1,'Component():&#160;menuPrincipal.h']]],
   ['components_49',['components',['../structgame_object.html#a05854aef7f0d1b81ee18f01574e9347f',1,'gameObject']]],
-  ['constantes_2eh_50',['constantes.h',['../constantes_8h.html',1,'']]],
-  ['constants_5fh_51',['CONSTANTS_H',['../constantes_8h.html#ac7a36608ac7b2450d147e32c12ef6182',1,'constantes.h']]],
-  ['creerelement_52',['creerElement',['../liste_elements_8c.html#af4e71ddbe7e81a3b59dcef2f9776fcc2',1,'creerElement(SDL_Rect *rect, typeEntite item_t, bool actif):&#160;listeElements.c'],['../liste_elements_8h.html#ab8e6667f55faeda7974831ef4cfc8645',1,'creerElement(SDL_Rect *rect, typeEntite item_t, bool actif):&#160;listeElements.c']]],
-  ['creertir_53',['CreerTir',['../entite_8c.html#ad22010ae4c30b9f88efac9dc9c4aa51b',1,'CreerTir(typeEntite type, int width, int height, int startX, int startY):&#160;entite.c'],['../entite_8h.html#ad22010ae4c30b9f88efac9dc9c4aa51b',1,'CreerTir(typeEntite type, int width, int height, int startX, int startY):&#160;entite.c']]]
+  ['componentselected_50',['componentSelected',['../structgame_object.html#a62a1c77cd67342ff4761a483e2d06627',1,'gameObject']]],
+  ['constantes_2eh_51',['constantes.h',['../constantes_8h.html',1,'']]],
+  ['constants_5fh_52',['CONSTANTS_H',['../constantes_8h.html#ac7a36608ac7b2450d147e32c12ef6182',1,'constantes.h']]],
+  ['creerelement_53',['creerElement',['../liste_elements_8c.html#af4e71ddbe7e81a3b59dcef2f9776fcc2',1,'creerElement(SDL_Rect *rect, typeEntite item_t, bool actif):&#160;listeElements.c'],['../liste_elements_8h.html#ab8e6667f55faeda7974831ef4cfc8645',1,'creerElement(SDL_Rect *rect, typeEntite item_t, bool actif):&#160;listeElements.c']]],
+  ['creertir_54',['CreerTir',['../entite_8c.html#ad22010ae4c30b9f88efac9dc9c4aa51b',1,'CreerTir(typeEntite type, int width, int height, int startX, int startY):&#160;entite.c'],['../entite_8h.html#ad22010ae4c30b9f88efac9dc9c4aa51b',1,'CreerTir(typeEntite type, int width, int height, int startX, int startY):&#160;entite.c']]]
 ];

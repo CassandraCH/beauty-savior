@@ -33,7 +33,7 @@ extern bool UpdateBullets( typeEntite typeA, typeEntite typeB )
                 //Si le bullet actuel peut etre lancer
                 if ( pt->lancer )
                 {
-                    //Si l'entité A est le joueur et que le bullet actuel est de type bull => le bullet est tiré a gauche ou a droite en fonction de la position du joueur
+                    //Si l'entité A est le joueur et que le bullet actuel est de type bull => le bullet est tiré a Left ou a Right en fonction de la position du joueur
                     if ( typeA == joueur &&  ( pt->type == tree || pt->type == rock)  ) 
                     {
                         printf("Joueur\n");
@@ -47,12 +47,12 @@ extern bool UpdateBullets( typeEntite typeA, typeEntite typeB )
                             pt->movingX =  20;
                     }
 
-                    //Si l'entité A est un ennemi et que le bullet actuel est de type feu => le bullet est tiré a gauche ou a droite en fonction de la position du joueur par rapport a l'ennemi
+                    //Si l'entité A est un ennemi et que le bullet actuel est de type feu => le bullet est tiré a Left ou a Right en fonction de la position du joueur par rapport a l'ennemi
                     else if ( typeB == ennemi && pt->type == feu )
                     {  
                         printf("Ennemi\n");
 
-                        //Si le joueur est à gauche de l'ennemi, on inverse le sens du tir
+                        //Si le joueur est à Left de l'ennemi, on inverse le sens du tir
                         if( getPlayerX() + getPlayer()->w  <= pt->rect->x )
                             pt->movingX = -18;
 
@@ -208,13 +208,13 @@ extern void collisionDetection()
 
     /*
         côté droit = x + largeur;
-        coté gauche = x;
+        coté Left = x;
         coté bas = y + haut
         coté haut = y 
     */
 
     /* 
-        Verifie la collision avec les ennemis sur la gauche et la droite
+        Verifie la collision avec les ennemis sur la Left et la Right
         *pt = pointeur sur l'ennemi actuel
     */
     //Parcours de la liste des ennemis
@@ -230,7 +230,7 @@ extern void collisionDetection()
         float ennemi_y = pt->rect->y; // variable qui stocke la position en y du joueur 
 
 
-        // Vérifie les collisions à gauche , droite, bas et en haut
+        // Vérifie les collisions à Left , Right, bas et en haut
         if (collide2d(joueur_x, joueur_y, ennemi_x, ennemi_y, joueur_w, joueur_h, ennemi_w, ennemi_h) && pt->type == ennemi)
         {
             /*
@@ -320,7 +320,7 @@ extern void collision_Decor()
         /*
             Gestion des colisions avec le décor
             Divers traitement 
-            Cas du haut, bas, droit & gauche
+            Cas du haut, bas, droit & Left
         */
 
         //Si le joueur est situé dans l'alignement du collider
@@ -376,7 +376,7 @@ extern void collision_Decor()
 
         if(joueur_y+joueur_h > collider_y && joueur_y<collider_y+collider_h)
         {
-            //Le côté droit du joueur est en collision avec le coté gauche du bloc
+            //Le côté droit du joueur est en collision avec le coté Left du bloc
             if(joueur_x < collider_x+collider_w && joueur_x+joueur_w > collider_x+collider_w && getPlayer()->vx < 0)
             {
                 //Si c'est la fin d'un niveau

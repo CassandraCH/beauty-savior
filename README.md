@@ -25,7 +25,7 @@ L'équipe fut composée de :
 
 ## Comment jouer ?
 
-- Pour se déplacer, utilisez les flèches `gauche` - `droite`.
+- Pour se déplacer, utilisez les flèches `Left` - `Right`.
 - Pour effectuer un saut, utilisez la touche `haut`.
 - Pour mettre le jeu en pause, appuyer sur la touche `p`.
 - Pour récupérer un objet, il suffit de le toucher.
