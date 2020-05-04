@@ -186,7 +186,7 @@ extern void Game_Render()
   else if (getBaseGame()->state == GAMEOVER )
   {
     GameObject_Render(getMenu_Over(), 4, 0, 0 , 1280, 720 );
-    AfficherHUD(getScores());
+    
   }
 
   SDL_RenderPresent(getRenderer());
