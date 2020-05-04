@@ -21,11 +21,11 @@ extern GameObject * getMenuLoad()
 }
 
 /**
- * \fn extern void Init_MenuLoad()
+ * \fn extern void Load_Init()
  * \brief Fonction qui initialise le menu de chargement
  * \return pas de valeur de retour (void)
 */
-extern void Init_MenuLoad()
+extern void Load_Init()
 {
     int width = LARGEUR_FENETRE, height = HAUTEUR_FENETRE;
     printf("Chargement Menu principal");
@@ -72,13 +72,13 @@ extern void Init_MenuLoad()
 }
 
 /**
- * \fn extern void Input_MenuLoad(SDL_Event *event)
+ * \fn extern void Load_Input(SDL_Event *event)
  * \brief Fonction qui gere les evenements du menu
  * \details Gestion des entrees clavier de l'utilisateur
  * \param event evenement
  * \return pas de valeur de retour (void)
 */
-extern void Input_MenuLoad(SDL_Event *event)
+extern void Load_Input(SDL_Event *event)
 {
     // Lecture de tous les evenements
     while (SDL_PollEvent(event) != 0)
@@ -96,14 +96,14 @@ extern void Input_MenuLoad(SDL_Event *event)
         {
             switch (event->key.keysym.sym)
             {
-                //Cas de la fleche Left
+                //Cas de la fleche LEFT_Key
                 case SDLK_LEFT:
-                    Left(getMenuLoad(), 2);
+                    LEFT_Key(getMenuLoad(), 2);
                     break;
 
-                //Cas de la fleche Right
+                //Cas de la fleche RIGHT_Key
                 case SDLK_RIGHT:
-                    Right(getMenuLoad(), 2);
+                    RIGHT_Key(getMenuLoad(), 2);
                     break;
 
                 //Cas de la touche entree
@@ -116,7 +116,7 @@ extern void Input_MenuLoad(SDL_Event *event)
                             GameObject_Clean(getMenuLoad(), 2);
                             GameObject_Clean(getMenu_Over(), 4);
 
-                            actualiserJoueur();
+                            Player_Reset();
 
                             //Changer l'etat du jeu
                             getBaseGame()->state = MENU_PRINCIPAL;
@@ -125,7 +125,7 @@ extern void Input_MenuLoad(SDL_Event *event)
                         //Cas de la deuxieme option : charger la partie
                         case 1:
                             Level_Destroy();
-                            actualiserJoueur();
+                            Player_Reset();
 
                             //Changer l'etat du joueur
                             getPlayer()->estMort = false;

@@ -192,7 +192,7 @@ extern void Level_Render()
    if(  getPlayer()->niveau == 1 )
    {
       Level_Textures_Render(0);
-      AfficherJoueur();
+      Player_Render();
       Level_Textures_Render(1);
    }  
 

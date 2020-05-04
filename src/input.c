@@ -31,11 +31,11 @@ extern void ProcessInput(SDL_Event * event)
     //Cas où l'utilsateur est sur le menu pause
     else if ( getBaseGame()->state == PAUSE )
     {
-        Input_MenuPause(event);
+        Pause_Input(event);
     }
     else if ( getBaseGame()->state == HELP )
     {
-        Input_Help(event);
+        Help_Input(event);
     }
     else if ( getBaseGame()->state == INVENTAIRE )
     {
@@ -45,19 +45,19 @@ extern void ProcessInput(SDL_Event * event)
     //Cas où l'utilsateur est sur le menu de chargement
     else if ( getBaseGame()->state == LOADING )
     {
-        Input_MenuLoad(event);
+        Load_Input(event);
     }
 
     //Cas où l'utilsateur vient de terminer le niveau
     else if( getBaseGame()->state == LEVEL_COMPLETED )
     {
-        Input_MenuContinue(event);
+        Continue_Input(event);
     }
 
     //Cas où l'utilsateur a gagné le jeu (terminé tous les niveaux)
     else if ( getBaseGame()->state == GAMEWIN )
     {
-        Input_MenuWin( event );
+        GameWin_Input( event );
     }
 
     //Cas où l'utilsateur est sur le menu game over

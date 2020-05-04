@@ -44,11 +44,11 @@ extern int getPlayerY(void)
 }
 
 /**
- * \fn extern void setNombretir() 
+ * \fn extern void Player_SetBullets() 
  * \brief Fonction qui permet de regler le nombre de lancer du joueur
  * \return pas de valeur de retour (void)
 */
-extern void setNombretir() 
+extern void Player_SetBullets() 
 {
     if( player.nb_lancer < 1  ) 
     {
@@ -72,12 +72,12 @@ extern void SetValeurDuNiveau(int valeur)
 }
 
 /**
- * \fn extern void InitJoueur()
+ * \fn extern void Player_Init()
  * \brief Fonction qui permet d'initialiser le joueur
  * \details Remplissage de tous les champs de la structure Player
  * \return pas de valeur de retour (void)
 */
-extern void InitJoueur()
+extern void Player_Init()
 {
     //niveau en cours et nombre de vies
 	player.niveau = 1;
@@ -110,12 +110,12 @@ extern void InitJoueur()
 }
 
 /**
- * \fn extern void InputJoueur( SDL_Event *event  )
+ * \fn extern void Player_Input( SDL_Event *event  )
  * \brief Fonction qui gere les entrees clavier de l'utilisateur 
  * \param event evenement de l'utilisateur
  * \return pas de valeur de retour (void)
 */
-extern void InputJoueur(SDL_Event *event)
+extern void Player_Input(SDL_Event *event)
 {
     //Si une touche a ete relachee
     if( event->type == SDL_KEYDOWN )
@@ -138,13 +138,13 @@ extern void InputJoueur(SDL_Event *event)
     //Variable qui permet de savoir si une touche enfoncee
     const Uint8 *states = SDL_GetKeyboardState(NULL);
 
-    //Si la touche fleche Left est appuyee et que le joueur peut se deplacer vers la Left
+    //Si la touche fleche LEFT_Key est appuyee et que le joueur peut se deplacer vers la LEFT_Key
     if( states[SDL_SCANCODE_LEFT]  && player.x - 25 > 0  )
     {
         //Modification de la velocite du joueur
         player.vx -= 0.5;
 
-        //Deplacement du joueur vers la Left    
+        //Deplacement du joueur vers la LEFT_Key    
         if( player.vx < -8)
         {
             player.vx = -8;
@@ -153,13 +153,13 @@ extern void InputJoueur(SDL_Event *event)
         player.estTourne = true;
     }
 
-    //Si la touche fleche Right est appuyee et que le joueur peut se deplacer vers la Right
+    //Si la touche fleche RIGHT_Key est appuyee et que le joueur peut se deplacer vers la RIGHT_Key
     else if(states[SDL_SCANCODE_RIGHT] && player.x < LARGEUR_NIVEAU - player.w )
     {
         //Modification de la velocite du joueur
         player.vx += 0.5;
 
-        //Deplacement du joueur vers la Right
+        //Deplacement du joueur vers la RIGHT_Key
         if(player.vx > 8)
         {
            player.vx = 8;
@@ -235,11 +235,11 @@ extern void CollisionItems()
 }
 
 /**
- * \fn extern void AfficherJoueur()
+ * \fn extern void Player_Render()
  * \brief Fonction qui gere l'affichage du joueur a l'ecran
  * \return pas de valeur de retour (void)
 */
-extern void AfficherJoueur()
+extern void Player_Render()
 {
     //rectangle tampon
 	SDL_Rect rec = { player.x - camera.x , player.y - camera.y , player.tex.w, player.tex.h};
@@ -250,12 +250,12 @@ extern void AfficherJoueur()
 
 
 /**
- * \fn extern void UpdateJoueur()
+ * \fn extern void Player_Update()
  * \brief Fonction qui met a jour le joueur en fonction du delta-time
  * \details Gestion du deplacement du joueur
  * \return pas de valeur de retour (void)
 */
-extern void UpdateJoueur()
+extern void Player_Update()
 {   
 
 	if( !player.estMort )
@@ -270,12 +270,12 @@ extern void UpdateJoueur()
 }
 
 /**
- * \fn extern void actualiserJoueur(void)
+ * \fn extern void Player_Reset(void)
  * \brief Fonction qui reinitialise le joueur
  * \details Repositionnement du joueur a sa position initiale et remise a 0 de ses compteurs du nombre de lancer et du nombre d'objets
  * \return pas de valeur de retour (void)
 */
-extern void actualiserJoueur(void)
+extern void Player_Reset(void)
 {
 
     if( !player.estMort || getBaseGame()->state == LOADING )
@@ -317,7 +317,7 @@ extern bool collide2d(float x1, float y1, float x2, float y2, float wt1, float h
 /**
  *  Fonction qui s'occupe de gérer les attaques lancer par le joueur
  */
-extern void attaqueJoueur()
+extern void Player_Attack()
 {
   
          
@@ -338,11 +338,11 @@ extern void attaqueJoueur()
 
 
 /**
- * \fn extern void collision_tir()
+ * \fn extern void Shoot_Collision()
  * \brief Fonction qui gere les collisions entre un bullet et un ennemi
  * \return pas de valeur de retour (void)
 */
-extern void collision_tir()
+extern void Shoot_Collision()
 {
 
     bool collide = false;

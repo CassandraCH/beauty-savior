@@ -21,11 +21,11 @@ extern GameObject * getMenuCon()
 }
 
 /**
- * \fn extern void Init_MenuContinue()
+ * \fn extern void Continue_Init()
  * \brief Fonction qui initialise le menu "continuer"
  * \return pas de valeur de retour (void)
 */
-extern void Init_MenuContinue()
+extern void Continue_Init()
 {
     int width = LARGEUR_FENETRE, height = HAUTEUR_FENETRE;
     printf("Chargement Menu Continue");
@@ -49,13 +49,13 @@ extern void Init_MenuContinue()
 }
 
 /**
- * \fn extern void Input_MenuContinue(SDL_Event *event)
+ * \fn extern void Continue_Input(SDL_Event *event)
  * \brief Fonction qui gere les evenements du menu
  * \details Gestion des entrees clavier de l'utilisateur
  * \param event evenement
  * \return pas de valeur de retour (void)
 */
-extern void Input_MenuContinue(SDL_Event *event)
+extern void Continue_Input(SDL_Event *event)
 {
     // Lecture de tous les evenements
     while (SDL_PollEvent(event) != 0)
@@ -125,12 +125,12 @@ extern void Input_MenuContinue(SDL_Event *event)
 }
 
 /**
- * \fn extern void Init_Continue()
+ * \fn extern void Continue_Load()
  * \brief Fonction qui initialise l'etat continue
  * \details 
  * \return pas de valeur de retour (void)
 */
-extern void Init_Continue()
+extern void Continue_Load()
 {
    // NettoyerScore();
     Level_Destroy();
@@ -139,7 +139,7 @@ extern void Init_Continue()
     Init_HUD(getNiveau(),(SDL_Color){0xFF,0xFF,0xFF,0xFF}, "NIVEAU : 0", 530, 374);
 
     //Initialisation du menu "continuer"
-    Init_MenuContinue();
+    Continue_Init();
     
     //Changement de l'etat du jeu
     getBaseGame()->state = LEVEL_COMPLETED;

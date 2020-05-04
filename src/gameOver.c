@@ -132,7 +132,7 @@ extern void GameOver_Input(SDL_Event *event)
                             Delete_List(getEnnemis());
                             Delete_List(getBullets());
 
-                            actualiserJoueur();
+                            Player_Reset();
 
                             //Initialisation du hud score
                             Init_HUD(getScores(),(SDL_Color){0xFF,0xFF,0xFF,0xFF}, "0", 565, 17);
@@ -155,7 +155,7 @@ extern void GameOver_Input(SDL_Event *event)
                             GameObject_Clean(getMenu_Over(), 4);
                             GameObject_Clean( getGameObject() , 4);
 
-                            Init_MenuLoad();
+                            Load_Init();
                             GameObject_Clean(getGameObject(), 4);
 
                             //Changement de l'état du jeu

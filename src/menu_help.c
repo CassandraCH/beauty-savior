@@ -22,11 +22,11 @@ extern GameObject * getHelp()
 }
 
 /**
- * \fn extern void Init_Help()
+ * \fn extern void Help_Init()
  * \brief Fonction qui initialise l'affichage de l'aide
  * \return pas de valeur de retour (void)
 */
-extern void Init_Help()
+extern void Help_Init()
 {
      int width = LARGEUR_FENETRE, height = HAUTEUR_FENETRE;
     printf("Chargement Help");
@@ -47,13 +47,13 @@ extern void Init_Help()
 }
 
 /**
- * \fn extern void Input_Help(SDL_Event *event)
+ * \fn extern void Help_Input(SDL_Event *event)
  * \brief Fonction qui gere les evenements de l'aide
  * \details Gestion des entrees clavier de l'utilisateur
  * \param event evenement
  * \return pas de valeur de retour (void)
 */
-extern void Input_Help(SDL_Event *event)
+extern void Help_Input(SDL_Event *event)
 {
     // Lecture de tous les evenements
     while (SDL_PollEvent(event) != 0)

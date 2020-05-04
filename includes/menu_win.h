@@ -12,8 +12,7 @@
 #define _MENU_WIN_H/**< \def _MENU_WIN_H*/
 
 
-extern void Init_MenuWin();
-
-extern void Input_MenuWin(SDL_Event *event);
+extern void GameWin_Init();
+extern void GameWin_Input(SDL_Event *event);
 
 #endif

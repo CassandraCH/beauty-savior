@@ -75,10 +75,10 @@ extern void Update(float dt)
       List_Update();
       Enemy_Update();
       Bullets_Update(joueur, ennemi);
-      UpdateJoueur();
+      Player_Update();
   
       //Gestion des collisions
-      collision_tir();
+      Shoot_Collision();
       CollisionItems(); 
       Collision_Detection();
     }
@@ -169,7 +169,7 @@ extern void Game_Render()
     List_RenderElements( &bullet , rockTex, rock, 37, 35 );
     List_RenderElements( &bullet , treeTex, tree , 31, 49 );
     
-    AfficherJoueur();
+    Player_Render();
 
     // Liste de l'inventaire
     List_RenderElements( &items, osTex, os, 36, 51 ); 

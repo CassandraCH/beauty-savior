@@ -54,7 +54,7 @@ Player
     -> getPlayerY()
     -> Set_Level(int niveau)
     -> deplacement()
-    -> afficherJoueur()
+    -> Player_Render()
 
 Menu
     ->  getGameObject()

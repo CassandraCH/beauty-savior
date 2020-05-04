@@ -22,11 +22,11 @@ extern GameObject * getMenuPause()
 }
 
 /**
- * \fn extern void Init_MenuPause()
+ * \fn extern void Pause_Init()
  * \brief Fonction qui initialise le menu de pause
  * \return pas de valeur de retour (void)
 */
-extern void Init_MenuPause()
+extern void Pause_Init()
 {
      int width = LARGEUR_FENETRE, height = HAUTEUR_FENETRE;
     printf("Chargement Menu Pause");
@@ -63,13 +63,13 @@ extern void Init_MenuPause()
 }
 
 /**
- * \fn extern void Input_MenuPause(SDL_Event *event)
+ * \fn extern void Pause_Input(SDL_Event *event)
  * \brief Fonction qui gere les evenements du menu
  * \details Gestion des entrees clavier de l'utilisateur
  * \param event evenement
  * \return pas de valeur de retour (void)
 */
-extern void Input_MenuPause(SDL_Event *event)
+extern void Pause_Input(SDL_Event *event)
 {
     // Lecture de tous les evenements
     while (SDL_PollEvent(event) != 0)
@@ -86,14 +86,14 @@ extern void Input_MenuPause(SDL_Event *event)
         {
             switch (event->key.keysym.sym)
             {
-                //Cas touche fleche de Left
+                //Cas touche fleche de LEFT_Key
                 case SDLK_LEFT:
-                    Left(getMenuPause(), 2);
+                    LEFT_Key(getMenuPause(), 2);
                     break;
 
-                //Cas touche fleche de Right
+                //Cas touche fleche de RIGHT_Key
                 case SDLK_RIGHT:
-                    Right(getMenuPause() , 2);
+                    RIGHT_Key(getMenuPause() , 2);
                     break;
 
                 //Cas de la touche entree
@@ -106,7 +106,7 @@ extern void Input_MenuPause(SDL_Event *event)
                             break;
                         //Cas de la deuxieme option : retour sur le menu principal
                         case 1:
-                            actualiserJoueur();   
+                            Player_Reset();   
                             getBaseGame()->state = MENU_PRINCIPAL;       
                             return;
                             break;

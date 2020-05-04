@@ -12,10 +12,8 @@
 #define _MENU_LOAD_H/**< \def _MENU_LOAD_H*/
 
 
-extern void Init_MenuLoad();/**< fonction d'initialisation du menu de chargemet*/
+extern void Load_Init();                    /**< Fonction d'initialisation du menu de chargemet*/
+extern void Load_Input(SDL_Event *event);   /**< Input du menu */
 
-extern void Input_MenuLoad(SDL_Event *event);/**<input du menu */
-
-extern void Init_Pause();/**< fonction d'initialisation du fichiers pause*/
 
 #endif

@@ -12,8 +12,7 @@
 #define _HELP_H/**< \def _HELP_H*/
 
 
-extern void Init_Help();
-
-extern void Input_Help(SDL_Event *event);
+extern void Help_Init();
+extern void Help_Input(SDL_Event *event);
 
 #endif

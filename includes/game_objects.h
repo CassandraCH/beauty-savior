@@ -46,10 +46,10 @@ typedef struct gameObject GameObject;
  */
 struct gameObject
 {
-    int componentSelected;              /**< component selectionne  */
+    int componentSelected;              /**< Component selectionne  */
     Component components[4];            /**< Tableau de Components  */
     Mix_Chunk *son;                     /**< Le son du gameObject   */
-    TTF_Font * police;                  /**<    La police utilise pour le gameObject */
+    TTF_Font * police;                  /**< La police utilise pour le gameObject */
     SDL_Texture * bg;                   /**< Texture en arrière-plan */
     Mix_Music * bgm;                    /**< Musique du jeux en arriere plan*/
     char * nom_gameObject;              /**< Nom du GameObject  */
@@ -68,8 +68,8 @@ extern void GameObject_LoadRessources(int numero,int num_image, GameObject * gam
 extern void UP_Key(GameObject * gameObject);                                        /**< fonction pour la touche haut du gameObject */
 extern void DOWN_Key(GameObject *gameObject );                                      /**<touche bas  */
 
-extern void Right(GameObject *gameObject, int nombreOptions);                       /**< pour aller a Droite */
-extern void Left(GameObject *gameObject,int nombreOptions);                         /**< pour aller a Gauche */
+extern void RIGHT_Key(GameObject *gameObject, int nombreOptions);                       /**< pour aller a Droite */
+extern void LEFT_Key(GameObject *gameObject,int nombreOptions);                         /**< pour aller a Gauche */
 
 extern void GameObject_Render(GameObject* gameObject, int nombresOptions, int posX, int posY , int largeurBG, int hauteurBG); /* Rendu d'un gameObject */
 extern void GameObject_Clean(GameObject * gameObject, int nombreOptions);           /**< fonction servant à libérer les ressources d'un gameObject */

@@ -213,13 +213,13 @@ extern void DOWN_Key(GameObject *gameObject)
 }
 
 /**
- * \fn extern void Right(GameObject* gameObject, int nombresOptions)
- * \brief Fonction qui permet de naviguer dans le menu a Right
+ * \fn extern void RIGHT_Key(GameObject* gameObject, int nombresOptions)
+ * \brief Fonction qui permet de naviguer dans le menu a RIGHT_Key
  * \param gameObject Pointeur sur le gameObject
  * \param nombresOptions Nombre de components utilisés
  * \return pas de valeur de retour (void)
 */
-extern void Right(GameObject* gameObject, int nombresOptions)
+extern void RIGHT_Key(GameObject* gameObject, int nombresOptions)
 {
 
     //Si l'option actuellement selectionnee est differente de la premiere
@@ -238,13 +238,13 @@ extern void Right(GameObject* gameObject, int nombresOptions)
 }
 
 /**
- * \fn extern void Left(GameObject* gameObject, int nombresOptions)
- * \brief Fonction qui permet de naviguer dans le menu a Left
+ * \fn extern void LEFT_Key(GameObject* gameObject, int nombresOptions)
+ * \brief Fonction qui permet de naviguer dans le menu a LEFT_Key
  * \param gameObject pointeur sur le menu
  * \param nombresOptions nombre d'options
  * \return pas de valeur de retour (void)
 */
-extern void Left(GameObject* gameObject, int nombresOptions)
+extern void LEFT_Key(GameObject* gameObject, int nombresOptions)
 {
     //Si l'option actuellement selectionnee est differente de la premiere
     //Si on est sur la premiere option => on ne peut pas aller sur une option au-dessus
@@ -361,7 +361,7 @@ extern void Input_MenuPrincipal(SDL_Event *event)
                         case 1:
                             // printf("Bouton option press%c\n", 130);
                             printf("Chargement depuis menu principal\n");
-                            Init_MenuLoad();
+                            Load_Init();
                             GameObject_Clean(getGameObject(), 4);
 
                             //Changement de l'etat du jeu

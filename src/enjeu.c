@@ -38,7 +38,7 @@ extern void Input_InGame(SDL_Event *event)
         if(event->key.keysym.sym == SDLK_p && event->type == SDL_KEYDOWN )
         {
             //Gestion du menu de pause
-            Init_MenuPause();
+            Pause_Init();
             //Modification de l'etat du jeu => en pause
             getBaseGame()->state = PAUSE;
         }
@@ -57,7 +57,7 @@ extern void Input_InGame(SDL_Event *event)
         {
             
             //Gestion du menu de pause
-            Init_Help();
+            Help_Init();
             
             getBaseGame()->state = HELP;
         }
@@ -70,7 +70,7 @@ extern void Input_InGame(SDL_Event *event)
             if( getPlayer()->nb_lancer < 1 && !isKeyPressed )
             {
                 //Gestion de l'attaque
-                attaqueJoueur();
+                Player_Attack();
                 //Changement de l'état de la touche => pressée
                 isKeyPressed = true;
                 return;
@@ -92,7 +92,7 @@ extern void Input_InGame(SDL_Event *event)
     const Uint8 *keystates = SDL_GetKeyboardState(NULL); //Variable qui permet de savoir si une touche est pressée ou non
 
     //Gestion des entrées claver de l'utilisateur
-    InputJoueur(event);
+    Player_Input(event);
     
     //Initialisation de la position en x et en y de la camera
     camera.x = ( getPlayer()->x + getPlayer()->tex.w / 2 ) - LARGEUR_FENETRE / 2;

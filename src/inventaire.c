@@ -214,14 +214,14 @@ extern void Inventaire_Input(SDL_Event *event)
         {
             switch (event->key.keysym.sym)
             {
-                //Cas touche flèche de Left
+                //Cas touche flèche de LEFT_Key
                 case SDLK_LEFT:
-                    Left(getInventaire(), 3);
+                    LEFT_Key(getInventaire(), 3);
                     break;
 
-                //Cas touche flèche de Right
+                //Cas touche flèche de RIGHT_Key
                 case SDLK_RIGHT:
-                    Right(getInventaire(), 3);
+                    RIGHT_Key(getInventaire(), 3);
                     break;
 
                 //Cas de la touche entrée

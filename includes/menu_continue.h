@@ -14,12 +14,8 @@
 
 
 
-extern void Init_MenuContinue();/**< l'initialisation du menu continue*/
-
-extern void Input_MenuContinue(SDL_Event *event);/**<fonction input pour le menu continue*/
-
-extern void Nettoyer_MenuContinue();/**< fonction nettoyer pour le menu continue */
-
-extern void Init_Continue();
+extern void Continue_Init();                    /**< l'initialisation du menu continue*/
+extern void Continue_Input(SDL_Event *event);   /**< fonction input pour le menu continue*/
+extern void Continue_Load();                    /**< Fonction de chargement des ressources du menu continue */
 
 #endif
