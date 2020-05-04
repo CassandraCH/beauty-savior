@@ -5,9 +5,10 @@ var indexSectionsWithContent =
   2: "abcdeghilmpst",
   3: "abcdefghilmnprstu",
   4: "_abcdefghilmnopqrstvwxy",
-  5: "bcghlnpt",
+  5: "bchlnpt",
   6: "bt",
-  7: "_cfghilmnpq"
+  7: "_cfghilmnpq",
+  8: "gl"
 };
 
 var indexSectionNames =
@@ -19,7 +20,8 @@ var indexSectionNames =
   4: "variables",
   5: "typedefs",
   6: "enums",
-  7: "defines"
+  7: "defines",
+  8: "groups"
 };
 
 var indexSectionLabels =
@@ -31,6 +33,7 @@ var indexSectionLabels =
   4: "Variables",
   5: "Définitions de type",
   6: "Énumérations",
-  7: "Macros"
+  7: "Macros",
+  8: "Groupes"
 };
 

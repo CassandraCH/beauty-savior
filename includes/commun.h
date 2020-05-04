@@ -28,7 +28,7 @@
 
 /**
  *\enum bool
- *\details énumération représentant un type booléen
+ *\brief énumération représentant un type booléen
  */
 typedef enum 
 { 
@@ -38,7 +38,7 @@ typedef enum
 
 /**
  *\enum typeEntite
- *\details énumération représentant les types du jeux
+ *\brief énumération représentant les types du jeux
  */
 typedef enum  { item,  joueur, ennemi, platform ,checkpoint, 
                 bull, feu,os, rock , tree, gamewin , passport }  typeEntite;
@@ -46,7 +46,7 @@ typedef enum  { item,  joueur, ennemi, platform ,checkpoint,
 
 /**
  *\enum texState
- *\details énumération les états d'une entité: fixe ou animé
+ *\brief énumération les états d'une entité: fixe ou animé
  */
 typedef enum { fixe, anime } texState;
 

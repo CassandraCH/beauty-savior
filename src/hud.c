@@ -12,7 +12,7 @@
 /**
  * \fn extern void Init_HUD(HUD * hud, SDL_Color color, const char * text, int x,  int y)
  * \brief Fonction qui permet d'initialiser un hud
- * \details Un hud correspond à toutes les informations concernant le joueur tels que le score ou le nombre de vie par exemple
+ * \brief Un hud correspond à toutes les informations concernant le joueur tels que le score ou le nombre de vie par exemple
  * \param hud pointeur sur une structure de type HUD 
  * \param color enumération SDL_Color correspondant à la couleur de la police 
  * \param text chaîne de caractère qui correspond au nom de la texture
@@ -100,7 +100,7 @@ extern void AfficherHUD(HUD * hud)
 /**
  * \fn extern void NettoyerHUD(HUD * hud)
  * \brief Fonction qui detruit un hud
- * \details 
+ * \brief 
  * \param hud pointeur sur le hud à supprimer
  * \return pas de valeur de retour (void)
 */

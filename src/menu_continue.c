@@ -51,7 +51,7 @@ extern void Continue_Init()
 /**
  * \fn extern void Continue_Input(SDL_Event *event)
  * \brief Fonction qui gere les evenements du menu
- * \details Gestion des entrees clavier de l'utilisateur
+ * \brief Gestion des entrees clavier de l'utilisateur
  * \param event evenement
  * \return pas de valeur de retour (void)
 */
@@ -127,7 +127,7 @@ extern void Continue_Input(SDL_Event *event)
 /**
  * \fn extern void Continue_Load()
  * \brief Fonction qui initialise l'etat continue
- * \details 
+ * \brief 
  * \return pas de valeur de retour (void)
 */
 extern void Continue_Load()

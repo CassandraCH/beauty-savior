@@ -3,7 +3,7 @@
  * \author CALVADOS Cindy, CHAUMULON Cassandra, CHELLI Célia, OUSMANOVA Karina
  * \version 1.0
  * \date janvier 2020
- * \details Projet réalisé dans le cadre de la formation licence 2 informatiques de l'Université du Mans
+ * \brief Projet réalisé dans le cadre de la formation licence 2 informatiques de l'Université du Mans
  *          Le projet est un jeu de type plate-forme, réalisé en langage C avec l'appui de la librairie SDL2.
  * \brief Programme principal du jeu
  */
@@ -13,7 +13,7 @@
 /**
  * \fn int main( int argc, char ** argv )
  * \brief Programme principal du jeu
- * \details 
+ * \brief 
  * \param argc nombre de paramètres
  * \param argv les arguments
  * \return 0

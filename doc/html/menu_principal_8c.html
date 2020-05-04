@@ -9,10 +9,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -50,23 +46,6 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('menu_principal_8c.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -81,6 +60,11 @@ $(document).ready(function(){initNavTree('menu_principal_8c.html',''); initResiz
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#func-members">Fonctions</a> &#124;
@@ -96,10 +80,10 @@ $(document).ready(function(){initNavTree('menu_principal_8c.html',''); initResiz
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Fonctions</h2></td></tr>
-<tr class="memitem:aaaeb1f529b288b0f30f48a5271545632"><td class="memItemLeft" align="right" valign="top"><a class="el" href="game__objects_8h.html#af9fb569cbd08ef37d3d595d28f9bec9e">GameObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="menu_principal_8c.html#aaaeb1f529b288b0f30f48a5271545632">getGameObject</a> ()</td></tr>
-<tr class="memdesc:aaaeb1f529b288b0f30f48a5271545632"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui permet retourner le menu principal.  <a href="menu_principal_8c.html#aaaeb1f529b288b0f30f48a5271545632">Plus de détails...</a><br /></td></tr>
-<tr class="separator:aaaeb1f529b288b0f30f48a5271545632"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a50cf2830b3fc02fe87654dc6ac9612a4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="menu_principal_8c.html#a50cf2830b3fc02fe87654dc6ac9612a4">GetKeypressed</a> (<a class="el" href="game__objects_8h.html#af9fb569cbd08ef37d3d595d28f9bec9e">GameObject</a> *<a class="el" href="structgame_object.html">gameObject</a>)</td></tr>
+<tr class="memitem:ga30ffe1f3f39e422f7cb83ddaffa29dc9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="game__objects_8h.html#a3a5524ade47a781f175ed5dcef155ff6">GameObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___getter.html#ga30ffe1f3f39e422f7cb83ddaffa29dc9">getGameObject</a> ()</td></tr>
+<tr class="memdesc:ga30ffe1f3f39e422f7cb83ddaffa29dc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui permet retourner le menu principal.  <a href="group___getter.html#ga30ffe1f3f39e422f7cb83ddaffa29dc9">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga30ffe1f3f39e422f7cb83ddaffa29dc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50cf2830b3fc02fe87654dc6ac9612a4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="menu_principal_8c.html#a50cf2830b3fc02fe87654dc6ac9612a4">GetKeypressed</a> (<a class="el" href="game__objects_8h.html#a3a5524ade47a781f175ed5dcef155ff6">GameObject</a> *<a class="el" href="structgame_object.html">gameObject</a>)</td></tr>
 <tr class="memdesc:a50cf2830b3fc02fe87654dc6ac9612a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui retourne l'option du menu selectionne.  <a href="menu_principal_8c.html#a50cf2830b3fc02fe87654dc6ac9612a4">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a50cf2830b3fc02fe87654dc6ac9612a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad53030b82918beae3d0bb0f0e703ac64"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="menu_principal_8c.html#ad53030b82918beae3d0bb0f0e703ac64">Principal_Init</a> ()</td></tr>
@@ -109,34 +93,34 @@ Fonctions</h2></td></tr>
 <tr class="separator:a4f4eab8b38fcb99021983486b019ca19"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a92ecfb91426e1ff70919b2862c283891"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="menu_principal_8c.html#a92ecfb91426e1ff70919b2862c283891">UpdateImage_Component</a> (<a class="el" href="game__objects_8h.html#ad9e2910eec221978e490706e75d9b610">Component</a> *<a class="el" href="structcomponent.html">component</a>, const char *filename)</td></tr>
 <tr class="separator:a92ecfb91426e1ff70919b2862c283891"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1376fc070c1fe7fab19b741c1eeb3955"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="menu_principal_8c.html#a1376fc070c1fe7fab19b741c1eeb3955">UP_Key</a> (<a class="el" href="game__objects_8h.html#af9fb569cbd08ef37d3d595d28f9bec9e">GameObject</a> *<a class="el" href="structgame_object.html">gameObject</a>)</td></tr>
+<tr class="memitem:a1376fc070c1fe7fab19b741c1eeb3955"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="menu_principal_8c.html#a1376fc070c1fe7fab19b741c1eeb3955">UP_Key</a> (<a class="el" href="game__objects_8h.html#a3a5524ade47a781f175ed5dcef155ff6">GameObject</a> *<a class="el" href="structgame_object.html">gameObject</a>)</td></tr>
 <tr class="memdesc:a1376fc070c1fe7fab19b741c1eeb3955"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui permet de naviguer dans le menu vers le haut.  <a href="menu_principal_8c.html#a1376fc070c1fe7fab19b741c1eeb3955">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a1376fc070c1fe7fab19b741c1eeb3955"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae2bc4aa212cfbfade52283f7b14f0cab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="menu_principal_8c.html#ae2bc4aa212cfbfade52283f7b14f0cab">DOWN_Key</a> (<a class="el" href="game__objects_8h.html#af9fb569cbd08ef37d3d595d28f9bec9e">GameObject</a> *<a class="el" href="structgame_object.html">gameObject</a>)</td></tr>
+<tr class="memitem:ae2bc4aa212cfbfade52283f7b14f0cab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="menu_principal_8c.html#ae2bc4aa212cfbfade52283f7b14f0cab">DOWN_Key</a> (<a class="el" href="game__objects_8h.html#a3a5524ade47a781f175ed5dcef155ff6">GameObject</a> *<a class="el" href="structgame_object.html">gameObject</a>)</td></tr>
 <tr class="memdesc:ae2bc4aa212cfbfade52283f7b14f0cab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui permet de naviguer dans le menu vers le bas.  <a href="menu_principal_8c.html#ae2bc4aa212cfbfade52283f7b14f0cab">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ae2bc4aa212cfbfade52283f7b14f0cab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a259807dd39261191d93bfa1551b7407a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="menu_principal_8c.html#a259807dd39261191d93bfa1551b7407a">RIGHT_Key</a> (<a class="el" href="game__objects_8h.html#af9fb569cbd08ef37d3d595d28f9bec9e">GameObject</a> *<a class="el" href="structgame_object.html">gameObject</a>, int nombresOptions)</td></tr>
+<tr class="memitem:a259807dd39261191d93bfa1551b7407a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="menu_principal_8c.html#a259807dd39261191d93bfa1551b7407a">RIGHT_Key</a> (<a class="el" href="game__objects_8h.html#a3a5524ade47a781f175ed5dcef155ff6">GameObject</a> *<a class="el" href="structgame_object.html">gameObject</a>, int nombresOptions)</td></tr>
 <tr class="memdesc:a259807dd39261191d93bfa1551b7407a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui permet de naviguer dans le menu a RIGHT_Key.  <a href="menu_principal_8c.html#a259807dd39261191d93bfa1551b7407a">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a259807dd39261191d93bfa1551b7407a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac19563afa403a4b09319ad573c52bdd4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="menu_principal_8c.html#ac19563afa403a4b09319ad573c52bdd4">LEFT_Key</a> (<a class="el" href="game__objects_8h.html#af9fb569cbd08ef37d3d595d28f9bec9e">GameObject</a> *<a class="el" href="structgame_object.html">gameObject</a>, int nombresOptions)</td></tr>
+<tr class="memitem:ac19563afa403a4b09319ad573c52bdd4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="menu_principal_8c.html#ac19563afa403a4b09319ad573c52bdd4">LEFT_Key</a> (<a class="el" href="game__objects_8h.html#a3a5524ade47a781f175ed5dcef155ff6">GameObject</a> *<a class="el" href="structgame_object.html">gameObject</a>, int nombresOptions)</td></tr>
 <tr class="memdesc:ac19563afa403a4b09319ad573c52bdd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui permet de naviguer dans le menu a LEFT_Key.  <a href="menu_principal_8c.html#ac19563afa403a4b09319ad573c52bdd4">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ac19563afa403a4b09319ad573c52bdd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa18e369249075d7319f2b547d46e0a7c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="menu_principal_8c.html#aa18e369249075d7319f2b547d46e0a7c">GameObject_Render</a> (<a class="el" href="game__objects_8h.html#af9fb569cbd08ef37d3d595d28f9bec9e">GameObject</a> *<a class="el" href="structgame_object.html">gameObject</a>, int nombresOptions, int posX, int posY, int largeurBG, int hauteurBG)</td></tr>
+<tr class="memitem:aa18e369249075d7319f2b547d46e0a7c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="menu_principal_8c.html#aa18e369249075d7319f2b547d46e0a7c">GameObject_Render</a> (<a class="el" href="game__objects_8h.html#a3a5524ade47a781f175ed5dcef155ff6">GameObject</a> *<a class="el" href="structgame_object.html">gameObject</a>, int nombresOptions, int posX, int posY, int largeurBG, int hauteurBG)</td></tr>
 <tr class="memdesc:aa18e369249075d7319f2b547d46e0a7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui permet d'afficher le menu.  <a href="menu_principal_8c.html#aa18e369249075d7319f2b547d46e0a7c">Plus de détails...</a><br /></td></tr>
 <tr class="separator:aa18e369249075d7319f2b547d46e0a7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a919f130e32127cc8baa33d46eb799fca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="menu_principal_8c.html#a919f130e32127cc8baa33d46eb799fca">Principal_Input</a> (SDL_Event *event)</td></tr>
 <tr class="memdesc:a919f130e32127cc8baa33d46eb799fca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui gere les evenements du menu principal.  <a href="menu_principal_8c.html#a919f130e32127cc8baa33d46eb799fca">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a919f130e32127cc8baa33d46eb799fca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a05732c6ee5abe6e978dfc40dddff94d4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="menu_principal_8c.html#a05732c6ee5abe6e978dfc40dddff94d4">GameObject_LoadRessources</a> (int numero, int num_image, <a class="el" href="game__objects_8h.html#af9fb569cbd08ef37d3d595d28f9bec9e">GameObject</a> *<a class="el" href="structgame_object.html">gameObject</a>, char *nomOption, char *image_on, char *image_off, int positionX, int positionY)</td></tr>
+<tr class="memitem:a05732c6ee5abe6e978dfc40dddff94d4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="menu_principal_8c.html#a05732c6ee5abe6e978dfc40dddff94d4">GameObject_LoadRessources</a> (int numero, int num_image, <a class="el" href="game__objects_8h.html#a3a5524ade47a781f175ed5dcef155ff6">GameObject</a> *<a class="el" href="structgame_object.html">gameObject</a>, char *nomOption, char *image_on, char *image_off, int positionX, int positionY)</td></tr>
 <tr class="memdesc:a05732c6ee5abe6e978dfc40dddff94d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui gere le chargement des donnes du menu.  <a href="menu_principal_8c.html#a05732c6ee5abe6e978dfc40dddff94d4">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a05732c6ee5abe6e978dfc40dddff94d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa6f0855c15b5b6dac82b78b6d5d5c870"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="menu_principal_8c.html#aa6f0855c15b5b6dac82b78b6d5d5c870">GameObject_Clean</a> (<a class="el" href="game__objects_8h.html#af9fb569cbd08ef37d3d595d28f9bec9e">GameObject</a> *<a class="el" href="structgame_object.html">gameObject</a>, int nombreOptions)</td></tr>
+<tr class="memitem:aa6f0855c15b5b6dac82b78b6d5d5c870"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="menu_principal_8c.html#aa6f0855c15b5b6dac82b78b6d5d5c870">GameObject_Clean</a> (<a class="el" href="game__objects_8h.html#a3a5524ade47a781f175ed5dcef155ff6">GameObject</a> *<a class="el" href="structgame_object.html">gameObject</a>, int nombreOptions)</td></tr>
 <tr class="memdesc:aa6f0855c15b5b6dac82b78b6d5d5c870"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui permet de nettoyer l'ecran du menu.  <a href="menu_principal_8c.html#aa6f0855c15b5b6dac82b78b6d5d5c870">Plus de détails...</a><br /></td></tr>
 <tr class="separator:aa6f0855c15b5b6dac82b78b6d5d5c870"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a3e1941cda6d7f8f8c3e809d47ba384cd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="game__objects_8h.html#af9fb569cbd08ef37d3d595d28f9bec9e">GameObject</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="menu_principal_8c.html#a3e1941cda6d7f8f8c3e809d47ba384cd">_gameObject</a></td></tr>
+<tr class="memitem:a3e1941cda6d7f8f8c3e809d47ba384cd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="game__objects_8h.html#a3a5524ade47a781f175ed5dcef155ff6">GameObject</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="menu_principal_8c.html#a3e1941cda6d7f8f8c3e809d47ba384cd">_gameObject</a></td></tr>
 <tr class="separator:a3e1941cda6d7f8f8c3e809d47ba384cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
@@ -155,7 +139,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">void DOWN_Key </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="game__objects_8h.html#af9fb569cbd08ef37d3d595d28f9bec9e">GameObject</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="game__objects_8h.html#a3a5524ade47a781f175ed5dcef155ff6">GameObject</a> *&#160;</td>
           <td class="paramname"><em>gameObject</em></td><td>)</td>
           <td></td>
         </tr>
@@ -165,7 +149,7 @@ Variables</h2></td></tr>
 <p>Fonction qui permet de naviguer dans le menu vers le bas. </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname"><a class="el" href="structgame_object.html">gameObject</a></td><td>pointeur sur le menu </td></tr>
+    <tr><td class="paramname"><a class="el" href="structgame_object.html" title="Structure permettant de gérer un GameObject.">gameObject</a></td><td>pointeur sur le menu </td></tr>
   </table>
   </dd>
 </dl>
@@ -182,7 +166,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">void GameObject_Clean </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="game__objects_8h.html#af9fb569cbd08ef37d3d595d28f9bec9e">GameObject</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="game__objects_8h.html#a3a5524ade47a781f175ed5dcef155ff6">GameObject</a> *&#160;</td>
           <td class="paramname"><em>gameObject</em>, </td>
         </tr>
         <tr>
@@ -202,7 +186,7 @@ Variables</h2></td></tr>
 <p>Fonction qui permet de nettoyer l'ecran du menu. </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname"><a class="el" href="structgame_object.html">gameObject</a></td><td>pointeur sur le menu </td></tr>
+    <tr><td class="paramname"><a class="el" href="structgame_object.html" title="Structure permettant de gérer un GameObject.">gameObject</a></td><td>pointeur sur le menu </td></tr>
     <tr><td class="paramname">nombreOptions</td><td>nombre d'options du menu </td></tr>
   </table>
   </dd>
@@ -232,7 +216,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="game__objects_8h.html#af9fb569cbd08ef37d3d595d28f9bec9e">GameObject</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="game__objects_8h.html#a3a5524ade47a781f175ed5dcef155ff6">GameObject</a> *&#160;</td>
           <td class="paramname"><em>gameObject</em>, </td>
         </tr>
         <tr>
@@ -278,7 +262,7 @@ Variables</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">numero</td><td>numero de l'option </td></tr>
     <tr><td class="paramname">num_image</td><td>numero de l'image selectionne par defaut </td></tr>
-    <tr><td class="paramname"><a class="el" href="structgame_object.html">gameObject</a></td><td>pointeur sur le menu </td></tr>
+    <tr><td class="paramname"><a class="el" href="structgame_object.html" title="Structure permettant de gérer un GameObject.">gameObject</a></td><td>pointeur sur le menu </td></tr>
     <tr><td class="paramname">nomOption</td><td>nom de l'option </td></tr>
     <tr><td class="paramname">image_on</td><td>chemin pour acceder a l'image selectionnee </td></tr>
     <tr><td class="paramname">image_off</td><td>chemin pour acceder a l'image deselectionnee </td></tr>
@@ -300,7 +284,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">void GameObject_Render </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="game__objects_8h.html#af9fb569cbd08ef37d3d595d28f9bec9e">GameObject</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="game__objects_8h.html#a3a5524ade47a781f175ed5dcef155ff6">GameObject</a> *&#160;</td>
           <td class="paramname"><em>gameObject</em>, </td>
         </tr>
         <tr>
@@ -344,7 +328,7 @@ Variables</h2></td></tr>
 <p>Fonction qui permet d'afficher le menu. </p>
 <p>Affichage des différentes options </p><dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname"><a class="el" href="structgame_object.html">gameObject</a></td><td>pointeur sur le menu </td></tr>
+    <tr><td class="paramname"><a class="el" href="structgame_object.html" title="Structure permettant de gérer un GameObject.">gameObject</a></td><td>pointeur sur le menu </td></tr>
     <tr><td class="paramname">nombresOptions</td><td>nombre d'options dans le menu </td></tr>
     <tr><td class="paramname">posX</td><td>position en x de l'arriere plan </td></tr>
     <tr><td class="paramname">posY</td><td>position en y de l'arriere plan </td></tr>
@@ -357,26 +341,6 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="aaaeb1f529b288b0f30f48a5271545632"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaaeb1f529b288b0f30f48a5271545632">&#9670;&nbsp;</a></span>getGameObject()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="game__objects_8h.html#af9fb569cbd08ef37d3d595d28f9bec9e">GameObject</a> * getGameObject </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Fonction qui permet retourner le menu principal. </p>
-<dl class="section return"><dt>Renvoie</dt><dd>une structure menu de type GameObject </dd></dl>
-
-</div>
-</div>
 <a id="a50cf2830b3fc02fe87654dc6ac9612a4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a50cf2830b3fc02fe87654dc6ac9612a4">&#9670;&nbsp;</a></span>GetKeypressed()</h2>
 
@@ -386,7 +350,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">int GetKeypressed </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="game__objects_8h.html#af9fb569cbd08ef37d3d595d28f9bec9e">GameObject</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="game__objects_8h.html#a3a5524ade47a781f175ed5dcef155ff6">GameObject</a> *&#160;</td>
           <td class="paramname"><em>gameObject</em></td><td>)</td>
           <td></td>
         </tr>
@@ -396,7 +360,7 @@ Variables</h2></td></tr>
 <p>Fonction qui retourne l'option du menu selectionne. </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname"><a class="el" href="structgame_object.html">gameObject</a></td><td>pointeur sur le menu </td></tr>
+    <tr><td class="paramname"><a class="el" href="structgame_object.html" title="Structure permettant de gérer un GameObject.">gameObject</a></td><td>pointeur sur le menu </td></tr>
   </table>
   </dd>
 </dl>
@@ -413,7 +377,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">void LEFT_Key </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="game__objects_8h.html#af9fb569cbd08ef37d3d595d28f9bec9e">GameObject</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="game__objects_8h.html#a3a5524ade47a781f175ed5dcef155ff6">GameObject</a> *&#160;</td>
           <td class="paramname"><em>gameObject</em>, </td>
         </tr>
         <tr>
@@ -433,7 +397,7 @@ Variables</h2></td></tr>
 <p>Fonction qui permet de naviguer dans le menu a LEFT_Key. </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname"><a class="el" href="structgame_object.html">gameObject</a></td><td>pointeur sur le menu </td></tr>
+    <tr><td class="paramname"><a class="el" href="structgame_object.html" title="Structure permettant de gérer un GameObject.">gameObject</a></td><td>pointeur sur le menu </td></tr>
     <tr><td class="paramname">nombresOptions</td><td>nombre d'options </td></tr>
   </table>
   </dd>
@@ -498,7 +462,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">void RIGHT_Key </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="game__objects_8h.html#af9fb569cbd08ef37d3d595d28f9bec9e">GameObject</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="game__objects_8h.html#a3a5524ade47a781f175ed5dcef155ff6">GameObject</a> *&#160;</td>
           <td class="paramname"><em>gameObject</em>, </td>
         </tr>
         <tr>
@@ -518,7 +482,7 @@ Variables</h2></td></tr>
 <p>Fonction qui permet de naviguer dans le menu a RIGHT_Key. </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname"><a class="el" href="structgame_object.html">gameObject</a></td><td>Pointeur sur le <a class="el" href="structgame_object.html">gameObject</a> </td></tr>
+    <tr><td class="paramname"><a class="el" href="structgame_object.html" title="Structure permettant de gérer un GameObject.">gameObject</a></td><td>Pointeur sur le <a class="el" href="structgame_object.html" title="Structure permettant de gérer un GameObject.">gameObject</a> </td></tr>
     <tr><td class="paramname">nombresOptions</td><td>Nombre de components utilisés </td></tr>
   </table>
   </dd>
@@ -536,7 +500,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">void UP_Key </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="game__objects_8h.html#af9fb569cbd08ef37d3d595d28f9bec9e">GameObject</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="game__objects_8h.html#a3a5524ade47a781f175ed5dcef155ff6">GameObject</a> *&#160;</td>
           <td class="paramname"><em>gameObject</em></td><td>)</td>
           <td></td>
         </tr>
@@ -546,7 +510,7 @@ Variables</h2></td></tr>
 <p>Fonction qui permet de naviguer dans le menu vers le haut. </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname"><a class="el" href="structgame_object.html">gameObject</a></td><td>pointeur sur le menu </td></tr>
+    <tr><td class="paramname"><a class="el" href="structgame_object.html" title="Structure permettant de gérer un GameObject.">gameObject</a></td><td>pointeur sur le menu </td></tr>
   </table>
   </dd>
 </dl>
@@ -579,7 +543,7 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>fonction de mise à jour du component d'un <a class="el" href="structgame_object.html">gameObject</a> </p>
+<p>fonction de mise à jour du component d'un <a class="el" href="structgame_object.html" title="Structure permettant de gérer un GameObject.">gameObject</a> </p>
 
 </div>
 </div>
@@ -608,7 +572,7 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>fonction de mise à jour d'image du component d'un <a class="el" href="structgame_object.html">gameObject</a> </p>
+<p>fonction de mise à jour d'image du component d'un <a class="el" href="structgame_object.html" title="Structure permettant de gérer un GameObject.">gameObject</a> </p>
 
 </div>
 </div>
@@ -620,7 +584,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="game__objects_8h.html#af9fb569cbd08ef37d3d595d28f9bec9e">GameObject</a> _gameObject</td>
+          <td class="memname"><a class="el" href="game__objects_8h.html#a3a5524ade47a781f175ed5dcef155ff6">GameObject</a> _gameObject</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -629,15 +593,11 @@ Variables</h2></td></tr>
 </div>
 </div>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="menu_principal_8c.html">menuPrincipal.c</a></li>
-    <li class="footer">Généré par
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.18 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.18
+</small></address>
 </body>
 </html>

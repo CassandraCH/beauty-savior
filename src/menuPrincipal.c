@@ -266,7 +266,7 @@ extern void LEFT_Key(GameObject* gameObject, int nombresOptions)
 /**
  * \fn extern void GameObject_Render(GameObject* gameObject, int nombresOptions, int posX, int posY , int largeurBG, int hauteurBG) 
  * \brief Fonction qui permet d'afficher le menu
- * \details Affichage des différentes options
+ * \brief Affichage des différentes options
  * \param gameObject pointeur sur le menu
  * \param nombresOptions nombre d'options dans le menu
  * \param posX position en x de l'arriere plan
@@ -295,7 +295,7 @@ extern void GameObject_Render(GameObject* gameObject, int nombresOptions, int po
 /**
  * \fn extern void Principal_Input(SDL_Event *event)
  * \brief Fonction qui gere les evenements du menu principal
- * \details Gestion des entrees clavier de l'utilisateur
+ * \brief Gestion des entrees clavier de l'utilisateur
  * \param event evenement
  * \return pas de valeur de retour (void)
 */

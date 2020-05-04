@@ -9,10 +9,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -50,23 +46,6 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('entite_8c.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -81,6 +60,11 @@ $(document).ready(function(){initNavTree('entite_8c.html',''); initResizable(); 
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#func-members">Fonctions</a>  </div>
@@ -110,12 +94,12 @@ Fonctions</h2></td></tr>
 <tr class="memitem:a02c07781e54c5b63f42fcad8bcd3b8ed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="entite_8c.html#a02c07781e54c5b63f42fcad8bcd3b8ed">Enemy_Update</a> ()</td></tr>
 <tr class="memdesc:a02c07781e54c5b63f42fcad8bcd3b8ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui met à jour les ennemis.  <a href="entite_8c.html#a02c07781e54c5b63f42fcad8bcd3b8ed">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a02c07781e54c5b63f42fcad8bcd3b8ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a571d006cd0e3b07c19ad18c1d7bbf8dc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="entite_8c.html#a571d006cd0e3b07c19ad18c1d7bbf8dc">Collision_Detection</a> ()</td></tr>
-<tr class="memdesc:a571d006cd0e3b07c19ad18c1d7bbf8dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui gère les collision entre le joueur et le decor, le joueur et les ennemis; et si le joueur tombe dans le vide.  <a href="entite_8c.html#a571d006cd0e3b07c19ad18c1d7bbf8dc">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a571d006cd0e3b07c19ad18c1d7bbf8dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a33c40ad8cc89d54f4e75b62de1e6144a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="entite_8c.html#a33c40ad8cc89d54f4e75b62de1e6144a">Level_Collision</a> ()</td></tr>
-<tr class="memdesc:a33c40ad8cc89d54f4e75b62de1e6144a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui gère les collisions avec le décor.  <a href="entite_8c.html#a33c40ad8cc89d54f4e75b62de1e6144a">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a33c40ad8cc89d54f4e75b62de1e6144a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga571d006cd0e3b07c19ad18c1d7bbf8dc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___gestion___collision.html#ga571d006cd0e3b07c19ad18c1d7bbf8dc">Collision_Detection</a> ()</td></tr>
+<tr class="memdesc:ga571d006cd0e3b07c19ad18c1d7bbf8dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui gère les collision entre le joueur et le decor, le joueur et les ennemis; et si le joueur tombe dans le vide.  <a href="group___gestion___collision.html#ga571d006cd0e3b07c19ad18c1d7bbf8dc">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga571d006cd0e3b07c19ad18c1d7bbf8dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga33c40ad8cc89d54f4e75b62de1e6144a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___gestion___collision.html#ga33c40ad8cc89d54f4e75b62de1e6144a">Level_Collision</a> ()</td></tr>
+<tr class="memdesc:ga33c40ad8cc89d54f4e75b62de1e6144a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui gère les collisions avec le décor.  <a href="group___gestion___collision.html#ga33c40ad8cc89d54f4e75b62de1e6144a">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga33c40ad8cc89d54f4e75b62de1e6144a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>Programme qui gère le comportement des entités. </p>
@@ -160,26 +144,6 @@ Fonctions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd>Une valeur de type booleen </dd></dl>
-
-</div>
-</div>
-<a id="a571d006cd0e3b07c19ad18c1d7bbf8dc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a571d006cd0e3b07c19ad18c1d7bbf8dc">&#9670;&nbsp;</a></span>Collision_Detection()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Collision_Detection </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Fonction qui gère les collision entre le joueur et le decor, le joueur et les ennemis; et si le joueur tombe dans le vide. </p>
-<dl class="section return"><dt>Renvoie</dt><dd>pas de valeur de retour (void) </dd></dl>
 
 </div>
 </div>
@@ -302,36 +266,12 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a id="a33c40ad8cc89d54f4e75b62de1e6144a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a33c40ad8cc89d54f4e75b62de1e6144a">&#9670;&nbsp;</a></span>Level_Collision()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Level_Collision </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Fonction qui gère les collisions avec le décor. </p>
-<dl class="section return"><dt>Renvoie</dt><dd>pas de valeur de retour (void) </dd></dl>
-
-</div>
-</div>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="entite_8c.html">entite.c</a></li>
-    <li class="footer">Généré par
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.18 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.18
+</small></address>
 </body>
 </html>

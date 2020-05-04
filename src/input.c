@@ -10,7 +10,7 @@
 /**
  * \fn extern void ProcessInput(SDL_Event * event)
  * \brief Fonction qui gère les entrées utilisateur
- * \details En fonction de si l'utilisateur est en cours de partie, sur le menu principal, sur le menu pause, sur le menu game over ou si le niveau vient d'être achevé
+ * \brief En fonction de si l'utilisateur est en cours de partie, sur le menu principal, sur le menu pause, sur le menu game over ou si le niveau vient d'être achevé
  * \param event evenement (entree utilisateur)
  * \return pas de valeur de retour (void)
 */

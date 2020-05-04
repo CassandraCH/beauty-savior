@@ -11,8 +11,8 @@
 /**
  * \fn extern bool Bullets_Update( typeEntite typeA, typeEntite typeB )
  * \brief Fonction qui permet de mettre a jour les bullets
- * \details Parcours de la listes des bullets 
- * \details En fonction de s'il s'agit d'un ennemi ou du joueur, le comportement des bullets est différent
+ * \brief Parcours de la listes des bullets 
+ * \brief En fonction de s'il s'agit d'un ennemi ou du joueur, le comportement des bullets est différent
  * \param typeA type de la premiere entite : item, joueur, ennemi, platform , bull, feu
  * \param typeB type de la deuxieme entite : item, joueur, ennemi, platform , bull, feu
  * \return Une valeur de type booleen
@@ -135,7 +135,7 @@ extern void CreateBullet(typeEntite type, int width, int height, int startX, int
 /**
  * \fn extern void Enemy_Attack() 
  * \brief Fonction qui gère les attaques des ennemis
- * \details Parcours des ennemis, verification qu'il n'est pas mort et de son compteur de lancer
+ * \brief Parcours des ennemis, verification qu'il n'est pas mort et de son compteur de lancer
  * \return pas de valeur de retour (void)
 */
 extern void Enemy_Attack() 
@@ -285,7 +285,7 @@ extern void Collision_Detection()
     Level_Collision( );
 }
 
-/**
+/** 
  * \fn extern void Level_Collision()
  * \brief Fonction qui gère les collisions avec le décor
  * \return pas de valeur de retour (void)

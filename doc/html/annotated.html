@@ -9,10 +9,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -51,22 +47,6 @@ $(function() {
 /* @license-end */</script>
 <div id="main-nav"></div>
 </div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('annotated.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -88,26 +68,23 @@ $(document).ready(function(){initNavTree('annotated.html',''); initResizable(); 
 <div class="contents">
 <div class="textblock">Liste des structures de données avec une brève description :</div><div class="directory">
 <table class="directory">
-<tr id="row_0_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structbase_game.html" target="_self">baseGame</a></td><td class="desc"></td></tr>
-<tr id="row_1_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structcomponent.html" target="_self">component</a></td><td class="desc"></td></tr>
-<tr id="row_2_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structgame_object.html" target="_self">gameObject</a></td><td class="desc"></td></tr>
-<tr id="row_3_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structhud__s.html" target="_self">hud_s</a></td><td class="desc"></td></tr>
-<tr id="row_4_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structlevel.html" target="_self">level</a></td><td class="desc"></td></tr>
-<tr id="row_5_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structlist.html" target="_self">list</a></td><td class="desc"></td></tr>
-<tr id="row_6_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_node.html" target="_self">Node</a></td><td class="desc"></td></tr>
-<tr id="row_7_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structplayer.html" target="_self">player</a></td><td class="desc"></td></tr>
-<tr id="row_8_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structtextures.html" target="_self">textures</a></td><td class="desc"></td></tr>
+<tr id="row_0_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structbase_game.html" target="_self">baseGame</a></td><td class="desc">Structure principale de jeux, qui gère tous les composants du jeux majeurs </td></tr>
+<tr id="row_1_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structcomponent.html" target="_self">component</a></td><td class="desc">Structure gérant les caractéristiques liées à un component </td></tr>
+<tr id="row_2_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structgame_object.html" target="_self">gameObject</a></td><td class="desc">Structure permettant de gérer un GameObject </td></tr>
+<tr id="row_3_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structhud__s.html" target="_self">hud_s</a></td><td class="desc">Structure gerant les informations concernant le joueur </td></tr>
+<tr id="row_4_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structlevel.html" target="_self">level</a></td><td class="desc">Structure gerant les niveux </td></tr>
+<tr id="row_5_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structlist.html" target="_self">list</a></td><td class="desc">Structure gerant les noeud de l'entete et a la fin </td></tr>
+<tr id="row_6_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_node.html" target="_self">Node</a></td><td class="desc">Structure gerant les noeud de la liste </td></tr>
+<tr id="row_7_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structplayer.html" target="_self">player</a></td><td class="desc">Structure gérant les caractéristiques liées au joueur </td></tr>
+<tr id="row_8_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structtextures.html" target="_self">textures</a></td><td class="desc">Structure gérant les textures </td></tr>
 </table>
 </div><!-- directory -->
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="footer">Généré par
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.18 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.18
+</small></address>
 </body>
 </html>

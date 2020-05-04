@@ -19,7 +19,7 @@
 
 /**
  *\struct textures
- *\details Structure gérant les textures
+ *\brief Structure gérant les textures
  */
 typedef struct textures /** structure des differentes  textures du jeu*/
 {

@@ -9,10 +9,10 @@
 #include "baseGame.h"
 
 /*#### DONNEES PRIVEES ####*/
-LinkedList listEnnemis; /**< Liste des ennemis */
-LinkedList bullet; /**< Liste des bullets */
-LinkedList listCollider; /**< Liste des colliders */
-LinkedList items; /**< Liste des items */
+LinkedList listEnnemis; 
+LinkedList bullet; 
+LinkedList listCollider;
+LinkedList items; 
 
 int timerBullets; /**< Temps d'apparition a l'ecran des bullets */
 
@@ -93,7 +93,7 @@ extern void List_Init(LinkedList *list)
 /**
  * \fn extern Node* CreateElement(SDL_Rect*rect, typeEntite item_t, bool actif ) 
  * \brief Fonction qui permet de créer un rectangle (portion de l'ecran)
- * \details Ce rectangle sera utilisé pour la texture
+ * \brief Ce rectangle sera utilisé pour la texture
  * \param rect rectangle SDL
  * \param item_t type de l'entité
  * \param actif etat de l'entité

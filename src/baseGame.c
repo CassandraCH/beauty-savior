@@ -4,7 +4,7 @@
  * \version 1.0
  * \date janvier 2020
  * \brief Programme qui gère les différents comportements du jeu en fonction de l'état
- * \details Etat possible : en cours de partie, en pause...
+ * \brief Etat possible : en cours de partie, en pause...
  */
 #include "baseGame.h"
 #include "commun.h"
@@ -29,7 +29,7 @@ Base_Game* getBaseGame()
 /**
  * \fn extern void Update(float dt)
  * \brief Fonction qui permet gérer les comportements des entités si on se Find dans une partie et gérer le son si on se Find sur le menu principal
- * \details Etat du jeu possible : menu principal ou en partie
+ * \brief Etat du jeu possible : menu principal ou en partie
  * \param dt valeur du delta-time
  * \return pas de valeur de retour (void)
 */
@@ -88,7 +88,7 @@ extern void Update(float dt)
 /**
  * \fn extern void Game_Render()
  * \brief Fonction qui permet de gérer le rendu 
- * \details Affichage en fonction de l'etat dans lequel se Find le jeu
+ * \brief Affichage en fonction de l'etat dans lequel se Find le jeu
  * \return pas de valeur de retour (void)
 */
 extern void Game_Render() 
@@ -198,7 +198,7 @@ extern void Game_Render()
 /**
  * \fn extern void List_Update()
  * \brief Fonction qui met à jour les listes des bullets et des ennemis
- * \details Suppression des listes si nécessaire
+ * \brief Suppression des listes si nécessaire
  * \return pas de valeur de retour (void)
 */
 extern void List_Update()
@@ -211,7 +211,7 @@ extern void List_Update()
 /**
  * \fn extern delay(unsigned int frameLimit)
  * \brief Fonction qui permet de gérer le délai du jeu
- * \details Gestion d'un délai lors de la mise à jour du jeu, afin de laisser respirer le processeur
+ * \brief Gestion d'un délai lors de la mise à jour du jeu, afin de laisser respirer le processeur
  * \return pas de valeur de retour (void)
 */
 extern void delay(unsigned int frameLimit)

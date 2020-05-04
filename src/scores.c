@@ -18,7 +18,7 @@ HUD time_; /**< hud du timer */
 
 /** \fn  extern HUD* getNombreVie()
  *  \brief Retourne le hud du nombre de vie
- *  \details 
+ *  \brief 
  *  \return Retourne un pointeur sur l'objet séléctionné 
  */
 extern HUD* getNombreVie()
@@ -29,7 +29,7 @@ extern HUD* getNombreVie()
 
 /** \fn  extern HUD* getScores()
  *  \brief Retourne l'instance de l'objet score
- *  \details Cela permet d'instaurer un contexte privé
+ *  \brief Cela permet d'instaurer un contexte privé
  *  \return Retourne un pointeur sur l'objet score 
  */
 extern HUD* getScores()
@@ -39,7 +39,7 @@ extern HUD* getScores()
 
 /** \fn  extern HUD* getNiveau()
  *  \brief Retourne l'instance de l'objet niveau
- *  \details Cela permet d'instaurer un contexte privé
+ *  \brief Cela permet d'instaurer un contexte privé
  *  \return Retourne un pointeur sur l'objet niveau 
  */
 extern HUD* getNiveau()
@@ -49,7 +49,7 @@ extern HUD* getNiveau()
 
 /** \fn  extern HUD* getTime()
  *  \brief Retourne l'instance de l'objet niveau
- *  \details Cela permet d'instaurer un contexte privé
+ *  \brief Cela permet d'instaurer un contexte privé
  *  \return Retourne un pointeur sur l'objet niveau 
  */
 extern HUD* getTime()
@@ -60,7 +60,7 @@ extern HUD* getTime()
 /** \fn  extern HUD* getItem(int num_item) 
  *  \brief Retourne de l'item séléction
  *  \param num_item correspond au numéro de l'item selectionné
- *  \details Cela permet d'instaurer un contexte privé
+ *  \brief Cela permet d'instaurer un contexte privé
  *  \return Retourne un pointeur sur l'objet séléctionné 
  */
 extern HUD* getItem(int num_item) 

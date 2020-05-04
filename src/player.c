@@ -15,7 +15,7 @@ Texture_Manager playerSprite; /**< texture du joueur */
 
 /**
  * \fn extern Player *getPlayer(void)
- * \brief Fonction qui permet retourner l'adresse vers de l'objet Joueur (héros)
+ * \brief Fonction qui permet retourner l'adresse vers l'objet Joueur (héros)
  * \return une structure joueur de type Player
 */
 extern Player *getPlayer(void)
@@ -35,7 +35,7 @@ extern int getPlayerX(void)
 
 /**
  * \fn extern int getPlayerY(void)
- * \brief Fonction qui permet retourner la position en y du héros
+ * \brief Fonction qui permet de retourner la position en y du héros
  * \return un int qui correspond a la position en y
 */
 extern int getPlayerY(void)
@@ -74,7 +74,7 @@ extern void SetValeurDuNiveau(int valeur)
 /**
  * \fn extern void Player_Init()
  * \brief Fonction qui permet d'initialiser le joueur
- * \details Remplissage de tous les champs de la structure Player
+ * \brief Remplissage de tous les champs de la structure Player
  * \return pas de valeur de retour (void)
 */
 extern void Player_Init()
@@ -252,7 +252,7 @@ extern void Player_Render()
 /**
  * \fn extern void Player_Update()
  * \brief Fonction qui met a jour le joueur en fonction du delta-time
- * \details Gestion du deplacement du joueur
+ * \brief Gestion du deplacement du joueur
  * \return pas de valeur de retour (void)
 */
 extern void Player_Update()
@@ -272,7 +272,7 @@ extern void Player_Update()
 /**
  * \fn extern void Player_Reset(void)
  * \brief Fonction qui reinitialise le joueur
- * \details Repositionnement du joueur a sa position initiale et remise a 0 de ses compteurs du nombre de lancer et du nombre d'objets
+ * \brief Repositionnement du joueur a sa position initiale et remise a 0 de ses compteurs du nombre de lancer et du nombre d'objets
  * \return pas de valeur de retour (void)
 */
 extern void Player_Reset(void)

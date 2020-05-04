@@ -9,10 +9,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -51,22 +47,6 @@ $(function() {
 /* @license-end */</script>
 <div id="main-nav"></div>
 </div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('globals_vars.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -93,8 +73,8 @@ $(document).ready(function(){initNavTree('globals_vars.html',''); initResizable(
 
 <h3><a id="index_b"></a>- b -</h3><ul>
 <li>bullet
-: <a class="el" href="liste_elements_8c.html#a184872af80e53427412c77ba457621e7">listeElements.c</a>
-, <a class="el" href="definitions_8h.html#a184872af80e53427412c77ba457621e7">definitions.h</a>
+: <a class="el" href="group___listes.html#ga184872af80e53427412c77ba457621e7">listeElements.c</a>
+, <a class="el" href="group___listes.html#ga184872af80e53427412c77ba457621e7">definitions.h</a>
 </li>
 </ul>
 
@@ -132,6 +112,9 @@ $(document).ready(function(){initNavTree('globals_vars.html',''); initResizable(
 <li>game
 : <a class="el" href="base_game_8c.html#a9e1da7e436a315594c2bfb20bc8b240c">baseGame.c</a>
 </li>
+<li>GameObject
+: <a class="el" href="game__objects_8h.html#a3a5524ade47a781f175ed5dcef155ff6">game_objects.h</a>
+</li>
 </ul>
 
 
@@ -156,8 +139,8 @@ $(document).ready(function(){initNavTree('globals_vars.html',''); initResizable(
 : <a class="el" href="scores_8c.html#a1c845b472ee3497dd6bd651ce12bbf13">scores.c</a>
 </li>
 <li>items
-: <a class="el" href="definitions_8h.html#a9b30d68dee6975a7a531167794f4fe49">definitions.h</a>
-, <a class="el" href="liste_elements_8c.html#a9b30d68dee6975a7a531167794f4fe49">listeElements.c</a>
+: <a class="el" href="group___listes.html#ga9b30d68dee6975a7a531167794f4fe49">definitions.h</a>
+, <a class="el" href="group___listes.html#ga9b30d68dee6975a7a531167794f4fe49">listeElements.c</a>
 </li>
 <li>itemTex
 : <a class="el" href="texture_8c.html#aa16f8a82cd7c1e1b436ff6baaec66bec">texture.c</a>
@@ -175,12 +158,12 @@ $(document).ready(function(){initNavTree('globals_vars.html',''); initResizable(
 , <a class="el" href="player_8c.html#acf4d33ee4cff36f69b924471174dcb11">player.c</a>
 </li>
 <li>listCollider
-: <a class="el" href="definitions_8h.html#a37f0a458c58c0ccfc3b1cf9f9a57b00c">definitions.h</a>
-, <a class="el" href="liste_elements_8c.html#a37f0a458c58c0ccfc3b1cf9f9a57b00c">listeElements.c</a>
+: <a class="el" href="group___listes.html#ga37f0a458c58c0ccfc3b1cf9f9a57b00c">definitions.h</a>
+, <a class="el" href="group___listes.html#ga37f0a458c58c0ccfc3b1cf9f9a57b00c">listeElements.c</a>
 </li>
 <li>listEnnemis
-: <a class="el" href="liste_elements_8c.html#ac1b61ab86d27e2cb6e2a904acd358400">listeElements.c</a>
-, <a class="el" href="definitions_8h.html#ac1b61ab86d27e2cb6e2a904acd358400">definitions.h</a>
+: <a class="el" href="group___listes.html#gac1b61ab86d27e2cb6e2a904acd358400">listeElements.c</a>
+, <a class="el" href="group___listes.html#gac1b61ab86d27e2cb6e2a904acd358400">definitions.h</a>
 </li>
 </ul>
 
@@ -320,14 +303,11 @@ $(document).ready(function(){initNavTree('globals_vars.html',''); initResizable(
 </li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="footer">Généré par
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.18 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.18
+</small></address>
 </body>
 </html>

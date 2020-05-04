@@ -192,7 +192,7 @@ extern void Inventaire_Init()
 /**
  * \fn extern void Inventaire_Input(SDL_Event *event)
  * \brief Fonction qui gère les évènements de l'inventaire
- * \details Gestion des entrées clavier de l'utilisateur
+ * \brief Gestion des entrées clavier de l'utilisateur
  * \param event évènement
  * \return pas de valeur de retour (void)
 */

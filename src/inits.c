@@ -26,8 +26,8 @@ extern SDL_Renderer* getRenderer(void)
 /**
  * \fn void Init(const char *title)
  * \brief Fonction qui permet d'initialiser la fenêtre
- * \details Création de la fenetre
- * \details Chargement des polices, de l'audio et des entites
+ * \brief Création de la fenetre
+ * \brief Chargement des polices, de l'audio et des entites
  * \param title chaine de caracteres
  * \return pas de valeur de retour (void)
 */
@@ -139,7 +139,7 @@ void Init(const char *title)
 /**
  * \fn void Game_DestroyRessources(void)
  * \brief Fonction qui libère toutes les ressources du jeu 
- * \details Destruction des structures rendu et fenêtre 
+ * \brief Destruction des structures rendu et fenêtre 
  * \return pas de valeur de retour (void)
 */
 void Game_DestroyRessources(void)

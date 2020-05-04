@@ -49,7 +49,7 @@ extern void Help_Init()
 /**
  * \fn extern void Help_Input(SDL_Event *event)
  * \brief Fonction qui gere les evenements de l'aide
- * \details Gestion des entrees clavier de l'utilisateur
+ * \brief Gestion des entrees clavier de l'utilisateur
  * \param event evenement
  * \return pas de valeur de retour (void)
 */
