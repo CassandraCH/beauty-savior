@@ -4,7 +4,7 @@
  * \version 1.0
  * \date mars 2020
  * \brief Fichier regroupant les attributs en commun des entités 
- * \details Ce fichier est utilisé afin d'éviter la redondance de déclarations.
+ * \brief Ce fichier est utilisé afin d'éviter la redondance de déclarations.
  */
 
 float w;    /*!< largeur de l'entite    */

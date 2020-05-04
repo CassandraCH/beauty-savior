@@ -15,7 +15,7 @@
 
 /**
  *\struct player
- *\details Structure gérant les caractéristiques liées au joueur
+ *\brief Structure gérant les caractéristiques liées au joueur
  */
 typedef struct player
 {
@@ -49,21 +49,39 @@ typedef struct player
 } Player ;
 /**< This is the documentation for the preceding typedef */
 
-extern Player * getPlayer(void);            /**< accès à la structure du joueur */
-extern int      getPlayerX(void);           /**< accès à la position en x du joueur */
-extern int      getPlayerY(void);           /**< accès à la position en y du joueur */
+/*! \addtogroup Getter
+*   \brief Ensemble des accesseurs du programme 
+ * */
+    ///@{
+    /** accès à la structure du joueur */
+    extern Player * getPlayer(void);   
+    /** accès à la position en x du joueur */
+    extern int      getPlayerX(void); 
+    extern int      getPlayerY(void);           /**< accès à la position en y du joueur */
+    extern int      getPlayerOriginX();         /**< la position'l'origine) du joueur selon x*/
+    extern int      getPlayerOriginY();         /**< la position'l'origine) du joueur selon y*/
 
-extern int      getPlayerOriginX();         /**< la position'l'origine) du joueur selon x*/
-extern int      getPlayerOriginY();         /**< la position'l'origine) du joueur selon y*/
+///@}
 
+         
+        
 extern void     Player_Update();            /**< mise à joueur du joueur */
 extern void     Player_Reset(void);         /**< réinitialisation du joueur     */
 extern void     Player_Init();              /**<initialisation du joueur*/
 extern void     Player_SetBullets();        /**<réglage du nombre de bu llets*/
-extern bool     collide2d(float x1, float y1, float x2, float y2, float wt1, float ht1, float wt2, float ht2); /**< vérification de la collision entre 2 éléments */
+
+/*! \addtogroup Gestion_Collision
+*   \brief Listes de toutes les méthodes liées au Collision
+ * */
+  ///@{ 
+    extern bool     collide2d(float x1, float y1, float x2, float y2, float wt1, float ht1, float wt2, float ht2); /**< vérification de la collision entre 2 éléments */
+    extern void     Shoot_Collision();          /**<collission des tirs du joueur*/
+    extern void     CollisionItems();
+ ///@}
+
 extern void     Player_Attack();            /**<les attaques du joueurs*/
-extern void     Shoot_Collision();          /**<collission des tirs du joueur*/
-extern void     CollisionItems();
+
+
 
 extern void     Player_Input(SDL_Event *event); /**< gestion des entrées utilisateur */
 extern void     Player_Render();                /**<affichage du joueur */

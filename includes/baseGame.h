@@ -41,7 +41,7 @@
 
 /**
  *\struct baseGame
- *\details Structure principale de jeux, qui gère tous les composants du jeux majeurs.
+ *\brief  Structure principale de jeux, qui gère tous les composants du jeux majeurs.
  */
 typedef struct baseGame
 {

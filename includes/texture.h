@@ -16,8 +16,13 @@
 
 #include "commun.h" /** les structures du fichier commun.h */
 /**
+<<<<<<< HEAD
  *\struct Texture_Manager
  *\details Structure gérant les textures
+=======
+ *\struct textures
+ *\brief Structure gérant les textures
+>>>>>>> 674e9288e4b728278a91af8e9aad7255f9ee44f2
  */
 typedef struct textures /** structure des differentes  textures du jeu*/
 {

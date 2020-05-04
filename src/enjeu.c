@@ -13,7 +13,7 @@ SDL_Rect camera = {0, 0, LARGEUR_FENETRE, HAUTEUR_FENETRE}; /**< Structure qui g
 /**
  * \fn extern void Input_InGame(SDL_Event *event)
  * \brief Fonction qui permet gérer les entr"es clavier et la camera lorsqu'une partie est en cours 
- * \details Gestion des entrées de l'utilisateur
+ * \brief Gestion des entrées de l'utilisateur
  * \param event pointeur sur une structure SDL evenement
  * \return pas de valeur de retour (void)
 */

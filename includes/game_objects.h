@@ -9,7 +9,7 @@
 
 
 #ifndef _GAME_OBJECTS_H
-/**< \def _GAME_OBJECTS_H */
+/*! \def _GAME_OBJECTS_H */
 #define _GAME_OBJECTS_H
 
 
@@ -21,7 +21,8 @@
 
 /**
  *\struct component
- *\details Structure gérant les caractéristiques liées à un component
+ *\brief Structure gérant les caractéristiques liées à un component
+ * \details  Les components sont toujours liés à un gameObject,ils définissent le comportement de ce GameObject. 
  */
 typedef struct component
 {
@@ -34,15 +35,13 @@ typedef struct component
     char * filename[4];     /**<le fichiers contenant la texture de l'option */
 
 }Component;
-/**< Les components sont toujours liés à un gameObject,ils définissent le comportement de ce GameObject.  */
-
-typedef struct gameObject GameObject;
-/**< le GameObject représente une boîte vide qui ne fait pas grand chose tout seul, il agit comme un conteneur pour les components. */
+/**< Typedef component Component */
 
 
 /**
  *\struct gameObject
- *\details GameObject
+ *\brief Structure permettant de gérer un GameObject
+ *\details Le GameObject représente une boîte vide qui ne fait pas grand chose tout seul, il agit comme un conteneur pour les components.
  */
 struct gameObject
 {
@@ -54,8 +53,8 @@ struct gameObject
     Mix_Music * bgm;                    /**< Musique du jeux en arriere plan*/
     char * nom_gameObject;              /**< Nom du GameObject  */
 
-};
-
+} GameObject;
+/**< Typedef gameObject GameObject */
 
 extern void UpdateComponent(Component * component, int etat);                       /**< fonction de mise à jour du component d'un gameObject */
 extern void UpdateImage_Component(Component * component, const char * filename);    /**< fonction de mise à jour d'image du component d'un gameObject*/

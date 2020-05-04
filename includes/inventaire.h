@@ -3,7 +3,7 @@
  * \author CALVADOS Cindy, CHAUMULON Cassandra, CHELLI Célia, OUSMANOVA Karina
  * \version 1.0
  * \date mars 2020
- * \brief fichier qui gère l'inventaire durant le jeu
+ * \brief fichier qui gere l'inventaire durant le jeu
  */
 
 
@@ -28,5 +28,8 @@ extern void increaseBranche();                  /**< incrémentation du compteur
 extern void decreaseOS();                       /**< décrémentation du compteur d'os  */
 extern void decreaseRock();                     /**< décrémentation du compteur de cailloux  */
 extern void decreaseBranche();                  /**< décrémentation du compteur de branches  */
+
+
+
 
 #endif

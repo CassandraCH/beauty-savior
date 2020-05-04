@@ -16,7 +16,7 @@
 #include "texture.h"
 /**
 * \struct Node
-* \details structure gerant les noeud de la liste
+* \brief structure gerant les noeud de la liste
 */
 
 typedef struct Node
@@ -45,7 +45,7 @@ typedef struct Node
 
 /**
 * \struct list
-* \details structure gerant les noeud de l'entete et a la fin.
+* \brief structure gerant les noeud de l'entete et a la fin.
 */
 typedef struct list
 {

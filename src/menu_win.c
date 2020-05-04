@@ -73,7 +73,7 @@ extern void GameWin_Init()
 /**
  * \fn extern void GameWin_Input(SDL_Event *event)
  * \brief Fonction qui gere les evenements du menu
- * \details Gestion des entrees clavier de l'utilisateur
+ * \brief Gestion des entrees clavier de l'utilisateur
  * \param event evenement
  * \return pas de valeur de retour (void)
 */

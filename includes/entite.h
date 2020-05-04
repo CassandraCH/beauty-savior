@@ -22,8 +22,13 @@ extern void Enemy_Update();                                         /**< fonctio
 extern void CreateBullet( typeEntite type,int width, int height, int startX, int startY );  /**< fonction tir avec parametres le type,selon la largueur, la taille et selon les vecteurs x et y */
 extern bool Bullets_Update( typeEntite typeA, typeEntite typeB );   /**< booleen pour les Bullets_Update */
 
-extern void Level_Collision();                                      /**< fonction collision de decor    */
-extern void Collision_Detection();                                  /**< les detection de collisions    */
+/*! \addtogroup Gestion_Collision
+ * */
+    ///@{ 
+    extern void Level_Collision();  
+    extern void Collision_Detection();                                  /**< les detection de collisions    */
+///@}
+                                    /**< fonction collision de decor    */
 
 
 #endif
