@@ -14,15 +14,13 @@
 #include "commun.h"
 #include "baseGame.h"
 
-extern void ChargerPartie();            /**< les charger des parties */
-extern void SauvegarderPartie();        /**< les sauvegarde de parties */
-
+extern void LoadGame();                 /**< les charger des parties */
+extern void SaveGame();                 /**< les sauvegarde de parties */
 extern void SaveCollider_Position();    /**< les collider de position */
-
-extern void ChargementCollider(const char * filename);      /**< chargements des collider*/
-extern void Chargement_CreationPNJ(LinkedList*lst, char * filename);    /**< chargements et créations des PNJ ( personnage non joueur ) */
-extern void ChargementEnnemis(const char * filename);       /**< chargements des ennemis*/
-extern void ChargementItems(const char * filename, SDL_Texture * tex);  /**< chargements des items */
+extern void LoadCollider(const char * filename);                    /**< chargements des collider*/
+extern void LoadAndCreate_PNJ(LinkedList*lst, char * filename);     /**< chargements et créations des PNJ ( personnage non joueur ) */
+extern void LoadEnemies(const char * filename);                     /**< chargements des ennemis*/
+extern void LoadItems(const char * filename, SDL_Texture * tex);    /**< chargements des items */
 
 
 

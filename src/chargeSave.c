@@ -8,12 +8,12 @@
 #include "chargeSave.h"
 
 /**
- * \fn extern void ChargerPartie()
+ * \fn extern void LoadGame()
  * \brief Fonction qui permet de charger une partie sauvegardée
  * \details Lecture du fichier save_player.txt
  * \return pas de valeur de retour (void)
 */
-extern void ChargerPartie()
+extern void LoadGame()
 {
     //Ouverture du fichier save_player.txt
     FILE * file = fopen("files_assets/save_player.txt", "r");
@@ -41,12 +41,12 @@ extern void ChargerPartie()
 }
 
 /**
- * \fn extern void SauvegarderPartie()
+ * \fn extern void SaveGame()
  * \brief Fonction qui permet sauvegarder une partie
  * \details Creation du fichier save_player.txt
  * \return pas de valeur de retour (void)
 */
-extern void SauvegarderPartie()
+extern void SaveGame()
 {
     //Ouverture ou creation du fichier save_player.txt
     FILE * file = fopen("files_assets/save_player.txt", "w");
@@ -100,13 +100,13 @@ extern void SaveCollider_Position()
 }
 
 /**
- * \fn extern void ChargementCollider(const char * filename) 
+ * \fn extern void LoadCollider(const char * filename) 
  * \brief Fonction qui permet de charger les colliders a partir d'un fichier
  * \details Utilisation d'un pointeur pour pouvoir parcourir la liste de colliders
  * \param filename Nom du fichier ou la position des colliders est sauvegardee
  * \return pas de valeur de retour (void)
 */
-extern void ChargementCollider(const char * filename) 
+extern void LoadCollider(const char * filename) 
 {
     //Ouverture du fichier en lecture
     FILE * file = fopen(filename, "r");
@@ -135,13 +135,13 @@ extern void ChargementCollider(const char * filename)
 }
 
 /**
- * \fn extern void Chargement_CreationPNJ(LinkedList*lst, char * filename)
+ * \fn extern void LoadAndCreate_PNJ(LinkedList*lst, char * filename)
  * \brief Fonction qui permet de charger et de créer toutes les entités (sauf le joueur) à partir d'un fichier
  * \param lst Liste des colliders
  * \param filename Nom du fichier
  * \return pas de valeur de retour (void)
 */
-extern void Chargement_CreationPNJ(LinkedList * lst, char * filename)
+extern void LoadAndCreate_PNJ(LinkedList * lst, char * filename)
 {
     //Si il y a déjà des éléments dans la liste => les supprimer
     if( lst->nodeCount > 0 ) 
@@ -178,13 +178,13 @@ extern void Chargement_CreationPNJ(LinkedList * lst, char * filename)
 }
 
 /**
- * \fn extern void ChargementItems(const char * filename, SDL_Texture * tex)
+ * \fn extern void LoadItems(const char * filename, SDL_Texture * tex)
  * \brief Fonction qui permet de charger les items à partir d'un fichier
  * \param filename Nom du fichier
  * \param tex Texture de l'item
  * \return pas de valeur de retour (void)
 */
-extern void ChargementItems(const char * filename, SDL_Texture * tex)
+extern void LoadItems(const char * filename, SDL_Texture * tex)
 {
 
     //Ouverture du fichier en lecture
@@ -220,12 +220,12 @@ extern void ChargementItems(const char * filename, SDL_Texture * tex)
 }
 
 /**
- * \fn extern void ChargementEnnemis(const char * filename)
+ * \fn extern void LoadEnemies(const char * filename)
  * \brief Fonction qui permet de charger les ennemis à partir d'un fichier
  * \param filename Nom du fichier
  * \return pas de valeur de retour (void)
 */
-extern void ChargementEnnemis(const char * filename)
+extern void LoadEnemies(const char * filename)
 {
     //Ouverture du fichier en lecture
     FILE * file = fopen(filename, "r");

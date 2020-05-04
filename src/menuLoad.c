@@ -31,7 +31,7 @@ extern void Load_Init()
     printf("Chargement Menu principal");
     
     //Chargement d'une partie sauvegardee
-    ChargerPartie();
+    LoadGame();
 
     //Creation de la texture pour le score
     SetHUD_IntToTexture(getScores(), (SDL_Color){0,0,0,0} ,"SCORES", getPlayer()->scores, 490, 245);

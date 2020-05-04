@@ -3,7 +3,7 @@
 
 
 
-extern void ChargementCollider(const char * filename) 
+extern void LoadCollider(const char * filename) 
 {
 
     
@@ -25,9 +25,9 @@ extern void ChargementCollider(const char * filename)
 int main()
 {
 
-    ChargementCollider( "test.txt ");
+    LoadCollider( "test.txt ");
 
-    ChargementCollider( "test1.txt ");
+    LoadCollider( "test1.txt ");
 
 
     return 0;

@@ -54,14 +54,14 @@ extern void Level_Load()
    if(  getPlayer()->niveau == 1 )
    {
       //Chargement de toutes les entites (sauf joueur)
-      Chargement_CreationPNJ(getCollider(),"files_assets/niveau1.txt") ;
+      LoadAndCreate_PNJ(getCollider(),"files_assets/niveau1.txt") ;
 
       //Chargement des ennemis
-      ChargementEnnemis("files_assets/ennemi_1.txt");
+      LoadEnemies("files_assets/ennemi_1.txt");
 
       //Chargement des textures
       SDL_Texture * itemTex = Texture_Load("graphics_assets/coin.png");
-      ChargementItems("files_assets/items.txt", itemTex);
+      LoadItems("files_assets/items.txt", itemTex);
 
       printf("Chargement niveau 1\n");
       TextureManager_Load( &level.levelTextures[0], "graphics_assets/level1.png");
@@ -74,8 +74,8 @@ extern void Level_Load()
       Level_Destroy();
 
       //Chargement de toutes les entites (sauf joueur)
-      Chargement_CreationPNJ(getCollider(),"files_assets/niveau2.txt") ;
-      ChargementEnnemis("files_assets/ennemi_2.txt");
+      LoadAndCreate_PNJ(getCollider(),"files_assets/niveau2.txt") ;
+      LoadEnemies("files_assets/ennemi_2.txt");
 
       //Chargement des textures
       SDL_Texture * itemTex = Texture_Load("graphics_assets/coin.png");
@@ -83,7 +83,7 @@ extern void Level_Load()
       //Suppression de la liste d'item precedente
       Delete_List(getItems()); 
 
-      ChargementItems("files_assets/items.txt", itemTex);
+      LoadItems("files_assets/items.txt", itemTex);
 
       printf("Chargement niveau 2\n");
       TextureManager_Load( &level.levelTextures[0], "graphics_assets/level2.png");
@@ -96,8 +96,8 @@ extern void Level_Load()
          Level_Destroy();
 
          //Chargement de toutes les entites (sauf joueur)
-         Chargement_CreationPNJ(getCollider(),"files_assets/niveau3.txt") ;
-         ChargementEnnemis("files_assets/ennemi_3.txt");
+         LoadAndCreate_PNJ(getCollider(),"files_assets/niveau3.txt") ;
+         LoadEnemies("files_assets/ennemi_3.txt");
 
          //Chargement des textures
          SDL_Texture * itemTex = Texture_Load("graphics_assets/coin.png");
@@ -105,7 +105,7 @@ extern void Level_Load()
          //Suppression de la liste d'item precedente
          Delete_List(getItems()); 
 
-         ChargementItems("files_assets/items.txt", itemTex);
+         LoadItems("files_assets/items.txt", itemTex);
 
          printf("Chargement niveau 3\n");
          TextureManager_Load( &level.levelTextures[0], "graphics_assets/level3.png");  
@@ -118,9 +118,9 @@ extern void Level_Load()
          Level_Destroy();
 
          //Chargement de toutes les entites (sauf joueur)
-         Chargement_CreationPNJ(getCollider(),"files_assets/niveau4.txt") ;
+         LoadAndCreate_PNJ(getCollider(),"files_assets/niveau4.txt") ;
          
-         // ChargementEnnemis("files_assets/ennemi_4.txt");
+         // LoadEnemies("files_assets/ennemi_4.txt");
 
          //Chargement des textures
          SDL_Texture * itemTex = Texture_Load("graphics_assets/coin.png");
@@ -128,7 +128,7 @@ extern void Level_Load()
          //Suppression de la liste d'item precedente
          Delete_List(getItems()); 
 
-         // ChargementItems("files_assets/items.txt", itemTex);
+         // LoadItems("files_assets/items.txt", itemTex);
 
          printf("Chargement niveau 4\n");
          TextureManager_Load( &level.levelTextures[0], "graphics_assets/level4.png");

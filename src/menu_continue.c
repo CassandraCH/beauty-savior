@@ -84,7 +84,7 @@ extern void Continue_Input(SDL_Event *event)
                             Set_Level( ++getPlayer()->niveau) ;
 
                             //Sauvegarder la partie
-                            SauvegarderPartie();
+                            SaveGame();
 
                             //Suppression des listes
                             Delete_List(getCollider());
