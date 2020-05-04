@@ -31,9 +31,7 @@ extern void GameOver_Init()
     int width = LARGEUR_FENETRE, height = HAUTEUR_FENETRE;
     printf("Chargement Menu Game Over");
     
-    //Création de la texture pour le score
-    SetHUD_IntToTexture(getScores(), (SDL_Color) {0,0,0,0}, "", getPlayer()->scores, 100, 300);
-
+   
 
     //chargement du son
     menu_over.son = Mix_LoadWAV("sounds/menu_click.wav");
@@ -124,6 +122,7 @@ extern void GameOver_Input(SDL_Event *event)
                             //Changement de l'état du joueur
                             getPlayer()->estMort = false;
                             getPlayer()->nombreVies = 3;
+                            
                             //Chargement du hud avec 3 vies
                             UpdateImage_Component( &getInterface()->components[2] , "graphics_assets/vie_3.png" );
 
