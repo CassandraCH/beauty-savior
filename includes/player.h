@@ -14,10 +14,9 @@
 #include "constantes.h"
 
 /**
- *\struct Player
+ *\struct player
  *\details Structure gérant les caractéristiques liées au joueur
  */
-
 typedef struct player
 {
     
@@ -47,7 +46,7 @@ typedef struct player
     bool isPasspordCollected; /**< booleen pour connaître la collecte ou du passpord dans un niveau */
 
 
-}Player;
+} Player ;
 /**< This is the documentation for the preceding typedef */
 
 extern Player * getPlayer(void);            /**< accès à la structure du joueur */
@@ -61,7 +60,7 @@ extern void     Player_Update();            /**< mise à joueur du joueur */
 extern void     Player_Reset(void);         /**< réinitialisation du joueur     */
 extern void     Player_Init();              /**<initialisation du joueur*/
 extern void     Player_SetBullets();        /**<réglage du nombre de bu llets*/
-extern bool     collide2d(float x1, float y1, float x2, float y2, floa  t wt1, float ht1, float wt2, float ht2); /**< vérification de la collision entre 2 éléments */
+extern bool     collide2d(float x1, float y1, float x2, float y2, float wt1, float ht1, float wt2, float ht2); /**< vérification de la collision entre 2 éléments */
 extern void     Player_Attack();            /**<les attaques du joueurs*/
 extern void     Shoot_Collision();          /**<collission des tirs du joueur*/
 extern void     CollisionItems();

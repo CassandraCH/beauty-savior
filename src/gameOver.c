@@ -122,7 +122,7 @@ extern void GameOver_Input(SDL_Event *event)
                             //Changement de l'état du joueur
                             getPlayer()->estMort = false;
                             getPlayer()->nombreVies = 3;
-                            
+
                             //Chargement du hud avec 3 vies
                             UpdateImage_Component( &getInterface()->components[2] , "graphics_assets/vie_3.png" );
 

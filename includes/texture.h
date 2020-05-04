@@ -15,8 +15,10 @@
 #define __TEXTURE_H /
 
 #include "commun.h" /** les structures du fichier commun.h */
+
+
 /**
- *\struct Texture_Manager
+ *\struct textures
  *\details Structure gérant les textures
  */
 typedef struct textures /** structure des differentes  textures du jeu*/
