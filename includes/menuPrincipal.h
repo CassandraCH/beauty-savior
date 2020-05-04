@@ -12,8 +12,8 @@
 
 
 
-extern void Init_MenuPrincipal();/**<initialise le menu*/
-extern void Input_MenuPrincipal(SDL_Event* event);
+extern void Principal_Init();/**<initialise le menu*/
+extern void Principal_Input(SDL_Event* event);
 
 
 

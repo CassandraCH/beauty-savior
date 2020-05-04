@@ -18,15 +18,15 @@ src/gameover.c \- Programme qui gère le menu du game over\&.
 .br
 .RI "Fonction qui permet de retourner le menu du game over\&. "
 .ti -1c
-.RI "void \fBInit_MenuGameOver\fP ()"
+.RI "void \fBGameOver_Init\fP ()"
 .br
 .RI "Fonction qui initialise le menu game over\&. "
 .ti -1c
-.RI "void \fBInput_MenuGameOver\fP (SDL_Event *event)"
+.RI "void \fBGameOver_Input\fP (SDL_Event *event)"
 .br
 .RI "Fonction qui gère les évènements du menu\&. "
 .ti -1c
-.RI "void \fBInit_GameOver\fP ()"
+.RI "void \fBGameOver_Load\fP ()"
 .br
 .RI "Fonction qui initialise l'état game over\&. "
 .in -1c
@@ -61,29 +61,7 @@ mars 2020
 Initialisation, affichage du menu, navigation dans le menu, gestion des entrees clavier et destruction du menu 
 .SH "Documentation des fonctions"
 .PP 
-.SS "\fBGameObject\fP * getMenu_Over ()"
-
-.PP
-Fonction qui permet de retourner le menu du game over\&. 
-.PP
-\fBRenvoie\fP
-.RS 4
-une structure menu de type GameObject 
-.RE
-.PP
-
-.SS "void Init_GameOver ()"
-
-.PP
-Fonction qui initialise l'état game over\&. 
-.PP
-\fBRenvoie\fP
-.RS 4
-pas de valeur de retour (void) 
-.RE
-.PP
-
-.SS "void Init_MenuGameOver ()"
+.SS "void GameOver_Init ()"
 
 .PP
 Fonction qui initialise le menu game over\&. 
@@ -94,7 +72,7 @@ pas de valeur de retour (void)
 .RE
 .PP
 
-.SS "void Input_MenuGameOver (SDL_Event * event)"
+.SS "void GameOver_Input (SDL_Event * event)"
 
 .PP
 Fonction qui gère les évènements du menu\&. Gestion des entrées clavier de l'utilisateur 
@@ -107,6 +85,28 @@ Fonction qui gère les évènements du menu\&. Gestion des entrées clavier de l
 \fBRenvoie\fP
 .RS 4
 pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void GameOver_Load ()"
+
+.PP
+Fonction qui initialise l'état game over\&. 
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "\fBGameObject\fP * getMenu_Over ()"
+
+.PP
+Fonction qui permet de retourner le menu du game over\&. 
+.PP
+\fBRenvoie\fP
+.RS 4
+une structure menu de type GameObject 
 .RE
 .PP
 

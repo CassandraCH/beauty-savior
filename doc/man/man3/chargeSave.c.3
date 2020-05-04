@@ -14,11 +14,11 @@ src/chargeSave.c \- Programme qui gère le chargement et la sauvegarde des parti
 
 .in +1c
 .ti -1c
-.RI "void \fBChargerPartie\fP ()"
+.RI "void \fBLoadGame\fP ()"
 .br
 .RI "Fonction qui permet de charger une partie sauvegardée\&. "
 .ti -1c
-.RI "void \fBSauvegarderPartie\fP ()"
+.RI "void \fBSaveGame\fP ()"
 .br
 .RI "Fonction qui permet sauvegarder une partie\&. "
 .ti -1c
@@ -26,19 +26,19 @@ src/chargeSave.c \- Programme qui gère le chargement et la sauvegarde des parti
 .br
 .RI "Fonction qui permet de sauvegarder la position des colliders dans un fichier\&. "
 .ti -1c
-.RI "void \fBChargementCollider\fP (const char *filename)"
+.RI "void \fBLoadCollider\fP (const char *filename)"
 .br
 .RI "Fonction qui permet de charger les colliders a partir d'un fichier\&. "
 .ti -1c
-.RI "void \fBChargement_CreationPNJ\fP (\fBLinkedList\fP *lst, char *filename)"
+.RI "void \fBLoadAndCreate_PNJ\fP (\fBLinkedList\fP *lst, char *filename)"
 .br
 .RI "Fonction qui permet de charger et de créer toutes les entités (sauf le joueur) à partir d'un fichier\&. "
 .ti -1c
-.RI "void \fBChargementItems\fP (const char *filename, SDL_Texture *tex)"
+.RI "void \fBLoadItems\fP (const char *filename, SDL_Texture *tex)"
 .br
 .RI "Fonction qui permet de charger les items à partir d'un fichier\&. "
 .ti -1c
-.RI "void \fBChargementEnnemis\fP (const char *filename)"
+.RI "void \fBLoadEnemies\fP (const char *filename)"
 .br
 .RI "Fonction qui permet de charger les ennemis à partir d'un fichier\&. "
 .in -1c
@@ -66,7 +66,7 @@ janvier 2020
 
 .SH "Documentation des fonctions"
 .PP 
-.SS "void Chargement_CreationPNJ (\fBLinkedList\fP * lst, char * filename)"
+.SS "void LoadAndCreate_PNJ (\fBLinkedList\fP * lst, char * filename)"
 
 .PP
 Fonction qui permet de charger et de créer toutes les entités (sauf le joueur) à partir d'un fichier\&. 
@@ -84,7 +84,7 @@ pas de valeur de retour (void)
 .RE
 .PP
 
-.SS "void ChargementCollider (const char * filename)"
+.SS "void LoadCollider (const char * filename)"
 
 .PP
 Fonction qui permet de charger les colliders a partir d'un fichier\&. Utilisation d'un pointeur pour pouvoir parcourir la liste de colliders 
@@ -100,7 +100,7 @@ pas de valeur de retour (void)
 .RE
 .PP
 
-.SS "void ChargementEnnemis (const char * filename)"
+.SS "void LoadEnemies (const char * filename)"
 
 .PP
 Fonction qui permet de charger les ennemis à partir d'un fichier\&. 
@@ -116,7 +116,18 @@ pas de valeur de retour (void)
 .RE
 .PP
 
-.SS "void ChargementItems (const char * filename, SDL_Texture * tex)"
+.SS "void LoadGame ()"
+
+.PP
+Fonction qui permet de charger une partie sauvegardée\&. Lecture du fichier save_player\&.txt 
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void LoadItems (const char * filename, SDL_Texture * tex)"
 
 .PP
 Fonction qui permet de charger les items à partir d'un fichier\&. 
@@ -134,34 +145,23 @@ pas de valeur de retour (void)
 .RE
 .PP
 
-.SS "void ChargerPartie ()"
-
-.PP
-Fonction qui permet de charger une partie sauvegardée\&. Lecture du fichier save_player\&.txt 
-.PP
-\fBRenvoie\fP
-.RS 4
-pas de valeur de retour (void) 
-.RE
-.PP
-
-.SS "void SauvegarderPartie ()"
-
-.PP
-Fonction qui permet sauvegarder une partie\&. Creation du fichier save_player\&.txt 
-.PP
-\fBRenvoie\fP
-.RS 4
-pas de valeur de retour (void) 
-.RE
-.PP
-
 .SS "void SaveCollider_Position ()"
 
 .PP
 Fonction qui permet de sauvegarder la position des colliders dans un fichier\&. Creation du fichier niveau1_position\&.txt
 .PP
 Utilisation d'un pointeur pour pouvoir parcourir la liste de colliders 
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void SaveGame ()"
+
+.PP
+Fonction qui permet sauvegarder une partie\&. Creation du fichier save_player\&.txt 
 .PP
 \fBRenvoie\fP
 .RS 4

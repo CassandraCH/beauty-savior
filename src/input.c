@@ -19,7 +19,7 @@ extern void ProcessInput(SDL_Event * event)
     //Cas où l'utilsateur est sur le menu principal
     if (getBaseGame()->state == MENU_PRINCIPAL )
     {
-        Input_MenuPrincipal(event);
+        Principal_Input(event);
     }
 
     //Cas où l'utilsateur est en cours de partie

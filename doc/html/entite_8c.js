@@ -1,10 +1,10 @@
 var entite_8c =
 [
-    [ "attaqueEnnemis", "entite_8c.html#adf33bce05406e0cd2662f95f88a69bad", null ],
-    [ "collision_Decor", "entite_8c.html#a82df5417c6ae04171aded998b1302048", null ],
-    [ "collisionDetection", "entite_8c.html#a245251599de796f01b4d187a4bcae01b", null ],
-    [ "CreerTir", "entite_8c.html#ad22010ae4c30b9f88efac9dc9c4aa51b", null ],
-    [ "SetNombreTir_Ennemis", "entite_8c.html#ad05db5f8734978421f1b6050b5aaeb4d", null ],
-    [ "UpdateBullets", "entite_8c.html#a48a46773f7a54ff924d3fe18676da527", null ],
-    [ "UpdateEnnemis", "entite_8c.html#a6254e69c73b49b05628238188813f020", null ]
+    [ "Bullets_Update", "entite_8c.html#a432d4962a53ddcfab51f2630957e1ed9", null ],
+    [ "Collision_Detection", "entite_8c.html#a571d006cd0e3b07c19ad18c1d7bbf8dc", null ],
+    [ "CreateBullet", "entite_8c.html#ac1a6a9f6dff04d44c929966b902695bc", null ],
+    [ "Enemy_Attack", "entite_8c.html#a3c5118ed5adf520ebda7558194ac259b", null ],
+    [ "Enemy_SetBullets", "entite_8c.html#a199e12b013e6676db57ef7ad924bf68f", null ],
+    [ "Enemy_Update", "entite_8c.html#a02c07781e54c5b63f42fcad8bcd3b8ed", null ],
+    [ "Level_Collision", "entite_8c.html#a33c40ad8cc89d54f4e75b62de1e6144a", null ]
 ];

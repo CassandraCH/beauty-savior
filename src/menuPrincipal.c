@@ -33,11 +33,11 @@ extern int GetKeypressed(GameObject *gameObject)
 }
 
 /**
- * \fn extern void Init_MenuPrincipal()
+ * \fn extern void Principal_Init()
  * \brief Fonction qui initialise le menu principal
  * \return pas de valeur de retour (void)
 */
-extern void Init_MenuPrincipal()
+extern void Principal_Init()
 {       
     int width = LARGEUR_FENETRE, height = HAUTEUR_FENETRE;
     printf("Chargement Menu principal\n");
@@ -293,13 +293,13 @@ extern void GameObject_Render(GameObject* gameObject, int nombresOptions, int po
 }
 
 /**
- * \fn extern void Input_MenuPrincipal(SDL_Event *event)
+ * \fn extern void Principal_Input(SDL_Event *event)
  * \brief Fonction qui gere les evenements du menu principal
  * \details Gestion des entrees clavier de l'utilisateur
  * \param event evenement
  * \return pas de valeur de retour (void)
 */
-extern void Input_MenuPrincipal(SDL_Event *event)
+extern void Principal_Input(SDL_Event *event)
 {
     // Lecture de tous les evenements
     while( SDL_PollEvent(event) != 0 )

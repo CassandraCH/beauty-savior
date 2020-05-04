@@ -8,7 +8,7 @@ var struct_node =
     [ "lancer", "struct_node.html#acfd5b1f8b6cd859f1b655751de7dc302", null ],
     [ "movingX", "struct_node.html#adfa3d4f287a51a2284b00ebaf60647aa", null ],
     [ "nb_objets", "struct_node.html#a10ac3a7107f4633b9d6e187a45e2bdc3", null ],
+    [ "next", "struct_node.html#aa162dd1e0693188a22b1f13b9a2a0ef0", null ],
     [ "phase", "struct_node.html#a275dd6dafe5d4455e599ffd15feb06f8", null ],
-    [ "rect", "struct_node.html#a7da905fbd28061f8637acb1daa4559a2", null ],
-    [ "suivant", "struct_node.html#a0514ea888daa033e22a7657c9b521a06", null ]
+    [ "rect", "struct_node.html#a7da905fbd28061f8637acb1daa4559a2", null ]
 ];

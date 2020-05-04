@@ -125,7 +125,7 @@ void Init(const char *title)
     /*############### INITIALISATION DES ENTITES *###############*/        
     
     Player_Init( getPlayer() );
-	Init_MenuPrincipal();      
+	Principal_Init();      
 
     getBaseGame()->tempsActuel = 0;
     getBaseGame()->tempsPrecedent = 0;

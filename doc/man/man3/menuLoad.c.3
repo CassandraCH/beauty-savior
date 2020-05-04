@@ -18,11 +18,11 @@ src/menuLoad.c \- Programme qui gère le menu de chargement\&.
 .br
 .RI "Fonction qui permet retourner le menu de chargement\&. "
 .ti -1c
-.RI "void \fBInit_MenuLoad\fP ()"
+.RI "void \fBLoad_Init\fP ()"
 .br
 .RI "Fonction qui initialise le menu de chargement\&. "
 .ti -1c
-.RI "void \fBInput_MenuLoad\fP (SDL_Event *event)"
+.RI "void \fBLoad_Input\fP (SDL_Event *event)"
 .br
 .RI "Fonction qui gere les evenements du menu\&. "
 .in -1c
@@ -68,7 +68,7 @@ une structure menu de type GameObject
 .RE
 .PP
 
-.SS "void Init_MenuLoad ()"
+.SS "void Load_Init ()"
 
 .PP
 Fonction qui initialise le menu de chargement\&. 
@@ -79,7 +79,7 @@ pas de valeur de retour (void)
 .RE
 .PP
 
-.SS "void Input_MenuLoad (SDL_Event * event)"
+.SS "void Load_Input (SDL_Event * event)"
 
 .PP
 Fonction qui gere les evenements du menu\&. Gestion des entrees clavier de l'utilisateur 

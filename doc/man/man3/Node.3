@@ -42,7 +42,7 @@ Node
 .RI "int \fBimageCourante\fP"
 .br
 .ti -1c
-.RI "struct \fBNode\fP * \fBsuivant\fP"
+.RI "struct \fBNode\fP * \fBnext\fP"
 .br
 .in -1c
 .SH "Description détaillée"
@@ -66,12 +66,12 @@ float des lancer
 les deplacements selon x 
 .SS "int nb_objets"
 le nombres d'objets 
+.SS "struct \fBNode\fP* next"
+Pointeur vers l'element suiv 
 .SS "float phase"
 float de la phase 
 .SS "SDL_Rect* rect"
 Rectangle qui défini la taille d'un éléments> 
-.SS "struct \fBNode\fP* suivant"
-Pointeur vers l'element suivant 
 
 .SH "Auteur"
 .PP 

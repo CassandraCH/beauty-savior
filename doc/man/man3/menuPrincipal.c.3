@@ -18,7 +18,7 @@ src/menuPrincipal.c \- Programme qui gère le menu principal\&.
 .br
 .RI "Fonction qui permet retourner le menu principal\&. "
 .ti -1c
-.RI "int \fBgetKeypressed\fP (\fBGameObject\fP *\fBgameObject\fP)"
+.RI "int \fBGetKeypressed\fP (\fBGameObject\fP *\fBgameObject\fP)"
 .br
 .RI "Fonction qui retourne l'option du menu selectionne\&. "
 .ti -1c
@@ -40,13 +40,13 @@ src/menuPrincipal.c \- Programme qui gère le menu principal\&.
 .br
 .RI "Fonction qui permet de naviguer dans le menu vers le bas\&. "
 .ti -1c
-.RI "void \fBRight\fP (\fBGameObject\fP *\fBgameObject\fP, int nombresOptions)"
+.RI "void \fBRIGHT_Key\fP (\fBGameObject\fP *\fBgameObject\fP, int nombresOptions)"
 .br
-.RI "Fonction qui permet de naviguer dans le menu a Right\&. "
+.RI "Fonction qui permet de naviguer dans le menu a RIGHT_Key\&. "
 .ti -1c
-.RI "void \fBLeft\fP (\fBGameObject\fP *\fBgameObject\fP, int nombresOptions)"
+.RI "void \fBLEFT_Key\fP (\fBGameObject\fP *\fBgameObject\fP, int nombresOptions)"
 .br
-.RI "Fonction qui permet de naviguer dans le menu a Left\&. "
+.RI "Fonction qui permet de naviguer dans le menu a LEFT_Key\&. "
 .ti -1c
 .RI "void \fBGameObject_Render\fP (\fBGameObject\fP *\fBgameObject\fP, int nombresOptions, int posX, int posY, int largeurBG, int hauteurBG)"
 .br
@@ -196,7 +196,7 @@ une structure menu de type GameObject
 .RE
 .PP
 
-.SS "int getKeypressed (\fBGameObject\fP * gameObject)"
+.SS "int GetKeypressed (\fBGameObject\fP * gameObject)"
 
 .PP
 Fonction qui retourne l'option du menu selectionne\&. 
@@ -239,10 +239,10 @@ pas de valeur de retour (void)
 .RE
 .PP
 
-.SS "void Left (\fBGameObject\fP * gameObject, int nombresOptions)"
+.SS "void LEFT_Key (\fBGameObject\fP * gameObject, int nombresOptions)"
 
 .PP
-Fonction qui permet de naviguer dans le menu a Left\&. 
+Fonction qui permet de naviguer dans le menu a LEFT_Key\&. 
 .PP
 \fBParamètres\fP
 .RS 4
@@ -257,10 +257,10 @@ pas de valeur de retour (void)
 .RE
 .PP
 
-.SS "void Right (\fBGameObject\fP * gameObject, int nombresOptions)"
+.SS "void RIGHT_Key (\fBGameObject\fP * gameObject, int nombresOptions)"
 
 .PP
-Fonction qui permet de naviguer dans le menu a Right\&. 
+Fonction qui permet de naviguer dans le menu a RIGHT_Key\&. 
 .PP
 \fBParamètres\fP
 .RS 4

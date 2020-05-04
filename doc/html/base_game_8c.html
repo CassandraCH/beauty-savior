@@ -101,14 +101,14 @@ Fonctions</h2></td></tr>
 <tr class="memdesc:a4a9a8fc9fd5aa1cc1612a8ec90c6461e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui permet d'accéder à la structure qui gère l'état du jeu.  <a href="base_game_8c.html#a4a9a8fc9fd5aa1cc1612a8ec90c6461e">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a4a9a8fc9fd5aa1cc1612a8ec90c6461e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acb21945d67d98b8ce4fc097ead0c6515"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="base_game_8c.html#acb21945d67d98b8ce4fc097ead0c6515">Update</a> (float <a class="el" href="base_game_8c.html#a778e38aa889751afffa2dea6b803e67a">dt</a>)</td></tr>
-<tr class="memdesc:acb21945d67d98b8ce4fc097ead0c6515"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui permet gérer les comportements des entités si on se trouve dans une partie et gérer le son si on se trouve sur le menu principal.  <a href="base_game_8c.html#acb21945d67d98b8ce4fc097ead0c6515">Plus de détails...</a><br /></td></tr>
+<tr class="memdesc:acb21945d67d98b8ce4fc097ead0c6515"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui permet gérer les comportements des entités si on se Find dans une partie et gérer le son si on se Find sur le menu principal.  <a href="base_game_8c.html#acb21945d67d98b8ce4fc097ead0c6515">Plus de détails...</a><br /></td></tr>
 <tr class="separator:acb21945d67d98b8ce4fc097ead0c6515"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a95d88cc6c0ae6e11521bf0e0551d51d7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="base_game_8c.html#a95d88cc6c0ae6e11521bf0e0551d51d7">Game_Render</a> ()</td></tr>
 <tr class="memdesc:a95d88cc6c0ae6e11521bf0e0551d51d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui permet de gérer le rendu.  <a href="base_game_8c.html#a95d88cc6c0ae6e11521bf0e0551d51d7">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a95d88cc6c0ae6e11521bf0e0551d51d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a42fd91da1c159bcb3ef0805dd742a5ce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="base_game_8c.html#a42fd91da1c159bcb3ef0805dd742a5ce">Update_Listes</a> ()</td></tr>
-<tr class="memdesc:a42fd91da1c159bcb3ef0805dd742a5ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui met à jour les listes des bullets et des ennemis.  <a href="base_game_8c.html#a42fd91da1c159bcb3ef0805dd742a5ce">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a42fd91da1c159bcb3ef0805dd742a5ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa21b67fd024a91eebd9354df56ec5efe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="base_game_8c.html#aa21b67fd024a91eebd9354df56ec5efe">List_Update</a> ()</td></tr>
+<tr class="memdesc:aa21b67fd024a91eebd9354df56ec5efe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui met à jour les listes des bullets et des ennemis.  <a href="base_game_8c.html#aa21b67fd024a91eebd9354df56ec5efe">Plus de détails...</a><br /></td></tr>
+<tr class="separator:aa21b67fd024a91eebd9354df56ec5efe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a302dca4767118e018db546a9fd717be0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="base_game_8c.html#a302dca4767118e018db546a9fd717be0">delay</a> (unsigned int frameLimit)</td></tr>
 <tr class="memdesc:a302dca4767118e018db546a9fd717be0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui permet de gérer le délai du jeu.  <a href="base_game_8c.html#a302dca4767118e018db546a9fd717be0">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a302dca4767118e018db546a9fd717be0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -166,7 +166,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Fonction qui permet de gérer le rendu. </p>
-<p>Affichage en fonction de l'etat dans lequel se trouve le jeu </p><dl class="section return"><dt>Renvoie</dt><dd>pas de valeur de retour (void) </dd></dl>
+<p>Affichage en fonction de l'etat dans lequel se Find le jeu </p><dl class="section return"><dt>Renvoie</dt><dd>pas de valeur de retour (void) </dd></dl>
 
 </div>
 </div>
@@ -190,6 +190,26 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="aa21b67fd024a91eebd9354df56ec5efe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa21b67fd024a91eebd9354df56ec5efe">&#9670;&nbsp;</a></span>List_Update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void List_Update </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction qui met à jour les listes des bullets et des ennemis. </p>
+<p>Suppression des listes si nécessaire </p><dl class="section return"><dt>Renvoie</dt><dd>pas de valeur de retour (void) </dd></dl>
+
+</div>
+</div>
 <a id="acb21945d67d98b8ce4fc097ead0c6515"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acb21945d67d98b8ce4fc097ead0c6515">&#9670;&nbsp;</a></span>Update()</h2>
 
@@ -206,7 +226,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Fonction qui permet gérer les comportements des entités si on se trouve dans une partie et gérer le son si on se trouve sur le menu principal. </p>
+<p>Fonction qui permet gérer les comportements des entités si on se Find dans une partie et gérer le son si on se Find sur le menu principal. </p>
 <p>Etat du jeu possible : menu principal ou en partie </p><dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">dt</td><td>valeur du delta-time </td></tr>
@@ -214,26 +234,6 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd>pas de valeur de retour (void) </dd></dl>
-
-</div>
-</div>
-<a id="a42fd91da1c159bcb3ef0805dd742a5ce"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a42fd91da1c159bcb3ef0805dd742a5ce">&#9670;&nbsp;</a></span>Update_Listes()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Update_Listes </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Fonction qui met à jour les listes des bullets et des ennemis. </p>
-<p>Suppression des listes si nécessaire </p><dl class="section return"><dt>Renvoie</dt><dd>pas de valeur de retour (void) </dd></dl>
 
 </div>
 </div>

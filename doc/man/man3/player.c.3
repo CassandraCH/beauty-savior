@@ -26,7 +26,7 @@ src/player.c \- Programme qui gère le joueur\&.
 .br
 .RI "Fonction qui permet retourner la position en y du héros\&. "
 .ti -1c
-.RI "void \fBsetNombretir\fP ()"
+.RI "void \fBPlayer_SetBullets\fP ()"
 .br
 .RI "Fonction qui permet de regler le nombre de lancer du joueur\&. "
 .ti -1c
@@ -34,11 +34,11 @@ src/player.c \- Programme qui gère le joueur\&.
 .br
 .RI "Fonction qui permet de changer la valeur du niveau en cours\&. "
 .ti -1c
-.RI "void \fBInitJoueur\fP ()"
+.RI "void \fBPlayer_Init\fP ()"
 .br
 .RI "Fonction qui permet d'initialiser le joueur\&. "
 .ti -1c
-.RI "void \fBInputJoueur\fP (SDL_Event *event)"
+.RI "void \fBPlayer_Input\fP (SDL_Event *event)"
 .br
 .RI "Fonction qui gere les entrees clavier de l'utilisateur\&. "
 .ti -1c
@@ -46,15 +46,15 @@ src/player.c \- Programme qui gère le joueur\&.
 .br
 .RI "Fonction qui gere les collisions avec les items\&. "
 .ti -1c
-.RI "void \fBAfficherJoueur\fP ()"
+.RI "void \fBPlayer_Render\fP ()"
 .br
 .RI "Fonction qui gere l'affichage du joueur a l'ecran\&. "
 .ti -1c
-.RI "void \fBUpdateJoueur\fP ()"
+.RI "void \fBPlayer_Update\fP ()"
 .br
 .RI "Fonction qui met a jour le joueur en fonction du delta-time\&. "
 .ti -1c
-.RI "void \fBactualiserJoueur\fP (void)"
+.RI "void \fBPlayer_Reset\fP (void)"
 .br
 .RI "Fonction qui reinitialise le joueur\&. "
 .ti -1c
@@ -62,10 +62,10 @@ src/player.c \- Programme qui gère le joueur\&.
 .br
 .RI "Fonction qui verifie la collision entre 2 elements\&. "
 .ti -1c
-.RI "void \fBattaqueJoueur\fP ()"
+.RI "void \fBPlayer_Attack\fP ()"
 .br
 .ti -1c
-.RI "void \fBcollision_tir\fP ()"
+.RI "void \fBShoot_Collision\fP ()"
 .br
 .RI "Fonction qui gere les collisions entre un bullet et un ennemi\&. "
 .in -1c
@@ -108,30 +108,6 @@ Initialisation, affichage (et actualisation en fonction des entrées clavier), p
 Gestion des tirs (attaques) et des collisions 
 .SH "Documentation des fonctions"
 .PP 
-.SS "void actualiserJoueur (void)"
-
-.PP
-Fonction qui reinitialise le joueur\&. Repositionnement du joueur a sa position initiale et remise a 0 de ses compteurs du nombre de lancer et du nombre d'objets 
-.PP
-\fBRenvoie\fP
-.RS 4
-pas de valeur de retour (void) 
-.RE
-.PP
-
-.SS "void AfficherJoueur ()"
-
-.PP
-Fonction qui gere l'affichage du joueur a l'ecran\&. 
-.PP
-\fBRenvoie\fP
-.RS 4
-pas de valeur de retour (void) 
-.RE
-.PP
-
-.SS "void attaqueJoueur ()"
-Fonction qui s'occupe de gérer les attaques lancer par le joueur 
 .SS "\fBbool\fP collide2d (float x1, float y1, float x2, float y2, float wt1, float ht1, float wt2, float ht2)"
 
 .PP
@@ -159,17 +135,6 @@ Fonction qui verifie la collision entre 2 elements\&.
 \fBRenvoie\fP
 .RS 4
 un booleen : VRAI s'il y a collison, FAUX sinon 
-.RE
-.PP
-
-.SS "void collision_tir ()"
-
-.PP
-Fonction qui gere les collisions entre un bullet et un ennemi\&. 
-.PP
-\fBRenvoie\fP
-.RS 4
-pas de valeur de retour (void) 
 .RE
 .PP
 
@@ -217,7 +182,9 @@ un int qui correspond a la position en y
 .RE
 .PP
 
-.SS "void InitJoueur ()"
+.SS "void Player_Attack ()"
+Fonction qui s'occupe de gérer les attaques lancer par le joueur 
+.SS "void Player_Init ()"
 
 .PP
 Fonction qui permet d'initialiser le joueur\&. Remplissage de tous les champs de la structure Player 
@@ -228,7 +195,7 @@ pas de valeur de retour (void)
 .RE
 .PP
 
-.SS "void InputJoueur (SDL_Event * event)"
+.SS "void Player_Input (SDL_Event * event)"
 
 .PP
 Fonction qui gere les entrees clavier de l'utilisateur\&. 
@@ -244,10 +211,43 @@ pas de valeur de retour (void)
 .RE
 .PP
 
-.SS "void setNombretir ()"
+.SS "void Player_Render ()"
+
+.PP
+Fonction qui gere l'affichage du joueur a l'ecran\&. 
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void Player_Reset (void)"
+
+.PP
+Fonction qui reinitialise le joueur\&. Repositionnement du joueur a sa position initiale et remise a 0 de ses compteurs du nombre de lancer et du nombre d'objets 
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void Player_SetBullets ()"
 
 .PP
 Fonction qui permet de regler le nombre de lancer du joueur\&. 
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void Player_Update ()"
+
+.PP
+Fonction qui met a jour le joueur en fonction du delta-time\&. Gestion du deplacement du joueur 
 .PP
 \fBRenvoie\fP
 .RS 4
@@ -271,10 +271,10 @@ pas de valeur de retour (void)
 .RE
 .PP
 
-.SS "void UpdateJoueur ()"
+.SS "void Shoot_Collision ()"
 
 .PP
-Fonction qui met a jour le joueur en fonction du delta-time\&. Gestion du deplacement du joueur 
+Fonction qui gere les collisions entre un bullet et un ennemi\&. 
 .PP
 \fBRenvoie\fP
 .RS 4
