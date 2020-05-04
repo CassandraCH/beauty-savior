@@ -64,13 +64,13 @@ extern void List_Update();                            /**< Mis à jour de la lis
 extern Node*  CreateElement(SDL_Rect*rect, typeEntite item_t, bool actif );                         /**< creation du rectangle*/
 extern void   Insert_Element(LinkedList * list, SDL_Rect *rect, typeEntite items_t , bool actif);   /**< creation du rectangle*/
 
-extern void List_RenderElements(LinkedList *lst, SDL_Texture * tex, typeEntite typeE, int largeurTex, int hauteurTex);    /**< affiche les elements de la liste*/
+extern void   List_RenderElements(LinkedList *lst, SDL_Texture * tex, typeEntite typeE, int largeurTex, int hauteurTex);    /**< affiche les elements de la liste*/
 
-extern void   Delete_List(LinkedList * lst);
-extern bool   Delete_First(LinkedList * lst);
-extern bool   Delete_Last(LinkedList * lst);
-extern Node * Find (LinkedList *lsptr, int target, Node **prvPtr);
-extern bool   Delete_Target(LinkedList *lsptr, int target);/**<suppime la cible*/
+extern void   Delete_List(LinkedList * lst);                        /**< Supprime la liste */
+extern bool   Delete_First(LinkedList * lst);                       /**< Supprime le premier */
+extern bool   Delete_Last(LinkedList * lst);                        /**< Supprime le dernier */
+extern Node * Find (LinkedList *lsptr, int target, Node **prvPtr);  /**< trouve la cible */
+extern bool   Delete_Target(LinkedList *lsptr, int target);         /**< suppime la cible */
 
 
 
