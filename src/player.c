@@ -89,7 +89,7 @@ extern void Player_Init()
     //position en x et en y, hauteur et largeur
 	player.h = player.tex.h;
 	player.w = player.tex.w;
-    player.x = 8500;
+    player.x = 100;
     player.y = 50;
     player.scores = 0;
 
