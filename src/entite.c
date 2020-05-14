@@ -28,7 +28,7 @@ extern bool Bullets_Update( typeEntite typeA, typeEntite typeB )
         for( pt = getBullets()->head; pt!= NULL; pt= pt->next )
         {
             //Si le joueur est suffisamment proche de l'ennemi
-            if(    pt->rect->x > 0-15  && pt->rect->x < camera.x + camera.w )
+            if(    pt->_rect.x > 0-15  && pt->_rect.x < camera.x + camera.w )
             {   
                 //Si le bullet actuel peut etre lancer
                 if ( pt->lancer )
@@ -53,7 +53,7 @@ extern bool Bullets_Update( typeEntite typeA, typeEntite typeB )
                         printf("Ennemi\n");
 
                         //Si le joueur est à LEFT_Key de l'ennemi, on inverse le sens du tir
-                        if( getPlayerX() + getPlayer()->w  <= pt->rect->x )
+                        if( getPlayerX() + getPlayer()->w  <= pt->_rect.x )
                             pt->movingX = -18;
 
                         //Sinon le sens de tir n'est pas inversé
@@ -64,7 +64,7 @@ extern bool Bullets_Update( typeEntite typeA, typeEntite typeB )
                     pt->lancer = false;
                 }
                
-                pt->rect->x += pt->movingX;
+                pt->_rect.x += pt->movingX;
             }
             //Sinon
             else 
@@ -120,16 +120,16 @@ extern void Enemy_SetBullets()
 */
 extern void CreateBullet(typeEntite type, int width, int height, int startX, int startY)
 {
-    SDL_Rect *rect = malloc(sizeof(SDL_Rect)); //Creation d'une structure de type rectangle en SDL
-
+   // SDL_Rect _rect = calloc( 1, sizeof(SDL_Rect)); //Creation d'une structure de type rectangle en SDL
+    SDL_Rect _rect ={0};
     /* Ajout des valeurs dans les champs de la structure */
-    rect->w = width;
-    rect->h = height;
-    rect->y = ( startY + height / 2 ) - rect->h / 2;
-    rect->x = startX + 25;
+    _rect.w = width;
+    _rect.h = height;
+    _rect.y = ( startY + height / 2 ) - _rect.h / 2;
+    _rect.x = startX + 25;
 
     //Gestion de l'affichage
-    Insert_Element(&bullet, rect, type, false);
+    Insert_Element(&bullet, _rect, type, false);
 }
 
 /**
@@ -149,15 +149,15 @@ extern void Enemy_Attack()
         if ( !pt->estMort )
         {
             //distance pour que le joueur soit détectable par l'ennemi
-            float distance = sqrt(pow(pt->rect->x - getPlayerX(), 2) +  pow(pt->rect->y - getPlayerY(), 2)); 
+            float distance = sqrt(pow(pt->_rect.x - getPlayerX(), 2) +  pow(pt->_rect.y - getPlayerY(), 2)); 
 
-            if( distance < (pt->rect->w*7) + getPlayer()->w )
+            if( distance < (pt->_rect.w*7) + getPlayer()->w )
             {
                 //Si le compteur de lancer disponible est inférieur à 1 => on reconfigure ce compteur et on créé un tir
                 if( pt->nb_lancer < 1) 
                 {
                     Enemy_SetBullets();
-                    CreateBullet(feu, pt->rect->w, pt->rect->h, pt->rect->x, pt->rect->y );
+                    CreateBullet(feu, pt->_rect.w, pt->_rect.h, pt->_rect.x, pt->_rect.y );
                 }
             }
         }
@@ -180,11 +180,11 @@ extern void Enemy_Update()
         if ( !pt->estMort && pt->actif )
         {
             //Affectation des positions en x et en y initiales
-            pt->rect->x = pt->baseX;
-            pt->rect->y = pt->baseY;
+            pt->_rect.x = pt->baseX;
+            pt->_rect.y = pt->baseY;
 
             //Gestion de l'amplitude du deplacement 
-            pt->rect->x = pt->baseX + sinf( (pt->phase*2)+ getBaseGame()->time * 0.04f ) * 55;
+            pt->_rect.x = pt->baseX + sinf( (pt->phase*2)+ getBaseGame()->time * 0.04f ) * 55;
        }
     }
 }   
@@ -222,12 +222,12 @@ extern void Collision_Detection()
     {
         /*##### ENNEMI ######*/
         // Largeur et Hauteur de l'ennemi
-        float ennemi_w = pt->rect->w; // variable qui stocke la largeur de l'ennemi 
-        float ennemi_h = pt->rect->h; // variable qui stocke la hauteur du joueur 
+        float ennemi_w = pt->_rect.w; // variable qui stocke la largeur de l'ennemi 
+        float ennemi_h = pt->_rect.h; // variable qui stocke la hauteur du joueur 
 
         // Position X & Y de l'ennemi
-        float ennemi_x = pt->rect->x; // variable qui stocke la position en x du joueur 
-        float ennemi_y = pt->rect->y; // variable qui stocke la position en y du joueur 
+        float ennemi_x = pt->_rect.x; // variable qui stocke la position en x du joueur 
+        float ennemi_y = pt->_rect.y; // variable qui stocke la position en y du joueur 
 
 
         // Vérifie les collisions à LEFT_Key , Right, bas et en haut
@@ -307,12 +307,12 @@ extern void Level_Collision()
     {   
         /*##### BRIQUES ######*/
         // Largeur et Hauteur des blocs de collisions
-        float collider_w = pt->rect->w; // variable qui stocke la largeur du collider 
-        float collider_h = pt->rect->h; // variable qui stocke la hauteur du collider 
+        float collider_w = pt->_rect.w; // variable qui stocke la largeur du collider 
+        float collider_h = pt->_rect.h; // variable qui stocke la hauteur du collider 
 
         // Position X & Y des blocs de collisions
-        float collider_x = pt->rect->x; // variable qui stocke la position en x du collider 
-        float collider_y = pt->rect->y; // variable qui stocke la position en y du collider 
+        float collider_x = pt->_rect.x; // variable qui stocke la position en x du collider 
+        float collider_y = pt->_rect.y; // variable qui stocke la position en y du collider 
 
 
         typeEntite typeCollider = pt->type;

@@ -9,7 +9,7 @@ CC=gcc
 # Valeurs possibles : yes , no  
 DEBUG=no
 # Valeurs possibles : win , linux 
-ARCH=win
+ARCH=linux
 
 ifeq ($(ARCH),win)
 	 CFLAGS= -I includes  -Wfatal-errors -O 
@@ -20,6 +20,6 @@ endif
 ifeq ($(ARCH),linux)
 	CFLAGS= -I includes -Wfatal-errors
 	LDFLAGS= -lm -L lib -lSDL2main -lSDL2_image -lSDL2_ttf -lSDL2_mixer -lSDL2 
-	EXEC= bin\linux_prog
+	EXEC= linux_prog
 endif
 

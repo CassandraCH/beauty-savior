@@ -46,7 +46,7 @@ extern void Load_Init()
      * Actif par défaut
      */ 
 
-    GameObject_LoadRessources(0,0,&menu_load , "Retour"
+    GameObject_LoadRessources(0,0,&menu_load
                 ,"graphics_assets/icons_buttons/return_on_xs.png"
                 ,"graphics_assets/icons_buttons/return_off_xs.png"
                 ,339
@@ -57,7 +57,7 @@ extern void Load_Init()
      * Deuxieme option : Charger la partie
      */
 
-    GameObject_LoadRessources(1,1, &menu_load ,"Charger Partie"
+    GameObject_LoadRessources(1,1, &menu_load 
                 ,"graphics_assets/icons_buttons/load_on_xs.png"
                 ,"graphics_assets/icons_buttons/load_off_xs.png"
                 ,620

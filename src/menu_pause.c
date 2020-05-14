@@ -38,7 +38,7 @@ extern void Pause_Init()
 
     menu_pause.nom_gameObject = "Menu Pause";
 
-    GameObject_LoadRessources(0,0,&menu_pause , "Reprendre partie"
+    GameObject_LoadRessources(0,0,&menu_pause 
                 ,"graphics_assets/icons_buttons/back_on_xs.png"
                 ,"graphics_assets/icons_buttons/back_off_xs.png"
                 ,339
@@ -47,7 +47,7 @@ extern void Pause_Init()
     /* 
      * Deuxieme option : Retour sur le menu principal
      */
-    GameObject_LoadRessources(1,1, &menu_pause ,"Retour menu"
+    GameObject_LoadRessources(1,1, &menu_pause 
                 ,"graphics_assets/icons_buttons/menu_on_xs.png"
                 ,"graphics_assets/icons_buttons/menu_off_xs.png"
                 ,620

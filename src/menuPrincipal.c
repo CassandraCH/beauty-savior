@@ -52,7 +52,7 @@ extern void Principal_Init()
      * Premiere option : Demarer une nouvelle partie 
      * Actif par défaut
      */ 
-    GameObject_LoadRessources(0,0,&_gameObject , "Jouer"
+    GameObject_LoadRessources(0,0,&_gameObject 
                 ,"graphics_assets/icons_buttons/jouer_on_xs.png"
                 ,"graphics_assets/icons_buttons/jouer_off_xs.png"
                 ,469
@@ -61,7 +61,7 @@ extern void Principal_Init()
     /* 
      * Deuxieme option : Chargement d'une partie
      */
-    GameObject_LoadRessources(1,1,&_gameObject , "Chargement"
+    GameObject_LoadRessources(1,1,&_gameObject 
             ,"graphics_assets/icons_buttons/load_on_xs.png"
             ,"graphics_assets/icons_buttons/load_off_xs.png"
             ,455
@@ -71,7 +71,7 @@ extern void Principal_Init()
     /* 
      * Troisieme option : Quitter le jeu 
      */
-    GameObject_LoadRessources(2,1,&_gameObject , "Quitter"
+    GameObject_LoadRessources(2,1,&_gameObject
             ,"graphics_assets/icons_buttons/quitter_on_xs.png"
             ,"graphics_assets/icons_buttons/quitter_off_xs.png"
             ,469
@@ -80,7 +80,7 @@ extern void Principal_Init()
     /* 
      * Quatrième option : Couper/Activer Son
      */
-    GameObject_LoadRessources(3,1,&_gameObject , "ActiverSon"
+    GameObject_LoadRessources(3,1,&_gameObject 
             ,"graphics_assets/icons_buttons/sound_on_xs.png"
             ,"graphics_assets/icons_buttons/sound_off_xs.png"
             ,487
@@ -333,18 +333,19 @@ extern void Principal_Input(SDL_Event *event)
 
                 //Cas de la touche entree
                 case SDLK_RETURN:
-                    switch (GetKeypressed( getGameObject() ))
+                    switch (GetKeypressed(getGameObject()))
                     {
                         //Cas de la premiere option : demarer une nouvelle partie
                         case 0:
-                           
+                            //Changement de l'etat du joueur
+                            getPlayer()->estMort = false;
                             increaseRock();
                             getPlayer()->rockActif = true;
 
                             //Suppression des listes
                             Delete_List( getCollider() );
-                            Delete_List( getEnnemis() );
-                            Delete_List( getBullets() );
+                            Delete_List(getEnnemis());
+                            Delete_List(getBullets());
 
                             Interface_Init();
                             
@@ -409,22 +410,20 @@ extern void Principal_Input(SDL_Event *event)
 }
 
 /**
- * \fn extern void GameObject_LoadRessources(int numero,int num_image, GameObject * gameObject,  char * nomOption,  char * image_on,  char * image_off, int positionX, int positionY)
+ * \fn extern void GameObject_LoadRessources(int numero,int num_image, GameObject * gameObject,    char * image_on,  char * image_off, int positionX, int positionY)
  * \brief Fonction qui gere le chargement des donnes du menu
  * \param numero numero de l'option
  * \param num_image numero de l'image selectionne par defaut
  * \param gameObject pointeur sur le menu
- * \param nomOption nom de l'option
  * \param image_on chemin pour acceder a l'image selectionnee
  * \param image_off chemin pour acceder a l'image deselectionnee
  * \param positionX position en x
  * \param positionY position en y
  * \return pas de valeur de retour (void)
 */
-extern void GameObject_LoadRessources(int numero, int num_image, GameObject * gameObject,  char * nomOption,  char * image_on,  char * image_off, int positionX, int positionY)
+extern void GameObject_LoadRessources(int numero, int num_image, GameObject * gameObject,   char * image_on,  char * image_off, int positionX, int positionY)
 {
     //Chargement des donnees
-    gameObject->components[numero].nomOption = nomOption;
     gameObject->components[numero].filename[0] = image_on;
     gameObject->components[numero].filename[1] = image_off;
 

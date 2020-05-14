@@ -92,7 +92,7 @@ extern void SaveCollider_Position()
         for( pt =  getCollider()->head; pt != NULL; pt = pt->next )
         {
             //Ecrire la position en x et en y du collider actuel dans le fichier
-            fprintf(file,"%d %d\n", pt->rect->x , pt->rect->y );
+            fprintf(file,"%d %d\n", pt->_rect.x , pt->_rect.y );
         }
     }
 
@@ -127,7 +127,7 @@ extern void LoadCollider(const char * filename)
         for( pt = getCollider()->head ; pt != NULL; pt = pt->next )
         {
             //Lecture des positions en x et en y dans le fichier
-            if (fscanf(file, "%d %d",&pt->rect->x , &pt->rect->y) );            
+            if (fscanf(file, "%d %d",&pt->_rect.x , &pt->_rect.y) );            
         }
     }
 
@@ -162,21 +162,17 @@ extern void LoadAndCreate_PNJ(LinkedList * lst, char * filename)
     int typeCollider; // Variable qui permet de savoir le type du collider
 
     //Tant qu'on n'a pas lu entièrement le fichier
-    SDL_Rect *rect = NULL;
+    SDL_Rect _rect = {0};
     while( !feof(file) )
     {
         //Creation d'un rectangle en SDL pour chaque entite => Allocation dynamique
-        if(( rect= calloc(1, sizeof(SDL_Rect))) == NULL )
-        {
-            fprintf( stderr , "LoadAndCreate_PNJ: debordement memoire lors de la creation d'un rectangle\n");
-            break;
-        }
+        
 
         //Lecture du type, des positions en x et en y, de la largeur et de la hauteur du collider  
-        if( fscanf(file, "%d %d %d %d %d",&typeCollider, &rect->x , &rect->y, &rect->w, &rect->h) )
+        if( fscanf(file, "%d %d %d %d %d",&typeCollider, &_rect.x , &_rect.y, &_rect.w, &_rect.h) )
         {
             //Ajout dans la liste (lst) les proprietes du collider d
-            Insert_Element(lst, rect, typeCollider, false);
+            Insert_Element(lst, _rect, typeCollider, false);
         }
     }
 	
@@ -212,13 +208,11 @@ extern void LoadItems(const char * filename, SDL_Texture * tex)
     while( !feof(file) )
     {
         //Creation d'un rectangle en SDL pour chaque item => Allocation dynamique
-        SDL_Rect *rect = malloc( sizeof(SDL_Rect));
-        rect->w = w;
-        rect->h = h;    
+        SDL_Rect _rect= {0}; 
         //Recupération des positions en x et y de l'item dans le fichier         
-        if( fscanf(file, "%d %d %d",&rect->x , &rect->y, &typeU) ){
+        if( fscanf(file, "%d %d %d",&_rect.x , &_rect.y, &typeU) ){
             //Ajout de l'item avec les proprietes recuperees dans le fichier
-            Insert_Element(getItems(),  rect, typeU , false);
+            Insert_Element(getItems(),  _rect, typeU , false);
         }
     }
 
@@ -249,13 +243,14 @@ extern void LoadEnemies(const char * filename)
     while( !feof(file) )
     {
         //Creation d'un rectangle en SDL pour chaque ennemi => Allocation dynamique
-        SDL_Rect *rect = malloc( sizeof(SDL_Rect));
-        rect->w = 55;
-        rect->h = 55; 
+        //SDL_Rect _rect = malloc( sizeof(SDL_Rect));
+        SDL_Rect _rect = {0};
+        _rect.w = 55;
+        _rect.h = 55; 
         //Recuperation des positions en x et en y, et de l'etat de l'ennemi           
-        if( fscanf(file, "%d %d %d",&rect->x , &rect->y, &actif ) ){
+        if( fscanf(file, "%d %d %d",&_rect.x , &_rect.y, &actif ) ){
             //Ajout de l'ennemi avec les proprietes recuperees dans le fichier
-            Insert_Element(getEnnemis(),  rect, ennemi , actif );
+            Insert_Element(getEnnemis(),  _rect, ennemi , actif );
         }
     }
 

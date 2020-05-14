@@ -99,8 +99,6 @@ extern void Player_Init()
     //inventaire initialise a 0
     player.nb_lancer = 0;
     player.nb_objet = 0;
-     //Changement de l'etat du joueur
-    getPlayer()->estMort = false;
 
     player.osActif = true;
     player.treeActif = false;
@@ -198,7 +196,7 @@ extern void CollisionItems()
     for(pt = getItems()->head ; pt != NULL; pt = pt->next)
     {
         //Si le joueur est en collision avec l'item actuel
-        if(collide2d(getPlayerX(), getPlayerY(), pt->rect->x,pt->rect->y, player.tex.w,player.tex.h,pt->rect->w , pt->rect->h) )
+        if(collide2d(getPlayerX(), getPlayerY(), pt->_rect.x,pt->_rect.y, player.tex.w,player.tex.h,pt->_rect.w , pt->_rect.h) )
         {
             //Si l'item est toujours existant
             if(!pt->estMort)
@@ -357,7 +355,7 @@ extern void Shoot_Collision()
         {
             for(enne = getEnnemis()->head; enne != NULL; enne = enne->next)
             {
-                if(collide = ( collide2d( tir->rect->x , tir->rect->y, enne->rect->x,enne->rect->y,tir->rect->w ,tir->rect->h,enne->rect->w, enne->rect->h ) ) && 
+                if(collide = ( collide2d( tir->_rect.x , tir->_rect.y, enne->_rect.x,enne->_rect.y,tir->_rect.w ,tir->_rect.h,enne->_rect.w, enne->_rect.h ) ) && 
                 ( tir->type == tree || tir->type == rock) ) 
                 {
 
@@ -367,14 +365,14 @@ extern void Shoot_Collision()
                         {
                             enne->estMort = true;
                             tir->estMort = true;
-                            tir->rect->x = 0;
-                            enne->rect->x = 0;
+                            tir->_rect.x = 0;
+                            enne->_rect.x = 0;
                         }
                         
                             
                         break;
                 }
-                else if(collide2d( tir->rect->x , tir->rect->y, getPlayerX(),getPlayerY(),tir->rect->w ,tir->rect->h,getPlayer()->w, getPlayer()->h ) && tir->type == feu ) 
+                else if(collide2d( tir->_rect.x , tir->_rect.y, getPlayerX(),getPlayerY(),tir->_rect.w ,tir->_rect.h,getPlayer()->w, getPlayer()->h ) && tir->type == feu ) 
                 {
                      if( !getPlayer()->estMort && getPlayer()->nombreVies > 1 )
                     {

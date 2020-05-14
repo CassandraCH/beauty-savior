@@ -41,22 +41,22 @@ extern void GameOver_Init()
      * Première option : demarer une nouvelle partie 
      * Actif par défaut
      */
-    GameObject_LoadRessources(0, 0, &menu_over, "Nouvelle partie", "graphics_assets/icons_buttons/newpartie_on_xs.png", "graphics_assets/icons_buttons/newpartie_off_xs.png", 469, 366);
+    GameObject_LoadRessources(0, 0, &menu_over,"graphics_assets/icons_buttons/newpartie_on_xs.png", "graphics_assets/icons_buttons/newpartie_off_xs.png", 469, 366);
 
     /* 
      * Deuxième option : Chargement d'une partie
      */
-    GameObject_LoadRessources(1, 1, &menu_over, "Chargement", "graphics_assets/icons_buttons/load_on_xs.png", "graphics_assets/icons_buttons/load_off_xs.png", 455, 449);
+    GameObject_LoadRessources(1, 1, &menu_over, "graphics_assets/icons_buttons/load_on_xs.png", "graphics_assets/icons_buttons/load_off_xs.png", 455, 449);
     
     /* 
      * Troisième option : quitter le jeu 
      */
-    GameObject_LoadRessources(2, 1, &menu_over, "Quitter", "graphics_assets/icons_buttons/quitter_on_xs.png", "graphics_assets/icons_buttons/quitter_off_xs.png", 469, 491);
+    GameObject_LoadRessources(2, 1, &menu_over, "graphics_assets/icons_buttons/quitter_on_xs.png", "graphics_assets/icons_buttons/quitter_off_xs.png", 469, 491);
 
     /* 
      * Quatrième option : Couper/Activer Son
      */
-    GameObject_LoadRessources(3, 1, &menu_over, "Son", "graphics_assets/icons_buttons/sound_on_xs.png", "graphics_assets/icons_buttons/sound_off_xs.png", 487, 627);
+    GameObject_LoadRessources(3, 1, &menu_over, "graphics_assets/icons_buttons/sound_on_xs.png", "graphics_assets/icons_buttons/sound_off_xs.png", 487, 627);
     
     
     //Option selectionnée par défaut = la première (nouvelle partie)
