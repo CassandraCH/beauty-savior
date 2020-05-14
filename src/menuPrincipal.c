@@ -333,19 +333,18 @@ extern void Principal_Input(SDL_Event *event)
 
                 //Cas de la touche entree
                 case SDLK_RETURN:
-                    switch (GetKeypressed(getGameObject()))
+                    switch (GetKeypressed( getGameObject() ))
                     {
                         //Cas de la premiere option : demarer une nouvelle partie
                         case 0:
-                            //Changement de l'etat du joueur
-                            getPlayer()->estMort = false;
+                           
                             increaseRock();
                             getPlayer()->rockActif = true;
 
                             //Suppression des listes
                             Delete_List( getCollider() );
-                            Delete_List(getEnnemis());
-                            Delete_List(getBullets());
+                            Delete_List( getEnnemis() );
+                            Delete_List( getBullets() );
 
                             Interface_Init();
                             

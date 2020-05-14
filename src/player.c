@@ -99,6 +99,8 @@ extern void Player_Init()
     //inventaire initialise a 0
     player.nb_lancer = 0;
     player.nb_objet = 0;
+     //Changement de l'etat du joueur
+    getPlayer()->estMort = false;
 
     player.osActif = true;
     player.treeActif = false;

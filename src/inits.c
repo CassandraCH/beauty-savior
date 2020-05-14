@@ -126,12 +126,12 @@ void Init(const char *title)
     
     Player_Init( getPlayer() );
 	Principal_Init();      
-
+     Init_Textures();
     getBaseGame()->tempsActuel = 0;
     getBaseGame()->tempsPrecedent = 0;
     getBaseGame()->min = 60;
 
-    Init_Textures();
+   
   
     getBaseGame()->estActif = true;
 }

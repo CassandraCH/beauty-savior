@@ -162,10 +162,16 @@ extern void LoadAndCreate_PNJ(LinkedList * lst, char * filename)
     int typeCollider; // Variable qui permet de savoir le type du collider
 
     //Tant qu'on n'a pas lu entièrement le fichier
+    SDL_Rect *rect = NULL;
     while( !feof(file) )
     {
         //Creation d'un rectangle en SDL pour chaque entite => Allocation dynamique
-        SDL_Rect *rect = malloc(sizeof(SDL_Rect)); 
+        if(( rect= calloc(1, sizeof(SDL_Rect))) == NULL )
+        {
+            fprintf( stderr , "LoadAndCreate_PNJ: debordement memoire lors de la creation d'un rectangle\n");
+            break;
+        }
+
         //Lecture du type, des positions en x et en y, de la largeur et de la hauteur du collider  
         if( fscanf(file, "%d %d %d %d %d",&typeCollider, &rect->x , &rect->y, &rect->w, &rect->h) )
         {
