@@ -28,7 +28,6 @@ typedef struct component
 {
     int largeur;            /**< la largeur de l'option */
     int hauteur;            /**< la hauteur de l'option */
-    const char * nomOption; /**< le nom de l'option */
     SDL_Texture *texture;   /**< le texture de l'option */
     int x;                  /**< la position en x de l'option   */
     int y;                  /**< la position en y de l'option   */
@@ -62,7 +61,7 @@ extern void UpdateComponent(Component * component, int etat);                   
 extern void UpdateImage_Component(Component * component, const char * filename);    /**< fonction de mise à jour d'image du component d'un gameObject*/
 
 extern int  GetKeypressed( GameObject *gameObject );                                /**< fonction sur les touches du gameObject*/
-extern void GameObject_LoadRessources(int numero,int num_image, GameObject * gameObject,  char * nomOption,  char * image_on,  char * image_off,
+extern void GameObject_LoadRessources(int numero,int num_image, GameObject * gameObject, char * image_on,  char * image_off,
                 int positionX, int positionY );                                     /**< rechargement du gameObject */
 
 

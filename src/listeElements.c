@@ -91,41 +91,41 @@ extern void List_Init(LinkedList *list)
 }
 
 /**
- * \fn extern Node* CreateElement(SDL_Rect*rect, typeEntite item_t, bool actif ) 
+ * \fn extern Node* CreateElement(SDL_Rect_rect, typeEntite item_t, bool actif ) 
  * \brief Fonction qui permet de créer un rectangle (portion de l'ecran)
  * \brief Ce rectangle sera utilisé pour la texture
- * \param rect rectangle SDL
+ * \param _rect rectangle SDL
  * \param item_t type de l'entité
  * \param actif etat de l'entité
  * \return Pointeur sur une structure de type Node
 */
-extern Node* CreateElement(SDL_Rect*rect, typeEntite item_t, bool actif ) 
+extern Node* CreateElement(SDL_Rect _rect, typeEntite item_t, bool actif ) 
 {   
-    Node * nouvelElement = malloc( sizeof( Node ) );
+    Node * nouvelElement = calloc(1, sizeof( Node ) );
     nouvelElement->next = NULL; 
 
     //Remplir la zone mémoire avec des 0
     memset(nouvelElement, 0, sizeof(Node));
 
-    nouvelElement->rect = rect;
+    nouvelElement->_rect = _rect;
     nouvelElement->type = item_t;
 
     /* ### CARACTERISTIQUE LIEE AU TIR ### */
     nouvelElement->movingX = 0; //Sens du tir de l'ennemi
     nouvelElement->lancer = true; //Etat du tir
 
-    nouvelElement->x = rect->x; //posiiton en x
-    nouvelElement->y = rect->y; //posiiton en y
-    nouvelElement->w = rect->w; //largeur
-    nouvelElement->h = rect->h; //hauteur
+    nouvelElement->x = _rect.x; //posiiton en x
+    nouvelElement->y = _rect.y; //posiiton en y
+    nouvelElement->w = _rect.w; //largeur
+    nouvelElement->h = _rect.h; //hauteur
     nouvelElement->actif = actif; 
 
     //Cas si c'est un ennemi
     if( item_t == ennemi ) 
     {  
         //Sauvegarde de la position initiale en x et en y
-        nouvelElement->baseX = rect->x;
-        nouvelElement->baseY = rect->y;
+        nouvelElement->baseX = _rect.x;
+        nouvelElement->baseY = _rect.y;
 
         //S'il n'est pas mort
         if( actif == true )
@@ -144,18 +144,18 @@ extern Node* CreateElement(SDL_Rect*rect, typeEntite item_t, bool actif )
 }
 
 /**
- * \fn extern void Insert_Element(LinkedList * list, SDL_Rect *rect, typeEntite items_t, bool actif)
+ * \fn extern void Insert_Element(LinkedList * list, SDL_Rect _rect, typeEntite items_t, bool actif)
  * \brief Fonction qui permet d'insérer un élément dans une liste passée en paramètre
  * \param list pointeur sur la liste dans laquelle on veut insérer un élement
- * \param rect pointeur sur l'élement a ajouter
+ * \param _rect pointeur sur l'élement a ajouter
  * \param items_t type de l'élement à ajouter : ennemi, bullet, collider...
  * \param actif état de l'élement
  * \return pas de valeur de retour (void)
 */
-extern void Insert_Element(LinkedList * list, SDL_Rect *rect, typeEntite items_t, bool actif)
+extern void Insert_Element(LinkedList * list, SDL_Rect _rect, typeEntite items_t, bool actif)
 {
     printf("Insert_Element objet\n");
-    Node *nouvelElement = CreateElement(rect, items_t, actif);
+    Node *nouvelElement = CreateElement(_rect, items_t, actif);
 
     //Cas lorsque la liste est vide
     if (list->nodeCount == 0)
@@ -232,7 +232,7 @@ extern bool Delete_First(LinkedList * lst)
         lst->head = first->next;
     }
 
-    free(first->rect);
+    
     free(first);
 
     //Mise a jour du compteur d'élements
@@ -277,7 +277,7 @@ extern bool Delete_Last(LinkedList * lst)
 
     }
 
-    free(last->rect);
+  
     free(last);
 
     //Mise a jour du compteur d'élements
@@ -380,11 +380,11 @@ extern void List_RenderElements(LinkedList *lst, SDL_Texture * tex, typeEntite t
             //Si l'élément n'est pas mort
             if ( pt->estMort != true && pt->type == typeE )
             {
-                pt->rect->w = largeurTex;
-                pt->rect->h = hauteurTex;
+                pt->_rect.w = largeurTex;
+                pt->_rect.h = hauteurTex;
 
-                SDL_Rect rect = { pt->rect->x- camera.x, pt->rect->y -  camera.y, pt->rect->w, pt->rect->h };
-                SDL_RenderCopy( getRenderer() , tex , NULL, &rect );
+                SDL_Rect _rect = { pt->_rect.x- camera.x, pt->_rect.y -  camera.y, pt->_rect.w, pt->_rect.h };
+                SDL_RenderCopy( getRenderer() , tex , NULL, &_rect );
             }
         }
     }

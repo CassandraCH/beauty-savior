@@ -162,7 +162,7 @@ extern void Debug_AfficherCollider()
    //Parcours de la liste des colliders
    for(Node* pt = getCollider()->head ; pt != NULL ; pt = pt->next )
    {
-      rect = (SDL_Rect) {  pt->rect->x- camera.x ,pt->rect->y-  camera.y ,pt->rect->w,pt->rect->h };
+      rect = (SDL_Rect) {  pt->_rect.x- camera.x ,pt->_rect.y-  camera.y ,pt->_rect.w,pt->_rect.h };
 
       //Affichage des colliders
       SDL_RenderCopy(getRenderer(), texColider , NULL, &rect);

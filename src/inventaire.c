@@ -161,21 +161,21 @@ extern void Inventaire_Init()
     SetHUD_IntToTexture(getItem(2),(SDL_Color){0xFF,0xFF,0xFF,0xFF}, "", nombreBranche ,835, 347);
 
     //Première option : Sélectionner les os
-    GameObject_LoadRessources(0,0, &inventaire ,"OS"
+    GameObject_LoadRessources(0,0, &inventaire 
                 ,"graphics_assets/inventaire/os_on.png"
                 ,"graphics_assets/inventaire/os_off.png"
                 ,555
                 ,300 );
 
     //Deuxième option : Sélectionner les cailloux
-    GameObject_LoadRessources(1,1, &inventaire ,"ROCK"
+    GameObject_LoadRessources(1,1, &inventaire 
                 ,"graphics_assets/inventaire/rock_on.png"
                 ,"graphics_assets/inventaire/rock_off.png"
                 ,675
                 ,310 );
 
     //Troisième option : Sélectionner les branches
-    GameObject_LoadRessources(2,1, &inventaire ,"TREE"
+    GameObject_LoadRessources(2,1, &inventaire 
                 ,"graphics_assets/inventaire/tree_on.png"
                 ,"graphics_assets/inventaire/tree_off.png"
                 ,790

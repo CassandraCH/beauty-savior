@@ -43,7 +43,7 @@ extern void GameWin_Init()
      * Actif par défaut
      */ 
 
-    GameObject_LoadRessources(0,0,&menu_win , "Reprendre partie"
+    GameObject_LoadRessources(0,0,&menu_win 
                 ,"graphics_assets/win_icons/quit_on.png"
                 ,"graphics_assets/win_icons/quit_off.png"
                 ,552
@@ -52,7 +52,7 @@ extern void GameWin_Init()
     /* 
      * Deuxieme option : Retour sur le menu principal
      */
-    GameObject_LoadRessources(1,1, &menu_win ,"Retour menu"
+    GameObject_LoadRessources(1,1, &menu_win 
                 ,"graphics_assets/win_icons/menu_on.png"
                 ,"graphics_assets/win_icons/menu_off.png"
                 ,657

@@ -25,7 +25,7 @@ typedef struct Node
   #include "attributs.h"
   
 
-  SDL_Rect *rect;       /*!< Rectangle qui défini la taille d'un éléments>*/
+  SDL_Rect _rect;       /*!< Rectangle qui défini la taille d'un éléments>*/
   bool actif;           /*!< Défini si l'élement est actif ou non>*/
 
   int nb_objets;        /**< le nombres d'objets*/
@@ -61,8 +61,8 @@ typedef struct list
 extern void List_Init(LinkedList *list);              /**< initialisation des listes */
 extern void List_Update();                            /**< Mis à jour de la listes */
 
-extern Node*  CreateElement(SDL_Rect*rect, typeEntite item_t, bool actif );                         /**< creation du rectangle*/
-extern void   Insert_Element(LinkedList * list, SDL_Rect *rect, typeEntite items_t , bool actif);   /**< creation du rectangle*/
+extern Node*  CreateElement(SDL_Rect rect, typeEntite item_t, bool actif );                         /**< creation du rectangle*/
+extern void   Insert_Element(LinkedList * list, SDL_Rect _rect, typeEntite items_t , bool actif);   /**< creation du rectangle*/
 
 extern void   List_RenderElements(LinkedList *lst, SDL_Texture * tex, typeEntite typeE, int largeurTex, int hauteurTex);    /**< affiche les elements de la liste*/
 

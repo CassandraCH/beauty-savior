@@ -33,10 +33,10 @@ extern void Init_HUD(HUD * hud,SDL_Color color,  const char * text, int x,  int 
     int width, height;
     SDL_QueryTexture(hud->tex, NULL, NULL, &width, &height);
 
-    hud->rect.x = x; //Position en x du hud
-    hud->rect.y = y; //Position en y du hud
-    hud->rect.w = width; //Largeur du hud
-    hud->rect.h = height; //Hauteur du hud
+    hud->_rect.x = x; //Position en x du hud
+    hud->_rect.y = y; //Position en y du hud
+    hud->_rect.w = width; //Largeur du hud
+    hud->_rect.h = height; //Hauteur du hud
 }
 
 /**
@@ -78,10 +78,10 @@ extern void SetHUD_IntToTexture(HUD * hud,SDL_Color color, const char * nom, int
     int width, height;
     SDL_QueryTexture(hud->tex, NULL, NULL, &width, &height);
 
-    hud->rect.w = width; //Largeur du hud
-    hud->rect.h = height;//Hauteur du hud
-    hud->rect.x = posX;  //Position en x du hud
-    hud->rect.y = posY;  //Position en y du hud
+    hud->_rect.w = width; //Largeur du hud
+    hud->_rect.h = height;//Hauteur du hud
+    hud->_rect.x = posX;  //Position en x du hud
+    hud->_rect.y = posY;  //Position en y du hud
 }
 
 
@@ -93,8 +93,8 @@ extern void SetHUD_IntToTexture(HUD * hud,SDL_Color color, const char * nom, int
 */
 extern void AfficherHUD(HUD * hud)
 {
-    SDL_Rect scor = {hud->rect.x - camera.x  ,hud->rect.y - camera.y, hud->rect.w ,hud->rect.h };
-    SDL_RenderCopy(getRenderer(), hud->tex, NULL, &hud->rect);
+    SDL_Rect scor = {hud->_rect.x - camera.x  ,hud->_rect.y - camera.y, hud->_rect.w ,hud->_rect.h };
+    SDL_RenderCopy(getRenderer(), hud->tex, NULL, &hud->_rect);
 }
 
 /**

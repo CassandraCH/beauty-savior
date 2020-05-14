@@ -39,7 +39,7 @@ extern void Continue_Init()
      * Premiere option : Reprendre la partie
      * Actif par défaut
      */
-    GameObject_LoadRessources(0, 0, &menu_continue, "Continuer", "graphics_assets/icons_buttons/continue.png", "null", 707, 562);
+    GameObject_LoadRessources(0, 0, &menu_continue,  "graphics_assets/icons_buttons/continue.png", "null", 707, 562);
 
     //Option selectionnee = Reprendre partie
     menu_continue.componentSelected = 0;
