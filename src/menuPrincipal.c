@@ -7,6 +7,8 @@
  * \brief Initialisation, affichage du menu, navigation dans le menu, gestion des entrées clavier et destruction du menu
  */
 
+#define MAX_LETTERS 50
+
 #include "baseGame.h"
 
 GameObject _gameObject; /**< Structure de type GameObject */
@@ -444,13 +446,14 @@ extern void GameObject_LoadRessources(int numero, int num_image, GameObject * ga
 */
 extern void GameObject_Clean(GameObject * gameObject, int nombreOptions)
 {
-    printf("Suppression Menu %s\n", gameObject->nom_gameObject );
+ 
 
     if( gameObject != NULL )
     {
          //Parcours de toute les options
         for(int i = 0; i < nombreOptions; i++)
         {
+                
             //Liberation de la memoire utilisee pour la texture de l'option
             if( gameObject->components[i].texture != NULL ) 
             {
@@ -458,8 +461,6 @@ extern void GameObject_Clean(GameObject * gameObject, int nombreOptions)
                 SDL_DestroyTexture(gameObject->components[i].texture);
             }
         }
-        printf("Fin Suppression Menu %s \n", gameObject->nom_gameObject);
-
     }
       return;
 

@@ -170,6 +170,7 @@ void Game_DestroyRessources(void)
     GameObject_Clean(getMenuCon(), 1);
     GameObject_Clean(getGameObject(), 4 );
     GameObject_Clean(getMenuPause(), 2);
+    GameObject_Clean( getInterface(), 5 );
     GameObject_Clean( getMenu_Win(), 2);
 
 

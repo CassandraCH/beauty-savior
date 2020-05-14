@@ -31,7 +31,7 @@ typedef struct component
     SDL_Texture *texture;   /**< le texture de l'option */
     int x;                  /**< la position en x de l'option   */
     int y;                  /**< la position en y de l'option   */
-    char * filename[4];     /**<le fichiers contenant la texture de l'option */
+    char * filename[2];     /**<le fichiers contenant la texture de l'option */
 
 }Component;
 /**< Typedef component Component */
@@ -47,7 +47,7 @@ typedef struct gameObject GameObject;
 struct gameObject
 {
     int componentSelected;              /**< Component selectionne  */
-    Component components[4];            /**< Tableau de Components  */
+    Component components[5];            /**< Tableau de Components  */
     Mix_Chunk *son;                     /**< Le son du gameObject   */
     TTF_Font * police;                  /**< La police utilise pour le gameObject */
     SDL_Texture * bg;                   /**< Texture en arrière-plan */

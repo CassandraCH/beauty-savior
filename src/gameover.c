@@ -151,8 +151,8 @@ extern void GameOver_Input(SDL_Event *event)
                             printf("Chargement depuis gameover");
 
                             //Nettoyage de l'affichage
-                            GameObject_Clean(getMenu_Over(), 4);
-                            GameObject_Clean( getGameObject() , 4);
+                            GameObject_Clean(   getMenu_Over(), 4);
+                            GameObject_Clean(   getGameObject() , 4);
 
                             Load_Init();
                             GameObject_Clean(getGameObject(), 4);

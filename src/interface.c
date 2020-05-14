@@ -46,11 +46,10 @@ extern void Interface_Init()
     
   GameObject_LoadRessources(3, 0, &interface, "graphics_assets/help_info.png", "NULL", 18, 699);
 
-  GameObject_LoadRessources(4,1, &interface,  "graphics_assets/passport_on.png",
+  GameObject_LoadRessources(4, 1 , &interface,  "graphics_assets/passport_on.png",
   "graphics_assets/passport_off.png", 900, 18);
 
-    
- 
+
   interface.componentSelected = 0;
 
   interface.bg = Texture_Load("graphics_assets/bg_interface.png");
@@ -67,8 +66,6 @@ extern void Interface_Render()
 
     GameObject_Render( &interface ,5, 20, 20, 1208,50 );
 
-
-    
     SetHUD_IntToTexture(getTime(),(SDL_Color){0xFF,0xFF,0xFF,0xFF}, "0 : ", getBaseGame()->min ,90, 21 );
     
     
