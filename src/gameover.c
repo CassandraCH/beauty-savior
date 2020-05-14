@@ -116,7 +116,7 @@ extern void GameOver_Input(SDL_Event *event)
                             printf("Nouvelle partie depuis gameover");
 
                             //Nettoyage de l'affichage
-                            GameObject_Clean(getMenu_Over(), 4);
+                            GameObject_Clean (getMenu_Over(), 4);
                             GameObject_Clean( getGameObject() , 4);
 
                             //Changement de l'état du joueur

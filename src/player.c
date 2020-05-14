@@ -282,6 +282,7 @@ extern void Player_Reset(void)
     {
           
             player.nb_lancer = 0;
+            player.isPasspordCollected = false;
             player.y = player.posYDepart;
             player.x = player.posXDepart;
             if( getBaseGame()->state != LOADING )
