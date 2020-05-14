@@ -88,7 +88,7 @@ extern void Continue_Input(SDL_Event *event)
 
                             //Suppression des listes
                             Delete_List(getCollider());
-                            Delete_List(getEnnemis());
+                           
                             Delete_List(getBullets());
 
                             //Initialisation du hud score avec le nombre de points du niveau précédent
