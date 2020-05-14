@@ -14,8 +14,6 @@ doc/*
 
 # Libraries
 *.lib
-*.a
-*.la
 *.lo
 
 # Executables
