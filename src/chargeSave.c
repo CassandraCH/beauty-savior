@@ -203,14 +203,24 @@ extern void LoadItems(const char * filename, SDL_Texture * tex)
     SDL_QueryTexture(tex, NULL,NULL, &w, &h );
  
     int typeU;
+    int posX, posY;
 
     //Tant qu'on n'a pas lu entièrement le fichier
     while( !feof(file) )
     {
         //Creation d'un rectangle en SDL pour chaque item => Allocation dynamique
-        SDL_Rect _rect= {0}; 
-        //Recupération des positions en x et y de l'item dans le fichier         
-        if( fscanf(file, "%d %d %d",&_rect.x , &_rect.y, &typeU) ){
+
+        //Recupération des positions en x et y de l'item dans le fichier
+        if (fscanf(file, "%d %d %d", &posX, &posY, &typeU))
+        {
+
+            SDL_Rect _rect;
+            _rect.x = posX;
+            _rect.y = posY;
+            _rect.w = 55;
+            _rect.h = 55;
+
+            
             //Ajout de l'item avec les proprietes recuperees dans le fichier
             Insert_Element(getItems(),  _rect, typeU , false);
         }
@@ -238,19 +248,25 @@ extern void LoadEnemies(const char * filename)
     }
 
     int actif; //Variable qui permet de stocker l'etat de l'ennemi = actif
+    int posX, posY;
 
     //Tant qu'on n'a pas lu entièrement le fichier
     while( !feof(file) )
     {
-        //Creation d'un rectangle en SDL pour chaque ennemi => Allocation dynamique
-        //SDL_Rect _rect = malloc( sizeof(SDL_Rect));
-        SDL_Rect _rect = {0};
-        _rect.w = 55;
-        _rect.h = 55; 
-        //Recuperation des positions en x et en y, et de l'etat de l'ennemi           
-        if( fscanf(file, "%d %d %d",&_rect.x , &_rect.y, &actif ) ){
+        
+        //Recuperation des positions en x et en y, et de l'etat de l'ennemi
+        if (fscanf(file, "%d %d %d", &posX, &posY, &actif))
+        {
+            //Creation d'un rectangle en SDL pour chaque ennemi => Allocation dynamique
+            SDL_Rect _rect;
+            _rect.x = posX;
+            _rect.y = posY;
+            _rect.w = 55;
+            _rect.h = 55;
+
+        
             //Ajout de l'ennemi avec les proprietes recuperees dans le fichier
-            Insert_Element(getEnnemis(),  _rect, ennemi , actif );
+            Insert_Element(getEnnemis(), _rect, ennemi, actif);
         }
     }
 

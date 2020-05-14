@@ -127,6 +127,11 @@ extern void Load_Input(SDL_Event *event)
                             Level_Destroy();
                             Player_Reset();
 
+                            //Suppression des listes
+                            Delete_List(getCollider());
+                            Delete_List(getEnnemis());
+                            Delete_List(getBullets());
+
                             //Changer l'etat du joueur
                             getPlayer()->estMort = false;
 

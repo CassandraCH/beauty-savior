@@ -80,7 +80,7 @@ extern void SetValeurDuNiveau(int valeur)
 extern void Player_Init()
 {
     //niveau en cours et nombre de vies
-	player.niveau = 1;
+	player.niveau = 2;
     player.nombreVies = 3;
 
     //Chargement de l'image
@@ -90,7 +90,7 @@ extern void Player_Init()
 	player.h = player.tex.h;
 	player.w = player.tex.w;
     player.x = 100;
-    player.y = 50;
+    player.y = 182;
     player.scores = 0;
 
    // le passport n'est pas collecté par défaut
