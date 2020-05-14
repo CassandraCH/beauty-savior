@@ -106,7 +106,7 @@ extern void Continue_Input(SDL_Event *event)
 
                             //le passport est remis en non collecté
                             getPlayer()->isPasspordCollected = false;
-                            UpdateComponent( &getInterface()->components[4], 1);
+                            UpdateComponent( &getInterface()->components[4], 1 );
 
                         
                             //Charger le niveau next
