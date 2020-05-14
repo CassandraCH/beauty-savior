@@ -45,5 +45,6 @@ extern void         TexManager_DestroyRessources( Texture_Manager *tex );       
 extern SDL_Texture* Texture_Load(char * filepath);                              /**<chargement des textures à partir d'image*/
 
 extern void         TextureManager_Load(Texture_Manager *tex, char *filepath);  /**<chargement d'une texture*/
+extern void         Update_TextureEnemi();                                      /**<Modification de la texture ennemi*/
 
 #endif

@@ -169,7 +169,7 @@ extern void Init_Textures()
   rockTex = Texture_Load("graphics_assets/tex_rock.png");
   treeTex = Texture_Load("graphics_assets/tex_tree.png");
   osTex = Texture_Load("graphics_assets/tex_os.png");   
-  passportTex = Texture_Load("graphics_assets/passport.png");  
+  passportTex = Texture_Load("graphics_assets/passport.png"); 
   getBaseGame()->passportReq = Texture_Load("graphics_assets/passport_requis.png");
 }
 
@@ -187,4 +187,24 @@ extern void Clean_Textures()
   SDL_DestroyTexture( osTex );
   SDL_DestroyTexture( passportTex );
   SDL_DestroyTexture( getBaseGame()->passportReq );
+}
+
+/**
+ * \fn extern void Update_TextureEnemi()
+ * \brief Fonction qui gère la mise à jour des textures des ennemis en fonction du niveau
+ * \return pas de valeur de retour (void)
+*/
+extern void Update_TextureEnemi()
+{
+    
+    if ( texture != NULL )
+        SDL_DestroyTexture(texture);
+
+    if(  getPlayer()->niveau == 4 )
+    {
+        texture = Texture_Load("graphics_assets/enemi_4.png");
+    }
+    else
+        texture = Texture_Load("graphics_assets/enemi.png");
+
 }

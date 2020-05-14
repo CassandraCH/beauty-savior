@@ -122,8 +122,10 @@ extern void Level_Load()
          
          LoadEnemies("files_assets/ennemi_4.txt");
 
+         Update_TextureEnemi();
+         
          //Chargement des textures
-         SDL_Texture * itemTex = Texture_Load("graphics_assets/coin.png");
+          SDL_Texture *itemTex = Texture_Load("graphics_assets/coin.png");
 
          //Suppression de la liste d'item precedente
          Delete_List(getItems()); 
