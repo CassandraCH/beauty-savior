@@ -69,6 +69,6 @@ extern void Interface_Render()
     SetHUD_IntToTexture(getTime(),(SDL_Color){0xFF,0xFF,0xFF,0xFF}, "0 : ", getBaseGame()->min ,90, 21 );
     
     
-    AfficherHUD(getScores()); 
-    AfficherHUD(getTime());
+    Render_HUD(getScores()); 
+    Render_HUD(getTime());
 }

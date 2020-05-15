@@ -113,16 +113,16 @@ extern void Game_Render()
   else if ( getBaseGame()->state == LOADING )
   {
     GameObject_Render(getMenuLoad(), 2, 0,0 , 1280, 720) ;
-    AfficherHUD(getScores());
-    AfficherHUD( getNiveau() );
+    Render_HUD(getScores());
+    Render_HUD( getNiveau() );
   }
 
   //Cas où un niveau est terminé
   else if ( getBaseGame()->state == LEVEL_COMPLETED )
   {
     GameObject_Render(getMenuCon(), 1,0, 0, 1280, 720);
-    AfficherHUD(  getScores() );
-    AfficherHUD( getNiveau() );
+    Render_HUD(  getScores() );
+    Render_HUD( getNiveau() );
   }
 
   //Cas où le jeu est en pause
@@ -135,17 +135,17 @@ extern void Game_Render()
   else if ( getBaseGame()->state == INVENTAIRE )
   {
       GameObject_Render( getInventaire(),3, 300, 200, 607, 269 );
-      AfficherHUD(getItem(0)); 
-      AfficherHUD(getItem(1));
-      AfficherHUD(getItem(2));
+      Render_HUD(getItem(0)); 
+      Render_HUD(getItem(1));
+      Render_HUD(getItem(2));
   }
 
   //Cas où le jeu est terminé = tous les niveaux sont terminés
   else if ( getBaseGame()->state == GAMEWIN )
   {
     GameObject_Render( getMenu_Win() ,2, 413, 74,433, 478  );
-    AfficherHUD( getNombreVie() );
-    AfficherHUD( getScores()  );
+    Render_HUD( getNombreVie() );
+    Render_HUD( getScores()  );
 
   }
   // Cas où le joueur affiche l'aide 

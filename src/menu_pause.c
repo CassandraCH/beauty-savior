@@ -107,7 +107,10 @@ extern void Pause_Input(SDL_Event *event)
                             break;
                         //Cas de la deuxieme option : retour sur le menu principal
                         case 1:
-                            Player_Reset();   
+                            Player_Reset();
+
+                            Principal_Init();
+
                             getBaseGame()->state = MENU_PRINCIPAL;       
                             return;
                             break;
