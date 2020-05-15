@@ -6,9 +6,6 @@
  * \brief Programme qui gère le menu principal
  * \brief Initialisation, affichage du menu, navigation dans le menu, gestion des entrées clavier et destruction du menu
  */
-
-#define MAX_LETTERS 50
-
 #include "baseGame.h"
 
 GameObject _gameObject; /**< Structure de type GameObject */

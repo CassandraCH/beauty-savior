@@ -52,6 +52,7 @@ typedef struct list
   struct Node *head;          /**< noeud d'entete */
   struct Node *queue;         /**< noeud de fin */
 
+  int bulletSpeed;            /**< vitesse des bullets */
   int nodeCount;            /**< compteur de noeuds */
 
 }LinkedList;

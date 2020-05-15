@@ -54,11 +54,11 @@ extern bool Bullets_Update( typeEntite typeA, typeEntite typeB )
 
                         //Si le joueur est à LEFT_Key de l'ennemi, on inverse le sens du tir
                         if( getPlayerX() + getPlayer()->w  <= pt->_rect.x )
-                            pt->movingX = -18;
+                            pt->movingX = -getBullets()->bulletSpeed;
 
                         //Sinon le sens de tir n'est pas inversé
-                        else 
-                            pt->movingX = 18;
+                        else
+                            pt->movingX = getBullets()->bulletSpeed;
                     }
                     //Mise a jour de l'état du lancer du bullet => ne peut plus être lancer
                     pt->lancer = false;
@@ -132,7 +132,7 @@ extern void CreateBullet(typeEntite type, int width, int height, int startX, int
     Insert_Element(&bullet, _rect, type, false);
 }
 
-/**
+/**"
  * \fn extern void Enemy_Attack() 
  * \brief Fonction qui gère les attaques des ennemis
  * \brief Parcours des ennemis, verification qu'il n'est pas mort et de son compteur de lancer
@@ -148,13 +148,12 @@ extern void Enemy_Attack()
         //Si l'ennemi n'est pas mort
         if ( !pt->estMort )
         {
-            //distance pour que le joueur soit détectable par l'ennemi
-            float distance = sqrt(pow(pt->_rect.x - getPlayerX(), 2) +  pow(pt->_rect.y - getPlayerY(), 2)); 
-
-            if( distance < (pt->_rect.w*7) + getPlayer()->w )
+            //distance pour que le joueur soit détectable par l'ennemi"
+            float distance = sqrt( pow(pt->_rect.x - getPlayerX(), 2) +  pow(pt->_rect.y - getPlayerY(), 2) ); 
+            if( distance < (pt->_rect.w*6) + getPlayer()->w )
             {
                 //Si le compteur de lancer disponible est inférieur à 1 => on reconfigure ce compteur et on créé un tir
-                if( pt->nb_lancer < 1) 
+                if( pt->nb_lancer < 1 ) 
                 {
                     Enemy_SetBullets();
                     CreateBullet(feu, pt->_rect.w, pt->_rect.h, pt->_rect.x, pt->_rect.y );
@@ -264,7 +263,7 @@ extern void Collision_Detection()
                         printf("Il reste %d points de vie\n", getPlayer()->nombreVies );
                     }
                     //Sinon le joueur a perdu
-                    else 
+                    else if( getPlayer()->nombreVies <= 0 )
                     {
                         GameOver_Load();
                     }
