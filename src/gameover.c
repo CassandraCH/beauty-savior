@@ -221,7 +221,7 @@ extern void GameOver_Load()
     Set_Level(1);
     setOs(0);
     setBranche(0);
-    setRock(0);
+    setRock(1);
 
     GameObject_Clean(getGameObject(), 4);
     GameOver_Init();

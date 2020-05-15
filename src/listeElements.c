@@ -88,6 +88,15 @@ extern void List_Init(LinkedList *list)
   list->head = NULL;
   list->queue = NULL;
   list->nodeCount = 0;
+  
+  if(getPlayer()->niveau == 1)
+      list->bulletSpeed = 15;
+  else if (getPlayer()->niveau == 2)
+      list->bulletSpeed = 16;
+  else if (getPlayer()->niveau == 3)
+      list->bulletSpeed = 17;
+  else if (getPlayer()->niveau == 4)
+      list->bulletSpeed = 18;
 }
 
 /**

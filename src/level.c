@@ -59,6 +59,8 @@ extern void Level_Load()
       //Chargement des ennemis
       LoadEnemies("files_assets/ennemi_1.txt");
 
+      Update_TextureEnemi();
+
       //Chargement des textures
       SDL_Texture * itemTex = Texture_Load("graphics_assets/coin.png");
       LoadItems("files_assets/items_1.txt", itemTex);
@@ -76,6 +78,8 @@ extern void Level_Load()
       //Chargement de toutes les entites (sauf joueur)
       LoadAndCreate_PNJ(getCollider(),"files_assets/niveau2.txt") ;
       LoadEnemies("files_assets/ennemi_2.txt");
+
+      Update_TextureEnemi();
 
       //Chargement des textures
       SDL_Texture * itemTex = Texture_Load("graphics_assets/coin.png");
@@ -98,6 +102,8 @@ extern void Level_Load()
          //Chargement de toutes les entites (sauf joueur)
          LoadAndCreate_PNJ(getCollider(),"files_assets/niveau3.txt") ;
          LoadEnemies("files_assets/ennemi_3.txt");
+
+         Update_TextureEnemi();
 
          //Chargement des textures
          SDL_Texture * itemTex = Texture_Load("graphics_assets/coin.png");

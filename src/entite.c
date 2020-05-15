@@ -54,11 +54,11 @@ extern bool Bullets_Update( typeEntite typeA, typeEntite typeB )
 
                         //Si le joueur est à LEFT_Key de l'ennemi, on inverse le sens du tir
                         if( getPlayerX() + getPlayer()->w  <= pt->_rect.x )
-                            pt->movingX = -18;
+                            pt->movingX = -getBullets()->bulletSpeed;
 
                         //Sinon le sens de tir n'est pas inversé
-                        else 
-                            pt->movingX = 18;
+                        else
+                            pt->movingX = getBullets()->bulletSpeed;
                     }
                     //Mise a jour de l'état du lancer du bullet => ne peut plus être lancer
                     pt->lancer = false;
