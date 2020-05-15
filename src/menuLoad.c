@@ -134,6 +134,7 @@ extern void Load_Input(SDL_Event *event)
 
                             //Changer l'etat du joueur
                             getPlayer()->estMort = false;
+                            getPlayer()->nombreVies = 3;
 
                             //Initialisation du hud score
                             SetHUD_IntToTexture(getScores(),(SDL_Color){0xFF,0xFF,0xFF,0xFF}, "", getPlayer()->scores,560, 21);
