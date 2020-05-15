@@ -67,7 +67,6 @@ extern void SetHUD_IntToTexture(HUD * hud,SDL_Color color, const char * nom, int
 
     sprintf( sc, "%s %d" , nom, valeur ); 
     
-
  
     hud->surface = TTF_RenderText_Solid(hud->police, sc, color );
    
@@ -86,25 +85,25 @@ extern void SetHUD_IntToTexture(HUD * hud,SDL_Color color, const char * nom, int
 
 
 /**
- * \fn extern void AfficherHUD(HUD * hud)
+ * \fn extern void Render_HUD(HUD * hud)
  * \brief Fonction qui permet d'afficher un hud
  * \param hud pointeur sur le hud à afficher
  * \return pas de valeur de retour (void)
 */
-extern void AfficherHUD(HUD * hud)
+extern void Render_HUD(HUD * hud)
 {
     SDL_Rect scor = {hud->_rect.x - camera.x  ,hud->_rect.y - camera.y, hud->_rect.w ,hud->_rect.h };
     SDL_RenderCopy(getRenderer(), hud->tex, NULL, &hud->_rect);
 }
 
 /**
- * \fn extern void NettoyerHUD(HUD * hud)
+ * \fn extern void Clean_HUD(HUD * hud)
  * \brief Fonction qui detruit un hud
  * \brief 
  * \param hud pointeur sur le hud à supprimer
  * \return pas de valeur de retour (void)
 */
-extern void NettoyerHUD(HUD * hud)
+extern void Clean_HUD(HUD * hud)
 {
     //Vérifie que la texture a été correctement créé
     if(hud->tex != NULL)

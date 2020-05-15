@@ -77,7 +77,8 @@ extern void Pause_Input(SDL_Event *event)
         if (event->type == SDL_QUIT || event->key.keysym.sym == SDLK_ESCAPE)
         {
             //changer l'etat du jeu
-            getBaseGame()->estActif = false;
+            getBaseGame()->estActif = false;//
+
             return;
         }
 

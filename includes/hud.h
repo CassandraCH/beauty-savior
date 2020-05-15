@@ -27,9 +27,9 @@ typedef struct hud_s
 
 
 extern void Init_HUD(HUD * hud,SDL_Color color,  const char * text, int x,  int y);     /** <initialisation de hud  */
-extern void NettoyerHUD(HUD * hud);                                                     /**< nettoyer, renitialliser le hud */
+extern void Clean_HUD(HUD * hud);                                                     /**< nettoyer, renitialliser le hud */
 extern void SetHUD_IntToTexture(HUD * hud, SDL_Color color, const char * nom, int scores, int posX, int posY); /**< */
-extern void AfficherHUD(HUD * hud);/**< l'affichage de hud*/
+extern void Render_HUD(HUD * hud);/**< l'affichage de hud*/
 
 
 
