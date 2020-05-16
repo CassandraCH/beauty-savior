@@ -61,7 +61,7 @@ extern void ProcessInput(SDL_Event * event)
     }
 
     //Cas où l'utilsateur est sur le menu game over
-    else if (getBaseGame()->state == GAMEOVER)
+    else if (getBaseGame()->state == game_over)
     {
         GameOver_Input(event);
     }

@@ -44,7 +44,7 @@
 #define PAUSE 3
 
 /** @brief GAME OVER */
-#define GAMEOVER 4
+#define game_over 4
 
 /** @brief NIVEAU TERMINE */
 #define LEVEL_COMPLETED 5

@@ -21,13 +21,13 @@
 #include "player.h"
 #include "level.h"
 #include "listeElements.h"
-#include "chargeSave.h"
+#include "charge_save.h"
 #include "texture.h"
 
 #include "entite.h"
 #include "hud.h"
 #include "inventaire.h"
-#include "menuPrincipal.h"
+#include "menu_principal.h"
 #include "menu_load.h"
 #include "menu_pause.h"
 #include "menu_win.h"
@@ -35,7 +35,7 @@
 #include "menu_help.h"
 
 #include "interface.h"
-#include "gameover.h"
+#include "game_over.h"
 
 
 /**
@@ -57,6 +57,7 @@ typedef struct baseGame
 
 }Base_Game; 
 /**< This is the documentation for the preceding typedef */
+
 
 
 #include "definitions.h"

@@ -182,7 +182,7 @@ extern void Game_Render()
   }
 
   //Cas où on a perdu
-  else if (getBaseGame()->state == GAMEOVER )
+  else if (getBaseGame()->state == game_over )
   {
     GameObject_Render(getMenu_Over(), 4, 0, 0 , 1280, 720 );
     

@@ -1,5 +1,5 @@
 /**
- * \file menuPrincipal.c
+ * \file menu_principal.c
  * \author CALVADOS Cindy, CHAUMULON Cassandra, CHELLI Célia, OUSMANOVA Karina
  * \version 1.0
  * \date janvier 2020
@@ -437,28 +437,30 @@ extern void GameObject_LoadRessources(int numero, int num_image, GameObject * ga
 }
 
 /**
- * \fn extern void GameObject_Clean(GameObject * gameObject, int nombreOptions)
+ * \fn extern void GameObject_Clean(GameObject * gameObject, int nombreComponents)
  * \brief Fonction qui permet de nettoyer l'ecran du menu
  * \param gameObject pointeur sur le menu
- * \param nombreOptions nombre d'options du menu
+ * \param nombreComponents nombre de components(options) du menu
  * \return pas de valeur de retour (void)
 */
-extern void GameObject_Clean(GameObject * gameObject, int nombreOptions)
+extern void GameObject_Clean(GameObject * gameObject, int nombreComponents)
 {
  
 
     if( gameObject != NULL )
     {
          //Parcours de toute les options
-        for(int i = 0; i < nombreOptions; i++)
+        for(int i = 0; i < nombreComponents; i++)
         {
-                
-            //Liberation de la memoire utilisee pour la texture de l'option
-            if( gameObject->components[i].texture != NULL ) 
-            {
+
                 //Liberation de la memoire utilisee pour la texture de l'option
-                SDL_DestroyTexture(gameObject->components[i].texture);
-            }
+                if( gameObject->components[i].texture != NULL ) 
+                {
+                    //Liberation de la memoire utilisee pour la texture de l'option
+                    SDL_DestroyTexture(gameObject->components[i].texture);
+                }
+             
+            
         }
     }
       return;

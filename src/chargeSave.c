@@ -1,11 +1,11 @@
 /**
- * \file chargeSave.c
+ * \file charge_save.c
  * \author CALVADOS Cindy, CHAUMULON Cassandra, CHELLI Célia, OUSMANOVA Karina
  * \version 1.0
  * \date janvier 2020
  * \brief Programme qui gère le chargement et la sauvegarde des parties
  */
-#include "chargeSave.h"
+#include "charge_save.h"
 
 /**
  * \fn extern void LoadGame()
