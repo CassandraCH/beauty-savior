@@ -360,9 +360,11 @@ extern void Principal_Input(SDL_Event *event)
                         case 1:
                             // printf("Bouton option press%c\n", 130);
                             printf("Chargement depuis menu principal\n");
-                            Load_Init();
+                        
+                            GameObject_Clean(getMenu_Over(), 4);
                             GameObject_Clean(getGameObject(), 4);
 
+                            Load_Init();
                             //Changement de l'etat du jeu
                             getBaseGame()->state = LOADING;
 

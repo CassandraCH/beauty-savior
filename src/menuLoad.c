@@ -125,6 +125,7 @@ extern void Load_Input(SDL_Event *event)
                         //Cas de la deuxieme option : charger la partie
                         case 1:
                             Level_Destroy();
+                            
                             Player_Reset();
 
                             //Suppression des listes
@@ -140,9 +141,10 @@ extern void Load_Input(SDL_Event *event)
                             SetHUD_IntToTexture(getScores(),(SDL_Color){0xFF,0xFF,0xFF,0xFF}, "", getPlayer()->scores,560, 21);
 
                             //Nettoyage de l'affichage
+                            GameObject_Clean(getMenu_Over(), 4);
                             GameObject_Clean(getGameObject(), 4);
-                            
-                             Interface_Init();
+
+                            Interface_Init();
                             //Charger le niveau
                             Level_Load();
 

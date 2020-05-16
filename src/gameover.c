@@ -113,6 +113,7 @@ extern void GameOver_Input(SDL_Event *event)
                     {
                         //Cas de la première option : nouvelle partie
                         case 0:
+
                             printf("Nouvelle partie depuis gameover");
 
                             //Nettoyage de l'affichage
@@ -132,6 +133,7 @@ extern void GameOver_Input(SDL_Event *event)
                             Delete_List(getBullets());
 
                             Player_Reset();
+                            Interface_Init();
 
                             //Initialisation du hud score
                             Init_HUD(getScores(),(SDL_Color){0xFF,0xFF,0xFF,0xFF}, "0", 565, 17);
@@ -155,8 +157,7 @@ extern void GameOver_Input(SDL_Event *event)
                             GameObject_Clean(   getGameObject() , 4);
 
                             Load_Init();
-                            GameObject_Clean(getGameObject(), 4);
-
+                            
                             //Changement de l'état du jeu
                             getBaseGame()->state = LOADING;
 
