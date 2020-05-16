@@ -80,9 +80,6 @@ extern void     Player_SetBullets();        /**<réglage du nombre de bu llets*/
  ///@}
 
 extern void     Player_Attack();            /**<les attaques du joueurs*/
-
-
-
 extern void     Player_Input(SDL_Event *event); /**< gestion des entrées utilisateur */
 extern void     Player_Render();                /**<affichage du joueur */
 

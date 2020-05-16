@@ -68,8 +68,8 @@ extern void GameObject_LoadRessources(int numero,int num_image, GameObject * gam
 extern void UP_Key(GameObject * gameObject);                                        /**< fonction pour la touche haut du gameObject */
 extern void DOWN_Key(GameObject *gameObject );                                      /**<touche bas  */
 
-extern void RIGHT_Key(GameObject *gameObject, int nombreOptions);                       /**< pour aller a Droite */
-extern void LEFT_Key(GameObject *gameObject,int nombreOptions);                         /**< pour aller a Gauche */
+extern void RIGHT_Key(GameObject *gameObject, int nombreOptions);                   /**< pour aller a Droite */
+extern void LEFT_Key(GameObject *gameObject,int nombreOptions);                     /**< pour aller a Gauche */
 
 extern void GameObject_Render(GameObject* gameObject, int nombresOptions, int posX, int posY , int largeurBG, int hauteurBG); /* Rendu d'un gameObject */
 extern void GameObject_Clean(GameObject * gameObject, int nombreOptions);           /**< fonction servant à libérer les ressources d'un gameObject */

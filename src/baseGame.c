@@ -30,10 +30,9 @@ Base_Game* getBaseGame()
  * \fn extern void Update(float dt)
  * \brief Fonction qui permet gérer les comportements des entités si on se Find dans une partie et gérer le son si on se Find sur le menu principal
  * \brief Etat du jeu possible : menu principal ou en partie
- * \param dt valeur du delta-time
  * \return pas de valeur de retour (void)
 */
-extern void Update(float dt)
+extern void Update()
 { 
   //Si la partie n'est pas gagnée 
   if( getBaseGame()->state != GAMEWIN )
@@ -113,16 +112,16 @@ extern void Game_Render()
   else if ( getBaseGame()->state == LOADING )
   {
     GameObject_Render(getMenuLoad(), 2, 0,0 , 1280, 720) ;
-    AfficherHUD(getScores());
-    AfficherHUD( getNiveau() );
+    RenderHUD(getScores());
+    RenderHUD( getNiveau() );
   }
 
   //Cas où un niveau est terminé
   else if ( getBaseGame()->state == LEVEL_COMPLETED )
   {
     GameObject_Render(getMenuCon(), 1,0, 0, 1280, 720);
-    AfficherHUD(  getScores() );
-    AfficherHUD( getNiveau() );
+    RenderHUD(  getScores() );
+    RenderHUD( getNiveau() );
   }
 
   //Cas où le jeu est en pause
@@ -135,17 +134,17 @@ extern void Game_Render()
   else if ( getBaseGame()->state == INVENTAIRE )
   {
       GameObject_Render( getInventaire(),3, 300, 200, 607, 269 );
-      AfficherHUD(getItem(0)); 
-      AfficherHUD(getItem(1));
-      AfficherHUD(getItem(2));
+      RenderHUD(getItem(0)); 
+      RenderHUD(getItem(1));
+      RenderHUD(getItem(2));
   }
 
   //Cas où le jeu est terminé = tous les niveaux sont terminés
   else if ( getBaseGame()->state == GAMEWIN )
   {
     GameObject_Render( getMenu_Win() ,2, 413, 74,433, 478  );
-    AfficherHUD( getNombreVie() );
-    AfficherHUD( getScores()  );
+    RenderHUD( getNombreVie() );
+    RenderHUD( getScores()  );
 
   }
   // Cas où le joueur affiche l'aide 
