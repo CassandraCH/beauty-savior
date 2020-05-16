@@ -26,26 +26,24 @@ int main( int argc, char ** argv )
     
     //Initialisation du generateur de nombres aleatoires
     srand( (int) time(NULL));
+    
     unsigned int frameLimit = SDL_GetTicks() + 16;
     //
     int flPreviousTime = 0, flCurrentTime = 0;
 
-    //delta-time
-    float dt = 0.0f;
-
     //Tant que le jeu est actif (le jeu n'a pas ete quitte)
 	while( getBaseGame()->estActif )
     {   
-        //Gestion des entrees utilisateur
+        //Gestion des entrees utilisateurs
         ProcessInput(&event);
       
-        //Gestion du comportement des entites
-        Update(dt);
+        //Mis à jour des composants
+        Update();
         
-        //Gestion de l'affichage
+        // Gestion de l'affichage des éléments graphiques du jeu
 		Game_Render( getBaseGame() );
         
-        // Gestion des 60 fps (1000ms/60 = 16.6 -> 16 
+        // Gestion des 60 fps (1000ms/60 = 16.6 -> 16)
         delay(frameLimit);
 		frameLimit = SDL_GetTicks() + 16;
     } 

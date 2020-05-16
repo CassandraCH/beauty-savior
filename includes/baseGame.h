@@ -28,14 +28,13 @@
 #include "hud.h"
 #include "inventaire.h"
 #include "menuPrincipal.h"
-#include "menuLoad.h"
-#include "menuPause.h"
+#include "menu_load.h"
+#include "menu_pause.h"
 #include "menu_win.h"
 #include "menu_continue.h"
 #include "menu_help.h"
 
 #include "interface.h"
-
 #include "gameover.h"
 
 

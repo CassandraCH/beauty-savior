@@ -13,7 +13,7 @@
 
 /**
 * \struct hud_s
-* \brief structure gerant les informations concernant le joueur
+* \brief structure lié à la gestion d'élément graphique
 */
 typedef struct hud_s
 {

@@ -8,9 +8,6 @@
 
 /*######## GETTER & SETTER ######## */
 
-
-
-
 /*! \addtogroup Getter
 *   
  */
