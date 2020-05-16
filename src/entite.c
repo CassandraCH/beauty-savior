@@ -6,7 +6,7 @@
  * \brief Programme qui gère le comportement des entités 
  * \brief Gestion des collisions entre le joueur et le décor (plateformes), le joueur et les ennemis, les ennemis et les projectiles ou si le joueur tombe dans le vide
  */
-#include "baseGame.h"
+#include "basegame.h"
 
 /**
  * \fn extern bool Bullets_Update( typeEntite typeA, typeEntite typeB )

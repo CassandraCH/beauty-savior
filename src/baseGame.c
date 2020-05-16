@@ -1,12 +1,12 @@
 /**
- * \file baseGame.c
+ * \file basegame.c
  * \author CALVADOS Cindy, CHAUMULON Cassandra, CHELLI Célia, OUSMANOVA Karina
  * \version 1.0
  * \date janvier 2020
  * \brief Programme qui gère les différents comportements du jeu en fonction de l'état
  * \brief Etat possible : en cours de partie, en pause...
  */
-#include "baseGame.h"
+#include "basegame.h"
 #include "commun.h"
 
 

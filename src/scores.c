@@ -7,7 +7,7 @@
  * \brief Initialisation, mise à jour, affichage et destruction du score
  */
 
-#include "baseGame.h"
+#include "basegame.h"
 
 
 HUD score; /**< hud du score */

@@ -12,7 +12,7 @@
 
 
 #include "commun.h"
-#include "baseGame.h"
+#include "basegame.h"
 
 extern void LoadGame();                                             /**< les chargements des parties */
 extern void SaveGame();                                             /**< les sauvegardes de parties */

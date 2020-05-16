@@ -5,7 +5,7 @@
  * \date avril 2020
  * \brief Programme qui gère l'interface de l'utilisateur 
  */
-#include "baseGame.h"
+#include "basegame.h"
 
 GameObject interface; /**< Structure de type GameObject */
 

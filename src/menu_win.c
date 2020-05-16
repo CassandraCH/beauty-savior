@@ -7,7 +7,7 @@
  * \brief Initialisation, affichage du menu, navigation dans le menu, gestion des entrees clavier et destruction du menu
  */
 
-#include "baseGame.h"
+#include "basegame.h"
 
 GameObject menu_win; /**< Structure de type GameObject */
 
@@ -86,7 +86,7 @@ extern void GameWin_Input(SDL_Event *event)
         if (event->type == SDL_QUIT || event->key.keysym.sym == SDLK_ESCAPE)
         {
             //changer l'etat du jeu
-            getBaseGame()->estActif = false;
+            getBaseGame()->isActive = false;
             return;
         }
 
@@ -111,7 +111,7 @@ extern void GameWin_Input(SDL_Event *event)
                     {
                         //Cas de la premiere option : Quitter le jeux
                         case 0:
-                            getBaseGame()->estActif = false;                  
+                            getBaseGame()->isActive = false;                  
                             break;
                         //Cas de la deuxieme option : retour sur le menu principal
                         case 1:

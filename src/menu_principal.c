@@ -6,7 +6,7 @@
  * \brief Programme qui gère le menu principal
  * \brief Initialisation, affichage du menu, navigation dans le menu, gestion des entrées clavier et destruction du menu
  */
-#include "baseGame.h"
+#include "basegame.h"
 
 GameObject _gameObject; /**< Structure de type GameObject */
 
@@ -307,7 +307,7 @@ extern void Principal_Input(SDL_Event *event)
         if( event->type == SDL_QUIT ||  event->key.keysym.sym == SDLK_ESCAPE )
         {
             //changer l'etat du jeu
-            getBaseGame()->estActif = false;
+            getBaseGame()->isActive = false;
             return;
         }
 
@@ -375,7 +375,7 @@ extern void Principal_Input(SDL_Event *event)
                         //Cas de la troisieme option : quitter le jeu
                         case 2:
                             //Changement de l'etat du jeu
-                            getBaseGame()->estActif = false;
+                            getBaseGame()->isActive = false;
                             return;
                             break;
                         default:

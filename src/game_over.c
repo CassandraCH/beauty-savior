@@ -7,7 +7,7 @@
  * \brief Initialisation, affichage du menu, navigation dans le menu, gestion des entrees clavier et destruction du menu
  */
 
-#include "baseGame.h"
+#include "basegame.h"
 
 GameObject menu_over; /**< Structure de type GameObject */
 
@@ -82,7 +82,7 @@ extern void GameOver_Input(SDL_Event *event)
         if (event->type == SDL_QUIT || event->key.keysym.sym == SDLK_ESCAPE)
         {
             //changer l'etat du jeu
-            getBaseGame()->estActif = false;
+            getBaseGame()->isActive = false;
             return;
         }
 
@@ -168,7 +168,7 @@ extern void GameOver_Input(SDL_Event *event)
                         //Cas de la troisième option : quitter
                         case 2:
                             //Changement de l'état du jeu
-                            getBaseGame()->estActif = false;
+                            getBaseGame()->isActive = false;
                             return;
                             break;
 

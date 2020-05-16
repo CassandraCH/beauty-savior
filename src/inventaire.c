@@ -5,7 +5,7 @@
  * \date avril 2020
  * \brief Programme qui gère l'inventaire (liste des objets collectés par le joueur) 
  */
-#include "baseGame.h"
+#include "basegame.h"
 
 GameObject inventaire; /**< Structure de type GameObject */
 
@@ -205,7 +205,7 @@ extern void Inventaire_Input(SDL_Event *event)
         if (event->type == SDL_QUIT || event->key.keysym.sym == SDLK_ESCAPE)
         {
             //changer l'état du jeu
-            getBaseGame()->estActif = false;
+            getBaseGame()->isActive = false;
             return;
         }
 

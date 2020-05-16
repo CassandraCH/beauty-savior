@@ -7,7 +7,7 @@
  * \brief Initialisation, affichage du menu, navigation dans le menu, gestion des entrees clavier et destruction du menu
  */
 
-#include "baseGame.h"
+#include "basegame.h"
 
 GameObject help; /**< Structure de type GameObject */
 
@@ -61,7 +61,7 @@ extern void Help_Input(SDL_Event *event)
         if (event->type == SDL_QUIT || event->key.keysym.sym == SDLK_ESCAPE)
         {
             //changer l'etat du jeu
-            getBaseGame()->estActif = false;
+            getBaseGame()->isActive = false;
             return;
         }
 

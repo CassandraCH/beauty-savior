@@ -7,7 +7,7 @@
  * \brief Affichage et mise à jour graphique des éléments
  */
 
-#include "baseGame.h"
+#include "basegame.h"
 
 /**
  * \fn extern void Init_HUD(HUD * hud, SDL_Color color, const char * text, int x,  int y)
@@ -73,7 +73,6 @@ extern void SetHUD_IntToTexture(HUD * hud,SDL_Color color, const char * nom, int
     //Transformation de la surface en texture
     hud->tex = SDL_CreateTextureFromSurface( getRenderer() , hud->surface );
 
-   
     int width, height;
     SDL_QueryTexture(hud->tex, NULL, NULL, &width, &height);
 

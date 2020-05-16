@@ -6,7 +6,7 @@
  * \brief Programme qui gère les textures (affichage)
  * \brief Chargement des images, des textures, des textes et destruction des textures
  */
-#include "baseGame.h"
+#include "basegame.h"
 
 SDL_Texture * texture; /**< Texture pour les ennemis */
 SDL_Texture * itemTex; /**< Texture pour les pièces */

@@ -8,7 +8,7 @@
  * \brief Programme principal du jeu
  */
 
-#include "baseGame.h"
+#include "basegame.h"
 
 /**
  * \fn int main( int argc, char ** argv )
@@ -34,7 +34,7 @@ int main( int argc, char ** argv )
     Init("Beauty Savior");
     
     //Tant que le jeu est actif (le jeu n'a pas ete quitte)
-	while( getBaseGame()->estActif ) {   
+	while( getBaseGame()->isActive ) {   
         //Gestion des entrees utilisateurs
         ProcessInput(&event);
       

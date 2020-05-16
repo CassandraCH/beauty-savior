@@ -6,7 +6,7 @@
  * \brief Programme qui gère les entrées utilisateur (touches) et la caméra lorsqu'une partie est en cours
  */
 
-#include "baseGame.h"
+#include "basegame.h"
 
 SDL_Rect camera = {0, 0, LARGEUR_FENETRE, HAUTEUR_FENETRE}; /**< Structure qui gère la camera*/
 
@@ -30,7 +30,7 @@ extern void Input_InGame(SDL_Event *event)
         if( event->type == SDL_QUIT || event->key.keysym.sym == SDLK_ESCAPE )
         {   
             //Modification de l'etat du jeu => n'est plus actif
-            getBaseGame()->estActif = false;
+            getBaseGame()->isActive = false;
             return;
         }
 

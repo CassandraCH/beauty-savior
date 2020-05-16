@@ -6,7 +6,7 @@
  * \brief Programme qui gère le menu de chargement
  * \brief Initialisation, affichage du menu, navigation dans le menu, gestion des entrees clavier et destruction du menu
  */
-#include "baseGame.h"
+#include "basegame.h"
 
 GameObject menu_load; /**< Structure de type GameObject */
 
@@ -87,7 +87,7 @@ extern void Load_Input(SDL_Event *event)
         if (event->type == SDL_QUIT || event->key.keysym.sym == SDLK_ESCAPE)
         {
             //changer l'etat du jeu
-            getBaseGame()->estActif = false;
+            getBaseGame()->isActive = false;
             return;
         }
 

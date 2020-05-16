@@ -7,7 +7,7 @@
  * \brief Initialisation, affichage (et actualisation en fonction des entrées clavier), positionnement et déplacement du joueur
  * \brief Gestion des tirs (attaques) et des collisions
  */
-#include "baseGame.h"
+#include "basegame.h"
 
 int level; /**< numero du niveau */
 Player player; /**< joueur */

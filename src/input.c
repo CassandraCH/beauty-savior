@@ -5,7 +5,7 @@
  * \date janvier 2020
  * \brief Programme qui gère les entrées de l'utilisateur en fonction de si l'utilisateur est en train de jouer ou bien sur le menu principal
  */
-#include "baseGame.h"
+#include "basegame.h"
 
 /**
  * \fn extern void ProcessInput(SDL_Event * event)

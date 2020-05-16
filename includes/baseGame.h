@@ -1,5 +1,5 @@
 /**
- * \file baseGame.h
+ * \file basegame.h
  * \author CALVADOS Cindy, CHAUMULON Cassandra, CHELLI Célia, OUSMANOVA Karina
  * \version 1.0
  * \date mars 2020
@@ -20,7 +20,7 @@
 #include "entite.h"
 #include "player.h"
 #include "level.h"
-#include "listeElements.h"
+#include "liste_elements.h"
 #include "charge_save.h"
 #include "texture.h"
 
@@ -39,13 +39,13 @@
 
 
 /**
- *\struct baseGame
+ *\struct basegame
  *\brief  Structure principale de jeux, qui gère tous les composants du jeux majeurs.
  */
-typedef struct baseGame
+typedef struct basegame
 {
     int state;      /**< Etat du jeu : en cours de partie, sur le menu principal */
-    bool estActif;  /**< Etat du jeu : Actif - Non Actif */
+    bool isActive;  /**< Etat du jeu : Actif - Non Actif */
     int time;       /**< time : temps du jeux */
 
     int min;        /**<  : temps liée au timer du jeux : minutes du jeux */

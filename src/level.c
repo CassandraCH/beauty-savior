@@ -8,7 +8,7 @@
 #include "level.h"
 #include "constantes.h"
 
-#include "baseGame.h"
+#include "basegame.h"
 
 Level level; /**< Structure d'un niveau */
 

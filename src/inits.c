@@ -8,7 +8,7 @@
  * \brief Destruction du son, des ennemis, de la fenêtre, du menu prinicpal, du rendu...
  */
 #include "commun.h"
-#include "baseGame.h"
+#include "basegame.h"
 
 SDL_Renderer *rendu = NULL; /**< Structure du rendu */
 SDL_Window *fenetre = NULL; /**< Structure de la fenêtre */
@@ -131,7 +131,7 @@ void Init(const char *title)
     getBaseGame()->tempsPrecedent = 0;
     getBaseGame()->min = 60;
   
-    getBaseGame()->estActif = true;
+    getBaseGame()->isActive = true;
 }
 
 /**
