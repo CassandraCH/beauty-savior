@@ -20,20 +20,21 @@
 */
 int main( int argc, char ** argv )
 {
-    //Initialisation de la fenetre 
-    Init("Beauty Savior");
+    
 	SDL_Event event;
     
     //Initialisation du generateur de nombres aleatoires
     srand( (int) time(NULL));
-    
+
     unsigned int frameLimit = SDL_GetTicks() + 16;
     //
     int flPreviousTime = 0, flCurrentTime = 0;
 
+    //Initialisation des données du jeu
+    Init("Beauty Savior");
+    
     //Tant que le jeu est actif (le jeu n'a pas ete quitte)
-	while( getBaseGame()->estActif )
-    {   
+	while( getBaseGame()->estActif ) {   
         //Gestion des entrees utilisateurs
         ProcessInput(&event);
       

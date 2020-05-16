@@ -130,8 +130,6 @@ void Init(const char *title)
     getBaseGame()->tempsActuel = 0;
     getBaseGame()->tempsPrecedent = 0;
     getBaseGame()->min = 60;
-
-   
   
     getBaseGame()->estActif = true;
 }
