@@ -1,0 +1,52 @@
+.TH "hud_s" 3 "Samedi 16 Mai 2020" "Version 0.2" "Beauty Savior" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+hud_s \- structure lié à la gestion d'élément graphique  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <hud\&.h>\fP
+.SS "Champs de données"
+
+.in +1c
+.ti -1c
+.RI "TTF_Font * \fBpolice\fP"
+.br
+.ti -1c
+.RI "SDL_Surface * \fBsurface\fP"
+.br
+.ti -1c
+.RI "SDL_Texture * \fBtex\fP"
+.br
+.ti -1c
+.RI "SDL_Rect \fB_rect\fP"
+.br
+.in -1c
+.SH "Description détaillée"
+.PP 
+structure lié à la gestion d'élément graphique 
+.SH "Documentation des champs"
+.PP 
+.SS "SDL_Rect _rect"
+le rectangle ou sera afficher le rendu du hud 
+.br
+ 
+.SS "TTF_Font* police"
+la police qui est utilise pour l'affichage du hud 
+.br
+ 
+.SS "SDL_Surface* surface"
+la surface qui sera convertit en texture 
+.br
+ 
+.SS "SDL_Texture* tex"
+correspond a la texture du hud,c'est a dire ce qui sera affiché 
+.br
+ 
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Beauty Savior à partir du code source\&.

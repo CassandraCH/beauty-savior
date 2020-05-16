@@ -2,8 +2,6 @@
 src/*.o
 .vs/*
 
-doc/*.*
-doc/*
 
 
 # Object files

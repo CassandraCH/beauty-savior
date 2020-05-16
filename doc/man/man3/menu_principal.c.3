@@ -1,0 +1,291 @@
+.TH "src/menu_principal.c" 3 "Samedi 16 Mai 2020" "Version 0.2" "Beauty Savior" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/menu_principal.c \- Programme qui gère le menu principal\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'basegame\&.h'\fP
+.br
+
+.SS "Fonctions"
+
+.in +1c
+.ti -1c
+.RI "\fBGameObject\fP * \fBgetGameObject\fP ()"
+.br
+.RI "Fonction qui permet retourner le menu principal\&. "
+.ti -1c
+.RI "int \fBGetKeypressed\fP (\fBGameObject\fP *\fBgameObject\fP)"
+.br
+.RI "Fonction qui retourne l'option du menu selectionne\&. "
+.ti -1c
+.RI "void \fBPrincipal_Init\fP ()"
+.br
+.RI "Fonction qui initialise le menu principal\&. "
+.ti -1c
+.RI "void \fBUpdateComponent\fP (\fBComponent\fP *\fBcomponent\fP, int etat)"
+.br
+.ti -1c
+.RI "void \fBUpdateImage_Component\fP (\fBComponent\fP *\fBcomponent\fP, const char *filename)"
+.br
+.ti -1c
+.RI "void \fBUP_Key\fP (\fBGameObject\fP *\fBgameObject\fP)"
+.br
+.RI "Fonction qui permet de naviguer dans le menu vers le haut\&. "
+.ti -1c
+.RI "void \fBDOWN_Key\fP (\fBGameObject\fP *\fBgameObject\fP)"
+.br
+.RI "Fonction qui permet de naviguer dans le menu vers le bas\&. "
+.ti -1c
+.RI "void \fBRIGHT_Key\fP (\fBGameObject\fP *\fBgameObject\fP, int nombresOptions)"
+.br
+.RI "Fonction qui permet de naviguer dans le menu a RIGHT_Key\&. "
+.ti -1c
+.RI "void \fBLEFT_Key\fP (\fBGameObject\fP *\fBgameObject\fP, int nombresOptions)"
+.br
+.RI "Fonction qui permet de naviguer dans le menu a LEFT_Key\&. "
+.ti -1c
+.RI "void \fBGameObject_Render\fP (\fBGameObject\fP *\fBgameObject\fP, int nombresOptions, int posX, int posY, int largeurBG, int hauteurBG)"
+.br
+.RI "Fonction qui permet d'afficher le menu\&. "
+.ti -1c
+.RI "void \fBPrincipal_Input\fP (SDL_Event *event)"
+.br
+.RI "Fonction qui gere les evenements du menu principal\&. "
+.ti -1c
+.RI "void \fBGameObject_LoadRessources\fP (int numero, int num_image, \fBGameObject\fP *\fBgameObject\fP, char *image_on, char *image_off, int positionX, int positionY)"
+.br
+.RI "Fonction qui gere le chargement des donnes du menu\&. "
+.ti -1c
+.RI "void \fBGameObject_Clean\fP (\fBGameObject\fP *\fBgameObject\fP, int nombreComponents)"
+.br
+.RI "Fonction qui permet de nettoyer l'ecran du menu\&. "
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBGameObject\fP \fB_gameObject\fP"
+.br
+.in -1c
+.SH "Description détaillée"
+.PP 
+Programme qui gère le menu principal\&. 
+
+
+.PP
+\fBAuteur\fP
+.RS 4
+CALVADOS Cindy, CHAUMULON Cassandra, CHELLI Célia, OUSMANOVA Karina 
+.RE
+.PP
+\fBVersion\fP
+.RS 4
+1\&.0 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+janvier 2020
+.RE
+.PP
+Initialisation, affichage du menu, navigation dans le menu, gestion des entrées clavier et destruction du menu 
+.SH "Documentation des fonctions"
+.PP 
+.SS "void DOWN_Key (\fBGameObject\fP * gameObject)"
+
+.PP
+Fonction qui permet de naviguer dans le menu vers le bas\&. 
+.PP
+\fBParamètres\fP
+.RS 4
+\fI\fBgameObject\fP\fP pointeur sur le menu 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void GameObject_Clean (\fBGameObject\fP * gameObject, int nombreComponents)"
+
+.PP
+Fonction qui permet de nettoyer l'ecran du menu\&. 
+.PP
+\fBParamètres\fP
+.RS 4
+\fI\fBgameObject\fP\fP pointeur sur le menu 
+.br
+\fInombreComponents\fP nombre de components(options) du menu 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void GameObject_LoadRessources (int numero, int num_image, \fBGameObject\fP * gameObject, char * image_on, char * image_off, int positionX, int positionY)"
+
+.PP
+Fonction qui gere le chargement des donnes du menu\&. 
+.PP
+\fBParamètres\fP
+.RS 4
+\fInumero\fP numero de l'option 
+.br
+\fInum_image\fP numero de l'image selectionne par defaut 
+.br
+\fI\fBgameObject\fP\fP pointeur sur le menu 
+.br
+\fIimage_on\fP chemin pour acceder a l'image selectionnee 
+.br
+\fIimage_off\fP chemin pour acceder a l'image deselectionnee 
+.br
+\fIpositionX\fP position en x 
+.br
+\fIpositionY\fP position en y 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void GameObject_Render (\fBGameObject\fP * gameObject, int nombresOptions, int posX, int posY, int largeurBG, int hauteurBG)"
+
+.PP
+Fonction qui permet d'afficher le menu\&. Affichage des différentes options 
+.PP
+\fBParamètres\fP
+.RS 4
+\fI\fBgameObject\fP\fP pointeur sur le menu 
+.br
+\fInombresOptions\fP nombre d'options dans le menu 
+.br
+\fIposX\fP position en x de l'arriere plan 
+.br
+\fIposY\fP position en y de l'arriere plan 
+.br
+\fIlargeurBG\fP largeur de l'arriere plan 
+.br
+\fIhauteurBG\fP hauteur de l'arriere plan 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "int GetKeypressed (\fBGameObject\fP * gameObject)"
+
+.PP
+Fonction qui retourne l'option du menu selectionne\&. 
+.PP
+\fBParamètres\fP
+.RS 4
+\fI\fBgameObject\fP\fP pointeur sur le menu 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+un entier correspondant au numero de l'option selectionnee 
+.RE
+.PP
+
+.SS "void LEFT_Key (\fBGameObject\fP * gameObject, int nombresOptions)"
+
+.PP
+Fonction qui permet de naviguer dans le menu a LEFT_Key\&. 
+.PP
+\fBParamètres\fP
+.RS 4
+\fI\fBgameObject\fP\fP pointeur sur le menu 
+.br
+\fInombresOptions\fP nombre d'options 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void Principal_Init ()"
+
+.PP
+Fonction qui initialise le menu principal\&. 
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void Principal_Input (SDL_Event * event)"
+
+.PP
+Fonction qui gere les evenements du menu principal\&. Gestion des entrees clavier de l'utilisateur 
+.PP
+\fBParamètres\fP
+.RS 4
+\fIevent\fP evenement 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void RIGHT_Key (\fBGameObject\fP * gameObject, int nombresOptions)"
+
+.PP
+Fonction qui permet de naviguer dans le menu a RIGHT_Key\&. 
+.PP
+\fBParamètres\fP
+.RS 4
+\fI\fBgameObject\fP\fP Pointeur sur le \fBgameObject\fP 
+.br
+\fInombresOptions\fP Nombre de components utilisés 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void UP_Key (\fBGameObject\fP * gameObject)"
+
+.PP
+Fonction qui permet de naviguer dans le menu vers le haut\&. 
+.PP
+\fBParamètres\fP
+.RS 4
+\fI\fBgameObject\fP\fP pointeur sur le menu 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void UpdateComponent (\fBComponent\fP * component, int etat)"
+fonction de mise à jour du component d'un \fBgameObject\fP 
+.SS "void UpdateImage_Component (\fBComponent\fP * component, const char * filename)"
+fonction de mise à jour d'image du component d'un \fBgameObject\fP 
+.SH "Documentation des variables"
+.PP 
+.SS "\fBGameObject\fP _gameObject"
+Structure de type GameObject 
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Beauty Savior à partir du code source\&.

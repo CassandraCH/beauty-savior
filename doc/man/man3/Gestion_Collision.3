@@ -1,0 +1,118 @@
+.TH "Gestion_Collision" 3 "Samedi 16 Mai 2020" "Version 0.2" "Beauty Savior" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Gestion_Collision \- Listes de toutes les méthodes liées au Collision\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Fonctions"
+
+.in +1c
+.ti -1c
+.RI "void \fBLevel_Collision\fP ()"
+.br
+.RI "Fonction qui gère les collisions avec le décor\&. "
+.ti -1c
+.RI "void \fBCollision_Detection\fP ()"
+.br
+.RI "Fonction qui gère les collision entre le joueur et le decor, le joueur et les ennemis; et si le joueur tombe dans le vide\&. "
+.ti -1c
+.RI "\fBbool\fP \fBcollide2d\fP (float x1, float y1, float x2, float y2, float wt1, float ht1, float wt2, float ht2)"
+.br
+.RI "Fonction qui verifie la collision entre 2 elements\&. "
+.ti -1c
+.RI "void \fBShoot_Collision\fP ()"
+.br
+.RI "Fonction qui gere les collisions entre un bullet et un ennemi\&. "
+.ti -1c
+.RI "void \fBCollisionItems\fP ()"
+.br
+.RI "Fonction qui gere les collisions avec les items\&. "
+.in -1c
+.SH "Description détaillée"
+.PP 
+Listes de toutes les méthodes liées au Collision\&. 
+
+
+.SH "Documentation des fonctions"
+.PP 
+.SS "\fBbool\fP collide2d (float x1, float y1, float x2, float y2, float wt1, float ht1, float wt2, float ht2)"
+
+.PP
+Fonction qui verifie la collision entre 2 elements\&. vérification de la collision entre 2 éléments
+.PP
+\fBParamètres\fP
+.RS 4
+\fIx1\fP position en x du premier element 
+.br
+\fIy1\fP position en y du premier element 
+.br
+\fIx2\fP position en x du deuxieme element 
+.br
+\fIy2\fP position en y du deuxieme element 
+.br
+\fIwt1\fP largeur du premier element 
+.br
+\fIht1\fP hauteur du premier element 
+.br
+\fIwt2\fP largeur du deuxieme element 
+.br
+\fIht2\fP hauteur du deuxieme element 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+un booleen : VRAI s'il y a collison, FAUX sinon 
+.RE
+.PP
+
+.SS "void Collision_Detection ()"
+
+.PP
+Fonction qui gère les collision entre le joueur et le decor, le joueur et les ennemis; et si le joueur tombe dans le vide\&. les detection de collisions 
+.br
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void CollisionItems ()"
+
+.PP
+Fonction qui gere les collisions avec les items\&. 
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void Level_Collision ()"
+
+.PP
+Fonction qui gère les collisions avec le décor\&. 
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void Shoot_Collision ()"
+
+.PP
+Fonction qui gere les collisions entre un bullet et un ennemi\&. collission des tirs du joueur
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Beauty Savior à partir du code source\&.

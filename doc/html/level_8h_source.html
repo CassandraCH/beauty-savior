@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Beauty Savior:  Fichier source de includes/level.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo_doxy.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Beauty Savior
+   &#160;<span id="projectnumber">0.2</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_09e761304027c904456130627fd4dcf5.html">includes</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">level.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="level_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#ifndef __LEVEL_H</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#define __LEVEL_H </span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;texture.h&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="structlevel.html">   19</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structlevel.html">level</a></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="structlevel.html#ac63a91a97e269326321f0a4001e2ef21">   22</a></span>&#160;    <a class="code" href="struct_texture___manager.html">Texture_Manager</a> <a class="code" href="structlevel.html#ac63a91a97e269326321f0a4001e2ef21">levelTextures</a>[5];   </div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="structlevel.html#a0d02b00b1392caf444bad30e61df2c9e">   23</a></span>&#160;    <a class="code" href="struct_texture___manager.html">Texture_Manager</a> <a class="code" href="structlevel.html#a0d02b00b1392caf444bad30e61df2c9e">layer_1</a>;            </div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="structlevel.html#a54351e35b8b0b13933ae36e8a3f5b7e7">   24</a></span>&#160;    <a class="code" href="struct_texture___manager.html">Texture_Manager</a> <a class="code" href="structlevel.html#a54351e35b8b0b13933ae36e8a3f5b7e7">layer_2</a>;            </div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="structlevel.html#a1a2ca124cd411fbbd1b628c0acd8686d">   25</a></span>&#160;    <a class="code" href="struct_texture___manager.html">Texture_Manager</a> <a class="code" href="structlevel.html#a1a2ca124cd411fbbd1b628c0acd8686d">layer_3</a>;            </div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="structlevel.html#a505b46750c7f9ae828d45bbf08ab8d35">   27</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structlevel.html#a505b46750c7f9ae828d45bbf08ab8d35">departX</a>;    </div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="structlevel.html#aa43b8450f7191b74989a2653f1a8b139">   28</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structlevel.html#aa43b8450f7191b74989a2653f1a8b139">departY</a>;    </div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="structlevel.html#ab8ebe819b6cfefc95a0793d1b44f9152">   30</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structlevel.html#ab8ebe819b6cfefc95a0793d1b44f9152">cameraX</a>;    </div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="structlevel.html#afbcb58b5cb41b076a8c32950b7e6c335">   31</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structlevel.html#afbcb58b5cb41b076a8c32950b7e6c335">cameraY</a>;    </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;}<a class="code" href="level_8h.html#ac1551656a68ed66f6599769b3597607f">Level</a>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">extern</span> <a class="code" href="structlevel.html">Level</a> *  <a class="code" href="level_8h.html#a6a7d673fdffc2a6ccc8d52eae5f6a7ff">Get_Level</a>();                                </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span>     <a class="code" href="level_8h.html#abcb64c4e1a5f98c0f371ea276cd196e6">Set_Level</a>(<span class="keywordtype">int</span> <a class="code" href="scores_8c.html#ad8fced43a1512c1ba76ca0d12d718c48">niveau</a>);                      </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span>     <a class="code" href="level_8h.html#a7b4c55971be563d00d1d2a9c0513da5c">Level_Load</a>();                               </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span>     <a class="code" href="level_8h.html#a0759e4ea8dd0966291fd234043427724">Level_Render</a>();                             </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span>     <a class="code" href="level_8h.html#a0c54b7d11bf9135f8de62d9478db6439">Level_Destroy</a>();                            </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span>     <a class="code" href="level_8h.html#abf1125b91e2539588aee755e704e5338">Level_Textures_Render</a>(<span class="keywordtype">int</span> <a class="code" href="scores_8c.html#ad8fced43a1512c1ba76ca0d12d718c48">niveau</a>);          </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span>     <a class="code" href="level_8h.html#a2ca40c89f5d9919989aa0f95fbe7e66d">Debug_AfficherCollider</a>();                   </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="alevel_8h_html_a6a7d673fdffc2a6ccc8d52eae5f6a7ff"><div class="ttname"><a href="level_8h.html#a6a7d673fdffc2a6ccc8d52eae5f6a7ff">Get_Level</a></div><div class="ttdeci">Level * Get_Level()</div><div class="ttdoc">Fonction qui permet d'accéder à la structure d'un niveau.</div><div class="ttdef"><b>Definition:</b> level.c:20</div></div>
+<div class="ttc" id="astructlevel_html"><div class="ttname"><a href="structlevel.html">level</a></div><div class="ttdoc">structure gerant les niveux</div><div class="ttdef"><b>Definition:</b> level.h:19</div></div>
+<div class="ttc" id="astructlevel_html_a505b46750c7f9ae828d45bbf08ab8d35"><div class="ttname"><a href="structlevel.html#a505b46750c7f9ae828d45bbf08ab8d35">level::departX</a></div><div class="ttdeci">int departX</div><div class="ttdef"><b>Definition:</b> level.h:27</div></div>
+<div class="ttc" id="ascores_8c_html_ad8fced43a1512c1ba76ca0d12d718c48"><div class="ttname"><a href="scores_8c.html#ad8fced43a1512c1ba76ca0d12d718c48">niveau</a></div><div class="ttdeci">HUD niveau</div><div class="ttdef"><b>Definition:</b> scores.c:15</div></div>
+<div class="ttc" id="astructlevel_html_a1a2ca124cd411fbbd1b628c0acd8686d"><div class="ttname"><a href="structlevel.html#a1a2ca124cd411fbbd1b628c0acd8686d">level::layer_3</a></div><div class="ttdeci">Texture_Manager layer_3</div><div class="ttdef"><b>Definition:</b> level.h:25</div></div>
+<div class="ttc" id="alevel_8h_html_a0759e4ea8dd0966291fd234043427724"><div class="ttname"><a href="level_8h.html#a0759e4ea8dd0966291fd234043427724">Level_Render</a></div><div class="ttdeci">void Level_Render()</div><div class="ttdoc">Fonction qui permet d'afficher un niveau.</div><div class="ttdef"><b>Definition:</b> level.c:197</div></div>
+<div class="ttc" id="alevel_8h_html_ac1551656a68ed66f6599769b3597607f"><div class="ttname"><a href="level_8h.html#ac1551656a68ed66f6599769b3597607f">Level</a></div><div class="ttdeci">struct level Level</div></div>
+<div class="ttc" id="astructlevel_html_aa43b8450f7191b74989a2653f1a8b139"><div class="ttname"><a href="structlevel.html#aa43b8450f7191b74989a2653f1a8b139">level::departY</a></div><div class="ttdeci">int departY</div><div class="ttdef"><b>Definition:</b> level.h:28</div></div>
+<div class="ttc" id="alevel_8h_html_a0c54b7d11bf9135f8de62d9478db6439"><div class="ttname"><a href="level_8h.html#a0c54b7d11bf9135f8de62d9478db6439">Level_Destroy</a></div><div class="ttdeci">void Level_Destroy()</div><div class="ttdoc">Fonction qui permet de gérer la destruction des niveaux et la libération des ressources qui ont été u...</div><div class="ttdef"><b>Definition:</b> level.c:219</div></div>
+<div class="ttc" id="alevel_8h_html_a7b4c55971be563d00d1d2a9c0513da5c"><div class="ttname"><a href="level_8h.html#a7b4c55971be563d00d1d2a9c0513da5c">Level_Load</a></div><div class="ttdeci">void Level_Load()</div><div class="ttdoc">Fonction qui permet de charger un niveau.</div><div class="ttdef"><b>Definition:</b> level.c:43</div></div>
+<div class="ttc" id="alevel_8h_html_a2ca40c89f5d9919989aa0f95fbe7e66d"><div class="ttname"><a href="level_8h.html#a2ca40c89f5d9919989aa0f95fbe7e66d">Debug_AfficherCollider</a></div><div class="ttdeci">void Debug_AfficherCollider()</div><div class="ttdoc">Fonction de debug qui permet d'afficher les blocs de collision par dessus le decor.</div><div class="ttdef"><b>Definition:</b> level.c:165</div></div>
+<div class="ttc" id="alevel_8h_html_abf1125b91e2539588aee755e704e5338"><div class="ttname"><a href="level_8h.html#abf1125b91e2539588aee755e704e5338">Level_Textures_Render</a></div><div class="ttdeci">void Level_Textures_Render(int niveau)</div><div class="ttdoc">Fonction qui permet d'afficher les textures du niveau passé en paramètre.</div><div class="ttdef"><b>Definition:</b> level.c:186</div></div>
+<div class="ttc" id="astructlevel_html_ac63a91a97e269326321f0a4001e2ef21"><div class="ttname"><a href="structlevel.html#ac63a91a97e269326321f0a4001e2ef21">level::levelTextures</a></div><div class="ttdeci">Texture_Manager levelTextures[5]</div><div class="ttdef"><b>Definition:</b> level.h:22</div></div>
+<div class="ttc" id="astructlevel_html_a54351e35b8b0b13933ae36e8a3f5b7e7"><div class="ttname"><a href="structlevel.html#a54351e35b8b0b13933ae36e8a3f5b7e7">level::layer_2</a></div><div class="ttdeci">Texture_Manager layer_2</div><div class="ttdef"><b>Definition:</b> level.h:24</div></div>
+<div class="ttc" id="astruct_texture___manager_html"><div class="ttname"><a href="struct_texture___manager.html">Texture_Manager</a></div></div>
+<div class="ttc" id="astructlevel_html_afbcb58b5cb41b076a8c32950b7e6c335"><div class="ttname"><a href="structlevel.html#afbcb58b5cb41b076a8c32950b7e6c335">level::cameraY</a></div><div class="ttdeci">int cameraY</div><div class="ttdef"><b>Definition:</b> level.h:31</div></div>
+<div class="ttc" id="astructlevel_html_ab8ebe819b6cfefc95a0793d1b44f9152"><div class="ttname"><a href="structlevel.html#ab8ebe819b6cfefc95a0793d1b44f9152">level::cameraX</a></div><div class="ttdeci">int cameraX</div><div class="ttdef"><b>Definition:</b> level.h:30</div></div>
+<div class="ttc" id="astructlevel_html_a0d02b00b1392caf444bad30e61df2c9e"><div class="ttname"><a href="structlevel.html#a0d02b00b1392caf444bad30e61df2c9e">level::layer_1</a></div><div class="ttdeci">Texture_Manager layer_1</div><div class="ttdef"><b>Definition:</b> level.h:23</div></div>
+<div class="ttc" id="alevel_8h_html_abcb64c4e1a5f98c0f371ea276cd196e6"><div class="ttname"><a href="level_8h.html#abcb64c4e1a5f98c0f371ea276cd196e6">Set_Level</a></div><div class="ttdeci">void Set_Level(int niveau)</div><div class="ttdoc">Fonction qui permet de mettre à jour le niveau du joueur.</div><div class="ttdef"><b>Definition:</b> level.c:32</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

@@ -1,0 +1,60 @@
+.TH "component" 3 "Samedi 16 Mai 2020" "Version 0.2" "Beauty Savior" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+component \- Structure gérant les caractéristiques liées à un component\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <game_objects\&.h>\fP
+.SS "Champs de données"
+
+.in +1c
+.ti -1c
+.RI "int \fBlargeur\fP"
+.br
+.ti -1c
+.RI "int \fBhauteur\fP"
+.br
+.ti -1c
+.RI "SDL_Texture * \fBtexture\fP"
+.br
+.ti -1c
+.RI "int \fBx\fP"
+.br
+.ti -1c
+.RI "int \fBy\fP"
+.br
+.ti -1c
+.RI "char * \fBfilename\fP [2]"
+.br
+.in -1c
+.SH "Description détaillée"
+.PP 
+Structure gérant les caractéristiques liées à un component\&. 
+
+Les components sont toujours liés à un \fBgameObject\fP,ils définissent le comportement de ce GameObject\&. 
+.SH "Documentation des champs"
+.PP 
+.SS "char* filename[2]"
+le fichiers contenant la texture de l'option 
+.SS "int hauteur"
+la hauteur de l'option 
+.SS "int largeur"
+la largeur de l'option 
+.SS "SDL_Texture* texture"
+le texture de l'option 
+.SS "int x"
+la position en x de l'option 
+.br
+ 
+.SS "int y"
+la position en y de l'option 
+.br
+ 
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Beauty Savior à partir du code source\&.

@@ -1,0 +1,59 @@
+.TH "basegame" 3 "Samedi 16 Mai 2020" "Version 0.2" "Beauty Savior" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+basegame \- Structure principale de jeux, qui gère tous les composants du jeux majeurs\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <baseGame\&.h>\fP
+.SS "Champs de données"
+
+.in +1c
+.ti -1c
+.RI "int \fBstate\fP"
+.br
+.ti -1c
+.RI "\fBbool\fP \fBisActive\fP"
+.br
+.ti -1c
+.RI "int \fBtime\fP"
+.br
+.ti -1c
+.RI "int \fBmin\fP"
+.br
+.ti -1c
+.RI "int \fBtempsPrecedent\fP"
+.br
+.ti -1c
+.RI "int \fBtempsActuel\fP"
+.br
+.ti -1c
+.RI "SDL_Texture * \fBpassportReq\fP"
+.br
+.in -1c
+.SH "Description détaillée"
+.PP 
+Structure principale de jeux, qui gère tous les composants du jeux majeurs\&. 
+.SH "Documentation des champs"
+.PP 
+.SS "\fBbool\fP isActive"
+Etat du jeu : Actif - Non Actif 
+.SS "int min"
+: temps liée au timer du jeux : minutes du jeux 
+.SS "SDL_Texture* passportReq"
+Texture du passeport nécéssaire pour le niveau 
+.SS "int state"
+Etat du jeu : en cours de partie, sur le menu principal 
+.SS "int tempsActuel"
+temps actuel en référence au temps écoulé depuis la dernière image 
+.SS "int tempsPrecedent"
+temps précédent en référence au temps écoulé depuis la dernière image 
+.SS "int time"
+time : temps du jeux 
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Beauty Savior à partir du code source\&.

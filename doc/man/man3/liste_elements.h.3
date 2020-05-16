@@ -1,0 +1,254 @@
+.TH "includes/liste_elements.h" 3 "Samedi 16 Mai 2020" "Version 0.2" "Beauty Savior" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+includes/liste_elements.h \- programme qui gere tous les elements met en place pour le jeu \&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'commun\&.h'\fP
+.br
+\fC#include 'texture\&.h'\fP
+.br
+\fC#include 'attributs\&.h'\fP
+.br
+
+.SS "Structures de données"
+
+.in +1c
+.ti -1c
+.RI "struct \fBNode\fP"
+.br
+.RI "structure gerant les noeud de la liste "
+.ti -1c
+.RI "struct \fBlist\fP"
+.br
+.RI "structure gerant les noeud de l'entete et a la fin\&. "
+.in -1c
+.SS "Définitions de type"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fBNode\fP \fBNode\fP"
+.br
+.ti -1c
+.RI "typedef struct \fBlist\fP \fBLinkedList\fP"
+.br
+.in -1c
+.SS "Fonctions"
+
+.in +1c
+.ti -1c
+.RI "void \fBList_Init\fP (\fBLinkedList\fP *\fBlist\fP)"
+.br
+.RI "Fonction qui permet d'initialiser la liste passée en paramètre\&. "
+.ti -1c
+.RI "void \fBList_Update\fP ()"
+.br
+.RI "Fonction qui met à jour les listes des bullets et des ennemis\&. "
+.ti -1c
+.RI "\fBNode\fP * \fBCreateElement\fP (SDL_Rect rect, \fBtypeEntite\fP item_t, \fBbool\fP actif)"
+.br
+.ti -1c
+.RI "void \fBInsert_Element\fP (\fBLinkedList\fP *\fBlist\fP, SDL_Rect _rect, \fBtypeEntite\fP items_t, \fBbool\fP actif)"
+.br
+.RI "Fonction qui permet d'insérer un élément dans une liste passée en paramètre\&. "
+.ti -1c
+.RI "void \fBList_RenderElements\fP (\fBLinkedList\fP *lst, SDL_Texture *tex, \fBtypeEntite\fP typeE, int largeurTex, int hauteurTex)"
+.br
+.ti -1c
+.RI "void \fBDelete_List\fP (\fBLinkedList\fP *lst)"
+.br
+.RI "Fonction qui permet de supprimer la liste passée en paramètre\&. "
+.ti -1c
+.RI "\fBbool\fP \fBDelete_First\fP (\fBLinkedList\fP *lst)"
+.br
+.RI "Fonction qui permet de supprimer la head de la liste passée en paramètre\&. "
+.ti -1c
+.RI "\fBbool\fP \fBDelete_Last\fP (\fBLinkedList\fP *lst)"
+.br
+.RI "Fonction qui permet de supprimer la queue de la liste liste passée en paramètre\&. "
+.ti -1c
+.RI "\fBNode\fP * \fBFind\fP (\fBLinkedList\fP *lsptr, int target, \fBNode\fP **prvPtr)"
+.br
+.RI "Fonction qui permet de chercher un élement dans une liste\&. "
+.ti -1c
+.RI "\fBbool\fP \fBDelete_Target\fP (\fBLinkedList\fP *lsptr, int target)"
+.br
+.RI "Fonction qui permet de supprimer un élément cible dans une liste\&. "
+.in -1c
+.SH "Description détaillée"
+.PP 
+programme qui gere tous les elements met en place pour le jeu \&. 
+
+
+.PP
+\fBAuteur\fP
+.RS 4
+CALVADOS Cindy, CHAUMULON Cassandra, CHELLI Célia, OUSMANOVA Karina 
+.RE
+.PP
+\fBVersion\fP
+.RS 4
+1\&.0 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+mars 2020 
+.RE
+.PP
+
+.SH "Documentation des définitions de type"
+.PP 
+.SS "typedef struct \fBlist\fP \fBLinkedList\fP"
+This is the documentation for the preceding typedef 
+.SS "typedef struct \fBNode\fP \fBNode\fP"
+This is the documentation for the preceding typedef 
+.SH "Documentation des fonctions"
+.PP 
+.SS "\fBNode\fP* CreateElement (SDL_Rect rect, \fBtypeEntite\fP item_t, \fBbool\fP actif)"
+creation du rectangle 
+.SS "\fBbool\fP Delete_First (\fBLinkedList\fP * lst)"
+
+.PP
+Fonction qui permet de supprimer la head de la liste passée en paramètre\&. Supprime le premier
+.PP
+\fBParamètres\fP
+.RS 4
+\fIlst\fP pointeur sur la liste dans laquelle on veut insérer un élement 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+un booleen si l'élement a bien été supprimé ou non 
+.RE
+.PP
+
+.SS "\fBbool\fP Delete_Last (\fBLinkedList\fP * lst)"
+
+.PP
+Fonction qui permet de supprimer la queue de la liste liste passée en paramètre\&. Supprime le dernier
+.PP
+\fBParamètres\fP
+.RS 4
+\fIlst\fP pointeur sur la liste dans laquelle on veut inserer un élement 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+un booleen si l'élement a bien été supprimé ou non 
+.RE
+.PP
+
+.SS "void Delete_List (\fBLinkedList\fP * lst)"
+
+.PP
+Fonction qui permet de supprimer la liste passée en paramètre\&. Supprime la liste
+.PP
+\fBParamètres\fP
+.RS 4
+\fIlst\fP pointeur sur la liste dans laquelle on veut insérer un élement 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "\fBbool\fP Delete_Target (\fBLinkedList\fP * lsptr, int target)"
+
+.PP
+Fonction qui permet de supprimer un élément cible dans une liste\&. suppime la cible
+.PP
+\fBParamètres\fP
+.RS 4
+\fIlsptr\fP pointeur sur la liste dans laquelle on veut supprimer un élément 
+.br
+\fItarget\fP élément cible qu'on veut supprimer 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+un booleen si l'élément cible a bien été supprimé ou non 
+.RE
+.PP
+
+.SS "\fBNode\fP* Find (\fBLinkedList\fP * lsptr, int target, \fBNode\fP ** prvPtr)"
+
+.PP
+Fonction qui permet de chercher un élement dans une liste\&. trouve la cible
+.PP
+\fBParamètres\fP
+.RS 4
+\fIlsptr\fP pointeur sur la liste dans laquelle on cherche un élement 
+.br
+\fItarget\fP élement cible qui est cherché 
+.br
+\fIprvPtr\fP pointeur sur l'élément précédent 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+Pointeur sur une structure de type \fBNode\fP 
+.RE
+.PP
+
+.SS "void Insert_Element (\fBLinkedList\fP * list, SDL_Rect _rect, \fBtypeEntite\fP items_t, \fBbool\fP actif)"
+
+.PP
+Fonction qui permet d'insérer un élément dans une liste passée en paramètre\&. creation du rectangle
+.PP
+\fBParamètres\fP
+.RS 4
+\fIlist\fP pointeur sur la liste dans laquelle on veut insérer un élement 
+.br
+\fI_rect\fP pointeur sur l'élement a ajouter 
+.br
+\fIitems_t\fP type de l'élement à ajouter : ennemi, bullet, collider\&.\&.\&. 
+.br
+\fIactif\fP état de l'élement 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void List_Init (\fBLinkedList\fP * list)"
+
+.PP
+Fonction qui permet d'initialiser la liste passée en paramètre\&. initialisation des listes
+.PP
+\fBParamètres\fP
+.RS 4
+\fIlist\fP liste a initialiser 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void List_RenderElements (\fBLinkedList\fP * lst, SDL_Texture * tex, \fBtypeEntite\fP typeE, int largeurTex, int hauteurTex)"
+affiche les elements de la liste 
+.SS "void List_Update ()"
+
+.PP
+Fonction qui met à jour les listes des bullets et des ennemis\&. Mis à jour de la listes
+.PP
+Suppression des listes si nécessaire 
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Beauty Savior à partir du code source\&.

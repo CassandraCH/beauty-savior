@@ -1,0 +1,342 @@
+.TH "includes/definitions.h" 3 "Samedi 16 Mai 2020" "Version 0.2" "Beauty Savior" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+includes/definitions.h \- Fichier regroupant toutes les déclarations globales du jeu\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Fonctions"
+
+.in +1c
+.ti -1c
+.RI "SDL_Window * \fBgetWindow\fP (void)"
+.br
+.ti -1c
+.RI "\fBBase_Game\fP * \fBgetBaseGame\fP (void)"
+.br
+.RI "Fonction qui permet d'accéder à la structure qui gère l'état du jeu\&. "
+.ti -1c
+.RI "\fBLinkedList\fP * \fBgetEnnemis\fP (void)"
+.br
+.RI "Fonction qui permet d'acceder à la liste des ennemis\&. "
+.ti -1c
+.RI "\fBLinkedList\fP * \fBgetCollider\fP (void)"
+.br
+.RI "Fonction qui permet d'acceder à la liste des colliders\&. "
+.ti -1c
+.RI "\fBLinkedList\fP * \fBgetItems\fP (void)"
+.br
+.RI "Fonction qui permet d'acceder à la liste des items\&. "
+.ti -1c
+.RI "\fBLinkedList\fP * \fBgetBullets\fP (void)"
+.br
+.RI "Fonction qui permet d'acceder à la liste des bullets\&. "
+.ti -1c
+.RI "\fBHUD\fP * \fBgetScores\fP (void)"
+.br
+.RI "Retourne l'instance de l'objet score\&. "
+.ti -1c
+.RI "\fBHUD\fP * \fBgetNiveau\fP ()"
+.br
+.RI "Retourne l'instance de l'objet niveau\&. "
+.ti -1c
+.RI "\fBHUD\fP * \fBgetTime\fP ()"
+.br
+.RI "Retourne l'instance de l'objet niveau\&. "
+.ti -1c
+.RI "\fBHUD\fP * \fBgetItem\fP (int num_item)"
+.br
+.RI "Retourne de l'item séléction\&. "
+.ti -1c
+.RI "\fBHUD\fP * \fBgetNombreVie\fP ()"
+.br
+.RI "Retourne le hud du nombre de vie\&. "
+.ti -1c
+.RI "\fBGameObject\fP * \fBgetGameObject\fP (void)"
+.br
+.RI "Fonction qui permet retourner le menu principal\&. "
+.ti -1c
+.RI "\fBGameObject\fP * \fBgetHelp\fP (void)"
+.br
+.ti -1c
+.RI "\fBGameObject\fP * \fBgetInventaire\fP (void)"
+.br
+.RI "Fonction qui permet de retourner l'interface\&. "
+.ti -1c
+.RI "\fBGameObject\fP * \fBgetInterface\fP (void)"
+.br
+.RI "Fonction qui permet de retourner l'interface\&. "
+.ti -1c
+.RI "\fBGameObject\fP * \fBgetMenuLoad\fP (void)"
+.br
+.RI "Fonction qui permet retourner le menu de chargement\&. "
+.ti -1c
+.RI "\fBGameObject\fP * \fBgetMenuCon\fP (void)"
+.br
+.RI "Fonction qui permet retourner le menu 'continuer'\&. "
+.ti -1c
+.RI "\fBGameObject\fP * \fBgetMenuPause\fP (void)"
+.br
+.RI "Fonction qui permet retourner le menu de pause\&. "
+.ti -1c
+.RI "\fBGameObject\fP * \fBgetMenu_Win\fP (void)"
+.br
+.RI "Fonction qui permet retourner le menu concernant la fin d'une partie gagnée\&. "
+.ti -1c
+.RI "\fBGameObject\fP * \fBgetMenu_Over\fP (void)"
+.br
+.RI "Fonction qui permet de retourner le menu du game over\&. "
+.ti -1c
+.RI "int \fBgetOs\fP ()"
+.br
+.RI "Fonction qui permet de retourner le nombre d'os\&. "
+.ti -1c
+.RI "int \fBgetRock\fP ()"
+.br
+.RI "Fonction qui permet de retourner le nombre de cailloux\&. "
+.ti -1c
+.RI "int \fBgetBranche\fP ()"
+.br
+.RI "Fonction qui permet de retourner le nombre de branches\&. "
+.ti -1c
+.RI "void \fBInput_InGame\fP (SDL_Event *event)"
+.br
+.RI "Fonction qui permet gérer les entr"es clavier et la camera lorsqu'une partie est en cours\&. "
+.ti -1c
+.RI "void \fBdelay\fP (unsigned int frameLimit)"
+.br
+.RI "Fonction qui permet de gérer le délai du jeu\&. "
+.ti -1c
+.RI "void \fBInit_Textures\fP ()"
+.br
+.RI "Fonction qui charge les textures des ennemis, des pièces, des cailloux, des branches et des os\&. "
+.ti -1c
+.RI "void \fBClean_Textures\fP ()"
+.br
+.RI "Fonction qui détruit les textures des ennemis, des pièces, des cailloux, des branches et des os\&. "
+.ti -1c
+.RI "void \fBInit\fP (const char *title)"
+.br
+.RI "Fonction qui permet d'initialiser la fenêtre\&. "
+.ti -1c
+.RI "void \fBProcessInput\fP (SDL_Event *event)"
+.br
+.RI "Fonction qui gère les entrées utilisateur\&. "
+.ti -1c
+.RI "void \fBUpdate\fP ()"
+.br
+.ti -1c
+.RI "void \fBGame_Render\fP ()"
+.br
+.RI "Fonction qui permet de gérer le rendu\&. "
+.ti -1c
+.RI "void \fBGame_DestroyRessources\fP ()"
+.br
+.RI "Fonction qui libère toutes les ressources du jeu\&. "
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBLinkedList\fP \fBlistEnnemis\fP"
+.br
+.ti -1c
+.RI "\fBLinkedList\fP \fBlistCollider\fP"
+.br
+.ti -1c
+.RI "\fBLinkedList\fP \fBbullet\fP"
+.br
+.ti -1c
+.RI "\fBLinkedList\fP \fBitems\fP"
+.br
+.ti -1c
+.RI "int \fBtempsEcoule\fP"
+.br
+.ti -1c
+.RI "SDL_Rect \fBcamera\fP"
+.br
+.ti -1c
+.RI "SDL_Texture * \fBtexture\fP"
+.br
+.ti -1c
+.RI "SDL_Texture * \fBitemTex\fP"
+.br
+.ti -1c
+.RI "SDL_Texture * \fBrockTex\fP"
+.br
+.ti -1c
+.RI "SDL_Texture * \fBtreeTex\fP"
+.br
+.ti -1c
+.RI "SDL_Texture * \fBosTex\fP"
+.br
+.ti -1c
+.RI "SDL_Texture * \fBpassportTex\fP"
+.br
+.in -1c
+.SH "Description détaillée"
+.PP 
+Fichier regroupant toutes les déclarations globales du jeu\&. 
+
+
+.PP
+\fBAuteur\fP
+.RS 4
+CALVADOS Cindy, CHAUMULON Cassandra, CHELLI Célia, OUSMANOVA Karina 
+.RE
+.PP
+\fBVersion\fP
+.RS 4
+1\&.0 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+mars 2020 
+.RE
+.PP
+
+.SH "Documentation des fonctions"
+.PP 
+.SS "void Clean_Textures ()"
+
+.PP
+Fonction qui détruit les textures des ennemis, des pièces, des cailloux, des branches et des os\&. fonction de nettoyage des textures pour les entités
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void delay (unsigned int frameLimit)"
+
+.PP
+Fonction qui permet de gérer le délai du jeu\&. Gestion d'un délai lors de la mise à jour du jeu, afin de laisser respirer le processeur 
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void Game_DestroyRessources (void)"
+
+.PP
+Fonction qui libère toutes les ressources du jeu\&. Libération de toutes les ressources du jeu
+.PP
+Destruction des structures rendu et fenêtre 
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void Game_Render ()"
+
+.PP
+Fonction qui permet de gérer le rendu\&. Gestion du rendu
+.PP
+Affichage en fonction de l'etat dans lequel se Find le jeu 
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void Init (const char * title)"
+
+.PP
+Fonction qui permet d'initialiser la fenêtre\&. Initialisation
+.PP
+Création de la fenetre
+.PP
+Chargement des polices, de l'audio et des entites 
+.PP
+\fBParamètres\fP
+.RS 4
+\fItitle\fP chaine de caracteres 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void Init_Textures ()"
+
+.PP
+Fonction qui charge les textures des ennemis, des pièces, des cailloux, des branches et des os\&. fonction d'initialisation des textures pour les entités
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void Input_InGame (SDL_Event * event)"
+
+.PP
+Fonction qui permet gérer les entr"es clavier et la camera lorsqu'une partie est en cours\&. fonction Input_InGame
+.PP
+Gestion des entrées de l'utilisateur 
+.PP
+\fBParamètres\fP
+.RS 4
+\fIevent\fP pointeur sur une structure SDL evenement 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void ProcessInput (SDL_Event * event)"
+
+.PP
+Fonction qui gère les entrées utilisateur\&. fonction ProcessInput
+.PP
+En fonction de si l'utilisateur est en cours de partie, sur le menu principal, sur le menu pause, sur le menu game over ou si le niveau vient d'être achevé 
+.PP
+\fBParamètres\fP
+.RS 4
+\fIevent\fP evenement (entree utilisateur) 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void Update ()"
+Mise a jour avec le delta-time 
+.SH "Documentation des variables"
+.PP 
+.SS "SDL_Rect camera"
+la camera
+.PP
+Structure qui gère la camera 
+.SS "SDL_Texture* itemTex"
+Texture pour les pièces 
+.SS "SDL_Texture* osTex"
+Texture pour les os 
+.SS "SDL_Texture* passportTex"
+Texture pour le passport 
+.SS "SDL_Texture* rockTex"
+Texture pour les cailloux 
+.SS "int tempsEcoule"
+les temps ecouler 
+.SS "SDL_Texture* texture"
+Texture pour les ennemis 
+.SS "SDL_Texture* treeTex"
+Texture pour les branches 
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Beauty Savior à partir du code source\&.

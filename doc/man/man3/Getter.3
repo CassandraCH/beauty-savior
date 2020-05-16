@@ -1,0 +1,416 @@
+.TH "Getter" 3 "Samedi 16 Mai 2020" "Version 0.2" "Beauty Savior" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Getter \- Ensemble des accesseurs du programme\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Fonctions"
+
+.in +1c
+.ti -1c
+.RI "SDL_Window * \fBgetWindow\fP (void)"
+.br
+.ti -1c
+.RI "\fBBase_Game\fP * \fBgetBaseGame\fP (void)"
+.br
+.RI "Fonction qui permet d'accéder à la structure qui gère l'état du jeu\&. "
+.ti -1c
+.RI "\fBLinkedList\fP * \fBgetEnnemis\fP (void)"
+.br
+.RI "Fonction qui permet d'acceder à la liste des ennemis\&. "
+.ti -1c
+.RI "\fBLinkedList\fP * \fBgetCollider\fP (void)"
+.br
+.RI "Fonction qui permet d'acceder à la liste des colliders\&. "
+.ti -1c
+.RI "\fBLinkedList\fP * \fBgetItems\fP (void)"
+.br
+.RI "Fonction qui permet d'acceder à la liste des items\&. "
+.ti -1c
+.RI "\fBLinkedList\fP * \fBgetBullets\fP (void)"
+.br
+.RI "Fonction qui permet d'acceder à la liste des bullets\&. "
+.ti -1c
+.RI "\fBHUD\fP * \fBgetScores\fP (void)"
+.br
+.RI "Retourne l'instance de l'objet score\&. "
+.ti -1c
+.RI "\fBHUD\fP * \fBgetNiveau\fP ()"
+.br
+.RI "Retourne l'instance de l'objet niveau\&. "
+.ti -1c
+.RI "\fBHUD\fP * \fBgetTime\fP ()"
+.br
+.RI "Retourne l'instance de l'objet niveau\&. "
+.ti -1c
+.RI "\fBHUD\fP * \fBgetItem\fP (int num_item)"
+.br
+.RI "Retourne de l'item séléction\&. "
+.ti -1c
+.RI "\fBHUD\fP * \fBgetNombreVie\fP ()"
+.br
+.RI "Retourne le hud du nombre de vie\&. "
+.ti -1c
+.RI "\fBGameObject\fP * \fBgetGameObject\fP (void)"
+.br
+.RI "Fonction qui permet retourner le menu principal\&. "
+.ti -1c
+.RI "\fBGameObject\fP * \fBgetHelp\fP (void)"
+.br
+.ti -1c
+.RI "\fBGameObject\fP * \fBgetInventaire\fP (void)"
+.br
+.RI "Fonction qui permet de retourner l'interface\&. "
+.ti -1c
+.RI "\fBGameObject\fP * \fBgetInterface\fP (void)"
+.br
+.RI "Fonction qui permet de retourner l'interface\&. "
+.ti -1c
+.RI "\fBGameObject\fP * \fBgetMenuLoad\fP (void)"
+.br
+.RI "Fonction qui permet retourner le menu de chargement\&. "
+.ti -1c
+.RI "\fBGameObject\fP * \fBgetMenuCon\fP (void)"
+.br
+.RI "Fonction qui permet retourner le menu 'continuer'\&. "
+.ti -1c
+.RI "\fBGameObject\fP * \fBgetMenuPause\fP (void)"
+.br
+.RI "Fonction qui permet retourner le menu de pause\&. "
+.ti -1c
+.RI "\fBGameObject\fP * \fBgetMenu_Win\fP (void)"
+.br
+.RI "Fonction qui permet retourner le menu concernant la fin d'une partie gagnée\&. "
+.ti -1c
+.RI "\fBGameObject\fP * \fBgetMenu_Over\fP (void)"
+.br
+.RI "Fonction qui permet de retourner le menu du game over\&. "
+.ti -1c
+.RI "int \fBgetOs\fP ()"
+.br
+.RI "Fonction qui permet de retourner le nombre d'os\&. "
+.ti -1c
+.RI "int \fBgetRock\fP ()"
+.br
+.RI "Fonction qui permet de retourner le nombre de cailloux\&. "
+.ti -1c
+.RI "int \fBgetBranche\fP ()"
+.br
+.RI "Fonction qui permet de retourner le nombre de branches\&. "
+.ti -1c
+.RI "\fBPlayer\fP * \fBgetPlayer\fP (void)"
+.br
+.RI "Fonction qui permet retourner l'adresse vers l'objet Joueur (héros) "
+.ti -1c
+.RI "int \fBgetPlayerX\fP (void)"
+.br
+.RI "Fonction qui permet retourner la position en x du héros\&. "
+.ti -1c
+.RI "int \fBgetPlayerY\fP (void)"
+.br
+.RI "Fonction qui permet de retourner la position en y du héros\&. "
+.ti -1c
+.RI "int \fBgetPlayerOriginX\fP ()"
+.br
+.ti -1c
+.RI "int \fBgetPlayerOriginY\fP ()"
+.br
+.in -1c
+.SH "Description détaillée"
+.PP 
+Ensemble des accesseurs du programme\&. 
+
+
+.SH "Documentation des fonctions"
+.PP 
+.SS "\fBBase_Game\fP* getBaseGame ()"
+
+.PP
+Fonction qui permet d'accéder à la structure qui gère l'état du jeu\&. 
+.PP
+\fBRenvoie\fP
+.RS 4
+Un pointeur sur une structure de données de type Base_Game 
+.RE
+.PP
+
+.SS "int getBranche ()"
+
+.PP
+Fonction qui permet de retourner le nombre de branches\&. fonction getBranche
+.PP
+\fBRenvoie\fP
+.RS 4
+le compteur de branches 
+.RE
+.PP
+
+.SS "\fBLinkedList\fP* getBullets ()"
+
+.PP
+Fonction qui permet d'acceder à la liste des bullets\&. fonction getBullets
+.PP
+\fBRenvoie\fP
+.RS 4
+un pointeur sur une liste de type LinkedList 
+.RE
+.PP
+
+.SS "\fBLinkedList\fP* getCollider ()"
+
+.PP
+Fonction qui permet d'acceder à la liste des colliders\&. fonction getCollider
+.PP
+\fBRenvoie\fP
+.RS 4
+un pointeur sur une liste de type LinkedList 
+.RE
+.PP
+
+.SS "\fBLinkedList\fP* getEnnemis ()"
+
+.PP
+Fonction qui permet d'acceder à la liste des ennemis\&. fonction getEnnemis qui gere les ennemis
+.PP
+\fBRenvoie\fP
+.RS 4
+un pointeur sur une liste de type LinkedList 
+.RE
+.PP
+
+.SS "\fBGameObject\fP* getGameObject ()"
+
+.PP
+Fonction qui permet retourner le menu principal\&. fonction getMenu
+.PP
+\fBRenvoie\fP
+.RS 4
+une structure menu de type GameObject 
+.RE
+.PP
+
+.SS "\fBGameObject\fP* getHelp (void)"
+fonction getHelp 
+.SS "\fBGameObject\fP* getInterface ()"
+
+.PP
+Fonction qui permet de retourner l'interface\&. fonction getInterface
+.PP
+\fBRenvoie\fP
+.RS 4
+un pointeur sur l'interface 
+.RE
+.PP
+
+.SS "\fBGameObject\fP* getInventaire ()"
+
+.PP
+Fonction qui permet de retourner l'interface\&. fonction getInventaire
+.PP
+\fBRenvoie\fP
+.RS 4
+un pointeur sur l'interface 
+.RE
+.PP
+
+.SS "\fBHUD\fP* getItem (int num_item)"
+
+.PP
+Retourne de l'item séléction\&. fonction getItem
+.PP
+\fBParamètres\fP
+.RS 4
+\fInum_item\fP correspond au numéro de l'item selectionné
+.RE
+.PP
+Cela permet d'instaurer un contexte privé 
+.PP
+\fBRenvoie\fP
+.RS 4
+Retourne un pointeur sur l'objet séléctionné 
+.RE
+.PP
+
+.SS "\fBLinkedList\fP* getItems ()"
+
+.PP
+Fonction qui permet d'acceder à la liste des items\&. fonction getItems
+.PP
+\fBRenvoie\fP
+.RS 4
+un pointeur sur une liste de type LinkedList 
+.RE
+.PP
+
+.SS "\fBGameObject\fP* getMenu_Over ()"
+
+.PP
+Fonction qui permet de retourner le menu du game over\&. fonction getMenu_Over
+.PP
+\fBRenvoie\fP
+.RS 4
+une structure menu de type GameObject 
+.RE
+.PP
+
+.SS "\fBGameObject\fP* getMenu_Win ()"
+
+.PP
+Fonction qui permet retourner le menu concernant la fin d'une partie gagnée\&. fonction getMenu_Win
+.PP
+\fBRenvoie\fP
+.RS 4
+une structure menu de type GameObject 
+.RE
+.PP
+
+.SS "\fBGameObject\fP* getMenuCon ()"
+
+.PP
+Fonction qui permet retourner le menu 'continuer'\&. fonction getMenuCon
+.PP
+\fBRenvoie\fP
+.RS 4
+une structure menu de type GameObject 
+.RE
+.PP
+
+.SS "\fBGameObject\fP* getMenuLoad ()"
+
+.PP
+Fonction qui permet retourner le menu de chargement\&. fonction getMenuLoad
+.PP
+\fBRenvoie\fP
+.RS 4
+une structure menu de type GameObject 
+.RE
+.PP
+
+.SS "\fBGameObject\fP* getMenuPause ()"
+
+.PP
+Fonction qui permet retourner le menu de pause\&. fonction getMenuPause
+.PP
+\fBRenvoie\fP
+.RS 4
+une structure menu de type GameObject 
+.RE
+.PP
+
+.SS "\fBHUD\fP* getNiveau ()"
+
+.PP
+Retourne l'instance de l'objet niveau\&. fonction getNiveau qui gere les niveaux
+.PP
+Cela permet d'instaurer un contexte privé 
+.PP
+\fBRenvoie\fP
+.RS 4
+Retourne un pointeur sur l'objet niveau 
+.RE
+.PP
+
+.SS "\fBHUD\fP* getNombreVie ()"
+
+.PP
+Retourne le hud du nombre de vie\&. fonction getNombreVie
+.PP
+\fBRenvoie\fP
+.RS 4
+Retourne un pointeur sur l'objet séléctionné 
+.RE
+.PP
+
+.SS "int getOs ()"
+
+.PP
+Fonction qui permet de retourner le nombre d'os\&. fonction getOs
+.PP
+\fBRenvoie\fP
+.RS 4
+le compteur d'os 
+.RE
+.PP
+
+.SS "\fBPlayer\fP* getPlayer (void)"
+
+.PP
+Fonction qui permet retourner l'adresse vers l'objet Joueur (héros) accès à la structure du joueur
+.PP
+\fBRenvoie\fP
+.RS 4
+une structure joueur de type Player 
+.RE
+.PP
+
+.SS "int getPlayerOriginX ()"
+la position'l'origine) du joueur selon x 
+.SS "int getPlayerOriginY ()"
+la position'l'origine) du joueur selon y 
+.SS "int getPlayerX (void)"
+
+.PP
+Fonction qui permet retourner la position en x du héros\&. accès à la position en x du joueur
+.PP
+\fBRenvoie\fP
+.RS 4
+un int qui correspond a la position en x 
+.RE
+.PP
+
+.SS "int getPlayerY (void)"
+
+.PP
+Fonction qui permet de retourner la position en y du héros\&. accès à la position en y du joueur
+.PP
+\fBRenvoie\fP
+.RS 4
+un int qui correspond a la position en y 
+.RE
+.PP
+
+.SS "int getRock ()"
+
+.PP
+Fonction qui permet de retourner le nombre de cailloux\&. fonction getRock
+.PP
+\fBRenvoie\fP
+.RS 4
+le compteur de cailloux 
+.RE
+.PP
+
+.SS "\fBHUD\fP* getScores ()"
+
+.PP
+Retourne l'instance de l'objet score\&. fonction getScores qui gere le scores
+.PP
+Cela permet d'instaurer un contexte privé 
+.PP
+\fBRenvoie\fP
+.RS 4
+Retourne un pointeur sur l'objet score 
+.RE
+.PP
+
+.SS "\fBHUD\fP* getTime ()"
+
+.PP
+Retourne l'instance de l'objet niveau\&. fonction getNiveau qui gere le timer du jeux
+.PP
+Cela permet d'instaurer un contexte privé 
+.PP
+\fBRenvoie\fP
+.RS 4
+Retourne un pointeur sur l'objet niveau 
+.RE
+.PP
+
+.SS "SDL_Window* getWindow (void)"
+< fonction SDL_Window qui gere la fenetre fonction Base_Game 
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Beauty Savior à partir du code source\&.

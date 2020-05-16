@@ -1,0 +1,92 @@
+.TH "src/scores.c" 3 "Samedi 16 Mai 2020" "Version 0.2" "Beauty Savior" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/scores.c \- Programme qui gère le score\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'basegame\&.h'\fP
+.br
+
+.SS "Fonctions"
+
+.in +1c
+.ti -1c
+.RI "\fBHUD\fP * \fBgetNombreVie\fP ()"
+.br
+.RI "Retourne le hud du nombre de vie\&. "
+.ti -1c
+.RI "\fBHUD\fP * \fBgetScores\fP ()"
+.br
+.RI "Retourne l'instance de l'objet score\&. "
+.ti -1c
+.RI "\fBHUD\fP * \fBgetNiveau\fP ()"
+.br
+.RI "Retourne l'instance de l'objet niveau\&. "
+.ti -1c
+.RI "\fBHUD\fP * \fBgetTime\fP ()"
+.br
+.RI "Retourne l'instance de l'objet niveau\&. "
+.ti -1c
+.RI "\fBHUD\fP * \fBgetItem\fP (int num_item)"
+.br
+.RI "Retourne de l'item séléction\&. "
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBHUD\fP \fBscore\fP"
+.br
+.ti -1c
+.RI "\fBHUD\fP \fBvie\fP"
+.br
+.ti -1c
+.RI "\fBHUD\fP \fBniveau\fP"
+.br
+.ti -1c
+.RI "\fBHUD\fP \fBitem_s\fP [3]"
+.br
+.ti -1c
+.RI "\fBHUD\fP \fBtime_\fP"
+.br
+.in -1c
+.SH "Description détaillée"
+.PP 
+Programme qui gère le score\&. 
+
+
+.PP
+\fBAuteur\fP
+.RS 4
+CALVADOS Cindy, CHAUMULON Cassandra, CHELLI Célia, OUSMANOVA Karina 
+.RE
+.PP
+\fBVersion\fP
+.RS 4
+1\&.0 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+janvier 2020
+.RE
+.PP
+Initialisation, mise à jour, affichage et destruction du score 
+.SH "Documentation des variables"
+.PP 
+.SS "\fBHUD\fP item_s[3]"
+hud des items du jeux 
+.SS "\fBHUD\fP niveau"
+hud du niveau 
+.SS "\fBHUD\fP score"
+hud du score 
+.SS "\fBHUD\fP time_"
+hud du timer 
+.SS "\fBHUD\fP vie"
+hud de la vie pour le menu de fin de partie 
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Beauty Savior à partir du code source\&.

@@ -1,0 +1,213 @@
+.TH "includes/texture.h" 3 "Samedi 16 Mai 2020" "Version 0.2" "Beauty Savior" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+includes/texture.h \- programme qui gere les texture du jeu \&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'commun\&.h'\fP
+.br
+
+.SS "Structures de données"
+
+.in +1c
+.ti -1c
+.RI "struct \fBtextures\fP"
+.br
+.RI "Structure gérant les textures 
+.PP
+.RS 4
+
+.PP
+.RS 4
+
+.PP
+.RS 4
+
+.PP
+.RS 4
+
+.PP
+.RS 4
+
+.PP
+.RS 4
+
+.PP
+.RS 4
+674e9288e4b728278a91af8e9aad7255f9ee44f2 
+.RE
+.PP
+.RE
+.PP
+.RE
+.PP
+.RE
+.PP
+.RE
+.PP
+.RE
+.PP
+.RE
+.PP
+"
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fB__TEXTURE_H\fP   /"
+.br
+.RI "Clause de mise en garde pour le fichier TEXTURE_H\&. "
+.in -1c
+.SS "Définitions de type"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fBtextures\fP \fBTexture_Manager\fP"
+.br
+.in -1c
+.SS "Fonctions"
+
+.in +1c
+.ti -1c
+.RI "\fBbool\fP \fBImage_Load\fP (\fBTexture_Manager\fP *tex, const char *filename)"
+.br
+.RI "Fonction qui permet de charger une image dans une texture\&. "
+.ti -1c
+.RI "void \fBTexManager_DestroyRessources\fP (\fBTexture_Manager\fP *tex)"
+.br
+.RI "Fonction qui permet detruire une texture\&. "
+.ti -1c
+.RI "SDL_Texture * \fBTexture_Load\fP (char *filepath)"
+.br
+.RI "Fonction qui permet de charger une texture a partir d'une image\&. "
+.ti -1c
+.RI "void \fBTextureManager_Load\fP (\fBTexture_Manager\fP *tex, char *filepath)"
+.br
+.RI "Fonction qui permet de charger une texture\&. "
+.ti -1c
+.RI "void \fBUpdate_TextureEnemi\fP ()"
+.br
+.RI "Fonction qui gère la mise à jour des textures des ennemis en fonction du niveau\&. "
+.in -1c
+.SH "Description détaillée"
+.PP 
+programme qui gere les texture du jeu \&. 
+
+
+.PP
+\fBAuteur\fP
+.RS 4
+CALVADOS Cindy, CHAUMULON Cassandra, CHELLI Célia, OUSMANOVA Karina 
+.RE
+.PP
+\fBVersion\fP
+.RS 4
+1\&.0 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+mars 2020 
+.RE
+.PP
+
+.SH "Documentation des définitions de type"
+.PP 
+.SS "typedef struct \fBtextures\fP \fBTexture_Manager\fP"
+structure des differentes textures du jeu 
+.SH "Documentation des fonctions"
+.PP 
+.SS "\fBbool\fP Image_Load (\fBTexture_Manager\fP * tex, const char * filename)"
+
+.PP
+Fonction qui permet de charger une image dans une texture\&. booleen charger des images
+.PP
+chargements des images
+.PP
+\fBParamètres\fP
+.RS 4
+\fItex\fP pointeur sur la texture dans laquelle on veut charger l'image 
+.br
+\fIfilename\fP nom du fichier de l'image 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+un booleen : VRAI si l'image a bien ete chargee dans la texture, FAUX sinon
+.RE
+.PP
+chargements des images 
+.SS "void TexManager_DestroyRessources (\fBTexture_Manager\fP * tex)"
+
+.PP
+Fonction qui permet detruire une texture\&. liberation des ressources
+.PP
+les ressources
+.PP
+\fBParamètres\fP
+.RS 4
+\fItex\fP pointeur sur la texture a detruire 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void)
+.RE
+.PP
+les ressources 
+.SS "SDL_Texture* Texture_Load (char * filepath)"
+
+.PP
+Fonction qui permet de charger une texture a partir d'une image\&. charger de texture de filepath(chemin de fichier)
+.PP
+chargement des textures à partir d'image
+.PP
+\fBParamètres\fP
+.RS 4
+\fIfilepath\fP chemin pour acceder a l'image 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+un pointeur sur une texture SDL (SDL_Texture)
+.RE
+.PP
+chargement des textures à partir d'image 
+.SS "void TextureManager_Load (\fBTexture_Manager\fP * tex, char * filepath)"
+
+.PP
+Fonction qui permet de charger une texture\&. charger des texture visuel principal dans le jeu
+.PP
+chargement d'une texture
+.PP
+\fBParamètres\fP
+.RS 4
+\fItex\fP pointeur sur la texture dans laquelle on veut charger l'image 
+.br
+\fIfilepath\fP nom du fichier de l'image 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void)
+.RE
+.PP
+chargement d'une texture 
+.SS "void Update_TextureEnemi ()"
+
+.PP
+Fonction qui gère la mise à jour des textures des ennemis en fonction du niveau\&. Modification de la texture ennemi
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Beauty Savior à partir du code source\&.

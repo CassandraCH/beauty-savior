@@ -1,0 +1,74 @@
+.TH "src/enjeu.c" 3 "Samedi 16 Mai 2020" "Version 0.2" "Beauty Savior" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/enjeu.c \- Programme qui gère les entrées utilisateur (touches) et la caméra lorsqu'une partie est en cours\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'basegame\&.h'\fP
+.br
+
+.SS "Fonctions"
+
+.in +1c
+.ti -1c
+.RI "void \fBInput_InGame\fP (SDL_Event *event)"
+.br
+.RI "Fonction qui permet gérer les entr"es clavier et la camera lorsqu'une partie est en cours\&. "
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "SDL_Rect \fBcamera\fP = {0, 0, \fBLARGEUR_FENETRE\fP, \fBHAUTEUR_FENETRE\fP}"
+.br
+.in -1c
+.SH "Description détaillée"
+.PP 
+Programme qui gère les entrées utilisateur (touches) et la caméra lorsqu'une partie est en cours\&. 
+
+
+.PP
+\fBAuteur\fP
+.RS 4
+CALVADOS Cindy, CHAUMULON Cassandra, CHELLI Célia, OUSMANOVA Karina 
+.RE
+.PP
+\fBVersion\fP
+.RS 4
+1\&.0 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+janvier 2020 
+.RE
+.PP
+
+.SH "Documentation des fonctions"
+.PP 
+.SS "void Input_InGame (SDL_Event * event)"
+
+.PP
+Fonction qui permet gérer les entr"es clavier et la camera lorsqu'une partie est en cours\&. Gestion des entrées de l'utilisateur 
+.PP
+\fBParamètres\fP
+.RS 4
+\fIevent\fP pointeur sur une structure SDL evenement 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SH "Documentation des variables"
+.PP 
+.SS "SDL_Rect camera = {0, 0, \fBLARGEUR_FENETRE\fP, \fBHAUTEUR_FENETRE\fP}"
+Structure qui gère la camera 
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Beauty Savior à partir du code source\&.

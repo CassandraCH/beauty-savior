@@ -1,0 +1,69 @@
+.TH "gameObject" 3 "Samedi 16 Mai 2020" "Version 0.2" "Beauty Savior" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+gameObject \- Structure permettant de gérer un GameObject\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <game_objects\&.h>\fP
+.SS "Champs de données"
+
+.in +1c
+.ti -1c
+.RI "int \fBcomponentSelected\fP"
+.br
+.ti -1c
+.RI "\fBComponent\fP \fBcomponents\fP [5]"
+.br
+.ti -1c
+.RI "Mix_Chunk * \fBson\fP"
+.br
+.ti -1c
+.RI "TTF_Font * \fBpolice\fP"
+.br
+.ti -1c
+.RI "SDL_Texture * \fBbg\fP"
+.br
+.ti -1c
+.RI "Mix_Music * \fBbgm\fP"
+.br
+.ti -1c
+.RI "char * \fBnom_gameObject\fP"
+.br
+.in -1c
+.SH "Description détaillée"
+.PP 
+Structure permettant de gérer un GameObject\&. 
+
+Le GameObject représente une boîte vide qui ne fait pas grand chose tout seul, il agit comme un conteneur pour les components\&. 
+.SH "Documentation des champs"
+.PP 
+.SS "SDL_Texture* bg"
+Texture en arrière-plan 
+.SS "Mix_Music* bgm"
+Musique du jeux en arriere plan 
+.SS "\fBComponent\fP components[5]"
+Tableau de Components 
+.br
+ 
+.SS "int componentSelected"
+Component selectionne 
+.br
+ 
+.SS "char* nom_gameObject"
+Nom du GameObject 
+.br
+ 
+.SS "TTF_Font* police"
+La police utilise pour le \fBgameObject\fP 
+.SS "Mix_Chunk* son"
+Le son du \fBgameObject\fP 
+.br
+ 
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Beauty Savior à partir du code source\&.

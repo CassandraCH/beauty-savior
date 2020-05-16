@@ -1,0 +1,190 @@
+.TH "includes/level.h" 3 "Samedi 16 Mai 2020" "Version 0.2" "Beauty Savior" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+includes/level.h \- programme qui gere le debut de mises en place du passage des niveaux \&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'texture\&.h'\fP
+.br
+
+.SS "Structures de données"
+
+.in +1c
+.ti -1c
+.RI "struct \fBlevel\fP"
+.br
+.RI "structure gerant les niveux "
+.in -1c
+.SS "Définitions de type"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fBlevel\fP \fBLevel\fP"
+.br
+.in -1c
+.SS "Fonctions"
+
+.in +1c
+.ti -1c
+.RI "\fBLevel\fP * \fBGet_Level\fP ()"
+.br
+.RI "Fonction qui permet d'accéder à la structure d'un niveau\&. "
+.ti -1c
+.RI "void \fBSet_Level\fP (int \fBniveau\fP)"
+.br
+.RI "Fonction qui permet de mettre à jour le niveau du joueur\&. "
+.ti -1c
+.RI "void \fBLevel_Load\fP ()"
+.br
+.RI "Fonction qui permet de charger un niveau\&. "
+.ti -1c
+.RI "void \fBLevel_Render\fP ()"
+.br
+.RI "Fonction qui permet d'afficher un niveau\&. "
+.ti -1c
+.RI "void \fBLevel_Destroy\fP ()"
+.br
+.RI "Fonction qui permet de gérer la destruction des niveaux et la libération des ressources qui ont été utilisées\&. "
+.ti -1c
+.RI "void \fBLevel_Textures_Render\fP (int \fBniveau\fP)"
+.br
+.RI "Fonction qui permet d'afficher les textures du niveau passé en paramètre\&. "
+.ti -1c
+.RI "void \fBDebug_AfficherCollider\fP ()"
+.br
+.RI "Fonction de debug qui permet d'afficher les blocs de collision par dessus le decor\&. "
+.in -1c
+.SH "Description détaillée"
+.PP 
+programme qui gere le debut de mises en place du passage des niveaux \&. 
+
+
+.PP
+\fBAuteur\fP
+.RS 4
+CALVADOS Cindy, CHAUMULON Cassandra, CHELLI Célia, OUSMANOVA Karina 
+.RE
+.PP
+\fBVersion\fP
+.RS 4
+1\&.0 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+mars 2020 
+.RE
+.PP
+
+.SH "Documentation des définitions de type"
+.PP 
+.SS "typedef struct \fBlevel\fP \fBLevel\fP"
+This is the documentation for the preceding typedef 
+.SH "Documentation des fonctions"
+.PP 
+.SS "void Debug_AfficherCollider ()"
+
+.PP
+Fonction de debug qui permet d'afficher les blocs de collision par dessus le decor\&. le Debug_AfficherCollider 
+.br
+.PP
+Cette fonction permet de savoir si les blocs de collisions sont bien positionnés
+.PP
+Cette fonction permet de verifier que le joueur entre bien en collision avec les colliders 
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "\fBLevel\fP* Get_Level ()"
+
+.PP
+Fonction qui permet d'accéder à la structure d'un niveau\&. le niveau 
+.br
+.PP
+\fBRenvoie\fP
+.RS 4
+Un pointeur sur une structure de données de type Level 
+.RE
+.PP
+
+.SS "void Level_Destroy ()"
+
+.PP
+Fonction qui permet de gérer la destruction des niveaux et la libération des ressources qui ont été utilisées\&. les destruction des niveaux 
+.br
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void Level_Load ()"
+
+.PP
+Fonction qui permet de charger un niveau\&. le chargemnts des niveaux 
+.br
+.PP
+Initialisation des listes (ennemis, bullets,items et colliders) 
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void Level_Render ()"
+
+.PP
+Fonction qui permet d'afficher un niveau\&. l'affichage des niveaux 
+.br
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void Level_Textures_Render (int niveau)"
+
+.PP
+Fonction qui permet d'afficher les textures du niveau passé en paramètre\&. l'affichage des textures des niveaux 
+.br
+.PP
+\fBParamètres\fP
+.RS 4
+\fIniveau\fP numero du niveau a afficher 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void Set_Level (int niveau)"
+
+.PP
+Fonction qui permet de mettre à jour le niveau du joueur\&. le niveau correspond 
+.br
+.PP
+\fBParamètres\fP
+.RS 4
+\fIniveau\fP numero du niveau 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Beauty Savior à partir du code source\&.

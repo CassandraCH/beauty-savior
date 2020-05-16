@@ -1,0 +1,205 @@
+.TH "includes/player.h" 3 "Samedi 16 Mai 2020" "Version 0.2" "Beauty Savior" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+includes/player.h \- programme qui gere le joueur par exemple la vitesse de deplacements,sa position etc\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'texture\&.h'\fP
+.br
+\fC#include 'constantes\&.h'\fP
+.br
+\fC#include 'attributs\&.h'\fP
+.br
+
+.SS "Structures de données"
+
+.in +1c
+.ti -1c
+.RI "struct \fBplayer\fP"
+.br
+.RI "Structure gérant les caractéristiques liées au joueur\&. "
+.in -1c
+.SS "Définitions de type"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fBplayer\fP \fBPlayer\fP"
+.br
+.in -1c
+.SS "Fonctions"
+
+.in +1c
+.ti -1c
+.RI "\fBPlayer\fP * \fBgetPlayer\fP (void)"
+.br
+.RI "Fonction qui permet retourner l'adresse vers l'objet Joueur (héros) "
+.ti -1c
+.RI "int \fBgetPlayerX\fP (void)"
+.br
+.RI "Fonction qui permet retourner la position en x du héros\&. "
+.ti -1c
+.RI "int \fBgetPlayerY\fP (void)"
+.br
+.RI "Fonction qui permet de retourner la position en y du héros\&. "
+.ti -1c
+.RI "int \fBgetPlayerOriginX\fP ()"
+.br
+.ti -1c
+.RI "int \fBgetPlayerOriginY\fP ()"
+.br
+.ti -1c
+.RI "void \fBPlayer_Update\fP ()"
+.br
+.RI "Fonction qui met a jour le joueur en fonction du delta-time\&. "
+.ti -1c
+.RI "void \fBPlayer_Reset\fP (void)"
+.br
+.RI "Fonction qui reinitialise le joueur\&. "
+.ti -1c
+.RI "void \fBPlayer_Init\fP ()"
+.br
+.RI "Fonction qui permet d'initialiser le joueur\&. "
+.ti -1c
+.RI "void \fBPlayer_SetBullets\fP ()"
+.br
+.RI "Fonction qui permet de regler le nombre de lancer du joueur\&. "
+.ti -1c
+.RI "\fBbool\fP \fBcollide2d\fP (float x1, float y1, float x2, float y2, float wt1, float ht1, float wt2, float ht2)"
+.br
+.RI "Fonction qui verifie la collision entre 2 elements\&. "
+.ti -1c
+.RI "void \fBShoot_Collision\fP ()"
+.br
+.RI "Fonction qui gere les collisions entre un bullet et un ennemi\&. "
+.ti -1c
+.RI "void \fBCollisionItems\fP ()"
+.br
+.RI "Fonction qui gere les collisions avec les items\&. "
+.ti -1c
+.RI "void \fBPlayer_Attack\fP ()"
+.br
+.ti -1c
+.RI "void \fBPlayer_Input\fP (SDL_Event *event)"
+.br
+.RI "Fonction qui gere les entrees clavier de l'utilisateur\&. "
+.ti -1c
+.RI "void \fBPlayer_Render\fP ()"
+.br
+.RI "Fonction qui gere l'affichage du joueur a l'ecran\&. "
+.in -1c
+.SH "Description détaillée"
+.PP 
+programme qui gere le joueur par exemple la vitesse de deplacements,sa position etc\&. 
+
+
+.PP
+\fBAuteur\fP
+.RS 4
+CALVADOS Cindy, CHAUMULON Cassandra, CHELLI Célia, OUSMANOVA Karina 
+.RE
+.PP
+\fBVersion\fP
+.RS 4
+1\&.0 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+mars 2020 
+.RE
+.PP
+
+.SH "Documentation des définitions de type"
+.PP 
+.SS "typedef struct \fBplayer\fP \fBPlayer\fP"
+This is the documentation for the preceding typedef 
+.SH "Documentation des fonctions"
+.PP 
+.SS "void Player_Attack ()"
+les attaques du joueurs
+.PP
+Fonction qui s'occupe de gérer les attaques lancer par le joueur 
+.SS "void Player_Init ()"
+
+.PP
+Fonction qui permet d'initialiser le joueur\&. initialisation du joueur
+.PP
+Remplissage de tous les champs de la structure Player 
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void Player_Input (SDL_Event * event)"
+
+.PP
+Fonction qui gere les entrees clavier de l'utilisateur\&. gestion des entrées utilisateur
+.PP
+\fBParamètres\fP
+.RS 4
+\fIevent\fP evenement de l'utilisateur 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void Player_Render ()"
+
+.PP
+Fonction qui gere l'affichage du joueur a l'ecran\&. affichage du joueur
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void Player_Reset (void)"
+
+.PP
+Fonction qui reinitialise le joueur\&. réinitialisation du joueur 
+.br
+.PP
+Repositionnement du joueur a sa position initiale et remise a 0 de ses compteurs du nombre de lancer et du nombre d'objets 
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void Player_SetBullets ()"
+
+.PP
+Fonction qui permet de regler le nombre de lancer du joueur\&. réglage du nombre de bu llets
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void Player_Update ()"
+
+.PP
+Fonction qui met a jour le joueur en fonction du delta-time\&. mise à joueur du joueur
+.PP
+Gestion du deplacement du joueur 
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Beauty Savior à partir du code source\&.

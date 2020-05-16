@@ -1,0 +1,108 @@
+.TH "src/game_over.c" 3 "Samedi 16 Mai 2020" "Version 0.2" "Beauty Savior" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/game_over.c \- Programme qui gère le menu du game over\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'basegame\&.h'\fP
+.br
+
+.SS "Fonctions"
+
+.in +1c
+.ti -1c
+.RI "\fBGameObject\fP * \fBgetMenu_Over\fP ()"
+.br
+.RI "Fonction qui permet de retourner le menu du game over\&. "
+.ti -1c
+.RI "void \fBGameOver_Init\fP ()"
+.br
+.RI "Fonction qui initialise le menu game over\&. "
+.ti -1c
+.RI "void \fBGameOver_Input\fP (SDL_Event *event)"
+.br
+.RI "Fonction qui gère les évènements du menu\&. "
+.ti -1c
+.RI "void \fBGameOver_Load\fP ()"
+.br
+.RI "Fonction qui initialise l'état game over\&. "
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBGameObject\fP \fBmenu_over\fP"
+.br
+.in -1c
+.SH "Description détaillée"
+.PP 
+Programme qui gère le menu du game over\&. 
+
+
+.PP
+\fBAuteur\fP
+.RS 4
+CALVADOS Cindy, CHAUMULON Cassandra, CHELLI Célia, OUSMANOVA Karina 
+.RE
+.PP
+\fBVersion\fP
+.RS 4
+1\&.0 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+mars 2020
+.RE
+.PP
+Initialisation, affichage du menu, navigation dans le menu, gestion des entrees clavier et destruction du menu 
+.SH "Documentation des fonctions"
+.PP 
+.SS "void GameOver_Init ()"
+
+.PP
+Fonction qui initialise le menu game over\&. 
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void GameOver_Input (SDL_Event * event)"
+
+.PP
+Fonction qui gère les évènements du menu\&. Gestion des entrées clavier de l'utilisateur 
+.PP
+\fBParamètres\fP
+.RS 4
+\fIevent\fP évènement 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SS "void GameOver_Load ()"
+
+.PP
+Fonction qui initialise l'état game over\&. 
+.PP
+\fBRenvoie\fP
+.RS 4
+pas de valeur de retour (void) 
+.RE
+.PP
+
+.SH "Documentation des variables"
+.PP 
+.SS "\fBGameObject\fP menu_over"
+Structure de type GameObject 
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Beauty Savior à partir du code source\&.
