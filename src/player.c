@@ -378,6 +378,7 @@ extern void Shoot_Collision()
                      if( !getPlayer()->estMort && getPlayer()->nombreVies > 1 )
                     {
                         getPlayer()->nombreVies--;
+
                         switch( getPlayer()->nombreVies )
                         {
                             case 1: UpdateImage_Component( &getInterface()->components[2], "graphics_assets/vie_1.png" ); break;
@@ -389,7 +390,10 @@ extern void Shoot_Collision()
                     }
                     else 
                     {
+                        Mix_HaltMusic();
+                        Mix_PlayChannel(-1, getBaseGame()->over_sound, 0);
                         GameOver_Load();
+
                     }
                     break;
                 }

@@ -35,7 +35,7 @@ extern void GameOver_Init()
 
     //chargement du son
     menu_over.son = Mix_LoadWAV("sounds/menu_click.wav");
-    menu_over.bgm = Mix_LoadMUS("sounds/awesomeness.wav");
+    
 
     /* 
      * Première option : demarer une nouvelle partie 

@@ -55,6 +55,7 @@ typedef struct basegame
 
     SDL_Texture * passportReq; /**< Texture du passeport nécéssaire pour le niveau */
     Mix_Music * bgm;    /**< Musique d'un niveau */
+    Mix_Chunk * over_sound;  /**< Musique de mort */
 
 }Base_Game; 
 /**< This is the documentation for the preceding typedef */

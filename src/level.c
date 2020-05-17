@@ -49,6 +49,8 @@ extern void Level_Load()
    List_Init(&bullet);
    List_Init(&items);
    List_Init(&listCollider);
+
+   getBaseGame()->over_sound = Mix_LoadWAV("sounds/gameover.wav");
       
    //Chargement du niveau 1
    if(  getPlayer()->niveau == 1 )

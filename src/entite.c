@@ -260,11 +260,14 @@ extern void Collision_Detection()
                     {
                         //On décrémente le nombre de vie
                         getPlayer()->nombreVies--;
+                         
                         printf("Il reste %d points de vie\n", getPlayer()->nombreVies );
                     }
                     //Sinon le joueur a perdu
                     else if( getPlayer()->nombreVies <= 0 )
                     {
+                        Mix_HaltMusic();
+                       
                         GameOver_Load();
                     }
 
@@ -277,6 +280,9 @@ extern void Collision_Detection()
     //Verifie si le joueur tombe dans le vide et qu'il dépasse la hauteur de l'écran => la partie est perdu
     if( getPlayer()->y > 720 ) 
     {
+        Mix_HaltMusic();
+
+         Mix_PlayChannel(-1, getBaseGame()->over_sound, 0);
         GameOver_Load();
     }
 
