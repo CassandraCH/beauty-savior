@@ -267,7 +267,6 @@ extern void Collision_Detection()
                     else if( getPlayer()->nombreVies <= 0 )
                     {
                         Mix_HaltMusic();
-                       
                         GameOver_Load();
                     }
 

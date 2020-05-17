@@ -35,6 +35,7 @@ typedef struct Node
   bool lancer;          /**< float des lancer*/
   float movingX;        /**<les deplacements selon x*/
 
+  
   Texture_Manager imagesItem[2];  /**< Tableau de texture pour un element*/
   int imageCourante;              /**<Determine l'image actuellement visible a l'écran*/
 
@@ -52,6 +53,7 @@ typedef struct list
   struct Node *head;          /**< noeud d'entete */
   struct Node *queue;         /**< noeud de fin */
 
+  Mix_Chunk * shoot_sound;   /**< Son des attaques */ 
   int bulletSpeed;            /**< vitesse des bullets */
   int nodeCount;            /**< compteur de noeuds */
 

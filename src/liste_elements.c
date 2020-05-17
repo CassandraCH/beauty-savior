@@ -97,6 +97,9 @@ extern void List_Init(LinkedList *list)
       list->bulletSpeed = 17;
   else if (getPlayer()->niveau == 4)
       list->bulletSpeed = 18;
+
+
+  list->shoot_sound = Mix_LoadWAV("sounds/shoot.wav");
 }
 
 /**
