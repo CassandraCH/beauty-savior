@@ -33,16 +33,26 @@ basegame \- Structure principale de jeux, qui gère tous les composants du jeux 
 .ti -1c
 .RI "SDL_Texture * \fBpassportReq\fP"
 .br
+.ti -1c
+.RI "Mix_Music * \fBbgm\fP"
+.br
+.ti -1c
+.RI "Mix_Chunk * \fBover_sound\fP"
+.br
 .in -1c
 .SH "Description détaillée"
 .PP 
 Structure principale de jeux, qui gère tous les composants du jeux majeurs\&. 
 .SH "Documentation des champs"
 .PP 
+.SS "Mix_Music* bgm"
+Musique d'un niveau 
 .SS "\fBbool\fP isActive"
 Etat du jeu : Actif - Non Actif 
 .SS "int min"
 : temps liée au timer du jeux : minutes du jeux 
+.SS "Mix_Chunk* over_sound"
+Musique de mort 
 .SS "SDL_Texture* passportReq"
 Texture du passeport nécéssaire pour le niveau 
 .SS "int state"

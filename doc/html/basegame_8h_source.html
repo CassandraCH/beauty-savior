@@ -110,12 +110,14 @@ $(function() {
 <div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="structbasegame.html#ad91b9b205dc2942cadc6238154484713">   53</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structbasegame.html#ad91b9b205dc2942cadc6238154484713">tempsPrecedent</a>; </div>
 <div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="structbasegame.html#ac869183cc8112900384541203856669f">   54</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structbasegame.html#ac869183cc8112900384541203856669f">tempsActuel</a>;    </div>
 <div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="structbasegame.html#a24b1fc2f9659345f9b9103169dadac0b">   56</a></span>&#160;    SDL_Texture * <a class="code" href="structbasegame.html#a24b1fc2f9659345f9b9103169dadac0b">passportReq</a>; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}<a class="code" href="basegame_8h.html#ab47d948e342791b190626d7d2c17ab75">Base_Game</a>; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="definitions_8h.html">definitions.h</a>&quot;</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="structbasegame.html#a015eb04e0a2b9b43b073ff5abf39a6ea">   57</a></span>&#160;    Mix_Music * <a class="code" href="structbasegame.html#a015eb04e0a2b9b43b073ff5abf39a6ea">bgm</a>;    </div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="structbasegame.html#af5d108cfb432ba629b78c28fd7791be8">   58</a></span>&#160;    Mix_Chunk * <a class="code" href="structbasegame.html#af5d108cfb432ba629b78c28fd7791be8">over_sound</a>;  </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}<a class="code" href="basegame_8h.html#ab47d948e342791b190626d7d2c17ab75">Base_Game</a>; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="definitions_8h.html">definitions.h</a>&quot;</span></div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="abasegame_8h_html_ab47d948e342791b190626d7d2c17ab75"><div class="ttname"><a href="basegame_8h.html#ab47d948e342791b190626d7d2c17ab75">Base_Game</a></div><div class="ttdeci">struct basegame Base_Game</div></div>
 <div class="ttc" id="ainventaire_8h_html"><div class="ttname"><a href="inventaire_8h.html">inventaire.h</a></div><div class="ttdoc">fichier qui gere l'inventaire durant le jeu</div></div>
@@ -133,10 +135,12 @@ $(function() {
 <div class="ttc" id="ainterface_8h_html"><div class="ttname"><a href="interface_8h.html">interface.h</a></div><div class="ttdoc">programme qui gere l'interface du jeu</div></div>
 <div class="ttc" id="aliste__elements_8h_html"><div class="ttname"><a href="liste__elements_8h.html">liste_elements.h</a></div><div class="ttdoc">programme qui gere tous les elements met en place pour le jeu .</div></div>
 <div class="ttc" id="astructbasegame_html_a89f234133d3efe315836311cbf21c64b"><div class="ttname"><a href="structbasegame.html#a89f234133d3efe315836311cbf21c64b">basegame::state</a></div><div class="ttdeci">int state</div><div class="ttdef"><b>Definition:</b> basegame.h:47</div></div>
+<div class="ttc" id="astructbasegame_html_af5d108cfb432ba629b78c28fd7791be8"><div class="ttname"><a href="structbasegame.html#af5d108cfb432ba629b78c28fd7791be8">basegame::over_sound</a></div><div class="ttdeci">Mix_Chunk * over_sound</div><div class="ttdef"><b>Definition:</b> basegame.h:58</div></div>
 <div class="ttc" id="amenu__continue_8h_html"><div class="ttname"><a href="menu__continue_8h.html">menu_continue.h</a></div><div class="ttdoc">programme qui gere le menu durant le jeu.</div></div>
 <div class="ttc" id="astructbasegame_html"><div class="ttname"><a href="structbasegame.html">basegame</a></div><div class="ttdoc">Structure principale de jeux, qui gère tous les composants du jeux majeurs.</div><div class="ttdef"><b>Definition:</b> basegame.h:46</div></div>
 <div class="ttc" id="adefinitions_8h_html"><div class="ttname"><a href="definitions_8h.html">definitions.h</a></div><div class="ttdoc">Fichier regroupant toutes les déclarations globales du jeu.</div></div>
 <div class="ttc" id="aentite_8h_html"><div class="ttname"><a href="entite_8h.html">entite.h</a></div><div class="ttdoc">Programme qui gère toutes les entites du jeu, les collisions, les attaques ...</div></div>
+<div class="ttc" id="astructbasegame_html_a015eb04e0a2b9b43b073ff5abf39a6ea"><div class="ttname"><a href="structbasegame.html#a015eb04e0a2b9b43b073ff5abf39a6ea">basegame::bgm</a></div><div class="ttdeci">Mix_Music * bgm</div><div class="ttdef"><b>Definition:</b> basegame.h:57</div></div>
 <div class="ttc" id="astructbasegame_html_a24b1fc2f9659345f9b9103169dadac0b"><div class="ttname"><a href="structbasegame.html#a24b1fc2f9659345f9b9103169dadac0b">basegame::passportReq</a></div><div class="ttdeci">SDL_Texture * passportReq</div><div class="ttdef"><b>Definition:</b> basegame.h:56</div></div>
 <div class="ttc" id="aplayer_8h_html"><div class="ttname"><a href="player_8h.html">player.h</a></div><div class="ttdoc">programme qui gere le joueur par exemple la vitesse de deplacements,sa position etc.</div></div>
 <div class="ttc" id="amenu__load_8h_html"><div class="ttname"><a href="menu__load_8h.html">menu_load.h</a></div><div class="ttdoc">programme qui gere le menu de chargemnt du jeu.</div></div>
