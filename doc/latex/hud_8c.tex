@@ -1,0 +1,126 @@
+\doxysection{Référence du fichier src/hud.c}
+\label{hud_8c}\index{src/hud.c@{src/hud.c}}
+
+
+Programme qui gère le compteur de temps, le compteur de vie et le score à afficher.  
+
+
+{\ttfamily \#include \char`\"{}base\+Game.\+h\char`\"{}}\newline
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ Init\+\_\+\+H\+UD} (\textbf{ H\+UD} $\ast$hud, S\+D\+L\+\_\+\+Color color, const char $\ast$text, int \textbf{ x}, int \textbf{ y})
+\begin{DoxyCompactList}\small\item\em Fonction qui permet d\textquotesingle{}initialiser un hud. \end{DoxyCompactList}\item 
+void \textbf{ Set\+H\+U\+D\+\_\+\+Int\+To\+Texture} (\textbf{ H\+UD} $\ast$hud, S\+D\+L\+\_\+\+Color color, const char $\ast$nom, int valeur, int posX, int posY)
+\begin{DoxyCompactList}\small\item\em Fonction qui permet de creer la texture d\textquotesingle{}un hud. \end{DoxyCompactList}\item 
+void \textbf{ Afficher\+H\+UD} (\textbf{ H\+UD} $\ast$hud)
+\begin{DoxyCompactList}\small\item\em Fonction qui permet d\textquotesingle{}afficher un hud. \end{DoxyCompactList}\item 
+void \textbf{ Nettoyer\+H\+UD} (\textbf{ H\+UD} $\ast$hud)
+\begin{DoxyCompactList}\small\item\em Fonction qui detruit un hud. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Programme qui gère le compteur de temps, le compteur de vie et le score à afficher. 
+
+\begin{DoxyAuthor}{Auteur}
+C\+A\+L\+V\+A\+D\+OS Cindy, C\+H\+A\+U\+M\+U\+L\+ON Cassandra, C\+H\+E\+L\+LI Célia, O\+U\+S\+M\+A\+N\+O\+VA Karina 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+mars 2020
+\end{DoxyDate}
+Affichage et mise à jour graphique des éléments 
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\label{hud_8c_a4f49d6dce188b88579a49345270f0463}} 
+\index{hud.c@{hud.c}!AfficherHUD@{AfficherHUD}}
+\index{AfficherHUD@{AfficherHUD}!hud.c@{hud.c}}
+\doxysubsubsection{AfficherHUD()}
+{\footnotesize\ttfamily void Afficher\+H\+UD (\begin{DoxyParamCaption}\item[{\textbf{ H\+UD} $\ast$}]{hud }\end{DoxyParamCaption})}
+
+
+
+Fonction qui permet d\textquotesingle{}afficher un hud. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em hud} & pointeur sur le hud à afficher \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+\mbox{\label{hud_8c_a0b5bb9068714fa26c8f7c97634816285}} 
+\index{hud.c@{hud.c}!Init\_HUD@{Init\_HUD}}
+\index{Init\_HUD@{Init\_HUD}!hud.c@{hud.c}}
+\doxysubsubsection{Init\_HUD()}
+{\footnotesize\ttfamily void Init\+\_\+\+H\+UD (\begin{DoxyParamCaption}\item[{\textbf{ H\+UD} $\ast$}]{hud,  }\item[{S\+D\+L\+\_\+\+Color}]{color,  }\item[{const char $\ast$}]{text,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+Fonction qui permet d\textquotesingle{}initialiser un hud. 
+
+Un hud correspond à toutes les informations concernant le joueur tels que le score ou le nombre de vie par exemple 
+\begin{DoxyParams}{Paramètres}
+{\em hud} & pointeur sur une structure de type H\+UD \\
+\hline
+{\em color} & enumération S\+D\+L\+\_\+\+Color correspondant à la couleur de la police \\
+\hline
+{\em text} & chaîne de caractère qui correspond au nom de la texture \\
+\hline
+{\em x} & position en x du hud \\
+\hline
+{\em y} & position en y du hud \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+\mbox{\label{hud_8c_af36b747248c55fe2868fd998ab00e87d}} 
+\index{hud.c@{hud.c}!NettoyerHUD@{NettoyerHUD}}
+\index{NettoyerHUD@{NettoyerHUD}!hud.c@{hud.c}}
+\doxysubsubsection{NettoyerHUD()}
+{\footnotesize\ttfamily void Nettoyer\+H\+UD (\begin{DoxyParamCaption}\item[{\textbf{ H\+UD} $\ast$}]{hud }\end{DoxyParamCaption})}
+
+
+
+Fonction qui detruit un hud. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em hud} & pointeur sur le hud à supprimer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+\mbox{\label{hud_8c_a829a93e4411240ecbb3936611c2dda46}} 
+\index{hud.c@{hud.c}!SetHUD\_IntToTexture@{SetHUD\_IntToTexture}}
+\index{SetHUD\_IntToTexture@{SetHUD\_IntToTexture}!hud.c@{hud.c}}
+\doxysubsubsection{SetHUD\_IntToTexture()}
+{\footnotesize\ttfamily void Set\+H\+U\+D\+\_\+\+Int\+To\+Texture (\begin{DoxyParamCaption}\item[{\textbf{ H\+UD} $\ast$}]{hud,  }\item[{S\+D\+L\+\_\+\+Color}]{color,  }\item[{const char $\ast$}]{nom,  }\item[{int}]{valeur,  }\item[{int}]{posX,  }\item[{int}]{posY }\end{DoxyParamCaption})}
+
+
+
+Fonction qui permet de creer la texture d\textquotesingle{}un hud. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em hud} & pointeur sur une structure de type H\+UD \\
+\hline
+{\em color} & enumération S\+D\+L\+\_\+\+Color correspondant à la couleur de la police \\
+\hline
+{\em nom} & chaîne de caractère de ce qu\textquotesingle{}on veut afficher \\
+\hline
+{\em valeur} & valeur numérique à afficher dans le hud \\
+\hline
+{\em posX} & position en x du hud \\
+\hline
+{\em posY} & position en y du hud \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}

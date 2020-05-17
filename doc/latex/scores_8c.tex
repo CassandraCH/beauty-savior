@@ -1,0 +1,82 @@
+\doxysection{Référence du fichier src/scores.c}
+\label{scores_8c}\index{src/scores.c@{src/scores.c}}
+
+
+Programme qui gère le score.  
+
+
+{\ttfamily \#include \char`\"{}base\+Game.\+h\char`\"{}}\newline
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ H\+UD} $\ast$ \textbf{ get\+Nombre\+Vie} ()
+\begin{DoxyCompactList}\small\item\em Retourne le hud du nombre de vie. \end{DoxyCompactList}\item 
+\textbf{ H\+UD} $\ast$ \textbf{ get\+Scores} ()
+\begin{DoxyCompactList}\small\item\em Retourne l\textquotesingle{}instance de l\textquotesingle{}objet score. \end{DoxyCompactList}\item 
+\textbf{ H\+UD} $\ast$ \textbf{ get\+Niveau} ()
+\begin{DoxyCompactList}\small\item\em Retourne l\textquotesingle{}instance de l\textquotesingle{}objet niveau. \end{DoxyCompactList}\item 
+\textbf{ H\+UD} $\ast$ \textbf{ get\+Time} ()
+\begin{DoxyCompactList}\small\item\em Retourne l\textquotesingle{}instance de l\textquotesingle{}objet niveau. \end{DoxyCompactList}\item 
+\textbf{ H\+UD} $\ast$ \textbf{ get\+Item} (int num\+\_\+item)
+\begin{DoxyCompactList}\small\item\em Retourne de l\textquotesingle{}item séléction. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ H\+UD} \textbf{ score}
+\item 
+\textbf{ H\+UD} \textbf{ vie}
+\item 
+\textbf{ H\+UD} \textbf{ niveau}
+\item 
+\textbf{ H\+UD} \textbf{ item\+\_\+s} [3]
+\item 
+\textbf{ H\+UD} \textbf{ time\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Programme qui gère le score. 
+
+\begin{DoxyAuthor}{Auteur}
+C\+A\+L\+V\+A\+D\+OS Cindy, C\+H\+A\+U\+M\+U\+L\+ON Cassandra, C\+H\+E\+L\+LI Célia, O\+U\+S\+M\+A\+N\+O\+VA Karina 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+janvier 2020
+\end{DoxyDate}
+Initialisation, mise à jour, affichage et destruction du score 
+
+\doxysubsection{Documentation des variables}
+\mbox{\label{scores_8c_a1c845b472ee3497dd6bd651ce12bbf13}} 
+\index{scores.c@{scores.c}!item\_s@{item\_s}}
+\index{item\_s@{item\_s}!scores.c@{scores.c}}
+\doxysubsubsection{item\_s}
+{\footnotesize\ttfamily \textbf{ H\+UD} item\+\_\+s[3]}
+
+hud des items du jeux \mbox{\label{scores_8c_ad8fced43a1512c1ba76ca0d12d718c48}} 
+\index{scores.c@{scores.c}!niveau@{niveau}}
+\index{niveau@{niveau}!scores.c@{scores.c}}
+\doxysubsubsection{niveau}
+{\footnotesize\ttfamily \textbf{ H\+UD} niveau}
+
+hud du niveau \mbox{\label{scores_8c_a6114d54a4a783abb9742f5868d02af92}} 
+\index{scores.c@{scores.c}!score@{score}}
+\index{score@{score}!scores.c@{scores.c}}
+\doxysubsubsection{score}
+{\footnotesize\ttfamily \textbf{ H\+UD} score}
+
+hud du score \mbox{\label{scores_8c_adb87172f98d060746b910a25df448ad5}} 
+\index{scores.c@{scores.c}!time\_@{time\_}}
+\index{time\_@{time\_}!scores.c@{scores.c}}
+\doxysubsubsection{time\_}
+{\footnotesize\ttfamily \textbf{ H\+UD} time\+\_\+}
+
+hud du timer \mbox{\label{scores_8c_a94acb5f88ee746a36716d17a51626784}} 
+\index{scores.c@{scores.c}!vie@{vie}}
+\index{vie@{vie}!scores.c@{scores.c}}
+\doxysubsubsection{vie}
+{\footnotesize\ttfamily \textbf{ H\+UD} vie}
+
+hud de la vie pour le menu de fin de partie 

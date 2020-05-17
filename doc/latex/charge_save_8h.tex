@@ -1,0 +1,188 @@
+\doxysection{Référence du fichier includes/charge\+Save.h}
+\label{charge_save_8h}\index{includes/chargeSave.h@{includes/chargeSave.h}}
+
+
+Programme qui s\textquotesingle{}occupe du chargement et sauvegarde de manière globaliser, chargement des niveaux, des items, des boites de collisions, sauvegarde du joueur. En general la sauvegarde et chargement én général.  
+
+
+{\ttfamily \#include \char`\"{}commun.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}base\+Game.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \textbf{ \+\_\+\+\_\+\+L\+O\+A\+D\+\_\+\+S\+A\+V\+E\+\_\+H}
+\end{DoxyCompactItemize}
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ Load\+Game} ()
+\begin{DoxyCompactList}\small\item\em Fonction qui permet de charger une partie sauvegardée. \end{DoxyCompactList}\item 
+void \textbf{ Save\+Game} ()
+\begin{DoxyCompactList}\small\item\em Fonction qui permet sauvegarder une partie. \end{DoxyCompactList}\item 
+void \textbf{ Save\+Collider\+\_\+\+Position} ()
+\begin{DoxyCompactList}\small\item\em Fonction qui permet de sauvegarder la position des colliders dans un fichier. \end{DoxyCompactList}\item 
+void \textbf{ Load\+Collider} (const char $\ast$filename)
+\begin{DoxyCompactList}\small\item\em Fonction qui permet de charger les colliders a partir d\textquotesingle{}un fichier. \end{DoxyCompactList}\item 
+void \textbf{ Load\+And\+Create\+\_\+\+P\+NJ} (\textbf{ Linked\+List} $\ast$lst, char $\ast$filename)
+\begin{DoxyCompactList}\small\item\em Fonction qui permet de charger et de créer toutes les entités (sauf le joueur) à partir d\textquotesingle{}un fichier. \end{DoxyCompactList}\item 
+void \textbf{ Load\+Enemies} (const char $\ast$filename)
+\begin{DoxyCompactList}\small\item\em Fonction qui permet de charger les ennemis à partir d\textquotesingle{}un fichier. \end{DoxyCompactList}\item 
+void \textbf{ Load\+Items} (const char $\ast$filename, S\+D\+L\+\_\+\+Texture $\ast$tex)
+\begin{DoxyCompactList}\small\item\em Fonction qui permet de charger les items à partir d\textquotesingle{}un fichier. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Programme qui s\textquotesingle{}occupe du chargement et sauvegarde de manière globaliser, chargement des niveaux, des items, des boites de collisions, sauvegarde du joueur. En general la sauvegarde et chargement én général. 
+
+\begin{DoxyAuthor}{Auteur}
+C\+A\+L\+V\+A\+D\+OS Cindy, C\+H\+A\+U\+M\+U\+L\+ON Cassandra, C\+H\+E\+L\+LI Célia, O\+U\+S\+M\+A\+N\+O\+VA Karina 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+mars 2020 
+\end{DoxyDate}
+
+
+\doxysubsection{Documentation des macros}
+\mbox{\label{charge_save_8h_af911910b91aea07d6dd6b9e51dad4c80}} 
+\index{chargeSave.h@{chargeSave.h}!\_\_LOAD\_SAVE\_H@{\_\_LOAD\_SAVE\_H}}
+\index{\_\_LOAD\_SAVE\_H@{\_\_LOAD\_SAVE\_H}!chargeSave.h@{chargeSave.h}}
+\doxysubsubsection{\_\_LOAD\_SAVE\_H}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+L\+O\+A\+D\+\_\+\+S\+A\+V\+E\+\_\+H}
+
+$<$ 
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\label{charge_save_8h_a5dd91c63073da97b4040644cdbd58be9}} 
+\index{chargeSave.h@{chargeSave.h}!LoadAndCreate\_PNJ@{LoadAndCreate\_PNJ}}
+\index{LoadAndCreate\_PNJ@{LoadAndCreate\_PNJ}!chargeSave.h@{chargeSave.h}}
+\doxysubsubsection{LoadAndCreate\_PNJ()}
+{\footnotesize\ttfamily void Load\+And\+Create\+\_\+\+P\+NJ (\begin{DoxyParamCaption}\item[{\textbf{ Linked\+List} $\ast$}]{lst,  }\item[{char $\ast$}]{filename }\end{DoxyParamCaption})}
+
+
+
+Fonction qui permet de charger et de créer toutes les entités (sauf le joueur) à partir d\textquotesingle{}un fichier. 
+
+chargement et créations des P\+NJ ( personnage non joueur )
+
+
+\begin{DoxyParams}{Paramètres}
+{\em lst} & Liste des colliders \\
+\hline
+{\em filename} & Nom du fichier \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+\mbox{\label{charge_save_8h_abe87588694601b14fd4ba742b4fdc183}} 
+\index{chargeSave.h@{chargeSave.h}!LoadCollider@{LoadCollider}}
+\index{LoadCollider@{LoadCollider}!chargeSave.h@{chargeSave.h}}
+\doxysubsubsection{LoadCollider()}
+{\footnotesize\ttfamily void Load\+Collider (\begin{DoxyParamCaption}\item[{const char $\ast$}]{filename }\end{DoxyParamCaption})}
+
+
+
+Fonction qui permet de charger les colliders a partir d\textquotesingle{}un fichier. 
+
+chargement des collider
+
+Utilisation d\textquotesingle{}un pointeur pour pouvoir parcourir la liste de colliders 
+\begin{DoxyParams}{Paramètres}
+{\em filename} & Nom du fichier ou la position des colliders est sauvegardee \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+\mbox{\label{charge_save_8h_a299fa172ba41e15f07c0cfb6e1ab14dd}} 
+\index{chargeSave.h@{chargeSave.h}!LoadEnemies@{LoadEnemies}}
+\index{LoadEnemies@{LoadEnemies}!chargeSave.h@{chargeSave.h}}
+\doxysubsubsection{LoadEnemies()}
+{\footnotesize\ttfamily void Load\+Enemies (\begin{DoxyParamCaption}\item[{const char $\ast$}]{filename }\end{DoxyParamCaption})}
+
+
+
+Fonction qui permet de charger les ennemis à partir d\textquotesingle{}un fichier. 
+
+chargement des ennemis
+
+
+\begin{DoxyParams}{Paramètres}
+{\em filename} & Nom du fichier \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+\mbox{\label{charge_save_8h_ab0e5cf3e0686edf88442f5977c0f8875}} 
+\index{chargeSave.h@{chargeSave.h}!LoadGame@{LoadGame}}
+\index{LoadGame@{LoadGame}!chargeSave.h@{chargeSave.h}}
+\doxysubsubsection{LoadGame()}
+{\footnotesize\ttfamily void Load\+Game (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fonction qui permet de charger une partie sauvegardée. 
+
+les chargements des parties
+
+Lecture du fichier save\+\_\+player.\+txt \begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+\mbox{\label{charge_save_8h_abbae1f56c60a9a52505d4ce798d54248}} 
+\index{chargeSave.h@{chargeSave.h}!LoadItems@{LoadItems}}
+\index{LoadItems@{LoadItems}!chargeSave.h@{chargeSave.h}}
+\doxysubsubsection{LoadItems()}
+{\footnotesize\ttfamily void Load\+Items (\begin{DoxyParamCaption}\item[{const char $\ast$}]{filename,  }\item[{S\+D\+L\+\_\+\+Texture $\ast$}]{tex }\end{DoxyParamCaption})}
+
+
+
+Fonction qui permet de charger les items à partir d\textquotesingle{}un fichier. 
+
+chargement des items
+
+
+\begin{DoxyParams}{Paramètres}
+{\em filename} & Nom du fichier \\
+\hline
+{\em tex} & Texture de l\textquotesingle{}item \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+\mbox{\label{charge_save_8h_a1154ecfe153a8c8ff20d73bc3cf2fe5e}} 
+\index{chargeSave.h@{chargeSave.h}!SaveCollider\_Position@{SaveCollider\_Position}}
+\index{SaveCollider\_Position@{SaveCollider\_Position}!chargeSave.h@{chargeSave.h}}
+\doxysubsubsection{SaveCollider\_Position()}
+{\footnotesize\ttfamily void Save\+Collider\+\_\+\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fonction qui permet de sauvegarder la position des colliders dans un fichier. 
+
+les collider de position
+
+Creation du fichier niveau1\+\_\+position.\+txt
+
+Utilisation d\textquotesingle{}un pointeur pour pouvoir parcourir la liste de colliders \begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+\mbox{\label{charge_save_8h_a3e91a8cd0bb4d1d8db71ee601cda4588}} 
+\index{chargeSave.h@{chargeSave.h}!SaveGame@{SaveGame}}
+\index{SaveGame@{SaveGame}!chargeSave.h@{chargeSave.h}}
+\doxysubsubsection{SaveGame()}
+{\footnotesize\ttfamily void Save\+Game (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fonction qui permet sauvegarder une partie. 
+
+les sauvegardes de parties
+
+Creation du fichier save\+\_\+player.\+txt \begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}

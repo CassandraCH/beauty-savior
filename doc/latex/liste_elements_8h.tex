@@ -1,0 +1,276 @@
+\doxysection{Référence du fichier includes/liste\+Elements.h}
+\label{liste_elements_8h}\index{includes/listeElements.h@{includes/listeElements.h}}
+
+
+programme qui gere tous les elements met en place pour le jeu .  
+
+
+{\ttfamily \#include \char`\"{}commun.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}texture.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}attributs.\+h\char`\"{}}\newline
+\doxysubsection*{Structures de données}
+\begin{DoxyCompactItemize}
+\item 
+struct \textbf{ Node}
+\begin{DoxyCompactList}\small\item\em structure gerant les noeud de la liste \end{DoxyCompactList}\item 
+struct \textbf{ list}
+\begin{DoxyCompactList}\small\item\em structure gerant les noeud de l\textquotesingle{}entete et a la fin. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Définitions de type}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \textbf{ Node} \textbf{ Node}
+\item 
+typedef struct \textbf{ list} \textbf{ Linked\+List}
+\end{DoxyCompactItemize}
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ List\+\_\+\+Init} (\textbf{ Linked\+List} $\ast$\textbf{ list})
+\begin{DoxyCompactList}\small\item\em Fonction qui permet d\textquotesingle{}initialiser la liste passée en paramètre. \end{DoxyCompactList}\item 
+void \textbf{ List\+\_\+\+Update} ()
+\begin{DoxyCompactList}\small\item\em Fonction qui met à jour les listes des bullets et des ennemis. \end{DoxyCompactList}\item 
+\textbf{ Node} $\ast$ \textbf{ Create\+Element} (S\+D\+L\+\_\+\+Rect $\ast$rect, \textbf{ type\+Entite} item\+\_\+t, \textbf{ bool} actif)
+\begin{DoxyCompactList}\small\item\em Fonction qui permet de créer un rectangle (portion de l\textquotesingle{}ecran) \end{DoxyCompactList}\item 
+void \textbf{ Insert\+\_\+\+Element} (\textbf{ Linked\+List} $\ast$\textbf{ list}, S\+D\+L\+\_\+\+Rect $\ast$rect, \textbf{ type\+Entite} items\+\_\+t, \textbf{ bool} actif)
+\begin{DoxyCompactList}\small\item\em Fonction qui permet d\textquotesingle{}insérer un élément dans une liste passée en paramètre. \end{DoxyCompactList}\item 
+void \textbf{ List\+\_\+\+Render\+Elements} (\textbf{ Linked\+List} $\ast$lst, S\+D\+L\+\_\+\+Texture $\ast$tex, \textbf{ type\+Entite} typeE, int largeur\+Tex, int hauteur\+Tex)
+\item 
+void \textbf{ Delete\+\_\+\+List} (\textbf{ Linked\+List} $\ast$lst)
+\begin{DoxyCompactList}\small\item\em Fonction qui permet de supprimer la liste passée en paramètre. \end{DoxyCompactList}\item 
+\textbf{ bool} \textbf{ Delete\+\_\+\+First} (\textbf{ Linked\+List} $\ast$lst)
+\begin{DoxyCompactList}\small\item\em Fonction qui permet de supprimer la head de la liste passée en paramètre. \end{DoxyCompactList}\item 
+\textbf{ bool} \textbf{ Delete\+\_\+\+Last} (\textbf{ Linked\+List} $\ast$lst)
+\begin{DoxyCompactList}\small\item\em Fonction qui permet de supprimer la queue de la liste liste passée en paramètre. \end{DoxyCompactList}\item 
+\textbf{ Node} $\ast$ \textbf{ Find} (\textbf{ Linked\+List} $\ast$lsptr, int target, \textbf{ Node} $\ast$$\ast$prv\+Ptr)
+\begin{DoxyCompactList}\small\item\em Fonction qui permet de chercher un élement dans une liste. \end{DoxyCompactList}\item 
+\textbf{ bool} \textbf{ Delete\+\_\+\+Target} (\textbf{ Linked\+List} $\ast$lsptr, int target)
+\begin{DoxyCompactList}\small\item\em Fonction qui permet de supprimer un élément cible dans une liste. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+programme qui gere tous les elements met en place pour le jeu . 
+
+\begin{DoxyAuthor}{Auteur}
+C\+A\+L\+V\+A\+D\+OS Cindy, C\+H\+A\+U\+M\+U\+L\+ON Cassandra, C\+H\+E\+L\+LI Célia, O\+U\+S\+M\+A\+N\+O\+VA Karina 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+mars 2020 
+\end{DoxyDate}
+
+
+\doxysubsection{Documentation des définitions de type}
+\mbox{\label{liste_elements_8h_a030286e4cb8b6aa168edf87519ab6e12}} 
+\index{listeElements.h@{listeElements.h}!LinkedList@{LinkedList}}
+\index{LinkedList@{LinkedList}!listeElements.h@{listeElements.h}}
+\doxysubsubsection{LinkedList}
+{\footnotesize\ttfamily typedef struct \textbf{ list} \textbf{ Linked\+List}}
+
+This is the documentation for the preceding typedef \mbox{\label{liste_elements_8h_a3b09f37e675bcd48a01bf22155996872}} 
+\index{listeElements.h@{listeElements.h}!Node@{Node}}
+\index{Node@{Node}!listeElements.h@{listeElements.h}}
+\doxysubsubsection{Node}
+{\footnotesize\ttfamily typedef struct \textbf{ Node} \textbf{ Node}}
+
+This is the documentation for the preceding typedef 
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\label{liste_elements_8h_a083f24df1acaec77f131118e3dcfd036}} 
+\index{listeElements.h@{listeElements.h}!CreateElement@{CreateElement}}
+\index{CreateElement@{CreateElement}!listeElements.h@{listeElements.h}}
+\doxysubsubsection{CreateElement()}
+{\footnotesize\ttfamily \textbf{ Node}$\ast$ Create\+Element (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Rect $\ast$}]{rect,  }\item[{\textbf{ type\+Entite}}]{item\+\_\+t,  }\item[{\textbf{ bool}}]{actif }\end{DoxyParamCaption})}
+
+
+
+Fonction qui permet de créer un rectangle (portion de l\textquotesingle{}ecran) 
+
+creation du rectangle
+
+Ce rectangle sera utilisé pour la texture 
+\begin{DoxyParams}{Paramètres}
+{\em rect} & rectangle S\+DL \\
+\hline
+{\em item\+\_\+t} & type de l\textquotesingle{}entité \\
+\hline
+{\em actif} & etat de l\textquotesingle{}entité \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Pointeur sur une structure de type \doxyref{Node}{p.}{struct_node} 
+\end{DoxyReturn}
+\mbox{\label{liste_elements_8h_ab2f6cf26958bce6bb10c4cc50a2182d5}} 
+\index{listeElements.h@{listeElements.h}!Delete\_First@{Delete\_First}}
+\index{Delete\_First@{Delete\_First}!listeElements.h@{listeElements.h}}
+\doxysubsubsection{Delete\_First()}
+{\footnotesize\ttfamily \textbf{ bool} Delete\+\_\+\+First (\begin{DoxyParamCaption}\item[{\textbf{ Linked\+List} $\ast$}]{lst }\end{DoxyParamCaption})}
+
+
+
+Fonction qui permet de supprimer la head de la liste passée en paramètre. 
+
+Supprime le premier
+
+
+\begin{DoxyParams}{Paramètres}
+{\em lst} & pointeur sur la liste dans laquelle on veut insérer un élement \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+un booleen si l\textquotesingle{}élement a bien été supprimé ou non 
+\end{DoxyReturn}
+\mbox{\label{liste_elements_8h_a4e595c2b6cfd5eefefbd3f02f31f097f}} 
+\index{listeElements.h@{listeElements.h}!Delete\_Last@{Delete\_Last}}
+\index{Delete\_Last@{Delete\_Last}!listeElements.h@{listeElements.h}}
+\doxysubsubsection{Delete\_Last()}
+{\footnotesize\ttfamily \textbf{ bool} Delete\+\_\+\+Last (\begin{DoxyParamCaption}\item[{\textbf{ Linked\+List} $\ast$}]{lst }\end{DoxyParamCaption})}
+
+
+
+Fonction qui permet de supprimer la queue de la liste liste passée en paramètre. 
+
+Supprime le dernier
+
+
+\begin{DoxyParams}{Paramètres}
+{\em lst} & pointeur sur la liste dans laquelle on veut inserer un élement \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+un booleen si l\textquotesingle{}élement a bien été supprimé ou non 
+\end{DoxyReturn}
+\mbox{\label{liste_elements_8h_a2c3bcee53ceafaf4909feaba08df4a33}} 
+\index{listeElements.h@{listeElements.h}!Delete\_List@{Delete\_List}}
+\index{Delete\_List@{Delete\_List}!listeElements.h@{listeElements.h}}
+\doxysubsubsection{Delete\_List()}
+{\footnotesize\ttfamily void Delete\+\_\+\+List (\begin{DoxyParamCaption}\item[{\textbf{ Linked\+List} $\ast$}]{lst }\end{DoxyParamCaption})}
+
+
+
+Fonction qui permet de supprimer la liste passée en paramètre. 
+
+Supprime la liste
+
+
+\begin{DoxyParams}{Paramètres}
+{\em lst} & pointeur sur la liste dans laquelle on veut insérer un élement \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+\mbox{\label{liste_elements_8h_a7eaa364a635b38963b3ca9e5c96f2001}} 
+\index{listeElements.h@{listeElements.h}!Delete\_Target@{Delete\_Target}}
+\index{Delete\_Target@{Delete\_Target}!listeElements.h@{listeElements.h}}
+\doxysubsubsection{Delete\_Target()}
+{\footnotesize\ttfamily \textbf{ bool} Delete\+\_\+\+Target (\begin{DoxyParamCaption}\item[{\textbf{ Linked\+List} $\ast$}]{lsptr,  }\item[{int}]{target }\end{DoxyParamCaption})}
+
+
+
+Fonction qui permet de supprimer un élément cible dans une liste. 
+
+suppime la cible
+
+
+\begin{DoxyParams}{Paramètres}
+{\em lsptr} & pointeur sur la liste dans laquelle on veut supprimer un élément \\
+\hline
+{\em target} & élément cible qu\textquotesingle{}on veut supprimer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+un booleen si l\textquotesingle{}élément cible a bien été supprimé ou non 
+\end{DoxyReturn}
+\mbox{\label{liste_elements_8h_a64f636bd61bb1accd714604609dfb955}} 
+\index{listeElements.h@{listeElements.h}!Find@{Find}}
+\index{Find@{Find}!listeElements.h@{listeElements.h}}
+\doxysubsubsection{Find()}
+{\footnotesize\ttfamily \textbf{ Node}$\ast$ Find (\begin{DoxyParamCaption}\item[{\textbf{ Linked\+List} $\ast$}]{lsptr,  }\item[{int}]{target,  }\item[{\textbf{ Node} $\ast$$\ast$}]{prv\+Ptr }\end{DoxyParamCaption})}
+
+
+
+Fonction qui permet de chercher un élement dans une liste. 
+
+trouve la cible
+
+
+\begin{DoxyParams}{Paramètres}
+{\em lsptr} & pointeur sur la liste dans laquelle on cherche un élement \\
+\hline
+{\em target} & élement cible qui est cherché \\
+\hline
+{\em prv\+Ptr} & pointeur sur l\textquotesingle{}élément précédent \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Pointeur sur une structure de type \doxyref{Node}{p.}{struct_node} 
+\end{DoxyReturn}
+\mbox{\label{liste_elements_8h_ad960ce201385512a4b18f208aba95ed3}} 
+\index{listeElements.h@{listeElements.h}!Insert\_Element@{Insert\_Element}}
+\index{Insert\_Element@{Insert\_Element}!listeElements.h@{listeElements.h}}
+\doxysubsubsection{Insert\_Element()}
+{\footnotesize\ttfamily void Insert\+\_\+\+Element (\begin{DoxyParamCaption}\item[{\textbf{ Linked\+List} $\ast$}]{list,  }\item[{S\+D\+L\+\_\+\+Rect $\ast$}]{rect,  }\item[{\textbf{ type\+Entite}}]{items\+\_\+t,  }\item[{\textbf{ bool}}]{actif }\end{DoxyParamCaption})}
+
+
+
+Fonction qui permet d\textquotesingle{}insérer un élément dans une liste passée en paramètre. 
+
+creation du rectangle
+
+
+\begin{DoxyParams}{Paramètres}
+{\em list} & pointeur sur la liste dans laquelle on veut insérer un élement \\
+\hline
+{\em rect} & pointeur sur l\textquotesingle{}élement a ajouter \\
+\hline
+{\em items\+\_\+t} & type de l\textquotesingle{}élement à ajouter \+: ennemi, bullet, collider... \\
+\hline
+{\em actif} & état de l\textquotesingle{}élement \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+\mbox{\label{liste_elements_8h_a39adc86c1bc06da97382006b6ea685cb}} 
+\index{listeElements.h@{listeElements.h}!List\_Init@{List\_Init}}
+\index{List\_Init@{List\_Init}!listeElements.h@{listeElements.h}}
+\doxysubsubsection{List\_Init()}
+{\footnotesize\ttfamily void List\+\_\+\+Init (\begin{DoxyParamCaption}\item[{\textbf{ Linked\+List} $\ast$}]{list }\end{DoxyParamCaption})}
+
+
+
+Fonction qui permet d\textquotesingle{}initialiser la liste passée en paramètre. 
+
+initialisation des listes
+
+
+\begin{DoxyParams}{Paramètres}
+{\em list} & liste a initialiser \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+\mbox{\label{liste_elements_8h_a54e31ba842e9468ab7f9f3761ed3466a}} 
+\index{listeElements.h@{listeElements.h}!List\_RenderElements@{List\_RenderElements}}
+\index{List\_RenderElements@{List\_RenderElements}!listeElements.h@{listeElements.h}}
+\doxysubsubsection{List\_RenderElements()}
+{\footnotesize\ttfamily void List\+\_\+\+Render\+Elements (\begin{DoxyParamCaption}\item[{\textbf{ Linked\+List} $\ast$}]{lst,  }\item[{S\+D\+L\+\_\+\+Texture $\ast$}]{tex,  }\item[{\textbf{ type\+Entite}}]{typeE,  }\item[{int}]{largeur\+Tex,  }\item[{int}]{hauteur\+Tex }\end{DoxyParamCaption})}
+
+affiche les elements de la liste \mbox{\label{liste_elements_8h_aa21b67fd024a91eebd9354df56ec5efe}} 
+\index{listeElements.h@{listeElements.h}!List\_Update@{List\_Update}}
+\index{List\_Update@{List\_Update}!listeElements.h@{listeElements.h}}
+\doxysubsubsection{List\_Update()}
+{\footnotesize\ttfamily void List\+\_\+\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fonction qui met à jour les listes des bullets et des ennemis. 
+
+Mis à jour de la listes
+
+Suppression des listes si nécessaire \begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}

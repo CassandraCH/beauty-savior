@@ -17,26 +17,26 @@
     /**< fonction Base_Game*/
     extern Base_Game*  getBaseGame(void); 
 
-    extern LinkedList* getEnnemis(void);/**< fonction getEnnemis qui gere les ennemis*/
-    extern LinkedList* getCollider(void);/**< fonction getCollider*/
-    extern LinkedList* getItems(void);/**< fonction getItems*/
-    extern LinkedList* getBullets(void);/**< fonction getBullets*/
+    extern LinkedList* getEnnemis(void);            /**< fonction getEnnemis qui gere les ennemis*/
+    extern LinkedList* getCollider(void);           /**< fonction getCollider*/
+    extern LinkedList* getItems(void);              /**< fonction getItems*/
+    extern LinkedList* getBullets(void);            /**< fonction getBullets*/
 
-    extern HUD* getScores(void);/**< fonction getScores qui gere le scores*/
-    extern HUD* getNiveau();/**< fonction getNiveau qui gere les niveaux*/
-    extern HUD* getTime();/**< fonction getNiveau qui gere le timer du jeux*/
-    extern HUD* getItem(int num_item) ;/**< fonction getItem*/
-    extern HUD* getNombreVie(); /**< fonction getNombreVie*/
+    extern HUD* getScores(void);                    /**< fonction getScores qui gere le scores*/
+    extern HUD* getNiveau();                        /**< fonction getNiveau qui gere les niveaux*/
+    extern HUD* getTime();                          /**< fonction getNiveau qui gere le timer du jeux*/
+    extern HUD* getItem(int num_item) ;             /**< fonction getItem*/
+    extern HUD* getNombreVie();                     /**< fonction getNombreVie*/
 
-    extern GameObject* getGameObject(void);/**< fonction getMenu*/
-    extern GameObject * getHelp(void);/**< fonction getHelp*/
-    extern GameObject* getInventaire(void);/**< fonction getInventaire*/
-    extern GameObject* getInterface(void);/**< fonction getInterface*/
-    extern GameObject * getMenuLoad(void);/**< fonction getMenuLoad*/
-    extern GameObject * getMenuCon(void);/**< fonction getMenuCon*/
-    extern GameObject * getMenuPause(void);/**< fonction getMenuPause*/
-    extern GameObject * getMenu_Win(void);/**< fonction getMenu_Win*/
-    extern GameObject * getMenu_Over(void);/**< fonction getMenu_Over*/
+    extern GameObject* getGameObject(void);         /**< fonction getMenu*/
+    extern GameObject * getHelp(void);              /**< fonction getHelp*/
+    extern GameObject* getInventaire(void);         /**< fonction getInventaire*/
+    extern GameObject* getInterface(void);          /**< fonction getInterface*/
+    extern GameObject * getMenuLoad(void);          /**< fonction getMenuLoad*/
+    extern GameObject * getMenuCon(void);           /**< fonction getMenuCon*/
+    extern GameObject * getMenuPause(void);         /**< fonction getMenuPause*/
+    extern GameObject * getMenu_Win(void);          /**< fonction getMenu_Win*/
+    extern GameObject * getMenu_Over(void);         /**< fonction getMenu_Over*/
 
 
     extern int getOs();/**< fonction getOs*/
@@ -64,8 +64,6 @@ extern void Clean_Textures();   /**< fonction de nettoyage des textures pour les
     extern LinkedList items;        /**< Liste des items */
 
 ///@}
-
-
 
 
 extern int tempsEcoule;/**< les temps ecouler*/

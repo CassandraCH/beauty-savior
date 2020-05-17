@@ -14,7 +14,7 @@
 #include "texture.h"
 /**
 * \struct level
-* \brief structure gerant les niveux
+* \brief structure gerant les niveaux
 */
 typedef struct level
 {

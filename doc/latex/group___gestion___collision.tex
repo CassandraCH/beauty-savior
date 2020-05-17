@@ -1,0 +1,119 @@
+\doxysection{Gestion\+\_\+\+Collision}
+\label{group___gestion___collision}\index{Gestion\_Collision@{Gestion\_Collision}}
+
+
+Listes de toutes les méthodes liées au Collision.  
+
+
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ Level\+\_\+\+Collision} ()
+\begin{DoxyCompactList}\small\item\em Fonction qui gère les collisions avec le décor. \end{DoxyCompactList}\item 
+void \textbf{ Collision\+\_\+\+Detection} ()
+\begin{DoxyCompactList}\small\item\em Fonction qui gère les collision entre le joueur et le decor, le joueur et les ennemis; et si le joueur tombe dans le vide. \end{DoxyCompactList}\item 
+\textbf{ bool} \textbf{ collide2d} (float x1, float y1, float x2, float y2, float wt1, float ht1, float wt2, float ht2)
+\begin{DoxyCompactList}\small\item\em Fonction qui verifie la collision entre 2 elements. \end{DoxyCompactList}\item 
+void \textbf{ Shoot\+\_\+\+Collision} ()
+\begin{DoxyCompactList}\small\item\em Fonction qui gere les collisions entre un bullet et un ennemi. \end{DoxyCompactList}\item 
+void \textbf{ Collision\+Items} ()
+\begin{DoxyCompactList}\small\item\em Fonction qui gere les collisions avec les items. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Listes de toutes les méthodes liées au Collision. 
+
+
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\label{group___gestion___collision_ga3f975bc358d2138dabd1e67263613350}} 
+\index{Gestion\_Collision@{Gestion\_Collision}!collide2d@{collide2d}}
+\index{collide2d@{collide2d}!Gestion\_Collision@{Gestion\_Collision}}
+\doxysubsubsection{collide2d()}
+{\footnotesize\ttfamily \textbf{ bool} collide2d (\begin{DoxyParamCaption}\item[{float}]{x1,  }\item[{float}]{y1,  }\item[{float}]{x2,  }\item[{float}]{y2,  }\item[{float}]{wt1,  }\item[{float}]{ht1,  }\item[{float}]{wt2,  }\item[{float}]{ht2 }\end{DoxyParamCaption})}
+
+
+
+Fonction qui verifie la collision entre 2 elements. 
+
+vérification de la collision entre 2 éléments
+
+
+\begin{DoxyParams}{Paramètres}
+{\em x1} & position en x du premier element \\
+\hline
+{\em y1} & position en y du premier element \\
+\hline
+{\em x2} & position en x du deuxieme element \\
+\hline
+{\em y2} & position en y du deuxieme element \\
+\hline
+{\em wt1} & largeur du premier element \\
+\hline
+{\em ht1} & hauteur du premier element \\
+\hline
+{\em wt2} & largeur du deuxieme element \\
+\hline
+{\em ht2} & hauteur du deuxieme element \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+un booleen \+: V\+R\+AI s\textquotesingle{}il y a collison, F\+A\+UX sinon 
+\end{DoxyReturn}
+\mbox{\label{group___gestion___collision_ga571d006cd0e3b07c19ad18c1d7bbf8dc}} 
+\index{Gestion\_Collision@{Gestion\_Collision}!Collision\_Detection@{Collision\_Detection}}
+\index{Collision\_Detection@{Collision\_Detection}!Gestion\_Collision@{Gestion\_Collision}}
+\doxysubsubsection{Collision\_Detection()}
+{\footnotesize\ttfamily void Collision\+\_\+\+Detection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fonction qui gère les collision entre le joueur et le decor, le joueur et les ennemis; et si le joueur tombe dans le vide. 
+
+les detection de collisions ~\newline
+
+
+\begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+\mbox{\label{group___gestion___collision_ga41e5645de94682a849a9f90aed83978a}} 
+\index{Gestion\_Collision@{Gestion\_Collision}!CollisionItems@{CollisionItems}}
+\index{CollisionItems@{CollisionItems}!Gestion\_Collision@{Gestion\_Collision}}
+\doxysubsubsection{CollisionItems()}
+{\footnotesize\ttfamily void Collision\+Items (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fonction qui gere les collisions avec les items. 
+
+\begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+\mbox{\label{group___gestion___collision_ga33c40ad8cc89d54f4e75b62de1e6144a}} 
+\index{Gestion\_Collision@{Gestion\_Collision}!Level\_Collision@{Level\_Collision}}
+\index{Level\_Collision@{Level\_Collision}!Gestion\_Collision@{Gestion\_Collision}}
+\doxysubsubsection{Level\_Collision()}
+{\footnotesize\ttfamily void Level\+\_\+\+Collision (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fonction qui gère les collisions avec le décor. 
+
+\begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+\mbox{\label{group___gestion___collision_gac68664494879b81f79036c869f951c48}} 
+\index{Gestion\_Collision@{Gestion\_Collision}!Shoot\_Collision@{Shoot\_Collision}}
+\index{Shoot\_Collision@{Shoot\_Collision}!Gestion\_Collision@{Gestion\_Collision}}
+\doxysubsubsection{Shoot\_Collision()}
+{\footnotesize\ttfamily void Shoot\+\_\+\+Collision (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fonction qui gere les collisions entre un bullet et un ennemi. 
+
+collission des tirs du joueur
+
+\begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}

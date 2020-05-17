@@ -1,0 +1,137 @@
+\doxysection{Référence de la structure player}
+\label{structplayer}\index{player@{player}}
+
+
+Structure gérant les caractéristiques liées au joueur.  
+
+
+
+
+{\ttfamily \#include $<$player.\+h$>$}
+
+\doxysubsection*{Champs de données}
+\begin{DoxyCompactItemize}
+\item 
+float \textbf{ pos\+X\+Depart}
+\item 
+float \textbf{ pos\+Y\+Depart}
+\item 
+\textbf{ bool} \textbf{ os\+Actif}
+\item 
+\textbf{ bool} \textbf{ tree\+Actif}
+\item 
+\textbf{ bool} \textbf{ rock\+Actif}
+\item 
+\textbf{ bool} \textbf{ est\+Tourne}
+\item 
+\textbf{ bool} \textbf{ est\+Sur\+Sol}
+\item 
+int \textbf{ scores}
+\item 
+int \textbf{ nombre\+Vies}
+\item 
+\textbf{ bool} \textbf{ ralenti}
+\item 
+int \textbf{ niveau}
+\item 
+int \textbf{ nb\+\_\+objet}
+\item 
+\textbf{ Texture\+\_\+\+Manager} \textbf{ tex}
+\item 
+\textbf{ bool} \textbf{ is\+Passpord\+Collected}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Structure gérant les caractéristiques liées au joueur. 
+
+\doxysubsection{Documentation des champs}
+\mbox{\label{structplayer_a5a67f39f9630f2e6fe85eeed83004e87}} 
+\index{player@{player}!estSurSol@{estSurSol}}
+\index{estSurSol@{estSurSol}!player@{player}}
+\doxysubsubsection{estSurSol}
+{\footnotesize\ttfamily \textbf{ bool} est\+Sur\+Sol}
+
+le booleen est sur le sol \mbox{\label{structplayer_a004c72afdc3021650707ef9382c546dc}} 
+\index{player@{player}!estTourne@{estTourne}}
+\index{estTourne@{estTourne}!player@{player}}
+\doxysubsubsection{estTourne}
+{\footnotesize\ttfamily \textbf{ bool} est\+Tourne}
+
+le booleen est tourne \mbox{\label{structplayer_aa1d6bac50e7547fbb640884660ef4163}} 
+\index{player@{player}!isPasspordCollected@{isPasspordCollected}}
+\index{isPasspordCollected@{isPasspordCollected}!player@{player}}
+\doxysubsubsection{isPasspordCollected}
+{\footnotesize\ttfamily \textbf{ bool} is\+Passpord\+Collected}
+
+booleen pour connaître la collecte ou du passpord dans un niveau \mbox{\label{structplayer_a8d6b043f4511d84b1161cbe4aa2abdfa}} 
+\index{player@{player}!nb\_objet@{nb\_objet}}
+\index{nb\_objet@{nb\_objet}!player@{player}}
+\doxysubsubsection{nb\_objet}
+{\footnotesize\ttfamily int nb\+\_\+objet}
+
+nombres d\textquotesingle{}objets qui a le joueur \mbox{\label{structplayer_a01662fc98c8f04492826890e0b34bd72}} 
+\index{player@{player}!niveau@{niveau}}
+\index{niveau@{niveau}!player@{player}}
+\doxysubsubsection{niveau}
+{\footnotesize\ttfamily int niveau}
+
+le niveau du joueur \mbox{\label{structplayer_a48fe96196e7887fcf1dedb046c1d6c5f}} 
+\index{player@{player}!nombreVies@{nombreVies}}
+\index{nombreVies@{nombreVies}!player@{player}}
+\doxysubsubsection{nombreVies}
+{\footnotesize\ttfamily int nombre\+Vies}
+
+le nombre de vie du joueur \mbox{\label{structplayer_a2fd5b71a224aea943fa19c97199d5602}} 
+\index{player@{player}!osActif@{osActif}}
+\index{osActif@{osActif}!player@{player}}
+\doxysubsubsection{osActif}
+{\footnotesize\ttfamily \textbf{ bool} os\+Actif}
+
+booleen pour vérifier l\textquotesingle{}os est l\textquotesingle{}élement actif \mbox{\label{structplayer_ac456d6f9c88206712986fff965b49a77}} 
+\index{player@{player}!posXDepart@{posXDepart}}
+\index{posXDepart@{posXDepart}!player@{player}}
+\doxysubsubsection{posXDepart}
+{\footnotesize\ttfamily float pos\+X\+Depart}
+
+sa positon de depart selon x \mbox{\label{structplayer_aee8c046a0ddcd7e9c444095b3cf57229}} 
+\index{player@{player}!posYDepart@{posYDepart}}
+\index{posYDepart@{posYDepart}!player@{player}}
+\doxysubsubsection{posYDepart}
+{\footnotesize\ttfamily float pos\+Y\+Depart}
+
+sa positon de depart selon y \mbox{\label{structplayer_acacb5a1b2070a6542b1e9527b5cba98c}} 
+\index{player@{player}!ralenti@{ralenti}}
+\index{ralenti@{ralenti}!player@{player}}
+\doxysubsubsection{ralenti}
+{\footnotesize\ttfamily \textbf{ bool} ralenti}
+
+le ralentisement du joueur \mbox{\label{structplayer_ae7a6b543a763f86f60f21723fee2b1d6}} 
+\index{player@{player}!rockActif@{rockActif}}
+\index{rockActif@{rockActif}!player@{player}}
+\doxysubsubsection{rockActif}
+{\footnotesize\ttfamily \textbf{ bool} rock\+Actif}
+
+booleen pour vérifier le rock est l\textquotesingle{}élement actif \mbox{\label{structplayer_a99e47d721cb50b8482fb9bc9eab1cbdd}} 
+\index{player@{player}!scores@{scores}}
+\index{scores@{scores}!player@{player}}
+\doxysubsubsection{scores}
+{\footnotesize\ttfamily int scores}
+
+score du joueur \mbox{\label{structplayer_a1bec17986f5e71989ca648dcc8b9a138}} 
+\index{player@{player}!tex@{tex}}
+\index{tex@{tex}!player@{player}}
+\doxysubsubsection{tex}
+{\footnotesize\ttfamily \textbf{ Texture\+\_\+\+Manager} tex}
+
+Texture du joueur \mbox{\label{structplayer_a107a3a5b130c35648389404c8e50d7f6}} 
+\index{player@{player}!treeActif@{treeActif}}
+\index{treeActif@{treeActif}!player@{player}}
+\doxysubsubsection{treeActif}
+{\footnotesize\ttfamily \textbf{ bool} tree\+Actif}
+
+booleen pour vérifier le tree est l\textquotesingle{}élement actif 
+
+La documentation de cette structure a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+includes/\textbf{ player.\+h}\end{DoxyCompactItemize}

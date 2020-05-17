@@ -1,12 +1,12 @@
 var searchData=
 [
-  ['game_71',['game',['../base_game_8c.html#a9e1da7e436a315594c2bfb20bc8b240c',1,'baseGame.c']]],
+  ['game_71',['game',['../basegame_8c.html#a9e1da7e436a315594c2bfb20bc8b240c',1,'basegame.c']]],
   ['game_5fdestroyressources_72',['Game_DestroyRessources',['../inits_8c.html#afbdce5ed10902f780e055ecb0d28a756',1,'Game_DestroyRessources(void):&#160;inits.c'],['../definitions_8h.html#a89cf217e5f305712048c3bc99aa69252',1,'Game_DestroyRessources():&#160;inits.c']]],
   ['game_5fobjects_2eh_73',['game_objects.h',['../game__objects_8h.html',1,'']]],
   ['game_5fover_74',['game_over',['../constantes_8h.html#a693fa47d6694731875ebd5d2c5353c05',1,'constantes.h']]],
   ['game_5fover_2ec_75',['game_over.c',['../game__over_8c.html',1,'']]],
   ['game_5fover_2eh_76',['game_over.h',['../game__over_8h.html',1,'']]],
-  ['game_5frender_77',['Game_Render',['../base_game_8c.html#a95d88cc6c0ae6e11521bf0e0551d51d7',1,'Game_Render():&#160;baseGame.c'],['../definitions_8h.html#a95d88cc6c0ae6e11521bf0e0551d51d7',1,'Game_Render():&#160;baseGame.c']]],
+  ['game_5frender_77',['Game_Render',['../basegame_8c.html#a95d88cc6c0ae6e11521bf0e0551d51d7',1,'Game_Render():&#160;basegame.c'],['../definitions_8h.html#a95d88cc6c0ae6e11521bf0e0551d51d7',1,'Game_Render():&#160;basegame.c']]],
   ['gameobject_78',['gameObject',['../structgame_object.html',1,'gameObject'],['../game__objects_8h.html#af9fb569cbd08ef37d3d595d28f9bec9e',1,'GameObject():&#160;game_objects.h']]],
   ['gameobject_5fclean_79',['GameObject_Clean',['../menu__principal_8c.html#ab9d40b1cbcd9f037e4f3a8409ceafcec',1,'GameObject_Clean(GameObject *gameObject, int nombreComponents):&#160;menu_principal.c'],['../game__objects_8h.html#aa6f0855c15b5b6dac82b78b6d5d5c870',1,'GameObject_Clean(GameObject *gameObject, int nombreOptions):&#160;menu_principal.c']]],
   ['gameobject_5floadressources_80',['GameObject_LoadRessources',['../menu__principal_8c.html#a158f101033d8232e3eb30e0534e0f117',1,'GameObject_LoadRessources(int numero, int num_image, GameObject *gameObject, char *image_on, char *image_off, int positionX, int positionY):&#160;menu_principal.c'],['../game__objects_8h.html#a158f101033d8232e3eb30e0534e0f117',1,'GameObject_LoadRessources(int numero, int num_image, GameObject *gameObject, char *image_on, char *image_off, int positionX, int positionY):&#160;menu_principal.c']]],
@@ -20,7 +20,7 @@ var searchData=
   ['gamewin_5finput_88',['GameWin_Input',['../menu__win_8c.html#a38c5e5b9be9c16d59987a1976a7a62e4',1,'GameWin_Input(SDL_Event *event):&#160;menu_win.c'],['../menu__win_8h.html#a38c5e5b9be9c16d59987a1976a7a62e4',1,'GameWin_Input(SDL_Event *event):&#160;menu_win.c']]],
   ['gestion_5fcollision_89',['Gestion_Collision',['../group___gestion___collision.html',1,'']]],
   ['get_5flevel_90',['Get_Level',['../level_8c.html#a6acdc7be4ba8b4d7f859e37df0ad6626',1,'Get_Level():&#160;level.c'],['../level_8h.html#a6a7d673fdffc2a6ccc8d52eae5f6a7ff',1,'Get_Level():&#160;level.c']]],
-  ['getbasegame_91',['getBaseGame',['../group___getter.html#ga723a5ea9b6e1f0ba848043de38ba55ba',1,'getBaseGame():&#160;baseGame.c'],['../group___getter.html#ga723a5ea9b6e1f0ba848043de38ba55ba',1,'getBaseGame(void):&#160;baseGame.c']]],
+  ['getbasegame_91',['getBaseGame',['../group___getter.html#ga723a5ea9b6e1f0ba848043de38ba55ba',1,'getBaseGame():&#160;basegame.c'],['../group___getter.html#ga723a5ea9b6e1f0ba848043de38ba55ba',1,'getBaseGame(void):&#160;basegame.c']]],
   ['getbranche_92',['getBranche',['../group___getter.html#ga8279a01ed04962c9cf6dd3f3dbcdaa57',1,'getBranche():&#160;inventaire.c'],['../group___getter.html#ga8279a01ed04962c9cf6dd3f3dbcdaa57',1,'getBranche():&#160;inventaire.c']]],
   ['getbullets_93',['getBullets',['../group___getter.html#ga97a33115666a842df058340168fb18a8',1,'getBullets():&#160;liste_elements.c'],['../group___getter.html#ga97a33115666a842df058340168fb18a8',1,'getBullets(void):&#160;liste_elements.c']]],
   ['getcollider_94',['getCollider',['../group___getter.html#ga616efe224a4e672efcd010f9a7d14950',1,'getCollider():&#160;liste_elements.c'],['../group___getter.html#ga616efe224a4e672efcd010f9a7d14950',1,'getCollider(void):&#160;liste_elements.c']]],

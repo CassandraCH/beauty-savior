@@ -1,0 +1,106 @@
+\doxysection{Référence du fichier src/inits.c}
+\label{inits_8c}\index{src/inits.c@{src/inits.c}}
+
+
+Programme qui gère les initialisations.  
+
+
+{\ttfamily \#include \char`\"{}commun.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}base\+Game.\+h\char`\"{}}\newline
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+S\+D\+L\+\_\+\+Renderer $\ast$ \textbf{ get\+Renderer} (void)
+\begin{DoxyCompactList}\small\item\em Fonction qui permet d\textquotesingle{}accéder à la structure du rendu. \end{DoxyCompactList}\item 
+void \textbf{ Init} (const char $\ast$title)
+\begin{DoxyCompactList}\small\item\em Fonction qui permet d\textquotesingle{}initialiser la fenêtre. \end{DoxyCompactList}\item 
+void \textbf{ Game\+\_\+\+Destroy\+Ressources} (void)
+\begin{DoxyCompactList}\small\item\em Fonction qui libère toutes les ressources du jeu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+S\+D\+L\+\_\+\+Renderer $\ast$ \textbf{ rendu} = N\+U\+LL
+\item 
+S\+D\+L\+\_\+\+Window $\ast$ \textbf{ fenetre} = N\+U\+LL
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Programme qui gère les initialisations. 
+
+\begin{DoxyAuthor}{Auteur}
+C\+A\+L\+V\+A\+D\+OS Cindy, C\+H\+A\+U\+M\+U\+L\+ON Cassandra, C\+H\+E\+L\+LI Célia, O\+U\+S\+M\+A\+N\+O\+VA Karina 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+janvier 2020
+\end{DoxyDate}
+Initialisation de la fenêtre, du rendu, du son, du menu principal, du score et du joueur
+
+Destruction du son, des ennemis, de la fenêtre, du menu prinicpal, du rendu... 
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\label{inits_8c_afbdce5ed10902f780e055ecb0d28a756}} 
+\index{inits.c@{inits.c}!Game\_DestroyRessources@{Game\_DestroyRessources}}
+\index{Game\_DestroyRessources@{Game\_DestroyRessources}!inits.c@{inits.c}}
+\doxysubsubsection{Game\_DestroyRessources()}
+{\footnotesize\ttfamily void Game\+\_\+\+Destroy\+Ressources (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Fonction qui libère toutes les ressources du jeu. 
+
+Destruction des structures rendu et fenêtre \begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+\mbox{\label{inits_8c_ae2565fc92725a6507ff7dafe13a8cc7f}} 
+\index{inits.c@{inits.c}!getRenderer@{getRenderer}}
+\index{getRenderer@{getRenderer}!inits.c@{inits.c}}
+\doxysubsubsection{getRenderer()}
+{\footnotesize\ttfamily S\+D\+L\+\_\+\+Renderer $\ast$ get\+Renderer (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Fonction qui permet d\textquotesingle{}accéder à la structure du rendu. 
+
+\begin{DoxyReturn}{Renvoie}
+un pointeur sur une structure de type S\+D\+L\+\_\+\+Renderer 
+\end{DoxyReturn}
+\mbox{\label{inits_8c_afefe7e5d2ab817ec07f05cdd89324fdf}} 
+\index{inits.c@{inits.c}!Init@{Init}}
+\index{Init@{Init}!inits.c@{inits.c}}
+\doxysubsubsection{Init()}
+{\footnotesize\ttfamily void Init (\begin{DoxyParamCaption}\item[{const char $\ast$}]{title }\end{DoxyParamCaption})}
+
+
+
+Fonction qui permet d\textquotesingle{}initialiser la fenêtre. 
+
+Création de la fenetre
+
+Chargement des polices, de l\textquotesingle{}audio et des entites 
+\begin{DoxyParams}{Paramètres}
+{\em title} & chaine de caracteres \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+
+
+\doxysubsection{Documentation des variables}
+\mbox{\label{inits_8c_a83273a719e3c35f920b32f1e64e2e22a}} 
+\index{inits.c@{inits.c}!fenetre@{fenetre}}
+\index{fenetre@{fenetre}!inits.c@{inits.c}}
+\doxysubsubsection{fenetre}
+{\footnotesize\ttfamily S\+D\+L\+\_\+\+Window$\ast$ fenetre = N\+U\+LL}
+
+Structure de la fenêtre \mbox{\label{inits_8c_a5b163fafde24bef5e6b019af29b92072}} 
+\index{inits.c@{inits.c}!rendu@{rendu}}
+\index{rendu@{rendu}!inits.c@{inits.c}}
+\doxysubsubsection{rendu}
+{\footnotesize\ttfamily S\+D\+L\+\_\+\+Renderer$\ast$ rendu = N\+U\+LL}
+
+Structure du rendu 

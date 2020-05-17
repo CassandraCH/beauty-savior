@@ -1,0 +1,260 @@
+\doxysection{Référence du fichier src/inventaire.c}
+\label{inventaire_8c}\index{src/inventaire.c@{src/inventaire.c}}
+
+
+Programme qui gère l\textquotesingle{}inventaire (liste des objets collectés par le joueur)  
+
+
+{\ttfamily \#include \char`\"{}base\+Game.\+h\char`\"{}}\newline
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Game\+Object} $\ast$ \textbf{ get\+Inventaire} ()
+\begin{DoxyCompactList}\small\item\em Fonction qui permet de retourner l\textquotesingle{}interface. \end{DoxyCompactList}\item 
+int \textbf{ get\+Os} ()
+\begin{DoxyCompactList}\small\item\em Fonction qui permet de retourner le nombre d\textquotesingle{}os. \end{DoxyCompactList}\item 
+int \textbf{ get\+Rock} ()
+\begin{DoxyCompactList}\small\item\em Fonction qui permet de retourner le nombre de cailloux. \end{DoxyCompactList}\item 
+int \textbf{ get\+Branche} ()
+\begin{DoxyCompactList}\small\item\em Fonction qui permet de retourner le nombre de branches. \end{DoxyCompactList}\item 
+void \textbf{ set\+Os} (int value)
+\begin{DoxyCompactList}\small\item\em Fonction qui permet d\textquotesingle{}initialiser le compteur d\textquotesingle{}os. \end{DoxyCompactList}\item 
+void \textbf{ set\+Rock} (int value)
+\begin{DoxyCompactList}\small\item\em Fonction qui permet d\textquotesingle{}initialiser le compteur de cailloux. \end{DoxyCompactList}\item 
+void \textbf{ set\+Branche} (int value)
+\begin{DoxyCompactList}\small\item\em Fonction qui permet d\textquotesingle{}initialiser le compteur de branches. \end{DoxyCompactList}\item 
+void \textbf{ increase\+Os} ()
+\begin{DoxyCompactList}\small\item\em Fonction qui permet d\textquotesingle{}incrémenter le compteur d\textquotesingle{}os. \end{DoxyCompactList}\item 
+void \textbf{ increase\+Rock} ()
+\begin{DoxyCompactList}\small\item\em Fonction qui permet d\textquotesingle{}incrémenter le compteur de cailloux. \end{DoxyCompactList}\item 
+void \textbf{ increase\+Branche} ()
+\begin{DoxyCompactList}\small\item\em Fonction qui permet d\textquotesingle{}incrémenter le compteur de branches. \end{DoxyCompactList}\item 
+void \textbf{ decrease\+OS} ()
+\begin{DoxyCompactList}\small\item\em Fonction qui permet de décrémenter le compteur d\textquotesingle{}os. \end{DoxyCompactList}\item 
+void \textbf{ decrease\+Rock} ()
+\begin{DoxyCompactList}\small\item\em Fonction qui permet de décrémenter le compteur de cailloux. \end{DoxyCompactList}\item 
+void \textbf{ decrease\+Branche} ()
+\begin{DoxyCompactList}\small\item\em Fonction qui permet de décrémenter le compteur de branches. \end{DoxyCompactList}\item 
+void \textbf{ Inventaire\+\_\+\+Init} ()
+\begin{DoxyCompactList}\small\item\em Fonction qui initialise l\textquotesingle{}inventaire. \end{DoxyCompactList}\item 
+void \textbf{ Inventaire\+\_\+\+Input} (S\+D\+L\+\_\+\+Event $\ast$event)
+\begin{DoxyCompactList}\small\item\em Fonction qui gère les évènements de l\textquotesingle{}inventaire. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Game\+Object} \textbf{ inventaire}
+\item 
+int \textbf{ nombre\+Os} = 0
+\item 
+int \textbf{ nombre\+Rock} = 0
+\item 
+int \textbf{ nombre\+Branche} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Programme qui gère l\textquotesingle{}inventaire (liste des objets collectés par le joueur) 
+
+\begin{DoxyAuthor}{Auteur}
+C\+A\+L\+V\+A\+D\+OS Cindy, C\+H\+A\+U\+M\+U\+L\+ON Cassandra, C\+H\+E\+L\+LI Célia, O\+U\+S\+M\+A\+N\+O\+VA Karina 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+avril 2020 
+\end{DoxyDate}
+
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\label{inventaire_8c_a77f151219e7415c816c2778e830b97d2}} 
+\index{inventaire.c@{inventaire.c}!decreaseBranche@{decreaseBranche}}
+\index{decreaseBranche@{decreaseBranche}!inventaire.c@{inventaire.c}}
+\doxysubsubsection{decreaseBranche()}
+{\footnotesize\ttfamily void decrease\+Branche (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fonction qui permet de décrémenter le compteur de branches. 
+
+\begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+\mbox{\label{inventaire_8c_a9628f5d3156a4b8bd59d63ffccd232e2}} 
+\index{inventaire.c@{inventaire.c}!decreaseOS@{decreaseOS}}
+\index{decreaseOS@{decreaseOS}!inventaire.c@{inventaire.c}}
+\doxysubsubsection{decreaseOS()}
+{\footnotesize\ttfamily void decrease\+OS (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fonction qui permet de décrémenter le compteur d\textquotesingle{}os. 
+
+\begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+\mbox{\label{inventaire_8c_a474abccf0163a757860e864710865175}} 
+\index{inventaire.c@{inventaire.c}!decreaseRock@{decreaseRock}}
+\index{decreaseRock@{decreaseRock}!inventaire.c@{inventaire.c}}
+\doxysubsubsection{decreaseRock()}
+{\footnotesize\ttfamily void decrease\+Rock (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fonction qui permet de décrémenter le compteur de cailloux. 
+
+\begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+\mbox{\label{inventaire_8c_a9d5746f4b524e646f60cb86ebdb578a5}} 
+\index{inventaire.c@{inventaire.c}!increaseBranche@{increaseBranche}}
+\index{increaseBranche@{increaseBranche}!inventaire.c@{inventaire.c}}
+\doxysubsubsection{increaseBranche()}
+{\footnotesize\ttfamily void increase\+Branche (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fonction qui permet d\textquotesingle{}incrémenter le compteur de branches. 
+
+\begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+\mbox{\label{inventaire_8c_a97553c94142b1b909a61af648c64d3ed}} 
+\index{inventaire.c@{inventaire.c}!increaseOs@{increaseOs}}
+\index{increaseOs@{increaseOs}!inventaire.c@{inventaire.c}}
+\doxysubsubsection{increaseOs()}
+{\footnotesize\ttfamily void increase\+Os (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fonction qui permet d\textquotesingle{}incrémenter le compteur d\textquotesingle{}os. 
+
+\begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+\mbox{\label{inventaire_8c_a5ea8bb851d3a0458c44c19a5e8c8411b}} 
+\index{inventaire.c@{inventaire.c}!increaseRock@{increaseRock}}
+\index{increaseRock@{increaseRock}!inventaire.c@{inventaire.c}}
+\doxysubsubsection{increaseRock()}
+{\footnotesize\ttfamily void increase\+Rock (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fonction qui permet d\textquotesingle{}incrémenter le compteur de cailloux. 
+
+\begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+\mbox{\label{inventaire_8c_af1ab2be49aa6520979900e01a22ac299}} 
+\index{inventaire.c@{inventaire.c}!Inventaire\_Init@{Inventaire\_Init}}
+\index{Inventaire\_Init@{Inventaire\_Init}!inventaire.c@{inventaire.c}}
+\doxysubsubsection{Inventaire\_Init()}
+{\footnotesize\ttfamily void Inventaire\+\_\+\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fonction qui initialise l\textquotesingle{}inventaire. 
+
+\begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+\mbox{\label{inventaire_8c_a788f9f004915147c04ab177ffc408060}} 
+\index{inventaire.c@{inventaire.c}!Inventaire\_Input@{Inventaire\_Input}}
+\index{Inventaire\_Input@{Inventaire\_Input}!inventaire.c@{inventaire.c}}
+\doxysubsubsection{Inventaire\_Input()}
+{\footnotesize\ttfamily void Inventaire\+\_\+\+Input (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Event $\ast$}]{event }\end{DoxyParamCaption})}
+
+
+
+Fonction qui gère les évènements de l\textquotesingle{}inventaire. 
+
+Gestion des entrées clavier de l\textquotesingle{}utilisateur 
+\begin{DoxyParams}{Paramètres}
+{\em event} & évènement \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+\mbox{\label{inventaire_8c_a27200133ced92ba358b0562b23c74a78}} 
+\index{inventaire.c@{inventaire.c}!setBranche@{setBranche}}
+\index{setBranche@{setBranche}!inventaire.c@{inventaire.c}}
+\doxysubsubsection{setBranche()}
+{\footnotesize\ttfamily void set\+Branche (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})}
+
+
+
+Fonction qui permet d\textquotesingle{}initialiser le compteur de branches. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em value} & valeur à appliquer au compteur \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+\mbox{\label{inventaire_8c_ac4571656e130172c46d70a200da46e8c}} 
+\index{inventaire.c@{inventaire.c}!setOs@{setOs}}
+\index{setOs@{setOs}!inventaire.c@{inventaire.c}}
+\doxysubsubsection{setOs()}
+{\footnotesize\ttfamily void set\+Os (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})}
+
+
+
+Fonction qui permet d\textquotesingle{}initialiser le compteur d\textquotesingle{}os. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em value} & valeur à appliquer au compteur \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+\mbox{\label{inventaire_8c_a8a181863b2254c010e02a9ae15722c6a}} 
+\index{inventaire.c@{inventaire.c}!setRock@{setRock}}
+\index{setRock@{setRock}!inventaire.c@{inventaire.c}}
+\doxysubsubsection{setRock()}
+{\footnotesize\ttfamily void set\+Rock (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})}
+
+
+
+Fonction qui permet d\textquotesingle{}initialiser le compteur de cailloux. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em value} & valeur à appliquer au compteur \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+
+
+\doxysubsection{Documentation des variables}
+\mbox{\label{inventaire_8c_aa6e2bf2aa38e7fda74dadc29584f9f01}} 
+\index{inventaire.c@{inventaire.c}!inventaire@{inventaire}}
+\index{inventaire@{inventaire}!inventaire.c@{inventaire.c}}
+\doxysubsubsection{inventaire}
+{\footnotesize\ttfamily \textbf{ Game\+Object} inventaire}
+
+Structure de type Game\+Object \mbox{\label{inventaire_8c_a494041358532dded91e7f4bb81944f0e}} 
+\index{inventaire.c@{inventaire.c}!nombreBranche@{nombreBranche}}
+\index{nombreBranche@{nombreBranche}!inventaire.c@{inventaire.c}}
+\doxysubsubsection{nombreBranche}
+{\footnotesize\ttfamily int nombre\+Branche = 0}
+
+Compteur du nombre de branches \mbox{\label{inventaire_8c_a695f2a55a68f52bf199bd7e852ed71e4}} 
+\index{inventaire.c@{inventaire.c}!nombreOs@{nombreOs}}
+\index{nombreOs@{nombreOs}!inventaire.c@{inventaire.c}}
+\doxysubsubsection{nombreOs}
+{\footnotesize\ttfamily int nombre\+Os = 0}
+
+Compteur du nombre d\textquotesingle{}os \mbox{\label{inventaire_8c_afa0a809d2a4aefc0020c6285e13541bc}} 
+\index{inventaire.c@{inventaire.c}!nombreRock@{nombreRock}}
+\index{nombreRock@{nombreRock}!inventaire.c@{inventaire.c}}
+\doxysubsubsection{nombreRock}
+{\footnotesize\ttfamily int nombre\+Rock = 0}
+
+Compteur du nombre de cailloux 

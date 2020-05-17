@@ -1,0 +1,185 @@
+\doxysection{Référence du fichier includes/level.h}
+\label{level_8h}\index{includes/level.h@{includes/level.h}}
+
+
+programme qui gere le debut de mises en place du passage des niveaux .  
+
+
+{\ttfamily \#include \char`\"{}texture.\+h\char`\"{}}\newline
+\doxysubsection*{Structures de données}
+\begin{DoxyCompactItemize}
+\item 
+struct \textbf{ level}
+\begin{DoxyCompactList}\small\item\em structure gerant les niveux \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Définitions de type}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \textbf{ level} \textbf{ Level}
+\end{DoxyCompactItemize}
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Level} $\ast$ \textbf{ Get\+\_\+\+Level} ()
+\begin{DoxyCompactList}\small\item\em Fonction qui permet d\textquotesingle{}accéder à la structure d\textquotesingle{}un niveau. \end{DoxyCompactList}\item 
+void \textbf{ Set\+\_\+\+Level} (int \textbf{ niveau})
+\begin{DoxyCompactList}\small\item\em Fonction qui permet de mettre à jour le niveau du joueur. \end{DoxyCompactList}\item 
+void \textbf{ Level\+\_\+\+Load} ()
+\begin{DoxyCompactList}\small\item\em Fonction qui permet de charger un niveau. \end{DoxyCompactList}\item 
+void \textbf{ Level\+\_\+\+Render} ()
+\begin{DoxyCompactList}\small\item\em Fonction qui permet d\textquotesingle{}afficher un niveau. \end{DoxyCompactList}\item 
+void \textbf{ Level\+\_\+\+Destroy} ()
+\begin{DoxyCompactList}\small\item\em Fonction qui permet de gérer la destruction des niveaux et la libération des ressources qui ont été utilisées. \end{DoxyCompactList}\item 
+void \textbf{ Level\+\_\+\+Textures\+\_\+\+Render} (int \textbf{ niveau})
+\begin{DoxyCompactList}\small\item\em Fonction qui permet d\textquotesingle{}afficher les textures du niveau passé en paramètre. \end{DoxyCompactList}\item 
+void \textbf{ Debug\+\_\+\+Afficher\+Collider} ()
+\begin{DoxyCompactList}\small\item\em Fonction de debug qui permet d\textquotesingle{}afficher les blocs de collision par dessus le decor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+programme qui gere le debut de mises en place du passage des niveaux . 
+
+\begin{DoxyAuthor}{Auteur}
+C\+A\+L\+V\+A\+D\+OS Cindy, C\+H\+A\+U\+M\+U\+L\+ON Cassandra, C\+H\+E\+L\+LI Célia, O\+U\+S\+M\+A\+N\+O\+VA Karina 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+mars 2020 
+\end{DoxyDate}
+
+
+\doxysubsection{Documentation des définitions de type}
+\mbox{\label{level_8h_ac1551656a68ed66f6599769b3597607f}} 
+\index{level.h@{level.h}!Level@{Level}}
+\index{Level@{Level}!level.h@{level.h}}
+\doxysubsubsection{Level}
+{\footnotesize\ttfamily typedef struct \textbf{ level} \textbf{ Level}}
+
+This is the documentation for the preceding typedef 
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\label{level_8h_a2ca40c89f5d9919989aa0f95fbe7e66d}} 
+\index{level.h@{level.h}!Debug\_AfficherCollider@{Debug\_AfficherCollider}}
+\index{Debug\_AfficherCollider@{Debug\_AfficherCollider}!level.h@{level.h}}
+\doxysubsubsection{Debug\_AfficherCollider()}
+{\footnotesize\ttfamily void Debug\+\_\+\+Afficher\+Collider (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fonction de debug qui permet d\textquotesingle{}afficher les blocs de collision par dessus le decor. 
+
+le Debug\+\_\+\+Afficher\+Collider ~\newline
+
+
+Cette fonction permet de savoir si les blocs de collisions sont bien positionnés
+
+Cette fonction permet de verifier que le joueur entre bien en collision avec les colliders \begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+\mbox{\label{level_8h_a6a7d673fdffc2a6ccc8d52eae5f6a7ff}} 
+\index{level.h@{level.h}!Get\_Level@{Get\_Level}}
+\index{Get\_Level@{Get\_Level}!level.h@{level.h}}
+\doxysubsubsection{Get\_Level()}
+{\footnotesize\ttfamily \textbf{ Level}$\ast$ Get\+\_\+\+Level (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fonction qui permet d\textquotesingle{}accéder à la structure d\textquotesingle{}un niveau. 
+
+le niveau ~\newline
+
+
+\begin{DoxyReturn}{Renvoie}
+Un pointeur sur une structure de données de type Level 
+\end{DoxyReturn}
+\mbox{\label{level_8h_a0c54b7d11bf9135f8de62d9478db6439}} 
+\index{level.h@{level.h}!Level\_Destroy@{Level\_Destroy}}
+\index{Level\_Destroy@{Level\_Destroy}!level.h@{level.h}}
+\doxysubsubsection{Level\_Destroy()}
+{\footnotesize\ttfamily void Level\+\_\+\+Destroy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fonction qui permet de gérer la destruction des niveaux et la libération des ressources qui ont été utilisées. 
+
+les destruction des niveaux ~\newline
+
+
+\begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+\mbox{\label{level_8h_a7b4c55971be563d00d1d2a9c0513da5c}} 
+\index{level.h@{level.h}!Level\_Load@{Level\_Load}}
+\index{Level\_Load@{Level\_Load}!level.h@{level.h}}
+\doxysubsubsection{Level\_Load()}
+{\footnotesize\ttfamily void Level\+\_\+\+Load (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fonction qui permet de charger un niveau. 
+
+le chargemnts des niveaux ~\newline
+
+
+Initialisation des listes (ennemis, bullets,items et colliders) \begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+\mbox{\label{level_8h_a0759e4ea8dd0966291fd234043427724}} 
+\index{level.h@{level.h}!Level\_Render@{Level\_Render}}
+\index{Level\_Render@{Level\_Render}!level.h@{level.h}}
+\doxysubsubsection{Level\_Render()}
+{\footnotesize\ttfamily void Level\+\_\+\+Render (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fonction qui permet d\textquotesingle{}afficher un niveau. 
+
+l\textquotesingle{}affichage des niveaux ~\newline
+
+
+\begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+\mbox{\label{level_8h_abf1125b91e2539588aee755e704e5338}} 
+\index{level.h@{level.h}!Level\_Textures\_Render@{Level\_Textures\_Render}}
+\index{Level\_Textures\_Render@{Level\_Textures\_Render}!level.h@{level.h}}
+\doxysubsubsection{Level\_Textures\_Render()}
+{\footnotesize\ttfamily void Level\+\_\+\+Textures\+\_\+\+Render (\begin{DoxyParamCaption}\item[{int}]{niveau }\end{DoxyParamCaption})}
+
+
+
+Fonction qui permet d\textquotesingle{}afficher les textures du niveau passé en paramètre. 
+
+l\textquotesingle{}affichage des textures des niveaux ~\newline
+
+
+
+\begin{DoxyParams}{Paramètres}
+{\em niveau} & numero du niveau a afficher \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+\mbox{\label{level_8h_abcb64c4e1a5f98c0f371ea276cd196e6}} 
+\index{level.h@{level.h}!Set\_Level@{Set\_Level}}
+\index{Set\_Level@{Set\_Level}!level.h@{level.h}}
+\doxysubsubsection{Set\_Level()}
+{\footnotesize\ttfamily void Set\+\_\+\+Level (\begin{DoxyParamCaption}\item[{int}]{niveau }\end{DoxyParamCaption})}
+
+
+
+Fonction qui permet de mettre à jour le niveau du joueur. 
+
+le niveau correspond ~\newline
+
+
+
+\begin{DoxyParams}{Paramètres}
+{\em niveau} & numero du niveau \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}

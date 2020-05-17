@@ -56,6 +56,9 @@ extern void Level_Load()
       //Chargement de toutes les entites (sauf joueur)
       LoadAndCreate_PNJ(getCollider(),"files_assets/niveau1.txt") ;
 
+      //Chargement de la musique 
+      getBaseGame()->bgm = Mix_LoadMUS("sounds/level1.mp3");
+
       //Chargement des ennemis
       LoadEnemies("files_assets/ennemi_1.txt");
 
@@ -74,6 +77,10 @@ extern void Level_Load()
    {  
       //Destruction du niveau precedent
       Level_Destroy();
+
+      //Chargement de la musique 
+      getBaseGame()->bgm = Mix_LoadMUS("sounds/level2.mp3");
+
 
       //Chargement de toutes les entites (sauf joueur)
       LoadAndCreate_PNJ(getCollider(),"files_assets/niveau2.txt") ;
@@ -99,6 +106,9 @@ extern void Level_Load()
          //Destruction du niveau precedent
          Level_Destroy();
 
+          //Chargement de la musique 
+         getBaseGame()->bgm = Mix_LoadMUS("sounds/level3.mp3");
+
          //Chargement de toutes les entites (sauf joueur)
          LoadAndCreate_PNJ(getCollider(),"files_assets/niveau3.txt") ;
          LoadEnemies("files_assets/ennemi_3.txt");
@@ -122,6 +132,9 @@ extern void Level_Load()
    {  
          //Destruction du niveau precedent
          Level_Destroy();
+
+          //Chargement de la musique 
+         getBaseGame()->bgm = Mix_LoadMUS("sounds/level4.mp3");
 
          //Chargement de toutes les entites (sauf joueur)
          LoadAndCreate_PNJ(getCollider(),"files_assets/niveau4.txt") ;

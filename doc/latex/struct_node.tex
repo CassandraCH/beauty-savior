@@ -1,0 +1,113 @@
+\doxysection{Référence de la structure Node}
+\label{struct_node}\index{Node@{Node}}
+
+
+structure gerant les noeud de la liste  
+
+
+
+
+{\ttfamily \#include $<$liste\+Elements.\+h$>$}
+
+\doxysubsection*{Champs de données}
+\begin{DoxyCompactItemize}
+\item 
+S\+D\+L\+\_\+\+Rect $\ast$ \textbf{ rect}
+\item 
+\textbf{ bool} \textbf{ actif}
+\item 
+int \textbf{ nb\+\_\+objets}
+\item 
+float \textbf{ baseX}
+\item 
+float \textbf{ baseY}
+\item 
+float \textbf{ phase}
+\item 
+\textbf{ bool} \textbf{ lancer}
+\item 
+float \textbf{ movingX}
+\item 
+\textbf{ Texture\+\_\+\+Manager} \textbf{ images\+Item} [2]
+\item 
+int \textbf{ image\+Courante}
+\item 
+struct \textbf{ Node} $\ast$ \textbf{ next}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+structure gerant les noeud de la liste 
+
+\doxysubsection{Documentation des champs}
+\mbox{\label{struct_node_a9700370f50e0fce28f167c5c808f5faf}} 
+\index{Node@{Node}!actif@{actif}}
+\index{actif@{actif}!Node@{Node}}
+\doxysubsubsection{actif}
+{\footnotesize\ttfamily \textbf{ bool} actif}
+
+Défini si l\textquotesingle{}élement est actif ou non$>$ \mbox{\label{struct_node_a55d0bd90e3b7d8747086fb4cffa628a3}} 
+\index{Node@{Node}!baseX@{baseX}}
+\index{baseX@{baseX}!Node@{Node}}
+\doxysubsubsection{baseX}
+{\footnotesize\ttfamily float baseX}
+
+Position de départ en X \mbox{\label{struct_node_aa6733345a1163765ef8e0f57d455a1ef}} 
+\index{Node@{Node}!baseY@{baseY}}
+\index{baseY@{baseY}!Node@{Node}}
+\doxysubsubsection{baseY}
+{\footnotesize\ttfamily float baseY}
+
+Position de départ en Y \mbox{\label{struct_node_a4470157cfcbad4f362f3db062b49fba4}} 
+\index{Node@{Node}!imageCourante@{imageCourante}}
+\index{imageCourante@{imageCourante}!Node@{Node}}
+\doxysubsubsection{imageCourante}
+{\footnotesize\ttfamily int image\+Courante}
+
+Determine l\textquotesingle{}image actuellement visible a l\textquotesingle{}écran \mbox{\label{struct_node_a276032ee488518c4ad6a8ef59cbf749d}} 
+\index{Node@{Node}!imagesItem@{imagesItem}}
+\index{imagesItem@{imagesItem}!Node@{Node}}
+\doxysubsubsection{imagesItem}
+{\footnotesize\ttfamily \textbf{ Texture\+\_\+\+Manager} images\+Item[2]}
+
+Tableau de texture pour un element \mbox{\label{struct_node_acfd5b1f8b6cd859f1b655751de7dc302}} 
+\index{Node@{Node}!lancer@{lancer}}
+\index{lancer@{lancer}!Node@{Node}}
+\doxysubsubsection{lancer}
+{\footnotesize\ttfamily \textbf{ bool} lancer}
+
+float des lancer \mbox{\label{struct_node_adfa3d4f287a51a2284b00ebaf60647aa}} 
+\index{Node@{Node}!movingX@{movingX}}
+\index{movingX@{movingX}!Node@{Node}}
+\doxysubsubsection{movingX}
+{\footnotesize\ttfamily float movingX}
+
+les deplacements selon x \mbox{\label{struct_node_a10ac3a7107f4633b9d6e187a45e2bdc3}} 
+\index{Node@{Node}!nb\_objets@{nb\_objets}}
+\index{nb\_objets@{nb\_objets}!Node@{Node}}
+\doxysubsubsection{nb\_objets}
+{\footnotesize\ttfamily int nb\+\_\+objets}
+
+le nombres d\textquotesingle{}objets \mbox{\label{struct_node_aa162dd1e0693188a22b1f13b9a2a0ef0}} 
+\index{Node@{Node}!next@{next}}
+\index{next@{next}!Node@{Node}}
+\doxysubsubsection{next}
+{\footnotesize\ttfamily struct \textbf{ Node}$\ast$ next}
+
+Pointeur vers l\textquotesingle{}element suiv \mbox{\label{struct_node_a275dd6dafe5d4455e599ffd15feb06f8}} 
+\index{Node@{Node}!phase@{phase}}
+\index{phase@{phase}!Node@{Node}}
+\doxysubsubsection{phase}
+{\footnotesize\ttfamily float phase}
+
+float de la phase \mbox{\label{struct_node_a7da905fbd28061f8637acb1daa4559a2}} 
+\index{Node@{Node}!rect@{rect}}
+\index{rect@{rect}!Node@{Node}}
+\doxysubsubsection{rect}
+{\footnotesize\ttfamily S\+D\+L\+\_\+\+Rect$\ast$ rect}
+
+Rectangle qui défini la taille d\textquotesingle{}un éléments$>$ 
+
+La documentation de cette structure a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+includes/\textbf{ liste\+Elements.\+h}\end{DoxyCompactItemize}

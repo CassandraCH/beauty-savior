@@ -39,6 +39,7 @@ extern void Input_InGame(SDL_Event *event)
         {
             //Gestion du menu de pause
             Pause_Init();
+            Mix_PauseMusic();
             //Modification de l'etat du jeu => en pause
             getBaseGame()->state = PAUSE;
         }

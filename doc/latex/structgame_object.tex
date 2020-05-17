@@ -1,0 +1,87 @@
+\doxysection{Référence de la structure game\+Object}
+\label{structgame_object}\index{gameObject@{gameObject}}
+
+
+Structure permettant de gérer un Game\+Object.  
+
+
+
+
+{\ttfamily \#include $<$game\+\_\+objects.\+h$>$}
+
+\doxysubsection*{Champs de données}
+\begin{DoxyCompactItemize}
+\item 
+int \textbf{ component\+Selected}
+\item 
+\textbf{ Component} \textbf{ components} [4]
+\item 
+Mix\+\_\+\+Chunk $\ast$ \textbf{ son}
+\item 
+T\+T\+F\+\_\+\+Font $\ast$ \textbf{ police}
+\item 
+S\+D\+L\+\_\+\+Texture $\ast$ \textbf{ bg}
+\item 
+Mix\+\_\+\+Music $\ast$ \textbf{ bgm}
+\item 
+char $\ast$ \textbf{ nom\+\_\+game\+Object}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Structure permettant de gérer un Game\+Object. 
+
+Le Game\+Object représente une boîte vide qui ne fait pas grand chose tout seul, il agit comme un conteneur pour les components. 
+
+\doxysubsection{Documentation des champs}
+\mbox{\label{structgame_object_a4ed1389c10516234b19584ff707051c8}} 
+\index{gameObject@{gameObject}!bg@{bg}}
+\index{bg@{bg}!gameObject@{gameObject}}
+\doxysubsubsection{bg}
+{\footnotesize\ttfamily S\+D\+L\+\_\+\+Texture$\ast$ bg}
+
+Texture en arrière-\/plan \mbox{\label{structgame_object_a015eb04e0a2b9b43b073ff5abf39a6ea}} 
+\index{gameObject@{gameObject}!bgm@{bgm}}
+\index{bgm@{bgm}!gameObject@{gameObject}}
+\doxysubsubsection{bgm}
+{\footnotesize\ttfamily Mix\+\_\+\+Music$\ast$ bgm}
+
+Musique du jeux en arriere plan \mbox{\label{structgame_object_a05854aef7f0d1b81ee18f01574e9347f}} 
+\index{gameObject@{gameObject}!components@{components}}
+\index{components@{components}!gameObject@{gameObject}}
+\doxysubsubsection{components}
+{\footnotesize\ttfamily \textbf{ Component} components[4]}
+
+Tableau de Components ~\newline
+ \mbox{\label{structgame_object_a62a1c77cd67342ff4761a483e2d06627}} 
+\index{gameObject@{gameObject}!componentSelected@{componentSelected}}
+\index{componentSelected@{componentSelected}!gameObject@{gameObject}}
+\doxysubsubsection{componentSelected}
+{\footnotesize\ttfamily int component\+Selected}
+
+Component selectionne ~\newline
+ \mbox{\label{structgame_object_a88b9d5b728097cbf64f3835c1785e81e}} 
+\index{gameObject@{gameObject}!nom\_gameObject@{nom\_gameObject}}
+\index{nom\_gameObject@{nom\_gameObject}!gameObject@{gameObject}}
+\doxysubsubsection{nom\_gameObject}
+{\footnotesize\ttfamily char$\ast$ nom\+\_\+game\+Object}
+
+Nom du Game\+Object ~\newline
+ \mbox{\label{structgame_object_a49a11b0728728090fa1189391c9fe0c8}} 
+\index{gameObject@{gameObject}!police@{police}}
+\index{police@{police}!gameObject@{gameObject}}
+\doxysubsubsection{police}
+{\footnotesize\ttfamily T\+T\+F\+\_\+\+Font$\ast$ police}
+
+La police utilise pour le \doxyref{game\+Object}{p.}{structgame_object} \mbox{\label{structgame_object_aaef5439aa5d48324877868bb7d463468}} 
+\index{gameObject@{gameObject}!son@{son}}
+\index{son@{son}!gameObject@{gameObject}}
+\doxysubsubsection{son}
+{\footnotesize\ttfamily Mix\+\_\+\+Chunk$\ast$ son}
+
+Le son du \doxyref{game\+Object}{p.}{structgame_object} ~\newline
+ 
+
+La documentation de cette structure a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+includes/\textbf{ game\+\_\+objects.\+h}\end{DoxyCompactItemize}

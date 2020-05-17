@@ -1,0 +1,323 @@
+\doxysection{Référence du fichier includes/definitions.h}
+\label{definitions_8h}\index{includes/definitions.h@{includes/definitions.h}}
+
+
+Fichier regroupant toutes les déclarations globales du jeu.  
+
+
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+S\+D\+L\+\_\+\+Window $\ast$ \textbf{ get\+Window} (void)
+\item 
+\textbf{ Base\+\_\+\+Game} $\ast$ \textbf{ get\+Base\+Game} (void)
+\begin{DoxyCompactList}\small\item\em Fonction qui permet d\textquotesingle{}accéder à la structure qui gère l\textquotesingle{}état du jeu. \end{DoxyCompactList}\item 
+\textbf{ Linked\+List} $\ast$ \textbf{ get\+Ennemis} (void)
+\begin{DoxyCompactList}\small\item\em Fonction qui permet d\textquotesingle{}acceder à la liste des ennemis. \end{DoxyCompactList}\item 
+\textbf{ Linked\+List} $\ast$ \textbf{ get\+Collider} (void)
+\begin{DoxyCompactList}\small\item\em Fonction qui permet d\textquotesingle{}acceder à la liste des colliders. \end{DoxyCompactList}\item 
+\textbf{ Linked\+List} $\ast$ \textbf{ get\+Items} (void)
+\begin{DoxyCompactList}\small\item\em Fonction qui permet d\textquotesingle{}acceder à la liste des items. \end{DoxyCompactList}\item 
+\textbf{ Linked\+List} $\ast$ \textbf{ get\+Bullets} (void)
+\begin{DoxyCompactList}\small\item\em Fonction qui permet d\textquotesingle{}acceder à la liste des bullets. \end{DoxyCompactList}\item 
+\textbf{ H\+UD} $\ast$ \textbf{ get\+Scores} (void)
+\begin{DoxyCompactList}\small\item\em Retourne l\textquotesingle{}instance de l\textquotesingle{}objet score. \end{DoxyCompactList}\item 
+\textbf{ H\+UD} $\ast$ \textbf{ get\+Niveau} ()
+\begin{DoxyCompactList}\small\item\em Retourne l\textquotesingle{}instance de l\textquotesingle{}objet niveau. \end{DoxyCompactList}\item 
+\textbf{ H\+UD} $\ast$ \textbf{ get\+Time} ()
+\begin{DoxyCompactList}\small\item\em Retourne l\textquotesingle{}instance de l\textquotesingle{}objet niveau. \end{DoxyCompactList}\item 
+\textbf{ H\+UD} $\ast$ \textbf{ get\+Item} (int num\+\_\+item)
+\begin{DoxyCompactList}\small\item\em Retourne de l\textquotesingle{}item séléction. \end{DoxyCompactList}\item 
+\textbf{ H\+UD} $\ast$ \textbf{ get\+Nombre\+Vie} ()
+\begin{DoxyCompactList}\small\item\em Retourne le hud du nombre de vie. \end{DoxyCompactList}\item 
+\textbf{ Game\+Object} $\ast$ \textbf{ get\+Game\+Object} (void)
+\begin{DoxyCompactList}\small\item\em Fonction qui permet retourner le menu principal. \end{DoxyCompactList}\item 
+\textbf{ Game\+Object} $\ast$ \textbf{ get\+Help} (void)
+\item 
+\textbf{ Game\+Object} $\ast$ \textbf{ get\+Inventaire} (void)
+\begin{DoxyCompactList}\small\item\em Fonction qui permet de retourner l\textquotesingle{}interface. \end{DoxyCompactList}\item 
+\textbf{ Game\+Object} $\ast$ \textbf{ get\+Interface} (void)
+\begin{DoxyCompactList}\small\item\em Fonction qui permet de retourner l\textquotesingle{}interface. \end{DoxyCompactList}\item 
+\textbf{ Game\+Object} $\ast$ \textbf{ get\+Menu\+Load} (void)
+\begin{DoxyCompactList}\small\item\em Fonction qui permet retourner le menu de chargement. \end{DoxyCompactList}\item 
+\textbf{ Game\+Object} $\ast$ \textbf{ get\+Menu\+Con} (void)
+\begin{DoxyCompactList}\small\item\em Fonction qui permet retourner le menu \char`\"{}continuer\char`\"{}. \end{DoxyCompactList}\item 
+\textbf{ Game\+Object} $\ast$ \textbf{ get\+Menu\+Pause} (void)
+\begin{DoxyCompactList}\small\item\em Fonction qui permet retourner le menu de pause. \end{DoxyCompactList}\item 
+\textbf{ Game\+Object} $\ast$ \textbf{ get\+Menu\+\_\+\+Win} (void)
+\begin{DoxyCompactList}\small\item\em Fonction qui permet retourner le menu concernant la fin d\textquotesingle{}une partie gagnée. \end{DoxyCompactList}\item 
+\textbf{ Game\+Object} $\ast$ \textbf{ get\+Menu\+\_\+\+Over} (void)
+\begin{DoxyCompactList}\small\item\em Fonction qui permet de retourner le menu du game over. \end{DoxyCompactList}\item 
+int \textbf{ get\+Os} ()
+\begin{DoxyCompactList}\small\item\em Fonction qui permet de retourner le nombre d\textquotesingle{}os. \end{DoxyCompactList}\item 
+int \textbf{ get\+Rock} ()
+\begin{DoxyCompactList}\small\item\em Fonction qui permet de retourner le nombre de cailloux. \end{DoxyCompactList}\item 
+int \textbf{ get\+Branche} ()
+\begin{DoxyCompactList}\small\item\em Fonction qui permet de retourner le nombre de branches. \end{DoxyCompactList}\item 
+void \textbf{ Process\+Input} (S\+D\+L\+\_\+\+Event $\ast$event)
+\begin{DoxyCompactList}\small\item\em Fonction qui gère les entrées utilisateur. \end{DoxyCompactList}\item 
+void \textbf{ Input\+\_\+\+In\+Game} (S\+D\+L\+\_\+\+Event $\ast$event)
+\begin{DoxyCompactList}\small\item\em Fonction qui permet gérer les entr"es clavier et la camera lorsqu\textquotesingle{}une partie est en cours. \end{DoxyCompactList}\item 
+void \textbf{ delay} (unsigned int frame\+Limit)
+\begin{DoxyCompactList}\small\item\em Fonction qui permet de gérer le délai du jeu. \end{DoxyCompactList}\item 
+void \textbf{ Init\+\_\+\+Textures} ()
+\begin{DoxyCompactList}\small\item\em Fonction qui charge les textures des ennemis, des pièces, des cailloux, des branches et des os. \end{DoxyCompactList}\item 
+void \textbf{ Clean\+\_\+\+Textures} ()
+\begin{DoxyCompactList}\small\item\em Fonction qui détruit les textures des ennemis, des pièces, des cailloux, des branches et des os. \end{DoxyCompactList}\item 
+void \textbf{ Init} (const char $\ast$title)
+\begin{DoxyCompactList}\small\item\em Fonction qui permet d\textquotesingle{}initialiser la fenêtre. \end{DoxyCompactList}\item 
+void \textbf{ Update} (float \textbf{ dt})
+\begin{DoxyCompactList}\small\item\em Fonction qui permet gérer les comportements des entités si on se Find dans une partie et gérer le son si on se Find sur le menu principal. \end{DoxyCompactList}\item 
+void \textbf{ Game\+\_\+\+Render} ()
+\begin{DoxyCompactList}\small\item\em Fonction qui permet de gérer le rendu. \end{DoxyCompactList}\item 
+void \textbf{ Game\+\_\+\+Destroy\+Ressources} ()
+\begin{DoxyCompactList}\small\item\em Fonction qui libère toutes les ressources du jeu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Linked\+List} \textbf{ list\+Ennemis}
+\item 
+\textbf{ Linked\+List} \textbf{ list\+Collider}
+\item 
+\textbf{ Linked\+List} \textbf{ bullet}
+\item 
+\textbf{ Linked\+List} \textbf{ items}
+\item 
+int \textbf{ temps\+Ecoule}
+\item 
+S\+D\+L\+\_\+\+Rect \textbf{ camera}
+\item 
+S\+D\+L\+\_\+\+Texture $\ast$ \textbf{ texture}
+\item 
+S\+D\+L\+\_\+\+Texture $\ast$ \textbf{ item\+Tex}
+\item 
+S\+D\+L\+\_\+\+Texture $\ast$ \textbf{ rock\+Tex}
+\item 
+S\+D\+L\+\_\+\+Texture $\ast$ \textbf{ tree\+Tex}
+\item 
+S\+D\+L\+\_\+\+Texture $\ast$ \textbf{ os\+Tex}
+\item 
+S\+D\+L\+\_\+\+Texture $\ast$ \textbf{ passport\+Tex}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Fichier regroupant toutes les déclarations globales du jeu. 
+
+\begin{DoxyAuthor}{Auteur}
+C\+A\+L\+V\+A\+D\+OS Cindy, C\+H\+A\+U\+M\+U\+L\+ON Cassandra, C\+H\+E\+L\+LI Célia, O\+U\+S\+M\+A\+N\+O\+VA Karina 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+mars 2020 
+\end{DoxyDate}
+
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\label{definitions_8h_a79f9cedb098dcf50723a6d87dae07cec}} 
+\index{definitions.h@{definitions.h}!Clean\_Textures@{Clean\_Textures}}
+\index{Clean\_Textures@{Clean\_Textures}!definitions.h@{definitions.h}}
+\doxysubsubsection{Clean\_Textures()}
+{\footnotesize\ttfamily void Clean\+\_\+\+Textures (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fonction qui détruit les textures des ennemis, des pièces, des cailloux, des branches et des os. 
+
+\begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+\mbox{\label{definitions_8h_a278a2ffbb995f7837d4970a4d7435b63}} 
+\index{definitions.h@{definitions.h}!delay@{delay}}
+\index{delay@{delay}!definitions.h@{definitions.h}}
+\doxysubsubsection{delay()}
+{\footnotesize\ttfamily void delay (\begin{DoxyParamCaption}\item[{unsigned int}]{frame\+Limit }\end{DoxyParamCaption})}
+
+
+
+Fonction qui permet de gérer le délai du jeu. 
+
+Gestion d\textquotesingle{}un délai lors de la mise à jour du jeu, afin de laisser respirer le processeur \begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+\mbox{\label{definitions_8h_a89cf217e5f305712048c3bc99aa69252}} 
+\index{definitions.h@{definitions.h}!Game\_DestroyRessources@{Game\_DestroyRessources}}
+\index{Game\_DestroyRessources@{Game\_DestroyRessources}!definitions.h@{definitions.h}}
+\doxysubsubsection{Game\_DestroyRessources()}
+{\footnotesize\ttfamily void Game\+\_\+\+Destroy\+Ressources (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Fonction qui libère toutes les ressources du jeu. 
+
+Libération de toutes les ressources du jeu
+
+Destruction des structures rendu et fenêtre \begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+\mbox{\label{definitions_8h_a95d88cc6c0ae6e11521bf0e0551d51d7}} 
+\index{definitions.h@{definitions.h}!Game\_Render@{Game\_Render}}
+\index{Game\_Render@{Game\_Render}!definitions.h@{definitions.h}}
+\doxysubsubsection{Game\_Render()}
+{\footnotesize\ttfamily void Game\+\_\+\+Render (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fonction qui permet de gérer le rendu. 
+
+Gestion du rendu
+
+Affichage en fonction de l\textquotesingle{}etat dans lequel se Find le jeu \begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+\mbox{\label{definitions_8h_afefe7e5d2ab817ec07f05cdd89324fdf}} 
+\index{definitions.h@{definitions.h}!Init@{Init}}
+\index{Init@{Init}!definitions.h@{definitions.h}}
+\doxysubsubsection{Init()}
+{\footnotesize\ttfamily void Init (\begin{DoxyParamCaption}\item[{const char $\ast$}]{title }\end{DoxyParamCaption})}
+
+
+
+Fonction qui permet d\textquotesingle{}initialiser la fenêtre. 
+
+Initialisation
+
+Création de la fenetre
+
+Chargement des polices, de l\textquotesingle{}audio et des entites 
+\begin{DoxyParams}{Paramètres}
+{\em title} & chaine de caracteres \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+\mbox{\label{definitions_8h_a456e5f94b3631c84b9c87e2d83440eaf}} 
+\index{definitions.h@{definitions.h}!Init\_Textures@{Init\_Textures}}
+\index{Init\_Textures@{Init\_Textures}!definitions.h@{definitions.h}}
+\doxysubsubsection{Init\_Textures()}
+{\footnotesize\ttfamily void Init\+\_\+\+Textures (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fonction qui charge les textures des ennemis, des pièces, des cailloux, des branches et des os. 
+
+\begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+\mbox{\label{definitions_8h_ac14c56a1da1987c322c6892b20611ed4}} 
+\index{definitions.h@{definitions.h}!Input\_InGame@{Input\_InGame}}
+\index{Input\_InGame@{Input\_InGame}!definitions.h@{definitions.h}}
+\doxysubsubsection{Input\_InGame()}
+{\footnotesize\ttfamily void Input\+\_\+\+In\+Game (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Event $\ast$}]{event }\end{DoxyParamCaption})}
+
+
+
+Fonction qui permet gérer les entr"es clavier et la camera lorsqu\textquotesingle{}une partie est en cours. 
+
+fonction Input\+\_\+\+In\+Game
+
+Gestion des entrées de l\textquotesingle{}utilisateur 
+\begin{DoxyParams}{Paramètres}
+{\em event} & pointeur sur une structure S\+DL evenement \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+\mbox{\label{definitions_8h_af9658d8e7a4d94f46954586e8f10d5a1}} 
+\index{definitions.h@{definitions.h}!ProcessInput@{ProcessInput}}
+\index{ProcessInput@{ProcessInput}!definitions.h@{definitions.h}}
+\doxysubsubsection{ProcessInput()}
+{\footnotesize\ttfamily void Process\+Input (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Event $\ast$}]{event }\end{DoxyParamCaption})}
+
+
+
+Fonction qui gère les entrées utilisateur. 
+
+fonction Process\+Input
+
+En fonction de si l\textquotesingle{}utilisateur est en cours de partie, sur le menu principal, sur le menu pause, sur le menu game over ou si le niveau vient d\textquotesingle{}être achevé 
+\begin{DoxyParams}{Paramètres}
+{\em event} & evenement (entree utilisateur) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+\mbox{\label{definitions_8h_acb21945d67d98b8ce4fc097ead0c6515}} 
+\index{definitions.h@{definitions.h}!Update@{Update}}
+\index{Update@{Update}!definitions.h@{definitions.h}}
+\doxysubsubsection{Update()}
+{\footnotesize\ttfamily void Update (\begin{DoxyParamCaption}\item[{float}]{dt }\end{DoxyParamCaption})}
+
+
+
+Fonction qui permet gérer les comportements des entités si on se Find dans une partie et gérer le son si on se Find sur le menu principal. 
+
+Mise a jour avec le delta-\/time
+
+Etat du jeu possible \+: menu principal ou en partie 
+\begin{DoxyParams}{Paramètres}
+{\em dt} & valeur du delta-\/time \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+
+
+\doxysubsection{Documentation des variables}
+\mbox{\label{definitions_8h_a27d2b5b016fe50b9a15dd63a6228ed2a}} 
+\index{definitions.h@{definitions.h}!camera@{camera}}
+\index{camera@{camera}!definitions.h@{definitions.h}}
+\doxysubsubsection{camera}
+{\footnotesize\ttfamily S\+D\+L\+\_\+\+Rect camera}
+
+la camera
+
+Structure qui gère la camera \mbox{\label{definitions_8h_aa16f8a82cd7c1e1b436ff6baaec66bec}} 
+\index{definitions.h@{definitions.h}!itemTex@{itemTex}}
+\index{itemTex@{itemTex}!definitions.h@{definitions.h}}
+\doxysubsubsection{itemTex}
+{\footnotesize\ttfamily S\+D\+L\+\_\+\+Texture$\ast$ item\+Tex}
+
+Texture pour les pièces \mbox{\label{definitions_8h_ae679584e4664b32214e530a4e71c7d45}} 
+\index{definitions.h@{definitions.h}!osTex@{osTex}}
+\index{osTex@{osTex}!definitions.h@{definitions.h}}
+\doxysubsubsection{osTex}
+{\footnotesize\ttfamily S\+D\+L\+\_\+\+Texture$\ast$ os\+Tex}
+
+Texture pour les os \mbox{\label{definitions_8h_a85fc719444059af132d1afaefd5a5a7d}} 
+\index{definitions.h@{definitions.h}!passportTex@{passportTex}}
+\index{passportTex@{passportTex}!definitions.h@{definitions.h}}
+\doxysubsubsection{passportTex}
+{\footnotesize\ttfamily S\+D\+L\+\_\+\+Texture$\ast$ passport\+Tex}
+
+Texture pour le passport \mbox{\label{definitions_8h_afeb149e2ef57e507ddb8e101ac53a79c}} 
+\index{definitions.h@{definitions.h}!rockTex@{rockTex}}
+\index{rockTex@{rockTex}!definitions.h@{definitions.h}}
+\doxysubsubsection{rockTex}
+{\footnotesize\ttfamily S\+D\+L\+\_\+\+Texture$\ast$ rock\+Tex}
+
+Texture pour les cailloux \mbox{\label{definitions_8h_af41f31addaf36fbfe84e6b3d5c282f9e}} 
+\index{definitions.h@{definitions.h}!tempsEcoule@{tempsEcoule}}
+\index{tempsEcoule@{tempsEcoule}!definitions.h@{definitions.h}}
+\doxysubsubsection{tempsEcoule}
+{\footnotesize\ttfamily int temps\+Ecoule}
+
+les temps ecouler \mbox{\label{definitions_8h_a859b8efbf9abe8e82757ee5c75a0c97c}} 
+\index{definitions.h@{definitions.h}!texture@{texture}}
+\index{texture@{texture}!definitions.h@{definitions.h}}
+\doxysubsubsection{texture}
+{\footnotesize\ttfamily S\+D\+L\+\_\+\+Texture$\ast$ texture}
+
+Texture pour les ennemis \mbox{\label{definitions_8h_a5416a4efde5d90699181337dba627b40}} 
+\index{definitions.h@{definitions.h}!treeTex@{treeTex}}
+\index{treeTex@{treeTex}!definitions.h@{definitions.h}}
+\doxysubsubsection{treeTex}
+{\footnotesize\ttfamily S\+D\+L\+\_\+\+Texture$\ast$ tree\+Tex}
+
+Texture pour les branches 

@@ -103,7 +103,11 @@ extern void Pause_Input(SDL_Event *event)
                     {
                         //Cas de la premiere option : reprendre la partie
                         case 0:
-                            getBaseGame()->state = IN_GAME;                    
+                            getBaseGame()->state = IN_GAME;
+                            
+                        
+                            Mix_ResumeMusic();  
+                                           
                             break;
                         //Cas de la deuxieme option : retour sur le menu principal
                         case 1:

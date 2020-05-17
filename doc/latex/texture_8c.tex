@@ -1,0 +1,197 @@
+\doxysection{Référence du fichier src/texture.c}
+\label{texture_8c}\index{src/texture.c@{src/texture.c}}
+
+
+Programme qui gère les textures (affichage)  
+
+
+{\ttfamily \#include \char`\"{}base\+Game.\+h\char`\"{}}\newline
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ bool} \textbf{ Image\+\_\+\+Load} (\textbf{ Texture\+\_\+\+Manager} $\ast$tex, const char $\ast$filename)
+\begin{DoxyCompactList}\small\item\em Fonction qui permet de charger une image dans une texture. \end{DoxyCompactList}\item 
+void \textbf{ Texture\+Manager\+\_\+\+Load} (\textbf{ Texture\+\_\+\+Manager} $\ast$tex, char $\ast$filepath)
+\begin{DoxyCompactList}\small\item\em Fonction qui permet de charger une texture. \end{DoxyCompactList}\item 
+S\+D\+L\+\_\+\+Texture $\ast$ \textbf{ Texture\+\_\+\+Load} (char $\ast$filepath)
+\begin{DoxyCompactList}\small\item\em Fonction qui permet de charger une texture a partir d\textquotesingle{}une image. \end{DoxyCompactList}\item 
+void \textbf{ Tex\+Manager\+\_\+\+Destroy\+Ressources} (\textbf{ Texture\+\_\+\+Manager} $\ast$tex)
+\begin{DoxyCompactList}\small\item\em Fonction qui permet detruire une texture. \end{DoxyCompactList}\item 
+void \textbf{ Init\+\_\+\+Textures} ()
+\begin{DoxyCompactList}\small\item\em Fonction qui charge les textures des ennemis, des pièces, des cailloux, des branches et des os. \end{DoxyCompactList}\item 
+void \textbf{ Clean\+\_\+\+Textures} ()
+\begin{DoxyCompactList}\small\item\em Fonction qui détruit les textures des ennemis, des pièces, des cailloux, des branches et des os. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+S\+D\+L\+\_\+\+Texture $\ast$ \textbf{ texture}
+\item 
+S\+D\+L\+\_\+\+Texture $\ast$ \textbf{ item\+Tex}
+\item 
+S\+D\+L\+\_\+\+Texture $\ast$ \textbf{ rock\+Tex}
+\item 
+S\+D\+L\+\_\+\+Texture $\ast$ \textbf{ tree\+Tex}
+\item 
+S\+D\+L\+\_\+\+Texture $\ast$ \textbf{ os\+Tex}
+\item 
+S\+D\+L\+\_\+\+Texture $\ast$ \textbf{ passport\+Tex}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Programme qui gère les textures (affichage) 
+
+\begin{DoxyAuthor}{Auteur}
+C\+A\+L\+V\+A\+D\+OS Cindy, C\+H\+A\+U\+M\+U\+L\+ON Cassandra, C\+H\+E\+L\+LI Célia, O\+U\+S\+M\+A\+N\+O\+VA Karina 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+janvier 2020
+\end{DoxyDate}
+Chargement des images, des textures, des textes et destruction des textures 
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\label{texture_8c_a79f9cedb098dcf50723a6d87dae07cec}} 
+\index{texture.c@{texture.c}!Clean\_Textures@{Clean\_Textures}}
+\index{Clean\_Textures@{Clean\_Textures}!texture.c@{texture.c}}
+\doxysubsubsection{Clean\_Textures()}
+{\footnotesize\ttfamily void Clean\+\_\+\+Textures (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fonction qui détruit les textures des ennemis, des pièces, des cailloux, des branches et des os. 
+
+\begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+\mbox{\label{texture_8c_a5d2d9bc4592da2662306de3577d27685}} 
+\index{texture.c@{texture.c}!Image\_Load@{Image\_Load}}
+\index{Image\_Load@{Image\_Load}!texture.c@{texture.c}}
+\doxysubsubsection{Image\_Load()}
+{\footnotesize\ttfamily \textbf{ bool} Image\+\_\+\+Load (\begin{DoxyParamCaption}\item[{\textbf{ Texture\+\_\+\+Manager} $\ast$}]{tex,  }\item[{const char $\ast$}]{filename }\end{DoxyParamCaption})}
+
+
+
+Fonction qui permet de charger une image dans une texture. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em tex} & pointeur sur la texture dans laquelle on veut charger l\textquotesingle{}image \\
+\hline
+{\em filename} & nom du fichier de l\textquotesingle{}image \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+un booleen \+: V\+R\+AI si l\textquotesingle{}image a bien ete chargee dans la texture, F\+A\+UX sinon
+\end{DoxyReturn}
+chargements des images \mbox{\label{texture_8c_a456e5f94b3631c84b9c87e2d83440eaf}} 
+\index{texture.c@{texture.c}!Init\_Textures@{Init\_Textures}}
+\index{Init\_Textures@{Init\_Textures}!texture.c@{texture.c}}
+\doxysubsubsection{Init\_Textures()}
+{\footnotesize\ttfamily void Init\+\_\+\+Textures (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fonction qui charge les textures des ennemis, des pièces, des cailloux, des branches et des os. 
+
+\begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+\mbox{\label{texture_8c_ac3dedf51cd7a896d720a33333fee8356}} 
+\index{texture.c@{texture.c}!TexManager\_DestroyRessources@{TexManager\_DestroyRessources}}
+\index{TexManager\_DestroyRessources@{TexManager\_DestroyRessources}!texture.c@{texture.c}}
+\doxysubsubsection{TexManager\_DestroyRessources()}
+{\footnotesize\ttfamily void Tex\+Manager\+\_\+\+Destroy\+Ressources (\begin{DoxyParamCaption}\item[{\textbf{ Texture\+\_\+\+Manager} $\ast$}]{tex }\end{DoxyParamCaption})}
+
+
+
+Fonction qui permet detruire une texture. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em tex} & pointeur sur la texture a detruire \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void)
+\end{DoxyReturn}
+les ressources \mbox{\label{texture_8c_ab15379dba3cc83443ad654f72fb47a63}} 
+\index{texture.c@{texture.c}!Texture\_Load@{Texture\_Load}}
+\index{Texture\_Load@{Texture\_Load}!texture.c@{texture.c}}
+\doxysubsubsection{Texture\_Load()}
+{\footnotesize\ttfamily S\+D\+L\+\_\+\+Texture $\ast$ Texture\+\_\+\+Load (\begin{DoxyParamCaption}\item[{char $\ast$}]{filepath }\end{DoxyParamCaption})}
+
+
+
+Fonction qui permet de charger une texture a partir d\textquotesingle{}une image. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em filepath} & chemin pour acceder a l\textquotesingle{}image \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+un pointeur sur une texture S\+DL (S\+D\+L\+\_\+\+Texture)
+\end{DoxyReturn}
+chargement des textures à partir d\textquotesingle{}image \mbox{\label{texture_8c_a2817bb3a0cd16d6a6c25b7d3a32b938a}} 
+\index{texture.c@{texture.c}!TextureManager\_Load@{TextureManager\_Load}}
+\index{TextureManager\_Load@{TextureManager\_Load}!texture.c@{texture.c}}
+\doxysubsubsection{TextureManager\_Load()}
+{\footnotesize\ttfamily void Texture\+Manager\+\_\+\+Load (\begin{DoxyParamCaption}\item[{\textbf{ Texture\+\_\+\+Manager} $\ast$}]{tex,  }\item[{char $\ast$}]{filepath }\end{DoxyParamCaption})}
+
+
+
+Fonction qui permet de charger une texture. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em tex} & pointeur sur la texture dans laquelle on veut charger l\textquotesingle{}image \\
+\hline
+{\em filepath} & nom du fichier de l\textquotesingle{}image \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void)
+\end{DoxyReturn}
+chargement d\textquotesingle{}une texture 
+
+\doxysubsection{Documentation des variables}
+\mbox{\label{texture_8c_aa16f8a82cd7c1e1b436ff6baaec66bec}} 
+\index{texture.c@{texture.c}!itemTex@{itemTex}}
+\index{itemTex@{itemTex}!texture.c@{texture.c}}
+\doxysubsubsection{itemTex}
+{\footnotesize\ttfamily S\+D\+L\+\_\+\+Texture$\ast$ item\+Tex}
+
+Texture pour les pièces \mbox{\label{texture_8c_ae679584e4664b32214e530a4e71c7d45}} 
+\index{texture.c@{texture.c}!osTex@{osTex}}
+\index{osTex@{osTex}!texture.c@{texture.c}}
+\doxysubsubsection{osTex}
+{\footnotesize\ttfamily S\+D\+L\+\_\+\+Texture$\ast$ os\+Tex}
+
+Texture pour les os \mbox{\label{texture_8c_a85fc719444059af132d1afaefd5a5a7d}} 
+\index{texture.c@{texture.c}!passportTex@{passportTex}}
+\index{passportTex@{passportTex}!texture.c@{texture.c}}
+\doxysubsubsection{passportTex}
+{\footnotesize\ttfamily S\+D\+L\+\_\+\+Texture$\ast$ passport\+Tex}
+
+Texture pour le passport \mbox{\label{texture_8c_afeb149e2ef57e507ddb8e101ac53a79c}} 
+\index{texture.c@{texture.c}!rockTex@{rockTex}}
+\index{rockTex@{rockTex}!texture.c@{texture.c}}
+\doxysubsubsection{rockTex}
+{\footnotesize\ttfamily S\+D\+L\+\_\+\+Texture$\ast$ rock\+Tex}
+
+Texture pour les cailloux \mbox{\label{texture_8c_a859b8efbf9abe8e82757ee5c75a0c97c}} 
+\index{texture.c@{texture.c}!texture@{texture}}
+\index{texture@{texture}!texture.c@{texture.c}}
+\doxysubsubsection{texture}
+{\footnotesize\ttfamily S\+D\+L\+\_\+\+Texture$\ast$ texture}
+
+Texture pour les ennemis \mbox{\label{texture_8c_a5416a4efde5d90699181337dba627b40}} 
+\index{texture.c@{texture.c}!treeTex@{treeTex}}
+\index{treeTex@{treeTex}!texture.c@{texture.c}}
+\doxysubsubsection{treeTex}
+{\footnotesize\ttfamily S\+D\+L\+\_\+\+Texture$\ast$ tree\+Tex}
+
+Texture pour les branches 

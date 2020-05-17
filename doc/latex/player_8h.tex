@@ -1,0 +1,183 @@
+\doxysection{Référence du fichier includes/player.h}
+\label{player_8h}\index{includes/player.h@{includes/player.h}}
+
+
+programme qui gere le joueur par exemple la vitesse de deplacements,sa position etc.  
+
+
+{\ttfamily \#include \char`\"{}texture.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}constantes.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}attributs.\+h\char`\"{}}\newline
+\doxysubsection*{Structures de données}
+\begin{DoxyCompactItemize}
+\item 
+struct \textbf{ player}
+\begin{DoxyCompactList}\small\item\em Structure gérant les caractéristiques liées au joueur. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Définitions de type}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \textbf{ player} \textbf{ Player}
+\end{DoxyCompactItemize}
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Player} $\ast$ \textbf{ get\+Player} (void)
+\begin{DoxyCompactList}\small\item\em Fonction qui permet retourner l\textquotesingle{}adresse vers l\textquotesingle{}objet Joueur (héros) \end{DoxyCompactList}\item 
+int \textbf{ get\+PlayerX} (void)
+\begin{DoxyCompactList}\small\item\em Fonction qui permet retourner la position en x du héros. \end{DoxyCompactList}\item 
+int \textbf{ get\+PlayerY} (void)
+\begin{DoxyCompactList}\small\item\em Fonction qui permet de retourner la position en y du héros. \end{DoxyCompactList}\item 
+int \textbf{ get\+Player\+OriginX} ()
+\item 
+int \textbf{ get\+Player\+OriginY} ()
+\item 
+void \textbf{ Player\+\_\+\+Update} ()
+\begin{DoxyCompactList}\small\item\em Fonction qui met a jour le joueur en fonction du delta-\/time. \end{DoxyCompactList}\item 
+void \textbf{ Player\+\_\+\+Reset} (void)
+\begin{DoxyCompactList}\small\item\em Fonction qui reinitialise le joueur. \end{DoxyCompactList}\item 
+void \textbf{ Player\+\_\+\+Init} ()
+\begin{DoxyCompactList}\small\item\em Fonction qui permet d\textquotesingle{}initialiser le joueur. \end{DoxyCompactList}\item 
+void \textbf{ Player\+\_\+\+Set\+Bullets} ()
+\begin{DoxyCompactList}\small\item\em Fonction qui permet de regler le nombre de lancer du joueur. \end{DoxyCompactList}\item 
+\textbf{ bool} \textbf{ collide2d} (float x1, float y1, float x2, float y2, float wt1, float ht1, float wt2, float ht2)
+\begin{DoxyCompactList}\small\item\em Fonction qui verifie la collision entre 2 elements. \end{DoxyCompactList}\item 
+void \textbf{ Shoot\+\_\+\+Collision} ()
+\begin{DoxyCompactList}\small\item\em Fonction qui gere les collisions entre un bullet et un ennemi. \end{DoxyCompactList}\item 
+void \textbf{ Collision\+Items} ()
+\begin{DoxyCompactList}\small\item\em Fonction qui gere les collisions avec les items. \end{DoxyCompactList}\item 
+void \textbf{ Player\+\_\+\+Attack} ()
+\item 
+void \textbf{ Player\+\_\+\+Input} (S\+D\+L\+\_\+\+Event $\ast$event)
+\begin{DoxyCompactList}\small\item\em Fonction qui gere les entrees clavier de l\textquotesingle{}utilisateur. \end{DoxyCompactList}\item 
+void \textbf{ Player\+\_\+\+Render} ()
+\begin{DoxyCompactList}\small\item\em Fonction qui gere l\textquotesingle{}affichage du joueur a l\textquotesingle{}ecran. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+programme qui gere le joueur par exemple la vitesse de deplacements,sa position etc. 
+
+\begin{DoxyAuthor}{Auteur}
+C\+A\+L\+V\+A\+D\+OS Cindy, C\+H\+A\+U\+M\+U\+L\+ON Cassandra, C\+H\+E\+L\+LI Célia, O\+U\+S\+M\+A\+N\+O\+VA Karina 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+mars 2020 
+\end{DoxyDate}
+
+
+\doxysubsection{Documentation des définitions de type}
+\mbox{\label{player_8h_aacfbfbd6ace468c21c5128fced4e632c}} 
+\index{player.h@{player.h}!Player@{Player}}
+\index{Player@{Player}!player.h@{player.h}}
+\doxysubsubsection{Player}
+{\footnotesize\ttfamily typedef struct \textbf{ player} \textbf{ Player}}
+
+This is the documentation for the preceding typedef 
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\label{player_8h_a80d0e3a49c6071f37bcc48b92b787dfd}} 
+\index{player.h@{player.h}!Player\_Attack@{Player\_Attack}}
+\index{Player\_Attack@{Player\_Attack}!player.h@{player.h}}
+\doxysubsubsection{Player\_Attack()}
+{\footnotesize\ttfamily void Player\+\_\+\+Attack (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+les attaques du joueurs
+
+Fonction qui s\textquotesingle{}occupe de gérer les attaques lancer par le joueur \mbox{\label{player_8h_aa6799e8ba2b4fe450f5cfd4260cc5e0f}} 
+\index{player.h@{player.h}!Player\_Init@{Player\_Init}}
+\index{Player\_Init@{Player\_Init}!player.h@{player.h}}
+\doxysubsubsection{Player\_Init()}
+{\footnotesize\ttfamily void Player\+\_\+\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fonction qui permet d\textquotesingle{}initialiser le joueur. 
+
+initialisation du joueur
+
+Remplissage de tous les champs de la structure Player \begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+\mbox{\label{player_8h_aa36a5bcaf581e2bdf5bc704f92895120}} 
+\index{player.h@{player.h}!Player\_Input@{Player\_Input}}
+\index{Player\_Input@{Player\_Input}!player.h@{player.h}}
+\doxysubsubsection{Player\_Input()}
+{\footnotesize\ttfamily void Player\+\_\+\+Input (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Event $\ast$}]{event }\end{DoxyParamCaption})}
+
+
+
+Fonction qui gere les entrees clavier de l\textquotesingle{}utilisateur. 
+
+gestion des entrées utilisateur
+
+
+\begin{DoxyParams}{Paramètres}
+{\em event} & evenement de l\textquotesingle{}utilisateur \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+\mbox{\label{player_8h_a1a154dadff7ca1d762fa6dd44258cbd3}} 
+\index{player.h@{player.h}!Player\_Render@{Player\_Render}}
+\index{Player\_Render@{Player\_Render}!player.h@{player.h}}
+\doxysubsubsection{Player\_Render()}
+{\footnotesize\ttfamily void Player\+\_\+\+Render (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fonction qui gere l\textquotesingle{}affichage du joueur a l\textquotesingle{}ecran. 
+
+affichage du joueur
+
+\begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+\mbox{\label{player_8h_a4c2d29b061b5735aa15d173b2a0d56e4}} 
+\index{player.h@{player.h}!Player\_Reset@{Player\_Reset}}
+\index{Player\_Reset@{Player\_Reset}!player.h@{player.h}}
+\doxysubsubsection{Player\_Reset()}
+{\footnotesize\ttfamily void Player\+\_\+\+Reset (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Fonction qui reinitialise le joueur. 
+
+réinitialisation du joueur ~\newline
+
+
+Repositionnement du joueur a sa position initiale et remise a 0 de ses compteurs du nombre de lancer et du nombre d\textquotesingle{}objets \begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+\mbox{\label{player_8h_a4570aa4a2fcc6a62588c09c1d98c231a}} 
+\index{player.h@{player.h}!Player\_SetBullets@{Player\_SetBullets}}
+\index{Player\_SetBullets@{Player\_SetBullets}!player.h@{player.h}}
+\doxysubsubsection{Player\_SetBullets()}
+{\footnotesize\ttfamily void Player\+\_\+\+Set\+Bullets (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fonction qui permet de regler le nombre de lancer du joueur. 
+
+réglage du nombre de bu llets
+
+\begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+\mbox{\label{player_8h_a1006fd24c2fd35c7804a522689dc7da2}} 
+\index{player.h@{player.h}!Player\_Update@{Player\_Update}}
+\index{Player\_Update@{Player\_Update}!player.h@{player.h}}
+\doxysubsubsection{Player\_Update()}
+{\footnotesize\ttfamily void Player\+\_\+\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fonction qui met a jour le joueur en fonction du delta-\/time. 
+
+mise à joueur du joueur
+
+Gestion du deplacement du joueur \begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}

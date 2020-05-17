@@ -1,0 +1,95 @@
+\doxysection{Référence du fichier src/gameover.c}
+\label{gameover_8c}\index{src/gameover.c@{src/gameover.c}}
+
+
+Programme qui gère le menu du game over.  
+
+
+{\ttfamily \#include \char`\"{}base\+Game.\+h\char`\"{}}\newline
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Game\+Object} $\ast$ \textbf{ get\+Menu\+\_\+\+Over} ()
+\begin{DoxyCompactList}\small\item\em Fonction qui permet de retourner le menu du game over. \end{DoxyCompactList}\item 
+void \textbf{ Game\+Over\+\_\+\+Init} ()
+\begin{DoxyCompactList}\small\item\em Fonction qui initialise le menu game over. \end{DoxyCompactList}\item 
+void \textbf{ Game\+Over\+\_\+\+Input} (S\+D\+L\+\_\+\+Event $\ast$event)
+\begin{DoxyCompactList}\small\item\em Fonction qui gère les évènements du menu. \end{DoxyCompactList}\item 
+void \textbf{ Game\+Over\+\_\+\+Load} ()
+\begin{DoxyCompactList}\small\item\em Fonction qui initialise l\textquotesingle{}état game over. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Game\+Object} \textbf{ menu\+\_\+over}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Programme qui gère le menu du game over. 
+
+\begin{DoxyAuthor}{Auteur}
+C\+A\+L\+V\+A\+D\+OS Cindy, C\+H\+A\+U\+M\+U\+L\+ON Cassandra, C\+H\+E\+L\+LI Célia, O\+U\+S\+M\+A\+N\+O\+VA Karina 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+mars 2020
+\end{DoxyDate}
+Initialisation, affichage du menu, navigation dans le menu, gestion des entrees clavier et destruction du menu 
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\label{gameover_8c_ab394c139ae8d0a84c20025415df0fbdb}} 
+\index{gameover.c@{gameover.c}!GameOver\_Init@{GameOver\_Init}}
+\index{GameOver\_Init@{GameOver\_Init}!gameover.c@{gameover.c}}
+\doxysubsubsection{GameOver\_Init()}
+{\footnotesize\ttfamily void Game\+Over\+\_\+\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fonction qui initialise le menu game over. 
+
+\begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+\mbox{\label{gameover_8c_ab33c9b1c32b3a1c3134cafabc73a69e8}} 
+\index{gameover.c@{gameover.c}!GameOver\_Input@{GameOver\_Input}}
+\index{GameOver\_Input@{GameOver\_Input}!gameover.c@{gameover.c}}
+\doxysubsubsection{GameOver\_Input()}
+{\footnotesize\ttfamily void Game\+Over\+\_\+\+Input (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Event $\ast$}]{event }\end{DoxyParamCaption})}
+
+
+
+Fonction qui gère les évènements du menu. 
+
+Gestion des entrées clavier de l\textquotesingle{}utilisateur 
+\begin{DoxyParams}{Paramètres}
+{\em event} & évènement \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+\mbox{\label{gameover_8c_aa776b3feb8965664a5c89a8584a909d2}} 
+\index{gameover.c@{gameover.c}!GameOver\_Load@{GameOver\_Load}}
+\index{GameOver\_Load@{GameOver\_Load}!gameover.c@{gameover.c}}
+\doxysubsubsection{GameOver\_Load()}
+{\footnotesize\ttfamily void Game\+Over\+\_\+\+Load (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fonction qui initialise l\textquotesingle{}état game over. 
+
+\begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+
+
+\doxysubsection{Documentation des variables}
+\mbox{\label{gameover_8c_a26219e75fb93dbaeedb89f95bc0d5225}} 
+\index{gameover.c@{gameover.c}!menu\_over@{menu\_over}}
+\index{menu\_over@{menu\_over}!gameover.c@{gameover.c}}
+\doxysubsubsection{menu\_over}
+{\footnotesize\ttfamily \textbf{ Game\+Object} menu\+\_\+over}
+
+Structure de type Game\+Object 

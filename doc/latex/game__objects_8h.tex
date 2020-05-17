@@ -1,0 +1,285 @@
+\doxysection{Référence du fichier includes/game\+\_\+objects.h}
+\label{game__objects_8h}\index{includes/game\_objects.h@{includes/game\_objects.h}}
+
+
+programme qui gère les objets  
+
+
+{\ttfamily \#include \char`\"{}texture.\+h\char`\"{}}\newline
+\doxysubsection*{Structures de données}
+\begin{DoxyCompactItemize}
+\item 
+struct \textbf{ component}
+\begin{DoxyCompactList}\small\item\em Structure gérant les caractéristiques liées à un component. \end{DoxyCompactList}\item 
+struct \textbf{ game\+Object}
+\begin{DoxyCompactList}\small\item\em Structure permettant de gérer un Game\+Object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{game__objects_8h_ac5fd473f13cc6b7473d4cad23d3d495a}} 
+\#define \textbf{ M\+A\+X\+\_\+\+N\+U\+M\+B\+ER}~3
+\begin{DoxyCompactList}\small\item\em Nombre maximum d\textquotesingle{}options disponibles dans un menu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Définitions de type}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \textbf{ component} \textbf{ Component}
+\item 
+typedef struct \textbf{ game\+Object} \textbf{ Game\+Object}
+\end{DoxyCompactItemize}
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ Update\+Component} (\textbf{ Component} $\ast$\textbf{ component}, int etat)
+\item 
+void \textbf{ Update\+Image\+\_\+\+Component} (\textbf{ Component} $\ast$\textbf{ component}, const char $\ast$filename)
+\item 
+int \textbf{ Get\+Keypressed} (\textbf{ Game\+Object} $\ast$\textbf{ game\+Object})
+\begin{DoxyCompactList}\small\item\em Fonction qui retourne l\textquotesingle{}option du menu selectionne. \end{DoxyCompactList}\item 
+void \textbf{ Game\+Object\+\_\+\+Load\+Ressources} (int numero, int num\+\_\+image, \textbf{ Game\+Object} $\ast$\textbf{ game\+Object}, char $\ast$nom\+Option, char $\ast$image\+\_\+on, char $\ast$image\+\_\+off, int positionX, int positionY)
+\begin{DoxyCompactList}\small\item\em Fonction qui gere le chargement des donnes du menu. \end{DoxyCompactList}\item 
+void \textbf{ U\+P\+\_\+\+Key} (\textbf{ Game\+Object} $\ast$\textbf{ game\+Object})
+\begin{DoxyCompactList}\small\item\em Fonction qui permet de naviguer dans le menu vers le haut. \end{DoxyCompactList}\item 
+void \textbf{ D\+O\+W\+N\+\_\+\+Key} (\textbf{ Game\+Object} $\ast$\textbf{ game\+Object})
+\begin{DoxyCompactList}\small\item\em Fonction qui permet de naviguer dans le menu vers le bas. \end{DoxyCompactList}\item 
+void \textbf{ R\+I\+G\+H\+T\+\_\+\+Key} (\textbf{ Game\+Object} $\ast$\textbf{ game\+Object}, int nombre\+Options)
+\begin{DoxyCompactList}\small\item\em Fonction qui permet de naviguer dans le menu a R\+I\+G\+H\+T\+\_\+\+Key. \end{DoxyCompactList}\item 
+void \textbf{ L\+E\+F\+T\+\_\+\+Key} (\textbf{ Game\+Object} $\ast$\textbf{ game\+Object}, int nombre\+Options)
+\begin{DoxyCompactList}\small\item\em Fonction qui permet de naviguer dans le menu a L\+E\+F\+T\+\_\+\+Key. \end{DoxyCompactList}\item 
+void \textbf{ Game\+Object\+\_\+\+Render} (\textbf{ Game\+Object} $\ast$\textbf{ game\+Object}, int nombres\+Options, int posX, int posY, int largeur\+BG, int hauteur\+BG)
+\begin{DoxyCompactList}\small\item\em Fonction qui permet d\textquotesingle{}afficher le menu. \end{DoxyCompactList}\item 
+void \textbf{ Game\+Object\+\_\+\+Clean} (\textbf{ Game\+Object} $\ast$\textbf{ game\+Object}, int nombre\+Options)
+\begin{DoxyCompactList}\small\item\em Fonction qui permet de nettoyer l\textquotesingle{}ecran du menu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+programme qui gère les objets 
+
+\begin{DoxyAuthor}{Auteur}
+C\+A\+L\+V\+A\+D\+OS Cindy, C\+H\+A\+U\+M\+U\+L\+ON Cassandra, C\+H\+E\+L\+LI Célia, O\+U\+S\+M\+A\+N\+O\+VA Karina 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+mars 2020 
+\end{DoxyDate}
+
+
+\doxysubsection{Documentation des définitions de type}
+\mbox{\label{game__objects_8h_ad9e2910eec221978e490706e75d9b610}} 
+\index{game\_objects.h@{game\_objects.h}!Component@{Component}}
+\index{Component@{Component}!game\_objects.h@{game\_objects.h}}
+\doxysubsubsection{Component}
+{\footnotesize\ttfamily typedef struct \textbf{ component} \textbf{ Component}}
+
+Typedef component Component \mbox{\label{game__objects_8h_af9fb569cbd08ef37d3d595d28f9bec9e}} 
+\index{game\_objects.h@{game\_objects.h}!GameObject@{GameObject}}
+\index{GameObject@{GameObject}!game\_objects.h@{game\_objects.h}}
+\doxysubsubsection{GameObject}
+{\footnotesize\ttfamily typedef struct \textbf{ game\+Object} \textbf{ Game\+Object}}
+
+Typedef \doxyref{game\+Object}{p.}{structgame_object} Game\+Object 
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\label{game__objects_8h_ae2bc4aa212cfbfade52283f7b14f0cab}} 
+\index{game\_objects.h@{game\_objects.h}!DOWN\_Key@{DOWN\_Key}}
+\index{DOWN\_Key@{DOWN\_Key}!game\_objects.h@{game\_objects.h}}
+\doxysubsubsection{DOWN\_Key()}
+{\footnotesize\ttfamily void D\+O\+W\+N\+\_\+\+Key (\begin{DoxyParamCaption}\item[{\textbf{ Game\+Object} $\ast$}]{game\+Object }\end{DoxyParamCaption})}
+
+
+
+Fonction qui permet de naviguer dans le menu vers le bas. 
+
+touche bas ~\newline
+
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \doxyref{game\+Object}{p.}{structgame_object}} & pointeur sur le menu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+\mbox{\label{game__objects_8h_aa6f0855c15b5b6dac82b78b6d5d5c870}} 
+\index{game\_objects.h@{game\_objects.h}!GameObject\_Clean@{GameObject\_Clean}}
+\index{GameObject\_Clean@{GameObject\_Clean}!game\_objects.h@{game\_objects.h}}
+\doxysubsubsection{GameObject\_Clean()}
+{\footnotesize\ttfamily void Game\+Object\+\_\+\+Clean (\begin{DoxyParamCaption}\item[{\textbf{ Game\+Object} $\ast$}]{game\+Object,  }\item[{int}]{nombre\+Options }\end{DoxyParamCaption})}
+
+
+
+Fonction qui permet de nettoyer l\textquotesingle{}ecran du menu. 
+
+fonction servant à libérer les ressources d\textquotesingle{}un \doxyref{game\+Object}{p.}{structgame_object}
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \doxyref{game\+Object}{p.}{structgame_object}} & pointeur sur le menu \\
+\hline
+{\em nombre\+Options} & nombre d\textquotesingle{}options du menu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+\mbox{\label{game__objects_8h_a05732c6ee5abe6e978dfc40dddff94d4}} 
+\index{game\_objects.h@{game\_objects.h}!GameObject\_LoadRessources@{GameObject\_LoadRessources}}
+\index{GameObject\_LoadRessources@{GameObject\_LoadRessources}!game\_objects.h@{game\_objects.h}}
+\doxysubsubsection{GameObject\_LoadRessources()}
+{\footnotesize\ttfamily void Game\+Object\+\_\+\+Load\+Ressources (\begin{DoxyParamCaption}\item[{int}]{numero,  }\item[{int}]{num\+\_\+image,  }\item[{\textbf{ Game\+Object} $\ast$}]{game\+Object,  }\item[{char $\ast$}]{nom\+Option,  }\item[{char $\ast$}]{image\+\_\+on,  }\item[{char $\ast$}]{image\+\_\+off,  }\item[{int}]{positionX,  }\item[{int}]{positionY }\end{DoxyParamCaption})}
+
+
+
+Fonction qui gere le chargement des donnes du menu. 
+
+rechargement du \doxyref{game\+Object}{p.}{structgame_object}
+
+
+\begin{DoxyParams}{Paramètres}
+{\em numero} & numero de l\textquotesingle{}option \\
+\hline
+{\em num\+\_\+image} & numero de l\textquotesingle{}image selectionne par defaut \\
+\hline
+{\em \doxyref{game\+Object}{p.}{structgame_object}} & pointeur sur le menu \\
+\hline
+{\em nom\+Option} & nom de l\textquotesingle{}option \\
+\hline
+{\em image\+\_\+on} & chemin pour acceder a l\textquotesingle{}image selectionnee \\
+\hline
+{\em image\+\_\+off} & chemin pour acceder a l\textquotesingle{}image deselectionnee \\
+\hline
+{\em positionX} & position en x \\
+\hline
+{\em positionY} & position en y \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+\mbox{\label{game__objects_8h_aa18e369249075d7319f2b547d46e0a7c}} 
+\index{game\_objects.h@{game\_objects.h}!GameObject\_Render@{GameObject\_Render}}
+\index{GameObject\_Render@{GameObject\_Render}!game\_objects.h@{game\_objects.h}}
+\doxysubsubsection{GameObject\_Render()}
+{\footnotesize\ttfamily void Game\+Object\+\_\+\+Render (\begin{DoxyParamCaption}\item[{\textbf{ Game\+Object} $\ast$}]{game\+Object,  }\item[{int}]{nombres\+Options,  }\item[{int}]{posX,  }\item[{int}]{posY,  }\item[{int}]{largeur\+BG,  }\item[{int}]{hauteur\+BG }\end{DoxyParamCaption})}
+
+
+
+Fonction qui permet d\textquotesingle{}afficher le menu. 
+
+Affichage des différentes options 
+\begin{DoxyParams}{Paramètres}
+{\em \doxyref{game\+Object}{p.}{structgame_object}} & pointeur sur le menu \\
+\hline
+{\em nombres\+Options} & nombre d\textquotesingle{}options dans le menu \\
+\hline
+{\em posX} & position en x de l\textquotesingle{}arriere plan \\
+\hline
+{\em posY} & position en y de l\textquotesingle{}arriere plan \\
+\hline
+{\em largeur\+BG} & largeur de l\textquotesingle{}arriere plan \\
+\hline
+{\em hauteur\+BG} & hauteur de l\textquotesingle{}arriere plan \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+\mbox{\label{game__objects_8h_a50cf2830b3fc02fe87654dc6ac9612a4}} 
+\index{game\_objects.h@{game\_objects.h}!GetKeypressed@{GetKeypressed}}
+\index{GetKeypressed@{GetKeypressed}!game\_objects.h@{game\_objects.h}}
+\doxysubsubsection{GetKeypressed()}
+{\footnotesize\ttfamily int Get\+Keypressed (\begin{DoxyParamCaption}\item[{\textbf{ Game\+Object} $\ast$}]{game\+Object }\end{DoxyParamCaption})}
+
+
+
+Fonction qui retourne l\textquotesingle{}option du menu selectionne. 
+
+fonction sur les touches du \doxyref{game\+Object}{p.}{structgame_object}
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \doxyref{game\+Object}{p.}{structgame_object}} & pointeur sur le menu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+un entier correspondant au numero de l\textquotesingle{}option selectionnee 
+\end{DoxyReturn}
+\mbox{\label{game__objects_8h_ac117d17f6d60ba1cf32302c3a19cb6e5}} 
+\index{game\_objects.h@{game\_objects.h}!LEFT\_Key@{LEFT\_Key}}
+\index{LEFT\_Key@{LEFT\_Key}!game\_objects.h@{game\_objects.h}}
+\doxysubsubsection{LEFT\_Key()}
+{\footnotesize\ttfamily void L\+E\+F\+T\+\_\+\+Key (\begin{DoxyParamCaption}\item[{\textbf{ Game\+Object} $\ast$}]{game\+Object,  }\item[{int}]{nombres\+Options }\end{DoxyParamCaption})}
+
+
+
+Fonction qui permet de naviguer dans le menu a L\+E\+F\+T\+\_\+\+Key. 
+
+pour aller a Gauche
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \doxyref{game\+Object}{p.}{structgame_object}} & pointeur sur le menu \\
+\hline
+{\em nombres\+Options} & nombre d\textquotesingle{}options \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+\mbox{\label{game__objects_8h_a09b5fe23ad39aa8682992c33d676adc2}} 
+\index{game\_objects.h@{game\_objects.h}!RIGHT\_Key@{RIGHT\_Key}}
+\index{RIGHT\_Key@{RIGHT\_Key}!game\_objects.h@{game\_objects.h}}
+\doxysubsubsection{RIGHT\_Key()}
+{\footnotesize\ttfamily void R\+I\+G\+H\+T\+\_\+\+Key (\begin{DoxyParamCaption}\item[{\textbf{ Game\+Object} $\ast$}]{game\+Object,  }\item[{int}]{nombres\+Options }\end{DoxyParamCaption})}
+
+
+
+Fonction qui permet de naviguer dans le menu a R\+I\+G\+H\+T\+\_\+\+Key. 
+
+pour aller a Droite
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \doxyref{game\+Object}{p.}{structgame_object}} & Pointeur sur le \doxyref{game\+Object}{p.}{structgame_object} \\
+\hline
+{\em nombres\+Options} & Nombre de components utilisés \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+\mbox{\label{game__objects_8h_a1376fc070c1fe7fab19b741c1eeb3955}} 
+\index{game\_objects.h@{game\_objects.h}!UP\_Key@{UP\_Key}}
+\index{UP\_Key@{UP\_Key}!game\_objects.h@{game\_objects.h}}
+\doxysubsubsection{UP\_Key()}
+{\footnotesize\ttfamily void U\+P\+\_\+\+Key (\begin{DoxyParamCaption}\item[{\textbf{ Game\+Object} $\ast$}]{game\+Object }\end{DoxyParamCaption})}
+
+
+
+Fonction qui permet de naviguer dans le menu vers le haut. 
+
+fonction pour la touche haut du \doxyref{game\+Object}{p.}{structgame_object}
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \doxyref{game\+Object}{p.}{structgame_object}} & pointeur sur le menu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+\mbox{\label{game__objects_8h_a4f4eab8b38fcb99021983486b019ca19}} 
+\index{game\_objects.h@{game\_objects.h}!UpdateComponent@{UpdateComponent}}
+\index{UpdateComponent@{UpdateComponent}!game\_objects.h@{game\_objects.h}}
+\doxysubsubsection{UpdateComponent()}
+{\footnotesize\ttfamily void Update\+Component (\begin{DoxyParamCaption}\item[{\textbf{ Component} $\ast$}]{component,  }\item[{int}]{etat }\end{DoxyParamCaption})}
+
+fonction de mise à jour du component d\textquotesingle{}un \doxyref{game\+Object}{p.}{structgame_object} \mbox{\label{game__objects_8h_a92ecfb91426e1ff70919b2862c283891}} 
+\index{game\_objects.h@{game\_objects.h}!UpdateImage\_Component@{UpdateImage\_Component}}
+\index{UpdateImage\_Component@{UpdateImage\_Component}!game\_objects.h@{game\_objects.h}}
+\doxysubsubsection{UpdateImage\_Component()}
+{\footnotesize\ttfamily void Update\+Image\+\_\+\+Component (\begin{DoxyParamCaption}\item[{\textbf{ Component} $\ast$}]{component,  }\item[{const char $\ast$}]{filename }\end{DoxyParamCaption})}
+
+fonction de mise à jour d\textquotesingle{}image du component d\textquotesingle{}un \doxyref{game\+Object}{p.}{structgame_object} 

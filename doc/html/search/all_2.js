@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['base_5fgame_8',['Base_Game',['../base_game_8h.html#ab47d948e342791b190626d7d2c17ab75',1,'baseGame.h']]],
+  ['base_5fgame_8',['Base_Game',['../basegame_8h.html#ab47d948e342791b190626d7d2c17ab75',1,'basegame.h']]],
   ['basegame_9',['basegame',['../structbasegame.html',1,'']]],
-  ['basegame_2ec_10',['baseGame.c',['../base_game_8c.html',1,'']]],
-  ['basegame_2eh_11',['baseGame.h',['../base_game_8h.html',1,'']]],
+  ['basegame_2ec_10',['basegame.c',['../basegame_8c.html',1,'']]],
+  ['basegame_2eh_11',['basegame.h',['../basegame_8h.html',1,'']]],
   ['basex_12',['baseX',['../struct_node.html#a55d0bd90e3b7d8747086fb4cffa628a3',1,'Node']]],
   ['basey_13',['baseY',['../struct_node.html#aa6733345a1163765ef8e0f57d455a1ef',1,'Node']]],
   ['bg_14',['bg',['../structgame_object.html#a4ed1389c10516234b19584ff707051c8',1,'gameObject']]],

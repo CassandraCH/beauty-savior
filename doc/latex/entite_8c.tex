@@ -1,0 +1,129 @@
+\doxysection{Référence du fichier src/entite.c}
+\label{entite_8c}\index{src/entite.c@{src/entite.c}}
+
+
+Programme qui gère le comportement des entités.  
+
+
+{\ttfamily \#include \char`\"{}base\+Game.\+h\char`\"{}}\newline
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ bool} \textbf{ Bullets\+\_\+\+Update} (\textbf{ type\+Entite} typeA, \textbf{ type\+Entite} typeB)
+\begin{DoxyCompactList}\small\item\em Fonction qui permet de mettre a jour les bullets. \end{DoxyCompactList}\item 
+void \textbf{ Enemy\+\_\+\+Set\+Bullets} ()
+\begin{DoxyCompactList}\small\item\em Fonction qui configurer le nombre de tir des ennemis. \end{DoxyCompactList}\item 
+void \textbf{ Create\+Bullet} (\textbf{ type\+Entite} \textbf{ type}, int width, int height, int startX, int startY)
+\begin{DoxyCompactList}\small\item\em Fonction qui creer un tir. \end{DoxyCompactList}\item 
+void \textbf{ Enemy\+\_\+\+Attack} ()
+\begin{DoxyCompactList}\small\item\em Fonction qui gère les attaques des ennemis. \end{DoxyCompactList}\item 
+void \textbf{ Enemy\+\_\+\+Update} ()
+\begin{DoxyCompactList}\small\item\em Fonction qui met à jour les ennemis. \end{DoxyCompactList}\item 
+void \textbf{ Collision\+\_\+\+Detection} ()
+\begin{DoxyCompactList}\small\item\em Fonction qui gère les collision entre le joueur et le decor, le joueur et les ennemis; et si le joueur tombe dans le vide. \end{DoxyCompactList}\item 
+void \textbf{ Level\+\_\+\+Collision} ()
+\begin{DoxyCompactList}\small\item\em Fonction qui gère les collisions avec le décor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Programme qui gère le comportement des entités. 
+
+\begin{DoxyAuthor}{Auteur}
+C\+A\+L\+V\+A\+D\+OS Cindy, C\+H\+A\+U\+M\+U\+L\+ON Cassandra, C\+H\+E\+L\+LI Célia, O\+U\+S\+M\+A\+N\+O\+VA Karina 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+janvier 2020
+\end{DoxyDate}
+Gestion des collisions entre le joueur et le décor (plateformes), le joueur et les ennemis, les ennemis et les projectiles ou si le joueur tombe dans le vide 
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\label{entite_8c_a432d4962a53ddcfab51f2630957e1ed9}} 
+\index{entite.c@{entite.c}!Bullets\_Update@{Bullets\_Update}}
+\index{Bullets\_Update@{Bullets\_Update}!entite.c@{entite.c}}
+\doxysubsubsection{Bullets\_Update()}
+{\footnotesize\ttfamily \textbf{ bool} Bullets\+\_\+\+Update (\begin{DoxyParamCaption}\item[{\textbf{ type\+Entite}}]{typeA,  }\item[{\textbf{ type\+Entite}}]{typeB }\end{DoxyParamCaption})}
+
+
+
+Fonction qui permet de mettre a jour les bullets. 
+
+Parcours de la listes des bullets
+
+En fonction de s\textquotesingle{}il s\textquotesingle{}agit d\textquotesingle{}un ennemi ou du joueur, le comportement des bullets est différent 
+\begin{DoxyParams}{Paramètres}
+{\em typeA} & type de la premiere entite \+: item, joueur, ennemi, platform , bull, feu \\
+\hline
+{\em typeB} & type de la deuxieme entite \+: item, joueur, ennemi, platform , bull, feu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Une valeur de type booleen 
+\end{DoxyReturn}
+\mbox{\label{entite_8c_ac1a6a9f6dff04d44c929966b902695bc}} 
+\index{entite.c@{entite.c}!CreateBullet@{CreateBullet}}
+\index{CreateBullet@{CreateBullet}!entite.c@{entite.c}}
+\doxysubsubsection{CreateBullet()}
+{\footnotesize\ttfamily void Create\+Bullet (\begin{DoxyParamCaption}\item[{\textbf{ type\+Entite}}]{type,  }\item[{int}]{width,  }\item[{int}]{height,  }\item[{int}]{startX,  }\item[{int}]{startY }\end{DoxyParamCaption})}
+
+
+
+Fonction qui creer un tir. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em type} & type du tir \\
+\hline
+{\em width} & largeur du sprite \\
+\hline
+{\em height} & hauteur du sprite \\
+\hline
+{\em startX} & position en x du sprite \\
+\hline
+{\em startY} & position en y du sprite \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+\mbox{\label{entite_8c_a3c5118ed5adf520ebda7558194ac259b}} 
+\index{entite.c@{entite.c}!Enemy\_Attack@{Enemy\_Attack}}
+\index{Enemy\_Attack@{Enemy\_Attack}!entite.c@{entite.c}}
+\doxysubsubsection{Enemy\_Attack()}
+{\footnotesize\ttfamily void Enemy\+\_\+\+Attack (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fonction qui gère les attaques des ennemis. 
+
+Parcours des ennemis, verification qu\textquotesingle{}il n\textquotesingle{}est pas mort et de son compteur de lancer \begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+\mbox{\label{entite_8c_a199e12b013e6676db57ef7ad924bf68f}} 
+\index{entite.c@{entite.c}!Enemy\_SetBullets@{Enemy\_SetBullets}}
+\index{Enemy\_SetBullets@{Enemy\_SetBullets}!entite.c@{entite.c}}
+\doxysubsubsection{Enemy\_SetBullets()}
+{\footnotesize\ttfamily void Enemy\+\_\+\+Set\+Bullets (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fonction qui configurer le nombre de tir des ennemis. 
+
+\begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+\mbox{\label{entite_8c_a02c07781e54c5b63f42fcad8bcd3b8ed}} 
+\index{entite.c@{entite.c}!Enemy\_Update@{Enemy\_Update}}
+\index{Enemy\_Update@{Enemy\_Update}!entite.c@{entite.c}}
+\doxysubsubsection{Enemy\_Update()}
+{\footnotesize\ttfamily void Enemy\+\_\+\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fonction qui met à jour les ennemis. 
+
+\begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}

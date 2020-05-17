@@ -48,6 +48,13 @@ extern void Update()
     //Cas ou on est en train de jouer
     else if ( game.state == IN_GAME )
     { 
+
+
+      // Lecture de la musique d'un niveau 
+        if( !Mix_PlayingMusic() )
+            Mix_PlayMusic(getBaseGame()->bgm, -1);
+
+
       //Gestion du timer
       getBaseGame()->time++;
     

@@ -1,0 +1,80 @@
+\doxysection{Référence du fichier src/menu\+Load.c}
+\label{menu_load_8c}\index{src/menuLoad.c@{src/menuLoad.c}}
+
+
+Programme qui gère le menu de chargement.  
+
+
+{\ttfamily \#include \char`\"{}base\+Game.\+h\char`\"{}}\newline
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Game\+Object} $\ast$ \textbf{ get\+Menu\+Load} ()
+\begin{DoxyCompactList}\small\item\em Fonction qui permet retourner le menu de chargement. \end{DoxyCompactList}\item 
+void \textbf{ Load\+\_\+\+Init} ()
+\begin{DoxyCompactList}\small\item\em Fonction qui initialise le menu de chargement. \end{DoxyCompactList}\item 
+void \textbf{ Load\+\_\+\+Input} (S\+D\+L\+\_\+\+Event $\ast$event)
+\begin{DoxyCompactList}\small\item\em Fonction qui gere les evenements du menu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Game\+Object} \textbf{ menu\+\_\+load}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Programme qui gère le menu de chargement. 
+
+\begin{DoxyAuthor}{Auteur}
+C\+A\+L\+V\+A\+D\+OS Cindy, C\+H\+A\+U\+M\+U\+L\+ON Cassandra, C\+H\+E\+L\+LI Célia, O\+U\+S\+M\+A\+N\+O\+VA Karina 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+mars 2020
+\end{DoxyDate}
+Initialisation, affichage du menu, navigation dans le menu, gestion des entrees clavier et destruction du menu 
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\label{menu_load_8c_a4abffd318e7ee5fcae786cb87d7faad7}} 
+\index{menuLoad.c@{menuLoad.c}!Load\_Init@{Load\_Init}}
+\index{Load\_Init@{Load\_Init}!menuLoad.c@{menuLoad.c}}
+\doxysubsubsection{Load\_Init()}
+{\footnotesize\ttfamily void Load\+\_\+\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fonction qui initialise le menu de chargement. 
+
+\begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+\mbox{\label{menu_load_8c_a229d1192746d5fb95bcc7d98caca2718}} 
+\index{menuLoad.c@{menuLoad.c}!Load\_Input@{Load\_Input}}
+\index{Load\_Input@{Load\_Input}!menuLoad.c@{menuLoad.c}}
+\doxysubsubsection{Load\_Input()}
+{\footnotesize\ttfamily void Load\+\_\+\+Input (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Event $\ast$}]{event }\end{DoxyParamCaption})}
+
+
+
+Fonction qui gere les evenements du menu. 
+
+Gestion des entrees clavier de l\textquotesingle{}utilisateur 
+\begin{DoxyParams}{Paramètres}
+{\em event} & evenement \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+
+
+\doxysubsection{Documentation des variables}
+\mbox{\label{menu_load_8c_ac0fdc42fc650ab79ed6e6b7c7a349969}} 
+\index{menuLoad.c@{menuLoad.c}!menu\_load@{menu\_load}}
+\index{menu\_load@{menu\_load}!menuLoad.c@{menuLoad.c}}
+\doxysubsubsection{menu\_load}
+{\footnotesize\ttfamily \textbf{ Game\+Object} menu\+\_\+load}
+
+Structure de type Game\+Object 

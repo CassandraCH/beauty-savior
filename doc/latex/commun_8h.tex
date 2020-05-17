@@ -1,0 +1,84 @@
+\doxysection{Référence du fichier includes/commun.h}
+\label{commun_8h}\index{includes/commun.h@{includes/commun.h}}
+
+
+Programme qui a les enumerations.  
+
+
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$S\+D\+L2/\+S\+D\+L.\+h$>$}\newline
+{\ttfamily \#include $<$S\+D\+L2/\+S\+D\+L\+\_\+image.\+h$>$}\newline
+{\ttfamily \#include $<$S\+D\+L2/\+S\+D\+L\+\_\+ttf.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$S\+D\+L2/\+S\+D\+L\+\_\+mixer.\+h$>$}\newline
+\doxysubsection*{Énumérations}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{commun_8h_af6a258d8f3ee5206d682d799316314b1}} 
+enum \textbf{ bool} \{ {\bfseries false}, 
+{\bfseries true}
+ \}
+\begin{DoxyCompactList}\small\item\em énumération représentant un type booléen. \end{DoxyCompactList}\item 
+\mbox{\label{commun_8h_a2aba7ee053b5e021d71af3fcf4ea1ae5}} 
+enum \textbf{ type\+Entite} \{ \newline
+{\bfseries item}, 
+{\bfseries joueur}, 
+{\bfseries ennemi}, 
+{\bfseries platform}, 
+\newline
+{\bfseries checkpoint}, 
+{\bfseries bull}, 
+{\bfseries feu}, 
+{\bfseries os}, 
+\newline
+{\bfseries rock}, 
+{\bfseries tree}, 
+{\bfseries gamewin}, 
+{\bfseries passport}
+ \}
+\begin{DoxyCompactList}\small\item\em énumération représentant les types du jeux. \end{DoxyCompactList}\item 
+\mbox{\label{commun_8h_a942a1e77c0b3dc489088c50d42703157}} 
+enum \textbf{ tex\+State} \{ {\bfseries fixe}, 
+{\bfseries anime}
+ \}
+\begin{DoxyCompactList}\small\item\em énumération les états d\textquotesingle{}une entité\+: fixe ou animé \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+S\+D\+L\+\_\+\+Renderer $\ast$ \textbf{ get\+Renderer} (void)
+\begin{DoxyCompactList}\small\item\em Fonction qui permet d\textquotesingle{}accéder à la structure du rendu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Programme qui a les enumerations. 
+
+\begin{DoxyAuthor}{Auteur}
+C\+A\+L\+V\+A\+D\+OS Cindy, C\+H\+A\+U\+M\+U\+L\+ON Cassandra, C\+H\+E\+L\+LI Célia, O\+U\+S\+M\+A\+N\+O\+VA Karina 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+mars 2020 
+\end{DoxyDate}
+
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\label{commun_8h_a9f4702489c36e4ab8acc782762e94d41}} 
+\index{commun.h@{commun.h}!getRenderer@{getRenderer}}
+\index{getRenderer@{getRenderer}!commun.h@{commun.h}}
+\doxysubsubsection{getRenderer()}
+{\footnotesize\ttfamily S\+D\+L\+\_\+\+Renderer$\ast$ get\+Renderer (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Fonction qui permet d\textquotesingle{}accéder à la structure du rendu. 
+
+Accès à la structure d\textquotesingle{}un rendu
+
+\begin{DoxyReturn}{Renvoie}
+un pointeur sur une structure de type S\+D\+L\+\_\+\+Renderer 
+\end{DoxyReturn}

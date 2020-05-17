@@ -1,0 +1,80 @@
+\doxysection{Référence du fichier src/menu\+\_\+win.c}
+\label{menu__win_8c}\index{src/menu\_win.c@{src/menu\_win.c}}
+
+
+Programme qui gère le menu de la partie gagnée.  
+
+
+{\ttfamily \#include \char`\"{}base\+Game.\+h\char`\"{}}\newline
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Game\+Object} $\ast$ \textbf{ get\+Menu\+\_\+\+Win} ()
+\begin{DoxyCompactList}\small\item\em Fonction qui permet retourner le menu concernant la fin d\textquotesingle{}une partie gagnée. \end{DoxyCompactList}\item 
+void \textbf{ Game\+Win\+\_\+\+Init} ()
+\begin{DoxyCompactList}\small\item\em Fonction qui initialise le menu du jeux gagné \end{DoxyCompactList}\item 
+void \textbf{ Game\+Win\+\_\+\+Input} (S\+D\+L\+\_\+\+Event $\ast$event)
+\begin{DoxyCompactList}\small\item\em Fonction qui gere les evenements du menu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Game\+Object} \textbf{ menu\+\_\+win}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Programme qui gère le menu de la partie gagnée. 
+
+\begin{DoxyAuthor}{Auteur}
+C\+A\+L\+V\+A\+D\+OS Cindy, C\+H\+A\+U\+M\+U\+L\+ON Cassandra, C\+H\+E\+L\+LI Célia, O\+U\+S\+M\+A\+N\+O\+VA Karina 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+mars 2020
+\end{DoxyDate}
+Initialisation, affichage du menu, navigation dans le menu, gestion des entrees clavier et destruction du menu 
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\label{menu__win_8c_a73d47075678263fbb098618e319b2390}} 
+\index{menu\_win.c@{menu\_win.c}!GameWin\_Init@{GameWin\_Init}}
+\index{GameWin\_Init@{GameWin\_Init}!menu\_win.c@{menu\_win.c}}
+\doxysubsubsection{GameWin\_Init()}
+{\footnotesize\ttfamily void Game\+Win\+\_\+\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fonction qui initialise le menu du jeux gagné 
+
+\begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+\mbox{\label{menu__win_8c_a38c5e5b9be9c16d59987a1976a7a62e4}} 
+\index{menu\_win.c@{menu\_win.c}!GameWin\_Input@{GameWin\_Input}}
+\index{GameWin\_Input@{GameWin\_Input}!menu\_win.c@{menu\_win.c}}
+\doxysubsubsection{GameWin\_Input()}
+{\footnotesize\ttfamily void Game\+Win\+\_\+\+Input (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Event $\ast$}]{event }\end{DoxyParamCaption})}
+
+
+
+Fonction qui gere les evenements du menu. 
+
+Gestion des entrees clavier de l\textquotesingle{}utilisateur 
+\begin{DoxyParams}{Paramètres}
+{\em event} & evenement \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+
+
+\doxysubsection{Documentation des variables}
+\mbox{\label{menu__win_8c_a4c250cdd902b40db6171ff0e7bff043c}} 
+\index{menu\_win.c@{menu\_win.c}!menu\_win@{menu\_win}}
+\index{menu\_win@{menu\_win}!menu\_win.c@{menu\_win.c}}
+\doxysubsubsection{menu\_win}
+{\footnotesize\ttfamily \textbf{ Game\+Object} menu\+\_\+win}
+
+Structure de type Game\+Object 

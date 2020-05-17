@@ -1,0 +1,168 @@
+\doxysection{Référence du fichier includes/texture.h}
+\label{texture_8h}\index{includes/texture.h@{includes/texture.h}}
+
+
+programme qui gere les texture du jeu .  
+
+
+{\ttfamily \#include \char`\"{}commun.\+h\char`\"{}}\newline
+\doxysubsection*{Structures de données}
+\begin{DoxyCompactItemize}
+\item 
+struct \textbf{ textures}
+\begin{DoxyCompactList}\small\item\em Structure gérant les textures \begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+674e9288e4b728278a91af8e9aad7255f9ee44f2 \end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{texture_8h_a9249f4ba41290957b9727501b7b6ad60}} 
+\#define \textbf{ \+\_\+\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+H}~/
+\begin{DoxyCompactList}\small\item\em Clause de mise en garde pour le fichier T\+E\+X\+T\+U\+R\+E\+\_\+H. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Définitions de type}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \textbf{ textures} \textbf{ Texture\+\_\+\+Manager}
+\end{DoxyCompactItemize}
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ bool} \textbf{ Image\+\_\+\+Load} (\textbf{ Texture\+\_\+\+Manager} $\ast$tex, const char $\ast$filename)
+\begin{DoxyCompactList}\small\item\em Fonction qui permet de charger une image dans une texture. \end{DoxyCompactList}\item 
+void \textbf{ Tex\+Manager\+\_\+\+Destroy\+Ressources} (\textbf{ Texture\+\_\+\+Manager} $\ast$tex)
+\begin{DoxyCompactList}\small\item\em Fonction qui permet detruire une texture. \end{DoxyCompactList}\item 
+S\+D\+L\+\_\+\+Texture $\ast$ \textbf{ Texture\+\_\+\+Load} (char $\ast$filepath)
+\begin{DoxyCompactList}\small\item\em Fonction qui permet de charger une texture a partir d\textquotesingle{}une image. \end{DoxyCompactList}\item 
+void \textbf{ Texture\+Manager\+\_\+\+Load} (\textbf{ Texture\+\_\+\+Manager} $\ast$tex, char $\ast$filepath)
+\begin{DoxyCompactList}\small\item\em Fonction qui permet de charger une texture. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+programme qui gere les texture du jeu . 
+
+\begin{DoxyAuthor}{Auteur}
+C\+A\+L\+V\+A\+D\+OS Cindy, C\+H\+A\+U\+M\+U\+L\+ON Cassandra, C\+H\+E\+L\+LI Célia, O\+U\+S\+M\+A\+N\+O\+VA Karina 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+mars 2020 
+\end{DoxyDate}
+
+
+\doxysubsection{Documentation des définitions de type}
+\mbox{\label{texture_8h_acbc9d2c28ac70027ba8e1f246232367a}} 
+\index{texture.h@{texture.h}!Texture\_Manager@{Texture\_Manager}}
+\index{Texture\_Manager@{Texture\_Manager}!texture.h@{texture.h}}
+\doxysubsubsection{Texture\_Manager}
+{\footnotesize\ttfamily typedef struct \textbf{ textures} \textbf{ Texture\+\_\+\+Manager}}
+
+structure des differentes textures du jeu 
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\label{texture_8h_a5d2d9bc4592da2662306de3577d27685}} 
+\index{texture.h@{texture.h}!Image\_Load@{Image\_Load}}
+\index{Image\_Load@{Image\_Load}!texture.h@{texture.h}}
+\doxysubsubsection{Image\_Load()}
+{\footnotesize\ttfamily \textbf{ bool} Image\+\_\+\+Load (\begin{DoxyParamCaption}\item[{\textbf{ Texture\+\_\+\+Manager} $\ast$}]{tex,  }\item[{const char $\ast$}]{filename }\end{DoxyParamCaption})}
+
+
+
+Fonction qui permet de charger une image dans une texture. 
+
+booleen charger des images
+
+chargements des images
+
+
+\begin{DoxyParams}{Paramètres}
+{\em tex} & pointeur sur la texture dans laquelle on veut charger l\textquotesingle{}image \\
+\hline
+{\em filename} & nom du fichier de l\textquotesingle{}image \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+un booleen \+: V\+R\+AI si l\textquotesingle{}image a bien ete chargee dans la texture, F\+A\+UX sinon
+\end{DoxyReturn}
+chargements des images \mbox{\label{texture_8h_ac3dedf51cd7a896d720a33333fee8356}} 
+\index{texture.h@{texture.h}!TexManager\_DestroyRessources@{TexManager\_DestroyRessources}}
+\index{TexManager\_DestroyRessources@{TexManager\_DestroyRessources}!texture.h@{texture.h}}
+\doxysubsubsection{TexManager\_DestroyRessources()}
+{\footnotesize\ttfamily void Tex\+Manager\+\_\+\+Destroy\+Ressources (\begin{DoxyParamCaption}\item[{\textbf{ Texture\+\_\+\+Manager} $\ast$}]{tex }\end{DoxyParamCaption})}
+
+
+
+Fonction qui permet detruire une texture. 
+
+liberation des ressources
+
+les ressources
+
+
+\begin{DoxyParams}{Paramètres}
+{\em tex} & pointeur sur la texture a detruire \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void)
+\end{DoxyReturn}
+les ressources \mbox{\label{texture_8h_a41832dc7a870ddf9244818b5cc533546}} 
+\index{texture.h@{texture.h}!Texture\_Load@{Texture\_Load}}
+\index{Texture\_Load@{Texture\_Load}!texture.h@{texture.h}}
+\doxysubsubsection{Texture\_Load()}
+{\footnotesize\ttfamily S\+D\+L\+\_\+\+Texture$\ast$ Texture\+\_\+\+Load (\begin{DoxyParamCaption}\item[{char $\ast$}]{filepath }\end{DoxyParamCaption})}
+
+
+
+Fonction qui permet de charger une texture a partir d\textquotesingle{}une image. 
+
+charger de texture de filepath(chemin de fichier)
+
+chargement des textures à partir d\textquotesingle{}image
+
+
+\begin{DoxyParams}{Paramètres}
+{\em filepath} & chemin pour acceder a l\textquotesingle{}image \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+un pointeur sur une texture S\+DL (S\+D\+L\+\_\+\+Texture)
+\end{DoxyReturn}
+chargement des textures à partir d\textquotesingle{}image \mbox{\label{texture_8h_a2817bb3a0cd16d6a6c25b7d3a32b938a}} 
+\index{texture.h@{texture.h}!TextureManager\_Load@{TextureManager\_Load}}
+\index{TextureManager\_Load@{TextureManager\_Load}!texture.h@{texture.h}}
+\doxysubsubsection{TextureManager\_Load()}
+{\footnotesize\ttfamily void Texture\+Manager\+\_\+\+Load (\begin{DoxyParamCaption}\item[{\textbf{ Texture\+\_\+\+Manager} $\ast$}]{tex,  }\item[{char $\ast$}]{filepath }\end{DoxyParamCaption})}
+
+
+
+Fonction qui permet de charger une texture. 
+
+charger des texture visuel principal dans le jeu
+
+chargement d\textquotesingle{}une texture
+
+
+\begin{DoxyParams}{Paramètres}
+{\em tex} & pointeur sur la texture dans laquelle on veut charger l\textquotesingle{}image \\
+\hline
+{\em filepath} & nom du fichier de l\textquotesingle{}image \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void)
+\end{DoxyReturn}
+chargement d\textquotesingle{}une texture 

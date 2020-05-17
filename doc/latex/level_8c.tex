@@ -1,0 +1,177 @@
+\doxysection{Référence du fichier src/level.c}
+\label{level_8c}\index{src/level.c@{src/level.c}}
+
+
+Programme qui gère les niveaux \+: affichage et destruction des niveaux.  
+
+
+{\ttfamily \#include \char`\"{}level.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}constantes.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}base\+Game.\+h\char`\"{}}\newline
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Level} $\ast$ \textbf{ Get\+\_\+\+Level} ()
+\begin{DoxyCompactList}\small\item\em Fonction qui permet d\textquotesingle{}accéder à la structure d\textquotesingle{}un niveau. \end{DoxyCompactList}\item 
+void \textbf{ Set\+\_\+\+Level} (int \textbf{ niveau})
+\begin{DoxyCompactList}\small\item\em Fonction qui permet de mettre à jour le niveau du joueur. \end{DoxyCompactList}\item 
+void \textbf{ Level\+\_\+\+Load} ()
+\begin{DoxyCompactList}\small\item\em Fonction qui permet de charger un niveau. \end{DoxyCompactList}\item 
+void \textbf{ Niveau\+Suivant} ()
+\begin{DoxyCompactList}\small\item\em Fonction qui permet de charger un niveau next. \end{DoxyCompactList}\item 
+void \textbf{ Debug\+\_\+\+Afficher\+Collider} ()
+\begin{DoxyCompactList}\small\item\em Fonction de debug qui permet d\textquotesingle{}afficher les blocs de collision par dessus le decor. \end{DoxyCompactList}\item 
+void \textbf{ Level\+\_\+\+Textures\+\_\+\+Render} (int \textbf{ niveau})
+\begin{DoxyCompactList}\small\item\em Fonction qui permet d\textquotesingle{}afficher les textures du niveau passé en paramètre. \end{DoxyCompactList}\item 
+void \textbf{ Level\+\_\+\+Render} ()
+\begin{DoxyCompactList}\small\item\em Fonction qui permet d\textquotesingle{}afficher un niveau. \end{DoxyCompactList}\item 
+void \textbf{ Level\+\_\+\+Destroy} ()
+\begin{DoxyCompactList}\small\item\em Fonction qui permet de gérer la destruction des niveaux et la libération des ressources qui ont été utilisées. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Level} \textbf{ level}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Programme qui gère les niveaux \+: affichage et destruction des niveaux. 
+
+\begin{DoxyAuthor}{Auteur}
+C\+A\+L\+V\+A\+D\+OS Cindy, C\+H\+A\+U\+M\+U\+L\+ON Cassandra, C\+H\+E\+L\+LI Célia, O\+U\+S\+M\+A\+N\+O\+VA Karina 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+janvier 2020 
+\end{DoxyDate}
+
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\label{level_8c_a2ca40c89f5d9919989aa0f95fbe7e66d}} 
+\index{level.c@{level.c}!Debug\_AfficherCollider@{Debug\_AfficherCollider}}
+\index{Debug\_AfficherCollider@{Debug\_AfficherCollider}!level.c@{level.c}}
+\doxysubsubsection{Debug\_AfficherCollider()}
+{\footnotesize\ttfamily void Debug\+\_\+\+Afficher\+Collider (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fonction de debug qui permet d\textquotesingle{}afficher les blocs de collision par dessus le decor. 
+
+Cette fonction permet de savoir si les blocs de collisions sont bien positionnés
+
+Cette fonction permet de verifier que le joueur entre bien en collision avec les colliders \begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+\mbox{\label{level_8c_a6acdc7be4ba8b4d7f859e37df0ad6626}} 
+\index{level.c@{level.c}!Get\_Level@{Get\_Level}}
+\index{Get\_Level@{Get\_Level}!level.c@{level.c}}
+\doxysubsubsection{Get\_Level()}
+{\footnotesize\ttfamily \textbf{ Level} $\ast$ Get\+\_\+\+Level (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fonction qui permet d\textquotesingle{}accéder à la structure d\textquotesingle{}un niveau. 
+
+\begin{DoxyReturn}{Renvoie}
+Un pointeur sur une structure de données de type Level 
+\end{DoxyReturn}
+\mbox{\label{level_8c_a0c54b7d11bf9135f8de62d9478db6439}} 
+\index{level.c@{level.c}!Level\_Destroy@{Level\_Destroy}}
+\index{Level\_Destroy@{Level\_Destroy}!level.c@{level.c}}
+\doxysubsubsection{Level\_Destroy()}
+{\footnotesize\ttfamily void Level\+\_\+\+Destroy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fonction qui permet de gérer la destruction des niveaux et la libération des ressources qui ont été utilisées. 
+
+\begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+\mbox{\label{level_8c_a7b4c55971be563d00d1d2a9c0513da5c}} 
+\index{level.c@{level.c}!Level\_Load@{Level\_Load}}
+\index{Level\_Load@{Level\_Load}!level.c@{level.c}}
+\doxysubsubsection{Level\_Load()}
+{\footnotesize\ttfamily void Level\+\_\+\+Load (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fonction qui permet de charger un niveau. 
+
+Initialisation des listes (ennemis, bullets,items et colliders) \begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+\mbox{\label{level_8c_a0759e4ea8dd0966291fd234043427724}} 
+\index{level.c@{level.c}!Level\_Render@{Level\_Render}}
+\index{Level\_Render@{Level\_Render}!level.c@{level.c}}
+\doxysubsubsection{Level\_Render()}
+{\footnotesize\ttfamily void Level\+\_\+\+Render (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fonction qui permet d\textquotesingle{}afficher un niveau. 
+
+\begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+\mbox{\label{level_8c_abf1125b91e2539588aee755e704e5338}} 
+\index{level.c@{level.c}!Level\_Textures\_Render@{Level\_Textures\_Render}}
+\index{Level\_Textures\_Render@{Level\_Textures\_Render}!level.c@{level.c}}
+\doxysubsubsection{Level\_Textures\_Render()}
+{\footnotesize\ttfamily void Level\+\_\+\+Textures\+\_\+\+Render (\begin{DoxyParamCaption}\item[{int}]{niveau }\end{DoxyParamCaption})}
+
+
+
+Fonction qui permet d\textquotesingle{}afficher les textures du niveau passé en paramètre. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em niveau} & numero du niveau a afficher \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+\mbox{\label{level_8c_af03a5f30c8e752132aa2bd0751324be8}} 
+\index{level.c@{level.c}!NiveauSuivant@{NiveauSuivant}}
+\index{NiveauSuivant@{NiveauSuivant}!level.c@{level.c}}
+\doxysubsubsection{NiveauSuivant()}
+{\footnotesize\ttfamily void Niveau\+Suivant (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fonction qui permet de charger un niveau next. 
+
+Appel de la fonction \doxyref{Level\+\_\+\+Load()}{p.}{level_8c_a7b4c55971be563d00d1d2a9c0513da5c} \begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+\mbox{\label{level_8c_abcb64c4e1a5f98c0f371ea276cd196e6}} 
+\index{level.c@{level.c}!Set\_Level@{Set\_Level}}
+\index{Set\_Level@{Set\_Level}!level.c@{level.c}}
+\doxysubsubsection{Set\_Level()}
+{\footnotesize\ttfamily void Set\+\_\+\+Level (\begin{DoxyParamCaption}\item[{int}]{niveau }\end{DoxyParamCaption})}
+
+
+
+Fonction qui permet de mettre à jour le niveau du joueur. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em niveau} & numero du niveau \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+
+
+\doxysubsection{Documentation des variables}
+\mbox{\label{level_8c_a083b6d36ebd55b2e07bedb04440cb325}} 
+\index{level.c@{level.c}!level@{level}}
+\index{level@{level}!level.c@{level.c}}
+\doxysubsubsection{level}
+{\footnotesize\ttfamily \textbf{ Level} \textbf{ level}}
+
+Structure d\textquotesingle{}un niveau 

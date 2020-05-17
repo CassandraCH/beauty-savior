@@ -1,0 +1,81 @@
+\doxysection{Référence de la structure base\+Game}
+\label{structbase_game}\index{baseGame@{baseGame}}
+
+
+Structure principale de jeux, qui gère tous les composants du jeux majeurs.  
+
+
+
+
+{\ttfamily \#include $<$base\+Game.\+h$>$}
+
+\doxysubsection*{Champs de données}
+\begin{DoxyCompactItemize}
+\item 
+int \textbf{ state}
+\item 
+\textbf{ bool} \textbf{ est\+Actif}
+\item 
+int \textbf{ time}
+\item 
+int \textbf{ min}
+\item 
+int \textbf{ temps\+Precedent}
+\item 
+int \textbf{ temps\+Actuel}
+\item 
+S\+D\+L\+\_\+\+Texture $\ast$ \textbf{ passport\+Req}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Structure principale de jeux, qui gère tous les composants du jeux majeurs. 
+
+\doxysubsection{Documentation des champs}
+\mbox{\label{structbase_game_ad89867021ac1f6bf309e9a79313123fc}} 
+\index{baseGame@{baseGame}!estActif@{estActif}}
+\index{estActif@{estActif}!baseGame@{baseGame}}
+\doxysubsubsection{estActif}
+{\footnotesize\ttfamily \textbf{ bool} est\+Actif}
+
+Etat du jeu \+: Actif -\/ Non Actif \mbox{\label{structbase_game_a3e202b201e6255d975cd6d3aff1f5a4d}} 
+\index{baseGame@{baseGame}!min@{min}}
+\index{min@{min}!baseGame@{baseGame}}
+\doxysubsubsection{min}
+{\footnotesize\ttfamily int min}
+
+\+: temps liée au timer du jeux \+: minutes du jeux \mbox{\label{structbase_game_a24b1fc2f9659345f9b9103169dadac0b}} 
+\index{baseGame@{baseGame}!passportReq@{passportReq}}
+\index{passportReq@{passportReq}!baseGame@{baseGame}}
+\doxysubsubsection{passportReq}
+{\footnotesize\ttfamily S\+D\+L\+\_\+\+Texture$\ast$ passport\+Req}
+
+Texture du passeport nécéssaire pour le niveau \mbox{\label{structbase_game_a89f234133d3efe315836311cbf21c64b}} 
+\index{baseGame@{baseGame}!state@{state}}
+\index{state@{state}!baseGame@{baseGame}}
+\doxysubsubsection{state}
+{\footnotesize\ttfamily int state}
+
+Etat du jeu \+: en cours de partie, sur le menu principal \mbox{\label{structbase_game_ac869183cc8112900384541203856669f}} 
+\index{baseGame@{baseGame}!tempsActuel@{tempsActuel}}
+\index{tempsActuel@{tempsActuel}!baseGame@{baseGame}}
+\doxysubsubsection{tempsActuel}
+{\footnotesize\ttfamily int temps\+Actuel}
+
+temps actuel en référence au temps écoulé depuis la dernière image \mbox{\label{structbase_game_ad91b9b205dc2942cadc6238154484713}} 
+\index{baseGame@{baseGame}!tempsPrecedent@{tempsPrecedent}}
+\index{tempsPrecedent@{tempsPrecedent}!baseGame@{baseGame}}
+\doxysubsubsection{tempsPrecedent}
+{\footnotesize\ttfamily int temps\+Precedent}
+
+temps précédent en référence au temps écoulé depuis la dernière image \mbox{\label{structbase_game_a42715f65f02da52edc5b22021d8ae670}} 
+\index{baseGame@{baseGame}!time@{time}}
+\index{time@{time}!baseGame@{baseGame}}
+\doxysubsubsection{time}
+{\footnotesize\ttfamily int time}
+
+time \+: temps du jeux 
+
+La documentation de cette structure a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+includes/\textbf{ base\+Game.\+h}\end{DoxyCompactItemize}

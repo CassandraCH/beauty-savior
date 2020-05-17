@@ -1,0 +1,127 @@
+\doxysection{Référence du fichier src/base\+Game.c}
+\label{base_game_8c}\index{src/baseGame.c@{src/baseGame.c}}
+
+
+Programme qui gère les différents comportements du jeu en fonction de l\textquotesingle{}état.  
+
+
+{\ttfamily \#include \char`\"{}base\+Game.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}commun.\+h\char`\"{}}\newline
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Base\+\_\+\+Game} $\ast$ \textbf{ get\+Base\+Game} ()
+\begin{DoxyCompactList}\small\item\em Fonction qui permet d\textquotesingle{}accéder à la structure qui gère l\textquotesingle{}état du jeu. \end{DoxyCompactList}\item 
+void \textbf{ Update} (float \textbf{ dt})
+\begin{DoxyCompactList}\small\item\em Fonction qui permet gérer les comportements des entités si on se Find dans une partie et gérer le son si on se Find sur le menu principal. \end{DoxyCompactList}\item 
+void \textbf{ Game\+\_\+\+Render} ()
+\begin{DoxyCompactList}\small\item\em Fonction qui permet de gérer le rendu. \end{DoxyCompactList}\item 
+void \textbf{ List\+\_\+\+Update} ()
+\begin{DoxyCompactList}\small\item\em Fonction qui met à jour les listes des bullets et des ennemis. \end{DoxyCompactList}\item 
+void \textbf{ delay} (unsigned int frame\+Limit)
+\begin{DoxyCompactList}\small\item\em Fonction qui permet de gérer le délai du jeu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Base\+\_\+\+Game} \textbf{ game}
+\item 
+int \textbf{ last\+\_\+frame\+\_\+time} = 0
+\item 
+float \textbf{ dt} = 0.\+0f
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Programme qui gère les différents comportements du jeu en fonction de l\textquotesingle{}état. 
+
+\begin{DoxyAuthor}{Auteur}
+C\+A\+L\+V\+A\+D\+OS Cindy, C\+H\+A\+U\+M\+U\+L\+ON Cassandra, C\+H\+E\+L\+LI Célia, O\+U\+S\+M\+A\+N\+O\+VA Karina 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+janvier 2020
+\end{DoxyDate}
+Etat possible \+: en cours de partie, en pause... 
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\label{base_game_8c_a302dca4767118e018db546a9fd717be0}} 
+\index{baseGame.c@{baseGame.c}!delay@{delay}}
+\index{delay@{delay}!baseGame.c@{baseGame.c}}
+\doxysubsubsection{delay()}
+{\footnotesize\ttfamily delay (\begin{DoxyParamCaption}\item[{unsigned int}]{frame\+Limit }\end{DoxyParamCaption})}
+
+
+
+Fonction qui permet de gérer le délai du jeu. 
+
+Gestion d\textquotesingle{}un délai lors de la mise à jour du jeu, afin de laisser respirer le processeur \begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+\mbox{\label{base_game_8c_a95d88cc6c0ae6e11521bf0e0551d51d7}} 
+\index{baseGame.c@{baseGame.c}!Game\_Render@{Game\_Render}}
+\index{Game\_Render@{Game\_Render}!baseGame.c@{baseGame.c}}
+\doxysubsubsection{Game\_Render()}
+{\footnotesize\ttfamily void Game\+\_\+\+Render (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fonction qui permet de gérer le rendu. 
+
+Affichage en fonction de l\textquotesingle{}etat dans lequel se Find le jeu \begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+\mbox{\label{base_game_8c_aa21b67fd024a91eebd9354df56ec5efe}} 
+\index{baseGame.c@{baseGame.c}!List\_Update@{List\_Update}}
+\index{List\_Update@{List\_Update}!baseGame.c@{baseGame.c}}
+\doxysubsubsection{List\_Update()}
+{\footnotesize\ttfamily void List\+\_\+\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fonction qui met à jour les listes des bullets et des ennemis. 
+
+Suppression des listes si nécessaire \begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+\mbox{\label{base_game_8c_acb21945d67d98b8ce4fc097ead0c6515}} 
+\index{baseGame.c@{baseGame.c}!Update@{Update}}
+\index{Update@{Update}!baseGame.c@{baseGame.c}}
+\doxysubsubsection{Update()}
+{\footnotesize\ttfamily void Update (\begin{DoxyParamCaption}\item[{float}]{dt }\end{DoxyParamCaption})}
+
+
+
+Fonction qui permet gérer les comportements des entités si on se Find dans une partie et gérer le son si on se Find sur le menu principal. 
+
+Etat du jeu possible \+: menu principal ou en partie 
+\begin{DoxyParams}{Paramètres}
+{\em dt} & valeur du delta-\/time \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+
+
+\doxysubsection{Documentation des variables}
+\mbox{\label{base_game_8c_a778e38aa889751afffa2dea6b803e67a}} 
+\index{baseGame.c@{baseGame.c}!dt@{dt}}
+\index{dt@{dt}!baseGame.c@{baseGame.c}}
+\doxysubsubsection{dt}
+{\footnotesize\ttfamily float dt = 0.\+0f}
+
+Delta-\/time = temps écoulé entre l\textquotesingle{}affichage de chaque image \mbox{\label{base_game_8c_a9e1da7e436a315594c2bfb20bc8b240c}} 
+\index{baseGame.c@{baseGame.c}!game@{game}}
+\index{game@{game}!baseGame.c@{baseGame.c}}
+\doxysubsubsection{game}
+{\footnotesize\ttfamily \textbf{ Base\+\_\+\+Game} game}
+
+Structure qui gère l\textquotesingle{}état du jeu \mbox{\label{base_game_8c_aa988bffcd6557ee70ef1b3b4d13ce6f8}} 
+\index{baseGame.c@{baseGame.c}!last\_frame\_time@{last\_frame\_time}}
+\index{last\_frame\_time@{last\_frame\_time}!baseGame.c@{baseGame.c}}
+\doxysubsubsection{last\_frame\_time}
+{\footnotesize\ttfamily int last\+\_\+frame\+\_\+time = 0}
+
+Temps écoulé depuis la dernière image 

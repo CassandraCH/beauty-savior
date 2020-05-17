@@ -1,0 +1,286 @@
+\doxysection{Référence du fichier src/menu\+Principal.c}
+\label{menu_principal_8c}\index{src/menuPrincipal.c@{src/menuPrincipal.c}}
+
+
+Programme qui gère le menu principal.  
+
+
+{\ttfamily \#include \char`\"{}base\+Game.\+h\char`\"{}}\newline
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Game\+Object} $\ast$ \textbf{ get\+Game\+Object} ()
+\begin{DoxyCompactList}\small\item\em Fonction qui permet retourner le menu principal. \end{DoxyCompactList}\item 
+int \textbf{ Get\+Keypressed} (\textbf{ Game\+Object} $\ast$\textbf{ game\+Object})
+\begin{DoxyCompactList}\small\item\em Fonction qui retourne l\textquotesingle{}option du menu selectionne. \end{DoxyCompactList}\item 
+void \textbf{ Principal\+\_\+\+Init} ()
+\begin{DoxyCompactList}\small\item\em Fonction qui initialise le menu principal. \end{DoxyCompactList}\item 
+void \textbf{ Update\+Component} (\textbf{ Component} $\ast$\textbf{ component}, int etat)
+\item 
+void \textbf{ Update\+Image\+\_\+\+Component} (\textbf{ Component} $\ast$\textbf{ component}, const char $\ast$filename)
+\item 
+void \textbf{ U\+P\+\_\+\+Key} (\textbf{ Game\+Object} $\ast$\textbf{ game\+Object})
+\begin{DoxyCompactList}\small\item\em Fonction qui permet de naviguer dans le menu vers le haut. \end{DoxyCompactList}\item 
+void \textbf{ D\+O\+W\+N\+\_\+\+Key} (\textbf{ Game\+Object} $\ast$\textbf{ game\+Object})
+\begin{DoxyCompactList}\small\item\em Fonction qui permet de naviguer dans le menu vers le bas. \end{DoxyCompactList}\item 
+void \textbf{ R\+I\+G\+H\+T\+\_\+\+Key} (\textbf{ Game\+Object} $\ast$\textbf{ game\+Object}, int nombres\+Options)
+\begin{DoxyCompactList}\small\item\em Fonction qui permet de naviguer dans le menu a R\+I\+G\+H\+T\+\_\+\+Key. \end{DoxyCompactList}\item 
+void \textbf{ L\+E\+F\+T\+\_\+\+Key} (\textbf{ Game\+Object} $\ast$\textbf{ game\+Object}, int nombres\+Options)
+\begin{DoxyCompactList}\small\item\em Fonction qui permet de naviguer dans le menu a L\+E\+F\+T\+\_\+\+Key. \end{DoxyCompactList}\item 
+void \textbf{ Game\+Object\+\_\+\+Render} (\textbf{ Game\+Object} $\ast$\textbf{ game\+Object}, int nombres\+Options, int posX, int posY, int largeur\+BG, int hauteur\+BG)
+\begin{DoxyCompactList}\small\item\em Fonction qui permet d\textquotesingle{}afficher le menu. \end{DoxyCompactList}\item 
+void \textbf{ Principal\+\_\+\+Input} (S\+D\+L\+\_\+\+Event $\ast$event)
+\begin{DoxyCompactList}\small\item\em Fonction qui gere les evenements du menu principal. \end{DoxyCompactList}\item 
+void \textbf{ Game\+Object\+\_\+\+Load\+Ressources} (int numero, int num\+\_\+image, \textbf{ Game\+Object} $\ast$\textbf{ game\+Object}, char $\ast$nom\+Option, char $\ast$image\+\_\+on, char $\ast$image\+\_\+off, int positionX, int positionY)
+\begin{DoxyCompactList}\small\item\em Fonction qui gere le chargement des donnes du menu. \end{DoxyCompactList}\item 
+void \textbf{ Game\+Object\+\_\+\+Clean} (\textbf{ Game\+Object} $\ast$\textbf{ game\+Object}, int nombre\+Options)
+\begin{DoxyCompactList}\small\item\em Fonction qui permet de nettoyer l\textquotesingle{}ecran du menu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Game\+Object} \textbf{ \+\_\+game\+Object}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Programme qui gère le menu principal. 
+
+\begin{DoxyAuthor}{Auteur}
+C\+A\+L\+V\+A\+D\+OS Cindy, C\+H\+A\+U\+M\+U\+L\+ON Cassandra, C\+H\+E\+L\+LI Célia, O\+U\+S\+M\+A\+N\+O\+VA Karina 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+janvier 2020
+\end{DoxyDate}
+Initialisation, affichage du menu, navigation dans le menu, gestion des entrées clavier et destruction du menu 
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\label{menu_principal_8c_ae2bc4aa212cfbfade52283f7b14f0cab}} 
+\index{menuPrincipal.c@{menuPrincipal.c}!DOWN\_Key@{DOWN\_Key}}
+\index{DOWN\_Key@{DOWN\_Key}!menuPrincipal.c@{menuPrincipal.c}}
+\doxysubsubsection{DOWN\_Key()}
+{\footnotesize\ttfamily void D\+O\+W\+N\+\_\+\+Key (\begin{DoxyParamCaption}\item[{\textbf{ Game\+Object} $\ast$}]{game\+Object }\end{DoxyParamCaption})}
+
+
+
+Fonction qui permet de naviguer dans le menu vers le bas. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \doxyref{game\+Object}{p.}{structgame_object}} & pointeur sur le menu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+\mbox{\label{menu_principal_8c_aa6f0855c15b5b6dac82b78b6d5d5c870}} 
+\index{menuPrincipal.c@{menuPrincipal.c}!GameObject\_Clean@{GameObject\_Clean}}
+\index{GameObject\_Clean@{GameObject\_Clean}!menuPrincipal.c@{menuPrincipal.c}}
+\doxysubsubsection{GameObject\_Clean()}
+{\footnotesize\ttfamily void Game\+Object\+\_\+\+Clean (\begin{DoxyParamCaption}\item[{\textbf{ Game\+Object} $\ast$}]{game\+Object,  }\item[{int}]{nombre\+Options }\end{DoxyParamCaption})}
+
+
+
+Fonction qui permet de nettoyer l\textquotesingle{}ecran du menu. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \doxyref{game\+Object}{p.}{structgame_object}} & pointeur sur le menu \\
+\hline
+{\em nombre\+Options} & nombre d\textquotesingle{}options du menu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+\mbox{\label{menu_principal_8c_a05732c6ee5abe6e978dfc40dddff94d4}} 
+\index{menuPrincipal.c@{menuPrincipal.c}!GameObject\_LoadRessources@{GameObject\_LoadRessources}}
+\index{GameObject\_LoadRessources@{GameObject\_LoadRessources}!menuPrincipal.c@{menuPrincipal.c}}
+\doxysubsubsection{GameObject\_LoadRessources()}
+{\footnotesize\ttfamily void Game\+Object\+\_\+\+Load\+Ressources (\begin{DoxyParamCaption}\item[{int}]{numero,  }\item[{int}]{num\+\_\+image,  }\item[{\textbf{ Game\+Object} $\ast$}]{game\+Object,  }\item[{char $\ast$}]{nom\+Option,  }\item[{char $\ast$}]{image\+\_\+on,  }\item[{char $\ast$}]{image\+\_\+off,  }\item[{int}]{positionX,  }\item[{int}]{positionY }\end{DoxyParamCaption})}
+
+
+
+Fonction qui gere le chargement des donnes du menu. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em numero} & numero de l\textquotesingle{}option \\
+\hline
+{\em num\+\_\+image} & numero de l\textquotesingle{}image selectionne par defaut \\
+\hline
+{\em \doxyref{game\+Object}{p.}{structgame_object}} & pointeur sur le menu \\
+\hline
+{\em nom\+Option} & nom de l\textquotesingle{}option \\
+\hline
+{\em image\+\_\+on} & chemin pour acceder a l\textquotesingle{}image selectionnee \\
+\hline
+{\em image\+\_\+off} & chemin pour acceder a l\textquotesingle{}image deselectionnee \\
+\hline
+{\em positionX} & position en x \\
+\hline
+{\em positionY} & position en y \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+\mbox{\label{menu_principal_8c_aa18e369249075d7319f2b547d46e0a7c}} 
+\index{menuPrincipal.c@{menuPrincipal.c}!GameObject\_Render@{GameObject\_Render}}
+\index{GameObject\_Render@{GameObject\_Render}!menuPrincipal.c@{menuPrincipal.c}}
+\doxysubsubsection{GameObject\_Render()}
+{\footnotesize\ttfamily void Game\+Object\+\_\+\+Render (\begin{DoxyParamCaption}\item[{\textbf{ Game\+Object} $\ast$}]{game\+Object,  }\item[{int}]{nombres\+Options,  }\item[{int}]{posX,  }\item[{int}]{posY,  }\item[{int}]{largeur\+BG,  }\item[{int}]{hauteur\+BG }\end{DoxyParamCaption})}
+
+
+
+Fonction qui permet d\textquotesingle{}afficher le menu. 
+
+Affichage des différentes options 
+\begin{DoxyParams}{Paramètres}
+{\em \doxyref{game\+Object}{p.}{structgame_object}} & pointeur sur le menu \\
+\hline
+{\em nombres\+Options} & nombre d\textquotesingle{}options dans le menu \\
+\hline
+{\em posX} & position en x de l\textquotesingle{}arriere plan \\
+\hline
+{\em posY} & position en y de l\textquotesingle{}arriere plan \\
+\hline
+{\em largeur\+BG} & largeur de l\textquotesingle{}arriere plan \\
+\hline
+{\em hauteur\+BG} & hauteur de l\textquotesingle{}arriere plan \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+\mbox{\label{menu_principal_8c_a50cf2830b3fc02fe87654dc6ac9612a4}} 
+\index{menuPrincipal.c@{menuPrincipal.c}!GetKeypressed@{GetKeypressed}}
+\index{GetKeypressed@{GetKeypressed}!menuPrincipal.c@{menuPrincipal.c}}
+\doxysubsubsection{GetKeypressed()}
+{\footnotesize\ttfamily int Get\+Keypressed (\begin{DoxyParamCaption}\item[{\textbf{ Game\+Object} $\ast$}]{game\+Object }\end{DoxyParamCaption})}
+
+
+
+Fonction qui retourne l\textquotesingle{}option du menu selectionne. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \doxyref{game\+Object}{p.}{structgame_object}} & pointeur sur le menu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+un entier correspondant au numero de l\textquotesingle{}option selectionnee 
+\end{DoxyReturn}
+\mbox{\label{menu_principal_8c_ac19563afa403a4b09319ad573c52bdd4}} 
+\index{menuPrincipal.c@{menuPrincipal.c}!LEFT\_Key@{LEFT\_Key}}
+\index{LEFT\_Key@{LEFT\_Key}!menuPrincipal.c@{menuPrincipal.c}}
+\doxysubsubsection{LEFT\_Key()}
+{\footnotesize\ttfamily void L\+E\+F\+T\+\_\+\+Key (\begin{DoxyParamCaption}\item[{\textbf{ Game\+Object} $\ast$}]{game\+Object,  }\item[{int}]{nombres\+Options }\end{DoxyParamCaption})}
+
+
+
+Fonction qui permet de naviguer dans le menu a L\+E\+F\+T\+\_\+\+Key. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \doxyref{game\+Object}{p.}{structgame_object}} & pointeur sur le menu \\
+\hline
+{\em nombres\+Options} & nombre d\textquotesingle{}options \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+\mbox{\label{menu_principal_8c_ad53030b82918beae3d0bb0f0e703ac64}} 
+\index{menuPrincipal.c@{menuPrincipal.c}!Principal\_Init@{Principal\_Init}}
+\index{Principal\_Init@{Principal\_Init}!menuPrincipal.c@{menuPrincipal.c}}
+\doxysubsubsection{Principal\_Init()}
+{\footnotesize\ttfamily void Principal\+\_\+\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fonction qui initialise le menu principal. 
+
+\begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+\mbox{\label{menu_principal_8c_a919f130e32127cc8baa33d46eb799fca}} 
+\index{menuPrincipal.c@{menuPrincipal.c}!Principal\_Input@{Principal\_Input}}
+\index{Principal\_Input@{Principal\_Input}!menuPrincipal.c@{menuPrincipal.c}}
+\doxysubsubsection{Principal\_Input()}
+{\footnotesize\ttfamily void Principal\+\_\+\+Input (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Event $\ast$}]{event }\end{DoxyParamCaption})}
+
+
+
+Fonction qui gere les evenements du menu principal. 
+
+Gestion des entrees clavier de l\textquotesingle{}utilisateur 
+\begin{DoxyParams}{Paramètres}
+{\em event} & evenement \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+\mbox{\label{menu_principal_8c_a259807dd39261191d93bfa1551b7407a}} 
+\index{menuPrincipal.c@{menuPrincipal.c}!RIGHT\_Key@{RIGHT\_Key}}
+\index{RIGHT\_Key@{RIGHT\_Key}!menuPrincipal.c@{menuPrincipal.c}}
+\doxysubsubsection{RIGHT\_Key()}
+{\footnotesize\ttfamily void R\+I\+G\+H\+T\+\_\+\+Key (\begin{DoxyParamCaption}\item[{\textbf{ Game\+Object} $\ast$}]{game\+Object,  }\item[{int}]{nombres\+Options }\end{DoxyParamCaption})}
+
+
+
+Fonction qui permet de naviguer dans le menu a R\+I\+G\+H\+T\+\_\+\+Key. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \doxyref{game\+Object}{p.}{structgame_object}} & Pointeur sur le \doxyref{game\+Object}{p.}{structgame_object} \\
+\hline
+{\em nombres\+Options} & Nombre de components utilisés \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+\mbox{\label{menu_principal_8c_a1376fc070c1fe7fab19b741c1eeb3955}} 
+\index{menuPrincipal.c@{menuPrincipal.c}!UP\_Key@{UP\_Key}}
+\index{UP\_Key@{UP\_Key}!menuPrincipal.c@{menuPrincipal.c}}
+\doxysubsubsection{UP\_Key()}
+{\footnotesize\ttfamily void U\+P\+\_\+\+Key (\begin{DoxyParamCaption}\item[{\textbf{ Game\+Object} $\ast$}]{game\+Object }\end{DoxyParamCaption})}
+
+
+
+Fonction qui permet de naviguer dans le menu vers le haut. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \doxyref{game\+Object}{p.}{structgame_object}} & pointeur sur le menu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+\mbox{\label{menu_principal_8c_a4f4eab8b38fcb99021983486b019ca19}} 
+\index{menuPrincipal.c@{menuPrincipal.c}!UpdateComponent@{UpdateComponent}}
+\index{UpdateComponent@{UpdateComponent}!menuPrincipal.c@{menuPrincipal.c}}
+\doxysubsubsection{UpdateComponent()}
+{\footnotesize\ttfamily void Update\+Component (\begin{DoxyParamCaption}\item[{\textbf{ Component} $\ast$}]{component,  }\item[{int}]{etat }\end{DoxyParamCaption})}
+
+fonction de mise à jour du component d\textquotesingle{}un \doxyref{game\+Object}{p.}{structgame_object} \mbox{\label{menu_principal_8c_a92ecfb91426e1ff70919b2862c283891}} 
+\index{menuPrincipal.c@{menuPrincipal.c}!UpdateImage\_Component@{UpdateImage\_Component}}
+\index{UpdateImage\_Component@{UpdateImage\_Component}!menuPrincipal.c@{menuPrincipal.c}}
+\doxysubsubsection{UpdateImage\_Component()}
+{\footnotesize\ttfamily void Update\+Image\+\_\+\+Component (\begin{DoxyParamCaption}\item[{\textbf{ Component} $\ast$}]{component,  }\item[{const char $\ast$}]{filename }\end{DoxyParamCaption})}
+
+fonction de mise à jour d\textquotesingle{}image du component d\textquotesingle{}un \doxyref{game\+Object}{p.}{structgame_object} 
+
+\doxysubsection{Documentation des variables}
+\mbox{\label{menu_principal_8c_a3e1941cda6d7f8f8c3e809d47ba384cd}} 
+\index{menuPrincipal.c@{menuPrincipal.c}!\_gameObject@{\_gameObject}}
+\index{\_gameObject@{\_gameObject}!menuPrincipal.c@{menuPrincipal.c}}
+\doxysubsubsection{\_gameObject}
+{\footnotesize\ttfamily \textbf{ Game\+Object} \+\_\+game\+Object}
+
+Structure de type Game\+Object 

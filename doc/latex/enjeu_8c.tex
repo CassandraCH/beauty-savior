@@ -1,0 +1,63 @@
+\doxysection{Référence du fichier src/enjeu.c}
+\label{enjeu_8c}\index{src/enjeu.c@{src/enjeu.c}}
+
+
+Programme qui gère les entrées utilisateur (touches) et la caméra lorsqu\textquotesingle{}une partie est en cours.  
+
+
+{\ttfamily \#include \char`\"{}base\+Game.\+h\char`\"{}}\newline
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ Input\+\_\+\+In\+Game} (S\+D\+L\+\_\+\+Event $\ast$event)
+\begin{DoxyCompactList}\small\item\em Fonction qui permet gérer les entr"es clavier et la camera lorsqu\textquotesingle{}une partie est en cours. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+S\+D\+L\+\_\+\+Rect \textbf{ camera} = \{0, 0, \textbf{ L\+A\+R\+G\+E\+U\+R\+\_\+\+F\+E\+N\+E\+T\+RE}, \textbf{ H\+A\+U\+T\+E\+U\+R\+\_\+\+F\+E\+N\+E\+T\+RE}\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Programme qui gère les entrées utilisateur (touches) et la caméra lorsqu\textquotesingle{}une partie est en cours. 
+
+\begin{DoxyAuthor}{Auteur}
+C\+A\+L\+V\+A\+D\+OS Cindy, C\+H\+A\+U\+M\+U\+L\+ON Cassandra, C\+H\+E\+L\+LI Célia, O\+U\+S\+M\+A\+N\+O\+VA Karina 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+janvier 2020 
+\end{DoxyDate}
+
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\label{enjeu_8c_ac14c56a1da1987c322c6892b20611ed4}} 
+\index{enjeu.c@{enjeu.c}!Input\_InGame@{Input\_InGame}}
+\index{Input\_InGame@{Input\_InGame}!enjeu.c@{enjeu.c}}
+\doxysubsubsection{Input\_InGame()}
+{\footnotesize\ttfamily void Input\+\_\+\+In\+Game (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Event $\ast$}]{event }\end{DoxyParamCaption})}
+
+
+
+Fonction qui permet gérer les entr"es clavier et la camera lorsqu\textquotesingle{}une partie est en cours. 
+
+Gestion des entrées de l\textquotesingle{}utilisateur 
+\begin{DoxyParams}{Paramètres}
+{\em event} & pointeur sur une structure S\+DL evenement \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+pas de valeur de retour (void) 
+\end{DoxyReturn}
+
+
+\doxysubsection{Documentation des variables}
+\mbox{\label{enjeu_8c_a27d2b5b016fe50b9a15dd63a6228ed2a}} 
+\index{enjeu.c@{enjeu.c}!camera@{camera}}
+\index{camera@{camera}!enjeu.c@{enjeu.c}}
+\doxysubsubsection{camera}
+{\footnotesize\ttfamily S\+D\+L\+\_\+\+Rect camera = \{0, 0, \textbf{ L\+A\+R\+G\+E\+U\+R\+\_\+\+F\+E\+N\+E\+T\+RE}, \textbf{ H\+A\+U\+T\+E\+U\+R\+\_\+\+F\+E\+N\+E\+T\+RE}\}}
+
+Structure qui gère la camera 

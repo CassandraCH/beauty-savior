@@ -165,7 +165,7 @@ extern void TexManager_DestroyRessources( Texture_Manager *tex )
 extern void Init_Textures()
 {
   texture = Texture_Load("graphics_assets/enemi.png");
-  itemTex = Texture_Load("graphics_assets/coin.png");
+  itemTex = Texture_Load("graphics_assets/bullets.png");
   rockTex = Texture_Load("graphics_assets/tex_rock.png");
   treeTex = Texture_Load("graphics_assets/tex_tree.png");
   osTex = Texture_Load("graphics_assets/tex_os.png");   
