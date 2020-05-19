@@ -46,7 +46,7 @@ Deux exécutables sont fournis:
 Pour lancer un exécutable il suffit d'entrée en ligne de commande : make <run_plateforme> .
 - Exemple : make run_linux | make run_win 
 
-/!\ __NE PAS ESSAYEZ DE RECOMPILER LES SOURCES__ 
-- Les sources SDL2 étant liées statiquement au programme, une recompilation causerait une erreur.
-Si vous souhaitez compiler les sources, assurez-vous d'avoir SDL2 , SDL_Image, SDL_Mixer, SDL_TTF installer sur votre environnement de travail.
-- Veillez également à vérifier le makefile et à modifier au besoin les chemins vers les librairies SDL2.
+/!\ __NE PAS ESSAYEZ DE RECOMPILER LE DOXYGEN__
+- Le doxygen ayant été personnalisé manuellement avec du html et css, une recompilation causerait des erreurs.
+
+/!\ __POUR RECOMPILER LE PROJET AVEC make . VEILLEZ A AVOIR UNE VERSION 32BITS DE gcc.__
