@@ -46,7 +46,12 @@ Deux exécutables sont fournis:
 Pour lancer un exécutable il suffit d'entrée en ligne de commande : make <run_plateforme> .
 - Exemple : make run_linux | make run_win 
 
+
 /!\ __NE PAS ESSAYEZ DE RECOMPILER LE DOXYGEN__
 - Le doxygen ayant été personnalisé manuellement avec du html et css, une recompilation causerait des erreurs.
 
 /!\ __POUR RECOMPILER LE PROJET AVEC make . VEILLEZ A AVOIR UNE VERSION 32BITS DE gcc.__
+- Veillez à bien indiquer la bonne plateforme à compiler, dans le fichier Makefile.compilation 
+=> Exemple : ARCH=win | ARCH=linux
+
+
