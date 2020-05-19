@@ -30,6 +30,7 @@ extern void Continue_Init()
     int width = LARGEUR_FENETRE, height = HAUTEUR_FENETRE;
     printf("Chargement Menu Continue");
 
+     Mix_HaltMusic();
 
 
     //Affichage des huds de score et niveau
@@ -85,6 +86,17 @@ extern void Continue_Input(SDL_Event *event)
                             getBaseGame()->state = IN_GAME;
                             Set_Level( ++getPlayer()->niveau) ;
 
+
+                            if( getPlayer()->niveau == 1 )
+                                //Chargement de la musique 
+                                getBaseGame()->bgm = Mix_LoadMUS("sounds/level1.mp3");
+                            else if( getPlayer()->niveau == 2 )
+                                getBaseGame()->bgm = Mix_LoadMUS("sounds/level2.mp3");
+                            else if( getPlayer()->niveau == 3 )
+                                getBaseGame()->bgm = Mix_LoadMUS("sounds/level3.mp3");
+                            else if( getPlayer()->niveau == 4 )
+                                getBaseGame()->bgm = Mix_LoadMUS("sounds/level4.mp3");
+                            
                             //Sauvegarder la partie
                             SaveGame();
 

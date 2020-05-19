@@ -89,8 +89,8 @@ extern void Player_Init()
     //position en x et en y, hauteur et largeur
 	player.h = player.tex.h;
 	player.w = player.tex.w;
-    player.x = 100;
-    player.y = 182;
+    player.x = 7524;
+    player.y = 194;
     player.scores = 0;
 
    // le passport n'est pas collecté par défaut
