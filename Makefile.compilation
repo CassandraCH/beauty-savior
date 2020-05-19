@@ -9,7 +9,7 @@ CC=gcc
 # Valeurs possibles : yes , no  
 DEBUG=no
 # Valeurs possibles : win , linux 
-ARCH=win
+ARCH=linux
 
 ifeq ($(ARCH),win)
 	 CFLAGS= -I includes  -Wfatal-errors -O 
