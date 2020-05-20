@@ -22,6 +22,10 @@ L'équipe fut composée de :
   - Chaumulon Cassandra
   - Ousmanova Karina
 
+Les éléments de décor ainsi que le sprite du joueur utilisés dans le cadre de ce jeu sont tirés du pack : Platformer Art Deluxe conçu par Kenney proposé en (Licence CCO 1.0 Universal).
+
+Les autres ressources graphiques telles que : 
+- Logo,Ennemis,Items,Interface,Boutons,Menus,Inventaire,Menu aide/win, etc sont des ressources créés par moi-même, Calvados Cindy.
 
 ## Comment jouer ?
 
