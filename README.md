@@ -1,8 +1,10 @@
+![Image du Logo Beauty Savior](graphics_assets/logo.png)
+
 # Beauty Savior
 
 Projet développé dans le cadre de la 2ème année licence Informatique.
 
-![Image du Logo Beauty Savior](graphics_assets/logo.png)
+![capture](https://github.com/CassandraCH/beauty-savior/blob/8243f39729b8b1c458bbf0b9ddc6e5e411f36dd0/doc/beauty_global.png)
 
 ## Qu'est-ce que c'est ? 
 Beauty Savior est un jeu original développé en langage C avec pour appui la bibliothèque SDL2.
